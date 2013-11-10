@@ -1,0 +1,45 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400);
+a:link, a:visited {
+  color:#0082ca;
+}
+#wrapper {
+  width:920px;
+  margin:0 auto 60px;
+  font-family: 'Open Sans', 'YuGothic', 'Yu Gothic', 'Hiragino Kaku Gothic Pro', 'Meiryo', sans-serif;
+}
+#content {
+  margin-bottom:20px;
+}
+#main { 
+  width:600px;
+  float:left;
+}
+#sidebar {
+  width:300px;
+  float:left;
+}
+h1 { 
+  padding-bottom:0.5em;
+  border-bottom: 1px dashed #ccc;
+}
+h2 {
+  margin-top:0;
+}
+ul {
+  list-style:none;
+  padding-left:1em;
+  margin-bottom:2em;
+}
+img.profile {
+  margin-left:10px;
+  max-width:280px;
+  padding:2px;
+  border:1px solid #bbb;
+}
+address {
+  padding-top:0.5em;
+  border-top: 1px dashed #ccc;
+}
+.clear {
+  clear:both;
+}
