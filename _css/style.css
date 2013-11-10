@@ -3,7 +3,7 @@ a:link, a:visited {
   color:#0082ca;
 }
 #wrapper {
-  width:920px;
+  width:950px;
   margin:0 auto 60px;
   font-family: 'Open Sans', 'YuGothic', 'Yu Gothic', 'Hiragino Kaku Gothic Pro', 'Meiryo', sans-serif;
 }
@@ -11,16 +11,17 @@ a:link, a:visited {
   margin-bottom:20px;
 }
 #main { 
-  width:600px;
+  width:700px;
   float:left;
 }
 #sidebar {
-  width:300px;
+  width:240px;
   float:left;
 }
 h1 { 
   padding-bottom:0.5em;
   border-bottom: 1px dashed #ccc;
+  text-align:center;
 }
 h2 {
   margin-top:0;
@@ -32,7 +33,7 @@ ul {
 }
 img.profile {
   margin-left:10px;
-  max-width:280px;
+  max-width:240px;
   padding:2px;
   border:1px solid #bbb;
 }
