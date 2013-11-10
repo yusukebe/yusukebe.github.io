@@ -140,12 +140,18 @@ body {
 .reveal h1,.reveal h2,.reveal h3,.reveal h4,.reveal h5,.reveal h6 {
   text-transform:none;
   font-weight:bold;
+  line-height:1.2em;
 }
 .reveal h1 { 
   font-size:3em;
-  line-height:1.2em;
 }
 .reveal blockquote {
   font-style:normal;
   padding:1em 2em;
+}
+.reveal pre {
+  line-height:1.6em;
+}
+.reveal pre code {
+  padding:1em;
 }
