@@ -2,6 +2,9 @@
 a:link, a:visited {
   color:#0082ca;
 }
+body {
+  background-color:#fbfbfb;
+}
 #wrapper {
   width:950px;
   margin:0 auto 60px;
@@ -32,10 +35,15 @@ ul {
   margin-bottom:2em;
 }
 img.profile {
-  margin-left:10px;
-  max-width:240px;
+  max-width:230px;
   padding:2px;
   border:1px solid #bbb;
+  background-color:#fff;
+}
+small {
+  text-align:center;
+  display:block;
+  font-size:11px;
 }
 address {
   padding-top:0.5em;
