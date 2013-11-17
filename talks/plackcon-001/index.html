@@ -25,64 +25,7 @@
 
     <div class="reveal">
       <div class="slides">
-        <section>
-          <h1>Mojoliciousの<br />知りたい10のコト</h1>
-          <h3>Yusuke Wada a.k.a. yusukebe</h3>
-          <h4>2013-11-20</h4>
-          <h4>Shibuya Plack/PSGI Conference (shibuya.pl) #1</h4>
-        </section>
-        <section>
-          <h4>質問</h4>
-          <blockquote>Mojolicious使っている人ー？(^o^)／</blockquote>
-        </section>
-        <section>
-          <blockquote>Mojolicious力高い人少なそうなので^^;</blockquote>
-        </section>
-        <section data-background="#753d1b">
-          <h2>知りたいこと10のコト</h2>
-        </section>
-        <section>
-          <h3>No.1</h3>
-          <p>フルスタックってほんと？</p>
-        </section>
-        <section data-markdown>
-          <script type="text/template">
-### Answer
-
-- 機能が揃っているかという意味では**No**
-- 機能を自作しているという意味では**Yes**
-          </script>
-        </section>
-        <section data-markdown>
-          <script type="text/template">
-### コアモジュール以外には非依存
-
-    $ cpanm Mojolicious
-          </script>
-        </section>
-        <section data-markdown>
-          <script type="text/template">
-### 例えば最近...
-
-Mojolicious::Validatorが追加された
-
-    my $validator  = Mojolicious::Validator->new;
-    my $validation = $validator->validation();
-    $validation->input({ message => 'Hello Mojolicioius' });
-    $validation->required('message')->size(1,140);
-    if ($validation->has_error()) {
-        ...;
-    }
-
-実に簡素！
-          </script>
-        </section>
-        <section data-markdown>
-          <script type="text/template">
-特に統合されてて便利！とかじゃないので使わない...？
-          </script>
-        </section>
-
+        <section data-markdown="slide.md" data-separator="^---" data-charset="utf8"></section>
       </div>
     </div>
       <script src="lib/js/head.min.js"></script>

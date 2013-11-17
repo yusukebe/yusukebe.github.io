@@ -2,8 +2,10 @@
  * Solarized Dark theme for reveal.js.
  * Author: Achim Staebler
  */
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400);)
+
 @font-face {
-  font-family:'YuGothic', 'Yu Gothic', 'Hiragino Kaku Gothic Pro', 'Meiryo', sans-serif;
+  font-family: 'YuGothic', 'Yu Gothic', 'Hiragino Kaku Gothic Pro', 'Meiryo', sans-serif;
   font-weight: normal;
   font-style: normal;
 }
@@ -13,7 +15,8 @@
  */
 html * {
   color-profile: sRGB;
-  rendering-intent: auto; }
+  rendering-intent: auto;
+}
 
 /*********************************************
  * GLOBAL STYLES
@@ -23,6 +26,7 @@ body {
   background-color: #002b36; }
 
 .reveal {
+  font-family: 'Open Sans', 'YuGothic', 'Yu Gothic', 'Hiragino Kaku Gothic Pro', 'Meiryo', sans-serif;
   font-size: 36px;
   font-weight: 200;
   letter-spacing: -0.02em;
