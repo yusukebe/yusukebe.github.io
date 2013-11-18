@@ -412,7 +412,7 @@ ___
 
 ### Answer
 
-Key/ValueをBase64エンコードした文字列を
+Key/Value+秘密の文字列をBase64エンコードして
 
 Cookieにぶっこんでる
 
