@@ -319,7 +319,7 @@ ___
 
 ---
 
-#### Mojoliciouse-based なモジュール内で...
+#### Mojolicious-based なモジュール内で...
 
     my $r = $self->routes;
     $r->namespaces([qw/MyApp::Web::Controller/]);
