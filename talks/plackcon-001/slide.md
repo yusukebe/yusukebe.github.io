@@ -169,6 +169,49 @@ Mojoliciousアプリの場合...
 
 ### 改めてベンチマーク
 
+## Mojoliciousの知りたい10のコト
+
+1. フルスタックってほんと？
+2. M::Liteで簡単にアプリつくれるの？
+3. plackupとかで立ち上げられるの？
+4. ビルトインのサーバは使わないの？
+5. Mojo::Baseはいかが？
+6. CLIなどで便利な機能はあるの？
+7. ルーティングどうなってる？
+8. フックとか諸々知りたいんだけど？
+9. バージョンアップが頻繁らしいけど後方互換は？
+10. ぶっちゃけどうなの？
+
+Amon2とMojoliciousの違い
+Amon2にあってMojoliciousに無いもの
+
+—
+
+### morbo
+
+Requests per second:    154.40 [#/sec] (mean)
+
+### plackup
+
+Requests per second:    152.97 [#/sec] (mean)
+
+—
+
+### hypnotoad 10 workers
+
+Requests per second:    566.82 [#/sec] (mean)
+
+### starman 10 workers
+
+Requests per second:    602.90 [#/sec] (mean)
+
+### starlet 10 workers
+
+Requests per second:    731.37 [#/sec] (mean)
+
+—
+
+## psgi
 
 <http://kazeburo.hatenablog.com/entry/2013/04/15/173407>
 
