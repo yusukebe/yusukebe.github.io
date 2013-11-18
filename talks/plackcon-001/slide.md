@@ -5,7 +5,7 @@
 #### 2013-11-20
 #### Shibuya Plack/PSGI Conference (shibuya.pl) #1
 
----
+___
 
 ### 質問
 
@@ -17,9 +17,9 @@ Mojolicious力高い人少なそうなので^^
 
 ---
 
-Mojoliciousの知りたいことコト
+### Mojoliciousの知りたいことコト
 
----
+___
 
 ### No.1
 
@@ -57,11 +57,13 @@ Mojolicious::Validatorが追加された
 
 ---
 
-### 
-
 特に統合されてて便利！とかじゃないので使わない...？
 
 ---
+
+### フルスタックといえども<br />他のモジュールは使う...
+
+___
 
 ### No.2
 
@@ -113,7 +115,7 @@ templates/layouts/default.html.ep
 
     % layout 'default'; 
 
----
+___
 
 ### No.3
 
@@ -146,11 +148,11 @@ Mojoliciousアプリの場合...
         $app;
     };
 
----
+___
 
 ### No.4
 
-> ビルトインサーバは使わないの？
+> 付属のサーバは使わないの？
 
 ---
 
@@ -169,8 +171,74 @@ Mojoliciousアプリの場合...
 
 ### 改めてベンチマーク
 
+    get '/' => sub {
+        my $self = shift;
+        my $param = $self->req->param('foo');
+        $self->stash->{message} = 'x' x 12 . $param;
+        $self->render('index');
+    };
 
-<http://kazeburo.hatenablog.com/entry/2013/04/15/173407>
+    app->start;
+    __DATA__
+
+    @@ index.html.ep
+    % layout 'default';
+    % title 'Welcome';
+    Message: <%= $message %>
+    ...;
+
+ref. <http://kazeburo.hatenablog.com/entry/2013/04/15/173407>
 
 ---
+
+### 開発向けサーバ
+
+
+    # morbo
+    Requests per second:    154.40 [#/sec] (mean)
+
+    # plackup
+    Requests per second:    152.97 [#/sec] (mean)
+
+---
+
+### 本番用サーバ
+
+    # hypnotoad 10 workers
+    Requests per second:    566.82 [#/sec] (mean)
+
+    # starman 10 workers
+    Requests per second:    602.90 [#/sec] (mean)
+
+    # starlet 10 workers
+    Requests per second:    731.37 [#/sec] (mean)
+
+---
+
+### hypnotoadもそこそこ？
+
+#### そういえばホットデプロイ出来る
+
+立ち上げる
+
+    $ hypnotoad app.pl
+
+リロード
+
+    $ hypnotoad app.pl
+
+停止
+
+    $ hypnotoad -s app.pl
+
+---
+
+### でも...
+
+- .psgiをつくってplackup/starmanとかで動かしている
+- Plack::Middleware::* が使える
+- 複数アプリをマウント出来る
+
+___
+
 

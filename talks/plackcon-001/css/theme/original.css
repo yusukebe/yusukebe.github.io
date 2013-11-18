@@ -157,5 +157,11 @@ body {
   line-height:1.6em;
 }
 .reveal pre code {
-  padding:1em;
+  font-family: Monaco, monospace;
+  font-size:18px;
+  line-height:1.5;
+  padding:0.4em;
+}
+.reveal ul li {
+  line-height:1.5;
 }
