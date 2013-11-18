@@ -1,11 +1,11 @@
-# Mojoliciousの<br />知りたいコト
+# Mojoliciousの<br />知りたい10のコト
 
 ### Yusuke Wada a.k.a. yusukebe
 
 #### 2013-11-20
 #### Shibuya Plack/PSGI Conference (shibuya.pl) #1
 
----
+___
 
 ### 質問
 
@@ -17,9 +17,9 @@ Mojolicious力高い人少なそうなので^^
 
 ---
 
-Mojoliciousの知りたいことコト
+### Mojoliciousの知りたいことコト
 
----
+___
 
 ### No.1
 
@@ -40,7 +40,7 @@ Mojoliciousの知りたいことコト
 
 ---
 
-### 例えば最近...
+### そういえば最近...
 
 Mojolicious::Validatorが追加された
 
@@ -57,11 +57,13 @@ Mojolicious::Validatorが追加された
 
 ---
 
-### 
-
 特に統合されてて便利！とかじゃないので使わない...？
 
 ---
+
+### フルスタックといえども<br />他のモジュールは使う...
+
+___
 
 ### No.2
 
@@ -113,7 +115,7 @@ templates/layouts/default.html.ep
 
     % layout 'default'; 
 
----
+___
 
 ### No.3
 
@@ -146,11 +148,11 @@ Mojoliciousアプリの場合...
         $app;
     };
 
----
+___
 
 ### No.4
 
-> ビルトインサーバは使わないの？
+> 付属のサーバは使わないの？
 
 ---
 
@@ -169,51 +171,286 @@ Mojoliciousアプリの場合...
 
 ### 改めてベンチマーク
 
-## Mojoliciousの知りたい10のコト
+    get '/' => sub {
+        my $self = shift;
+        my $param = $self->req->param('foo');
+        $self->stash->{message} = 'x' x 12 . $param;
+        $self->render('index');
+    };
 
-1. フルスタックってほんと？
-2. M::Liteで簡単にアプリつくれるの？
-3. plackupとかで立ち上げられるの？
-4. ビルトインのサーバは使わないの？
-5. Mojo::Baseはいかが？
-6. CLIなどで便利な機能はあるの？
-7. ルーティングどうなってる？
-8. フックとか諸々知りたいんだけど？
-9. バージョンアップが頻繁らしいけど後方互換は？
-10. ぶっちゃけどうなの？
+    app->start;
+    __DATA__
 
-Amon2とMojoliciousの違い
-Amon2にあってMojoliciousに無いもの
+    @@ index.html.ep
+    % layout 'default';
+    % title 'Welcome';
+    Message: <%= $message %>
+    ...;
 
-—
-
-### morbo
-
-Requests per second:    154.40 [#/sec] (mean)
-
-### plackup
-
-Requests per second:    152.97 [#/sec] (mean)
-
-—
-
-### hypnotoad 10 workers
-
-Requests per second:    566.82 [#/sec] (mean)
-
-### starman 10 workers
-
-Requests per second:    602.90 [#/sec] (mean)
-
-### starlet 10 workers
-
-Requests per second:    731.37 [#/sec] (mean)
-
-—
-
-## psgi
-
-<http://kazeburo.hatenablog.com/entry/2013/04/15/173407>
+ref. <http://kazeburo.hatenablog.com/entry/2013/04/15/173407>
 
 ---
 
+### 開発向けサーバ
+
+
+    # morbo
+    Requests per second:    154.40 [#/sec] (mean)
+
+    # plackup
+    Requests per second:    152.97 [#/sec] (mean)
+
+---
+
+### 本番用サーバ
+
+    # hypnotoad 10 workers
+    Requests per second:    566.82 [#/sec] (mean)
+
+    # starman 10 workers
+    Requests per second:    602.90 [#/sec] (mean)
+
+    # starlet 10 workers
+    Requests per second:    731.37 [#/sec] (mean)
+
+---
+
+### hypnotoadもそこそこ？
+
+---
+
+#### そういえばホットデプロイ出来る
+
+立ち上げる
+
+    $ hypnotoad app.pl
+
+リロード
+
+    $ hypnotoad app.pl
+
+停止
+
+    $ hypnotoad -s app.pl
+
+---
+
+### でも...
+
+- app.psgiをつくってplackup/starmanとかで動かしている
+- Plack::Middleware::* が使える
+- 複数アプリをマウント出来る
+
+___
+
+### No.5
+
+> Mojo::Baseはいかが？
+
+---
+
+### Answer
+
+- 簡素なアクセッサ
+- Web層以外をMojo*でつくりたくない
+
+> **Mouse**使ってます^^
+
+---
+
+#### Mojo::Baseを一応紹介
+
+SYNOPSISより
+
+    package Cat;
+    use Mojo::Base -base;
+
+    has name => 'Nyan';
+    has [qw(birds mice)] => 2;
+
+    package Tiger;
+    use Mojo::Base 'Cat';
+
+    has friend  => sub { Cat->new };
+    has stripes => 42;
+
+___
+
+### No.6
+
+> CLIなどで便利な機能はあるの？
+
+---
+
+### 使ってない！！
+
+なので...
+
+---
+
+## ojo
+
+#### $ perl -Mojo -E ...
+
+---
+
+    $ perl -Mojo -E 'say x(g("yusuke.be")->body)->at("title")->text'
+    # ゆーすけべー日記 v2
+
+---
+
+## おおおーーー
+
+クール？？
+
+___
+
+### No.7
+
+> ルーティングどう？
+
+---
+
+### Answer
+
+すごく柔軟でいいよ！
+
+> **Mojolicious::Routes::Route** を参照
+
+---
+
+#### Mojoliciouse-based なモジュール内で...
+
+    my $r = $self->routes;
+    $r->namespaces([qw/MyApp::Web::Controller/]);
+
+    $r->get('/entry/:entry_id')->to('entry#show');
+    $r->post('/entry')->to( controller => 'Entry', action => 'create' );
+
+ルーティングルールを書く
+
+---
+
+### bridge とか便利
+
+    my $auth_route = $r->bridge->to( 'admin#auth' );
+    $auth_route->get('/admin/something')->to( 'admin#something' );
+
+一度ユーザ認証をするアクションを挟む例
+
+___
+
+### No.8
+
+> フックは？
+
+---
+
+### Answer
+
+結構使う
+
+- **before_dispatch**
+- **after_dispatch**
+
+---
+
+#### PUT DELETEをサポートしているので...
+
+    $self->hook(
+        before_dispatch => sub {
+            if ( my $request_method = $c->req->param('_method') ) {
+                my $methods = [qw/GET POST PUT DELETE/];
+                if ( grep { $_ eq uc $request_method } @$methods ) {
+                    $c->req->method( $request_method );
+                }
+            }
+        }
+    );
+
+擬似的にブラウザサポートさせる例
+
+___
+
+### No.9
+
+> バージョンアップが頻繁らしいけど？
+
+---
+
+### Answer
+
+#### そうなの後方互換もバッサリと切り捨てる！
+
+---
+
+### 例えば 3.xx -> 4.xx の時
+
+こいつが廃止された
+
+    $self->render_json( $ref );
+
+わーお
+
+    $self->render( json => $ref );
+
+と書かないと動かない＼(^o^)／
+
+---
+
+### Mojoliciousを使う場合は
+
+### 最新情報を追いましょう
+
+___
+
+### No.10
+
+> セッションがしょぼいって聞いたけど
+
+---
+
+### Answer
+
+Key/ValueをBase64エンコードした文字列を
+
+Cookieにぶっこんでる
+
+---
+
+### それが気持ち悪い人は
+
+- Plack::Middleware::Session
+- もしくは
+- 自作マネージャ
+- を使いましょう！
+
+___
+
+### まとめ
+
+> ぶっちゃけどうなの？
+
+---
+
+### Answer
+
+- 依存モジュール無しは気に入っている
+- 結局Amon2からコードを拝借しているが...
+- 変な挙動をしないのでWeb層に限ってはいい
+
+---
+
+### Plackあんま関係なかったけど
+
+> Mojoliciousは
+
+> PSGI簡単にはけるからいいよね！
+
+---
+
+### 以上
+
+#### Mojoliciousの気になる？話をしました〜
+
+おしまい
