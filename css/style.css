@@ -23,7 +23,7 @@ body {
 }
 h1 { 
   padding-bottom:0.5em;
-  border-bottom: 1px dashed #ccc;
+  border-bottom: 1px dashed #29007d;
   text-align:center;
 }
 h2 {
@@ -47,7 +47,16 @@ small {
 }
 address {
   padding-top:0.5em;
-  border-top: 1px dashed #ccc;
+  border-top: 1px dashed #29007d;
+}
+#presentation h3 {
+  margin:2em 0 0;
+}
+#presentation ul{
+  font-size:14px;
+  color:#29007d;
+  list-style-type: disc;
+  margin-left:0.2em;
 }
 .clear {
   clear:both;
