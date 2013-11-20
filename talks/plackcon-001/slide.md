@@ -467,6 +467,12 @@ ___
 
 ---
 
+![atmarkit](images/atmarkit.png)
+
+<http://www.atmarkit.co.jp/ait/articles/1311/20/news045.html>
+
+---
+
 ### YAPC::Asia 2014 やります！
 
 ___
