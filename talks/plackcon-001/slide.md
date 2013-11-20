@@ -431,6 +431,7 @@ Cookieにぶっこんでる
 ### それが気持ち悪い人は
 
 - Plack::Middleware::Session
+- Plack::Middleware::Session::Simple
 - もしくは
 - 自作マネージャ
 - を使いましょう！
