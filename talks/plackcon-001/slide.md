@@ -7,6 +7,10 @@
 
 ___
 
+### 最初に...
+
+---
+
 ### 質問
 
 > Mojolicious使っている人ー？(^o^)／
@@ -382,7 +386,11 @@ ___
 
 ### Answer
 
-#### そうなの後方互換もバッサリと切り捨てる！
+#### そうなのそして後方互換もバッサリと切り捨てる！
+
+---
+
+![changelog](images/changelog.png)
 
 ---
 
@@ -402,7 +410,7 @@ ___
 
 ### Mojoliciousを使う場合は
 
-### 最新情報を追いましょう
+### 最新情報をゆるく追いましょう
 
 ___
 
@@ -423,6 +431,7 @@ Cookieにぶっこんでる
 ### それが気持ち悪い人は
 
 - Plack::Middleware::Session
+- Plack::Middleware::Session::Simple
 - もしくは
 - 自作マネージャ
 - を使いましょう！
@@ -447,12 +456,31 @@ ___
 
 > Mojoliciousは
 
-> PSGI簡単にはけるからいいよね！
+> PSGIはくからいいでしょ！
+
+___
+
+### ところで
 
 ---
+
+## JPA理事になりました！
+
+---
+
+![atmarkit](images/atmarkit.png)
+
+<http://www.atmarkit.co.jp/ait/articles/1311/20/news045.html>
+
+---
+
+### YAPC::Asia 2014 やります！
+
+___
 
 ### 以上
 
 #### Mojoliciousの気になる？話をしました〜
 
 おしまい
+
