@@ -148,7 +148,7 @@ body {
   line-height:1.2em;
 }
 .reveal h1 { 
-  font-size:3em;
+  font-size:2.8em;
 }
 .reveal blockquote {
   font-style:normal;
@@ -162,6 +162,7 @@ body {
   font-size:18px;
   line-height:1.5;
   padding:0.4em;
+  max-height:500px;
 }
 .reveal ul li {
   line-height:1.5;
