@@ -1,4 +1,4 @@
-# 僕の見た<br />Perlコミュニティと<br />これから
+# 今年見た<br />Perlコミュニティと<br />これから
 
 ### Yusuke Wada a.k.a. yusukebe
 
@@ -26,18 +26,42 @@ ___
 
 ## 本題の前に...
 
+> 今年書いたコードとか
+
 ___
 
-### 今年書いたコード
+### 主に...
 
-- Bokete-Delta
-  - [ボケて](http://bokete.jp/) の内部コード=「Bokete」
-  - Alpha => Beta => Gamma => **Delta** <- 今ココ
-  - 今年でほぼ完成まで持ち込んだ
-  - 企業とのコラボ、スマホやアプリ対応 etc.
-- Shodo
-  - 次期Boketeバージョンで使うために開発
-  - Rubyのautodocに触発される
+![ボケて](images/bokete.png)
+
+___
+
+### 今年の実績
+
+- ピーク時 **250-300req/1sec**
+- iOS+Androidアプリ **280万インストール**
+- 第17回**メディア芸術祭 審査委員会推薦作品**
+- **Yahoo! Japan**その他と連携
+
+___
+
+### Bokete-Delta
+
+- ボケての内部コード「**Bokete**」
+- Alpha => Beta => Gamma => **Delta** <- 今ココ
+- 今年でほぼ完成まで持ち込んだ
+- 企業とのコラボ、スマホやアプリ対応 etc.
+
+___
+
+### Shodo
+
+- 次期Boketeバージョンで使うために開発
+- Rubyのautodocに触発される
+- HTTP::Request / HTTP::Responseを食わせる
+- ドキュメントをMarkdown出力
+- JSON-RPCのAPIで利用
+- Shodo / Suzuri / Hanshi
 
 ___
 
@@ -106,6 +130,7 @@ ___
 - Harriet
 - JSON::RPC
 - OAuth::Lite2
+- AngularJS *(JS)*
 - etc.
 
 ___
