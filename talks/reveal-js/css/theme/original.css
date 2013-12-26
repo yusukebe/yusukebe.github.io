@@ -29,8 +29,8 @@ body {
   font-family: 'Open Sans', 'YuGothic', 'Yu Gothic', 'Hiragino Kaku Gothic Pro', 'Meiryo', sans-serif;
   font-size: 36px;
   font-weight: 200;
-  letter-spacing: -0.02em;
-  color: #93a1a1; }
+  color: #93a1a1;
+}
 
 ::selection {
   color: white;
@@ -81,7 +81,7 @@ body {
  * IMAGES
  *********************************************/
 .reveal section img {
-  max-height:600px;
+  max-height:540px;
   margin: 15px 0px;
   background: rgba(255, 255, 255, 0.12);
   border: 4px solid #93a1a1;
@@ -152,7 +152,8 @@ body {
 }
 .reveal blockquote {
   font-style:normal;
-  padding:1em 2em;
+  padding:0.8em 2em;
+  margin:0.5em auto;
 }
 .reveal pre {
   line-height:1.6em;
@@ -166,4 +167,13 @@ body {
 }
 .reveal ul li {
   line-height:1.5;
+}
+.reveal strong, .reveal b {
+  color:#cad0d0;
+}
+.reveal em, .reveal i {
+  color:#d2d2cb;
+}
+.reveal code {
+  color:#d2cdcb;
 }
