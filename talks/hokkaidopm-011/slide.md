@@ -122,7 +122,7 @@ ___
 
 ___
 
-### 今年使い始めたモジュール
+### 今年使い始めたライブラリ
 
 - Cinnamon
 - Carton
@@ -130,8 +130,56 @@ ___
 - Harriet
 - JSON::RPC
 - OAuth::Lite2
-- AngularJS *(JS)*
+- reveal.js *(JS)*
+- **AngularJS** *(JS)*
 - etc.
+
+___
+
+## AngularJS
+
+> あんぎゅらーじぇいえす
+
+___
+
+### AngularJSを勉強してたら<br />Gigazineに載ってた...
+
+![Gigazine](images/gigazine.png)
+
+___
+
+### on HTML
+
+![HTML](images/html.png)
+
+___
+
+### on JS
+
+```
+var app = angular.module('myApp', []);
+app.controller('MyController', function($scope){
+  var nextTitle = 'Hello Hokkaido!';
+  $scope.changeTitle = function() {
+    var currentTitle = $scope.title;
+    $scope.title = nextTitle;
+    nextTitle = currentTitle;
+  };
+});
+```
+
+___
+
+## デモ
+
+___
+
+
+<div ng-controller="MyController" ng-init="title='Hello Tokyo!'">
+  <h2>{{ title }}</h2>
+  <button ng-click="changeTitle()"
+   style="font-weight:bold;font-size:1.4em;border-radius:0.2em;padding:0.2em;">Change Title</button>
+</div>
 
 ___
 
