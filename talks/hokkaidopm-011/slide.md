@@ -1,4 +1,4 @@
-# 今年見た<br />Perlコミュニティと<br />これから
+# 今年見た<br />Perlコミュニティ<br />そしてこれから
 
 ### Yusuke Wada a.k.a. yusukebe
 
@@ -93,7 +93,7 @@ ___
         to_json(
             {
                 result => {
-                    entries => [ { title => 'Hello', body => 'This is an example.' } ]
+                    entries => [{ title => 'Hello', body => 'It is fine tody.' }]
                 },
             }
         )
@@ -178,7 +178,7 @@ ___
 <div ng-controller="MyController" ng-init="title='Hello Tokyo!'">
   <h2>{{ title }}</h2>
   <button ng-click="changeTitle()"
-   style="font-weight:bold;font-size:1.4em;border-radius:0.2em;padding:0.2em;">Change Title</button>
+   style="font-weight:bold;font-size:1.4em;background-color:#ccc;border-radius:0.2em;padding:0.2em;">Change Title</button>
 </div>
 
 ___
@@ -247,6 +247,12 @@ ___
 
 ___
 
+## 今回のボツネタ
+
+> **登記を支える技術**
+
+___
+
 ### まとめると...
 
 - Boketeのコードたくさん書いて
@@ -268,7 +274,7 @@ ___
 
 ___
 
-## それは置いといて...
+## それはおいといて...
 
 ___
 
@@ -380,9 +386,27 @@ ___
 
 > 海外カンファレンスに行くのは<br />非常に刺激を受けますね^^
 
+___
+
+### ぶっちゃけスゲー楽しかった
+
+![YAPC::NA](images/yapcna2.jpg)
+
+___
+
+### YAPC::NA厨
+
 - 特にYAPC::NAは参加しやすかった
 - `Where are you from ?` で話しかけられる
+- 一人で積極的に英語で絡んでいく唯一の機会
+- 日に日に英語が聞けるようになっていった！
 - みんなが海外に行ける機会を増やせればいいのかにゃ...
+
+___
+
+## タオツポス...
+
+![T-shirts](images/t-shirts.jpg)
 
 ___
 
@@ -466,7 +490,7 @@ ___
 
 - 丁寧な教えとサポート
 - テーブル毎に参加者が教え合っている
-- ぶっちゃけビックリした
+- かなり**ビックリ**した
 
 ___
 
@@ -541,7 +565,17 @@ ___
 
 ___
 
-## たくらみ
+なによりも...
+
+## Perlという共通言語を<br />持って各地に行くと<br />楽しくて刺激を受けるよ！
+
+___
+
+## Perl Mongerよ<br />旅に出よ！
+
+___
+
+そして**たくらみ**
 
 ___
 
@@ -599,15 +633,16 @@ ___
 
 ___
 
-## 最後のまとめ
+## 最後のまとめと抱負
 
 ___
 
-### 2013年
+### 2013年と2014年
 
 - コードを書いてまだまだ学びたいと思いました
 - いろんなところに行って楽しかったです
-- 来年はYAPCを含め新しいチャレンジ頑張ります！
+- 来年は**YAPCをやる側**としてチャレンジ
+- Perlにもっと**コントリビュート**したい！
 
 ___
 
