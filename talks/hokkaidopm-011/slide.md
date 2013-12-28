@@ -1,3 +1,9 @@
+## これからはじまります
+
+![papix](images/papix.jpg)
+
+___
+
 # 今年見た<br />Perlコミュニティ<br />そしてこれから
 
 ### Yusuke Wada a.k.a. yusukebe
@@ -76,7 +82,8 @@ ___
     };
     $suzuri->params(
         category => { isa => 'Str', documentation => '...' },
-        limit => { isa => 'Int', default => 20, optional => 1, documentation => '...' }
+        limit => { isa => 'Int', default => 20,
+                   optional => 1, documentation => '...' }
     );
     ok $suzuri->validate($parameters->{params}); # Validate Parameter
 
@@ -642,7 +649,7 @@ ___
 - コードを書いてまだまだ学びたいと思いました
 - いろんなところに行って楽しかったです
 - 来年は**YAPCをやる側**としてチャレンジ
-- Perlにもっと**コントリビュート**したい！
+- もっと**コントリビュート**したい！
 
 ___
 
