@@ -81,7 +81,6 @@ body {
  *********************************************/
 .reveal section img {
   max-height:500px;
-  min-height:380px;
   margin: 15px 0px;
   background: rgba(255, 255, 255, 0.12);
   border: 4px solid #93a1a1;
