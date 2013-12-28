@@ -1,9 +1,3 @@
-## これからはじまります
-
-![papix](images/papix.jpg)
-
-___
-
 # 今年見た<br />Perlコミュニティ<br />そしてこれから
 
 ### Yusuke Wada a.k.a. yusukebe
