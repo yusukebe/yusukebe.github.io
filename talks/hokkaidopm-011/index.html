@@ -1,15 +1,15 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" ng-app="myApp"> <!-- For AngularJS DEMO -->
   <head>
     <meta charset="utf-8">
-    <title>今年見たPerlコミュニティとこれから #hokkaidopm</title>
+    <title>今年見たPerlコミュニティそしてこれから #hokkaidopm</title>
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="stylesheet" href="../reveal-js/css/reveal.min.css">
     <link rel="stylesheet" href="../reveal-js/css/theme/original.css" id="theme">
     <link rel="icon" type="image/png" href="http://yusukebe.github.io/favicon.png" />
-    <link rel="canonical" href="http://yusukebe.github.io/talks/hokkaidopm-011" />
+    <link rel="canonical" href="http://yusukebe.github.io/talks/hokkaidopm-011/#/" />
 
     <!-- For syntax highlighting -->
     <link rel="stylesheet" href="../reveal-js/lib/css/zenburn.css">
@@ -21,6 +21,7 @@
     <!--[if lt IE 9]>
       <script src="../reveal-js/lib/js/html5shiv.js"></script>
     <![endif]-->
+
   </head>
 
   <body>
@@ -42,6 +43,8 @@
           progress: true,
           history: true,
           center: true,
+          //width: 1280,
+          margin: 0.02,
 
           theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
           transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
@@ -57,6 +60,22 @@
             ]
          });
 
+        // For AngularJS DEMO
+        var script = document.createElement('script');
+        script.src = 'js/angular.min.js';
+        script.onload = function(){
+          var app = angular.module('myApp', []);
+          app.controller('MyController', function($scope){
+            var nextTitle = 'Hello Hokkaido!';
+            $scope.changeTitle = function() {
+              var currentTitle = $scope.title;
+              $scope.title = nextTitle;
+              nextTitle = currentTitle;
+            };
+          });
+        }
+        document.getElementsByTagName("head")[0].appendChild(script);
       </script>
+
   </body>
 </html>

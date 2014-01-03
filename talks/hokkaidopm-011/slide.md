@@ -1,4 +1,4 @@
-# 今年見た<br />Perlコミュニティと<br />これから
+# 今年見た<br />Perlコミュニティ<br />そしてこれから
 
 ### Yusuke Wada a.k.a. yusukebe
 
@@ -40,8 +40,15 @@ ___
 
 - ピーク時 **250-300req/1sec**
 - iOS+Androidアプリ **280万インストール**
-- 第17回**メディア芸術祭 審査委員会推薦作品**
 - **Yahoo! Japan**その他と連携
+
+> そして...
+
+___
+
+### 第17回**メディア芸術祭<br />審査委員会推薦作品**
+
+![メディア芸術祭](images/media.png)
 
 ___
 
@@ -61,7 +68,7 @@ ___
 - HTTP::Request / HTTP::Responseを食わせる
 - ドキュメントをMarkdown出力
 - JSON-RPCのAPIで利用
-- Shodo / Suzuri / Hanshi
+- `Shodo` / `Shodo::Suzuri` / `Shodo::Hanshi`
 
 ___
 
@@ -76,7 +83,8 @@ ___
     };
     $suzuri->params(
         category => { isa => 'Str', documentation => '...' },
-        limit => { isa => 'Int', default => 20, optional => 1, documentation => '...' }
+        limit => { isa => 'Int', default => 20,
+                   optional => 1, documentation => '...' }
     );
     ok $suzuri->validate($parameters->{params}); # Validate Parameter
 
@@ -93,7 +101,7 @@ ___
         to_json(
             {
                 result => {
-                    entries => [ { title => 'Hello', body => 'This is an example.' } ]
+                    entries => [{ title => 'Hello', body => 'It is fine tody.' }]
                 },
             }
         )
@@ -114,7 +122,7 @@ ___
 ### 実際使っている
 
 - JSON-RPCのAPIを試験するため
-- `Shodo::Test::JSONRPC` (Test::Shodo::JSONRPC?)
+- `Test::Shodo::JSONRPC`
 - リクエストパラメータをテストの中で記述
 - モック内のレスポンスをそのままJSONで表示
 - テストを走らせる => ドキュメント共有@GitHub
@@ -122,7 +130,7 @@ ___
 
 ___
 
-### 今年使い始めたモジュール
+### 今年使い始めたライブラリ
 
 - Cinnamon
 - Carton
@@ -130,8 +138,56 @@ ___
 - Harriet
 - JSON::RPC
 - OAuth::Lite2
-- AngularJS *(JS)*
+- reveal.js *(JS)*
+- **AngularJS** *(JS)*
 - etc.
+
+___
+
+## AngularJS
+
+> あんぎゅらーじぇいえす
+
+___
+
+### AngularJSを勉強してたら<br />Gigazineに載ってた...
+
+![Gigazine](images/gigazine.png)
+
+___
+
+### on HTML
+
+![HTML](images/html.png)
+
+___
+
+### on JS
+
+```
+var app = angular.module('myApp', []);
+app.controller('MyController', function($scope){
+  var nextTitle = 'Hello Hokkaido!';
+  $scope.changeTitle = function() {
+    var currentTitle = $scope.title;
+    $scope.title = nextTitle;
+    nextTitle = currentTitle;
+  };
+});
+```
+
+___
+
+## デモ
+
+___
+
+
+<div ng-controller="MyController" ng-init="title='Hello Tokyo!'">
+  <h2>{{ title }}</h2>
+  <button ng-click="changeTitle()"
+   style="font-weight:bold;font-size:1.4em;background-color:#ccc;border-radius:0.2em;padding:0.2em;">Change Title</button>
+</div>
 
 ___
 
@@ -158,6 +214,16 @@ ___
 
 ___
 
+### 12月23日(誕生日)
+
+![チキン](images/jisui.jpg)
+
+___
+
+> ところで
+
+___
+
 ### この地図なーんだぁ！
 
 ![地図2](images/map2.png)
@@ -171,6 +237,8 @@ ___
 - アメリカ => YAPC::NA + サンフランシスコ見学
 - 熱海 => 合宿 + 温泉 etc.
 - 福岡 => Fukuoka.pm
+- 五反田 => Perl入学式
+- 渋谷 => PerlCasual / Shibuya.pl
 - 八王子 => Hachioji.pm
 
 ___
@@ -184,6 +252,12 @@ ___
 ### JPA知事にも就任ぽよ！
 
 ![JPA](images/jpa.png)
+
+___
+
+## 今回のボツネタ
+
+> **登記を支える技術**
 
 ___
 
@@ -208,7 +282,7 @@ ___
 
 ___
 
-## それは置いといて...
+## それはおいといて...
 
 ___
 
@@ -269,7 +343,7 @@ ___
 
 - キャラクターで判断出来る
 - さらに日本人作者だと...
-- 直接質問が投げれる
+- 気楽に本人に質問出来る
 - ドキュメントやBlog記事で使い方を把握出来る
 - ユーザー同士で使い方を議論出来る
 
@@ -301,14 +375,14 @@ ___
 
 ___
 
-> うむ...
+> うっ...
 
 ___
 
 ### 当然だがコンテキストが異なる
 
 - 英語が伝わってないだけかも知れないが...
-- 日本人作者のモジュールを知らない人が多かった
+- よく使っているモジュールを知らない人が多かった
 - Web系のアプリを実践している人が少ない？
 - `Catalyst`は根強い
 
@@ -320,9 +394,27 @@ ___
 
 > 海外カンファレンスに行くのは<br />非常に刺激を受けますね^^
 
+___
+
+### ぶっちゃけスゲー楽しかった
+
+![YAPC::NA](images/yapcna2.jpg)
+
+___
+
+### YAPC::NA厨
+
 - 特にYAPC::NAは参加しやすかった
-- `Where are you from` で話しかけられる
-- みんなが海外に行ける機会を増やせればいいのか...
+- `Where are you from ?` で話しかけられる
+- 一人で積極的に英語で絡んでいく唯一の機会
+- 日に日に英語が聞けるようになっていった！
+- みんなが海外に行ける機会を増やせればいいのかにゃ...
+
+___
+
+## タオツポス...
+
+![T-shirts](images/t-shirts.jpg)
 
 ___
 
@@ -378,6 +470,44 @@ ___
 
 ___
 
+### PerlCasual #05 & Shibuya.pl #01
+
+![PerlCasual](images/perlcasual.jpg)
+
+___
+
+### 学びがある
+
+- LINEさんのカフェ非常に良い
+- [@koba04さんのサービスつくった話](http://koba04.com/slide/perl-casual-5/)
+- [@fujiwaraさんのPlack/PSGIおさらい話](http://dl.dropboxusercontent.com/u/224433/plackcon/index.html)
+- 個人的には@bayashiさんの小ネタがツボ
+- こう言っちゃなんだけど**つぶぞろい感**すごい
+
+___
+
+### Perl入学式
+
+![Perl入学式](images/perlentrance.jpg)
+
+___
+
+### 新境地を感じる
+
+> こんなPerlやりたい人いたのか！！
+
+- 丁寧な教えとサポート
+- テーブル毎に参加者が教え合っている
+- かなり**ビックリ**した
+
+___
+
+### ちなみに寿司が安くてウマい
+
+![寿司](images/sushi.jpg)
+
+___
+
 ### Hachioji.pm #34
 
 ![Hachioji.pm](images/hachiojipm.jpg)
@@ -412,8 +542,9 @@ ___
 
 ___
 
-### 進捗なかったけど得るものがあった
+### 温泉いい！その2
 
+- 進捗なかったけど得るものがあった
 - @karupaneruraさんが主催
 - 熱海の山木旅館さん
 - 今まで話したことない人と技術話出来た
@@ -442,7 +573,17 @@ ___
 
 ___
 
-## たくらみ
+なによりも...
+
+## Perlという共通言語を<br />持って各地に行くと<br />楽しくて刺激を受けるよ！
+
+___
+
+## Perl Mongerよ<br />旅に出よ！
+
+___
+
+そして**たくらみ**
 
 ___
 
@@ -475,9 +616,8 @@ ___
 
 ### 現実的なやり方
 
-- JPAとしてやるのは2015年度くらいから？
-- と言っても責任の少ない軽い斡旋がいい
-- 最初は有志でやっていこう
+- 本格的にやるのは2015年度くらいから？
+- 来年は有志でやっていく
 - 地方自治体や地元の観光協会に実績がわかるように
 - ここだけの話「熱海」だと融通が効くかも
 
@@ -485,7 +625,7 @@ ___
 
 ## そうすると...
 
-> JPA的にいい感じの3本柱が立つ
+> いい感じの3本柱が立つ
 
 ___
 
@@ -501,18 +641,18 @@ ___
 
 ___
 
-## 最後のまとめ
+## 最後のまとめと抱負
 
 ___
 
-### 2013年
+### 2013年と2014年
 
 - コードを書いてまだまだ学びたいと思いました
 - いろんなところに行って楽しかったです
-- 来年はYAPCを含め新しいチャレンジ頑張ります！
+- 来年は**YAPCをやる側**としてチャレンジ
+- もっと**コントリビュート**したい！
 
 ___
 
 ## おしまい
-
 
