@@ -26,17 +26,23 @@ Yokohama.pm#12
 
 ---
 
+## ガゼル！
+
+---
+
 ということでkazeburoさんが速いサーバを書いたので
 
 **本番で**使ってみる！
 
 ---
 
-試験環境じゃつまらないので稼働中のAPIサーバに入れてみる(Carton配下外)
+試験環境じゃつまらないので稼働中のAPIサーバに入れてみる
 
 ```
 $ cpanm Gazelle
-$ emacs /XXX/daemontools/bokete_api/run
+```
+
+```
 $ lv /XXX/daemontools/bokete_api/run
 ```
 
@@ -155,7 +161,7 @@ $ ab -n 10000 -c 50 http://10.0.x.x/xxx/xxx
 
 ## 結論
 
-* Nginxへはport接続より**unix socket domainを使うと速い!! ** (Starlet/Gazelle)
+* Nginxへはport接続より**unix domain socketを使うと速い!! ** (Starlet/Gazelle)
 * ただ本アプリではStarletとGazelleの差があまり見られなかった
 * 「そもそも高速なAppサーバ要らない」って誰かが言ってた！
 * kazeburoさんありがとうございます(何かあればお伝えします)
