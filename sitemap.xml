@@ -3,32 +3,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://yusukebe.com/posts/2020/perl-code/</loc>
-    <lastmod>2020-01-16T09:05:16+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusukebe.com/posts/</loc>
-    <lastmod>2020-01-16T09:05:16+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusukebe.com/</loc>
-    <lastmod>2020-01-16T09:05:16+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusukebe.com/posts/2020/style-guide/</loc>
-    <lastmod>2020-01-16T08:50:36+09:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://yusukebe.com/about/</loc>
     <lastmod>2020-01-16T02:58:48+09:00</lastmod>
   </url>
   
   <url>
+    <loc>https://yusukebe.com/</loc>
+    <lastmod>2020-01-16T02:58:48+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://yusukebe.com/posts/2020/0115093400/</loc>
+    <lastmod>2020-01-15T09:34:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yusukebe.com/posts/</loc>
     <lastmod>2020-01-15T09:34:00+09:00</lastmod>
   </url>
   
