@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <copyright>© Copyright yusukebe.com</copyright>
-    <lastBuildDate>Tue, 24 Jan 2012 18:09:00 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 16 Jan 2020 10:36:20 +0900</lastBuildDate>
     
 	<atom:link href="https://yusukebe.com/tags/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>はてなブログからGitHub Pages&#43;Hugoへ移行した</title>
+      <link>https://yusukebe.com/posts/2020/hatenablog-to-githubpages/</link>
+      <pubDate>Thu, 16 Jan 2020 10:36:20 +0900</pubDate>
+      
+      <guid>https://yusukebe.com/posts/2020/hatenablog-to-githubpages/</guid>
+      <description>&lt;p&gt;はてなブログで運用してたブログ「ゆーすけべー日記」をGitHub Pagesへ移行した。ドメインも昔使ってた&lt;code&gt;yusukebe.com&lt;/code&gt;にした。
+静的ファイルのジェネレーターとしてHugoを使ってる。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>nginxでリダレイクトの設定をしてデッドリンクを無くす</title>

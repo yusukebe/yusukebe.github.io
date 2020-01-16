@@ -3,22 +3,37 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://yusukebe.com/tags/blog/</loc>
+    <lastmod>2020-01-16T10:36:20+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yusukebe.com/posts/</loc>
+    <lastmod>2020-01-16T10:36:20+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yusukebe.com/tags/</loc>
+    <lastmod>2020-01-16T10:36:20+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yusukebe.com/posts/2020/hatenablog-to-githubpages/</loc>
+    <lastmod>2020-01-16T10:36:20+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yusukebe.com/</loc>
+    <lastmod>2020-01-16T10:36:20+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://yusukebe.com/about/</loc>
     <lastmod>2020-01-16T02:58:48+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://yusukebe.com/</loc>
-    <lastmod>2020-01-16T02:58:48+09:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://yusukebe.com/posts/2020/0115093400/</loc>
-    <lastmod>2020-01-15T09:34:00+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusukebe.com/posts/</loc>
     <lastmod>2020-01-15T09:34:00+09:00</lastmod>
   </url>
   
@@ -84,11 +99,6 @@
   
   <url>
     <loc>https://yusukebe.com/posts/2016/0118111838/</loc>
-    <lastmod>2016-01-18T11:18:00+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusukebe.com/tags/</loc>
     <lastmod>2016-01-18T11:18:00+09:00</lastmod>
   </url>
   
@@ -1295,11 +1305,6 @@
   <url>
     <loc>https://yusukebe.com/posts/2012/0126114125/</loc>
     <lastmod>2012-01-26T20:41:00+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusukebe.com/tags/blog/</loc>
-    <lastmod>2012-01-24T18:09:00+09:00</lastmod>
   </url>
   
   <url>
