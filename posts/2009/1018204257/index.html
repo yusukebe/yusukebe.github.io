@@ -7,9 +7,12 @@
 <meta property="og:description" content=" とあるサイトのページビューを日別で出さなくてはいけなくなった。Google Analytics でアクセス解析してるんだけど、いちいち管理画面でPVを見て書き出すのがめんどくさいので、API 経由で指定したサイトの過去10日間のそれぞれP" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://yusukebe.com/posts/2009/1018204257/" />
+<meta property="og:image" content="https://yusukebe.com/icons/myicon.png"/>
 <meta property="article:published_time" content="2009-10-19T05:42:00+09:00" />
 <meta property="article:modified_time" content="2009-10-19T05:42:00+09:00" />
-<meta name="twitter:card" content="summary"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://yusukebe.com/icons/myicon.png"/>
+
 <meta name="twitter:title" content="Google Analytics API を Perl から扱うスクリプト"/>
 <meta name="twitter:description" content=" とあるサイトのページビューを日別で出さなくてはいけなくなった。Google Analytics でアクセス解析してるんだけど、いちいち管理画面でPVを見て書き出すのがめんどくさいので、API 経由で指定したサイトの過去10日間のそれぞれP"/>
 <link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
@@ -248,7 +251,7 @@ sub ls {
 var doNotTrack = false;
 if (!doNotTrack) {
 	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-123-45', 'auto');
+	ga('create', 'UA-492497-1', 'auto');
 	
 	ga('send', 'pageview');
 }
