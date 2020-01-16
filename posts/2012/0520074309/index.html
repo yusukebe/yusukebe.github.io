@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Rubyやってみる！（新おっぱいスクリプトもあるぉ） - ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="Rubyやってみる！（新おっぱいスクリプトもあるぉ）" />
+<meta property="og:description" content=" 某プロジェクトでRuby on Rails使うっていぅんで「アジャイルWebアプリケーション開発」本なんて買ってチュートリアルとかやってます。ただ、Ruby自体なにも分からないので、Rails覚えてもどれだけできるかがよく分からなす。って" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yusukebe.com/posts/2012/0520074309/" />
+<meta property="article:published_time" content="2012-05-20T16:43:00+09:00" />
+<meta property="article:modified_time" content="2012-05-20T16:43:00+09:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Rubyやってみる！（新おっぱいスクリプトもあるぉ）"/>
+<meta name="twitter:description" content=" 某プロジェクトでRuby on Rails使うっていぅんで「アジャイルWebアプリケーション開発」本なんて買ってチュートリアルとかやってます。ただ、Ruby自体なにも分からないので、Rails覚えてもどれだけできるかがよく分からなす。って"/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
+	
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://yusukebe.com/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper post">
+		<div class="header">
+	<h1 class="site-title"><a href="https://yusukebe.com/">ゆーすけべー日記</a></h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/yusukebe" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/yusukebe" title="Twitter"><i data-feather="twitter"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post-header">
+			<h1 class="title">Rubyやってみる！（新おっぱいスクリプトもあるぉ）</h1>
+			<div class="meta">Posted at &mdash; May 20, 2012</div>
+		</div>
+
+		<div class="markdown">
+			
+
+<p>某プロジェクトでRuby on Rails使うっていぅんで
+「<a href="http://www.amazon.co.jp/exec/obidos/ASIN/4274068668/kamawada-22/ref=nosim/">アジャイルWebアプリケーション開発</a>」本なんて買ってチュートリアルとかやってます。
+ただ、Ruby自体なにも分からないので、Rails覚えてもどれだけできるかがよく分からなす。
+ってことでRubyを勉強する！と先ほど書いてみた4つのスクリプトをご紹介。間違ってたらツッコミよろしくおくんなまし。
+とはいえ簡単なやつだよ！でも新しいおっぱいダウンロードスクリプトもあるよ！</p>
+
+<h3>open-uri.rb</h3>
+
+<p>まずは、Perlで言うLWP的なもの、つまりHTTPクライアントでこの日記のHTMLを取得してみるよー。
+あら、簡単だねっ。</p>
+
+<pre> require "open-uri"
+
+html = open("http://yusukebe.com/").read;
+p html
+ </pre>
+
+<h3>twitter-search.rb</h3>
+
+<p>お次に「お得意の」APIを叩く系をやってみる。Twitter Search APIが簡単なので、
+そこから「ruby」という発言を取ってきて表示させます。
+Perlで言うURIモジュールの「query_form」メソッドが欲しかったので、Addressable::URIを使いましたぉ。</p>
+
+<pre> require "addressable/uri"
+require "open-uri"
+require "json"
+
+uri = Addressable::URI.parse('http://search.twitter.com/search.json')
+uri.query_values = { :q =&gt; "ruby", :lang =&gt; "ja" }
+json = open(uri).read
+ref = JSON.parse(json)
+ref["results"].each do |tweet|
+  puts "@" + tweet["from_user"] + " : " + tweet["text"]
+end
+ </pre>
+
+<h3>sinatra-oauth.rb</h3>
+
+<p>今度はWebアプリもつくっちゃおう！sinatra使ってFoursquareのOAuth v2なログインを試してみるよ。
+sinatraのsessionを有効にするために「enable :sessions」しなくてはいけないところにハマったけど、
+OAuthとかは、APIのドキュメントをしっかり読めばすぐ出来たよ。</p>
+
+<pre> require "sinatra"
+require "addressable/uri"
+require "pit"
+require "open-uri"
+require "json"
+
+enable :sessions, :logging
+
+config = Pit.get('foursquare.com')
+
+get '/' do
+  @name = nil
+  if session[:access_token]
+    uri = Addressable::URI.parse('https://api.foursquare.com/v2/users/self')
+    uri.query_values = {
+      :oauth_token =&gt; session[:access_token]
+    }
+    json = open(uri).read
+    @name = JSON.parse(json)["response"]["user"]["firstName"]
+    logger.info @name
+  end
+ erb :index
+end
+
+get '/login' do
+  uri = Addressable::URI.parse("http://foursquare.com/oauth2/authenticate")
+  uri.query_values = {
+    :client_id =&gt; config["client_id"],
+    :response_type =&gt; 'code',
+    :redirect_uri =&gt; request.base_url + '/callback',
+  }
+  redirect uri.to_s
+end
+
+get '/logout' do
+  session[:access_token] = nil
+  redirect "/"
+end
+
+get '/callback' do
+  code = params[:code]
+  uri = Addressable::URI.parse('https://foursquare.com/oauth2/access_token')
+  uri.query_values = {
+    :client_id =&gt; config["client_id"],
+    :client_secret =&gt; config["client_secret"],
+    :grant_type =&gt; 'authorization_code',
+    :redirect_uri =&gt; request.base_url + '/callback',
+    :code =&gt; code,
+  }
+  json = open(uri).read
+  data = JSON.parse(json)
+  session[:access_token] = data["access_token"]
+  redirect '/'
+end
+
+__END__
+
+@@ index
+&lt;% if @name %&gt;
+Hi, &lt;%= @name %&gt; &lt;br /&gt;
+&lt;a href="/logout"&gt;Logout&lt;/a&gt;
+&lt;% else %&gt;
+&lt;a href="/login"&gt;Login&lt;/a&gt;
+&lt;% end %&gt;
+ </pre>
+
+<h3>yahoo-oppai.rb</h3>
+
+<p>最後はお待ちかね、おっぱいダウンロードスクリプトだよ。
+今回、ちょっと工夫していて、まずYahooのプレミアムなんちゃらイメージサーチってのを使いつつ、
+Tumblrからの画像に絞って検索をかけてるよー。こうすることで、高品質なおっぱい画像が集まると思うんだ。</p>
+
+<h4>＊追記＊</h4>
+
+<p><a href="http://twitter.com/sugamasao">sugamasao</a>さんからツッコミいただきまして、インクリメント的な書き方は count += 1 でおkらしいです！ count = count + 1 とださく書いていたのを修正しておきました。</p>
+
+<pre> # -*- coding: utf-8 -*-
+require "pit"
+require "addressable/uri"
+require "open-uri"
+require "xmlsimple"
+require "digest/md5"
+require 'pathname'
+
+dir = Pathname.new('./data')
+config = Pit.get("yahoo-api")
+count = 1
+page = 1
+
+loop do
+  uri = Addressable::URI.parse("http://search.yahooapis.jp/PremiumImageSearchService/V1/imageSearch")
+  uri.query_values = {
+    :appid =&gt; config["appid"],
+    :query =&gt; 'おっぱい',
+    :results =&gt; 20,
+    :adult_ok =&gt; 1,
+    :format =&gt; 'jpeg',
+    :site =&gt; 'tumblr.com',
+    :start =&gt; (page - 1) * 20 + 1
+  }
+  res = open(uri) rescue break
+  xml = res.read
+  data = XmlSimple.xml_in(xml)
+  break unless data["Result"]
+  data["Result"].each do |item|
+    url = item["Url"][0]
+    filename = Digest::MD5.hexdigest(url) + '.jpg'
+    filepath = dir + filename
+    puts "#{count} : Download #{url} ..."
+    res = open(url) rescue next
+    open(filepath,'w').print res.read
+    count += 1
+  end
+  page += 1
+end
+ </pre>
+
+<p>実行すると... 1000枚ほどのおっぱい画像が集まったー！</p>
+
+<p><a href="http://yusukebe.com/archives/2012/05/20/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202012-05-20%2016.42.46.png"><img alt="スクリーンショット 2012-05-20 16.42.46.png" src="http://yusukebe.com/archives/assets_c/2012/05/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202012-05-20%2016.42.46-thumb-400x250-190.png" width="400" height="250" class="mt-image-none" style=""></a></p>
+
+<p><br></p>
+
+<hr>
+
+<p><br></p>
+
+<p>ベストプラクティス的なことが分からないけれど、なんとか出来たよ！Rubyいいね！</p>
+
+<h3>宣伝</h3>
+
+<p>メルマガやってます→ <a href="http://www.mag2.com/m/0001426750.html">ゆーすけべーラジオ</a></p>
+
+
+		</div>
+
+		<div class="post-tags">
+			
+				
+					<nav class="nav tags">
+							<ul class="flat">
+								
+								<li><a href="/tags/technologies">Technologies</a></li>
+								
+								<li><a href="/tags/ruby">Ruby</a></li>
+								
+							</ul>
+					</nav>
+				
+			
+		</div>
+        <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v5.0&appId=233306523373884&autoLogAppEvents=1"></script>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+
+<div class="social-button-area">
+  <ul class="social-button">
+    <li>
+      <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
+    </li>
+    <li>
+      <span class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2012%2f0520074309%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
+    </li>
+    <li>
+      <a href="https://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label-counter" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>
+    </li>
+  </ul>
+</div>
+
+<ul class="pagination">
+  
+  <li class="page-item page-prev">
+    <a href="https://yusukebe.com/posts/2012/0507112346/" class="page-link" aria-label="Previous"><span aria-hidden="true">← 実装までにする7つの企画作業</span></a>
+  </li>
+  
+  
+  <li class="page-item page-next">
+    <a href="https://yusukebe.com/posts/2012/0523094100/" class="page-link" aria-label="Next"><span aria-hidden="true">PocketIOのイカ娘語echoサンプル →</span></a>
+  </li>
+  
+</ul>
+
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright yusukebe.com |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-123-45', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

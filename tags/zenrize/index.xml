@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>zenrize on ゆーすけべー日記</title>
+    <link>https://yusukebe.com/tags/zenrize/</link>
+    <description>Recent content in zenrize on ゆーすけべー日記</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <copyright>© Copyright yusukebe.com</copyright>
+    <lastBuildDate>Tue, 06 Mar 2012 06:15:00 +0900</lastBuildDate>
+    
+	<atom:link href="https://yusukebe.com/tags/zenrize/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>全裸で学ぶMVC事始め</title>
+      <link>https://yusukebe.com/posts/2012/0305211542/</link>
+      <pubDate>Tue, 06 Mar 2012 06:15:00 +0900</pubDate>
+      
+      <guid>https://yusukebe.com/posts/2012/0305211542/</guid>
+      <description>一般的なWeb Application Framework（WAF）ではMVCという設計及び実装における概念が取り入れられています。 MVCに従ってつくるのが全てではありませんが、 WAFを使うと共に、一度はMVCを用いたWebアプリの開発経験はしておいた方がよいと思います。 MVCはモデル（Model）、ビュー（View）、コントローラ（Controller）の3つの単語を組み合わせた言葉で、 この3つで概念が成り立っています。 クライアントがWebに対してリクエストをした時に、これら3つがそれぞれ連動して結果を返します。 一般的には以下のような処理経路をたどります。
+ クライアントがWebサイトにリクエスト コントローラがリクエストの処理を行い、モデルとビューを動かす 必要に応じてモデルを呼び出す 結果のデータをビューに渡す ビューがHTML化などをしたものをクライアントに表示する  MVCという概念を学ぶにはこうした一連の流れを網羅する小さなサンプルをつくるのが一番取っ付きやすい気がします。 そこで今回は「全裸で学ぶMVC事始め」と題し、 zenrizeというテキスト処理を行うだけのWebサービスをつくってみたいと思います。
+zenrize zenrizeという聞き慣れない言葉が出てきましたが、これは単に僕がつくった言葉です。 zenrizeは「全裸bot」というsugyanがつくった 非常にくだらないTwitterボットの内部で行われている処理を指します。 全裸botではテキストの適切な位置に「全裸で」というフレーズを付け加えることにより、 Twitterのつぶやきを丸裸にします。 例えば、
+これから歯磨きをするよ
+ という文章はおそらく以下のようにzenrize処理されます。
+これから全裸で歯磨きをするよ
+ 全裸botでは作者sugyanによる試行錯誤が行われているのですが、 今回はzenrizeを単純に「文章内の動詞の前に【全裸で】を必ずつける」と定義してみます。
+Yahoo! 形態素解析APIを使う 日本語の文章内の品詞を特定するには形態素解析と呼ばれる処理をします。 お手軽に実装するには、Yahoo! APIで提供されている形態素解析APIを利用したいところです。
+一からWeb APIにリクエストをし結果をパースするプログラムを書かずに今回は、 CPANモジュールから「WebService::YahooJapan::WebMA」を使ってみたいと思います。
+簡単なスクリプトでzenrizeがされるかを試してみましょう。
+ use strict; use warnings; use WebService::YahooJapan::WebMA; use utf8; $WebService::YahooJapan::WebMA::APIBase = &#39;http://jlp.yahooapis.jp/MAService/V1/parse&#39;; my $api = WebService::YahooJapan::WebMA-&amp;gt;new( appid =&amp;gt; &#39;yourappid&#39;, ); my $result = $api-&amp;gt;parse( sentence =&amp;gt; &#39;起きたのでご飯を食べます&#39; ) or die $api-&amp;gt;error; my $ma_result = $result-&amp;gt;{ma_result}; my $text = &#39;&#39;; for my $word ( @{ $ma_result-&amp;gt;{word_list} } ) { if ( $word-&amp;gt;{pos} eq &#39;動詞&#39; ) { $text .= &#34;</description>
+    </item>
+    
+  </channel>
+</rss>

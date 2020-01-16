@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Senna 使って、夜の動画検索サイト「sugokuii beta」を作ってみた - ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="Senna 使って、夜の動画検索サイト「sugokuii beta」を作ってみた" />
+<meta property="og:description" content=" ムフフな夜の動画（今のところ YourFileHost のみ対応）をキーワードで検索できるサイト「sugokuii beta」というものを作ってみました。以前作った YourAVHost とどこが違うのかと思われるかもしれませんが、You" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yusukebe.com/posts/2009/0706030849/" />
+<meta property="article:published_time" content="2009-07-06T12:08:00+09:00" />
+<meta property="article:modified_time" content="2009-07-06T12:08:00+09:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Senna 使って、夜の動画検索サイト「sugokuii beta」を作ってみた"/>
+<meta name="twitter:description" content=" ムフフな夜の動画（今のところ YourFileHost のみ対応）をキーワードで検索できるサイト「sugokuii beta」というものを作ってみました。以前作った YourAVHost とどこが違うのかと思われるかもしれませんが、You"/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
+	
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://yusukebe.com/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper post">
+		<div class="header">
+	<h1 class="site-title"><a href="https://yusukebe.com/">ゆーすけべー日記</a></h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/yusukebe" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/yusukebe" title="Twitter"><i data-feather="twitter"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post-header">
+			<h1 class="title">Senna 使って、夜の動画検索サイト「sugokuii beta」を作ってみた</h1>
+			<div class="meta">Posted at &mdash; Jul 6, 2009</div>
+		</div>
+
+		<div class="markdown">
+			
+
+<p>
+ムフフな夜の動画（今のところ YourFileHost のみ対応）をキーワードで検索できるサイト
+「<strong>sugokuii beta</strong>」というものを作ってみました。以前作った YourAVHost とどこが違うのか
+と思われるかもしれませんが、YourAVHost は新着動画の情報を伝えるブログ的なものだったのに対して、
+sugokuii の場合は特化した検索エンジンのような形になっております。例によって18禁。
+</p>
+<p>
+<a href="http://sugokuii.urasukebe.com/">sugokuii beta - 夜の動画検索エンジン</a>
+<a href="http://b.hatena.ne.jp/entry/http://sugokuii.urasukebe.com/"><img alt="このエントリーのはてなブックマーク件数" class="at-xid-6a0133f4781589970b014e8bd74ef7970d" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b014e8bd74ef7970d-pi"></a>
+<br>
+<a href="http://sugokuii.urasukebe.com/">
+<img alt="sugokuii" class="at-xid-6a0133f4781589970b014e8bd74f14970d" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b014e8bd74f14970d-pi">
+</a>
+</p>
+<p>
+最近主要検索エンジン各社がどうも動画検索に力を入れているらしくて、
+Bing や Yahoo! JAPAN のものなんて、結果がでたらその場で再生なんかできちゃったりして、
+結構楽しいです。そこで、当然ながら好きな AV 女優の名前なんかいれ、
+ムフフな動画をみつけて喜んだりするわけですが、大きな問題点がひとつあります。それは
+</p>
+<blockquote>
+<p>
+「肝心の（夜のお供の）YourFileHost の動画が出てこないじゃないか！」
+</p>
+</blockquote>
+<p>
+ということです。
+そこで YourFileHost の動画もでてくる、いやむしろそれしか出てこない「夜の」
+検索エンジンを自分で作ってしまえというのが今回のモチベーションになりました。
+</p>
+<p>
+猛烈な勢いで検索対象のファイルを追加していっているのですが、
+現在のところ、「2万件強」の動画の中から好きな言葉で検索して、
+サムネイルつきの結果を見ることができます。
+また、インデックス数の関係からまだ精度があまりよくないのですが、
+ファイルごとに関連する動画の一覧表示をする機能もあり、
+シリーズものなども一気に閲覧できるように心がけております。
+</p>
+<p>
+例えば 「<b>柚木ティナ ゴスロリ</b>」というキーワードを Google のビデオ検索にかけても
+期待するものは出てきませんが、sugokuii ではお目当てのビデオもひっかかりますね。
+ちなみにこの「柚木ティナ ゴスロリ」的な動画、自分でオリジナルなものを持っているのですが、
+「すごくいい」のでよくお世話になっておりまして特に...（ry
+</p>
+
+<p>
+<a href="http://sugokuii.urasukebe.com/search?q=%E6%9F%9A%E6%9C%A8%E3%83%86%E3%82%A3%E3%83%8A+%E3%82%B4%E3%82%B9%E3%83%AD%E3%83%AA">sugokuii beta - 柚木ティナ ゴスロリの動画検索結果</a><br>
+<img alt="sugokuii" class="at-xid-6a0133f4781589970b014e8bd74f29970d" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b014e8bd74f29970d-pi">
+</p>
+
+<p>
+では、仕組みについて簡単に解説します。
+タイトルにあるように全文検索には Senna を使っています。
+MySQL に既にバインディングされている「Tritonn」を使えばインストールも簡単にできて、
+クエリーもわかりやすくかつ、パフォーマンスも今のところ気にならないのですごくいい感じです。
+</p>
+<p>
+さて、肝はこの検索をするための文章をどうやって持ってくるか、
+そして動画の情報とどう結びつけるかになります。
+前々から YourFileHost の URL を投げると AV女優名が返ってくるというシステムを作りたかったのですが、
+よく考えたらそれを逆に応用して結果を残しておけば AV女優名やキーワードを投げると YourFileHost のURL を取得する
+完全な検索エンジンができるなと思いました。
+</p>
+<p>
+どう実装するか。実は私、こういうものをいろいろと作っている関係柄、
+もちろん延べで重複を含みますが約 2000 万件の YourFileHost の個別動画ファイル名、つまり ID を所有しておりましてw
+（重複を除いた実際のファイル数はインデックス張ってカウントするのに時間かかりそうなんでやってません＞＜）、
+それを利用します。
+材料が揃うと次に、このリストの中から一つずつファイル名を取り出してきて、
+ファイル名もしくは、URL の被リンクのクエリーを、一般検索エンジンの API に投げます。
+するとその動画にリンクしたり関連するサイトのタイトル及びサマリーが返ってくるわけで、
+それを実のところその動画に関するメタデータとして扱おうという仕組みです。
+返ってきたタイトル及びサマリーを Senna の入った DB に入れて、最初にキーとして渡した動画の ID と結びつければ、
+全文検索のためのテーブルの準備ができます。
+この作業をひたすらリスト一覧から繰り返していけば、
+</p>
+<p>
+そこそこ多くの URL を網羅したデータが出来上がるのです。
+ここまでくれば、Senna、Tritonn のチュートリアルにあるような KWIC（キーワードインコンテキスト）出力を含む、
+検索クエリーを投げるように DBIC の resultset の扱い方を工夫すれば OK、でした。
+</p>
+<p>
+なんか気になる女優さんができた、もしくはなかなか私の趣味にあうムフフな動画ないんだよね、
+という方。まだインデックス作り中で十分な検索結果が得られないかもしれませんが、
+とりあえず気になったら sugokuii にキーワードを入れてみてください。
+もしかして、お目当ての動画がサクッと見つかるかもしれませんね。
+</p>
+<p>
+というわけで、夜の動画検索サイト「sugokuii、まだ beta 版」の紹介でした。是非とも、Enjoy! 
+</p>
+<ul>
+  <li><a href="http://sugokuii.urasukebe.com/">sugokuii beta - 夜の動画検索エンジン</a></li>
+</ul>
+<h4>参考文献</h4>
+
+<div>
+<div style="float:left"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4774133310/kamawada-22/"><img alt="WEB+DB PRESS Vol.42" class="at-xid-6a0133f4781589970b014e8bd74f38970d" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b014e8bd74f38970d-pi" style="border:none;"></a></div>
+<div style="float:left;margin-left:15px;">
+<div style="font-size:12pt"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4774133310/kamawada-22/">WEB+DB PRESS Vol.42</a></div>
+<div style="font-size:7pt;font-family:verdana;">posted with <a href="http://yusukebe.com/b/amazon/search/">yusukebe.com::AmazonSearch</a> on 2009.7.6</div>
+<div style="font-size:10pt;">
+<ul style="list-style-type:none;padding:0;">
+<li>WEB+DB PRESS編集部  </li>
+<li>大型本 / 技術評論社 </li>
+<li>Amazon 売り上げランキング: 179194</li>
+</ul>
+<a href="http://www.amazon.co.jp/WEB-DB-PRESS-Vol-42-PRESS%E7%B7%A8%E9%9B%86%E9%83%A8/dp/4774133310%3FSubscriptionId%3D13C5PCPS36EMN8C22682%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D4774133310">Amazon.co.jpで詳細を見る</a>
+</div>
+</div>
+<div style="clear:left;"></div>
+</div>
+<br><br>
+
+<div>
+<div style="float:left"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4872576446/kamawada-22/"><img alt="Google誕生 —ガレージで生まれたサーチ・モンスター" class="at-xid-6a0133f4781589970b014e8bd74f4a970d" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b014e8bd74f4a970d-pi" style="border:none;"></a></div>
+<div style="float:left;margin-left:15px;">
+<div style="font-size:12pt"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4872576446/kamawada-22/">Google誕生 —ガレージで生まれたサーチ・モンスター</a></div>
+<div style="font-size:7pt;font-family:verdana;">posted with <a href="http://yusukebe.com/b/amazon/search/">yusukebe.com::AmazonSearch</a> on 2009.7.6</div>
+<div style="font-size:10pt;">
+<ul style="list-style-type:none;padding:0;">
+<li>デビッド ヴァイス マーク マルシード  </li>
+<li>単行本 / イースト・プレス </li>
+<li>Amazon 売り上げランキング: 73050</li>
+</ul>
+<ul style="list-style-type:none;padding:0;"><li>Amazon おすすめ度の平均: <img alt="4.0" class="at-xid-6a0133f4781589970b014e8bd727e1970d" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b014e8bd727e1970d-pi" style="margin:0;"><ul style="list-style-type:none;padding-left:0;">
+<li>
+<img alt="5" class="at-xid-6a0133f4781589970b015435b6d28e970c" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015435b6d28e970c-pi" style="margin:0;"> わくわくするサクセスストーリーです</li>
+<li>
+<img alt="5" class="at-xid-6a0133f4781589970b015435b6d28e970c" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015435b6d28e970c-pi" style="margin:0;"> 大学院生の熱い情熱</li>
+<li>
+<img alt="4" class="at-xid-6a0133f4781589970b014e8bd727e1970d" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b014e8bd727e1970d-pi" style="margin:0;"> グーグルはこうして誕生し、こんな方向に向かっている</li>
+<li>
+<img alt="2" class="at-xid-6a0133f4781589970b015391e38ae3970b" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015391e38ae3970b-pi" style="margin:0;"> ちんたらちんたら</li>
+<li>
+<img alt="4" class="at-xid-6a0133f4781589970b014e8bd727e1970d" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b014e8bd727e1970d-pi" style="margin:0;"> 読みやすいGoogleの入門書</li>
+</ul>
+</li></ul>
+<a href="http://www.amazon.co.jp/Google%E8%AA%95%E7%94%9F-%E2%80%94%E3%82%AC%E3%83%AC%E3%83%BC%E3%82%B8%E3%81%A7%E7%94%9F%E3%81%BE%E3%82%8C%E3%81%9F%E3%82%B5%E3%83%BC%E3%83%81%E3%83%BB%E3%83%A2%E3%83%B3%E3%82%B9%E3%82%BF%E3%83%BC-%E3%83%87%E3%83%93%E3%83%83%E3%83%89-%E3%83%B4%E3%82%A1%E3%82%A4%E3%82%B9/dp/4872576446%3FSubscriptionId%3D13C5PCPS36EMN8C22682%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D4872576446">Amazon.co.jpで詳細を見る</a>
+</div>
+</div>
+<div style="clear:left;"></div>
+</div>
+<br><br>
+
+<div>
+<div style="float:left"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4879043214/kamawada-22/"><img alt="アイルトン・セナ 最速のドライビングテクニック" class="at-xid-6a0133f4781589970b014e8bd74f6f970d" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b014e8bd74f6f970d-pi" style="border:none;"></a></div>
+<div style="float:left;margin-left:15px;">
+<div style="font-size:12pt"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4879043214/kamawada-22/">アイルトン・セナ 最速のドライビングテクニック</a></div>
+<div style="font-size:7pt;font-family:verdana;">posted with <a href="http://yusukebe.com/b/amazon/search/">yusukebe.com::AmazonSearch</a> on 2009.7.6</div>
+<div style="font-size:10pt;">
+<ul style="list-style-type:none;padding:0;">
+<li>アイルトン セナ  </li>
+<li>単行本 / 三栄書房 </li>
+<li>Amazon 売り上げランキング: 407636</li>
+</ul>
+<ul style="list-style-type:none;padding:0;"><li>Amazon おすすめ度の平均: <img alt="4.5" class="at-xid-6a0133f4781589970b015435b6d28c970c" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015435b6d28c970c-pi" style="margin:0;"><ul style="list-style-type:none;padding-left:0;">
+<li>
+<img alt="5" class="at-xid-6a0133f4781589970b015435b6d28e970c" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015435b6d28e970c-pi" style="margin:0;"> 写真が豊富</li>
+<li>
+<img alt="4" class="at-xid-6a0133f4781589970b014e8bd727e1970d" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b014e8bd727e1970d-pi" style="margin:0;"> 本当にセナ？</li>
+</ul>
+</li></ul>
+<a href="http://www.amazon.co.jp/%E3%82%A2%E3%82%A4%E3%83%AB%E3%83%88%E3%83%B3%E3%83%BB%E3%82%BB%E3%83%8A-%E6%9C%80%E9%80%9F%E3%81%AE%E3%83%89%E3%83%A9%E3%82%A4%E3%83%93%E3%83%B3%E3%82%B0%E3%83%86%E3%82%AF%E3%83%8B%E3%83%83%E3%82%AF-%E3%82%A2%E3%82%A4%E3%83%AB%E3%83%88%E3%83%B3-%E3%82%BB%E3%83%8A/dp/4879043214%3FSubscriptionId%3D13C5PCPS36EMN8C22682%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D4879043214">Amazon.co.jpで詳細を見る</a>
+</div>
+</div>
+<div style="clear:left;"></div>
+</div>
+
+
+		</div>
+
+		<div class="post-tags">
+			
+				
+			
+		</div>
+        <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v5.0&appId=233306523373884&autoLogAppEvents=1"></script>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+
+<div class="social-button-area">
+  <ul class="social-button">
+    <li>
+      <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
+    </li>
+    <li>
+      <span class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2009%2f0706030849%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
+    </li>
+    <li>
+      <a href="https://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label-counter" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>
+    </li>
+  </ul>
+</div>
+
+<ul class="pagination">
+  
+  <li class="page-item page-prev">
+    <a href="https://yusukebe.com/posts/2009/0623105600/" class="page-link" aria-label="Previous"><span aria-hidden="true">← 夜の小道具「YourFilePlayer」 に便利な「関連動画表示」「flv再生」機能を追加した</span></a>
+  </li>
+  
+  
+  <li class="page-item page-next">
+    <a href="https://yusukebe.com/posts/2009/0707020233/" class="page-link" aria-label="Next"><span aria-hidden="true">Senna、MySQL 周りの「sugokuii beta」対処法的チューニング →</span></a>
+  </li>
+  
+</ul>
+
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright yusukebe.com |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-123-45', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

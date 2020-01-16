@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>JavaScript on ゆーすけべー日記</title>
+    <link>https://yusukebe.com/tags/javascript/</link>
+    <description>Recent content in JavaScript on ゆーすけべー日記</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <copyright>© Copyright yusukebe.com</copyright>
+    <lastBuildDate>Wed, 22 Feb 2012 08:10:00 +0900</lastBuildDate>
+    
+	<atom:link href="https://yusukebe.com/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>30分、JavaScriptで作るWebサービスのモックアップ</title>
+      <link>https://yusukebe.com/posts/2012/0221231031/</link>
+      <pubDate>Wed, 22 Feb 2012 08:10:00 +0900</pubDate>
+      
+      <guid>https://yusukebe.com/posts/2012/0221231031/</guid>
+      <description>Instagramは日本のユーザーも多く、日常を切り取った写真がほとんどで、 またお洒落なものも混じっているのでたまに眺めると気持ちがホッコリしたりします。 特定のキーワードでInstagramの最新の写真を検索したい時があります。 例えば、みんなが今どんな「ご飯」を食べているのか、今日の「日の出」はどのような具合なのか、 がInstagramの写真を通して分かるかもしれません。 Instagramの写真検索サービスを探してみると、 Instagram自身が検索機能を提供してないので他の第三者が作ったサービスがいくつか出てきます。 使ってみたところ、もう少し自分で見た目やら機能を変えてみたいなーなんて思いました。 そこで、「Instagramの今の写真を検索できるサービス」といういわばWebサービスを作りたい欲求にかられます。 今回はこのようなちょっとした欲求から考えた「Webサービスのモックアップ」をJavaScriptで素早く作ることについて、 解説してみます。
+Webサービスを「誰かの欲求を満たすWebのサービス」という一面から捉えると、 もちろんJavaScriptだけで記述可能です。HTML/CSSの知識は多少必要ですが、 PHPやRuby、Perlなどのサーバサイドについて知らなくてもよいわけです。 また、JavaScriptでWebサービスのモックを作る作業はサーバサイドを実装する場合でも、 UIやアイデアを試行錯誤するための意味をなすこともあります。 JavaScriptのAjaxと呼ばれるような仕組みを利用すれば、今回扱うようなTwitterのWeb APIとの通信も可能ですし、 インタラクティブにブラウザ上で表示を変化させることができます。
+「Instagramの今の写真を検索できるサービス」。実際にJavaScriptで作ってみました。 すると30分ほど集中すると、Webサービスを構成する必要最低限の行程を踏むことができたのです。 もちろん作り込みはだいぶ必要なので、それについては後述しますが、 実際に動くサービスを使うことが可能なのでユーザとして欲求はある程度満たせるものです。 30分、JavaScriptでWebサービスをサクッと作る行程は以下のようなものでした （時間は適当な目安です）。
+ HTMLとCSSの雛形を用意する(3分) JSの雛形を作る(2分) APIのドキュメントを読む(5分) JSコード、CSSを記述する(15分) 公開する(5分)  それぞれについて解説します。
+1.HTMLとCSSの雛形を用意する(3分) WebサービスとなるとHTMLとCSSは必須です。 実はここを作り込むのが一番時間かかったりするのですが、 今回は雛形だけで満足することにしましょう。CSS Frameworkを利用します。 BlueTripはCSSが簡素に記述されていて使いやすいだけではなく、 zipやtarをダウンロードして解凍すれば今すぐ使えるようなファイル構成になっているのでこちらを使ってみます。
+index.htmlをエディタで編集してタイトルだけの表示にします。
+ &amp;lt;!DOCTYPE html PUBLIC &#34;-//W3C//DTD XHTML 1.0 Strict//EN&#34; &#34;http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd&#34;&amp;gt; &amp;lt;html xmlns=&#34;http://www.w3.org/1999/xhtml&#34; xml:lang=&#34;ja&#34; lang=&#34;ja&#34;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta http-equiv=&#34;content-type&#34; content=&#34;text/html;charset=utf-8&#34; /&amp;gt; &amp;lt;title&amp;gt;Instagram検索&amp;lt;/title&amp;gt; &amp;lt;link rel=&#34;stylesheet&#34; href=&#34;css/screen.css&#34; type=&#34;text/css&#34; media=&#34;screen, projection&#34; /&amp;gt; &amp;lt;link rel=&#34;stylesheet&#34; href=&#34;css/print.css&#34; type=&#34;text/css&#34; media=&#34;print&#34; /&amp;gt; &amp;lt;!--[if IE]&amp;gt; &amp;lt;link rel=&#34;stylesheet&#34; href=&#34;css/ie.css&#34; type=&#34;text/css&#34; media=&#34;screen, projection&#34; /&amp;gt; &amp;lt;![endif]--&amp;gt; &amp;lt;link rel=&#34;stylesheet&#34; href=&#34;css/style.css&#34; type=&#34;text/css&#34; media=&#34;screen, projection&#34; /&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;div class=&#34;container&#34;&amp;gt; &amp;lt;div class=&#34;span-24&#34;&amp;gt; &amp;lt;h1&amp;gt;Instgram検索&amp;lt;/h1&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div id=&#34;</description>
+    </item>
+    
+  </channel>
+</rss>

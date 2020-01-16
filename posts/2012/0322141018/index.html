@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Markdown文章をお手軽にKindleで見る - ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="Markdown文章をお手軽にKindleで見る" />
+<meta property="og:description" content=" いつの間にか手元にある「Kindle Touch」。ぐふふ。    ページめくりがもっさりしているのが気になるけど、軽くて手頃なサイズ感がいい。今なら円高なんで安く買えるし。ただ、Kindle Storeで購入する書籍も含めて英語だとなん" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yusukebe.com/posts/2012/0322141018/" />
+<meta property="article:published_time" content="2012-03-27T07:21:00+09:00" />
+<meta property="article:modified_time" content="2012-03-27T07:21:00+09:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Markdown文章をお手軽にKindleで見る"/>
+<meta name="twitter:description" content=" いつの間にか手元にある「Kindle Touch」。ぐふふ。    ページめくりがもっさりしているのが気になるけど、軽くて手頃なサイズ感がいい。今なら円高なんで安く買えるし。ただ、Kindle Storeで購入する書籍も含めて英語だとなん"/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
+	
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://yusukebe.com/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper post">
+		<div class="header">
+	<h1 class="site-title"><a href="https://yusukebe.com/">ゆーすけべー日記</a></h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/yusukebe" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/yusukebe" title="Twitter"><i data-feather="twitter"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post-header">
+			<h1 class="title">Markdown文章をお手軽にKindleで見る</h1>
+			<div class="meta">Posted at &mdash; Mar 27, 2012</div>
+		</div>
+
+		<div class="markdown">
+			
+
+<p>いつの間にか手元にある「Kindle Touch」。ぐふふ。</p>
+
+<p><a href="http://yusukebe.com/archives/2012/03/27/IMG_1882.JPG"><img alt="IMG_1882.JPG" src="http://yusukebe.com/archives/assets_c/2012/03/IMG_1882-thumb-300x224-171.jpg" width="300" height="224" class="mt-image-none" style=""></a>
+<a href="http://yusukebe.com/archives/2012/03/27/IMG_1884.JPG"><img alt="IMG_1884.JPG" src="http://yusukebe.com/archives/assets_c/2012/03/IMG_1884-thumb-300x224-165.jpg" width="300" height="224" class="mt-image-none" style=""></a></p>
+
+<p>ページめくりがもっさりしているのが気になるけど、軽くて手頃なサイズ感がいい。
+今なら円高なんで安く買えるし。
+ただ、Kindle Storeで購入する書籍も含めて英語だとなんとなく実感がわかないので、
+日本語の文章を読んでみたかった。
+というか、自分が最近書いている文章のプレビュー用として使いたかった。</p>
+
+<p>Markdownで文章を書いているのでMarkdownを変換してKindleに転送して読めばよい。
+実は後から知ったんだけどKindleってePubにまだ対応してないのね...
+ということで色々調べてみると以下の方法がすごくお手軽。</p>
+
+<ul>
+<li>Markdownを簡単な構造のHTMLに変換する</li>
+<li>KindleGenを使って.mobi形式に変換する</li>
+<li>Kindleを繋げてフォルダにぶっこむ</li>
+</ul>
+
+
+<p>KindleGenっていうのはAmazonがオフィシャルに配布しているePubやHTMLを結構かしこくKindleで読める形式＝.mobiに変換してくれるコマンドラインソフト。</p>
+
+<ul>
+<li><a href="http://www.amazon.com/gp/feature.html?ie=UTF8&amp;amp;docId=1000234621" title="Kindle Publishing Programs">Kindle Publishing Programs</a></li>
+</ul>
+
+
+<p>これにMarkdownからおこしたHTMLをかませればいいということになる。
+適当なHTMLを指定しKindleGenを実行するいろいろと警告や情報を出してくれるのでHTMLを作る参考になります。</p>
+
+<p>気をつけるのは以下の点でした。</p>
+
+<ul>
+<li>html、bodyタグ等はしっかりつける</li>
+<li>head内のmeta要素でcharset=utf8とかしないと日本語が文字化ける</li>
+<li>画像はローカルにないといけない</li>
+<li>デフォルトだと特有のCSSが適応されるので簡単なCSSを書く</li>
+<li>.cssファイルを外部から読み込んでも考慮される</li>
+</ul>
+
+
+<p>MarkdownをHTML化するために使ったスクリプトはこちら。Markdownファイルを引数に渡すと、
+HTML内の画像をtempファイルに置きつつsrc属性を変更、最終的に出来たHTMLを標準出力に吐いてくれる。</p>
+
+<pre> use strict;
+use warnings;
+use Text::Markdown qw/markdown/;
+use Path::Class qw/file/;
+use Data::Section::Simple qw/get_data_section/;
+use HTML::TokeParser;
+use File::Temp qw/tempfile/;
+use LWP::Simple qw/getstore/;
+
+my $filename = $ARGV[0] or die "filename argument required!";
+my $file     = file($filename);
+my $content  = $file-&gt;slurp;
+my $html     = markdown($content);
+
+my $parser = HTML::TokeParser-&gt;new( \$html );
+while ( my $token = $parser-&gt;get_tag('img') ) {
+    my $src = $token-&gt;[1]{src};
+    my ($suffix) = $src =~ /.+(\..\w+?)$/;
+    my ( $fh, $tempname ) = tempfile( SUFFIX =&gt; $suffix );
+    getstore( $src, $tempname );
+    $html =~ s/$src/$tempname/g;
+}
+
+my $header = get_data_section('header.html');
+my $footer = get_data_section('footer.html');
+print "$header$html$footer";
+
+__DATA__
+
+@@ header.html
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta http-equiv="content-type" content="text/html; charset=utf-8" /&gt;
+    &lt;link rel="stylesheet" href="style.css" type="text/css" /&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+
+@@ footer.html
+  &lt;/body&gt;
+&lt;/html&gt;
+ </pre>
+
+<p>これを「convert.pl」などと保存して、以下のようにすればHTMLが生成される。</p>
+
+<pre> $ perl convert.pl oppai.mkdn &gt; oppai.html
+ </pre>
+
+<p>そしてすかさずKindleGenで変換。</p>
+
+<pre> $ ~/bin/kindlegen oppai.html
+ </pre>
+
+<p>するとカバーが無いと怒られつつも「oppai.mobi」が生成されるのでKindleに転送して見てみる。</p>
+
+<p><a href="http://yusukebe.com/archives/2012/03/27/IMG_1921.JPG"><img alt="IMG_1921.JPG" src="http://yusukebe.com/archives/assets_c/2012/03/IMG_1921-thumb-550x410-167.jpg" width="550" height="410" class="mt-image-none" style=""></a></p>
+
+<p>できたー！画像もコードも綺麗に読める！</p>
+
+<p><a href="http://yusukebe.com/archives/2012/03/27/IMG_1922.jpg"><img alt="IMG_1922.jpg" src="http://yusukebe.com/archives/assets_c/2012/03/IMG_1922-thumb-550x410-169.jpg" width="550" height="410" class="mt-image-none" style=""></a></p>
+
+<p>やっぱりE-Ink読みやすいな！そしてこういう風に自分の書いた文章を物理デバイスでプレビューすると直したい点がわかったり全体のボリューム感を把握できていいわー。今手元に複数のMarkdownファイルがあるのでそれをうまいことまとめて一つのHTMLにすればもっとよさげ。表紙とか目次についても比較的簡単にプログラマブルにやれそうなんで調べてみます。</p>
+
+
+		</div>
+
+		<div class="post-tags">
+			
+				
+					<nav class="nav tags">
+							<ul class="flat">
+								
+								<li><a href="/tags/technologies">Technologies</a></li>
+								
+								<li><a href="/tags/kindle">Kindle</a></li>
+								
+								<li><a href="/tags/markdown">Markdown</a></li>
+								
+							</ul>
+					</nav>
+				
+			
+		</div>
+        <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v5.0&appId=233306523373884&autoLogAppEvents=1"></script>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+
+<div class="social-button-area">
+  <ul class="social-button">
+    <li>
+      <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
+    </li>
+    <li>
+      <span class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2012%2f0322141018%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
+    </li>
+    <li>
+      <a href="https://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label-counter" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>
+    </li>
+  </ul>
+</div>
+
+<ul class="pagination">
+  
+  <li class="page-item page-prev">
+    <a href="https://yusukebe.com/posts/2012/0322010646/" class="page-link" aria-label="Previous"><span aria-hidden="true">← Webサービス、最初の宣伝</span></a>
+  </li>
+  
+  
+  <li class="page-item page-next">
+    <a href="https://yusukebe.com/posts/2012/0327085645/" class="page-link" aria-label="Next"><span aria-hidden="true">イカ娘でTwitter OAuth認証 →</span></a>
+  </li>
+  
+</ul>
+
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright yusukebe.com |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-123-45', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

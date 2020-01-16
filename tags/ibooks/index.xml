@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>iBooks on ゆーすけべー日記</title>
+    <link>https://yusukebe.com/tags/ibooks/</link>
+    <description>Recent content in iBooks on ゆーすけべー日記</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <copyright>© Copyright yusukebe.com</copyright>
+    <lastBuildDate>Fri, 20 Jan 2012 16:50:00 +0900</lastBuildDate>
+    
+	<atom:link href="https://yusukebe.com/tags/ibooks/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>iBooks Authorで「成瀬心美入門」というサンプルを作ってみた</title>
+      <link>https://yusukebe.com/posts/2012/0120075050/</link>
+      <pubDate>Fri, 20 Jan 2012 16:50:00 +0900</pubDate>
+      
+      <guid>https://yusukebe.com/posts/2012/0120075050/</guid>
+      <description> 電子書籍に段々と興味がわいた矢先にAppleからのiBooks Author発表があったためしばらく遊んで見ました。残念ながらiPadを僕は持っていないので実機でのプレビューすらできない状態で悶々としているのですが、このiBooks Author、素晴らしい出来です。先日からiTunes StoreでBeatlesの「Yellow Submarine」のBookが無料でダウンロードできるのですが、ああいった、アニメーションや動画をちりばめたリッチな本や雑誌などが作れてさらに課金も含めた配信までサポートする。そんなすぐそこにある未来を想像するととてもワクワクします（USなどの地域では既に有料コンテンツをユーザーが配信できるみたい）。
+で、このiBooks Authorでどれほどの事が可能か使用感をはかりつつも、iTunes Store経由じゃなくとも配信することができるのでちょい「エロ」なコンテンツを作ってみようと試みました。想像したのはよくグラビアアイドルとかが「月刊XXXXXXXX」というようなムックタイプの雑誌に動画とかインタラクティブなコンテンツが埋め込まれたBook。ただ自分はグラビアアイドルには全く興味がないので、AV女優で最近お気に入りな成瀬心美（ここみん）を紹介するBookを作ってみました。あら、「ちょい」エロじゃなくなってる？？ まぁ、iBooks Author のスクリーンショットをご覧あれ。
+まずは、Bookの表紙。一応AppleはBookを作る際に様々なテンプレートが選べると謳っているが、6種類でそこまで多くはない。これは「モダンタイプ」というテンプレート。なかなかそれっぽい。
+
+「チャプタ＞セクション＞ページ」と章立てがはっきりしてて迷わないのも割といい。
+ウィジェットと呼ばれるメニューからギャラリーを選択するとスライドさせる写真集が容易に作れる。
+
+以下は普通のページ。Wikipediaからのコンテンツを引用した。表組とかはもうKeynoteとかPagesまんまだね。
+
+YouTubeの動画も一度QuickTimeでiPhone/iPad用に変換してからドラッグ＆ドロップで挿入できる。実機の上、埋め込んだ状態で見てみたいものだ。
+
+と、個人的には動画が埋め込めるというのが鍵な気がしていて、短編映像と雑誌を組み合わせたようなものが流行るかどうかはしらないがいくつか出てくると思います。
+ちなみに、このBookには最後の方のページにDMM Adultへのアフィリエイトを仕込んであって、その時に電子書籍向けの広告モデルもそのうちあり得るんだろうなぁと考えたりもしました。
+さて今回は、成瀬ここみんを紹介するサンプルでiBooks Authorを使ってみました。iPadユーザーの方は以下のリンクから.ibooksというファイルをSafariで見た後にiBooksを起動すればたぶん「成瀬心美入門」が開くはず！
+ coco3n.ibooks   
+ coco miracle―成瀬心美1st.写真集posted with amazlet at 12.01.20  上野 勇 彩文館出版 売り上げランキング: 2395
+ Amazon.co.jp で詳細を見る    </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Twitter社へのお願い「Streaming API links の解放を」 - ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="Twitter社へのお願い「Streaming API links の解放を」" />
+<meta property="og:description" content=" TwibというTwitterの主に日本語ツイートではてなブックマークのような、人気ウェブサイトを閲覧できるサービスを運営しているのだけど、どうも今のところのやり方では対象となるツイートの取りこぼしが多い。ようはSearch APIとStr" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yusukebe.com/posts/2010/0618121406/" />
+<meta property="article:published_time" content="2010-06-18T21:14:00+09:00" />
+<meta property="article:modified_time" content="2010-06-18T21:14:00+09:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Twitter社へのお願い「Streaming API links の解放を」"/>
+<meta name="twitter:description" content=" TwibというTwitterの主に日本語ツイートではてなブックマークのような、人気ウェブサイトを閲覧できるサービスを運営しているのだけど、どうも今のところのやり方では対象となるツイートの取りこぼしが多い。ようはSearch APIとStr"/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
+	
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://yusukebe.com/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper post">
+		<div class="header">
+	<h1 class="site-title"><a href="https://yusukebe.com/">ゆーすけべー日記</a></h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/yusukebe" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/yusukebe" title="Twitter"><i data-feather="twitter"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post-header">
+			<h1 class="title">Twitter社へのお願い「Streaming API links の解放を」</h1>
+			<div class="meta">Posted at &mdash; Jun 18, 2010</div>
+		</div>
+
+		<div class="markdown">
+			
+
+<p>
+<a href="http://twib.jp/">Twib</a>というTwitterの主に日本語ツイートではてなブックマークのような、
+人気ウェブサイトを閲覧できるサービスを運営しているのだけど、どうも今のところのやり方では対象となるツイートの取りこぼしが多い。ようはSearch APIとStreaming APIのtrackメソッドを利用して「http」で検索しているわけだけど、
+やはりインターバルを短くしたりしても限界があるみたいだ。
+そこで先ほど非公開である Streaming API の links method の解放をお願いするためにTwitter社にメールを出してみた。
+これをするとStreaming APIで基本的に取りこぼし無しでウェブサイトへリンクを張ったツイーツを取得できる。
+</p>
+<p>
+実際、今のTwibには取りこぼしがあるのがどうもひっかかっていて、
+いろいろと改善したい点や機能追加したい点があるのに、
+なかなか手をつけていないで無駄にスパムサイトみたいになっていてすごく気持ちが悪いので、
+複雑な心境だった。取りこぼしが無ければ、いい方向に進めると思い、調べてる最中に links の API の件を知って
+メールを出した。
+以下がメールの全文である。このAPIを解放してもらえば、いいサイトにしていきたいので、
+もし賛同して頂ければ、以下のツイートをRTしてもらったりすると嬉しいです。
+</p>
+<p>
+<a href="http://twitter.com/twibjp/statuses/16463923675">Twitter / Twib (ツイブ!): [中の人]Twibのサービスを向上させるためにstr ...</a>
+</p>
+
+<pre> Twitter社御中、はじめまして
+いつも利用させていただいております
+@yusukebe 、和田裕介と申します。
+
+個人で Twib というサイトを運営しています。
+http://twib.jp/
+
+Twitter上でつぶやかれた日本語のツイートを対象に
+人気のリンクを表示するというTwitter APIを使用したサービスです。
+
+現在で、Search API と Streaming APIのtrackメソッドを利用して
+システムを構築しています。
+
+その際にやはり取りこぼし等が発生してしまっているため
+全てのリンクを収集できないという問題点を抱えてしまっています。
+また不本意なAPIのコールなどをしている可能性もあります。
+
+日本におけるTwitterホットエントリーのデファクトスタンダードをめざし
+開発を続けたいと思っているところですので、
+もしよろしければ
+streaming APIにある statsues/links を提供していただければと
+思います。
+
+以上ご相談のメールになりますが、
+何卒よろしくお願いいたします。
+またご質問等ありましたらなんなりとおっしゃってください。
+
+以下Webに掲載された資料になります。
+
+Twitter上の話題サイトがわかる「Twib」、
+iPhone向けページやお気に入り機能など追加 - CNET Japan
+http://japan.cnet.com/marketing/story/0,3800080523,20398173,00.htm
+
+誠 Biz.ID：Webサービス図鑑／Twitter関連：Twib
+http://bizmakoto.jp/bizid/articles/0910/26/news049.html
+ </pre>
+
+
+		</div>
+
+		<div class="post-tags">
+			
+				
+			
+		</div>
+        <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v5.0&appId=233306523373884&autoLogAppEvents=1"></script>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+
+<div class="social-button-area">
+  <ul class="social-button">
+    <li>
+      <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
+    </li>
+    <li>
+      <span class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2010%2f0618121406%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
+    </li>
+    <li>
+      <a href="https://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label-counter" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>
+    </li>
+  </ul>
+</div>
+
+<ul class="pagination">
+  
+  <li class="page-item page-prev">
+    <a href="https://yusukebe.com/posts/2010/0512060832/" class="page-link" aria-label="Previous"><span aria-hidden="true">← 靴下パンツ、ユニクロで買うか？無印で買うか？</span></a>
+  </li>
+  
+  
+  <li class="page-item page-next">
+    <a href="https://yusukebe.com/posts/2010/0620035801/" class="page-link" aria-label="Next"><span aria-hidden="true">失われた20年とインターネットの消費を超えて - 81世代の肖像 →</span></a>
+  </li>
+  
+</ul>
+
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright yusukebe.com |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-123-45', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

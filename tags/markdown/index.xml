@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Markdown on ゆーすけべー日記</title>
+    <link>https://yusukebe.com/tags/markdown/</link>
+    <description>Recent content in Markdown on ゆーすけべー日記</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <copyright>© Copyright yusukebe.com</copyright>
+    <lastBuildDate>Wed, 04 Jul 2012 15:07:00 +0900</lastBuildDate>
+    
+	<atom:link href="https://yusukebe.com/tags/markdown/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Markdownの文章を書くときに使えるMacソフト2つ</title>
+      <link>https://yusukebe.com/posts/2012/0704060757/</link>
+      <pubDate>Wed, 04 Jul 2012 15:07:00 +0900</pubDate>
+      
+      <guid>https://yusukebe.com/posts/2012/0704060757/</guid>
+      <description>今僕は大抵の文章をMarkdown記法で書いています。 Markdownの心地よさは以前この日記に書いた通りです。
+ Markdownは編集時もレンダリング後も見た目があまり変わらず、プレーンテキストでありながら構造をもたらしてくれます。
+Markdownで文章を書こう！ - ゆーすけべー日記
+ 「何用の」文章を書くかは人それぞれだと思いますが、 僕の場合はメルマガとこの日記（Blog）の記事というこの2つ向けの文章をメインで書きます。Markdownはプレーンテキストの状態でも構造が見やすいので、emacsなど僕にとって慣れてるエディタを使えばよいのですが、ある程度Markdown記法をサポートして色づけやプレビューなどをしてくれるエディタを使うとはかどります。後ほど解説する理由通りメルマガとBlog、それぞれエディタを分けて使っているので、その2つのMacソフトを紹介します。
+DAY ONE - Blog記事用 最初使い始めた際に「ひとりTwitter」っぽいという感想を持ったDAY ONE。これがBlog用の記事用に使っているソフトです。いい感じにMarkdownに対応しています。 Markdownで書かれたテキストは閲覧モードにすると記法を解釈して太字や画像、リンクなどが奇麗にプレビューされるのです。MovableTypeなどのBlogツールが編集画面にプレビュー機能がついていますが、それがローカルで出来るイメージです。
+
+プレビュー時だけではなく文章を書く際にも記述によって色づけや太文字化をしてくれます。
+
+普通にメモをとる時にも使えるのでもう既にDAY ONEはかかせないソフトになってしました。
+Byword - メルマガ記事用 メルマガの場合、1万文字近く、あるいはそれ以上の文章を書きます。 集中力が必要な作業のお供にBywordというエディタが最適だと思い出しました。 デザインがよい意味で「素っ気ない」のです。また、地味に文字カウントが常に表示されているのがいいっす。
+
+まさに「書く」のに適しているByword、プレビュー機能も一応ついてはいますがあんまり使ってないです。 代わりに自作のDropbox内のMarkdownテキストをWebでプレビューできる「Dropdown」というWebアプリをプライベート用に立ち上げて使ってます。結構見やすいです。
+
+ 
+いろいろエディタ系のソフトは試しましたが、今のところこの2つで落ち着いてます。 どちらも有料のソフトですが、気になる方は試してみてください！</description>
+    </item>
+    
+    <item>
+      <title>Markdown文章をお手軽にKindleで見る</title>
+      <link>https://yusukebe.com/posts/2012/0322141018/</link>
+      <pubDate>Tue, 27 Mar 2012 07:21:00 +0900</pubDate>
+      
+      <guid>https://yusukebe.com/posts/2012/0322141018/</guid>
+      <description>いつの間にか手元にある「Kindle Touch」。ぐふふ。
+ 
+ページめくりがもっさりしているのが気になるけど、軽くて手頃なサイズ感がいい。 今なら円高なんで安く買えるし。 ただ、Kindle Storeで購入する書籍も含めて英語だとなんとなく実感がわかないので、 日本語の文章を読んでみたかった。 というか、自分が最近書いている文章のプレビュー用として使いたかった。
+Markdownで文章を書いているのでMarkdownを変換してKindleに転送して読めばよい。 実は後から知ったんだけどKindleってePubにまだ対応してないのね... ということで色々調べてみると以下の方法がすごくお手軽。
+ Markdownを簡単な構造のHTMLに変換する KindleGenを使って.mobi形式に変換する Kindleを繋げてフォルダにぶっこむ  KindleGenっていうのはAmazonがオフィシャルに配布しているePubやHTMLを結構かしこくKindleで読める形式＝.mobiに変換してくれるコマンドラインソフト。
+ Kindle Publishing Programs  これにMarkdownからおこしたHTMLをかませればいいということになる。 適当なHTMLを指定しKindleGenを実行するいろいろと警告や情報を出してくれるのでHTMLを作る参考になります。
+気をつけるのは以下の点でした。
+ html、bodyタグ等はしっかりつける head内のmeta要素でcharset=utf8とかしないと日本語が文字化ける 画像はローカルにないといけない デフォルトだと特有のCSSが適応されるので簡単なCSSを書く .cssファイルを外部から読み込んでも考慮される  MarkdownをHTML化するために使ったスクリプトはこちら。Markdownファイルを引数に渡すと、 HTML内の画像をtempファイルに置きつつsrc属性を変更、最終的に出来たHTMLを標準出力に吐いてくれる。
+ use strict; use warnings; use Text::Markdown qw/markdown/; use Path::Class qw/file/; use Data::Section::Simple qw/get_data_section/; use HTML::TokeParser; use File::Temp qw/tempfile/; use LWP::Simple qw/getstore/; my $filename = $ARGV[0] or die &#34;filename argument required!&#34;; my $file = file($filename); my $content = $file-&amp;gt;slurp; my $html = markdown($content); my $parser = HTML::TokeParser-&amp;gt;new( \$html ); while ( my $token = $parser-&amp;gt;get_tag(&#39;img&#39;) ) { my $src = $token-&amp;gt;[1]{src}; my ($suffix) = $src =~ /.</description>
+    </item>
+    
+    <item>
+      <title>無ければつくる</title>
+      <link>https://yusukebe.com/posts/2012/0222223527/</link>
+      <pubDate>Thu, 23 Feb 2012 07:35:00 +0900</pubDate>
+      
+      <guid>https://yusukebe.com/posts/2012/0222223527/</guid>
+      <description>車輪の再発明 車輪の再発明という言葉があります。ある目的を果たすためのライブラリや先行事例があるにも関わらず、 同じことを叶えるためについつい自分で作ってしまう行為を指します。 例えば、SinatraというRubyの特徴的なWebアプリケーションフレームワークがありますが、 そのPerlバージョンを作ろうとすれば、 他にもDancerやMojolicious::Liteといった似たようなものが、 Perlのライブラリには存在していて「 でも、いいっか！ 」と制作に入るのがまさに「車輪の再発明」な感じです。 車輪の再発明は一般的に非効率だと言われ推奨はされません。 ただ、僕は勉強のためならばよいと思ってSinatraライクなフレームワークを作ってたりもします。 既存の似たようなものを参考にできるため、学ぶことが多いです。 状況によっては再発明は効果的なこともあると思っています。
+とはいえやはり、目的を最短で果たすためには車輪の再発明は避けた方がよいでしょう。 Japan Perl Association （JPA）現代表理事の牧大輔さんと お仕事をしたことがあるのですが、その際に彼は以下のように話していました。
+車輪の再発明はしてもいいけど、仕事の時は絶対駄目だよ
+ この端的な方針は僕も参考にしたいところです。
+車輪が無いときは？ しかし、自分がこれをしたいという目的を果たすものが世の中に存在しない時も多々あります。 特に自分一人や数名で使う特殊なケースで最適なものが無いということがよく見受けられるます。 そのような時、あなたがクリエータ、もしくはクリエータを目指すのであれば、「無ければつくる」方針でいきましょう。
+書籍執筆のための環境を作る 実は、この記事。将来出版させたい書籍のための原稿の意味も兼ねて書かれています。 編集者さんと連絡しつつ作業をしているのですが、 原稿を書き始めてちらほらと集まってきているのでそのドキュメントを共有したいと先日から思ってました。 文章は記事ごとに小分けにしてMarkdown書式のプレーンテキストで執筆しています。 ならばとDropboxの共有フォルダを作成し、 その中にMarkdownファイルを入れれば編集者の方も見ることができるだろうと考えてみました。 すると当然のことながらMarkdownのテキスト一覧を閲覧し、ファイルもエディタなどで開けるとのことなのですが、 以下のような質問をいただきました。
+ちなみにmarkdown形式のファイルは、普通にエディタで 見ればよいのだと思いますが、適したツールなどは あるのでしょうか？？
+ うーん、僕が以前から自作しているMarkdown Viewerはありますが、 いかんせんPerl製のコマンドラインのソフトなんで勧めてみたものの、少しハードルが高いかなぁと感じました。 そこであらためて、僕と編集者の方、2人にとってのニーズを整理してみましょう。
+ 僕が主にファイルを編集をする 編集者さんがそのMarkdownをHTMLとして確認したい ファイルはDropboxで逐一共有されている  このニーズを簡潔に叶えるアイデアを考えてみるとこのようなものになりました。
+Dropbox上のファイルを一覧できて、 指定ファイルがMarkdown形式ならばHTMLにレンダリングしてかっこよく表示させる内向けのWebサービス
+ そして、このようなサービスは軽くGoogleで検索調査したところ無い、 もしくは一般には利用できないということがわかります。
+書籍執筆のための 環境も無ければつくる 。この方針にのっとります。 DropboxのDeveloper向けサイトを見てAPIの仕様について調べます。 どうやら作ったものを一般に公開するにはDropbox側の審査が必要になるようですが、 開発者モードでは5名までのユーザーに使ってもらうことができそうです。 「REST APIを使って、OAuth 1.0 で認証する」というだいたいの仕様が把握できたところで、 Perlのライブラリ倉庫である「CPAN」を覗いてみました。 「Dropbox」で検索をすると、いくつかライブラリが出てきまして「さすがCPAN！」と思いましたが、 今回は「WebService::Dropbox」というモジュールが分かりやすかったので、こちらを使用したいと思います。「無いものをつくるために車輪を利用している」わけですね。 ところでこのモジュール、非常に便利です。
+実装方針が決まったところで、Dropbox APIを使ってどのようなことができるのか？どのようなデータを取得できるのか？ を知るためにサンプルプログラムを作成。 だいたい分かってきたのでいよいよサービスの名前を「Dropdown」として、Webアプリを作ります。 Markdown形式のテキストをHTMLへ変換するにはこれもまたCPANモジュールの「Text::Markdown」を使いました。 Dropboxのファイルもしくはディレクトリの名前を受け取とり、ファイルだったらそのデータをダウンロード。 Markdown形式にマッチすればHTMLに変換して綺麗に表示させる部分がこのアプリの肝です。 そのControllerのコード部分はちょっと長いですが以下のようになりました。
+ package Dropdown::Dropbox; # Web Application FrameworkにはMojoliciousを使用した use Mojo::Base &#39;Mojolicious::Controller&#39;; use Text::Markdown qw/markdown/; use Encode; use Plack::Session; sub dropbox { my $self = shift; # $nameにはDropboxファイルへのパスが入る my $name = $self-&amp;gt;stash-&amp;gt;{name}; my $dropbox = $self-&amp;gt;app-&amp;gt;dropbox; # sessionにはPlack::Sessionを使用 my $session = Plack::Session-&amp;gt;new( $self-&amp;gt;req-&amp;gt;env ); my $access_token = $session-&amp;gt;get(&#39;access_token&#39;); my $access_secret = $session-&amp;gt;get(&#39;access_secret&#39;); return $self-&amp;gt;render_not_found if ( !</description>
+    </item>
+    
+    <item>
+      <title>Markdownで文章を書こう！</title>
+      <link>https://yusukebe.com/posts/2012/0207013320/</link>
+      <pubDate>Tue, 07 Feb 2012 10:33:00 +0900</pubDate>
+      
+      <guid>https://yusukebe.com/posts/2012/0207013320/</guid>
+      <description>みなさんはどのようなエディタでどのような記法で文章を書いていますか？ 状況によるとは思いますが、WordとかMacのPagesで文章を書いているという方や Evernoteでメモを取っているという方、または、Blogの投稿フォームに綴っている方、 様々だと思います。
+僕も書くものによってはPagesやEvernoteも使うのですが、一番文章を書く手法が「プレーンテキスト＋Markdown」というものです。今もこの手法で書いています。Blogを書く時、雑誌の原稿を書く時、はたまたメルマガの原稿を書く時、全てにおいてこのやり方は今の僕にとってベストです。
+プレーンテキストである利点 そもそもプレーンテキストとはWikipediaによると、
+プレーンテキストには文字情報以外の情報は一切含まず、テキストデータのみで構成されている。バイナリデータや文字の整形情報を持たないので、最低限の機能しか持たないテキストエディタや表示用のソフトウェアで扱えると言う点で利便性が高い。
+ ということらしいです。
+で、まさに最後の利便性の話をするのですが、「機種依存」がないのが利点ですね。文字コードの問題もなきにしもあらずですが、Windows、Mac、Linux/Unix、スマートフォンと言った多種多様な環境においてテキストエディタ、ビューアーがさえあればファイルの中身を閲覧できるのが便利です。
+プレーンテキストである欠点 WordやPagesといったワードプロセッサソフトで便利なのは、章見出しや太文字とか箇条書きが簡単にできて見やすく仕上げることができることですね。見やすくというのはある意味文章情報を「構造化」させることができるという意味合いです。
+プレーンテキストではテキスト情報のみなのでなかなかそう簡単にはいきません。
+しかし、Webを構成するHTMLの中身はプレーンテキストであるように「マークアップ」という手法で構造化することができるのです。マークアップは「テキストでテキストを装飾する」ことに他なりません。
+マークアップじゃなじゃくてMarkdown このHTMLはデファクトになりましたが、じゃあちょっとした文章を書く時にHTMLでマークアップするかと言われたらちと大変です。もちろんやられる方もいらっしゃいますが... また、HTMLは実際にブラウザで表示しない限り見た目の確認がしにくいのです。
+そこで、マークアップをもじって出てきたが今回紹介したい「Markdown」です。
+これは記述の方法、というよりルールと解釈してもよいです。ある特定のルールを守りさえして、変換プログラムに通せばHTMLに整形されます。HTMLに整形するのが目的ではなくても、整形前の記法フォーマットで記述すればそれなりに「かなり」見やすいテキストができあがるのも特徴です。
+Markdownでよく使う例 Markdownの記法ルールについては、以下のサイトをご覧ください。日本語です。
+ blog::2310 » Markdown文法の全訳  今回は僕がよく使うMarkdownの書き方をいくつかピックアップします。
+見出し h1、h2、h3、h4... にあたいします。
+ # 見出し1番大きいの  と書くと、変換すれば、
+ &amp;lt;h1&amp;gt;見出し1番大きいの&amp;lt;/h1&amp;gt;  というHTMLになる。その他は#を増やしていくだけ。
+ ## 見出し2番目に大きいの ### 見出し3番目に大きいの #### 4番目、5番目と続く  強調、斜体 strong、i にあたいします。
+ ** 強調したいところ ** * 斜体にしたいところ **  リスト ul&amp;gt;li、ol&amp;gt;liにあたいします。
+ - 箇条書きその1 - 箇条書きその2 - 箇条書きその3 1. 番号付きその1 2. 番号付きその2 3. 番号付きその3  引用、ソースコード表現 blockquote、pre&amp;gt;codeに値します。
+ &amp;gt; 引用したい文章等 ←4行スペースもしくは1タブ以上でソースコード表現 print &#34;hello world!&#34;;  罫線 hr タグですね。
+ - - -  や
+ ----  で表現可能です。
+HTMLタグも使える 実は、HTMLタグも使えるので、aタグとかimgタグとか慣れている書き方がいい！っていう方はそちらを使うとよいと思います。</description>
+    </item>
+    
+  </channel>
+</rss>

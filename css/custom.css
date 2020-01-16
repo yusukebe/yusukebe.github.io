@@ -1,0 +1,59 @@
+body {
+    font-family: sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 400;
+}
+.site-title {
+    font-weight: bold;
+}
+.header h1, .header h2 {
+    font-size:2.4rem;
+    line-height: 1em;
+}
+img {
+    margin:10px auto 10px 0;
+    padding:1px;
+    border:1px solid #ddd;
+}
+blockquote {
+    margin:2rem 0;
+    font-size:1.1rem;
+}
+pre {
+    font-size: 0.9em;
+}
+.highlight pre {
+    background-color: #272822 !important;
+}
+pre.code {
+    margin-bottom: 0;
+    margin-top: 0;
+    padding: 20px;
+    background-color: #FAFAFA;
+}
+.post ul li {
+    margin-bottom: 4px;
+}
+
+.social-button-area {
+    margin:3rem 0 0 0;
+    text-align: left;
+}
+.social-button {
+    display: inline;
+}
+ul.social-button {
+    padding-left:0;
+}
+.social-button li {
+    display: inline-block;
+    vertical-align: top;
+}
+.fb_iframe_widget > span {
+  vertical-align: baseline !important;
+}
+
+ul.pagination {
+    padding-top: 2rem;
+}

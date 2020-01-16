@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>データ加工機としての Google BigQuery - ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="データ加工機としての Google BigQuery" />
+<meta property="og:description" content=" ボケてでは既に「お題」が110万レコード、「ボケ」が2,300万レコード、それに対するユーザーの「評価」が1億1,000万レコード数存在します。このところそれをちょいと利用して、楽しいことをしましょうっていうんで、直近1年間の範囲である条" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yusukebe.com/posts/2014/1230012100/" />
+<meta property="article:published_time" content="2014-12-30T01:21:00+09:00" />
+<meta property="article:modified_time" content="2014-12-30T01:21:00+09:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="データ加工機としての Google BigQuery"/>
+<meta name="twitter:description" content=" ボケてでは既に「お題」が110万レコード、「ボケ」が2,300万レコード、それに対するユーザーの「評価」が1億1,000万レコード数存在します。このところそれをちょいと利用して、楽しいことをしましょうっていうんで、直近1年間の範囲である条"/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
+	
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://yusukebe.com/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper post">
+		<div class="header">
+	<h1 class="site-title"><a href="https://yusukebe.com/">ゆーすけべー日記</a></h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/yusukebe" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/yusukebe" title="Twitter"><i data-feather="twitter"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post-header">
+			<h1 class="title">データ加工機としての Google BigQuery</h1>
+			<div class="meta">Posted at &mdash; Dec 30, 2014</div>
+		</div>
+
+		<div class="markdown">
+			
+
+<p><a href="http://bokete.jp/">ボケて</a>では既に「お題」が110万レコード、「ボケ」が2,300万レコード、それに対するユーザーの「評価」が1億1,000万レコード数存在します。このところそれをちょいと利用して、楽しいことをしましょうっていうんで、直近1年間の範囲である条件下のデータをエキスポートする必要がありました。ボケての基本的なデータは全て Amazon RDS の <strong>MySQL</strong> ストレージに格納されていて、この件で出力する形式は <strong>CSV</strong> フォーマットです。この場合、一般ユーザーがボケてのWebやモバイルアプリを操作する際に発生するクエリーとはまたひと味違った「<strong>重たい</strong>」クエリーを投げないとデータの「<strong>加工</strong>」が難しそうです。そんな際。<strong>Google BigQuery</strong> が非常に役に立ったので「<em>大雑把に</em>」その工程を紹介します。</p>
+
+
+
+
+<p><img src="http://33.media.tumblr.com/d0ce15c715df0b3d49140f6f2b5c4ab4/tumblr_inline_nhdezh8EjK1qb2ehr.png" alt="BigQuery"></p>
+
+
+
+
+<h3>投げては返ってこないMySQLへのクエリー</h3>
+
+
+
+
+<p>今回は最終的に以下の3つの種類のデータをCSVで書きだすことになりました。取得範囲は2013年12月から1年間とします。</p>
+
+
+
+
+<ul>
+<li>評価に関すること</li>
+<li>ボケに関すること</li>
+<li>ユーザーに関すること</li>
+</ul>
+
+
+<p>例えば「評価」が <code>rating</code> というテーブルで表せられるならば以下のようなクエリーを MySQL に投げれば今回の要件はある程度満たせます。</p>
+
+
+
+
+<pre> SELECT * FROM rating
+WHERE rating.date &gt;= '2013-12-01 00:00:00' AND rating.date &lt; '2014-12-01 00:00:00'
+ </pre>
+
+
+
+
+<p>しかし、2番目の「ボケに関すること」として「<strong>評価された対象のボケを集め、評価点数順にソートする</strong>」ってな要望があると <code>JOIN</code> が発生して、かつソートコストが高くなります。下は安直に書いた「例えば」のSQLクエリーです。</p>
+
+
+
+
+<pre> SELECT boke.*,SUM(rating.rate) as rate_sum FROM boke,rating
+WHERE boke.id = rating.boke_id
+AND rating.date &gt;= '2013-12-01 00:00:00' AND rating.date &lt; '2014-12-01 00:00:00'
+GROUP BY boke.id ORDER BY rate_sum DESC
+ </pre>
+
+
+
+
+<p>これがいわゆる「重たいクエリー」になって投げてはなかなか返ってこないことになります。また、数十分〜数時間待って返ってきたとしても希望する結果でなければ再度修正して、再び同じ時間立たなければ、それが正しいかを検証することが出来ません。もちろん並び替えはせずに評価値のスコアを持つテンポラリーなテーブルをつくりインデックスさせるなど、他に賢いやり方があるかもしれませんが、今回は「<strong>Google BigQueryに頼ってなるべく頭をひねらない</strong>」という趣旨なので割愛しました。</p>
+
+
+
+
+<h3>MySQLデータを BigQuery にのせる</h3>
+
+
+
+
+<p>さて今回の解決策は前述の通り、Google BigQuery を使うというもの。「一時的に何千台のマシンを使ってフルスキャンさせる」という「<em>強引な</em>」 Google ならではのやり方は今回のような「ある意味<em>強引な</em>」クエリーを試すには持ってこいです。</p>
+
+
+
+
+<p>諸々諸事情を加味して、以下のような手順で希望する3つのデータ＝CSVファイルを得ることが出来ました。</p>
+
+
+
+
+<ol>
+<li>一時的にEC2のハイメモリインスタンスを立ち上げる</li>
+<li>RDSから <code>mysqldump</code> を実行し手元にダンプファイルをつくる</li>
+<li>上記インスタンス上のローカルに MySQL サーバを立てて、ダンプファイルをインポート</li>
+<li>ソートや <code>JOIN</code> など<strong>コストのかかるクエリーは抜いて</strong>指定範囲内のデータをCSVで書き出し</li>
+<li>Googleのコマンドラインツールから <strong>Google Cloud Storage</strong> へアップロード</li>
+<li>スキーマファイルをつくり、CSVのデータを <strong>Google BigQuery</strong> のテーブルへインポート</li>
+<li>MySQLでは待たないと返ってこなかったようなクエリーを投げる =&gt; <strong>10s ちょいくらいで結果が出る！</strong>
+</li>
+<li>結果を一旦別テーブルへ書き出す</li>
+<li>そのテーブルデータを <strong>Google Cloud Storage</strong> に CSV 形式でエキスポート</li>
+<li>URLをみんなで共有</li>
+</ol>
+
+
+<p>冒頭の1〜3はしばらく待ってれば終わるとして、その後の作業を的確にやれば、半日、いや1時間くらいで作業が終わった！</p>
+
+
+
+
+<p><img src="http://33.media.tumblr.com/24d44f1b856e28d5bce898c57131b42f/tumblr_inline_nhdewe1jnj1qb2ehr.png" alt="BigQuery"></p>
+
+
+
+
+<p>ここで改めて、Google BigQuery の凄さというか便利さを「個人的に」まとめると以下の通り。</p>
+
+
+
+
+<ul>
+<li>
+<strong>しかたのない</strong>「重たいクエリー」をマシンパワーで高速に処理してくれる</li>
+<li>
+<code>Browser Tool</code> が充実していて、クエリーの実行から、結果の表示、履歴の保存まで用意されたWebインターフェースで出来る</li>
+<li>
+<code>Google Cloud Storage</code> 等とも連動して便利</li>
+<li>今や誰もが持っているGoogleアカウントで権限を移譲可能</li>
+<li>ストリームデータの取り込みもある</li>
+<li>何よりも安い！ ( 今回のデータ加工は無料範囲内で収まった )</li>
+</ul>
+
+
+<hr>
+<p>いや〜 今回のケースはデータの出力と加工だったので、「楽出来ることは楽して」サッサと終わらせたかったので非常に BigQuery が重宝しました。上記フローは初めて試したものだったので、ある程度半自動化していけば、より簡単になるかもしれませんね。現在は他にも、行動ログに近いものをストリームで BigQuery に流し込んでいるのですが、それだけではなく<strong>データ加工にも使えるよん♪</strong> というお話でした。ちゃんちゃん</p>
+
+
+
+		</div>
+
+		<div class="post-tags">
+			
+				
+			
+		</div>
+        <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v5.0&appId=233306523373884&autoLogAppEvents=1"></script>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+
+<div class="social-button-area">
+  <ul class="social-button">
+    <li>
+      <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
+    </li>
+    <li>
+      <span class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2014%2f1230012100%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
+    </li>
+    <li>
+      <a href="https://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label-counter" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>
+    </li>
+  </ul>
+</div>
+
+<ul class="pagination">
+  
+  <li class="page-item page-prev">
+    <a href="https://yusukebe.com/posts/2014/1218033300/" class="page-link" aria-label="Previous"><span aria-hidden="true">← Podcast「だんごゆっけの平和な話」にて「miyagawaさん」に出演してもらいました #dandyfm</span></a>
+  </li>
+  
+  
+  <li class="page-item page-next">
+    <a href="https://yusukebe.com/posts/2015/0117102552/" class="page-link" aria-label="Next"><span aria-hidden="true">新Podcast「wada.fm」をはじめました →</span></a>
+  </li>
+  
+</ul>
+
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright yusukebe.com |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-123-45', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>MovableType on ゆーすけべー日記</title>
+    <link>https://yusukebe.com/tags/movabletype/</link>
+    <description>Recent content in MovableType on ゆーすけべー日記</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <copyright>© Copyright yusukebe.com</copyright>
+    <lastBuildDate>Tue, 24 Jan 2012 10:57:00 +0900</lastBuildDate>
+    
+	<atom:link href="https://yusukebe.com/tags/movabletype/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Blogアクセスアップのための種まき</title>
+      <link>https://yusukebe.com/posts/2012/0124015731/</link>
+      <pubDate>Tue, 24 Jan 2012 10:57:00 +0900</pubDate>
+      
+      <guid>https://yusukebe.com/posts/2012/0124015731/</guid>
+      <description>今、会社のHPともあわせ親父とこのBlogのちょっとした改修を行っている。
+目標の一つにアクセスアップがあり、そのために閲覧者一人あたりのPVをアップさせる戦略をとる。
+以前とあるサイトのPVを10倍以上にあげた経験から3つ仮説を立てる。これをすれば「一人あたりのPVは上がる」だろうということだ。
+ ページ当たりのコンテンツを最適な量にしてシンプルに保つ ページの表示速度を速くする  ページとページの関連を作る（リンクを張る）  そのとあるWebサイトの結果はGoogle Analyticsの3年間のグラフを見れば明らかだ。
+お気づきの通り、これら3つの仮説は、情報商材販売サイトを除いた「私はこうしてアクセスを上げました」といった良質なBlog記事を見れば書かれてるしごく当たり前のことではある。ただ実体験したことなのでかなり気にしながら今回の改修を行っている。
+例えば、Blogにおいてはその記事において、同一カテゴリーの最新エントリー5件を文章の下に配置するなどである。より、目にとまりやすいようにはてなブックマークの「users」を表示するためにはMovableTypeで以下のようなタグを書くとよい。
+ &amp;lt;mt:If tag=&#34;CategoryLabel&#34;&amp;gt; &amp;lt;mt:SetVars&amp;gt; category_label=&amp;lt;$mt:CategoryLabel$&amp;gt; &amp;lt;/mt:SetVars&amp;gt; &amp;lt;mt:SetVarBlock name=&#34;category_count&#34;&amp;gt; &amp;lt;mt:Categories&amp;gt; &amp;lt;mt:If tag=&#34;CategoryLabel&#34; eq=&#34;$category_label&#34;&amp;gt;&amp;lt;$MTCategoryCount$&amp;gt;&amp;lt;/mt:If&amp;gt; &amp;lt;/mt:Categories&amp;gt; &amp;lt;/mt:SetVarBlock&amp;gt; &amp;lt;mt:If name=&#34;category_count&#34;&amp;gt; &amp;lt;div class=&#34;related-entries&#34;&amp;gt; &amp;lt;h2&amp;gt;カテゴリー「&amp;lt;$mt:CategoryLabel$&amp;gt;」のエントリー&amp;lt;/h2&amp;gt; &amp;lt;mt:Entries category=&#34;$category_label&#34; lastn=&#34;5&#34;&amp;gt; &amp;lt;ul&amp;gt; &amp;lt;li&amp;gt;&amp;lt;a href=&#34;&amp;lt;$mt:EntryPermalink$&amp;gt;&#34;&amp;gt;&amp;lt;mt:EntryTitle&amp;gt;&amp;lt;/a&amp;gt; &amp;lt;a href=&#34;http://b.hatena.ne.jp/entry/&amp;lt;$mt:EntryPermalink$&amp;gt;&#34;&amp;gt; &amp;lt;img src=&#34;http://b.hatena.ne.jp/entry/image/&amp;lt;$mt:EntryPermalink$&amp;gt;&#34;&amp;gt; &amp;lt;/a&amp;gt; &amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; &amp;lt;/mt:Entries&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/mt:If&amp;gt; &amp;lt;/mt:If&amp;gt;  こういったMovableTypeのTipsも当たり前のようにやられてはいるが、上記の仮説から導きだした対策だと考えると納得がいく。
+さらに、親父のBlogを分析していると検索キーワード経由の流入は多いが、リピーターが少ない。そのためによりパーソナリティとしての信頼度を上げる工夫をしようと思う。具体的には以下を施した。
+ ソーシャルボタンの追加 プロフィールの充実 外部サービスの表示（Twitterのプロフィールなど）  ただ、問題として、ソーシャルボタンや外部サービスと連携すると折角MovableTypeで書き出した静的HTMLの表示が重たくなってしまう。親父のブログは対策を考え中であるが、このBlogに関しては、現在トップページに「はてぶボタン」のみ、パーマリンクには、それに加えてTwitter、Facebookのパーツが表示されるようになっている。これでだいぶトップの表示が速くなった。
+さて、こうした「種まき」の結果を計測するにはGoogle Analyticsで行おう。新しいバージョンでは、「リアルタイム」機能までついているし、レポートの左側は順番に追っていけばサイトの分析が自然にできるように出来てる。特にこうした改修をした場合、「コンテンツ」というカテゴリを見れば、サイトコンテンツ、速度などを一覧や比較可能だ。
+優秀な計測ツールのおかげで、とりわけコンテンツを持っているWebサイトは「種まき→計測→フィードバック」というループができて面白い。この種まきで何か興味深い結果が出たら報告します。</description>
+    </item>
+    
+  </channel>
+</rss>

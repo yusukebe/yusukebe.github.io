@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>今聴いている曲の歌詞が見れる「LastLyrics」を作ってみた - ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="今聴いている曲の歌詞が見れる「LastLyrics」を作ってみた" />
+<meta property="og:description" content=" 遅ればせながら空前の Perfume ブームが俺の中で来ています。中でも「シークレットシークレット」がお気に入りなのですが、iTunes で再生してて歌詞が見たいと思いました。歌詞カードを見るのがあまり好きじゃないので、すると Web の" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yusukebe.com/posts/2009/0101105821/" />
+<meta property="article:published_time" content="2009-01-01T19:58:00+09:00" />
+<meta property="article:modified_time" content="2009-01-01T19:58:00+09:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="今聴いている曲の歌詞が見れる「LastLyrics」を作ってみた"/>
+<meta name="twitter:description" content=" 遅ればせながら空前の Perfume ブームが俺の中で来ています。中でも「シークレットシークレット」がお気に入りなのですが、iTunes で再生してて歌詞が見たいと思いました。歌詞カードを見るのがあまり好きじゃないので、すると Web の"/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
+	
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://yusukebe.com/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper post">
+		<div class="header">
+	<h1 class="site-title"><a href="https://yusukebe.com/">ゆーすけべー日記</a></h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/yusukebe" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/yusukebe" title="Twitter"><i data-feather="twitter"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post-header">
+			<h1 class="title">今聴いている曲の歌詞が見れる「LastLyrics」を作ってみた</h1>
+			<div class="meta">Posted at &mdash; Jan 1, 2009</div>
+		</div>
+
+		<div class="markdown">
+			
+
+<p>
+遅ればせながら空前の Perfume ブームが俺の中で来ています。
+中でも「シークレットシークレット」がお気に入りなのですが、
+iTunes で再生してて歌詞が見たいと思いました。
+歌詞カードを見るのがあまり好きじゃないので、
+すると Web の歌詞提供サービスを利用することになります。
+こういったサービス、海外のものも併せて非常に便利なのですが、
+あえて言うならアーティスト名や曲名も入れて検索する手間が省けないかと、
+Perfume を聴きながら考えました。
+</p>
+
+<p>
+  そこで、今回作ったのが「<strong>LastLyrics</strong>」というサイトです。
+iTunes などで、まさに「今」聴いてる曲の歌詞がアクセスするだけで見れるという代物。
+( * 実は何も調査せずに作ったので、もしかして似たようなサイトがあるかもしれませんがご了承くだされ。
+    あと、iTunes のプラグインみたいなソフトならあるよ！というツッコミは無しでｗ)
+</p>
+
+<p>
+  <a href="http://pulpsite.net/lastlyrics/">LastLyrics</a><br>
+  <a href="http://pulpsite.net/lastlyrics/">
+    <img alt="ss" class="at-xid-6a0133f4781589970b015435b6f481970c" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015435b6f481970c-pi">
+  </a>
+</p>
+
+<p>
+利用するのにひとつ条件があって、「last.fm」というサービスを使っている必要があります。
+フォームに last.fm のユーザーID を入れると今聴いている曲と最近聴いた曲の歌詞が表示されるだけという、
+シンプルなインターフェースです。
+ある程度メジャーな曲でないと歌詞が見つからないのですが、
+Perfume の「シークレットシークレット」はありました。
+よかったです。
+ちなみに、洋楽の英語の歌詞も該当するものがあれば、でてくるようになっています。
+</p>
+<p>
+last.fm について理解するために、はてなキーワードの Audioscrobbler のページがわかりやすかったので以下引用します。Audioscrobbler というのは、last.fm の前身みたいなサービス。
+</p>
+<blockquote>
+  <p>
+ネットに接続した状態でiTunesやWinamp、Windows Media Player 9などの再生ソフトを使って音楽を聴くと、聴いている音楽のアーティスト名や曲名の情報がここのサーバーへ送られ、自分の音楽プロフィールを作ってくれるというサイト。
+  </p>
+  <p>
+利用するにはユーザー登録をし、専用のプラグインをインストールする必要がある。
+  </p>
+  <a href="http://d.hatena.ne.jp/keyword/Audioscrobbler">Audioscrobblerとは - はてなキーワード</a>
+</blockquote>
+<p>
+ということで、LastLyrics を利用するには、last.fm でアカウントを作り、
+専用のプラグインをインストールしてサーバーに再生情報を送るようにしましょう。
+一見めんどくさそうですが、
+一度利用しだすとあとは特に何もせずともプラグインが勝手にいろいろやってくれるので、まだ
+使ったことがない人は是非登録してみてください。
+そんで、ついでに LastLyrics もよろしくです。
+</p>
+<p>
+さて仕組みなのですが、邦楽の歌詞情報を取得するのに、
+Yahoo!ミュージックを利用しています。
+それぞれの曲の歌詞に対して、embed で貼り付けるためのHTMLコードが提供されているので、
+それを引っ張ってきています。
+こうしたYahoo!ミュージックの 歌詞情報 へのインターフェースとして Perl のモジュール「<a href="http://svn.coderepos.org/share/lang/perl/WWW-Yahoo-Lyrics-JP/">WWW::Yahoo::Lyrics::JP</a>」というものをこしらえました。
+また、邦楽の方は LyricWiki.org というサービスを利用して歌詞を取得しています。
+これは Perl インターフェース「<a href="http://search.cpan.org/dist/Lyrics-Fetcher-LyricWiki/">Lyrics::Fetcher::LyricWiki</a>」というのがすでに CPAN にあったのでそれを使うことにしました。
+</p>
+<p>
+一方の last.fm の情報取得について、API が提供されているので、それを WebService::Simple で扱ってます。last.fm の API は以前から使ったことがあるのですが、2.0 という新しいバージョンが出てて、ちょっとびっくり。これは今回に限らずになかなか面白そうです。ということで、上記の歌詞サービスと last.fm API を組み合わせれば出来上がりです。
+</p>
+<p>
+小粒なサービスですが、使っていただけると嬉しいです。
+以上、元旦リリース「LastLyrics」の紹介でした。
+</p>
+
+<h4>関連サイト</h4>
+<ul>
+  <li><a href="http://pulpsite.net/lastlyrics/">LastLyrics</a></li>
+  <li><a href="http://www.last.fm/home">Last.fm</a></li>
+  <li><a href="http://music.yahoo.co.jp/lyrics/">Yahoo!ミュージック - 歌詞</a></li>
+  <li><a href="http://lyricwiki.org/Main_Page">Main Page - Lyrics from LyricWiki</a></li>
+</ul>
+
+
+		</div>
+
+		<div class="post-tags">
+			
+				
+			
+		</div>
+        <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v5.0&appId=233306523373884&autoLogAppEvents=1"></script>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+
+<div class="social-button-area">
+  <ul class="social-button">
+    <li>
+      <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
+    </li>
+    <li>
+      <span class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2009%2f0101105821%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
+    </li>
+    <li>
+      <a href="https://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label-counter" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>
+    </li>
+  </ul>
+</div>
+
+<ul class="pagination">
+  
+  <li class="page-item page-prev">
+    <a href="https://yusukebe.com/posts/2009/0101030127/" class="page-link" aria-label="Previous"><span aria-hidden="true">← Perl でライフハック（？）「リンクの横にはてなブックマークのUser数を表示する」捨てスクリプト</span></a>
+  </li>
+  
+  
+  <li class="page-item page-next">
+    <a href="https://yusukebe.com/posts/2009/0103052744/" class="page-link" aria-label="Next"><span aria-hidden="true">Flickr からキーワードにマッチした写真を一括ダウンロードする Perl スクリプト「flickr_fetcher.pl」 →</span></a>
+  </li>
+  
+</ul>
+
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright yusukebe.com |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-123-45', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

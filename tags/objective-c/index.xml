@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Objective-C on ゆーすけべー日記</title>
+    <link>https://yusukebe.com/tags/objective-c/</link>
+    <description>Recent content in Objective-C on ゆーすけべー日記</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <copyright>© Copyright yusukebe.com</copyright>
+    <lastBuildDate>Sat, 28 Jan 2012 11:11:00 +0900</lastBuildDate>
+    
+	<atom:link href="https://yusukebe.com/tags/objective-c/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Objective-C/iOSで写真を選ぶアレ</title>
+      <link>https://yusukebe.com/posts/2012/0128021126/</link>
+      <pubDate>Sat, 28 Jan 2012 11:11:00 +0900</pubDate>
+      
+      <guid>https://yusukebe.com/posts/2012/0128021126/</guid>
+      <description>最近始めたiOSプログラミングのコードのことも備忘録として、はたまたツッコミを乞うためとして書いていきたいと思います。
+特にソーシャル系iPhoneアプリでよく使う写真を選ぶアレのコードです。何かボタンを押すと下からウニョンと出てきてカメラかライブラリかの選択肢を選ぶやつ。あれ、ActionSheetと呼ぶらしいです。
+
+てなわけで、細かく分けて以下を実装してみました。
+ ActionSheetというかUIActionSheetを表示 ライブラリ、カメラそれぞれのケースを実装。といってもUIImagePickerControllerにお任せ 選択した写真をUIImageViewに表示  こういうUIがあったとして。
+
+implementation部分のコードはこんな感じになりました。正直ARCまだよくわかってナス。
+ViewController.m  - (IBAction)showActionSheet:(id)sender { UIActionSheet *actionSheet = [[UIActionSheet alloc]init]; [actionSheet setDelegate:self]; [actionSheet setTitle:@&#34;写真を選びます&#34;]; [actionSheet addButtonWithTitle:@&#34;ライブラリから選択&#34;]; if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) { [actionSheet addButtonWithTitle:@&#34;カメラで撮影&#34;]; [actionSheet setCancelButtonIndex:2]; }else{ [actionSheet setCancelButtonIndex:1]; } [actionSheet addButtonWithTitle:@&#34;キャンセル&#34;]; [actionSheet showFromToolbar:toolbar]; } -(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex { UIImagePickerController *imagePicker = [[UIImagePickerController alloc]init]; [imagePicker setDelegate:self]; switch (buttonIndex) { case 0: [imagePicker setSourceType:UIImagePickerControllerSourceTypePhotoLibrary]; [self presentModalViewController:imagePicker animated:YES]; break; case 1: [imagePicker setSourceType:UIImagePickerControllerSourceTypeCamera]; [self presentModalViewController:imagePicker animated:YES]; break; default: break; } } - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editingInfo { [imageView setImage:image]; [self dismissModalViewControllerAnimated:YES]; } -(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker { [self dismissModalViewControllerAnimated:YES]; }  カメラ無しデバイスのことを考慮しているのがポイント。あと気づいたのは、デリゲートされるdidFinishPickingImageってのではUIImageがそのまま渡されるんですぐ利用できて便利っす。実機で動かしてみてActionSheetで選択→「ライブラリ表示またはカメラ起動」がやたら遅い気がするのは気のせいかなぁ。</description>
+    </item>
+    
+  </channel>
+</rss>

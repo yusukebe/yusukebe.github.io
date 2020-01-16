@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Webアプリにおけるキャッシュ。オレオレ事例 - ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="Webアプリにおけるキャッシュ。オレオレ事例" />
+<meta property="og:description" content=" Webアプリにおいて、アクセスやデータ量が多く/大きくなってくると、バックエンドのパフォーマンスが低下しがちです。MySQLなどのRDBMSにデータを置いている場合は適切にクエリーを改善する、インデックスを張る、といった策で解決する場合も" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yusukebe.com/posts/2013/0118074955/" />
+<meta property="article:published_time" content="2013-01-18T16:49:00+09:00" />
+<meta property="article:modified_time" content="2013-01-18T16:49:00+09:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Webアプリにおけるキャッシュ。オレオレ事例"/>
+<meta name="twitter:description" content=" Webアプリにおいて、アクセスやデータ量が多く/大きくなってくると、バックエンドのパフォーマンスが低下しがちです。MySQLなどのRDBMSにデータを置いている場合は適切にクエリーを改善する、インデックスを張る、といった策で解決する場合も"/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
+	
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://yusukebe.com/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper post">
+		<div class="header">
+	<h1 class="site-title"><a href="https://yusukebe.com/">ゆーすけべー日記</a></h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/yusukebe" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/yusukebe" title="Twitter"><i data-feather="twitter"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post-header">
+			<h1 class="title">Webアプリにおけるキャッシュ。オレオレ事例</h1>
+			<div class="meta">Posted at &mdash; Jan 18, 2013</div>
+		</div>
+
+		<div class="markdown">
+			
+
+<p>Webアプリにおいて、アクセスやデータ量が多く/大きくなってくると、
+バックエンドのパフォーマンスが低下しがちです。
+MySQLなどのRDBMSにデータを置いている場合は適切に
+クエリーを改善する、インデックスを張る、といった策で解決する場合もありますが、
+キャッシュを効果的に利用することでより高負荷に対応できる可能性があります。
+また、外部APIへの問い合わせなど、どうしてもネットワークや他のリソースのレスポンスタイムに
+引きずられる部分に関しては情報を手元にキャッシュしておくと何かとよいでしょう。</p>
+
+<p>今回はWebアプリケーションのレイヤーで最近僕がどのようにキャッシュを使っているのか？
+の事例を紹介しつつまとめてみたいと思います。</p>
+
+<hr>
+
+<p><br></p>
+
+<h3>キャッシュについてとその基本</h3>
+
+<p>そもそもキャッシュとは、簡単にふわっと表現するならば、
+「一時的に情報を手元の近い場所に置いておいて利用する手法、もしくはその一時データ」
+と捉えることができます。
+拙作の「<a href="http://www.amazon.co.jp/dp/4774154075">Webサービスのつくり方</a>」にも書きましたが、
+例で説明するのがてっとり早いし、具体的な使い方が分かるでしょう。</p>
+
+<p>この「ゆーすけべー日記」のAtomフィードをどこかのアプリケーションで利用するとして以下のようなコードを書きます。parse_feed っていうのが出て来ますがこれはフィードをパースするためのメソッドが定義されていると仮定してください。</p>
+
+<pre> use LWP::Simple qw/get/;
+
+...;
+
+my $content = get('http://yusukebe.com/atom.xml');
+my $data = parse_feed($content);
+print $data-&gt;title . "\n";
+ </pre>
+
+<p>もし、更新を逐一知りたかったらこのコードを改良していけばいいのですが、
+例えば、エントリーのタイトルをとあるWebアプリのサイドバーに一覧表示させたいなんて時があります。
+アクセスの度にユーザーエージェントが（この場合はLWP::Simpleのgetメソッドを使って行っている）、
+僕のブログにアクセスしてAtomフィードをとってくることになるのですが以下のことが分かります。</p>
+
+<ul>
+<li>ネットワークを使って外部に、つまり yusukebe.com にアクセスするので時間がかかる</li>
+<li>短い頻度で更新されているわけではないので、毎回情報を更新させる必要がない</li>
+</ul>
+
+
+<p>そこで、キャッシュを使います。例えば30分間情報をキャッシュさせるとなるとこのようなフローになります。</p>
+
+<ol>
+<li>フィードコンテンツがキャッシュされているか？をチェックする</li>
+<li>キャッシュされていればそのデータをそのまま使って、終わり</li>
+<li>キャッシュが無ければ yusukebe.com からフィードを取得</li>
+<li>有効期限を30分として、キャッシュをセットする</li>
+<li>取って来たデータを使って、終わり</li>
+</ol>
+
+
+<p>キャッシュを実装する時にはまずは「get」「set」「delete」辺りのメソッドを覚えておけばいいのですが、
+それを使って疑似コードで表現するとこんな感じになります。</p>
+
+<pre> use LWP::Simple qw//; # get メソッドが紛らわしいのでエクスポートしない
+
+...;
+
+my $key = 'key_of_feed'; # キャッシュのキーを予め変数に
+my $data = $cache-&gt;get($key); # getメソッド
+unless($data) {
+    # キャッシュが無ければ
+    my $content = LWP::Simple::get('http://yusukebe.com/atom.xml'); 
+    $data = parse_feed($content); # フィードをフェッチしてパースする
+    $cache-&gt;set($key, $data, 60 * 30); # キー、値、有効期限の秒数、この順番でset
+}
+do_something($data); # 何かする
+ </pre>
+
+<p>memcachedなどのをバックエンドにしたキャッシュでは、このようにキャッシュを保持する有効期限を決めることが出来、上記のフローはキャッシュを使うに当たっての定石かと言えます。キャッシュについてとその実装を軽く説明したところで事例に入りましょう。</p>
+
+<h3>何をキャッシュするか？それが重要だ</h3>
+
+<p>キャッシュは上記のように簡単に実装できる反面、少しでも複雑なシステムだと「何をキャッシュするか？」を
+賢く設計しないと痛い目にあいます。本来のデータがDBに入っているとして、DBのデータとキャッシュとの整合性が取れなくなるのです。例えば、アプリ側で表示しちゃいけない情報があって「DB側で消してるのになんで出てくるんだこれ...」と思ったらキャッシュされてたなんてことに陥ります。</p>
+
+<p>こうした悩みを持たないためにも考慮しているのは、キャッシュの粒度です。
+なるべく大きなオブジェクトをキャッシュすることで、キャッシュの管理コストを下げるという方針ですね。</p>
+
+<p>これもアプリケーションの性質にだいぶ左右されてしまう問題ですが、とあるエロサイトでは更新が少ないために、
+SQLのクエリーで言う</p>
+
+<pre> SELECT * FROM entry WHERE actress = '成瀬心美' ORDER BY created_on DESC LIMIT 20;
+ </pre>
+
+<p>の結果をそのまま有効期限付きでキャッシュに突っ込んでおります。
+サイトの特性上これで十分ですし、サーバリソースを減らせることになります。</p>
+
+<p>また更新がある程度多いサイトでは、
+キャッシュするオブジェクトを精査し、ここはMySQLから引っ張って来てあれはキャッシュだなと
+区分しています。例えばソートが必要になるケースでは</p>
+
+<ul>
+<li>「SELECT id FROM 〜」の部分を有効期限付きでキャッシュ</li>
+<li>idに対応するRowをDBと一部キャッシュから取得する</li>
+<li>Rowが参照している他のRowを取得して利用可能なさらに大きいオブジェクトにする</li>
+<li>同時に随所でinflateがかかるようにする</li>
+<li>配列にしてコントローラやテンプレートに渡す</li>
+</ul>
+
+
+<p>といった具合です。例を出せないので分かりにくいかもですが、更新が早いサイトでは、
+どこでキャッシュをするのか？を判断するのが難しく、またキャッシュをしなくても良いくらい
+パフォーマンスを出せるクエリーを考える必要が出てきそうです。</p>
+
+<h4>参考ページ</h4>
+
+<ul>
+<li><a href="http://d.hatena.ne.jp/kazuk_i/20081021/1224564880">memcached活用は、格納オブジェクトの"粒度"がキモ - 出町ミスド攻防記</a></li>
+<li><a href="http://blog.endeworks.jp/d-6/2008/09/memcached.html">memcachedになにをキャッシュするのか - D-6 [相変わらず根無し]</a></li>
+</ul>
+
+
+<h3>ページのHTMLをキャッシュする</h3>
+
+<p>キャッシュする粒度の話をしましたが、その対象をより大きく捉えるという意味で
+アプリで生成するHTML自体をキャッシュするのは非常に有効だと思います。
+例えばサイトのサイドバーなど更新の少なく共通で使われる部分は積極的にHTMLにしてキャッシュした方がいいでしょう。</p>
+
+<p>僕がWeb Application Frameworkとして使っているMojoliciousでは、
+フックとテンプレートレンダリングの機能を使って実現することが出来ます。
+例えば「MyApp::Web.pm」などで</p>
+
+<pre> package MyApp::Web;
+
+sub startup {
+    my $self = shift;
+
+    ...;
+
+    $self-&gt;hook(
+        before_dispatch =&gt; sub {
+            my $c = shift;
+            my $key = "key_of_sidebar";
+            my $html = $cache-&gt;get($key);
+            unless($html) {
+                ...;
+                $html = $c-&gt;render_partical('layouts/right_container');
+                $cache-&gt;set($html, 60 * 30);
+            }
+            $self-&gt;stash-&gt;{right_container} = $html;
+        }
+    );
+}
+...;
+ </pre>
+
+<p>とし、テンプレート内では「right_container」という名の変数をエスケープせずそのまま展開すればOKです。
+今回はアプリケーションレイヤーでHTMLを読み込んでますが、書き出してフロントに近いところでインクルードしてもいいですね。</p>
+
+<h3>透過的キャッシュを自作する</h3>
+
+<p>DBとのやり取りを吸収してくれる「O/R Mapper」に「意識せずともキャッシュされる」機能が付いてくる場合もあります。「透過キャッシュ」という言葉がふさわしいか自信ないですが、今回はそう呼ばせてください。</p>
+
+<p>こうした透過キャッシュは便利ですが、上記で述べたキャッシュによる不整合を招く弊害があるので、一概にオススメできません。ただ、エロサイトの例のような更新が少ない簡単なアプリケーションには有効です。僕はこの透過的なキャッシュを自作して利用しています。O/R Mapperなどに投げるクエリーをハッシュ関数へ通してキーにして、結果をキャッシュするという戦略です。これも疑似コードを見てみましょう。get_entries がエントリー一覧を取得するためのメソッドで「条件」と「オーダーなどのオプション」を引数に取ります。make_key サブルーティンでハッシュ関数に通してキーを生成しています。</p>
+
+<pre> use Digest::SHA1 qw/sha1_hex/;
+use Storable qw/nfreeze/;
+...;
+
+sub get_entries {
+    my ($cond, $attr) = @_;
+
+    my $key = make_key('entry', $cond, $attr);
+    my $rows = $cache-&gt;get($key);
+    return $rows if $rows;
+
+    $rows = $db-&gt;search('entry', $cond, $attr);
+    $cache-&gt;set($key, $rows, 60 * 30);
+    return $rows;
+}
+
+sub make_key {
+    my @data = @_;
+    return sha1_hex(nfreeze({ data =&gt; \@data }));
+}
+
+...;
+ </pre>
+
+<p>ちなみに、<a href="http://search.cpan.org/dist/DBIx-Class-Cursor-Cached/">DBIx::Class::Cursor::Cached</a>というモジュールを参考にしてキー作成等を実装しています。</p>
+
+<h3>遅延キャッシュ</h3>
+
+<p>Webアプリケーションからソート済みの「エントリー」一覧を取得したいとします。
+ソート結果を出すには数秒かかってしまうために、キャッシュを利用して結果を30分間有効にします。
+一番最初のアクセスはしかたないにしろ、「数秒」かかってしまいます。
+そして当然ですが、
+30分の有効期限が切れた瞬間の次にアクセスしたクライアントにはまた「数秒」待ってもらうことになります。</p>
+
+<p>サービスによってはこの「数秒」が大きくなるかもしれませんし、そもそも運悪く遅いページを見てしまうユーザーもいるかもしれません。また複数のアクセスに対してキャッシュ生成ロジックが無駄に平行して走る可能性もあります。</p>
+
+<p>この辺り、まだ「ベストプラクティス」と言えないのですが、JobQueueと呼ばれる仕組みを使い遅延させてキャッシュを生成する方法を試しています。こんな流れです。</p>
+
+<ul>
+<li>クエリーを実行するためのワーカーをスタンバイさせておく</li>
+<li>サイトにアクセスが来る</li>
+<li>キャッシュがあれば返却</li>
+<li>無ければ、ワーカーに生成を依頼</li>
+<li>ワーカーが作ったオブジェクトはマスターに加えて「もう一つのキー」で保持させる</li>
+<li>Web側は「もう一つのキー」で取っておいたキャッシュの結果を返却</li>
+<li>生成中のフラグ処理等...</li>
+</ul>
+
+
+<p>つまり、ワーカー側では結果をマスターとスレーブの様な感じのキー2つにキャッシュさせておき、
+マスターは有効期限を付けておく。そして、有効期限が切れたときにはすぐさまワーカーに生成を依頼すると同時に、スレーブにあるキャッシュを返すのです。</p>
+
+<p>このキャッシュを遅延させる手法、ある程度うまくいっている感じはするものの、ぶっちゃけ、cronなどを使ったバッチでいいんじゃないか？という気がしていますw</p>
+
+<hr>
+
+<p><br></p>
+
+<h3>まとめ</h3>
+
+<p>最近どのようにキャッシュと戯れているかを書いてみました！
+やはり管理が大変なので、使いどころをわきまえるのが大切ですね。
+とはいえ、あからさまに「そこはキャッシュしておくところだ...」というツッコミたい時もあったりするので、
+参考にしてください！</p>
+
+
+		</div>
+
+		<div class="post-tags">
+			
+				
+					<nav class="nav tags">
+							<ul class="flat">
+								
+								<li><a href="/tags/technologies">Technologies</a></li>
+								
+								<li><a href="/tags/perl">Perl</a></li>
+								
+							</ul>
+					</nav>
+				
+			
+		</div>
+        <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v5.0&appId=233306523373884&autoLogAppEvents=1"></script>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+
+<div class="social-button-area">
+  <ul class="social-button">
+    <li>
+      <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
+    </li>
+    <li>
+      <span class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2013%2f0118074955%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
+    </li>
+    <li>
+      <a href="https://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label-counter" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>
+    </li>
+  </ul>
+</div>
+
+<ul class="pagination">
+  
+  <li class="page-item page-prev">
+    <a href="https://yusukebe.com/posts/2013/0118024957/" class="page-link" aria-label="Previous"><span aria-hidden="true">← コレだけ鞄に入れれば仕事ができる5つの道具</span></a>
+  </li>
+  
+  
+  <li class="page-item page-next">
+    <a href="https://yusukebe.com/posts/2013/0130093800/" class="page-link" aria-label="Next"><span aria-hidden="true">Webアプリのディレクトリ事情 →</span></a>
+  </li>
+  
+</ul>
+
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright yusukebe.com |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-123-45', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

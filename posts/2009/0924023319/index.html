@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Now, the Plack/PSGI based Application works ! - ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="Now, the Plack/PSGI based Application works !" />
+<meta property="og:description" content=" 以前まで Catalyst と DBIx::Class を使って運用していた「YouTubeMP4」というサイトをPlack 、DBIx::Skinny ベースでリライトして先ほどから実運用を始めました。     YouTubeMP4 :" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yusukebe.com/posts/2009/0924023319/" />
+<meta property="article:published_time" content="2009-09-24T11:33:00+09:00" />
+<meta property="article:modified_time" content="2009-09-24T11:33:00+09:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Now, the Plack/PSGI based Application works !"/>
+<meta name="twitter:description" content=" 以前まで Catalyst と DBIx::Class を使って運用していた「YouTubeMP4」というサイトをPlack 、DBIx::Skinny ベースでリライトして先ほどから実運用を始めました。     YouTubeMP4 :"/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
+	
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://yusukebe.com/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper post">
+		<div class="header">
+	<h1 class="site-title"><a href="https://yusukebe.com/">ゆーすけべー日記</a></h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/yusukebe" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/yusukebe" title="Twitter"><i data-feather="twitter"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post-header">
+			<h1 class="title">Now, the Plack/PSGI based Application works !</h1>
+			<div class="meta">Posted at &mdash; Sep 24, 2009</div>
+		</div>
+
+		<div class="markdown">
+			
+
+<p>
+以前まで Catalyst と DBIx::Class を使って運用していた「YouTubeMP4」というサイトを
+Plack 、DBIx::Skinny ベースでリライトして先ほどから実運用を始めました。
+</p>
+
+<ul>
+  <li><a href="http://youtubemp4.com/">YouTubeMP4 : Download YouTube Mpeg4 Videos</a></li>
+</ul>
+
+<p>
+先日の YAPC::Asia でのセッションを聞いている方はお分かりの通り、
+Plack というのは PSGIという仕様 の実装です。
+Plack 単体で見れば HTTP::Engine 相当のもので、
+HTTP の Request/Response 周りを処理してくれて CGI や mod_perl をはじめ
+様々なインターフェースに対して透過的にフレームワークを載せることができます。
+</p>
+
+<ul>
+  <li><a href="http://github.com/miyagawa/Plack/">miyagawa's Plack at master - GitHub</a></li>
+  <li><a href="http://github.com/miyagawa/psgi-specs/">miyagawa's psgi-specs at master - GitHub</a></li>
+</ul>
+
+<p>
+この Plack を使って必要最低限な Web Application Framework とも言えるかどうかわからないほどの、
+小さな WAF を自分で作り、その上に今回「YouTubeMP4」というアプリケーションを書いたという具合です。
+この WAF は「Noe」という名前で github にて公開しています。
+ちなみに、tokuhirom が作った「nttam」というこれまた Plack ベースの小さなWAFを参考にして作らせてもらいました。
+見ればわかる通り、クラスがたった2つ、行数にして150行以下のものです。
+Plack は PSGI の実装という意味の他に、
+HTTP::Engine と比べても少ないコードでWAFを構築できるのと今回作っていて感じましたね。
+</p>
+
+<p>
+追記: HTTP::Engine と比べてっていうのは、plackup などのユーティリティのおかげなので、
+一概に「少ないコードで」というのはちょいと語弊がありますね＞＜
+Yappoさんツッコミあざっす。
+</p>
+
+
+<ul>
+  <li><a href="http://github.com/yusukebe/Noe">yusukebe's Noe at master - GitHub</a></li>
+</ul>
+
+<p>
+Noe の少ない機能の内訳は、リクエストされたURIに対してどのコントローラクラスのメソッドを呼び出すかと指示する「ディスパッチャ」、
+引数を受け取り Template Toolkit で HTML 化してレンダリングする「ビュー」、
+リダレイクトやベースとなるURLを得ることができるメソッド郡となっています。
+「モデル」部分はアプリケーション毎に書くというのが一応の作法としています。
+Mouse ベース、config ファイルの読み込み、テンプレートの拡張子によってラッパーを働かせるかどうかを指定する、
+ディパッチャには HTTPx::Dispatcher を仕様するなど、
+個人的な嗜好がかなり入っています。
+本当に最小限ですが、「YouTubeMP4」のようないたってシンプルな機能を提供するサービスでは、
+これで十分動きます。
+参考になるのでしたら github のソースをみてください、そして何かあればツッコミください。
+</p>
+
+<p>
+また O/R マッパは nekokak さん作の DBIx::Skinny を使うことにしました。
+SQL をやはり書きたくない、けれども DBIx::Class はさすがにヘビーすぎると思っていたところ
+nekokak さんと話していて薦められたので使ってみたらいい感じです。
+</p>
+
+<ul>
+  <li><a href="http://github.com/nekokak/p5-dbix-skinny">nekokak's p5-dbix-skinny at master - GitHub</a></li>
+</ul>
+
+<p>
+今回のリライトでどれほどパフォーマンスが上がったかは、内部のロジックを大幅に変えたために
+結果がでないのですが、メモリ消費の観点で言うと約 3分の2 以下になっているのを確認しました。
+ちなみに Webサーバには lighttpd を使っています。
+今後、YouTubeMP4 と同じように「機能はそこまで必要ではなく、かつ、そこそこアクセスの多い」サービスに関して
+Noe を使った運用も考えていきたいと思います。
+</p>
+
+<p>
+こうした小さいけれども一応「WAF」というものは作るのが2度目なのですが、
+アプリケーションサーバの機構について知れることだけではなく、
+Perl の黒魔術的な一面も考えなくてはいけなかったり、設計について考えさせられたりと
+いろいろ勉強になります。
+Plack/PSGI の急速な開発にあわせつつも、勉強しながら、改良していくつもりです。
+上記した通り何かツッコんでいただければ幸いです。
+</p>
+
+
+		</div>
+
+		<div class="post-tags">
+			
+				
+					<nav class="nav tags">
+							<ul class="flat">
+								
+								<li><a href="/tags/perl">Perl</a></li>
+								
+							</ul>
+					</nav>
+				
+			
+		</div>
+        <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v5.0&appId=233306523373884&autoLogAppEvents=1"></script>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+
+<div class="social-button-area">
+  <ul class="social-button">
+    <li>
+      <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
+    </li>
+    <li>
+      <span class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2009%2f0924023319%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
+    </li>
+    <li>
+      <a href="https://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label-counter" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>
+    </li>
+  </ul>
+</div>
+
+<ul class="pagination">
+  
+  <li class="page-item page-prev">
+    <a href="https://yusukebe.com/posts/2009/0914060315/" class="page-link" aria-label="Previous"><span aria-hidden="true">← 生活に溶けこむコンテンツデザイン展 - 開催のお知らせ</span></a>
+  </li>
+  
+  
+  <li class="page-item page-next">
+    <a href="https://yusukebe.com/posts/2009/0926110713/" class="page-link" aria-label="Next"><span aria-hidden="true">Twitterのタイムラインをcometでリアルタイムに表示する「Tail-F」を実験的に公開しました →</span></a>
+  </li>
+  
+</ul>
+
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright yusukebe.com |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-123-45', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

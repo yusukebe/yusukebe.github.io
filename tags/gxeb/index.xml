@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>GXEB on ゆーすけべー日記</title>
+    <link>https://yusukebe.com/tags/gxeb/</link>
+    <description>Recent content in GXEB on ゆーすけべー日記</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <copyright>© Copyright yusukebe.com</copyright>
+    <lastBuildDate>Fri, 06 Jul 2012 20:55:00 +0900</lastBuildDate>
+    
+	<atom:link href="https://yusukebe.com/tags/gxeb/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>エロサイトのじわじわ（TV放送コード版）資料</title>
+      <link>https://yusukebe.com/posts/2012/0706115528/</link>
+      <pubDate>Fri, 06 Jul 2012 20:55:00 +0900</pubDate>
+      
+      <guid>https://yusukebe.com/posts/2012/0706115528/</guid>
+      <description> GXEB #5でたった今発表した「エロサイトのじわじわ（TV放送コード版）」の資料をSlideShareに上げました。内容がアレなんで詳しいことは推測してくださいw
+エロサイトのじわじわ （TV放送コード版）   View more presentations from Yusuke Wada   </description>
+    </item>
+    
+    <item>
+      <title>GXEB#5でエロサイトのアクセス分析について話します</title>
+      <link>https://yusukebe.com/posts/2012/0619145612/</link>
+      <pubDate>Tue, 19 Jun 2012 23:56:00 +0900</pubDate>
+      
+      <guid>https://yusukebe.com/posts/2012/0619145612/</guid>
+      <description> 久しぶりにまじめなエロい勉強会「GXEB」が行われます。
+ GXEB 第5回 「じわじわくるエンジニアリング」
+日常のふとした瞬間、ツボにはまってひとりで笑ってしまうことありませんか？今回のテーマは、そんな「じわじわくる」技術を考えてみたいと思います。例えば、Web業界を席巻した「ろくろ」ブーム。なぜ人は「ろくろ」とわかっていながら「ろくろ」を回してしまうのか。誰が始めたのか。気づいたら、ろくろ回さずには話ができなくなってしまっているのは、なぜか。今回は、そんなことを真剣にエンジニアリング的視点から考えることをやってみたいと思います。他にも、GPS情報をやたらとONにさせたがるアプリたち、オプトインとはいったい何か...などなど、すぐに結果が出なくてもじわじわと後から効いてくるような遅効性のエンジニアリングも大募集です。
+ 何回か発表させてもらいながら、他の人の発表を見るのも楽しみな勉強会です。 今回はNAVERからクックパッドへ会場を移しての開催ですが、 空気を読み切れるか！？ってことで頑張ってまたプレゼンさせていただきます。 タイトルは「エロサイトアナリティクス！（TV放送コード版）」と題し、運営しているエロサイトのアクセス分析について発表したいと思います。
+ちょうど、h300というサイトのアクセス解析の記事を見て面白いなーと思い、 どんな差が出るのかとかやってみたかったからです！
+ エロサイト「h300」のアクセス解析をしてわかった 6つの法則 - 彼女からは、おいちゃんと呼ばれています  以下発表予定の概要です。
+ エロサイトアナリティクス！（TV放送コード版）
+月間1000万PVのものをはじめいくつかのエロサイトを運用しています。 そこで、サイトの気になるアクセス解析から、ユーザーの動向をちょっとだけばらしちゃいます。 最近よく見られている人気のAV女優は？みんなが興味のあるジャンルは？ エロい県民、エロい時間、エロいブラウザは？そして、人は何分でイク！？
+時間が余ればエロサイトとお金の話も盛り込むかもよっ！
+ GXEB#5はまだ参加者受付中みたいだよ！ ってことでよろしくお願いいたします。
+ GXEB #5「じわじわくるエンジニアリング」開催決定! | GXEB  </description>
+    </item>
+    
+  </channel>
+</rss>

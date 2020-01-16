@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mac on ゆーすけべー日記</title>
+    <link>https://yusukebe.com/tags/mac/</link>
+    <description>Recent content in Mac on ゆーすけべー日記</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <copyright>© Copyright yusukebe.com</copyright>
+    <lastBuildDate>Sun, 12 Feb 2012 09:36:00 +0900</lastBuildDate>
+    
+	<atom:link href="https://yusukebe.com/tags/mac/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>これだけは使ってるMacアプリ10個</title>
+      <link>https://yusukebe.com/posts/2012/0212003607/</link>
+      <pubDate>Sun, 12 Feb 2012 09:36:00 +0900</pubDate>
+      
+      <guid>https://yusukebe.com/posts/2012/0212003607/</guid>
+      <description>Evernoteが好きではない。Macのアプリがイケてないからだ。 変なリッチテキストみたいな奴で編集しなくてはいけなかったり、 Webページからコピペした文字がスタイルを継承しちゃったり、 そもそもMarkdownに対応してもらいたかったり。 だから巷で騒がれるほど、Evernoteはあまり使っていない。
+その代わりと言ってはなんですが、お気に入りのMacアプリもあります。 今回はMacのApp Storeからダウンロードできるアプリの中でも、 僕が個人的に「今なら絶対入れる」というものを10個厳選して紹介します。 文章書くのに便利だったり、ちょっとしたライフハック的に使えたり、 クリエイティブな活動に必要だったりするもの達です。では、行ってみよう。
+ 
+1. DAYONE  Day One - Mac Journal Application for iPhone, iPad and Mac Desktop  
+一言で言うならば「一人Twitter的メモ帳」。時系列で短いテキストを日記のように綴れて、 DropboxやiCloud経由でMacとiPhoneやiPadと同期してくれるちょっとしたアプリで、 「ちょっとした」ものなんだけど、UIが優れている。 その特徴は、上記した通りTwitter風味なこと。 「気軽に思ったこと、気づいたことを書く」行為を抵抗無く生活に取り入れることができる。 Evernoteを似たような目的で使っている人がいると思うが、 僕はこのDAYONEを「一人Twitter」として気軽なアイデアや思い出の溜め込み場として活用している。 ちなみに実はMarkdownにも対応していて、このBlog記事も試しにDAYONEで書いている。 なかなか快適だ。
+2. Wunderlist  Task Management At Its Best With Wunderlist | 6Wunderkinder  
+リスト、つまり箇条書き形式の情報をストックしておくにはWunderlistが一番優れていると思う。 もちろんiPhone用アプリもあり同期をしてくれる。 特徴はこれもやはりUIにあり、気に入っているのが背景画像がクールでかつ複数のものから選択が できることである。箇条書きとそのグループ管理以外、余計な機能が無いのもいい。
+3. MarkdownNote  MarkdownNote  前回のBlog記事「Markdownで文章を書こう！」で紹介した通り。Markdownのテキストをプレビューしながら同時に編集ができる。 「Markdownがどのように（HTMLとして）マークアップされているか」を知りたければ便利。
+4. Byword  Byword • A Simple Text Editor for Mac  
+もう一つ文章編集用のソフトを紹介する。このBywordもMarkdownに対応したアプリ （ただしUI的に即座にプレビューするには向かない）。 MarkdownNoteよりクールに、特にフルスクリーンにした時に物書きに集中できるってことで、 メルマガの編集にはBywordを使っている。
+5. ColorSchemer Studio  ColorSchemer | Instant Color Schemes  
+配色のセンスが無い僕にとってこのアプリは必須。 Webアプリなどを作るときに複数の色のセットを考える状況があると思うが、 その時に使う。とあるベースカラーを指定すると色相を意識して他の色を提案してくれたり、 ギャラリーからカラーセットを閲覧・使用することができたり、 写真を読み込ませるとその写真の色要素からカラーセットを作成したりとかなり融通がきく。 有料アプリで少々値段がはるが買ってよかったなと思うアプリ。
+6. Pixelmator  Pixelmator  Mac界では有名な画像編集ソフト、Pixelmator。やはりこちらを愛用している。 Photoshopと比べると断然に格安なのが特徴。 ただ、いまいち使い方が世に出回ってないが残念なところです。</description>
+    </item>
+    
+  </channel>
+</rss>

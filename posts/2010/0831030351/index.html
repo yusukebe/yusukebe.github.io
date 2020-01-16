@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>PerlスクリプトでWebサイト死活管理 - ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="PerlスクリプトでWebサイト死活管理" />
+<meta property="og:description" content=" 個人で作ってるサイトの死活監視を「再び」ちゃんとやろうと思っています。  そこで、Nagios使うまでも無く、KazuhoさんのKazuho@Cybozu Labs: 監視とは継続的なテストである、という話 (もしくは cronlog と" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yusukebe.com/posts/2010/0831030351/" />
+<meta property="article:published_time" content="2010-08-31T12:03:00+09:00" />
+<meta property="article:modified_time" content="2010-08-31T12:03:00+09:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="PerlスクリプトでWebサイト死活管理"/>
+<meta name="twitter:description" content=" 個人で作ってるサイトの死活監視を「再び」ちゃんとやろうと思っています。  そこで、Nagios使うまでも無く、KazuhoさんのKazuho@Cybozu Labs: 監視とは継続的なテストである、という話 (もしくは cronlog と"/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
+	
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://yusukebe.com/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper post">
+		<div class="header">
+	<h1 class="site-title"><a href="https://yusukebe.com/">ゆーすけべー日記</a></h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/yusukebe" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/yusukebe" title="Twitter"><i data-feather="twitter"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post-header">
+			<h1 class="title">PerlスクリプトでWebサイト死活管理</h1>
+			<div class="meta">Posted at &mdash; Aug 31, 2010</div>
+		</div>
+
+		<div class="markdown">
+			
+
+<p>
+個人で作ってるサイトの死活監視を「再び」ちゃんとやろうと思っています。
+</p>
+<p>
+そこで、Nagios使うまでも無く、Kazuhoさんの
+<a href="http://developer.cybozu.co.jp/kazuho/2010/01/cronlog-52f2.html">Kazuho@Cybozu Labs: 監視とは継続的なテストである、という話 (もしくは cronlog とテストスクリプトを組み合わせた監視手法について)</a>
+みてシンプルに死活監視できるよなーと思って、
+「Perlスクリプト」を書いてみました。
+「死活」のみの監視なんで、サイトが正常では無かったらメールを飛ばすだけでいいという想定です。
+設定をYAMLで持たせたかったり、メールをPerlから送りたかったりしたんで、
+少しKazuhoさんのやってることより複雑になりましたが、まぁ簡単です。
+</p>
+<pre class="brush: perl"> #!/usr/bin/perl
+use strict;
+use warnings;
+use LWP::UserAgent;
+use Email::Sender::Simple qw(sendmail);
+use Email::MIME;
+use Try::Tiny;
+use YAML qw(LoadFile);
+use Path::Class qw( file );
+
+my $file = $ARGV[0] || "config.yaml";
+die "Can't open $file" unless ( -f file($file)-&gt;stringify );
+my $config = LoadFile( file($file) );
+my $ua = LWP::UserAgent-&gt;new( agent =&gt; 'Monita/0.01', timeout =&gt; 30 );
+
+for my $url ( @{ $config-&gt;{url} } ) {
+    my $res = $ua-&gt;get($url);
+    send_report( $res ) unless $res-&gt;is_success;
+}
+
+sub send_report {
+    my $res = shift;
+    my $email = Email::MIME-&gt;create(
+        header =&gt; [
+            From    =&gt; $config-&gt;{from},
+            To      =&gt; $config-&gt;{to},
+            Subject =&gt; $res-&gt;request-&gt;uri . ' : ' . $res-&gt;code,
+        ],
+        attributes =&gt; { content_type =&gt; 'text/plain', },
+        body       =&gt; $res-&gt;status_line,
+    );
+    try { sendmail($email) }
+    catch { my $error = $_; warn $error-&gt;message };
+}
+ </pre>
+<p>
+このようなconfig.yamlを用意して
+</p>
+<pre class="brush: perl"> ---
+from: xxxxxx@xxxxxx
+to: xxxxxx@xxxxxx
+url:
+  - http://hoge.com/
+  - http://moge.com/
+
+ </pre>
+<pre class="brush: perl"> $ ./monita.pl config.yaml
+ </pre>
+<p>
+と実行すればURLのリストにあるサイトで、200番以外のレスポンスを返却した時に、
+ステータス情報と共にメールが届きます。
+これをcrontabで定期的に実行すればOKですね。
+リソースの定期的な把握についてはcactiとかcloudforecastとか使えばいいっすね。
+</p>
+
+
+		</div>
+
+		<div class="post-tags">
+			
+				
+					<nav class="nav tags">
+							<ul class="flat">
+								
+								<li><a href="/tags/perl">Perl</a></li>
+								
+							</ul>
+					</nav>
+				
+			
+		</div>
+        <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v5.0&appId=233306523373884&autoLogAppEvents=1"></script>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+
+<div class="social-button-area">
+  <ul class="social-button">
+    <li>
+      <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
+    </li>
+    <li>
+      <span class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2010%2f0831030351%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
+    </li>
+    <li>
+      <a href="https://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label-counter" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>
+    </li>
+  </ul>
+</div>
+
+<ul class="pagination">
+  
+  <li class="page-item page-prev">
+    <a href="https://yusukebe.com/posts/2010/0831013338/" class="page-link" aria-label="Previous"><span aria-hidden="true">← ディレクトリ配下の.pmファイルでuseしているCPANモジュールを一気にインストールする</span></a>
+  </li>
+  
+  
+  <li class="page-item page-next">
+    <a href="https://yusukebe.com/posts/2010/0903034422/" class="page-link" aria-label="Next"><span aria-hidden="true">YourAVHostが最強のPC無料エロサイトになった件 →</span></a>
+  </li>
+  
+</ul>
+
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright yusukebe.com |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-123-45', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

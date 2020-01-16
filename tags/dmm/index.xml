@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DMM on ゆーすけべー日記</title>
+    <link>https://yusukebe.com/tags/dmm/</link>
+    <description>Recent content in DMM on ゆーすけべー日記</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <copyright>© Copyright yusukebe.com</copyright>
+    <lastBuildDate>Tue, 14 May 2013 08:25:00 +0900</lastBuildDate>
+    
+	<atom:link href="https://yusukebe.com/tags/dmm/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>DMMのWeb APIに今更気づいたので...</title>
+      <link>https://yusukebe.com/posts/2013/0513232521/</link>
+      <pubDate>Tue, 14 May 2013 08:25:00 +0900</pubDate>
+      
+      <guid>https://yusukebe.com/posts/2013/0513232521/</guid>
+      <description>ムフフなビデオも網羅的に扱うDVDや動画の提供サービス「DMM」のWeb APIがいつの間にか公開していたらしく、なにぶんノーマークだったもので昨日の夜知ってビックリした。というかDMMは一生API出さないだろうなんて決め込んでいたのが良くなかったですね。
+
+ってことでとあるAV女優の商品一覧を出力するようなスクリプトを書いてみました。API固有の「癖」でいくつか実装する際の注意すべきポイントがあるのでそれをまず紹介します。Perlコードですが参考になるかもです。
+リクエストパラメータにはタイムスタンプがいる リクエストのパラメータにはタイムスタンプが必須です。形式は
+2013-05-14 08:03:16
+ というもの。僕はDateTime派なので、以下のコードで現在のタイムスタンプの文字列をつくっています（＊ある方から指摘を受けてコードを修正させていただきました！）。
+ use DateTime; my $timestamp = DateTime-&amp;gt;now( time_zone =&amp;gt; &#39;Asia/Tokyo&#39; )-&amp;gt;strftime(&#39;%F %T&#39;); print &#34;$timestamp\n&#34;;  この文字列は後でAPIにリクエストを送る時に使います。
+リクエストパラメータはeuc-jpでエスケープさせる イマドキじゃない！？リクエストのパラメータはeuc-jpでエスケープさせることが必要なのです。通常のutf-8でエスケープさせたパラメータ値を含むURLを構築するにはURIモジュールの「query_form」メソッドが重宝するのですが、今回の場合はURIモジュール使わない方がいい？ってことでハッシュでつくったパラメータのキーとバリューの組み合わせを、URLに落とし込むには以下のコードを記述しました。
+ use URI::Escape qw/uri_escape/; use Encode; use utf8; my $params = { key1 =&amp;gt; &#39;値その1&#39;, key2 =&amp;gt; &#39;値その2&#39; }; my $url = &#39;http://affiliate-api.dmm.com&#39;; my $queries; for my $key ( keys %$params ) { my $value = uri_escape( encode( &#39;euc-jp&#39;, $params-&amp;gt;{$key} ) ); push @$queries, &#34;$key=$value&#34;; } $url .= &#39;?&#39; . join &#39;&amp;amp;&#39;, @$queries; print &#34;$url\n&#34;;  返却されるXMLもeuc-jp レスポンスとして返されるXMLもeuc-jpな作りになっております。とりあえず簡単にXML::SimpleでPerlのデータ構造へパースする場合この文字コードの関係で細工がいります。「$url」変数に正しいリクエストURLがあるとした場合のコード。
+ use LWP::UserAgent; use XML::Simple qw//; use YAML; my $ua = LWP::UserAgent-&amp;gt;new; my $res = $ua-&amp;gt;get($url); die $res-&amp;gt;status_line if $res-&amp;gt;is_error; my $content = encode(&#39;utf-8&#39;,$res-&amp;gt;content); $content =~ s!</description>
+    </item>
+    
+    <item>
+      <title>DMMのAVがDMM Booksでダウンロードできる件</title>
+      <link>https://yusukebe.com/posts/2012/0318195820/</link>
+      <pubDate>Mon, 19 Mar 2012 04:58:00 +0900</pubDate>
+      
+      <guid>https://yusukebe.com/posts/2012/0318195820/</guid>
+      <description>アニメやドラマ、映画のネット配信、DVDレンタル、今ではFX、太陽光発電のレンタルなど幅広く手がけるDMM.com。 エロの分野では「DMM.R18」としてエロビエオはもちろん、 ライブチャットや同人誌などを大量に扱うのでお世話になっている方も多いでしょう。
+そんなDMMが電子書籍向けに「DMM Books」というiPhoneアプリ及びAndroidアプリを2月の中旬にリリースしてました。
+ここではiPhoneアプリ版をみてみましょう。
+DMM.comの電子書籍をiPhoneで楽しもう!  と謳い、以下の使い方が説明に書いてあります。
+■閲覧方法 (1)Book Storeをタップ (2)お好みの商品を見つけて購入 (3)My Booksで購入した商品を読もう!  さっそくアプリを起動してみてログイン。「Book Store」をタップしてみると...
+ 
+ん... 本が2冊しかでてこないぞ... しかも、「来訪者」なんて聞いたことのない書籍だ... アプリのレビューにも同じように「マイナーな本が2冊しかねーんじゃごら」的なものがある...
+ってたぶんこれ、もっと裏技的な使い方があるんすよね。
+で、その一つが「DMM（のサイト）で買ったAVをDMM Booksでダウンロードして観る」というもの。
+DMMのアダルト動画をiPhoneで観るには「iPhone用の動画」を買ってストリーミングで再生するか、 一度PCやMacに動画を落としてからiTunesで同期させてiPhoneに転送する方法の2つがあります。 つまりストリーミングだと途切れちゃうなーなんて時に、ダウンロードで観たいわけですが、 そのためにはPCが必要だったわけです。 ところがどっこいDMM Booksを使えば、 PCいらずでiPhoneから直接動画がダウンロードできちゃうということなんです。たぶん...
+実際にAV買ってみた。でも買えるのはDMMのサイトからのみなのでSafariにて。動画を購入してファイルの詳細を見ようとしたら「DMM Books」の利用を促された。
+ 
+AV購入後、再びDMM Booksを開くとダウンロード可能になっているので、ビットレートを選んでダウンロード。 App Storeで公式に配布されているアプリで、割と正統な方法で、しかも電子書籍用のアプリで、 AVをダウンロードするのがなんか変な感じですw
+できた。そして観れた！
+うぉーこれでPC無くてもiPhoneだけでダウンロードしたDMMの動画が楽しめますねっ。 たぶんこの使い方がある意味DMM Booksとしてはアリなやり方なんだと思います。 DMMは大量に動画コンテンツを持っているんだけど、今回のDMM BooksやDMM PlayerというMacでもDRM付きのファイルを再生可能にするソフトを配布していたりして、環境依存を吸収するような考慮もしているという印象ですね。
+ところで、新しいiPadが話題ですがあの解像度を活かすエロコンテンツが観たい今日この頃。朝っぱらからエロの話でしたー！</description>
+    </item>
+    
+  </channel>
+</rss>

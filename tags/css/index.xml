@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>css on ゆーすけべー日記</title>
+    <link>https://yusukebe.com/tags/css/</link>
+    <description>Recent content in css on ゆーすけべー日記</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <copyright>© Copyright yusukebe.com</copyright>
+    <lastBuildDate>Mon, 05 Mar 2012 07:52:00 +0900</lastBuildDate>
+    
+	<atom:link href="https://yusukebe.com/tags/css/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>CSS Frameworkを持つ</title>
+      <link>https://yusukebe.com/posts/2012/0304225231/</link>
+      <pubDate>Mon, 05 Mar 2012 07:52:00 +0900</pubDate>
+      
+      <guid>https://yusukebe.com/posts/2012/0304225231/</guid>
+      <description>例えば、Webサービスのフロントエンドのコードを書き始める時にまず何をするでしょうか？ デザインスケッチや画像を元にHTMLとCSSを記述していくことになると思います。 少なくとも僕はそうですね。 理論的にはHTMLだけでもWebサービスを作ることはもちろんできますが、 見た目を少しでも調整したいとなるとCSSが必要になります。 例えばCSSを使わないHTMLの場合、いくら単純なレイアウトだとしても、 デフォルトのリンクの色を変えたかったり、フォントを変更したかったり、 要素ごとの余白をどうにかしかったりと最低限の要望が出てきます。 こうした最低限のCSSに対するニーズは共通化して自分なりのCSS Frameworkとして持っておくとよいと思います。 近頃、一からCSSを記述しなくなったのもこうした考え方のおかげです。
+今Web上で配布されて利用可能なCSS Framworkが非常に増えています。 僕も色々と探しては使ってみています。よく使われている、 もしくは僕が使っているCSS Framworkには以下のようなものがあります。
+ Blueprint 960.gs Bluetrip YUI CSS inuit.css Twitter bootstrap jQuery UI CSS Framework Less Framework  こうした数あるFramworkのうち、お気に入りを見つけるのもよし、 参考にして自分なりのCSS Frameworkを作るのもよいと思います。 そして結果的に「CSS Frameworkを持つ」ことになると開発が効率的になるのかなぁと。
+では、CSS Frameworkでは何が出来るのかを見て行きます。 そのことで、自作のFrameworkを作る際にもどのような要素を考慮すればいいかが分かると思います。 分かりやすい例として以前から使っているBluetripというCSS Frameworkを紹介します。 BluetripはBlueprintや960.gsなど様々なFrameworkのいいとこ取りをした、けれども最低限のFrameworkです。
+ 
+スタイルの初期化 CSS Frameworkではスタイルの初期化をしてくれるのが一番の効用かもしれません。 Bluetripの.cssファイルを見ると最初の冒頭でリセットと呼ばれる該当する要素に対してのマージンやパディングの無効化、 行間の調整などが一気に行われています。 ヘッダー要素、マージンとパディングに限れば以下のようなCSSになります。
+ h1,h2,h3,h4,h5,h6{margin:0;padding:0;}  そしてその後、要素ごとに適切なスタイルを、この場合だとマージンやパディングを設定しています。 以下はヘッダー要素の記述です。
+ h1 { margin: 1em 0 .5em; } h2 { margin: 1.07em 0 .535em; } h3 { margin: 1.14em 0 .57em; } h4 { margin: 1.23em 0 .615em; } h5 { margin: 1.33em 0 .67em; } h6 { margin: 1.6em 0 .8em; }  配布されているCSS Frameworkはおそらく作者のポリシーも含んだマージンや行間、 配色などの設定がなされていると思われます。そのまま使ってもよいですし、 多少の修正を加えることもCSSを上書きするか、修正などすれば容易です。 このスタイルの初期化によってプレーンな構造のHTMLがより見やすくなってくれます。 また、ブラウザごとの依存を吸収してくれる作用もあります。</description>
+    </item>
+    
+    <item>
+      <title>シンプルなもう一つのCSS Framework「inuit.css」</title>
+      <link>https://yusukebe.com/posts/2012/0203014140/</link>
+      <pubDate>Fri, 03 Feb 2012 10:41:00 +0900</pubDate>
+      
+      <guid>https://yusukebe.com/posts/2012/0203014140/</guid>
+      <description> ワディットのHPを改修する際に使ったんだけど、最近気に入ってるCSS Frameworkが「inuit.css」。CSS Frameworkは便利なんだけどどうしても使っていると「それっぽさ」が出ちゃうので（特にTwitter Bootstrapなんかｗ）こまめにみんなが使ってないようなものを探している。
+inuit.cssそれ自体は非常に簡素なもので、コアのcssオンリーだとgridレイアウトすら対応してない。ただHTML5の要素の記述もある。特徴としてデフォルトで使っても文字が非常に読みやすいことがあり。大きさ、フォント、マージン、色非常にバランスよく配置、設定されている。また、イメージをマージンつけて左側に回り込ませて配置するといったちょっとしたユーティリティな使い方ができる。img要素にclass=&#34;left&#34;を付ければOK。
+ &amp;lt;p&amp;gt; &amp;lt;img src=&#34;http://yusukebe.com/images/childfood.jpg&#34; class=&#34;left&#34; /&amp;gt; テキスト..... &amp;lt;/p&amp;gt;  gridレイアウトに対応してないと言っても、ダウンロードしたファイルに同封されている「inuit.grid.css」というものを読み込みさえすればclass属性に指定するだけでレイアウト可能だ。12個のgridで構成されているので、以下のようなマークアップをする。
+ &amp;lt;div class=&#34;grids&#34;&amp;gt; &amp;lt;div class=&#34;grid-4&#34;&amp;gt; &amp;lt;h3&amp;gt;サイドバー&amp;lt;/h3&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div class=&#34;grid-8 end&#34;&amp;gt; &amp;lt;h2&amp;gt;コンテンツ&amp;lt;/h2&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt;  「keyword.inuit.css」というものも同封されていて、ulでマークアップしたコンテンツがカンマ区切りの一行になる。使い道があんまり思い当たらないが一応紹介。
+ &amp;lt;ul class=&#34;keywords&#34;&amp;gt; &amp;lt;li&amp;gt;りんご&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;バナナ&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;梨&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;ぶどう&amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt;  似たようにulを水平レイアウトにするなら、「nav」クラスを付けてみればナビゲーションができる。
+ &amp;lt;ul class=&#34;nav&#34; style=&#34;margin-left:0;&#34;&amp;gt; &amp;lt;li&amp;gt;&amp;lt;a href=&#34;https://yusukebe.com/&#34;&amp;gt;ホーム&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;&amp;lt;a href=&#34;https://yusukebe.com/&#34;&amp;gt;アバウト&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;&amp;lt;a href=&#34;https://yusukebe.com/&#34;&amp;gt;コンタクト&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt;  全部を合わせるとこのようなスクリーンショットになる。
+
+と、まぁ、お分かりの通り、inuit.cssはコアは非常にシンプルでかつHTML5に対応し、追加したい機能をplugin、inuit.cssではigloosと呼ばれるもので拡張する形になる。全てを試してないが公式HP上では以下のigloosを取得できる。
+ bredcrumb.inuit.css ie6.inuit.css dropdown.inuit.css 12-col.inuit.css annotate.inuit.css keywords.inuit.css centered-nav.inuit.css  このinuit.css。シンプルさゆえ、名前の通り「クールな」CSS Frameworkだと思います。
+
+ 
+メルマガはじめました。技術的な話題も盛り込みたいと思います。
+ メルマガ「ゆーすけべーラジオ」  </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Flickr からキーワードにマッチした写真を一括ダウンロードする Perl スクリプト「flickr_fetcher.pl」 - ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="Flickr からキーワードにマッチした写真を一括ダウンロードする Perl スクリプト「flickr_fetcher.pl」" />
+<meta property="og:description" content="   昨日の夜、むしょうに「磯山さやか」の画像をたくさん見たくなって、  Flickr からキーワードにマッチした写真を一括でダウンロードする Perl のスクリプトを作ってみた。     flickr_fetcher.pl       使" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yusukebe.com/posts/2009/0103052744/" />
+<meta property="article:published_time" content="2009-01-03T14:27:00+09:00" />
+<meta property="article:modified_time" content="2009-01-03T14:27:00+09:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Flickr からキーワードにマッチした写真を一括ダウンロードする Perl スクリプト「flickr_fetcher.pl」"/>
+<meta name="twitter:description" content="   昨日の夜、むしょうに「磯山さやか」の画像をたくさん見たくなって、  Flickr からキーワードにマッチした写真を一括でダウンロードする Perl のスクリプトを作ってみた。     flickr_fetcher.pl       使"/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
+	
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://yusukebe.com/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper post">
+		<div class="header">
+	<h1 class="site-title"><a href="https://yusukebe.com/">ゆーすけべー日記</a></h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/yusukebe" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/yusukebe" title="Twitter"><i data-feather="twitter"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post-header">
+			<h1 class="title">Flickr からキーワードにマッチした写真を一括ダウンロードする Perl スクリプト「flickr_fetcher.pl」</h1>
+			<div class="meta">Posted at &mdash; Jan 3, 2009</div>
+		</div>
+
+		<div class="markdown">
+			
+
+<p>
+  昨日の夜、むしょうに「磯山さやか」の画像をたくさん見たくなって、
+  Flickr からキーワードにマッチした写真を一括でダウンロードする Perl のスクリプトを作ってみた。
+</p>
+<ul>
+  <li>
+<a href="http://svn.coderepos.org/share/lang/perl/misc/flickr_fetcher.pl">flickr_fetcher.pl</a>
+  </li>
+</ul>
+<p>
+  使い方はこんな感じ。
+</p>
+<pre> $ ./flickr_fetcher.pl --keyword 磯山さやか --dir sayaka --api_key yourflickrapikey
+ </pre>
+<p>
+すると、sayaka というディレクトリが無かったら自動的に作ってくれて、
+Flickr 内でマッチした 総写真枚数 が表示されます。
+</p>
+<pre> $ ./flickr_fetcher.pl --keyword 磯山さやか --dir sayaka --api_key yourflickrapikey
+search keyword : 磯山さやか
+total count : 760
+ </pre>
+<p>
+760枚もあるんですね。そして、勝手にダウンロード開始。
+</p>
+<pre> try to fetch : 200 OK : http://farm4.static.flickr.com/3285/3112920048_531a88761b_b.jpg
+try to fetch : 200 OK : http://farm4.static.flickr.com/3213/3084174182_463f9bd410_b.jpg
+try to fetch : 200 OK : http://farm4.static.flickr.com/3187/3067816386_f242e15580_o.jpg
+try to fetch : 200 OK : http://farm4.static.flickr.com/3280/3042192731_3ca24c0a5b_o.jpg
+try to fetch : 200 OK : http://farm4.static.flickr.com/3009/3042961088_cc993ba07d_b.jpg
+ </pre>
+<p>
+Flickr の写真っていろいろサイズがあるけど、一番大きなサイズのものをダウンロードしています。
+しばらく待つとダウンロードが終わって、sayaka ディレクトリには760枚の画像が。
+これはいい。今いろんなグラビアアイドルの写真を取って来まくっています。
+ちなみに、コマンドの引数に Flickr の api_key を渡さなくてはいけませんが、
+環境変数に「FLICKR_API_KEY」が設定されていれば指定しなくて OK です。
+</p>
+<p>
+  <img alt="磯山さやか" class="at-xid-6a0133f4781589970b014e8bd74e48970d" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b014e8bd74e48970d-pi">
+</p>
+<p>
+もちろんエロっちいーこと以外にも使えます。
+ダウンロードする写真のライセンスを指定できるので、例えば、CC の by アトリビュートの写真が欲しかったら以下のように license パラメータに 4 をセットします。
+</p>
+<pre> $ ./flickr_fetcher.pl --keyword sky --dir sky --license 4 --api_key yourflickrapikey
+ </pre>
+<p>
+ある程度自由に使いたい写真を見つけたい時に便利かもね。
+</p>
+<p>
+実装に関して、
+クラス作るのに Moose 、Flickr API を叩くところで WebService::Simple を利用しています。
+  WebService::Simple は <a href="http://svn.coderepos.org/share/lang/perl/WebService-Simple/trunk/">coderepos の最新版</a>もしくは、先ほどアップしたCPANの 0.13 というヴァージョンのものを使います（<a href="http://search.cpan.org/dist/WebService-Simple/">ここ</a>に登場予定）。
+</p>
+<p>
+  この flickr_fetcher.pl、CodeRepos にアップして<a href="http://svn.coderepos.org/share/lang/perl/misc/flickr_fetcher.pl">ある</a>けど
+  とりあえず現状のスクリプトを以下、全コード張りつけ。
+  Flickr の写真で一番大きいやつの URL を取得するのに、
+  一度それぞれの写真に対して「flickr.photos.search」というメソッドを呼んでいるのがポイントかな。
+  おかしなところあったらツッコミください。
+</p>
+
+<pre class="brush: perl"> #!/usr/bin/perl
+
+package FlickrFetcher;
+
+use Moose;
+use Moose::Util::TypeConstraints;
+use Params::Coerce ();
+
+use Digest::MD5 qw(md5_hex);
+use Encode;
+use LWP::UserAgent;
+use Path::Class;
+use POSIX qw(ceil);
+use WebService::Simple;
+use WebService::Simple::Parser::XML::Simple;
+use XML::Simple;
+use Perl6::Say;
+
+our $VERSION = '0.01';
+
+with 'MooseX::Getopt';
+
+subtype 'Dir' =&gt; as 'Object' =&gt; where { $_-&gt;isa('Path::Class::Dir') };
+coerce 'Dir'  =&gt; from 'Str'  =&gt; via   { Path::Class::Dir-&gt;new($_) };
+
+MooseX::Getopt::OptionTypeMap-&gt;add_option_type_to_map( 'Dir' =&gt; '=s' );
+
+has 'keyword' =&gt; ( is =&gt; 'rw', isa =&gt; 'Str', required =&gt; 1 );
+has 'dir' =&gt; ( is =&gt; 'rw', isa =&gt; 'Dir', required =&gt; 1, coerce =&gt; 1 );
+has 'api_key'  =&gt; ( is =&gt; 'rw', isa =&gt; 'Str' );
+has 'license'  =&gt; ( is =&gt; 'rw', isa =&gt; 'Int' );
+has '_perpage' =&gt; ( is =&gt; 'ro', isa =&gt; 'Int', default =&gt; 500 );
+has '_flickr'  =&gt; ( is =&gt; 'rw', isa =&gt; 'WebService::Simple' );
+has '_ua' =&gt; (
+    is      =&gt; 'ro',
+    isa     =&gt; 'LWP::UserAgent',
+    default =&gt; sub { LWP::UserAgent-&gt;new( keep_alive =&gt; 1 ) }
+);
+
+sub BUILD {
+    my ( $self, $args ) = @_;
+
+    unless ( $self-&gt;api_key ) {
+        if ( my $api_key = $ENV{FLICKR_API_KEY} ) {
+            $self-&gt;api_key($api_key);
+        }
+        else {
+            die "api_key is required\n";
+        }
+    }
+
+    my $xs = XML::Simple-&gt;new( KeepRoot =&gt; 1, keyattr =&gt; [] );
+    my $parser = WebService::Simple::Parser::XML::Simple-&gt;new( xs =&gt; $xs );
+    my $flickr = WebService::Simple-&gt;new(
+        base_url        =&gt; "http://api.flickr.com/services/rest/",
+        param           =&gt; { api_key =&gt; $self-&gt;api_key },
+        response_parser =&gt; $parser,
+    );
+    $self-&gt;_flickr($flickr);
+}
+
+__PACKAGE__-&gt;meta-&gt;make_immutable;
+no Moose;
+
+sub run {
+    my $self = shift;
+    mkdir $self-&gt;dir-&gt;relative if !-d $self-&gt;dir-&gt;is_absolute;
+    say "search keyword : " . $self-&gt;keyword;
+    my $photo_total = $self-&gt;photo_total( $self-&gt;keyword );
+    say "total count : " . $photo_total;
+    my $pages = ceil( $photo_total / $self-&gt;_perpage );
+    for my $current_page ( 1 .. $pages ) {
+        say "search page : $current_page";
+        $self-&gt;search( $self-&gt;keyword, $current_page, $self-&gt;_perpage );
+    }
+}
+
+sub search {
+    my ( $self, $keyword, $page , $perpage) = @_;
+    my $response = $self-&gt;_flickr-&gt;get(
+        {
+            method   =&gt; "flickr.photos.search",
+            text     =&gt; $keyword,
+            per_page =&gt; $perpage,
+            sort     =&gt; 'date-posted-desc',
+            extras   =&gt; 'date_upload',
+        page  =&gt; $page,
+            license =&gt; $self-&gt;license || "",
+        }
+    );
+    my $xml = $response-&gt;parse_response;
+    $self-&gt;fetch($xml-&gt;{rsp}-&gt;{photos}-&gt;{photo});
+}
+
+sub fetch {
+    my ( $self, $photo_ref ) = @_;
+    for my $photo ( @$photo_ref ){
+        my $url  = $self-&gt;photo_url( $photo-&gt;{id} );
+        my $file = $self-&gt;dir-&gt;file( md5_hex($url) . ".jpg" );
+        my $res  = $self-&gt;_ua-&gt;mirror( $url, $file );
+        say "try to fetch : " . $res-&gt;status_line . " : $url";
+    }
+}
+
+sub photo_url {
+    my ( $self, $photo_id ) = @_;
+    my $response = $self-&gt;_flickr-&gt;get(
+        {
+            method   =&gt; "flickr.photos.getSizes",
+            photo_id =&gt; $photo_id
+        }
+    );
+    my $xml         = $response-&gt;parse_response;
+    my $largest_ref = pop @{ $xml-&gt;{rsp}-&gt;{sizes}-&gt;{size} };
+    return $largest_ref-&gt;{source};
+}
+
+sub photo_total {
+    my ( $self, $keyword ) = @_;
+    my $response = $self-&gt;_flickr-&gt;get(
+        {
+            method   =&gt; "flickr.photos.search",
+            text     =&gt; $keyword,
+            per_page =&gt; 1,
+            license =&gt; $self-&gt;license || "",
+        }
+    );
+    my $xml = $response-&gt;parse_response;
+    return $xml-&gt;{rsp}-&gt;{photos}-&gt;{total};
+}
+
+package main;
+
+my $fetcher = FlickrFetcher-&gt;new_with_options();
+$fetcher-&gt;run();
+
+__END__
+
+=head1 NAME
+
+flickr_fetcher.pl - Fetch Flickr photos by keyword
+
+=head1 SYNOPSIS
+
+./flickr_fetcher.pl --keyword hoge --dir hoge --api_key yourflickrapikey
+
+=head1 AUTHOR
+
+Yusuke Wada E&lt;lt&gt;yusuke (at) kamawada.comE&lt;gt&gt;
+
+=head1 LICENSE
+
+This library is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself.
+
+=cut
+
+ </pre>
+
+<p>
+  Enjoy!
+</p>
+
+<h4>参考文献</h4>
+
+
+<p></p>
+<div style="float:left"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4873110963/kamawada-22/"><img alt="プログラミングPerl〈VOLUME1〉" class="at-xid-6a0133f4781589970b014e8bd74e54970d" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b014e8bd74e54970d-pi" style="border:none;"></a></div>
+<div style="float:left;margin-left:15px;">
+<div style="font-size:12pt"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4873110963/kamawada-22/">プログラミングPerl〈VOLUME1〉</a></div>
+<div style="font-size:7pt;font-family:verdana;">posted with <a href="http://yusukebe.com/b/amazon/search/">yusukebe.com::AmazonSearch</a> on 2009.1.3</div>
+<div style="font-size:10pt;">
+<ul style="list-style-type:none;padding:0;">
+<li>ラリー ウォール ジョン オーワント トム クリスチャンセン  </li>
+<li>単行本 / オライリー・ジャパン </li>
+<li>Amazon 売り上げランキング: 98834</li>
+</ul>
+<ul style="list-style-type:none;padding:0;"><li>Amazon おすすめ度の平均: <img alt="5.0" class="at-xid-6a0133f4781589970b015435b6d28e970c" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015435b6d28e970c-pi" style="margin:0;"><ul style="list-style-type:none;padding-left:0;">
+<li>
+<img alt="5" class="at-xid-6a0133f4781589970b015435b6d28e970c" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015435b6d28e970c-pi" style="margin:0;"> いまだに１０行以上のプログラムが書けません。</li>
+<li>
+<img alt="4" class="at-xid-6a0133f4781589970b014e8bd727e1970d" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b014e8bd727e1970d-pi" style="margin:0;"> 値段は高いけど・・・</li>
+<li>
+<img alt="5" class="at-xid-6a0133f4781589970b015435b6d28e970c" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015435b6d28e970c-pi" style="margin:0;"> CGIを自在にこなす第一歩の書</li>
+<li>
+<img alt="5" class="at-xid-6a0133f4781589970b015435b6d28e970c" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015435b6d28e970c-pi" style="margin:0;"> Perl文法の仕組みを詳細に知りたい人の本</li>
+<li>
+<img alt="5" class="at-xid-6a0133f4781589970b015435b6d28e970c" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015435b6d28e970c-pi" style="margin:0;"> ラクダが踊る</li>
+</ul>
+</li></ul>
+<a href="http://www.amazon.co.jp/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0Perl%E3%80%88VOLUME1%E3%80%89-%E3%83%A9%E3%83%AA%E3%83%BC-%E3%82%A6%E3%82%A9%E3%83%BC%E3%83%AB/dp/4873110963%3FSubscriptionId%3D13C5PCPS36EMN8C22682%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D4873110963">Amazon.co.jpで詳細を見る</a>
+</div>
+</div>
+<div style="clear:left;"></div>
+
+<p></p>
+<div style="float:left"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4847041364/kamawada-22/"><img alt="磯山さやか写真集『郡上に行ってきました。』(DVD付)" class="at-xid-6a0133f4781589970b014e8bd74e6f970d" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b014e8bd74e6f970d-pi" style="border:none;"></a></div>
+<div style="float:left;margin-left:15px;">
+<div style="font-size:12pt"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4847041364/kamawada-22/">磯山さやか写真集『郡上に行ってきました。』(DVD付)</a></div>
+<div style="font-size:7pt;font-family:verdana;">posted with <a href="http://yusukebe.com/b/amazon/search/">yusukebe.com::AmazonSearch</a> on 2009.1.3</div>
+<div style="font-size:10pt;">
+<ul style="list-style-type:none;padding:0;">
+<li>飯塚 昌太  </li>
+<li>大型本 / ワニブックス </li>
+<li>Amazon 売り上げランキング: 2500</li>
+</ul>
+<ul style="list-style-type:none;padding:0;"><li>Amazon おすすめ度の平均: <img alt="4.0" class="at-xid-6a0133f4781589970b014e8bd727e1970d" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b014e8bd727e1970d-pi" style="margin:0;"><ul style="list-style-type:none;padding-left:0;">
+<li>
+<img alt="5" class="at-xid-6a0133f4781589970b015435b6d28e970c" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015435b6d28e970c-pi" style="margin:0;"> 好きだけどなぁ…。</li>
+<li>
+<img alt="3" class="at-xid-6a0133f4781589970b015391e3783b970b" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015391e3783b970b-pi" style="margin:0;"> 表紙だけを見よう</li>
+<li>
+<img alt="2" class="at-xid-6a0133f4781589970b015391e38ae3970b" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015391e38ae3970b-pi" style="margin:0;"> う?ん、どうでしょ</li>
+<li>
+<img alt="5" class="at-xid-6a0133f4781589970b015435b6d28e970c" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015435b6d28e970c-pi" style="margin:0;"> お帰り！</li>
+<li>
+<img alt="4" class="at-xid-6a0133f4781589970b014e8bd727e1970d" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b014e8bd727e1970d-pi" style="margin:0;"> 可愛い！！　けど・・・</li>
+</ul>
+</li></ul>
+<a href="http://www.amazon.co.jp/%E7%A3%AF%E5%B1%B1%E3%81%95%E3%82%84%E3%81%8B%E5%86%99%E7%9C%9F%E9%9B%86%E3%80%8E%E9%83%A1%E4%B8%8A%E3%81%AB%E8%A1%8C%E3%81%A3%E3%81%A6%E3%81%8D%E3%81%BE%E3%81%97%E3%81%9F%E3%80%82%E3%80%8F-DVD%E4%BB%98-%E9%A3%AF%E5%A1%9A-%E6%98%8C%E5%A4%AA/dp/4847041364%3FSubscriptionId%3D13C5PCPS36EMN8C22682%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D4847041364">Amazon.co.jpで詳細を見る</a>
+</div>
+</div>
+<div style="clear:left;"></div>
+
+
+		</div>
+
+		<div class="post-tags">
+			
+				
+					<nav class="nav tags">
+							<ul class="flat">
+								
+								<li><a href="/tags/perl">Perl</a></li>
+								
+							</ul>
+					</nav>
+				
+			
+		</div>
+        <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v5.0&appId=233306523373884&autoLogAppEvents=1"></script>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+
+<div class="social-button-area">
+  <ul class="social-button">
+    <li>
+      <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
+    </li>
+    <li>
+      <span class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2009%2f0103052744%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
+    </li>
+    <li>
+      <a href="https://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label-counter" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>
+    </li>
+  </ul>
+</div>
+
+<ul class="pagination">
+  
+  <li class="page-item page-prev">
+    <a href="https://yusukebe.com/posts/2009/0101105821/" class="page-link" aria-label="Previous"><span aria-hidden="true">← 今聴いている曲の歌詞が見れる「LastLyrics」を作ってみた</span></a>
+  </li>
+  
+  
+  <li class="page-item page-next">
+    <a href="https://yusukebe.com/posts/2009/0109161910/" class="page-link" aria-label="Next"><span aria-hidden="true">年末ネタ旅行2008 かますけのネタハイキング〜廃村を目指して〜 →</span></a>
+  </li>
+  
+</ul>
+
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright yusukebe.com |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-123-45', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

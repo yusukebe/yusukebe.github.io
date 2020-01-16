@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hatena on ゆーすけべー日記</title>
+    <link>https://yusukebe.com/tags/hatena/</link>
+    <description>Recent content in Hatena on ゆーすけべー日記</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <copyright>© Copyright yusukebe.com</copyright>
+    <lastBuildDate>Sun, 12 Feb 2012 19:30:00 +0900</lastBuildDate>
+    
+	<atom:link href="https://yusukebe.com/tags/hatena/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>ホッテントリを書いた時「自己満度」をブーストさせる方法</title>
+      <link>https://yusukebe.com/posts/2012/0212103055/</link>
+      <pubDate>Sun, 12 Feb 2012 19:30:00 +0900</pubDate>
+      
+      <guid>https://yusukebe.com/posts/2012/0212103055/</guid>
+      <description>数ヶ月前から、アクセス解析サービス Google Analyticsにベータ版として「リアルタイム」機能がつきました。 このリアルタイム。その名の通り今まさに起こっていることが丸わかりですっごいんです。 なんというか「tail -f access.log」しているような感覚です。
+しかし、あまりにも瞬間的な計測なので、 リアルタイムデータをどう活かせばいいのか結構悩みどころ。 一つ言えるのは、リアルタイム解析を見るタイミングによっては Webクリエータや運用者にとって、最高の自己満ブーストツール になるってことです。 特に何かを「リリースした瞬間」が有効になります。つまりBlog記事やサービスが公開された時です。 さらにはそのリリースしたものが、はてなブックマークでホットエントリー入りなんてした日には... より自己満足に浸れます。では、理由を見て行きましょう。
+1. 今の訪問者を分析できる 実際に今現在サイトを訪問しているユーザーの数、属性、見ているページが分かります。 例えばBlog記事を公開して、自分のTwitterでURLを流したのならば、 フォローしてくれている人のうち数名の人が見てくれるかもしれません。 またはフィードリーダーからの訪問者もあるかもしれません。
+2. Twitterやはてぶでの拡散の具合が分かる 参照元、つまりどのサイトからどのページに人が来ているか？が丸わかりなので、 どこで拡散しているのかが把握できます。 TwitterやFacebook、または、はてなブックマークなどで 先ほど公開したBlog記事が騒がれているかもしれません。
+3. そして... もしあなたが書いたBlog記事やサービスがヒットしたならば という仮定に基づく話ですが、おそらく拡散具合はより広くなります。 はてなブックマークが「3 users」を超え、本体のサイトからリンクが張られるかもしれません。 すると先ほどから見ているリアルタイム分析の訪問者数がぐっとあがります。 一桁だったのが二桁に。二桁だったのが三桁に。
+
+自分の頭の中には、右肩上がりの曲線が描かれます。 「さっきのBlog記事にすっげー人が押し寄せてるぜ」という他人にはあまり 見せられないどや顔風味の自己満足な気持ちで気持ちが一杯になってきます。
+はてなブックマークの「xxx users」という数字を見たり グラフを見れば味わえる感覚かもしれませんが、このGoogle Analytics リアルタイムはそれをブーストしてくれるのです。
+まとめ はてなブックマークは自分のBlogがホッテントリ入りして自己満足を味わうための 計測ツールとなりうるが、Google Analytics リアルタイムを組み合わせることにより 瞬間的なトラフィックグラフがさらに頭に描きやすくなり、大きな自己満足を味わえるのです。 当然のことながら、ヒットする記事やサービスを生み出さなくてはいけませんがね！</description>
+    </item>
+    
+  </channel>
+</rss>

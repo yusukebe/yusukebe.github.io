@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>一瞬でクールなスライドがつくれる「App::revealup」をリリースしました - ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="一瞬でクールなスライドがつくれる「App::revealup」をリリースしました" />
+<meta property="og:description" content=" タイトルは釣り気味ですが、実際に英語で紹介してくれているBlog記事「Create professional slideshows in seconds with App::revealup」を参考にタイトル付けました。最近CPANライブ" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yusukebe.com/posts/2014/0616020621/" />
+<meta property="article:published_time" content="2014-06-16T02:06:00+09:00" />
+<meta property="article:modified_time" content="2014-06-16T02:06:00+09:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="一瞬でクールなスライドがつくれる「App::revealup」をリリースしました"/>
+<meta name="twitter:description" content=" タイトルは釣り気味ですが、実際に英語で紹介してくれているBlog記事「Create professional slideshows in seconds with App::revealup」を参考にタイトル付けました。最近CPANライブ"/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
+	
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://yusukebe.com/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper post">
+		<div class="header">
+	<h1 class="site-title"><a href="https://yusukebe.com/">ゆーすけべー日記</a></h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/yusukebe" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/yusukebe" title="Twitter"><i data-feather="twitter"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post-header">
+			<h1 class="title">一瞬でクールなスライドがつくれる「App::revealup」をリリースしました</h1>
+			<div class="meta">Posted at &mdash; Jun 16, 2014</div>
+		</div>
+
+		<div class="markdown">
+			
+
+<p>タイトルは釣り気味ですが、実際に英語で紹介してくれているBlog記事「<a href="http://perltricks.com/article/94/2014/6/6/Create-professional-slideshows-in-seconds-with-App-revealup">Create professional slideshows in seconds with App::revealup</a>」を参考にタイトル付けました。最近CPANライブラリとしてつくって、Yokohama.pm#11とGotanda.pm#01で話した便利ツール「 <strong>App::revealup</strong> 」についてです。以下はそのBlog記事のスクショ！</p>
+
+
+
+
+<p><img src="http://33.media.tumblr.com/e2a6879c87f375bc9d04aace5f10eac0/tumblr_inline_n78mnms2tC1qb2ehr.png" alt="App::revealup"></p>
+
+
+
+
+<p>勉強会などで用いるスライドなんだけど、ちょっとした資料の場合、Keynoteとかパワポを使いたくないってケースが結構あります。ただそれだといくつか問題があって</p>
+
+
+
+
+<ul>
+<li>専用のソフトを起動するのがだるい</li>
+<li>結果的にバイナリファイルだから <code>diff</code> がとれない</li>
+<li>なのでレポジトリに入れることも含め管理しにくい</li>
+<li>手に馴染むエディタを使いたい</li>
+<li>簡単なプレゼンだと「タイトルと箇条書きと画像くらいでしょ？」</li>
+</ul>
+
+
+<p>と思うところがありました。そこで個人的には記法にも慣れている <strong>Markdown</strong> 形式で内容を書いて、スライドショーが出来たらいいな〜と思い、探しだしたのが <strong>reveal.js</strong> です。</p>
+
+
+
+
+<ul>
+<li><a href="http://lab.hakim.se/reveal-js/">reveal.js - The HTML Presentation Framework</a></li>
+</ul>
+
+
+<p>このreveal.jsはJS側でMarkdownのパースを行うのですが、それが賢くて、かつ、見た目がクール。表示に関する様々なコントロールも出来ます。外部のMarkdownファイルを読みこむことも可能なのがポイントですね。</p>
+
+
+
+
+<p><img src="http://38.media.tumblr.com/59db0f1820c7f7c255585a0130320ed7/tumblr_inline_n78n3oXbrY1qb2ehr.png" alt="reveal.js"></p>
+
+
+
+
+<p>通常、利用するには<a href="https://github.com/hakimel/reveal.js/">GitHubのレポジトリ</a>ページから <code>clone</code> するなりダウンロードするなりでJSやCSSを含むライブラリを取ってきてHTMLの雛形をカスタマイズします。</p>
+
+
+
+
+<p>しかしちょいとこれを利用するには、上記の通り、ライブラリファイル群を取ってこなくてはいけないし、Markdownファイルを参照させるにはローカルホスト上などにHTTPサーバを立てなくてはいけなく面倒。そこで今回つくったのが <strong>App::revealup</strong> です。</p>
+
+
+
+
+<p>App::revealupはreveal.jsのライブラリを内包していて、HTMLやJS/CSSなどの適応をヨシナにやってくれるHTTPサーバを立てる機能があります。例えば <code>slide.md</code> というスライド向けのMarkdownファイルがあったとして付属する <code>revealup</code> コマンドを使えばreveal.jsが適応されたスライドショーがlocalhostで立ちます。</p>
+
+
+
+
+<pre> $ revealup serve slide.md
+ </pre>
+
+
+
+
+<p>お気に入りのブラウザで <code>http://localhost:5000</code> にアクセスすればスライドショーが見れるでしょう。</p>
+
+
+
+
+<p>ちなみに以下がスライド用のMarkdownのサンプルです。</p>
+
+
+
+
+<pre> # 大見出し
+
+'---' と書くことで横方向へのページ遷移が可能です
+
+---
+
+## 中見出し
+
+'___' と書くことで縦方向へのページ遷移が可能です
+
+___
+
+### 小見出し
+
+以下がリスト表現
+
+* アイテム 1
+* アイテム 2
+* アイテム 3
+ </pre>
+
+
+
+
+<p>また、いくつかオプションがあって「5001番ポート」で立ち上げて、reveal.jsにデフォルトで用意されているテーマ「night」を使い、切り替えのエフェクトとして「zoom」を使う場合はこんな具合。</p>
+
+
+
+
+<pre> $ revealup serve -p 5001 --theme night --transition zoom slide.md
+ </pre>
+
+
+
+
+<p><img src="http://31.media.tumblr.com/368bfa8d16e3f0b7c03e43a8c7a43a9f/tumblr_inline_n78npkpy061qb2ehr.png" alt="revealup"></p>
+
+
+
+
+<p>さらにオリジナルのCSSテーマを適応することも出来ます。上記のテーマ「night」をベースに <code>original.css</code> を生成しそれを参照させるためには</p>
+
+
+
+
+<pre> $ revealup them generate --base night --output original.css
+$ emacs original.css
+$ revealup serve --theme original.css slide.md
+ </pre>
+
+
+
+
+<p>というような工程を経ます。</p>
+
+
+
+
+<hr>
+<p><br></p>
+
+
+
+
+<p>このApp::revealup。 <em>イートマイドックフード</em> しているのですが無駄なセットアップ無しにMarkdown書くだけでスライド準備出来ちゃうし、見た目カスタマイズしたければ雛形からCSS自分で書けばいいんで相当便利っすよ！よろしければ使ってみて下さい。 <code>patch</code> も <code>issue</code> もウェルカムです。</p>
+
+
+
+
+<ul>
+<li><a href="http://search.cpan.org/dist/App-revealup/">http://search.cpan.org/dist/App-revealup/</a></li>
+<li><a href="https://metacpan.org/pod/App::revealup">https://metacpan.org/pod/App::revealup</a></li>
+<li><a href="https://github.com/yusukebe/App-revealup">https://github.com/yusukebe/App-revealup</a></li>
+</ul>
+
+
+
+		</div>
+
+		<div class="post-tags">
+			
+				
+			
+		</div>
+        <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v5.0&appId=233306523373884&autoLogAppEvents=1"></script>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+
+<div class="social-button-area">
+  <ul class="social-button">
+    <li>
+      <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
+    </li>
+    <li>
+      <span class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2014%2f0616020621%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
+    </li>
+    <li>
+      <a href="https://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label-counter" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>
+    </li>
+  </ul>
+</div>
+
+<ul class="pagination">
+  
+  <li class="page-item page-prev">
+    <a href="https://yusukebe.com/posts/2014/0602090512/" class="page-link" aria-label="Previous"><span aria-hidden="true">← とあるエロサイトの改修その2</span></a>
+  </li>
+  
+  
+  <li class="page-item page-next">
+    <a href="https://yusukebe.com/posts/2014/0623233700/" class="page-link" aria-label="Next"><span aria-hidden="true">僕が2年連続でベストトーク賞をとれた訳 #yapcasia →</span></a>
+  </li>
+  
+</ul>
+
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright yusukebe.com |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-123-45', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

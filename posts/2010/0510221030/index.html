@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>アイデアのMapReduce - Big Concept vol.04 - ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="アイデアのMapReduce - Big Concept vol.04" />
+<meta property="og:description" content="膨大なデータを分散並列処理するためのソフトウェアの概念にMapReduceがある。コンピュータ用語を何か他のことの象徴に使うのは勇気がいるが、なんとなく今やっていることがMapReduceに近い気がしているので浅はかな知識でも引用してみるこ" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yusukebe.com/posts/2010/0510221030/" />
+<meta property="article:published_time" content="2010-05-11T07:10:00+09:00" />
+<meta property="article:modified_time" content="2010-05-11T07:10:00+09:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="アイデアのMapReduce - Big Concept vol.04"/>
+<meta name="twitter:description" content="膨大なデータを分散並列処理するためのソフトウェアの概念にMapReduceがある。コンピュータ用語を何か他のことの象徴に使うのは勇気がいるが、なんとなく今やっていることがMapReduceに近い気がしているので浅はかな知識でも引用してみるこ"/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
+	
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://yusukebe.com/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper post">
+		<div class="header">
+	<h1 class="site-title"><a href="https://yusukebe.com/">ゆーすけべー日記</a></h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/yusukebe" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/yusukebe" title="Twitter"><i data-feather="twitter"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post-header">
+			<h1 class="title">アイデアのMapReduce - Big Concept vol.04</h1>
+			<div class="meta">Posted at &mdash; May 11, 2010</div>
+		</div>
+
+		<div class="markdown">
+			
+<p>膨大なデータを分散並列処理するためのソフトウェアの概念にMapReduceがある。
+コンピュータ用語を何か他のことの象徴に使うのは勇気がいるが、
+なんとなく今やっていることがMapReduceに近い気がしているので浅はかな知識でも引用してみることにする。
+ちなみにMapReduceの実装部分について自分は雑誌の記事を真似てサンプルを動かした程度だ。
+
+Wikipedia([MapReduce - Wikipedia](<a href="http://ja.wikipedia.org/wiki/MapReduce">http://ja.wikipedia.org/wiki/MapReduce</a> "MapReduce - Wikipedia"))から引用する。
+
+&gt; MapReduce は、ある種の問題について、多数のコンピューター（ノード）の集合であるコンピュータ・クラスターを用いて並列処理させるためのフレームワークのひとつである。
+
+&gt; Mapステップ - マスターノードは、入力データを受け取り、それをより細かい単位に分割し、複数のワーカーノードに配置する。受け取ったワーカーノードが、更に細かい単位に分割し、他の複数のワーカーノードに配置するという、より深い階層構造の分割を行うこともある。そして、各ワーカーノードは、その細かい単位のデータを処理し、処理結果を、マスターノードへと返す。
+
+&gt; Reduceステップ - 続いて、マスターノードが、Mapステップでの処理結果を集約し、目的としていた処理に対する答え（結果）を得る。
+
+例えばMap処理について他のMap処理とは完全に独立しているため、
+並列分散させることが可能で、今の言葉で言えばスケールさせることができる点が面白い。
+
+これを飛躍させてみる。
+
+僕らが今やっている作業はMap処理である。
+脳を分散させていろいろな人と会い「一緒にこれやりたいよね」とある種の夢を語る処理を並列に行っている。
+もちろん自分一人だけではなく、一緒にやるパートナーにも同じ作業をしてもらっているはずなので、
+人員的要員からもスケールしている。
+
+ソフトウェアの処理は基本的に「問題解決」で我々が目指しているものは「仮説検証」なので一概に比較はできないが、
+Map処理という概念をなんとなく頭に入れると、可能性を考える処理を平行してたくさん走らせている感覚がする。
+
+ちなみに「目的としていた処理に対する答え(結果)を得る」ためのReduce処理は
+7月に入ってからくらいのタイミングで行われる。
+
+わざわざMapReduceを取り出して何がいいたいかと言うと、Map処理が沢山のワーカーで処理することに対して、
+僕らは今、沢山の可能性について話し合うという処理をしているんだということだ。
+可能性は多ければ多いほどReduceした時にいいものが産まれる可能性が大きいかもしれない。
+もちろんReduce処理での負荷が高くなることは承知であるが。
+
+とにかくまずは、多くの可能性を考慮していきたい。</p>
+
+		</div>
+
+		<div class="post-tags">
+			
+				
+			
+		</div>
+        <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v5.0&appId=233306523373884&autoLogAppEvents=1"></script>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+
+<div class="social-button-area">
+  <ul class="social-button">
+    <li>
+      <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
+    </li>
+    <li>
+      <span class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2010%2f0510221030%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
+    </li>
+    <li>
+      <a href="https://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label-counter" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>
+    </li>
+  </ul>
+</div>
+
+<ul class="pagination">
+  
+  <li class="page-item page-prev">
+    <a href="https://yusukebe.com/posts/2010/0509224552/" class="page-link" aria-label="Previous"><span aria-hidden="true">← 目的のために本を読む - Big Concept vol.03</span></a>
+  </li>
+  
+  
+  <li class="page-item page-next">
+    <a href="https://yusukebe.com/posts/2010/0512051945/" class="page-link" aria-label="Next"><span aria-hidden="true">自ら略歴をまとめる - Big Concept vol.05 →</span></a>
+  </li>
+  
+</ul>
+
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright yusukebe.com |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-123-45', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>iOS on ゆーすけべー日記</title>
+    <link>https://yusukebe.com/tags/ios/</link>
+    <description>Recent content in iOS on ゆーすけべー日記</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <copyright>© Copyright yusukebe.com</copyright>
+    <lastBuildDate>Sat, 10 Mar 2012 19:34:00 +0900</lastBuildDate>
+    
+	<atom:link href="https://yusukebe.com/tags/ios/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>iPhoneアプリの販売状況を知るための3つのサイト</title>
+      <link>https://yusukebe.com/posts/2012/0310103401/</link>
+      <pubDate>Sat, 10 Mar 2012 19:34:00 +0900</pubDate>
+      
+      <guid>https://yusukebe.com/posts/2012/0310103401/</guid>
+      <description> iPhoneアプリを公開したらその販売状況が気になるところです。 いつ、どこから、何件ダウンロードされたか？ もし有料アプリだったりアプリ内課金をしている場合、いくら収益が上がっているのか？ 今現在、僕の知る限り以下の3つのサイトでその状況を知ることができます。 ということで（大人の事情で深く突っ込まない感じで）順に紹介していきます。
+iTunes Connect Apple公式のサイトです。そもそも販売前のアプリ登録をここから行うので知らない人はいないでしょう。
+
+「Sales and Trends 」っていう項目でグラフ化されたダウンロード数を見ることができます。 必要最小限ならこれで十分ですね。 僕の経験上だとだいたい日本時間の夜の22時以降くらいから前日のレポートを見ることができるようです。 ちなみにiPhoneアプリもあって、これが優れもの。
+
+レポートを見ることができるだけではなくて、アプリの登録状況、つまり「ただいま審査中」「審査通ってStoreへ並べる準備中」 といったステータスの変更をプッシュ通知してくれます。 入れとくと何かとよいと思います。
+App Annie 僕が一番よく見ていて活用できてるレポートサイトがこの「App Annie」です。
+
+なんか昔はもっと「Annie」ちゃんがアメリカの萌えキャラっぽかったんですが最近デザインが変わりました。 自己責任でiTunes ConnectのユーザーIDとパスワードを登録すると、自動的にデータを取得してレポート化してくれます。 ダウンロード数を金額に変換してグラフ化してくれるのでよりリアルな数字として把握しやすいです。 また、ランキングやアプリごとのレビューもとってきてくれます。 設定すれば、毎日日本時間の深夜にレポートのダイジェストメールを送ってきてくれて、 それが便利っすね。データの更新時間が不定で、サイトを見るのが手間になるので。 とりあえずしばらくはこのApp Annieを見続けることになりそうです。 ちなみにAndroidアプリにも対応しております。
+Distimo Monitor App Storeのマーケティング情報を提供をしているDistimoの「Distimo Monitor」でApp Annie相当のことができます。
+
+こちらはレポートのUIが凝ってるっぽいんだけど、もっさりしているのであまり使ってないです。 収益のレポートという面で円表記に対応しているのが気になる点。 英語気合い入れて読んでないんでちょっと不明瞭な理解ですが、Distimoの「Disitimo Report」ってのが面白そう。
+まとめ 3つのiPhoneアプリ販売レポートを知ることができるサイトを紹介しました。 他にもあったら教えてください＞＜
+宣伝 メルマガ「ゆーすけべーラジオ」ではiPhoneアプリ開発に役立つかもしれない、 究極のモノ作り手法「デザイン思考」について連載中です！よろしければお試し購読を！
+ ゆーすけべーラジオ  </description>
+    </item>
+    
+    <item>
+      <title>iPhoneアプリ「僕のラジオ」をリリースしました</title>
+      <link>https://yusukebe.com/posts/2012/0309014143/</link>
+      <pubDate>Fri, 09 Mar 2012 10:41:00 +0900</pubDate>
+      
+      <guid>https://yusukebe.com/posts/2012/0309014143/</guid>
+      <description> 僕の第2弾iPhoneアプリ「僕のラジオ」の「より安定板」な1.1.0が公開されたのでお知らせします！
+  僕のラジオはiTunes Music Store内の音楽を楽しもう！ってことで作りました。 iTunes Storeでは楽曲ごとに30秒ごとの短いサンプルが用意されているのですが （最近だと90秒もありますが今回は使ってません）、それを快適に聴くことができるプレイヤーです。 サンプル音源をラジオのように流していくので「僕ラジオ」というネーミングにしました。
+＊ なので、決して君のラジオのiPhone版というわけではないのですが、 これから述べるように「新しい音楽に出会う」という意味ではコンセプトの近いアプリになります。
+聴くためのアクションは2通りあります。ひとつ目はランキングから選ぶ方法。 以下の17の項目から選んで1位から300位までの曲を連続で再生していくことができます。
+ 全てのジャンル J-POP R&amp;amp;B/ソウル アニメ エレクトロニック オルタナティブ クラシック サウンドトラック ジャズ ダンス ヒップホップ/ラップ ブルース ポップ レゲエ ロック ワールド 歌謡曲  ふたつ目の聴き方はアーティストごとの人気曲を聴いていく方法です。 最近ではかなりアーティストがiTunes Storeでカバーされているのでなかなか楽しめます。 以下がランキング→視聴の模様のスクリーンショットです。
+ 聴いている曲が気になった時は詳細を表示して、そのままiPhone内のiTunes Storeのアプリを立ち上げ、 曲を購入することも簡単にできます。 僕のラジオを開発しながら利用してみてランキングを垂れ流して聴いていると、 聴いたことないけど「いいな」って思う曲がたくさんあります。 実際「家入レオのサブリナ」買っちゃいましたよ！ 僕のラジオを通じて新しい音楽に出会うってことがある程度かなえられるのかなぁなんて思っています。
+以下が機能を列挙したものです。当然ながらバックグランド再生にも対応しています。
+ 各種ジャンルを1位から300位まで連続再生 曲を指定しての再生も可能 曲の詳細情報表示 詳細表示からiTunes Storeへ飛び直接購入ができます アーティスト検索 ループ再生ON/OFF アーティスト閲覧履歴 バックグランド再生 ロック画面からの操作(STOP/PLAYのみ対応) ロック画面でのアートワーク表示  類似アプリはあるもの、上記以外にもちょっとしたコダワリをちりばめたつもりなので使いやすいと思います。 個人的には曲と曲のクロスフェードなつなぎが気に入っています。
+値段は通常170円で売ろうかなーとざっくり考えているのですが、 3月31日までは85円の最安値で販売しております。よろしければ是非お試しください！ ご感想はレビュー欄もしくは@yusukebeまで！
+ 僕のラジオ  </description>
+    </item>
+    
+    <item>
+      <title>月10万稼ぐにはiPhoneアプリ開発が一番速かった</title>
+      <link>https://yusukebe.com/posts/2012/0302221855/</link>
+      <pubDate>Sat, 03 Mar 2012 07:18:00 +0900</pubDate>
+      
+      <guid>https://yusukebe.com/posts/2012/0302221855/</guid>
+      <description> 実は大学時代の同期であるgamellaが面白いエントリーを書いていました。 題名は「ニート革命再々考とWebだけで月10万円稼げる力」。
+ ニート革命、つまり職がないときにじゃーどうするの？という問題について、こんなことを書いていた。
+...
+最近はもう考え方が結構変わっていて、 とりあえずWebで月10万円稼げる方法を何とか見つける！というのが直近の答えなのかなーと思う。
+...
+ 僕なりの解釈だと、Webだけで10万円を稼げれば、 住む場所によってはレバレッジが効いて場所と時間に束縛されないんで自由な生活できるんじゃね？ってとこです。
+すごい同意です。特に今だったら日本円を稼いで東南アジアに住むなんてプランはありありだと思います。 また10万円という単位も一つの目標としてよい設定値だと思います。
+さて、僕は、諸々の事情があって日本に住んでいますが、 Webだけで10万以上稼ぐことはしています。時間や場所に縛られている感覚もありません。 このWebだけで10万円ってのには様々な手段があります。また「Web」ってのをちょっと拡大解釈すると、 アプリ販売も候補に挙ります。
+ アフィリエイトBlog iPhoneアプリ販売 Webサービスで広告収入 メルマガ etc...  これら全て僕は実践してきた、もしくは実践しているものです。 そしていくつかは収入として10万円超えを達成しています。
+で、僕が書きたかったのはこの中でも 「iPhoneアプリ販売」が一番10万円を達成するのに素早かった という点です。
+このグラフは何も関係ないのですがw、まず販売から収入が入ってくるまで2ヶ月で月10万円超えを達成しました。 弊社の企業秘密的なことも含まれるので詳しいことは書きませんが、これは自分にとってかなり驚異的なスピードです。 また、アプリの開発期間は言語能力の取得も含めても2ヶ月ほど。 これを考慮しても速い。
+アフィリエイトサイトで10万円以上を達成しているものを所持していますが、 結構この10万円というある意味大台へ載せるのに継続的な運用が必要だったりで大変です。
+ま、だからと言ってニート革命の時代はiPhoneアプリを作ろう！というわけではないですが、 一つの事実として記してみたかったということです。iPhoneアプリで収入を得ることに関しては、 以下の本が面白いです。
+ iPhoneアプリで稼ごうposted with amazlet at 12.03.03  丸山弘詩 川畑雄補 脇俊済 毎日コミュニケーションズ 売り上げランキング: 63241
+ Amazon.co.jp で詳細を見る    
+ 
+ちなみに現在は僕にとっての第2弾のiPhoneアプリの配信準備中です。また、 メルマガでは僕のWebで稼ぐワークスタイルを紹介していきたいと思うので興味のある方はお試し購読をば！
+ ゆーすけべーラジオ  </description>
+    </item>
+    
+    <item>
+      <title>iPhone「アプリの設計パターン」についてまとめてみる</title>
+      <link>https://yusukebe.com/posts/2012/0215053118/</link>
+      <pubDate>Wed, 15 Feb 2012 14:31:00 +0900</pubDate>
+      
+      <guid>https://yusukebe.com/posts/2012/0215053118/</guid>
+      <description>iPhoneアプリの良いアイデアが出たので、これから作り始めようというところである。 さて、iPhoneアプリ開発童貞ってわけではないが、今までただ闇雲に作っていた感があるので、 実際にXcodeを起動してコードを書き始める前の設計をどうしていこうかと考えている。 ソフトウェアの作成はじめてではもちろん無いのでだいたい勝手は分かるものの、 iPhone特有の設計思考が必要な気がして、文献を漁っている。 ところが、世に出回っているiPhoneアプリ本にはUIKitをいじくるだけの解説ばかりではないか！ で、つまるところ設計について有益だと思えたのは以下3つの文献だった。
+ 「iOSアプリケーションプログラミングガイド」Appleのサイトからダウンロードできる 「iPhoneアプリ設計の極意 - 思わずタップしたくなるアプリのデザイン」のfladdictさんの章 「iOS開発におけるパターンによるオートマティズム」の第2章  今回は個人的にしっくりきて具体的な設計について書いてある「iOS開発におけるパターンによるオートマティズム」 より「アプリの設計パターン」を僕なりにまとめたいと思う。
+ iOS開発におけるパターンによるオートマティズムposted with amazlet at 12.02.15  木下 誠 ビー・エヌ・エヌ新社 売り上げランキング: 25881
+ Amazon.co.jp で詳細を見る    
+ちなみにこの本で言う「パターン」とはデザインパターンのことを指すのではなくて、 何ども使えるパターンというようなより汎用的な意味合いである。
+ 
+3つのフェーズ まず、設計には3つのフェーズがあるという。それは以下である。
+ 機能設計 ユーザーインターフェース設計 クラス設計  もちろんこれは必ずしも順番に行う必要はなく、行きつ戻りつしながらやるとよい。 僕も現に今その状態である。
+ 
+機能設計 アプリに求める機能を洗い出す。いかに具体的にするかが重要だと作者は説く。 RSSリーダーのケースが例にあるのだけれど、その最も基本的な機能
+「RSSの記事をダウンロードして読む」
+ をおのおのより細かく小分けにして機能を記述していく。「RSSの記事っていったい何のことを指すのか？」 と自問してくといいかもしれない。
+これは個人的な意見だが、いわゆるユースケースってやつじゃないかと。 つまりユーザーから見たシステムの機能。これを図にして列挙していく。 そして個別の機能についてユーザーがそれを使うシナリオ、ユースケース記述を書いていくことで具体化していく。 ユースケース、ユースケース記述により実は気づいていなかったシステムへの要求などが出てくると思う。 大した情報が漏れるわけではないので、今作っているアプリのユースケース図を掲載しておきます。
+  
+ユーザーインターフェース設計 これは結構一般化してきていると思うけど、ペーパープロトタイプと呼ばれる、スケッチなどのを用いて行う。 どこかで見たんだけど、海外のとある優秀なUIデザイナーが、 iPhoneサイズの木枠を作ってそれをペンでなぞることでiPhoneの画面を紙の上でささっと作ってしまう。 こういった工夫はいい。
+本書では、UIについて「真似ること」が大事と述べている。 確かに僕も様々アプリを使いながら、UIの参考にしている部分は多い。
+UIKitと呼ばれるiPhone独自のインターフェースに対する理解は必須だろう。 「ナビゲーションバーやタブってものがあって、それを使うのが一般的だし、ユーザーも慣れているよ」 ということを認識しておくとよい。 また、個々の画面のペーパープロトタイピングも必要だが、本書では画面ごとの遷移も紹介してあった。
+以下は、iPhone全体ではないが、タブバーの配置についてさきほどスケッチしたものだ。
+  
+クラス設計 基本的にはMVCモデルに従って書くのがiPhoneアプリ開発の流儀である。本書でもその件は明言している。 ただ、それぞれの依存関係をしっかり把握しないと駄目だとも言っている。以下の箇条書きは引用である。
+ モデルは、他のレイヤから独立している。 ビューはモデルに依存しており、コントローラから独立している。 コントローラは、モデルとビューに依存している。  それぞれのクラス設計だが、モデルから行うのがよいとのこと。また、 コントローラはもちろんだが画面一つにつき一クラスを対応づける。最後に、 ビューのクラスっていうと何を設計するか分かりにくかったのだけれど、UITableCellのサブクラスを本書では取り上げていた。
+
+まとめ 設計が過剰になってもいけないと思う主義ではあるが、 少なからず必要なものである。今回は「iOS開発におけるパターンによるオートマティズム」を取り上げた。 面白いiPhoneアプリ設計文献がもっと世に出るといいのになぁ。
+ 
+宣伝 メルマガやっています。開発のために必要な発想方法について今連載しているので、よかったら、 ご覧ください。</description>
+    </item>
+    
+    <item>
+      <title>Objective-C/iOSで写真を選ぶアレ</title>
+      <link>https://yusukebe.com/posts/2012/0128021126/</link>
+      <pubDate>Sat, 28 Jan 2012 11:11:00 +0900</pubDate>
+      
+      <guid>https://yusukebe.com/posts/2012/0128021126/</guid>
+      <description>最近始めたiOSプログラミングのコードのことも備忘録として、はたまたツッコミを乞うためとして書いていきたいと思います。
+特にソーシャル系iPhoneアプリでよく使う写真を選ぶアレのコードです。何かボタンを押すと下からウニョンと出てきてカメラかライブラリかの選択肢を選ぶやつ。あれ、ActionSheetと呼ぶらしいです。
+
+てなわけで、細かく分けて以下を実装してみました。
+ ActionSheetというかUIActionSheetを表示 ライブラリ、カメラそれぞれのケースを実装。といってもUIImagePickerControllerにお任せ 選択した写真をUIImageViewに表示  こういうUIがあったとして。
+
+implementation部分のコードはこんな感じになりました。正直ARCまだよくわかってナス。
+ViewController.m  - (IBAction)showActionSheet:(id)sender { UIActionSheet *actionSheet = [[UIActionSheet alloc]init]; [actionSheet setDelegate:self]; [actionSheet setTitle:@&#34;写真を選びます&#34;]; [actionSheet addButtonWithTitle:@&#34;ライブラリから選択&#34;]; if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) { [actionSheet addButtonWithTitle:@&#34;カメラで撮影&#34;]; [actionSheet setCancelButtonIndex:2]; }else{ [actionSheet setCancelButtonIndex:1]; } [actionSheet addButtonWithTitle:@&#34;キャンセル&#34;]; [actionSheet showFromToolbar:toolbar]; } -(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex { UIImagePickerController *imagePicker = [[UIImagePickerController alloc]init]; [imagePicker setDelegate:self]; switch (buttonIndex) { case 0: [imagePicker setSourceType:UIImagePickerControllerSourceTypePhotoLibrary]; [self presentModalViewController:imagePicker animated:YES]; break; case 1: [imagePicker setSourceType:UIImagePickerControllerSourceTypeCamera]; [self presentModalViewController:imagePicker animated:YES]; break; default: break; } } - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editingInfo { [imageView setImage:image]; [self dismissModalViewControllerAnimated:YES]; } -(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker { [self dismissModalViewControllerAnimated:YES]; }  カメラ無しデバイスのことを考慮しているのがポイント。あと気づいたのは、デリゲートされるdidFinishPickingImageってのではUIImageがそのまま渡されるんですぐ利用できて便利っす。実機で動かしてみてActionSheetで選択→「ライブラリ表示またはカメラ起動」がやたら遅い気がするのは気のせいかなぁ。</description>
+    </item>
+    
+  </channel>
+</rss>

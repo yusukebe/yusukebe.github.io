@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Getした値が空であることをキャッシュする - ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="Getした値が空であることをキャッシュする" />
+<meta property="og:description" content=" Perlはご存知の通りTrue/Falseと言った真偽値を扱うBooleanな型は標準で備わっていない。例えば以下のテストは偽の値と解釈され全てFailする。  use Test::More;ok(0); # Failok(undef);" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yusukebe.com/posts/2013/0712010821/" />
+<meta property="article:published_time" content="2013-07-12T10:08:00+09:00" />
+<meta property="article:modified_time" content="2013-07-12T10:08:00+09:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Getした値が空であることをキャッシュする"/>
+<meta name="twitter:description" content=" Perlはご存知の通りTrue/Falseと言った真偽値を扱うBooleanな型は標準で備わっていない。例えば以下のテストは偽の値と解釈され全てFailする。  use Test::More;ok(0); # Failok(undef);"/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
+	
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://yusukebe.com/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper post">
+		<div class="header">
+	<h1 class="site-title"><a href="https://yusukebe.com/">ゆーすけべー日記</a></h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/yusukebe" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/yusukebe" title="Twitter"><i data-feather="twitter"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post-header">
+			<h1 class="title">Getした値が空であることをキャッシュする</h1>
+			<div class="meta">Posted at &mdash; Jul 12, 2013</div>
+		</div>
+
+		<div class="markdown">
+			
+
+<p>Perlはご存知の通りTrue/Falseと言った真偽値を扱うBooleanな型は標準で備わっていない。例えば以下のテストは偽の値と解釈され全てFailする。</p>
+
+<pre> use Test::More;
+
+ok(0); # Fail
+ok(undef); # Fail
+ok(''); # Fail
+
+done_testing;
+ </pre>
+
+<p>つまり</p>
+
+<ul>
+<li>0</li>
+<li>undef / 未定義値</li>
+<li>空文字列</li>
+</ul>
+
+
+<p>が偽として解釈される。普段はこうした挙動で問題は無いんだけど、キャッシュの制御の時に困ってしまい考えた挙げ句、解決策のような実装が見つかったので紹介とツッコミいただきたい次第。</p>
+
+<hr>
+
+<p><br></p>
+
+<h3>追記</h3>
+
+<p>以下、ふつーに defined でごにょればイケる！</p>
+
+<pre> unless(defined $value) {
+    ...;
+}
+ </pre>
+
+<p>koba04さん、toku_bass さんあざっす。とりま自分のアプリで試してみます。</p>
+
+<hr>
+
+<p><br></p>
+
+<p>キャッシュの常套手段的にこんなフローをよく使う。</p>
+
+<ul>
+<li>キャッシュにヒットしたらその値をそのまま使う</li>
+<li>とって来た値が偽だったら算出するメソッドを発行する</li>
+<li>算出された値をキャッシュにsetする</li>
+</ul>
+
+
+<p>うんで、実装はこんな感じ。</p>
+
+<pre> my $value = $cache-&gt;get('key');
+unless($value) {
+    $value = get_value();
+    $cache-&gt;set('key', $value);
+}
+say $value;
+ </pre>
+
+<p>で、問題になるのは上のコードで言う「get_value」サブルーティンが「空」など偽と判断される値を返す時。さすればせっかく値をsetしているのに再びgetしたタイミングにこのコードだと値が偽であることからunlessブロックに入り、再度「get_value」が呼ばれることになる。「get_value」を呼び出すためのコストがかかる場合は一度「空」が返却されたんだからそれを覚えておいてもらいたい。つまり</p>
+
+<blockquote><p>「空であること」自体をキャッシュさせたい</p></blockquote>
+
+<p>ってことになる。そこで使ってみたのが Ingy の <a href="http://search.cpan.org/dist/boolean/">boolean.pm</a> 。Perl標準のコンテキストとは別にTrue/False の真偽につかえる値を提供する。とりあえず「false」だけを使う。</p>
+
+<pre> use boolean;
+
+my $value = boolean::false;
+say ref $value; # boolean
+say $value == boolean::false ? 'false' : 'true'; # false
+ </pre>
+
+<p>falseで特別に偽を定義することが出来るので、キャッシュの件だと、falseを値としてsetしちゃって、後ほどgetする時に判断させれば「空であること」自体をキャッシュさせることが出来そう。こんな感じのコードになった。</p>
+
+<pre> use Cache::Memcached::Fast;
+use feature qw/say/;
+use boolean;
+
+my $cache = Cache::Memcached::Fast-&gt;new({
+    servers =&gt; ['127.0.0.1:11211'],
+    namespace =&gt; 'example:',
+});
+
+my $value = $cache-&gt;get('key');
+
+if(ref $value eq 'boolean' &amp;&amp; $value == boolean::false) {
+    say "Result: value is false";
+}elsif($value) {
+    say "Result: value is $value";
+}else{
+    $value = make_value();
+    $value = boolean::false unless $value;
+    $cache-&gt;set('key', $value, 60);
+    say "Set: value as $value";
+    say "Result: value is $value";
+}
+
+sub make_value {
+    say "Called: make_value method";
+    return; # return null
+}
+ </pre>
+
+<p>一回目の実行結果。</p>
+
+<pre> Called: make_value method
+Set: value as 0
+Result: value is 0
+ </pre>
+
+<p>このコンテキストだと「0」になっているけど、boolean::falseがsetされているはず。もっかい実行してみる。</p>
+
+<pre> Result: value is false
+ </pre>
+
+<p>ちゃんとfalse = 空であると認識している。これでキャッシュの有効期限内だったら空が帰って来たよーという条件の元ごにょごにょ出来そう。boolean.pm の「boolean」とか「isTrue」「isFalse」のメソッドは使ってないけどとりあえずこれでよい気がするなー！</p>
+
+
+		</div>
+
+		<div class="post-tags">
+			
+				
+					<nav class="nav tags">
+							<ul class="flat">
+								
+								<li><a href="/tags/perl">Perl</a></li>
+								
+							</ul>
+					</nav>
+				
+			
+		</div>
+        <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v5.0&appId=233306523373884&autoLogAppEvents=1"></script>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+
+<div class="social-button-area">
+  <ul class="social-button">
+    <li>
+      <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
+    </li>
+    <li>
+      <span class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2013%2f0712010821%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
+    </li>
+    <li>
+      <a href="https://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label-counter" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>
+    </li>
+  </ul>
+</div>
+
+<ul class="pagination">
+  
+  <li class="page-item page-prev">
+    <a href="https://yusukebe.com/posts/2013/0709121252/" class="page-link" aria-label="Previous"><span aria-hidden="true">← 最近の開発周辺事情と職質テックトーク</span></a>
+  </li>
+  
+  
+  <li class="page-item page-next">
+    <a href="https://yusukebe.com/posts/2013/0715010453/" class="page-link" aria-label="Next"><span aria-hidden="true">「Webサービスのつくり方」Kindle版発売とアップデートすべき項目 →</span></a>
+  </li>
+  
+</ul>
+
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright yusukebe.com |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-123-45', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

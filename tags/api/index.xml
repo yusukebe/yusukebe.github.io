@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>API on ゆーすけべー日記</title>
+    <link>https://yusukebe.com/tags/api/</link>
+    <description>Recent content in API on ゆーすけべー日記</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <copyright>© Copyright yusukebe.com</copyright>
+    <lastBuildDate>Tue, 14 Feb 2012 17:33:00 +0900</lastBuildDate>
+    
+	<atom:link href="https://yusukebe.com/tags/api/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Perlから非公式Google Reader APIにアクセスする</title>
+      <link>https://yusukebe.com/posts/2012/0214083335/</link>
+      <pubDate>Tue, 14 Feb 2012 17:33:00 +0900</pubDate>
+      
+      <guid>https://yusukebe.com/posts/2012/0214083335/</guid>
+      <description>昔からGoogle Readerの非公式APIを使ってみたかったので、 こちらを参考にPerlでアクセスしてみてる。
+既読のアイテムのタイトルを表示するだけのスクリプトなら以下のコードになりました。 上記のサイトだとCookieにSIDを設定しろって書いてあるけれど、 「Authorization」ヘッダーに適切な値を入れてアクセスしたらデータが取れた。
+ use strict; use warnings; use LWP::UserAgent; use XML::Feed; my $email = &#39;my@emailaddress&#39;; my $password = &#39;mypassword&#39;; my $ua = LWP::UserAgent-&amp;gt;new; my $res = $ua-&amp;gt;post( &#39;https://www.google.com/accounts/ClientLogin&#39;, { service =&amp;gt; &#39;reader&#39;, Email =&amp;gt; $email, Passwd =&amp;gt; $password, source =&amp;gt; &#39;reader_from_perl&#39;, continue =&amp;gt; &#39;http://www.google.com/&#39;, } ); die $res-&amp;gt;status_line if $res-&amp;gt;is_error; my $content = $res-&amp;gt;content; my ($auth) = $content =~ /Auth=(.+?)\n/; $ua-&amp;gt;default_header( &#39;Authorization&#39; =&amp;gt; &#34;GoogleLogin auth=$auth&#34; ); $res = $ua-&amp;gt;get(&#39;http://www.google.com/reader/atom/user/-/state/com.google/read&#39;); die $res-&amp;gt;status_line if $res-&amp;gt;is_error; $content = $res-&amp;gt;content; my $feed = XML::Feed-&amp;gt;parse( \$content ) or die XML::Feed-&amp;gt;errstr; for my $entry ( $feed-&amp;gt;entries ) { print $entry-&amp;gt;title . &#34;</description>
+    </item>
+    
+  </channel>
+</rss>

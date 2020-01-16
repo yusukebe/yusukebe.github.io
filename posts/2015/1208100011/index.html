@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Google BigQueryがサービスのデバグに役に立った話 - ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="Google BigQueryがサービスのデバグに役に立った話" />
+<meta property="og:description" content=" GoogleがCloud Platformの一貫として提供するBigQueryというサービス。データウェアハウスともビッグデータ解析ツールとも言われていますが、今回は「サービスのデバグに便利」ということをガチの実話を交えて話してみましょう" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yusukebe.com/posts/2015/1208100011/" />
+<meta property="article:published_time" content="2015-12-08T10:00:00+09:00" />
+<meta property="article:modified_time" content="2015-12-08T10:00:00+09:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Google BigQueryがサービスのデバグに役に立った話"/>
+<meta name="twitter:description" content=" GoogleがCloud Platformの一貫として提供するBigQueryというサービス。データウェアハウスともビッグデータ解析ツールとも言われていますが、今回は「サービスのデバグに便利」ということをガチの実話を交えて話してみましょう"/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
+	
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://yusukebe.com/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper post">
+		<div class="header">
+	<h1 class="site-title"><a href="https://yusukebe.com/">ゆーすけべー日記</a></h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/yusukebe" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/yusukebe" title="Twitter"><i data-feather="twitter"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post-header">
+			<h1 class="title">Google BigQueryがサービスのデバグに役に立った話</h1>
+			<div class="meta">Posted at &mdash; Dec 8, 2015</div>
+		</div>
+
+		<div class="markdown">
+			
+
+<p>GoogleがCloud Platformの一貫として提供する<strong>BigQuery</strong>というサービス。データウェアハウスともビッグデータ解析ツールとも言われていますが、今回は「<strong>サービスのデバグに便利</strong>」ということを<strong>ガチの実話</strong>を交えて話してみましょう。</p>
+
+<p><span itemscope itemtype="http://schema.org/Photograph"><img src="http://cdn-ak.f.st-hatena.com/images/fotolife/k/kamawada/20151208/20151208094923.png" alt="f:id:kamawada:20151208094923p:plain" title="f:id:kamawada:20151208094923p:plain" class="hatena-fotolife" itemprop="image"></span></p>
+
+<h2>BigQueryざっくり紹介</h2>
+
+<p>BigQueryはの機能をわかりやすく言うならば</p>
+
+<blockquote><p>億超えるようなレコードへの<strong>雑</strong>クエリでも10秒程度で結果を返してくれる便利なカラム型データベース</p></blockquote>
+
+<p>と表現出来るでしょう。特徴として以下があげられます。</p>
+
+<ul>
+<li>事前に簡単なスキーマ定義を行う</li>
+<li>CSVやストリーミングでデータ挿入</li>
+<li>特化したSQLで<code>SELECT</code>文を発行</li>
+<li>更新系はSQL使って叩けない</li>
+<li>リアルタイムで情報を取ってくるためのデータストアには向かない</li>
+<li>重たいクエリを大量に実行しなければ... 安い</li>
+</ul>
+
+
+<p>Amazon Web Servicesだと<code>RedShift</code>が対応するサービスなのですが、カジュアルに使える意味でBigQueryを選んでます。</p>
+
+<h2>アクセスログ+αを流し込む</h2>
+
+<p>僕が開発しているBoketeでは、Webやモバイルアプリ含む全てのサービスは必ず「JSONRPCで実装されたWebAPI」を参照することにしています。このアーキテクチャ云々に関しては、なかなか上手くいっていて、詳しく書きたいところですが、また次の機会に。</p>
+
+<p>で、このアーキテクチャですと、WebAPIのアクセスを見ればクライアントソフトウェア、しいては「ユーザー」の行動を把握することにつながります。そこで僕らはBigQuery事始めとして<code>Apache Common Log</code>相当の情報にアプリケーション固有の簡単なユーザー情報を付加し、BigQueryにストリーミングで逐一流し込んでいます。実装を簡単の流れを説明すると</p>
+
+<ol>
+<li>WebAPIアプリがJSON形式のログファイルをローカルストレージに書き出す</li>
+<li>上記アプリと同じホストで動かしている<code>fluentd</code>がログを<code>tail</code>して集約サーバに投げる</li>
+<li>集約サーバの<code>fluentd</code>がそれを受け止め<a href="https://github.com/kaizenplatform/fluent-plugin-bigquery">BigQueryに投げるplugin</a>を使ってデータ挿入</li>
+</ol>
+
+
+<p>という具合です。</p>
+
+<h2>バグの原因追求の事例</h2>
+
+<p>さて本題。最近あった事例で、バグの原因追求に<strong>BigQueryが役に立った</strong>件を紹介します。</p>
+
+<p>一部のとある状況下、具体的に言うと、モバイルアプリの「とあるOSのとあるバージョン」で不具合が生じていました。その場合</p>
+
+<blockquote><p> 他の環境だと動くからネイティブクライアントのバグだよね〜</p></blockquote>
+
+<p>と、その責任を、アプリ担当である陳さんにある時期まで委ねてたのですが、どうも解決しないらしい。ただ問題は「認証周り」で起こっている可能性が高い。そこで、一度、BigQueryの管理画面からクエリを発行。ユーザーの動向を見るとやはり「特定のOSかつバージョン」でバグってることがすぐにわかりました。</p>
+
+<p><span itemscope itemtype="http://schema.org/Photograph"><img src="http://cdn-ak.f.st-hatena.com/images/fotolife/k/kamawada/20151208/20151208095020.png" alt="f:id:kamawada:20151208095020p:plain" title="f:id:kamawada:20151208095020p:plain" class="hatena-fotolife" itemprop="image"></span></p>
+
+<p>ただ、これだけだと原因追求としては甘いので、急いでBigQueryのスキーマとアプリのコードを一部を変更し、今まで取れてなかった、認証用の<code>Token</code>もログギングしてみました。そして上記した通り、バグを踏んでいるようなユーザーの<code>Token</code>一覧を取得。よくよくDBと照らし合わせると「その<code>Token</code>存在しないじゃん！」ってことになりまして「ここか〜」という具合。急いで、陳さんに連絡して「有効期限の切れた<code>Token</code>のリフレッシュ処理」がうまくいっているかどうか？を確認したところ「そのバージョンのみ」諸々の事情で出来てなかったことが判明。これで<strong>バグの解消</strong>につながったのです。</p>
+
+<h2>まとめ</h2>
+
+<p>このように、BigQueryは<strong>雑にデータ放り込んでおいて</strong>も、あとあとの「ログ追い」が非常に楽です。SQLで条件が指定できるし、多量のレコードあろうとも10秒前後で結果は返ってくる。さらにはSQLを書けるConsoleがついてくるのでお手軽です。<strong>便利に漁れるログの保全庫</strong>としてBigQueryを使うのもありでしょう。また、こうした用途の他にも、ちょうど今、TableauやBIMEなどのBIツールと連動させたデータ分析を試しているところなので、楽しいです！</p>
+
+<h2>PS.</h2>
+
+<p>そいや、現在、<strong>Amazon Web Services</strong>さんが<strong>powered by</strong>なCTO Night&amp;Dayというイベントに来ています...</p>
+
+<hr>
+
+<p></p>
+<div class="hatena-asin-detail">
+<a href="http://www.amazon.co.jp/exec/obidos/ASIN/487311716X/kamawada-22/"><img src="http://ecx.images-amazon.com/images/I/51LYuI72mPL._SL160_.jpg" class="hatena-asin-detail-image" alt="Google BigQuery" title="Google BigQuery"></a><div class="hatena-asin-detail-info">
+<p class="hatena-asin-detail-title"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/487311716X/kamawada-22/">Google BigQuery</a></p>
+<ul>
+<li>
+<span class="hatena-asin-detail-label">作者:</span> Jordan Tigani,Siddartha Naidu,Sky株式会社玉川竜司</li>
+<li>
+<span class="hatena-asin-detail-label">出版社/メーカー:</span> オライリージャパン</li>
+<li>
+<span class="hatena-asin-detail-label">発売日:</span> 2015/03/23</li>
+<li>
+<span class="hatena-asin-detail-label">メディア:</span> 大型本</li>
+<li><a href="http://d.hatena.ne.jp/asin/487311716X/kamawada-22" target="_blank">この商品を含むブログを見る</a></li>
+</ul>
+</div>
+<div class="hatena-asin-detail-foot"></div>
+</div>
+
+<p></p>
+<div class="hatena-asin-detail">
+<a href="http://www.amazon.co.jp/exec/obidos/ASIN/4798041874/kamawada-22/"><img src="http://ecx.images-amazon.com/images/I/51xqGwUhh3L._SL160_.jpg" class="hatena-asin-detail-image" alt="Google BigQueryではじめる自前ﾋﾞｯｸﾞﾃﾞｰﾀ処理入門" title="Google BigQueryではじめる自前ﾋﾞｯｸﾞﾃﾞｰﾀ処理入門"></a><div class="hatena-asin-detail-info">
+<p class="hatena-asin-detail-title"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4798041874/kamawada-22/">Google BigQueryではじめる自前ﾋﾞｯｸﾞﾃﾞｰﾀ処理入門</a></p>
+<ul>
+<li>
+<span class="hatena-asin-detail-label">作者:</span> 清野克行</li>
+<li>
+<span class="hatena-asin-detail-label">出版社/メーカー:</span> 秀和システム</li>
+<li>
+<span class="hatena-asin-detail-label">発売日:</span> 2014/09/30</li>
+<li>
+<span class="hatena-asin-detail-label">メディア:</span> 単行本</li>
+<li><a href="http://d.hatena.ne.jp/asin/4798041874/kamawada-22" target="_blank">この商品を含むブログ (3件) を見る</a></li>
+</ul>
+</div>
+<div class="hatena-asin-detail-foot"></div>
+</div>
+
+
+		</div>
+
+		<div class="post-tags">
+			
+				
+			
+		</div>
+        <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v5.0&appId=233306523373884&autoLogAppEvents=1"></script>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+
+<div class="social-button-area">
+  <ul class="social-button">
+    <li>
+      <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
+    </li>
+    <li>
+      <span class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2015%2f1208100011%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
+    </li>
+    <li>
+      <a href="https://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label-counter" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>
+    </li>
+  </ul>
+</div>
+
+<ul class="pagination">
+  
+  <li class="page-item page-prev">
+    <a href="https://yusukebe.com/posts/2015/1202115041/" class="page-link" aria-label="Previous"><span aria-hidden="true">← Amazon Auroraを東京リージョン提供翌日から使い始めて</span></a>
+  </li>
+  
+  
+  <li class="page-item page-next">
+    <a href="https://yusukebe.com/posts/2015/1209104244/" class="page-link" aria-label="Next"><span aria-hidden="true">Webサービスを支える「Perlモジュール」20選 →</span></a>
+  </li>
+  
+</ul>
+
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright yusukebe.com |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-123-45', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

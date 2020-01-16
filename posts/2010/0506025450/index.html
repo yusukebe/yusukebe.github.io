@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Perlについて知りたいこと - ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="Perlについて知りたいこと" />
+<meta property="og:description" content=" 本を書いていたり、Perl Casualとかイベントやってる手前、世の中の主にPerl初心者な人な人達が「Perlについて知りたいこと」を考えています。とりあえずニーズから物事を作っていくってやつですね。ちょっと抽象的な段階ですが僕なりに" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yusukebe.com/posts/2010/0506025450/" />
+<meta property="article:published_time" content="2010-05-06T11:54:00+09:00" />
+<meta property="article:modified_time" content="2010-05-06T11:54:00+09:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Perlについて知りたいこと"/>
+<meta name="twitter:description" content=" 本を書いていたり、Perl Casualとかイベントやってる手前、世の中の主にPerl初心者な人な人達が「Perlについて知りたいこと」を考えています。とりあえずニーズから物事を作っていくってやつですね。ちょっと抽象的な段階ですが僕なりに"/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
+	
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://yusukebe.com/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper post">
+		<div class="header">
+	<h1 class="site-title"><a href="https://yusukebe.com/">ゆーすけべー日記</a></h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/yusukebe" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/yusukebe" title="Twitter"><i data-feather="twitter"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post-header">
+			<h1 class="title">Perlについて知りたいこと</h1>
+			<div class="meta">Posted at &mdash; May 6, 2010</div>
+		</div>
+
+		<div class="markdown">
+			
+
+<p>
+本を書いていたり、Perl Casualとかイベントやってる手前、
+世の中の主にPerl初心者な人な人達が「<strong>Perlについて知りたいこと</strong>」を考えています。
+とりあえずニーズから物事を作っていくってやつですね。
+ちょっと抽象的な段階ですが僕なりに以下をまとめてみました。
+これはほんと、どんどん人に聞かないとわからないものなので、
+もし「私はこれが知りたいのよ！」って方がいらっしゃったらTwitterなり、
+はてブコメントなりで教えてくれるとすげー助かります。
+</p>
+
+<h4>何ができるのかを知りたい</h4>
+<p>
+Perlは比較的なんでもできるといわれてもピンとこないっすよね。
+具体的にどういう風な目的でどのような現場で使われているのかを知ったらイメージが湧きやすいし、
+モチベーションになるだろうなぁ。もちろん仕事だけに限らず趣味のプログラミングにおいてもです。
+</p>
+<h4>どうPerlだと「楽」なのかを知りたい</h4>
+<p>
+「楽」ってのは「楽をする」って意味と「楽しい」って意味の二つを含んでいます。
+まぁ、「楽」な感じでPerl使ってる人いるけど、どーいうことなんだろう？って思ってる人に紹介したいところです。
+</p>
+<h4>「Perl怖い」を払拭したい、そのためには？</h4>
+<p>
+どうも言語的にみてもコミュニティ的にみても「Perl怖い」と思われている方がいるようで、
+それを払拭するには、というかそもそも怖くないよ！ってことを論理的に説明できればいいかと思っています。
+</p>
+<h4>文法を知りたい</h4>
+<p>
+他の言語を触ったことがある方なら、手っ取り早くPerlの文法を知りたいと思うでしょう。
+しかもその言語との比較とかあればわかりやすいだろうなぁ。
+</p>
+<h4>Perl特有の概念を知りたい</h4>
+<p>
+文法以外にPerl特有の概念、「リファレンスって何？」から「CPANってなんて読むの？」という疑問まで知りたいというニーズはあるでしょう。するとPerlの哲学的なところも含んでいくことになると思います。
+</p>
+<h4>イマドキの書き方を知りたい</h4>
+<p>
+「モダンPerl入門読んで」で終わっちゃうかもしれませんが、
+まぁまだカバーできてない部分もあるし、その人なりの癖もあることを考慮していろいろな書き方を知るのはいいと思います。
+</p>
+<h4>難しいをとっぱらいたい、そのためには？</h4>
+<p>
+「Perl怖い」と似てるけど、PerlやるにはUnix/Linuxの知識が必要だったりするんで、
+やっぱり導入として難しい部分は否めないと思います。
+そのための知識や参考とできる部分を簡潔に説明できるといいのかなぁ。
+</p>
+<h4>Webアプリを作るには？</h4>
+<p>
+なんだかんだいってPerlやる目的としてWebアプリ作りたいってのが多いので、その辺り。
+具体的になりすぎると固有のものに引きずられるので、ちょっとメタな次元での話をしたいかも。
+</p>
+<h4>コミュニティにjoinしたいけど...</h4>
+<p>
+Perlはコミュニティがいい感じと言われるし、自分もそう思いますが、
+そこに入るのに障壁があるのは確かです。
+その障壁が逆にいいのかもしれませんが、本当に望んでる人を後押しするような情報なりなんなりを与えて行くのは
+有意義かもしれませんね。
+</p>
+<p>
+繰り返しになりますが、
+ご意見あればお待ちしております。
+</p>
+
+
+		</div>
+
+		<div class="post-tags">
+			
+				
+					<nav class="nav tags">
+							<ul class="flat">
+								
+								<li><a href="/tags/perl">Perl</a></li>
+								
+							</ul>
+					</nav>
+				
+			
+		</div>
+        <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v5.0&appId=233306523373884&autoLogAppEvents=1"></script>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+
+<div class="social-button-area">
+  <ul class="social-button">
+    <li>
+      <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
+    </li>
+    <li>
+      <span class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2010%2f0506025450%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
+    </li>
+    <li>
+      <a href="https://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label-counter" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>
+    </li>
+  </ul>
+</div>
+
+<ul class="pagination">
+  
+  <li class="page-item page-prev">
+    <a href="https://yusukebe.com/posts/2010/0505223604/" class="page-link" aria-label="Previous"><span aria-hidden="true">← 「8.31までの日誌」を始める - Big Concept vol.01</span></a>
+  </li>
+  
+  
+  <li class="page-item page-next">
+    <a href="https://yusukebe.com/posts/2010/0507004609/" class="page-link" aria-label="Next"><span aria-hidden="true">「アンケート」ではなく「観察」を - Big Concept vol.02 →</span></a>
+  </li>
+  
+</ul>
+
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright yusukebe.com |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-123-45', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>
