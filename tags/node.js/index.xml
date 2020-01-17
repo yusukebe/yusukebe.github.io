@@ -19,7 +19,7 @@
       
       <guid>https://yusukebe.com/posts/2020/node-dmm/</guid>
       <description>何事も勉強するなら「メロディー・雛・マークス」ということで、 Node.jsでDMM Webサービスを叩いてメロディー・雛・マークスを出す。PHPの実装は以下。
- PHPでDMM Webサービスを叩いてメロディー・雛・マークスを出す - ゆーすけべー日記  めんどくさいこと抜きで$ node dmm.jsで実行するようにする。
+ PHPでDMM Webサービスを叩いてメロディー・雛・マークスを出す - ゆーすけべー日記  めんどくさいこと抜きで$ node dmm.jsで実行してコンソールに表示させる。
 GETリクエストで使うURLを構築するのに、 Node.js標準のURLとURLSearchParamsを使う。 url.searchにURLSearchParamsオブジェクトを渡すといい感じにクエリパラメータを付けてくれる。
 HTTP(S)のクライアントは、 なるべくNode.js標準のhttp/httpsを使いたいところだが、 ローレベルで使いにくいかったのでnode-fetchを使う。
  node-fetch - npm  以下コード。
