@@ -3,27 +3,42 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://yusukebe.com/tags/javascript/</loc>
+    <lastmod>2020-01-18T05:43:34+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yusukebe.com/tags/node.js/</loc>
+    <lastmod>2020-01-18T05:43:34+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yusukebe.com/posts/2020/node-dmm/</loc>
+    <lastmod>2020-01-18T05:43:34+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yusukebe.com/posts/</loc>
+    <lastmod>2020-01-18T05:43:34+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yusukebe.com/tags/</loc>
+    <lastmod>2020-01-18T05:43:34+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yusukebe.com/</loc>
+    <lastmod>2020-01-18T05:43:34+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://yusukebe.com/tags/perl/</loc>
     <lastmod>2020-01-17T07:15:36+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://yusukebe.com/posts/</loc>
-    <lastmod>2020-01-17T07:15:36+09:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://yusukebe.com/posts/2020/write-perl6/</loc>
-    <lastmod>2020-01-17T07:15:36+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusukebe.com/tags/</loc>
-    <lastmod>2020-01-17T07:15:36+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusukebe.com/</loc>
     <lastmod>2020-01-17T07:15:36+09:00</lastmod>
   </url>
   
@@ -1134,11 +1149,6 @@
   
   <url>
     <loc>https://yusukebe.com/posts/2012/0221231031/</loc>
-    <lastmod>2012-02-22T08:10:00+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusukebe.com/tags/javascript/</loc>
     <lastmod>2012-02-22T08:10:00+09:00</lastmod>
   </url>
   

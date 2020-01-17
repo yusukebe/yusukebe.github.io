@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Node.js on ゆーすけべー日記</title>
+    <link>https://yusukebe.com/tags/node.js/</link>
+    <description>Recent content in Node.js on ゆーすけべー日記</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <copyright>© Copyright yusukebe.com</copyright>
+    <lastBuildDate>Sat, 18 Jan 2020 05:43:34 +0900</lastBuildDate>
+    
+	<atom:link href="https://yusukebe.com/tags/node.js/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Node.jsでメロディー・雛・マークスを出す</title>
+      <link>https://yusukebe.com/posts/2020/node-dmm/</link>
+      <pubDate>Sat, 18 Jan 2020 05:43:34 +0900</pubDate>
+      
+      <guid>https://yusukebe.com/posts/2020/node-dmm/</guid>
+      <description>何事も勉強するなら「メロディー・雛・マークス」ということで、 Node.jsでDMM Webサービスを叩いてメロディー・雛・マークスを出す。PHPの実装は以下。
+ PHPでDMM Webサービスを叩いてメロディー・雛・マークスを出す - ゆーすけべー日記  めんどくさいこと抜きで$ node dmm.jsで実行するようにする。
+GETリクエストで使うURLを構築するのに、 Node.js標準のURLとURLSearchParamsを使う。 url.searchにURLSearchParamsオブジェクトを渡すといい感じにクエリパラメータを付けてくれる。
+HTTP(S)のクライアントは、 なるべくNode.js標準のhttp/httpsを使いたいところだが、 ローレベルで使いにくいかったのでnode-fetchを使う。
+ node-fetch - npm  以下コード。
+const fetch = require(&amp;#39;node-fetch&amp;#39;); const api_id = &amp;#39;YOUR_API_ID&amp;#39;; const affiliate_id = &amp;#39;YOUR_AFFILIATE_ID&amp;#39;; const keyword = &amp;#39;雛&amp;#39;; const params = new URLSearchParams({ api_id: api_id, affiliate_id: affiliate_id, hits: 50, keyword: keyword }); const url = new URL(&amp;#39;https://api.dmm.com/affiliate/v3/ActressSearch&amp;#39;); url.search = params; console.log(&amp;#39;GET:&amp;#39; + url.toString()); fetch(url.toString()) .then(res =&amp;gt; res.json()) .then((data) =&amp;gt; { for (const actress of data.result.actress) { console.log(actress.name); } }); $ node dmm.jsで実行する。
+でた！メロディー・雛・マークス！ オモテナシ！</description>
+    </item>
+    
+  </channel>
+</rss>
