@@ -1,5 +1,6 @@
 body {
     font-family: sans-serif;
+    line-height: 1.7;
 }
 h1, h2, h3, h4, h5, h6 {
     font-weight: 400;
@@ -15,6 +16,19 @@ img {
     margin:10px auto 10px 0;
     padding:1px;
     border:1px solid #ddd;
+}
+.markdown ul, .markdown ol {
+    padding:1rem 0 1rem 2rem;
+    margin:1.4rem 0;
+    background-color: #fafafa;
+}
+.markdown ul li ul, .markdown ol li ol {
+    padding:0 0 0 2rem;
+    margin:0;
+    border:none;
+}
+img {
+    margin:1.4rem 0;
 }
 blockquote {
     margin:2rem 0;
@@ -35,7 +49,6 @@ pre.code {
 .post ul li {
     margin-bottom: 4px;
 }
-
 .social-button-area {
     margin:3rem 0 0 0;
     text-align: left;

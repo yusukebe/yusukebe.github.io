@@ -7,10 +7,29 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <copyright>© Copyright yusukebe.com</copyright>
-    <lastBuildDate>Mon, 24 Aug 2015 10:35:00 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 17 Jan 2020 07:15:36 +0900</lastBuildDate>
     
 	<atom:link href="https://yusukebe.com/tags/perl/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Raku(Perl6)を書く</title>
+      <link>https://yusukebe.com/posts/2020/write-perl6/</link>
+      <pubDate>Fri, 17 Jan 2020 07:15:36 +0900</pubDate>
+      
+      <guid>https://yusukebe.com/posts/2020/write-perl6/</guid>
+      <description>YAPC::Kyotoのトークリストを見て、突然Rakuを書いてみたくなったのでいまさらながら書いてみた。
+RakuとはPerl 6のこと。去年の10月にPerl 6からRakuへと改名された。 なぜ「いまさら」なのかというとPerl 6は20年くらい前に設計が始まり、 15年くらい前に動作可能な実装ができてたいからだ。 特に海外のPerlカンファレンスでは盛んにPerl 6の話がされていて、 2013年に行ったYAPC::NAでも 「Perl 6でWebフレームワーク作ったぜ！（遅いけどな）」みたいなトークがあった。 そして2015年のクリスマスにラリー・ウォールのもとリリースされた。 だから特別、目新しいものではない（とりわけ言語仕様）。 ただ、最近になってより実用性が高まってきたようだ。
+ちなみにPerl 6はPerl 5とは互換性がなく全く別の言語と考えてよい。
+以前Perl 6の話やそれで書かれたコードを見て 「ああ静的型付けができるんだな」とか「今までPerlになかったclassが使えるんだな」 とか感じることはあっても、いまいちピンと来ていなかった。 で、理解するには書くの一番早いということで、Rakuでいくつかのプログラムを書いてみた。
+今回書いたのは言わずとしたらFizzBuzzといくつかのデザインパターンである。 デザインパターンは以下のQiitaの記事が分かりやすかったので、 そこに掲載されているJavaのコードをPerl 6らしく書きかえるという作業を行った。
+ GoFのデザインパターンまとめ - Qiita  さて実際書いたコードと共にRakuについて分かったことをまとめてみた。
+環境づくり コードを書く前にまずは環境づくり。 rakudo-starを入れるとPerl 6におけるcpan/cpanmコマンドのzefも使えるようになる。 Macの場合rakudo-starはhomebrewで簡単にインストールできた。
+$ brew install rakudo-star これでperl6コマンドが使える。
+次にemacsにperl6-modeを入れた。Perl 5を書く時に使ってるcperl-modeだと 当然ながらPerl 6のコードを書く時に不便だった。 perl6-modeはMELPAからM-x package-install RET perl-6-modeすれば入る。
+FizzBuzz 最初はFizzBuzzを書いてみる。色々な書き方があるが、Rakuっぽくかつ分かりやすいってことで以下のようなコードになった。 ちなみにこのブログで使ってるシンタックスハイライトは今のところPerl 6に対応していないので、 Perl 5のものを使っている。見づらいと思うが勘弁を。
+for 1..100 -&amp;gt; $i { say to-fizz-buzz($i) } sub to-fizz-buzz (Int $n --&amp;gt; Str){ my Str $s = &amp;#39;&amp;#39;; given $n { when $n % 3 == 0 { $s ~= &amp;#39;Fizz&amp;#39;; proceed } when $n % 5 == 0 { $s ~= &amp;#39;Buzz&amp;#39;; proceed } when !</description>
+    </item>
     
     <item>
       <title>ありがとう！ #yapcasia</title>
