@@ -7,10 +7,25 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <copyright>© Copyright yusukebe.com</copyright>
-    <lastBuildDate>Sat, 18 Jan 2020 15:12:26 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 19 Jan 2020 06:42:55 +0900</lastBuildDate>
     
 	<atom:link href="https://yusukebe.com/tags/perl/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>RakuのSlurpyについて</title>
+      <link>https://yusukebe.com/posts/2020/raku-slurpy/</link>
+      <pubDate>Sun, 19 Jan 2020 06:42:55 +0900</pubDate>
+      
+      <guid>https://yusukebe.com/posts/2020/raku-slurpy/</guid>
+      <description>引っかかったのでメモ。
+Rakuでは関数やメソッドを引数を厳密に宣言させることができる、というかある程度しなきゃいけない。 例えば、それを利用して型や条件によってある一つの関数名でマルチディスパッチさせることができる。
+ 引数がStr型であるか 引数がInt型であり、かつ10未満か 引数がInt型であり、かつ10以上か  といったことを表現するコードは以下になる。
+proto sub func($a) { say &amp;#39;--------------------&amp;#39;; say $a; {*}; } multi sub func(Str $s) { say &amp;#39;func(Str $s) が呼ばれた&amp;#39;; } multi sub func(Int $i where $i &amp;lt; 10) { say &amp;#39;func(Int $i where $i &amp;lt; 10)が呼ばれた&amp;#39;; } multi sub func(Int $i where $i &amp;gt;= 10) { say &amp;#39;func(Int $i where $i &amp;gt;= 10)が呼ばれた&amp;#39;; } func(&amp;#39;hoge&amp;#39;); func(1); func(50); ちなみにproto subでそれぞれの関数を実行する前の処理を書いている。 実行結果は以下である。
+-------------------- hoge func(Str $s) が呼ばれた -------------------- 1 func(Int $i where $i &amp;lt; 10)が呼ばれた -------------------- 50 func(Int $i where $i &amp;gt;= 10)が呼ばれた 本題は引数をリストで受け取る時の方法。 この慣習はSlurpyと呼ばれている。 Sigilを「シジル」と言うように、これを日本語で表現してみたいけど、 「スラーピー」でいいのか、そもそも発音の仕方を知らないので、 とあえずSlurpyとしておく（誰か教えて&amp;hellip;）。
+Perl 5で配列の引数を受け取る場合は以下のように書く。
+use v5.20; sub func { my @args = @_; say join &amp;#39; -&amp;gt; &amp;#39;, @args; } func(1,2,3); でRakuでも同じのりで書くとどうなるか。</description>
+    </item>
     
     <item>
       <title>Rakuでメロディー・雛・マークスを出す</title>
