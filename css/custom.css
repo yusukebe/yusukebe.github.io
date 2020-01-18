@@ -50,11 +50,14 @@ pre.code {
     margin-bottom: 4px;
 }
 .social-button-area {
-    margin:3rem 0 0 0;
+    margin:3rem 0 1rem 0;
     text-align: left;
 }
 .social-button {
     display: inline;
+}
+.disqus-area {
+    margin:1rem 0;
 }
 ul.social-button {
     padding-left:0;
@@ -68,5 +71,5 @@ ul.social-button {
 }
 
 ul.pagination {
-    padding-top: 2rem;
+    padding: 1rem 0;
 }
