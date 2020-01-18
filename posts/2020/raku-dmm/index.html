@@ -9,8 +9,8 @@
 ただ引っかかったところが2点。コマンドライン引数を取得する際、 Perl 5だと
 my $name = $ARGV[0]; で取ってたのが、Rakuだと
 my $name = @*ARGS[0]; となる。もう一つは、JSONをdecodeして$dataに入れた 値の中から女優のリストを取ってくるのに、Perl 5だと @{$data-&gt;{result}{actress}} とハッシュの中身をたどって デリファレンスしていたが、今回の場合
-my $stars = $data-&gt;{&#39;result&#39;}{&#39;actress&#39;}; for $stars.list -&gt; $star { } と書いた。$starsはスカラの変数でそこにArray型が入っているので、 listメソッドでリストを取得している。
-List、Array、Scalarについては以下のドキュメントを参考にする。
+my $stars = $data-&gt;{&#39;result&#39;}{&#39;actress&#39;}; for $stars.list -&gt; $star { } と書いた。$starsはスカラの変数でそこにArray型が入っているので、 listメソッドでイテレーブルにしている。
+Array、Scalar、さらにListについては以下のドキュメントを参考にする。
  class Scalar - Perl 6 Documentation class List - Perl 6 Documentaion  とはいえ
 my $stars = $data-&gt;{&#39;result&#39;}{&#39;actress&#39;}; for @$stars -&gt; $star { } でもいける。
 さて、以下コード。
@@ -29,8 +29,8 @@ use HTTP::UserAgent; use URI; use JSON::Tiny; constant $api_id = &#39;YOUR_API_I
 ただ引っかかったところが2点。コマンドライン引数を取得する際、 Perl 5だと
 my $name = $ARGV[0]; で取ってたのが、Rakuだと
 my $name = @*ARGS[0]; となる。もう一つは、JSONをdecodeして$dataに入れた 値の中から女優のリストを取ってくるのに、Perl 5だと @{$data-&gt;{result}{actress}} とハッシュの中身をたどって デリファレンスしていたが、今回の場合
-my $stars = $data-&gt;{&#39;result&#39;}{&#39;actress&#39;}; for $stars.list -&gt; $star { } と書いた。$starsはスカラの変数でそこにArray型が入っているので、 listメソッドでリストを取得している。
-List、Array、Scalarについては以下のドキュメントを参考にする。
+my $stars = $data-&gt;{&#39;result&#39;}{&#39;actress&#39;}; for $stars.list -&gt; $star { } と書いた。$starsはスカラの変数でそこにArray型が入っているので、 listメソッドでイテレーブルにしている。
+Array、Scalar、さらにListについては以下のドキュメントを参考にする。
  class Scalar - Perl 6 Documentation class List - Perl 6 Documentaion  とはいえ
 my $stars = $data-&gt;{&#39;result&#39;}{&#39;actress&#39;}; for @$stars -&gt; $star { } でもいける。
 さて、以下コード。
@@ -104,8 +104,8 @@ Perl 5だと</p>
 <span class="k">for</span> <span class="nv">$</span><span class="nv">stars</span><span class="o">.</span><span class="n"></span><span class="nn">list</span> <span class="o">-</span><span class="o">&gt;</span> <span class="nv">$</span><span class="nv">star</span> <span class="p">{</span>
 <span class="p">}</span>
 </code></pre></div><p>と書いた。<code>$stars</code>はスカラの変数でそこに<code>Array</code>型が入っているので、
-<code>list</code>メソッドでリストを取得している。</p>
-<p><code>List</code>、<code>Array</code>、<code>Scalar</code>については以下のドキュメントを参考にする。</p>
+<code>list</code>メソッドでイテレーブルにしている。</p>
+<p><code>Array</code>、<code>Scalar</code>、さらに<code>List</code>については以下のドキュメントを参考にする。</p>
 <ul>
 <li><a href="https://docs.perl6.org/type/Scalar">class Scalar - Perl 6 Documentation</a></li>
 <li><a href="https://docs.perl6.org/type/List">class List - Perl 6 Documentaion</a></li>

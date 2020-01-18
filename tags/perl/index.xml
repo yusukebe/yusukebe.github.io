@@ -23,8 +23,8 @@
 ただ引っかかったところが2点。コマンドライン引数を取得する際、 Perl 5だと
 my $name = $ARGV[0]; で取ってたのが、Rakuだと
 my $name = @*ARGS[0]; となる。もう一つは、JSONをdecodeして$dataに入れた 値の中から女優のリストを取ってくるのに、Perl 5だと @{$data-&amp;gt;{result}{actress}} とハッシュの中身をたどって デリファレンスしていたが、今回の場合
-my $stars = $data-&amp;gt;{&amp;#39;result&amp;#39;}{&amp;#39;actress&amp;#39;}; for $stars.list -&amp;gt; $star { } と書いた。$starsはスカラの変数でそこにArray型が入っているので、 listメソッドでリストを取得している。
-List、Array、Scalarについては以下のドキュメントを参考にする。
+my $stars = $data-&amp;gt;{&amp;#39;result&amp;#39;}{&amp;#39;actress&amp;#39;}; for $stars.list -&amp;gt; $star { } と書いた。$starsはスカラの変数でそこにArray型が入っているので、 listメソッドでイテレーブルにしている。
+Array、Scalar、さらにListについては以下のドキュメントを参考にする。
  class Scalar - Perl 6 Documentation class List - Perl 6 Documentaion  とはいえ
 my $stars = $data-&amp;gt;{&amp;#39;result&amp;#39;}{&amp;#39;actress&amp;#39;}; for @$stars -&amp;gt; $star { } でもいける。
 さて、以下コード。
