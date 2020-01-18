@@ -24,12 +24,10 @@
 my $name = $ARGV[0]; で取ってたのが、Rakuだと
 my $name = @*ARGS[0]; となる。もう一つは、JSONをdecodeして$dataに入れた 値の中から女優のリストを取ってくるのに、Perl 5だと @{$data-&amp;gt;{result}{actress}} とハッシュの中身をたどって デリファレンスしていたが、今回の場合
 my $stars = $data-&amp;gt;{&amp;#39;result&amp;#39;}{&amp;#39;actress&amp;#39;}; for $stars.list -&amp;gt; $star { } と書いた。$starsはスカラの変数でそこにArray型が入っているので、 listメソッドでリストを取得している。
-ListとArrayそれにScalarの関係は以下のコードで検証できる。
+ちなみにListとArrayそれにScalarの関係は以下のコードで検証できる。
 my $a = [1,2,3]; say $a.^name; # =&amp;gt; Array say $a.VAR.^name; # =&amp;gt; Scalar my $b = (1,2,3); say $b.^name; # =&amp;gt; List say $b.VAR.^name; # =&amp;gt; Scalar うまく説明できてない気がするので、以下のドキュメントを参考にする。
- class List - Perl 6 Documentaion  ちなみに、
-my $stars = $data-&amp;gt;{&amp;#39;result&amp;#39;}{&amp;#39;actress&amp;#39;}; for @$stars -&amp;gt; $star { } でもいける。
-さて、以下コード。
-use HTTP::UserAgent; use URI; use JSON::Tiny; constant $api_id = &amp;#39;YOUR_API_ID&amp;#39;; constant $affiliate_id = &amp;#39;YOUR_AFFILIATE_ID&amp;#39;; # @*ARGSで引数取得、Perl5では$ARGV[0]だった my $name = @*ARGS[0] || &amp;#39;雛&amp;#39;; my $uri = URI.</description>
+ class Scalar - Perl 6 Documentation class List - Perl 6 Documentaion  とはいえ
+my $stars = $data-&amp;gt;{&amp;#39;result&amp;#39;}{&amp;#39;actress&amp;#39;}; for @$stars -&amp;gt; $star { } でもいける。</description>
     </item>
     
     <item>
