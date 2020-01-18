@@ -10,10 +10,11 @@
 my $name = $ARGV[0]; で取ってたのが、Rakuだと
 my $name = @*ARGS[0]; となる。もう一つは、JSONをdecodeして$dataに入れた 値の中から女優のリストを取ってくるのに、Perl 5だと @{$data-&gt;{result}{actress}} とハッシュの中身をたどって デリファレンスしていたが、今回の場合
 my $stars = $data-&gt;{&#39;result&#39;}{&#39;actress&#39;}; for $stars.list -&gt; $star { } と書いた。$starsはスカラの変数でそこにArray型が入っているので、 listメソッドでリストを取得している。
-ちなみにListとArrayそれにScalarの関係は以下のコードで検証できる。
-my $a = [1,2,3]; say $a.^name; # =&gt; Array say $a.VAR.^name; # =&gt; Scalar my $b = (1,2,3); say $b.^name; # =&gt; List say $b.VAR.^name; # =&gt; Scalar うまく説明できてない気がするので、以下のドキュメントを参考にする。
+List、Array、Scalarについては以下のドキュメントを参考にする。
  class Scalar - Perl 6 Documentation class List - Perl 6 Documentaion  とはいえ
-my $stars = $data-&gt;{&#39;result&#39;}{&#39;actress&#39;}; for @$stars -&gt; $star { } でもいける。" />
+my $stars = $data-&gt;{&#39;result&#39;}{&#39;actress&#39;}; for @$stars -&gt; $star { } でもいける。
+さて、以下コード。
+use HTTP::UserAgent; use URI; use JSON::Tiny; constant $api_id = &#39;YOUR_API_ID&#39;; constant $affiliate_id = &#39;YOUR_AFFILIATE_ID&#39;; # @*ARGSで引数取得、Perl5では$ARGV[0]だった my $name = @*ARGS[0] || &#39;雛&#39;; my $uri = URI.new(&#39;https://api.dmm.com/affiliate/v3/ActressSearch&#39;); # クエリを組み立てるハッシュ my %params = api_id =&gt; $api_id, affiliate_id =&gt; $affiliate_id, keyword =&gt; $name, hits =&gt; 50; # query-formメソッドに食わせる $uri." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://yusukebe.com/posts/2020/raku-dmm/" />
 <meta property="og:image" content="https://live.staticflickr.com/65535/49401830023_ca04d12565_c_d.jpg" />
@@ -29,10 +30,11 @@ my $stars = $data-&gt;{&#39;result&#39;}{&#39;actress&#39;}; for @$stars -&gt; $
 my $name = $ARGV[0]; で取ってたのが、Rakuだと
 my $name = @*ARGS[0]; となる。もう一つは、JSONをdecodeして$dataに入れた 値の中から女優のリストを取ってくるのに、Perl 5だと @{$data-&gt;{result}{actress}} とハッシュの中身をたどって デリファレンスしていたが、今回の場合
 my $stars = $data-&gt;{&#39;result&#39;}{&#39;actress&#39;}; for $stars.list -&gt; $star { } と書いた。$starsはスカラの変数でそこにArray型が入っているので、 listメソッドでリストを取得している。
-ちなみにListとArrayそれにScalarの関係は以下のコードで検証できる。
-my $a = [1,2,3]; say $a.^name; # =&gt; Array say $a.VAR.^name; # =&gt; Scalar my $b = (1,2,3); say $b.^name; # =&gt; List say $b.VAR.^name; # =&gt; Scalar うまく説明できてない気がするので、以下のドキュメントを参考にする。
+List、Array、Scalarについては以下のドキュメントを参考にする。
  class Scalar - Perl 6 Documentation class List - Perl 6 Documentaion  とはいえ
-my $stars = $data-&gt;{&#39;result&#39;}{&#39;actress&#39;}; for @$stars -&gt; $star { } でもいける。"/>
+my $stars = $data-&gt;{&#39;result&#39;}{&#39;actress&#39;}; for @$stars -&gt; $star { } でもいける。
+さて、以下コード。
+use HTTP::UserAgent; use URI; use JSON::Tiny; constant $api_id = &#39;YOUR_API_ID&#39;; constant $affiliate_id = &#39;YOUR_AFFILIATE_ID&#39;; # @*ARGSで引数取得、Perl5では$ARGV[0]だった my $name = @*ARGS[0] || &#39;雛&#39;; my $uri = URI.new(&#39;https://api.dmm.com/affiliate/v3/ActressSearch&#39;); # クエリを組み立てるハッシュ my %params = api_id =&gt; $api_id, affiliate_id =&gt; $affiliate_id, keyword =&gt; $name, hits =&gt; 50; # query-formメソッドに食わせる $uri."/>
 <link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
 	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
 	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
@@ -103,15 +105,7 @@ Perl 5だと</p>
 <span class="p">}</span>
 </code></pre></div><p>と書いた。<code>$stars</code>はスカラの変数でそこに<code>Array</code>型が入っているので、
 <code>list</code>メソッドでリストを取得している。</p>
-<p>ちなみに<code>List</code>と<code>Array</code>それに<code>Scalar</code>の関係は以下のコードで検証できる。</p>
-<div class="highlight"><pre class="chroma"><code class="language-perl" data-lang="perl"><span class="k">my</span> <span class="nv">$</span><span class="nv">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span><span class="p">;</span>
-<span class="n"></span><span class="n">say</span> <span class="nv">$</span><span class="nv">a</span><span class="o">.</span><span class="o">^</span><span class="n"></span><span class="n">name</span><span class="p">;</span> <span class="c1"># =&gt; Array</span>
-<span class="n"></span><span class="n">say</span> <span class="nv">$</span><span class="nv">a</span><span class="o">.</span><span class="n"></span><span class="n">VAR</span><span class="o">.</span><span class="o">^</span><span class="n"></span><span class="n">name</span><span class="p">;</span> <span class="c1"># =&gt; Scalar</span>
-
-<span class="k">my</span> <span class="nv">$</span><span class="nv">b</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span><span class="p">;</span>
-<span class="n"></span><span class="n">say</span> <span class="nv">$</span><span class="nv">b</span><span class="o">.</span><span class="o">^</span><span class="n"></span><span class="n">name</span><span class="p">;</span> <span class="c1"># =&gt; List</span>
-<span class="n"></span><span class="n">say</span> <span class="nv">$</span><span class="nv">b</span><span class="o">.</span><span class="n"></span><span class="n">VAR</span><span class="o">.</span><span class="o">^</span><span class="n"></span><span class="n">name</span><span class="p">;</span> <span class="c1"># =&gt; Scalar</span>
-</code></pre></div><p>うまく説明できてない気がするので、以下のドキュメントを参考にする。</p>
+<p><code>List</code>、<code>Array</code>、<code>Scalar</code>については以下のドキュメントを参考にする。</p>
 <ul>
 <li><a href="https://docs.perl6.org/type/Scalar">class Scalar - Perl 6 Documentation</a></li>
 <li><a href="https://docs.perl6.org/type/List">class List - Perl 6 Documentaion</a></li>
