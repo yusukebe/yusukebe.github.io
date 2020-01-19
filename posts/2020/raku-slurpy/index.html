@@ -198,6 +198,15 @@ func(*@args) が呼ばれた
 </code></pre></div><p><code>where</code>の条件にマッチした関数が、なければ<code>func(*@args)</code>が呼ばれる。</p>
 <p>なるほど！</p>
 <p>ところでPerl 5の<code>caller</code>みたいなのがはRakuにあるのだろうか&hellip;？</p>
+<p><strong>追記</strong></p>
+<p><code>callfarme</code>で取れる。skajiさんに教えてもらった。</p>
+<div class="highlight"><pre class="chroma"><code class="language-perl" data-lang="perl"><span class="k">use</span> <span class="nn">v6</span><span class="p">;</span>
+
+<span class="k">sub</span> <span class="nf">func</span> <span class="p">{</span>
+    <span class="n"></span><span class="n">say</span> <span class="n"></span><span class="n">callframe</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n"></span><span class="n">code</span><span class="o">.</span><span class="n"></span><span class="n">name</span><span class="p">;</span> <span class="c1">#func</span>
+<span class="p">}</span>
+<span class="n"></span><span class="n">func</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
+</code></pre></div><hr>
 <p>ツッコミあれば、ついさっきDisqusを入れたのでそこでもなんでもいいのでください！以下参考になるページ。</p>
 <ul>
 <li><a href="https://fluca1978.github.io/2017/12/13/Perl6Slurpy.html">Perl5 -&gt; Perl 6: slurpy things – Luca Ferrari – Open Source advocate, human being</a></li>
