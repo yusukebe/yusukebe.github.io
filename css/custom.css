@@ -1,34 +1,57 @@
 body {
     font-family: sans-serif;
     line-height: 1.7;
+    font-weight: normal;
+    color:#000;
 }
 h1, h2, h3, h4, h5, h6 {
-    font-weight: 400;
-}
-.site-title {
     font-weight: bold;
+    color:#000;
+    line-height: 1.7;
+}
+h1 {
+    font-size:1.9rem;
+}
+h2 {
+    font-size:1.7rem;
+}
+h3 {
+    font-size:1.4rem;
+}
+h3 {
+    font-size:1.2rem;
+}
+h1.site-title, h1.site-title a {
+    font-weight: bolder;
+    color:#000;
+    font-size:2.2rem;
 }
 .header h1, .header h2 {
-    font-size:2.4rem;
-    line-height: 1em;
+    line-height: 1rem;
+}
+.header nav ul.flat li {
+    font-weight: bold;
+}
+a.title {
+    font-weight:bold;
 }
 img {
     margin:10px auto 10px 0;
     padding:1px;
     border:1px solid #ddd;
 }
-.markdown ul, .markdown ol {
-    padding:1rem 0 1rem 1rem;
-    margin:1.4rem 0;
-    background-color: #fafafa;
+ul, ol {
+    padding-left: 1rem;
+}
+ul li, ol li {
+    padding-left:1rem;
 }
 .markdown ul li ul, .markdown ol li ol {
-    padding:0 1rem 0 1rem;
     margin:0;
     border:none;
 }
 img {
-    margin:1.4rem 0;
+    margin:1.5rem 0;
 }
 blockquote {
     margin:2rem 0;
@@ -39,6 +62,7 @@ pre {
 }
 .highlight pre {
     background-color: #272822 !important;
+    margin:1.5rem 0;
 }
 pre.code {
     margin-bottom: 0;
