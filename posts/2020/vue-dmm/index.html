@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Vue.jsでメロディー・雛・マークスを出す - ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="Vue.jsでメロディー・雛・マークスを出す" />
+<meta property="og:description" content="今回はVue.jsでメロディー・雛・マークスを出してみる。 Vue.jsは前にもいじったことがあるけど、ブランクがあるので、とりあえずやる。 これまでのメロディー・雛・マークスは以下。
+ Rakuでメロディー・雛・マークスを出す - ゆーすけべー日記 Node.jsでメロディー・雛・マークスを出す - ゆーすけべー日記 PHPでDMM Webサービスを叩いてメロディー・雛・マークスを出す - ゆーすけべー日記  Vue.jsはCDNで読み込ませる。他にもDMM APIをコールるすためにaxiosというライブラリを、 また、いちおカッコつかえるためにBootstrapを使ったので、それらもCDN経由で。
+&lt;link rel=&#34;stylesheet&#34; href=&#34;https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css&#34; /&gt; ... &lt;script src=&#34;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&#34;&gt;&lt;/script&gt; &lt;script src=&#34;https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.1/axios.min.js&#34;&gt;&lt;/script&gt; こいつを書いたindex.htmlをローカルで作り、app.jsにJSを記載する。 file://.../index.htmlをブラウザで閲覧するのでAjaxの制限に引っかからずにAPIを叩けるし、 APIキーを人に見られることはない。
+公開するにはそれなりに準備が必要だけど、今回の場合は CDNを活用してローカルで動かすのがいいだろう。 これで、メロディー・雛・マークスを出すことに専念できる。
+アプリではこの4つのプロパティを使う。
+data: { keyword: null, // 女優検索に使用するキーワード  stars: null, // 女優情報を配列で格納する  loading: false, // ローディングかどうか  errored: false // エラーが発生したらtrue } Vue.jsではこれらのプロパティ（モデル）はDOM上のものとJSで書いているアプリアプリケーションで 完全に関連付けられていて、リアクティブになっている。例えば、jQueryの典型的なやり方だと、 Ajaxでデータを持ってきたら、それを元にデータを整形しhtml()とかtext()とかで指定したDOMを書き換える なんてことをやるが、Vue.jsならこうした作業がいらない。 ある意味ViewとModelを切り離す、みたいなことになる （実際、Vue.jsを初めて触った時、Webフレームワークにおけるテンプレートエンジンの活用、っぽいなと思った）。
+なので、
+&lt;input v-model=&#34;keyword&#34; type=&#34;text&#34; placeholder=&#34;キーワードを入れてね&#34;&gt; と、v-model属性の値としてkeywordを指定すれば、 テキストフォームに入力した値はJS上からkeywordのプロパティ値として参照可能。 他にもJS側でAjaxが成功したらレスポンスの中身をとってきて、 AV女優情報の配列をstarsに入れれば、それが即反映されHTML内に記載した通りに描画される。 実際には、v-ifやv-elseなどのタグを利用してローディング中ならスピナーを表示、 ロードが終わったら検索結果一覧を表示、というように制御している。
+検索ボタンを押すと発火されるgetStarsメソッドはこんな具合。
+getStars: function() { // ローディング中を表す  this.loading = true; axios .get(&#39;https://api.dmm.com/affiliate/v3/ActressSearch&#39;, { params: { api_id: api_id, affiliate_id: affiliate_id, hits: 50, // フォームに入力された検索語を参照  keyword: this.keyword } }) ." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yusukebe.com/posts/2020/vue-dmm/" />
+<meta property="og:image" content="https://live.staticflickr.com/65535/49413383487_f660506ac6_c_d.jpg" />
+<meta property="article:published_time" content="2020-01-20T16:18:55+09:00" />
+<meta property="article:modified_time" content="2020-01-20T16:18:55+09:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://live.staticflickr.com/65535/49413383487_f660506ac6_c_d.jpg"/>
+
+<meta name="twitter:title" content="Vue.jsでメロディー・雛・マークスを出す"/>
+<meta name="twitter:description" content="今回はVue.jsでメロディー・雛・マークスを出してみる。 Vue.jsは前にもいじったことがあるけど、ブランクがあるので、とりあえずやる。 これまでのメロディー・雛・マークスは以下。
+ Rakuでメロディー・雛・マークスを出す - ゆーすけべー日記 Node.jsでメロディー・雛・マークスを出す - ゆーすけべー日記 PHPでDMM Webサービスを叩いてメロディー・雛・マークスを出す - ゆーすけべー日記  Vue.jsはCDNで読み込ませる。他にもDMM APIをコールるすためにaxiosというライブラリを、 また、いちおカッコつかえるためにBootstrapを使ったので、それらもCDN経由で。
+&lt;link rel=&#34;stylesheet&#34; href=&#34;https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css&#34; /&gt; ... &lt;script src=&#34;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&#34;&gt;&lt;/script&gt; &lt;script src=&#34;https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.1/axios.min.js&#34;&gt;&lt;/script&gt; こいつを書いたindex.htmlをローカルで作り、app.jsにJSを記載する。 file://.../index.htmlをブラウザで閲覧するのでAjaxの制限に引っかからずにAPIを叩けるし、 APIキーを人に見られることはない。
+公開するにはそれなりに準備が必要だけど、今回の場合は CDNを活用してローカルで動かすのがいいだろう。 これで、メロディー・雛・マークスを出すことに専念できる。
+アプリではこの4つのプロパティを使う。
+data: { keyword: null, // 女優検索に使用するキーワード  stars: null, // 女優情報を配列で格納する  loading: false, // ローディングかどうか  errored: false // エラーが発生したらtrue } Vue.jsではこれらのプロパティ（モデル）はDOM上のものとJSで書いているアプリアプリケーションで 完全に関連付けられていて、リアクティブになっている。例えば、jQueryの典型的なやり方だと、 Ajaxでデータを持ってきたら、それを元にデータを整形しhtml()とかtext()とかで指定したDOMを書き換える なんてことをやるが、Vue.jsならこうした作業がいらない。 ある意味ViewとModelを切り離す、みたいなことになる （実際、Vue.jsを初めて触った時、Webフレームワークにおけるテンプレートエンジンの活用、っぽいなと思った）。
+なので、
+&lt;input v-model=&#34;keyword&#34; type=&#34;text&#34; placeholder=&#34;キーワードを入れてね&#34;&gt; と、v-model属性の値としてkeywordを指定すれば、 テキストフォームに入力した値はJS上からkeywordのプロパティ値として参照可能。 他にもJS側でAjaxが成功したらレスポンスの中身をとってきて、 AV女優情報の配列をstarsに入れれば、それが即反映されHTML内に記載した通りに描画される。 実際には、v-ifやv-elseなどのタグを利用してローディング中ならスピナーを表示、 ロードが終わったら検索結果一覧を表示、というように制御している。
+検索ボタンを押すと発火されるgetStarsメソッドはこんな具合。
+getStars: function() { // ローディング中を表す  this.loading = true; axios .get(&#39;https://api.dmm.com/affiliate/v3/ActressSearch&#39;, { params: { api_id: api_id, affiliate_id: affiliate_id, hits: 50, // フォームに入力された検索語を参照  keyword: this.keyword } }) ."/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
+	
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://yusukebe.com/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper post">
+		<div class="header">
+	<h1 class="site-title"><a href="https://yusukebe.com/">ゆーすけべー日記</a></h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/yusukebe" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/yusukebe" title="Twitter"><i data-feather="twitter"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post-header">
+			<h1 class="title">Vue.jsでメロディー・雛・マークスを出す</h1>
+			<div class="meta">Posted at &mdash; Jan 20, 2020</div>
+		</div>
+
+		<div class="markdown">
+			<p>今回はVue.jsでメロディー・雛・マークスを出してみる。
+Vue.jsは前にもいじったことがあるけど、ブランクがあるので、とりあえずやる。
+これまでのメロディー・雛・マークスは以下。</p>
+<ul>
+<li><a href="https://yusukebe.com/posts/2020/raku-dmm/">Rakuでメロディー・雛・マークスを出す - ゆーすけべー日記</a></li>
+<li><a href="https://yusukebe.com/posts/2020/node-dmm/">Node.jsでメロディー・雛・マークスを出す - ゆーすけべー日記</a></li>
+<li><a href="https://yusukebe.com/posts/2019/1226173405/">PHPでDMM Webサービスを叩いてメロディー・雛・マークスを出す - ゆーすけべー日記</a></li>
+</ul>
+<p><code>Vue.js</code>はCDNで読み込ませる。他にもDMM APIをコールるすために<code>axios</code>というライブラリを、
+また、いちおカッコつかえるために<code>Bootstrap</code>を使ったので、それらもCDN経由で。</p>
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&#34;stylesheet&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css&#34;</span> <span class="p">/</span><span class="p">&gt;</span>
+...
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&#34;</span><span class="p"></span><span class="p">&gt;</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.1/axios.min.js&#34;</span><span class="p"></span><span class="p">&gt;</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">script</span><span class="p">&gt;</span>
+</code></pre></div><p>こいつを書いた<code>index.html</code>をローカルで作り、<code>app.js</code>にJSを記載する。
+<code>file://.../index.html</code>をブラウザで閲覧するのでAjaxの制限に引っかからずにAPIを叩けるし、
+APIキーを人に見られることはない。</p>
+<p>公開するにはそれなりに準備が必要だけど、今回の場合は
+CDNを活用してローカルで動かすのがいいだろう。
+これで、メロディー・雛・マークスを出すことに専念できる。</p>
+<p>アプリではこの4つのプロパティを使う。</p>
+<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">data</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">keyword</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span> <span class="c1">// 女優検索に使用するキーワード
+</span><span class="c1"></span>    <span class="nx">stars</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span> <span class="c1">// 女優情報を配列で格納する
+</span><span class="c1"></span>    <span class="nx">loading</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="c1">// ローディングかどうか
+</span><span class="c1"></span>    <span class="nx">errored</span><span class="o">:</span> <span class="kc">false</span> <span class="c1">// エラーが発生したらtrue
+</span><span class="c1"></span><span class="p">}</span>
+</code></pre></div><p>Vue.jsではこれらのプロパティ（モデル）はDOM上のものとJSで書いているアプリアプリケーションで
+完全に関連付けられていて、リアクティブになっている。例えば、jQueryの典型的なやり方だと、
+Ajaxでデータを持ってきたら、それを元にデータを整形し<code>html()</code>とか<code>text()</code>とかで指定したDOMを書き換える
+なんてことをやるが、Vue.jsならこうした作業がいらない。
+ある意味ViewとModelを切り離す、みたいなことになる
+（実際、Vue.jsを初めて触った時、Webフレームワークにおけるテンプレートエンジンの活用、っぽいなと思った）。</p>
+<p>なので、</p>
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">input</span> <span class="na">v-model</span><span class="o">=</span><span class="s">&#34;keyword&#34;</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text&#34;</span>
+       <span class="na">placeholder</span><span class="o">=</span><span class="s">&#34;キーワードを入れてね&#34;</span><span class="p"></span><span class="p">&gt;</span>
+</code></pre></div><p>と、<code>v-model</code>属性の値として<code>keyword</code>を指定すれば、
+テキストフォームに入力した値はJS上から<code>keyword</code>のプロパティ値として参照可能。
+他にもJS側でAjaxが成功したらレスポンスの中身をとってきて、
+AV女優情報の配列を<code>stars</code>に入れれば、それが即反映されHTML内に記載した通りに描画される。
+実際には、<code>v-if</code>や<code>v-else</code>などのタグを利用してローディング中ならスピナーを表示、
+ロードが終わったら検索結果一覧を表示、というように制御している。</p>
+<p>検索ボタンを押すと発火される<code>getStars</code>メソッドはこんな具合。</p>
+<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">getStars</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// ローディング中を表す
+</span><span class="c1"></span>    <span class="k">this</span><span class="p">.</span><span class="nx">loading</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+    <span class="nx">axios</span>
+        <span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;https://api.dmm.com/affiliate/v3/ActressSearch&#39;</span><span class="p">,</span> <span class="p">{</span>
+            <span class="nx">params</span><span class="o">:</span> <span class="p">{</span>
+                <span class="nx">api_id</span><span class="o">:</span> <span class="nx">api_id</span><span class="p">,</span>
+                <span class="nx">affiliate_id</span><span class="o">:</span> <span class="nx">affiliate_id</span><span class="p">,</span>
+                <span class="nx">hits</span><span class="o">:</span> <span class="mi">50</span><span class="p">,</span>
+                <span class="c1">// フォームに入力された検索語を参照
+</span><span class="c1"></span>                <span class="nx">keyword</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">keyword</span>
+            <span class="p">}</span>
+        <span class="p">}</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="p">=&gt;</span> <span class="p">{</span>
+             <span class="c1">// レスポンスを元にAV女優情報をstarsに入れる
+</span><span class="c1"></span>             <span class="k">this</span><span class="p">.</span><span class="nx">stars</span> <span class="o">=</span> <span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">result</span><span class="p">.</span><span class="nx">actress</span>
+         <span class="p">}</span><span class="p">)</span>
+         <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">error</span> <span class="p">=&gt;</span> <span class="p">{</span>
+             <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span>
+             <span class="c1">// エラーだったら
+</span><span class="c1"></span>             <span class="k">this</span><span class="p">.</span><span class="nx">errored</span> <span class="o">=</span> <span class="kc">true</span>
+         <span class="p">}</span><span class="p">)</span>
+         <span class="c1">// 処理が終わったらローディング状態を解除
+</span><span class="c1"></span>        <span class="p">.</span><span class="k">finally</span><span class="p">(</span><span class="p">(</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">loading</span> <span class="o">=</span> <span class="kc">false</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div><p>AV女優一覧を表現する<code>stars</code>を描画するHTML部分はこうだ。</p>
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">v-for</span><span class="o">=</span><span class="s">&#34;star in stars&#34;</span>
+     <span class="na">class</span><span class="o">=</span><span class="s">&#34;col-sm-2&#34;</span><span class="p"></span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;card mb-4 text-center&#34;</span><span class="p"></span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">img</span> <span class="na">v-bind:src</span><span class="o">=</span><span class="s">&#34;star.imageURL ? star.imageURL.large : &#39;dummy.gif&#39;&#34;</span>
+         <span class="na">class</span><span class="o">=</span><span class="s">&#34;card-img-top&#34;</span> <span class="p">/</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;card-body&#34;</span><span class="p"></span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;card-title&#34;</span><span class="p"></span><span class="p">&gt;</span>{{ star.name }}<span class="p">&lt;</span><span class="p">/</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;card-sub-title text-muted&#34;</span><span class="p"></span><span class="p">&gt;</span>{{ star.ruby }}<span class="p">&lt;</span><span class="p">/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="p">/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="p">/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="p">/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div><p>ネストが深くなっちゃってるので分かりにくいが、
+<code>v-for=&quot;star in stars&quot;</code>で個々の要素を<code>star</code>に入れて、
+<code>{{ star.name }}</code>で女優名を表示したりしている。</p>
+<p>さて、こうして完成。試しに検索してみる。</p>
+<p><img src="https://live.staticflickr.com/65535/49413374452_d0966222e1_c_d.jpg" alt=""></p>
+<p>おっ、<strong>深田えいみ</strong>出てきた！
+けど、イメージ写真がない女優さんが結構いる。</p>
+<p>で、いよいよメロディー・雛・マークスを出す。</p>
+<p><img src="https://live.staticflickr.com/65535/49413383487_f660506ac6_c_d.jpg" alt=""></p>
+<p>出た！右はじに<strong>メロディー・雛・マークス</strong>！写真がないのが残念！</p>
+<p>そして手持ち無沙汰になった僕は、指が勝手に動いてなぜか「<strong>ちんこ</strong>」と検索していた。</p>
+<p><img src="https://live.staticflickr.com/65535/49413379667_1577eaa4a5_c_d.jpg" alt=""></p>
+<p>えっ、<strong>望月珍子</strong>さん！！</p>
+<ul>
+<li><a href="https://gist.github.com/yusukebe/655efb65d4e08e0b2a80f4823e05d37f">https://gist.github.com/yusukebe/655efb65d4e08e0b2a80f4823e05d37f</a></li>
+</ul>
+
+		</div>
+
+		<div class="post-tags">
+			
+				
+					<nav class="nav tags">
+							<ul class="flat">
+								
+								<li><a href="/tags/javascript">JavaScript</a></li>
+								
+								<li><a href="/tags/vue.js">Vue.js</a></li>
+								
+							</ul>
+					</nav>
+				
+			
+		</div>
+        <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v5.0&appId=233306523373884&autoLogAppEvents=1"></script>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+
+<div class="social-button-area">
+  <ul class="social-button">
+    <li>
+      <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
+    </li>
+    <li>
+      <span class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2020%2fvue-dmm%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
+    </li>
+    <li>
+      <a href="https://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label-counter" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>
+    </li>
+  </ul>
+</div>
+
+<div class="disqus-area">
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "yusukebe-com" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<ul class="pagination">
+  
+  <li class="page-item page-prev">
+    <a href="https://yusukebe.com/posts/2020/raku-slurpy/" class="page-link" aria-label="Previous"><span aria-hidden="true">← RakuのSlurpyについて</span></a>
+  </li>
+  
+  
+</ul>
+
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright yusukebe.com |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-492497-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

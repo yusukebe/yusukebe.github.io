@@ -7,10 +7,28 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <copyright>© Copyright yusukebe.com</copyright>
-    <lastBuildDate>Sun, 19 Jan 2020 06:42:55 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 20 Jan 2020 16:18:55 +0900</lastBuildDate>
     
 	<atom:link href="https://yusukebe.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>JavaScript</title>
+      <link>https://yusukebe.com/tags/javascript/</link>
+      <pubDate>Mon, 20 Jan 2020 16:18:55 +0900</pubDate>
+      
+      <guid>https://yusukebe.com/tags/javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Vue.js</title>
+      <link>https://yusukebe.com/tags/vue.js/</link>
+      <pubDate>Mon, 20 Jan 2020 16:18:55 +0900</pubDate>
+      
+      <guid>https://yusukebe.com/tags/vue.js/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Perl</title>
@@ -27,15 +45,6 @@
       <pubDate>Sun, 19 Jan 2020 06:42:55 +0900</pubDate>
       
       <guid>https://yusukebe.com/tags/raku/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>JavaScript</title>
-      <link>https://yusukebe.com/tags/javascript/</link>
-      <pubDate>Sat, 18 Jan 2020 05:43:34 +0900</pubDate>
-      
-      <guid>https://yusukebe.com/tags/javascript/</guid>
       <description></description>
     </item>
     

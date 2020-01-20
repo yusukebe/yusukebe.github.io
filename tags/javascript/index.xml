@@ -7,10 +7,28 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <copyright>© Copyright yusukebe.com</copyright>
-    <lastBuildDate>Sat, 18 Jan 2020 05:43:34 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 20 Jan 2020 16:18:55 +0900</lastBuildDate>
     
 	<atom:link href="https://yusukebe.com/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Vue.jsでメロディー・雛・マークスを出す</title>
+      <link>https://yusukebe.com/posts/2020/vue-dmm/</link>
+      <pubDate>Mon, 20 Jan 2020 16:18:55 +0900</pubDate>
+      
+      <guid>https://yusukebe.com/posts/2020/vue-dmm/</guid>
+      <description>今回はVue.jsでメロディー・雛・マークスを出してみる。 Vue.jsは前にもいじったことがあるけど、ブランクがあるので、とりあえずやる。 これまでのメロディー・雛・マークスは以下。
+ Rakuでメロディー・雛・マークスを出す - ゆーすけべー日記 Node.jsでメロディー・雛・マークスを出す - ゆーすけべー日記 PHPでDMM Webサービスを叩いてメロディー・雛・マークスを出す - ゆーすけべー日記  Vue.jsはCDNで読み込ませる。他にもDMM APIをコールるすためにaxiosというライブラリを、 また、いちおカッコつかえるためにBootstrapを使ったので、それらもCDN経由で。
+&amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css&amp;#34; /&amp;gt; ... &amp;lt;script src=&amp;#34;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script src=&amp;#34;https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.1/axios.min.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; こいつを書いたindex.htmlをローカルで作り、app.jsにJSを記載する。 file://.../index.htmlをブラウザで閲覧するのでAjaxの制限に引っかからずにAPIを叩けるし、 APIキーを人に見られることはない。
+公開するにはそれなりに準備が必要だけど、今回の場合は CDNを活用してローカルで動かすのがいいだろう。 これで、メロディー・雛・マークスを出すことに専念できる。
+アプリではこの4つのプロパティを使う。
+data: { keyword: null, // 女優検索に使用するキーワード  stars: null, // 女優情報を配列で格納する  loading: false, // ローディングかどうか  errored: false // エラーが発生したらtrue } Vue.jsではこれらのプロパティ（モデル）はDOM上のものとJSで書いているアプリアプリケーションで 完全に関連付けられていて、リアクティブになっている。例えば、jQueryの典型的なやり方だと、 Ajaxでデータを持ってきたら、それを元にデータを整形しhtml()とかtext()とかで指定したDOMを書き換える なんてことをやるが、Vue.jsならこうした作業がいらない。 ある意味ViewとModelを切り離す、みたいなことになる （実際、Vue.jsを初めて触った時、Webフレームワークにおけるテンプレートエンジンの活用、っぽいなと思った）。
+なので、
+&amp;lt;input v-model=&amp;#34;keyword&amp;#34; type=&amp;#34;text&amp;#34; placeholder=&amp;#34;キーワードを入れてね&amp;#34;&amp;gt; と、v-model属性の値としてkeywordを指定すれば、 テキストフォームに入力した値はJS上からkeywordのプロパティ値として参照可能。 他にもJS側でAjaxが成功したらレスポンスの中身をとってきて、 AV女優情報の配列をstarsに入れれば、それが即反映されHTML内に記載した通りに描画される。 実際には、v-ifやv-elseなどのタグを利用してローディング中ならスピナーを表示、 ロードが終わったら検索結果一覧を表示、というように制御している。
+検索ボタンを押すと発火されるgetStarsメソッドはこんな具合。
+getStars: function() { // ローディング中を表す  this.loading = true; axios .get(&amp;#39;https://api.dmm.com/affiliate/v3/ActressSearch&amp;#39;, { params: { api_id: api_id, affiliate_id: affiliate_id, hits: 50, // フォームに入力された検索語を参照  keyword: this.keyword } }) .</description>
+    </item>
     
     <item>
       <title>Node.jsでメロディー・雛・マークスを出す</title>
