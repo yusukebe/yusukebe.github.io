@@ -9,7 +9,7 @@
  でも、Raku（Perl 6）の型付けについてイマイチ理解が足りなかった。 特にType Check=型チェックについて、どういう場合に、 どこで、どんなエラーを吐くかが分かってなかったのでインターネットアイドルさんの 力を借りつつつ調べてみた。
 RakuはGradual Typingな言語 まずRakuの型付けの性質について。 Rakuは、Javaのような静的型付けの側面も持ちつつ、動的型付けの利点がある Gradual Typing=漸進的型チェックを持つ（だと思う）。漸進的型付けについては以下の記事がすごく面白いです。
  What is Gradual Typing: 漸進的型付けとは何か - Qiita  RakuはGradual Typingだぜ！って言ってる人は他にもいる。
- Perl 6 gradual typing FTW! Perl 6 Types: Made for Humans | Zoffix Znet blogs.perl.org Calling subs and typing in Perl 6 | Opensource.com  簡単な例、そしてこれだけがType Check時にコンパイルエラーになる Perl 5は動的型付けな言語（ライブラリを使って漸進的型付けっぽくすることもできる）なので、 sub funcで定義したサブルーチンの引数にIntを期待したいけど、 それを表現することはできなくて、以下のコードはそのままfooと印字する。
+ Perl 6 gradual typing FTW! Perl 6 Types: Made for Humans | Zoffix Znet blogs.perl.org Calling subs and typing in Perl 6 | Opensource.com  簡単な例、そしてこれだけがType Checkでコンパイルエラーになる Perl 5は動的型付けな言語（ライブラリを使って漸進的型付けっぽくすることもできる）なので、 sub funcで定義したサブルーチンの引数にIntを期待したいけど、 それを表現することはできなくて、以下のコードはそのままfooと印字する。
 use v5.10; sub func { my $i = shift; say $i; } func(&#39;foo&#39;); まぁ当たり前なんだけど、これをRakuでやろうとするとシグネチャーを付けてこうなる。
 use v6; sub func( Int $i ) { say $i; } func(&#39;foo&#39;); 実行しようとするとコンパイルエラーになる。
 エラーメッセージが色付けされてていい感じ！
@@ -30,7 +30,7 @@ X::TypeCheck::* Rakuのコンパイルor実行時エラーの定義はRakudoの�
  でも、Raku（Perl 6）の型付けについてイマイチ理解が足りなかった。 特にType Check=型チェックについて、どういう場合に、 どこで、どんなエラーを吐くかが分かってなかったのでインターネットアイドルさんの 力を借りつつつ調べてみた。
 RakuはGradual Typingな言語 まずRakuの型付けの性質について。 Rakuは、Javaのような静的型付けの側面も持ちつつ、動的型付けの利点がある Gradual Typing=漸進的型チェックを持つ（だと思う）。漸進的型付けについては以下の記事がすごく面白いです。
  What is Gradual Typing: 漸進的型付けとは何か - Qiita  RakuはGradual Typingだぜ！って言ってる人は他にもいる。
- Perl 6 gradual typing FTW! Perl 6 Types: Made for Humans | Zoffix Znet blogs.perl.org Calling subs and typing in Perl 6 | Opensource.com  簡単な例、そしてこれだけがType Check時にコンパイルエラーになる Perl 5は動的型付けな言語（ライブラリを使って漸進的型付けっぽくすることもできる）なので、 sub funcで定義したサブルーチンの引数にIntを期待したいけど、 それを表現することはできなくて、以下のコードはそのままfooと印字する。
+ Perl 6 gradual typing FTW! Perl 6 Types: Made for Humans | Zoffix Znet blogs.perl.org Calling subs and typing in Perl 6 | Opensource.com  簡単な例、そしてこれだけがType Checkでコンパイルエラーになる Perl 5は動的型付けな言語（ライブラリを使って漸進的型付けっぽくすることもできる）なので、 sub funcで定義したサブルーチンの引数にIntを期待したいけど、 それを表現することはできなくて、以下のコードはそのままfooと印字する。
 use v5.10; sub func { my $i = shift; say $i; } func(&#39;foo&#39;); まぁ当たり前なんだけど、これをRakuでやろうとするとシグネチャーを付けてこうなる。
 use v6; sub func( Int $i ) { say $i; } func(&#39;foo&#39;); 実行しようとするとコンパイルエラーになる。
 エラーメッセージが色付けされてていい感じ！
@@ -114,7 +114,7 @@ Gradual Typing=漸進的型チェックを持つ（だと思う）。漸進的�
 <li><a href="http://blogs.perl.org/users/zoffix_znet/2016/04/perl-6-types-made-for-humans.html">Perl 6 Types: Made for Humans | Zoffix Znet blogs.perl.org</a></li>
 <li><a href="https://opensource.com/article/18/12/calling-subs-and-typing-perl-6">Calling subs and typing in Perl 6 | Opensource.com</a></li>
 </ul>
-<h2 id="簡単な例そしてこれだけがtype-check時にコンパイルエラーになる">簡単な例、そしてこれだけがType Check時にコンパイルエラーになる</h2>
+<h2 id="簡単な例そしてこれだけがtype-checkでコンパイルエラーになる">簡単な例、そしてこれだけがType Checkでコンパイルエラーになる</h2>
 <p>Perl 5は動的型付けな言語（ライブラリを使って漸進的型付けっぽくすることもできる）なので、
 <code>sub func</code>で定義したサブルーチンの引数に<code>Int</code>を期待したいけど、
 それを表現することはできなくて、以下のコードはそのまま<code>foo</code>と印字する。</p>
