@@ -10,7 +10,7 @@
 RakuはGradual Typingな言語 まずRakuの型付けの性質について。 Rakuは、Javaのような静的型付けの側面も持ちつつ、動的型付けの利点がある Gradual Typing=漸進的型チェックを持つ（だと思う）。漸進的型付けについては以下の記事がすごく面白いです。
  What is Gradual Typing: 漸進的型付けとは何か - Qiita  RakuはGradual Typingだぜ！って言ってる人は他にもいる。
  Perl 6 gradual typing FTW! Perl 6 Types: Made for Humans | Zoffix Znet blogs.perl.org Calling subs and typing in Perl 6 | Opensource.com  簡単な例、そしてこれだけがType Check時にコンパイルエラーになる Perl 5は動的型付けな言語（ライブラリを使って漸進的型付けっぽくすることもできる）なので、 sub funcで定義したサブルーチンの引数にIntを期待したいけど、 それを表現することはできなくて、以下のコードはそのままfooと印字する。
-use v5.10; sub foo { my $i = shift; say $i; } foo(&#39;foo&#39;); まぁ当たり前なんだけど、これをRakuでやろうとするとシグネチャーを付けてこうなる。
+use v5.10; sub func { my $i = shift; say $i; } func(&#39;foo&#39;); まぁ当たり前なんだけど、これをRakuでやろうとするとシグネチャーを付けてこうなる。
 use v6; sub func( Int $i ) { say $i; } func(&#39;foo&#39;); 実行しようとするとコンパイルエラーになる。
 エラーメッセージが色付けされてていい感じ！
 とはいえ、実はRakuにおける型チェックでコンパイルエラーが出るのは このケース（X::TypeCheck::Argument）だけのようだ&hellip;。
@@ -31,7 +31,7 @@ X::TypeCheck::* Rakuのコンパイルor実行時エラーの定義はRakudoの�
 RakuはGradual Typingな言語 まずRakuの型付けの性質について。 Rakuは、Javaのような静的型付けの側面も持ちつつ、動的型付けの利点がある Gradual Typing=漸進的型チェックを持つ（だと思う）。漸進的型付けについては以下の記事がすごく面白いです。
  What is Gradual Typing: 漸進的型付けとは何か - Qiita  RakuはGradual Typingだぜ！って言ってる人は他にもいる。
  Perl 6 gradual typing FTW! Perl 6 Types: Made for Humans | Zoffix Znet blogs.perl.org Calling subs and typing in Perl 6 | Opensource.com  簡単な例、そしてこれだけがType Check時にコンパイルエラーになる Perl 5は動的型付けな言語（ライブラリを使って漸進的型付けっぽくすることもできる）なので、 sub funcで定義したサブルーチンの引数にIntを期待したいけど、 それを表現することはできなくて、以下のコードはそのままfooと印字する。
-use v5.10; sub foo { my $i = shift; say $i; } foo(&#39;foo&#39;); まぁ当たり前なんだけど、これをRakuでやろうとするとシグネチャーを付けてこうなる。
+use v5.10; sub func { my $i = shift; say $i; } func(&#39;foo&#39;); まぁ当たり前なんだけど、これをRakuでやろうとするとシグネチャーを付けてこうなる。
 use v6; sub func( Int $i ) { say $i; } func(&#39;foo&#39;); 実行しようとするとコンパイルエラーになる。
 エラーメッセージが色付けされてていい感じ！
 とはいえ、実はRakuにおける型チェックでコンパイルエラーが出るのは このケース（X::TypeCheck::Argument）だけのようだ&hellip;。
@@ -120,11 +120,11 @@ Gradual Typing=漸進的型チェックを持つ（だと思う）。漸進的�
 それを表現することはできなくて、以下のコードはそのまま<code>foo</code>と印字する。</p>
 <div class="highlight"><pre class="chroma"><code class="language-perl" data-lang="perl"><span class="k">use</span> <span class="nn">v5</span><span class="mf">.10</span><span class="p">;</span>
 
-<span class="k">sub</span> <span class="nf">foo</span> <span class="p">{</span>
+<span class="k">sub</span> <span class="nf">func</span> <span class="p">{</span>
     <span class="k">my</span> <span class="nv">$</span><span class="nv">i</span> <span class="o">=</span> <span class="nb">shift</span><span class="p">;</span>
     <span class="n"></span><span class="n">say</span> <span class="nv">$</span><span class="nv">i</span><span class="p">;</span>
 <span class="p">}</span>
-<span class="n"></span><span class="n">foo</span><span class="p">(</span><span class="s">&#39;foo&#39;</span><span class="p">)</span><span class="p">;</span>
+<span class="n"></span><span class="n">func</span><span class="p">(</span><span class="s">&#39;foo&#39;</span><span class="p">)</span><span class="p">;</span>
 </code></pre></div><p>まぁ当たり前なんだけど、これをRakuでやろうとするとシグネチャーを付けてこうなる。</p>
 <div class="highlight"><pre class="chroma"><code class="language-perl" data-lang="perl"><span class="k">use</span> <span class="nn">v6</span><span class="p">;</span>
 
