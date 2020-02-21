@@ -18,18 +18,7 @@
       <pubDate>Thu, 01 Mar 2012 09:44:00 +0900</pubDate>
       
       <guid>https://yusukebe.com/posts/2012/0301004443/</guid>
-      <description>Webサービスの運営用にVPSと呼ばれるバーチャル・プライベート・サーバを借りることは昨今よくあることだと思います。 VPSのサーバを借りればroot権限を持てることになるので、自由度が高いサーバ環境を構築することができます。 また、スペックによって価格が違っていて、低いスペックなものだと月額かなり低価格なものが存在します。 僕はその中でも月額980円のさくらVPSを借りていて、それを個人用に限って使っています。 これから紹介するような用途であれば980円でもかなりいけます。 ちなみに980円コースのスペックは2012年3月現在で以下のようなものです。
- メモリ: 512MB HDD: 20GB CPU: 2Core(仮想)   
-gitリモートレポジトリ 僕が現行で行っているWebサービスでもiPhoneアプリ開発でもバージョン管理は必要になってきて、 そのためのプライベートなレポジトリが欲しくなります。 githubなどでは無料で公開レポジトリが持てますが、プライベートレポジトリを持つには有料プランが必要です。 こちらを使ってもいいですがだんだんキリがなくなってくるので、 僕は980円VPSにgitのプライベートレポジトリを構築しています。
-gitのリモートレポジトリを作るにはgitoliteというソフトがオススメです。 新規ユーザーを追加したり、 新たなレポジトリを追加したりする際に「管理用のレポジトリ」を取ってきてpushするだけで済むのが非常によいですね。 例えばレポジトリ「Hoge」を追加するとします。管理レポジトリを取ってきて
- $ git clone git@yourdomain:gitolite-admin.git $ cd gitolite-admin  「conf/gitolite.conf」に以下を追加します。
- repo Hoge RW+ = @all  そしてcommitしてpush。
- $ git commit -a -m &#39;add Hoge repo.&#39; $ git push  自動的に「Hoge」レポジトリを作ってくれます。
- remote: creating Hoge... remote: Initialized empty Git repository in /home/git/repositories/Hoge.git/  そのままgit cloneすれば空のレポジトリを取ってこれますね。
- $ git clone git@yourdomain:Hoge.git Cloning into Hoge... warning: You appear to have cloned an empty repository.  他にもgitosisなどの管理ツールはありますが、色々ためしてこのgitoliteに落ち着きました。
-gitレポジトリビューアー さてgitのリモートレポジトリができたところで、僕はレポジトリ郡の様子をWebブラウザで閲覧したいと思い、 「gitweb.cgi」を設定しました。gitweb.cgiでは個々のレポジトリのコミットログやコードを表示してくれます。
-gitweb.cgiはgitのソースコードに同封されています。 いくつかの設定をしてApacheでcgiが実行されるようにすればよいのですが、 僕は980円VPSにApacheを入れていないので特殊な方法で立ち上げてます。 PerlモジュールであるPlackを入れて、
- $ cpanm Plack  以下のような.</description>
+      <description>Webサービスの運営用にVPSと呼ばれるバーチャル・プライベート・サーバを借りることは昨今よくあることだと思います。 VPSのサーバを借りればroot権限を持てることになるので、自由度が高いサーバ環境を</description>
     </item>
     
   </channel>

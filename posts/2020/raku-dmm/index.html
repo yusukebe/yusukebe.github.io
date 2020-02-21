@@ -4,17 +4,7 @@
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Rakuでメロディー・雛・マークスを出す - ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta property="og:title" content="Rakuでメロディー・雛・マークスを出す" />
-<meta property="og:description" content="今度はRaku(Perl6)でDMM Webサービスを叩いてメロディー・雛・マークスを出す。
- PHPでDMM Webサービスを叩いてメロディー・雛・マークスを出す - ゆーすけべー日記 Node.jsでメロディー・雛・マークスを出す - ゆーすけべー日記  HTTP::UserAgentを使うとPerl 5におけるLWP::UserAgentとほぼ同じインターフェースなので、 あっさりと書けた。JSONのデコードにはJSON::Tinyを使った。
-ただ引っかかったところが2点。コマンドライン引数を取得する際、 Perl 5だと
-my $name = $ARGV[0]; で取ってたのが、Rakuだと
-my $name = @*ARGS[0]; となる。もう一つは、JSONをdecodeして$dataに入れた 値の中から女優のリストを取ってくるのに、Perl 5だと @{$data-&gt;{result}{actress}} とハッシュの中身をたどって デリファレンスしていたが、今回の場合
-my $stars = $data-&gt;{&#39;result&#39;}{&#39;actress&#39;}; for $stars.list -&gt; $star { } と書いた。$starsはスカラの変数でそこにArray型が入っているので、 listメソッドでイテレーブルにしている。
-Array、Scalar、さらにListについては以下のドキュメントを参考にする。
- class Scalar - Perl 6 Documentation class List - Perl 6 Documentaion  とはいえ
-my $stars = $data-&gt;{&#39;result&#39;}{&#39;actress&#39;}; for @$stars -&gt; $star { } でもいける。
-さて、以下コード。
-use HTTP::UserAgent; use URI; use JSON::Tiny; constant $api_id = &#39;YOUR_API_ID&#39;; constant $affiliate_id = &#39;YOUR_AFFILIATE_ID&#39;; # @*ARGSで引数取得、Perl5では$ARGV[0]だった my $name = @*ARGS[0] || &#39;雛&#39;; my $uri = URI.new(&#39;https://api.dmm.com/affiliate/v3/ActressSearch&#39;); # クエリを組み立てるハッシュ my %params = api_id =&gt; $api_id, affiliate_id =&gt; $affiliate_id, keyword =&gt; $name, hits =&gt; 50; # query-formメソッドに食わせる $uri." />
+<meta property="og:description" content="今度はRaku(Perl6)でDMM Webサービスを叩いてメロディー・雛・マークスを出す。 PHPでDMM Webサービスを叩いてメロディー・雛・マークスを出す - ゆーすけべー日記 Node.jsでメロディー" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://yusukebe.com/posts/2020/raku-dmm/" />
 <meta property="og:image" content="https://live.staticflickr.com/65535/49401830023_ca04d12565_c_d.jpg" />
@@ -24,17 +14,7 @@ use HTTP::UserAgent; use URI; use JSON::Tiny; constant $api_id = &#39;YOUR_API_I
 <meta name="twitter:image" content="https://live.staticflickr.com/65535/49401830023_ca04d12565_c_d.jpg"/>
 
 <meta name="twitter:title" content="Rakuでメロディー・雛・マークスを出す"/>
-<meta name="twitter:description" content="今度はRaku(Perl6)でDMM Webサービスを叩いてメロディー・雛・マークスを出す。
- PHPでDMM Webサービスを叩いてメロディー・雛・マークスを出す - ゆーすけべー日記 Node.jsでメロディー・雛・マークスを出す - ゆーすけべー日記  HTTP::UserAgentを使うとPerl 5におけるLWP::UserAgentとほぼ同じインターフェースなので、 あっさりと書けた。JSONのデコードにはJSON::Tinyを使った。
-ただ引っかかったところが2点。コマンドライン引数を取得する際、 Perl 5だと
-my $name = $ARGV[0]; で取ってたのが、Rakuだと
-my $name = @*ARGS[0]; となる。もう一つは、JSONをdecodeして$dataに入れた 値の中から女優のリストを取ってくるのに、Perl 5だと @{$data-&gt;{result}{actress}} とハッシュの中身をたどって デリファレンスしていたが、今回の場合
-my $stars = $data-&gt;{&#39;result&#39;}{&#39;actress&#39;}; for $stars.list -&gt; $star { } と書いた。$starsはスカラの変数でそこにArray型が入っているので、 listメソッドでイテレーブルにしている。
-Array、Scalar、さらにListについては以下のドキュメントを参考にする。
- class Scalar - Perl 6 Documentation class List - Perl 6 Documentaion  とはいえ
-my $stars = $data-&gt;{&#39;result&#39;}{&#39;actress&#39;}; for @$stars -&gt; $star { } でもいける。
-さて、以下コード。
-use HTTP::UserAgent; use URI; use JSON::Tiny; constant $api_id = &#39;YOUR_API_ID&#39;; constant $affiliate_id = &#39;YOUR_AFFILIATE_ID&#39;; # @*ARGSで引数取得、Perl5では$ARGV[0]だった my $name = @*ARGS[0] || &#39;雛&#39;; my $uri = URI.new(&#39;https://api.dmm.com/affiliate/v3/ActressSearch&#39;); # クエリを組み立てるハッシュ my %params = api_id =&gt; $api_id, affiliate_id =&gt; $affiliate_id, keyword =&gt; $name, hits =&gt; 50; # query-formメソッドに食わせる $uri."/>
+<meta name="twitter:description" content="今度はRaku(Perl6)でDMM Webサービスを叩いてメロディー・雛・マークスを出す。 PHPでDMM Webサービスを叩いてメロディー・雛・マークスを出す - ゆーすけべー日記 Node.jsでメロディー"/>
 <link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
 	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
 	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />

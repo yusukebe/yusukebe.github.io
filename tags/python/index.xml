@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python on ゆーすけべー日記</title>
+    <link>https://yusukebe.com/tags/python/</link>
+    <description>Recent content in Python on ゆーすけべー日記</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <copyright>© Copyright yusukebe.com</copyright>
+    <lastBuildDate>Fri, 21 Feb 2020 16:01:30 +0900</lastBuildDate>
+    
+	<atom:link href="https://yusukebe.com/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Pythonでメロディー・雛・マークスを出す</title>
+      <link>https://yusukebe.com/posts/2020/python-dmm/</link>
+      <pubDate>Fri, 21 Feb 2020 16:01:30 +0900</pubDate>
+      
+      <guid>https://yusukebe.com/posts/2020/python-dmm/</guid>
+      <description>意識が低いので、 Pythonを勉強するにあたってまずはDMM Webサービスを叩きたい。 意識が低いので、新しい技術を習得する際にはDMMのAPI叩いたり、カリビアンコムのCSVパースしたり、Pornhu</description>
+    </item>
+    
+  </channel>
+</rss>

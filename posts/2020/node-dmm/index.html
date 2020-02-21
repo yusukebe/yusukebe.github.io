@@ -4,13 +4,7 @@
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Node.jsでメロディー・雛・マークスを出す - ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta property="og:title" content="Node.jsでメロディー・雛・マークスを出す" />
-<meta property="og:description" content="何事も勉強するなら「メロディー・雛・マークス」ということで、 Node.jsでDMM Webサービスを叩いてメロディー・雛・マークスを出す。PHPの実装は以下。
- PHPでDMM Webサービスを叩いてメロディー・雛・マークスを出す - ゆーすけべー日記  めんどくさいこと抜きで$ node dmm.jsで実行してコンソールに表示させる。
-GETリクエストで使うURLを構築するのに、 Node.js標準のURLとURLSearchParamsを使う。 url.searchにURLSearchParamsオブジェクトを渡すといい感じにクエリパラメータを付けてくれる。
-HTTP(S)のクライアントは、 なるべくNode.js標準のhttp/httpsを使いたいところだが、 ローレベルで使いにくいかったのでnode-fetchを使う。
- node-fetch - npm  以下コード。
-const fetch = require(&#39;node-fetch&#39;); const api_id = &#39;YOUR_API_ID&#39;; const affiliate_id = &#39;YOUR_AFFILIATE_ID&#39;; const keyword = &#39;雛&#39;; const params = new URLSearchParams({ api_id: api_id, affiliate_id: affiliate_id, hits: 50, keyword: keyword }); const url = new URL(&#39;https://api.dmm.com/affiliate/v3/ActressSearch&#39;); url.search = params; console.log(&#39;GET:&#39; &#43; url.toString()); fetch(url.toString()) .then(res =&gt; res.json()) .then((data) =&gt; { for (const actress of data.result.actress) { console.log(actress.name); } }); $ node dmm.jsで実行する。
-でた！メロディー・雛・マークス！ オモテナシ！" />
+<meta property="og:description" content="何事も勉強するなら「メロディー・雛・マークス」ということで、 Node.jsでDMM Webサービスを叩いてメロディー・雛・マークスを出す。PHPの実装は以下。 PHPでDMM Webサービスを叩いてメロディ" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://yusukebe.com/posts/2020/node-dmm/" />
 <meta property="og:image" content="https://live.staticflickr.com/65535/49400593051_f9fe77a945_c_d.jpg" />
@@ -20,13 +14,7 @@ const fetch = require(&#39;node-fetch&#39;); const api_id = &#39;YOUR_API_ID&#39
 <meta name="twitter:image" content="https://live.staticflickr.com/65535/49400593051_f9fe77a945_c_d.jpg"/>
 
 <meta name="twitter:title" content="Node.jsでメロディー・雛・マークスを出す"/>
-<meta name="twitter:description" content="何事も勉強するなら「メロディー・雛・マークス」ということで、 Node.jsでDMM Webサービスを叩いてメロディー・雛・マークスを出す。PHPの実装は以下。
- PHPでDMM Webサービスを叩いてメロディー・雛・マークスを出す - ゆーすけべー日記  めんどくさいこと抜きで$ node dmm.jsで実行してコンソールに表示させる。
-GETリクエストで使うURLを構築するのに、 Node.js標準のURLとURLSearchParamsを使う。 url.searchにURLSearchParamsオブジェクトを渡すといい感じにクエリパラメータを付けてくれる。
-HTTP(S)のクライアントは、 なるべくNode.js標準のhttp/httpsを使いたいところだが、 ローレベルで使いにくいかったのでnode-fetchを使う。
- node-fetch - npm  以下コード。
-const fetch = require(&#39;node-fetch&#39;); const api_id = &#39;YOUR_API_ID&#39;; const affiliate_id = &#39;YOUR_AFFILIATE_ID&#39;; const keyword = &#39;雛&#39;; const params = new URLSearchParams({ api_id: api_id, affiliate_id: affiliate_id, hits: 50, keyword: keyword }); const url = new URL(&#39;https://api.dmm.com/affiliate/v3/ActressSearch&#39;); url.search = params; console.log(&#39;GET:&#39; &#43; url.toString()); fetch(url.toString()) .then(res =&gt; res.json()) .then((data) =&gt; { for (const actress of data.result.actress) { console.log(actress.name); } }); $ node dmm.jsで実行する。
-でた！メロディー・雛・マークス！ オモテナシ！"/>
+<meta name="twitter:description" content="何事も勉強するなら「メロディー・雛・マークス」ということで、 Node.jsでDMM Webサービスを叩いてメロディー・雛・マークスを出す。PHPの実装は以下。 PHPでDMM Webサービスを叩いてメロディ"/>
 <link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
 	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
 	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
