@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <copyright>© Copyright yusukebe.com</copyright>
-    <lastBuildDate>Fri, 21 Feb 2020 16:01:30 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 25 Feb 2020 16:25:27 +0900</lastBuildDate>
     
 	<atom:link href="https://yusukebe.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>オードリー若林のエッセイを読んだ</title>
+      <link>https://yusukebe.com/posts/2020/wakabayashi-essay/</link>
+      <pubDate>Tue, 25 Feb 2020 16:25:27 +0900</pubDate>
+      
+      <guid>https://yusukebe.com/posts/2020/wakabayashi-essay/</guid>
+      <description>ハライチ岩井のエッセイを買うつもりが、 オードリー若林のエッセイを買っていた。 「完全版 社会人大学人見知り学部 卒業見込」という角川から出ている文庫本。 1年くらい前からオードリーのオールナイトニッポン（AN</description>
+    </item>
     
     <item>
       <title>Pythonでメロディー・雛・マークスを出す</title>
