@@ -68,7 +68,7 @@
 例えば<code>2020-02-28T08:28:18+09:00</code>のようなフォーマットで現在時刻を印字したい。</p>
 <p><code>date</code>コマンドのフォーマッターはタイムゾーンの表示に対応していないので、
 <code>+09:00</code>固定でなんとかする。</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">$ 2020-02-28T08:28:18+09:00
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">$ LANG=&#34;C&#34; date &#34;+%Y-%m-%dT%H:%M:%S+09:00&#34;
 </code></pre></div>
 		</div>
 
