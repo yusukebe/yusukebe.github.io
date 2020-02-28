@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <copyright>© Copyright yusukebe.com</copyright>
-    <lastBuildDate>Fri, 28 Feb 2020 08:31:13 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 28 Feb 2020 09:57:20 +0900</lastBuildDate>
     
 	<atom:link href="https://yusukebe.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>ストレングス・ファインダーをやった</title>
+      <link>https://yusukebe.com/posts/2020/strengths-finder/</link>
+      <pubDate>Fri, 28 Feb 2020 09:57:20 +0900</pubDate>
+      
+      <guid>https://yusukebe.com/posts/2020/strengths-finder/</guid>
+      <description>長らく放置していたストレングス・ファインダーを読んだ。というよりやった。 邦題は『さあ、才能（じぶん）に目覚めよう』。 自分の強みを知り、それを活かそうってことが冒頭、かなり短く語られていて、 残りはこの本</description>
+    </item>
     
     <item>
       <title>dateコマンドでW3C-DTF形式の現在時刻を取得する</title>

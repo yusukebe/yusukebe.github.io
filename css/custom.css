@@ -1,8 +1,8 @@
 body {
-    font-family: sans-serif;
-    line-height: 1.7;
+    line-height: 1.67;
+    letter-spacing : 0.04em;
     font-weight: normal;
-    color:#000;
+    color:#222;
 }
 h1, h2, h3, h4, h5, h6 {
     font-weight: bold;
@@ -41,10 +41,15 @@ img {
     border:1px solid #ddd;
 }
 ul, ol {
-    padding-left:0rem;
+    list-style-position:inside;
+    margin-left:0;
+    padding-left:1rem;
 }
 ul li, ol li {
-    padding-left:1rem;
+    margin-left:0;
+}
+.markdown {
+    font-family: 'ヒラギノ角ゴ Pro W3';
 }
 .markdown ul li ul, .markdown ol li ol {
     margin:0;

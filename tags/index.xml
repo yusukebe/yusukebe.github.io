@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <copyright>© Copyright yusukebe.com</copyright>
-    <lastBuildDate>Fri, 28 Feb 2020 08:31:13 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 28 Feb 2020 09:57:20 +0900</lastBuildDate>
     
 	<atom:link href="https://yusukebe.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Book</title>
+      <link>https://yusukebe.com/tags/book/</link>
+      <pubDate>Fri, 28 Feb 2020 09:57:20 +0900</pubDate>
+      
+      <guid>https://yusukebe.com/tags/book/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Unix</title>
@@ -18,15 +27,6 @@
       <pubDate>Fri, 28 Feb 2020 08:31:13 +0900</pubDate>
       
       <guid>https://yusukebe.com/tags/unix/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Book</title>
-      <link>https://yusukebe.com/tags/book/</link>
-      <pubDate>Tue, 25 Feb 2020 16:25:27 +0900</pubDate>
-      
-      <guid>https://yusukebe.com/tags/book/</guid>
       <description></description>
     </item>
     
