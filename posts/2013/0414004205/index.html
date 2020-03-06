@@ -63,7 +63,7 @@
 			<div class="meta">Posted at &mdash; Apr 14, 2013</div>
 		</div>
 
-		<div class="markdown">
+		<div class="markdown post-body">
 			
 
 <p>Webアプリケーションが遅いとか感じる時って、僕の場合、I/Oがボトルネックなケースが多いのです。つまり、MySQLへクエリーを投げて返却を待つとか、memcachedにget/set等のメソッドを発行した時の待ち時間が長くかかってたり... とかです。そうすると計測して原因を突き止めたくなります。PerlのプロファイラはDevel::NYTProfとか色々ありますが、こうしたI/Oに関しての計測は「<a href="http://search.cpan.org/dist/Devel-KYTProf/">Devel::KYTProf</a>」が便利です。適当な場所にて</p>

@@ -63,7 +63,7 @@
 			<div class="meta">Posted at &mdash; Dec 30, 2014</div>
 		</div>
 
-		<div class="markdown">
+		<div class="markdown post-body">
 			
 
 <p><a href="http://bokete.jp/">ボケて</a>では既に「お題」が110万レコード、「ボケ」が2,300万レコード、それに対するユーザーの「評価」が1億1,000万レコード数存在します。このところそれをちょいと利用して、楽しいことをしましょうっていうんで、直近1年間の範囲である条件下のデータをエキスポートする必要がありました。ボケての基本的なデータは全て Amazon RDS の <strong>MySQL</strong> ストレージに格納されていて、この件で出力する形式は <strong>CSV</strong> フォーマットです。この場合、一般ユーザーがボケてのWebやモバイルアプリを操作する際に発生するクエリーとはまたひと味違った「<strong>重たい</strong>」クエリーを投げないとデータの「<strong>加工</strong>」が難しそうです。そんな際。<strong>Google BigQuery</strong> が非常に役に立ったので「<em>大雑把に</em>」その工程を紹介します。</p>

@@ -63,7 +63,7 @@
 			<div class="meta">Posted at &mdash; Jul 19, 2004</div>
 		</div>
 
-		<div class="markdown">
+		<div class="markdown post-body">
 			
 
 <p>   昨日は<a href="http://yusukebe.com/archives/2004_07_17_230431.php">LEDを光らせたが</a>、今日はパソコンとのシリアル通信にトライ。シリアルケーブルとavr2313の間にADM232というICをかませる。久しぶりにシリアルの口のところで半田付けしたり、5V電源のスイッチを作ったり。ギリシャ人の方<a href="http://www.serasidis.gr/circuits/RS232interface/RS232_interface.htm">のこちらのページ</a>を参考に作業を進める。うまくつなげてプログラムもばっちしかと試してみてもうまくいかん。TeratermでCOMポートに接続してボタンを押すと、軽くLEDが反応するくらい。どうしたもんだと3時間くらい悩んだ末に解決してくれたのは、<a href="http://web.sfc.keio.ac.jp/~marudai/">丸大君</a>。メッセンジャーで俺が「うまくいかない」と言ったら診断してくれて、配線ミスに気づかせてくれました。ADM232からの入力信号をavr2313のRESETに差してた。いっこずらして、うまくいきました。丸大様様です。</p>

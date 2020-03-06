@@ -63,7 +63,7 @@
 			<div class="meta">Posted at &mdash; Jul 24, 2013</div>
 		</div>
 
-		<div class="markdown">
+		<div class="markdown post-body">
 			
 
 <p>ユーザーからのPOST等された入力値の妥当性をチェックする <strong>Validation</strong> をどこでやるか問題が個人的にありまして〜、DBを使わないケースならばいわゆるFomrValidator::*を使ってControllerでやればいいのですが、Modelを経由するようなアプリだとControllerだけじゃ不安よねぇ〜、Modelだけ使う時もあるし、Model単体のテストで再現出来ないよね〜なんて思ってます。で、実際の実装をControllerではFormValidator::Lite、Modelの一部にData::Validatorを使っているのですが、なんかコレも効率悪い感じしてたんで、ちょいと実験的に理想の一つを実装してみました。</p>
