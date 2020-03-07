@@ -1,0 +1,85 @@
++++
+Categories = ["tech"]
+Description = " 昨日から公開し実験をしていた「TwitJuke」の正式版を先ほどリリースしました。TwitterのつぶやきでリクエストができるYouTubeジュークボックスWebサービスです。  TwitJuke      興味のある方は是非使ってみてく"
+Tags = []
+date = "2009-11-19T08:25:00+09:00"
+title = "「TwitJuke - みんなのツイートで作るJukeBox!」正式版をリリースしました"
+author = "kamawada"
+archive = ["2009"]
+draft = false
++++
+
+
+<p>
+昨日から公開し実験をしていた「<strong>TwitJuke</strong>」の正式版を先ほどリリースしました。
+TwitterのつぶやきでリクエストができるYouTubeジュークボックスWebサービスです。
+</p>
+<p>
+<span class="hatena-bookmark-title"><a href="http://twitjuke.com/">TwitJuke</a></span> <span class="hatena-bookmark-users"><a href="http://b.hatena.ne.jp/entry/twitjuke.com/"><img alt="TwitJuke" class="at-xid-6a0133f4781589970b015435b6f5e5970c" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015435b6f5e5970c-pi" title="TwitJuke"></a></span> <span class="hatena-bookmark-b-mark"><a href="http://b.hatena.ne.jp/entry/twitjuke.com/"><img alt="TwitJuke" class="at-xid-6a0133f4781589970b015435b6f515970c" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015435b6f515970c-pi" title="TwitJuke"></a></span> <span class="hatena-bookmark-b-ex-mark"><a href="http://b.hatena.ne.jp/my/add.confirm?url=http%3A%2F%2Ftwitjuke.com%2F"><img alt="このエントリーをはてなブックマークに追加" class="at-xid-6a0133f4781589970b015435b6f51e970c" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015435b6f51e970c-pi" title="このエントリーをはてなブックマークに追加"></a></span><br>
+<a href="http://twitjuke.com/">
+<img alt="TwitJuke" class="at-xid-6a0133f4781589970b015435b6f5ff970c" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015435b6f5ff970c-pi">
+</a>
+</p>
+<p>
+興味のある方は是非使ってみてくださいということでもう一度仕組みと使い方を解説します。
+TwitJukeでは、Twitterアカウント「twitjuke」宛のつぶやきの中からYouTubeのURLを解析して、
+対象の動画をリクエストとして受け取ります。
+つまり、あなたがとある動画をTwitJukeでかけたい！と思ったら
+</p>
+<blockquote>
+@twitjuke これお気に入り！ <a href="http://www.youtube.com/watch?v=xxxx">http://www.youtube.com/watch?v=xxxx</a>
+</blockquote>
+<p>
+みたいにYouTubeの動画のURL入りで<a href="http://twitter.com/home?status=%40twitjuke+">ツイートしてみてください</a>。
+</p>
+<p>
+<img alt="TwitJuke" class="at-xid-6a0133f4781589970b015435b6f62d970c" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015435b6f62d970c-pi">
+</p>
+<p>
+その際に動画の埋め込み許可がYouTube側でされていないとリクエストとして受け付けられないので、
+注意してください。
+</p>
+<p>
+リクエストされた動画は順番が来たらTwitJukeサイト上で再生され、
+皆さんは同じ動画を「ほぼ」同じタイミングで見ることができます。
+画面の右側に並んでいるのが現在受付中のリクエスト一覧になります。
+</p>
+<p>
+また、YouTubeの動画を素早く検索してリクエストのためのTwitterリンクを表示してくれる検索機能、
+過去にリクエストされた動画を見れる履歴機能、
+「#twitjuke」というハッシュタグが付けられたツイートの更新を閲覧できる簡易的なチャットっぽい機能などもあり、
+一枚のページに収まっています。
+</p>
+<p>
+<img alt="TwitJuke" class="at-xid-6a0133f4781589970b015435b6f641970c" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015435b6f641970c-pi">
+</p>
+<p>
+今現在「みんなのツイートでつくる」とか言っておきながら、僕のリクエストばっかりで恥ずかしいので＞＜
+是非皆さんお気に入りの音楽ビデオ等を
+</p>
+<blockquote>
+「<a href="http://twitter.com/home?status=%40twitjuke+">@twitjuke YouTubeのURL</a>」
+</blockquote>
+<p>
+とつぶやいてみてください！
+</p>
+<p>
+実際に使ってみると自分の曲がかかったら嬉しかったり、
+「これか！」というリクエストがあってびっくりしたり、
+他のTwitterユーザーの方の趣味がわかったりと結構楽しいです。
+今朝はちなみに「<a href="http://www.youtube.com/watch?v=Jy09vLHkIes">はるぴったんエンドレス</a>」がリクエストでかかってループが延々終わらないのでバグかと思ったら、
+そういう映像だったという経験がありましたw
+間違っても、リクエストするなよ！
+</p>
+<p>
+ということで実験的なサービスであることには変わりありませんが、
+興味のある方は使ってみてください。
+Enjoy!
+</p>
+<ul>
+  <li>
+<span class="hatena-bookmark-title"><a href="http://twitjuke.com/">TwitJuke</a></span> <span class="hatena-bookmark-users"><a href="http://b.hatena.ne.jp/entry/twitjuke.com/"><img alt="TwitJuke" class="at-xid-6a0133f4781589970b015435b6f5e5970c" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015435b6f5e5970c-pi" title="TwitJuke"></a></span> <span class="hatena-bookmark-b-mark"><a href="http://b.hatena.ne.jp/entry/twitjuke.com/"><img alt="TwitJuke" class="at-xid-6a0133f4781589970b015435b6f515970c" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015435b6f515970c-pi" title="TwitJuke"></a></span> <span class="hatena-bookmark-b-ex-mark"><a href="http://b.hatena.ne.jp/my/add.confirm?url=http%3A%2F%2Ftwitjuke.com%2F"><img alt="このエントリーをはてなブックマークに追加" class="at-xid-6a0133f4781589970b015435b6f51e970c" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015435b6f51e970c-pi" title="このエントリーをはてなブックマークに追加"></a></span>
+</li>
+</ul>
+<iframe frameborder="0" height="230" marginheight="0" marginwidth="0" scrolling="no" src="http://b.hatena.ne.jp/entry.parts?url=http%3A%2F%2Ftwitjuke.com%2F" width="500"></iframe>
+

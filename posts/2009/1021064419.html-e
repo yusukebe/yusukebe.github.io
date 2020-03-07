@@ -1,0 +1,69 @@
++++
+Categories = ["tech"]
+Description = " キーワードでマッチしたWebページから住所っぽいものを抽出して表示し、マップと連動するその名も「住所検索」というものを作ってみました。    とある違うサービスを作ってて、機能の一部として「住所入力補助が欲しいなぁ」って思って実装したら、"
+Tags = []
+date = "2009-10-21T15:44:00+09:00"
+title = "キーワードで住所を検索する「住所検索」を作ってみた"
+author = "kamawada"
+archive = ["2009"]
+draft = false
++++
+
+
+<p>
+キーワードでマッチしたWebページから住所っぽいものを抽出して表示し、
+マップと連動するその名も「<a href="http://ju-sho.net/">住所検索</a>」というものを作ってみました。
+</p>
+<p>
+<a href="http://ju-sho.net/">
+<img alt="ju-sho" class="at-xid-6a0133f4781589970b015391e392bf970b" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015391e392bf970b-pi">
+</a>
+</p>
+<p>
+とある違うサービスを作ってて、機能の一部として「住所入力補助が欲しいなぁ」って思って実装したら、
+独立したものができちゃいました。
+なので若干コンセプトが曖昧ですが、こんな場合に使えるかもね！
+</p>
+<blockquote>
+<p>
+「あー、あの、鎌倉のカレー屋どこだっけ、ってかなんていったっけ？」
+</p>
+</blockquote>
+<p>
+つ<a href="http://ju-sho.net/search?q=%E9%8E%8C%E5%80%89+%E3%82%AB%E3%83%AC%E3%83%BC">住所検索 : 鎌倉 カレー</a>
+</p>
+<blockquote>
+<p>
+「横浜のつけ麺うまいところあったけど、どこだっけ」
+</p>
+</blockquote>
+<p>
+つ<a href="http://ju-sho.net/search?q=%E6%A8%AA%E6%B5%9C+%E3%81%A4%E3%81%91%E9%BA%BA">住所検索 : 横浜 つけ麺</a>
+</p>
+<blockquote>
+<p>
+「渋谷でおいしいラーメン屋ねーかな」
+</p>
+</blockquote>
+<p>
+つ
+<a href="http://ju-sho.net/search?q=%E6%B8%8B%E8%B0%B7+%E3%81%8A%E3%81%84%E3%81%97%E3%81%84+%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3">住所検索 : 渋谷 おいしい ラーメン</a>
+</p>
+<blockquote>
+<p>
+「そいえばyusukebeってどこ住んでんだ？」
+</p>
+</blockquote>
+<p>
+つ<a href="http://ju-sho.net/search?q=yusukebe">住所検索 : yusukebe</a>
+</p>
+<p>
+ちなみに、検索結果を得るにはgoogleのAPIを利用、
+住所らしい文字列を抽出する部分に関してはokilabさんのAPIを使わせてもらってます。
+よろしければ、なにか面白い使い方みつけてください。
+ということでこれをAPI化したいんだったなぁ みつを。
+</p>
+<ul>
+  <li><a href="http://ju-sho.net/">住所検索 : 検索結果のWebページから住所を抽出!</a></li>
+</ul>
+

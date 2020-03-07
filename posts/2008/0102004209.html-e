@@ -1,0 +1,92 @@
++++
+Categories = ["tech"]
+Description = "   うわさには聞いていて前々から欲しかったのだけれど、  書店で実物をみて、即購入。タイトル、そして表紙がかっこよかったのでいわゆるジャケ買いならぬ「表紙買い」。  Joel Spolsky著の「Joel on Software」。   "
+Tags = []
+date = "2008-01-02T09:42:00+09:00"
+title = "Joel on Software - ジョエル・オン・ソフトウェア"
+author = "kamawada"
+archive = ["2008"]
+draft = false
++++
+
+
+<p>
+  うわさには聞いていて前々から欲しかったのだけれど、
+  書店で実物をみて、即購入。タイトル、そして表紙がかっこよかったのでいわゆるジャケ買いならぬ「表紙買い」。
+  <strong>Joel Spolsky</strong>著の「<strong>Joel on Software</strong>」。
+</p>
+<p>
+  <a href="http://www.amazon.co.jp/exec/obidos/ASIN/4274066304/kamawada-22/">
+    <img alt="Joel on Software" class="at-xid-6a0133f4781589970b015435b6f140970c" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015435b6f140970c-pi">
+  </a>
+</p>
+<p>
+著者のJoel氏はMicrosoftのExcelからアメリカの大手ISPのユーザーインターフェースまで様々なプロジェクトでの設計・開発実績のある方らしい。彼が書く「Joel on Software <a href="http://www.joelonsoftware.com/">http://www.joelonsoftware.com/</a>」はプログラマ向けのブログとして人気が高い。本著はそのブログ記事を改めてまとめたもの。プロのソフトウェア・エンジニアやプロジェクトマネージャー向けにプログラミングやマネジメントに関する事柄が彼自身の実践経験に基づいて述べられていて、説得力が非常にある。文体のノリのよさも相まって読み応えがある。
+</p>
+<p>
+個人的に面白かったのは、PART03の「Being Joel:それほどランダムでもないトピックに関するランダムな考察」と名づけられた章の中のいくつかのエッセイ。例えば「ビッグマック 対 裸のシェフ」では、会社の規模に関する問題について述べれていて、自分も経営者の立場からか興味深い。
+冒頭で
+</p>
+<blockquote>
+  <p>
+    謎: なぜ世界でも最大規模のコンサルティング会社のいくつかは最低の仕事をするのか？
+  </p>
+</blockquote>
+<p>
+と投げかけ答えはマクドナルドのビッグマックにあると言う。
+</p>
+<blockquote>
+  <p>
+ビッグマックの秘密は、それはそんなにおいしくないのだが、どれもがちょうど同じようにおいしくない、ということだ。
+  </p>
+  <p>
+（中略）
+  </p>
+  <p>
+ビッグマックのもう1つの秘密は、IQが「マヌケ」と「バカ」の間くらいであれば、十分あなたは世界中のほかのどのビッグマックとも正確に同じくらい意外性のないビッグマックを作れるということだ。
+  </p>
+</blockquote>
+<p>
+ビッグマックの対極に裸のシェフと名づけた街の優秀なシェフを例に出す。
+彼らの作るものはほんとにおいしい。しかし、こうした裸のシェフについては技術用語でいうスケーラビリティの問題を抱えていると述べ
+</p>
+<blockquote>
+  <p>
+    才能をスケールするのは困難である
+  </p>
+</blockquote>
+<p>
+と言う。結論はどちらとも利点やデメリットがあるからよく考えろということだと思うのだが、
+才能に対して「スケール」という単語を使うところが洒落ている。
+その次のエッセイでは、エクストリームプログラミングを信用するな、実装する前にデザインする必要があると、設計の重要さ加減を改めて身にしみて感じたり、その次の次のエッセイでは、企業は急成長するかゆっくりと大きくなるか2つのモデルがあるよねという話があったりと面白い。
+</p>
+<p>
+「ソフトウェア開発者、設計者、マネージャ、それに幸か不幸かなんらかの形で彼らと働く羽目になった人々が関心を抱くであろう、ソフトウェア、並びに往々にしてソフトウェアに関する諸々の問題について」愉快なエッセイがつまった本書。自分の立場や関心に応じて気に入ったところをぱらぱらと読んでいくと楽しいだろう。
+きっと「うんうん」とうなずき、著者Joel氏のユーモアを楽しめると思う。
+</p>
+
+<p></p>
+<div style="float:left"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4274066304/kamawada-22/"><img alt="Joel on Software" src="http://ecx.images-amazon.com/images/I/31HRRNNQP0L.jpg" style="border:none;"></a></div>
+<div style="float:left;margin-left:15px;">
+<div style="font-size:12pt"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4274066304/kamawada-22/">Joel on Software</a></div>
+<div style="font-size:7pt;font-family:verdana;">posted with <a href="http://yusukebe.com/b/amazon/search/">yusukebe.com::AmazonSearch</a> on 2008.1.2</div>
+<div style="font-size:10pt;">
+<ul style="list-style-type:none;padding:0;">
+<li>Joel Spolsky 青木 靖  </li>
+<li>単行本 / オーム社 (2005/12)</li>
+<li>Amazon 売り上げランキング: 33572</li>
+</ul>
+<ul style="list-style-type:none;padding:0;"><li>Amazon おすすめ度の平均: <img alt="4.5" class="at-xid-6a0133f4781589970b015435b6d28c970c" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015435b6d28c970c-pi" style="margin:0;"><ul style="list-style-type:none;padding-left:0;">
+<li>
+<img alt="5" class="at-xid-6a0133f4781589970b015435b6d28e970c" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015435b6d28e970c-pi" style="margin:0;"> 本当のソフト開発を本当の意味でわかってもらうのにいい本</li>
+<li>
+<img alt="4" class="at-xid-6a0133f4781589970b014e8bd727e1970d" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b014e8bd727e1970d-pi" style="margin:0;">  楽しい</li>
+<li>
+<img alt="5" class="at-xid-6a0133f4781589970b015435b6d28e970c" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015435b6d28e970c-pi" style="margin:0;"> 実際に現場で使わせてもらってます</li>
+</ul>
+</li></ul>
+<a href="http://www.amazon.co.jp/gp/product/4274066304%3ftag=kamawada-22%26link_code=xm2%26camp=2025%26dev-t=D3QNAE4JDR26A2">Amazon.co.jpで詳細を見る</a>
+</div>
+</div>
+<div style="clear:left;"></div>
+

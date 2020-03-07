@@ -1,0 +1,81 @@
++++
+Categories = ["tech"]
+Description = "   Mash Up Award 枠で参加した SaaS World 。企業向けの展示多くてこりゃ全部興味ナスだろうなと思ったら、Adobe が出展してるじゃないですか。  そこで一押ししていたのが「Premiere Express」。動い"
+Tags = []
+date = "2007-12-07T13:18:00+09:00"
+title = "Premiere Express に感動する件"
+author = "kamawada"
+archive = ["2007"]
+draft = false
++++
+
+
+<p>
+  <a href="http://yusukebe.com/archives/07/11/30/125427.html">Mash Up Award 枠で参加した</a> SaaS World 。
+企業向けの展示多くてこりゃ全部興味ナスだろうなと思ったら、
+Adobe が出展してるじゃないですか。
+  そこで一押ししていたのが「<strong>Premiere Express</strong>」。
+動いているのを初めて見て興奮。
+さらに、聞くところによるとYouTube上で「YouTube REMIXER beta」としてサービス提供をしてるとのこと。
+すげー。
+</p>
+<p>
+  <a href="http://jp.youtube.com/ytremixer_about">YouTube REMIXER</a>で編集している様子<br>
+  <img alt="Premiere Express" class="at-xid-6a0133f4781589970b015435b6f119970c" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015435b6f119970c-pi">
+</p>
+<p>
+Premiere というと Adobe が出している高性能な映像編集ソフト。
+俺の出身大学、慶應義塾大学湘南藤沢キャンパス（＝SFC ）では、このソフトがインストールされているマシンがたくさんあって、実際に映像編集を行う授業が結構あって、俺も映像制作にはまったくち。
+この Premiere Express は、その映像編集をオンライン、つまりWeb上でやっちゃおうっていう、
+当時学生だった頃からしたらとんでもねー試み。
+Webで映像編集できたらいいよねーって思ってたけど、絶対無理だと内心考えてたよ。
+ところがそれができちゃう。
+そりゃPCにインストールしている Premiere のようにサクサクとはいかないけど、
+一応切り貼りやトランジション（映像と映像との切り替え）、字幕の挿入なんかもできる。
+ということでそれを実際に触れる「YouTube REMIXER beta」のやりかたを紹介
+しようと思ったけど、GIGAZINEに詳しい解説があるので、
+使ってみたい人はこちらをどうぞ。
+</p>
+<ul>
+  <li>
+<a href="http://gigazine.net/index.php?/news/comments/20070618_youtube_remixer/">YouTubeにAdobe製のオンライン動画編集ツール「YouTube Remixer」登場 - GIGAZINE</a>
+  </li>
+</ul>
+<p>
+これ、仕組みが面白くて、
+PCにインストールする Premiere の場合だと、
+映像を切り貼りして、複雑なトランジションなどを加えると、そのつど映像ファイルを作り出してプレビューすることになる。レンダリングといわれている作業である。
+完成した映像を保存しておきたいときにはもちろんファイルとして書き出す作業が必要になってくる。
+ところがこの Premiere Express の場合は、
+映像の切り貼りといっても、元になるソース映像のどこからどこまで（イン点とアウト点）を覚えておくのみで、
+ソース映像自身は何もいじらない、新たな映像ファイルは作り出さないという仕組みなっている。
+さらに、トランジションや字幕などの効果を入れる時は、Flashのアクションスクリプトを利用していて、
+ローカルマシンのFlash Playerで計算をしている。つまりサーバーには負荷がかからないのだ。
+Adobe が Macromedia を買収したメリットがここで発揮されている。
+</p>
+<p>
+実際に使ってみると、
+映像を読み込むところが遅くて、エラーがでたりするので、まだまだだかなぁという印象を受けるが、
+可能性は感じる。というより、なんだ。昔、到底無理だろうなーって思っていたことが実現していることに感動するってことだな。
+以下に、鎌団子とのユニット「かますけ」の少林寺映像をリミックスしたのをembedで貼り付けておきます。
+うまく見れるかな。
+</p>
+<object height="355" width="425"><param name="movie" value="http://www.youtube.com/v/lnmoEAR4K4o&amp;rel=1">
+<param name="wmode" value="transparent">
+<embed height="355" src="http://www.youtube.com/v/lnmoEAR4K4o&amp;rel=1" type="application/x-shockwave-flash" width="425" wmode="transparent"></embed></object>
+<br>
+<p></p>
+<div style="float:left"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B000PJZZA6/kamawada-22/"><img alt="Premiere Pro CS3 Windows版" src="http://ecx.images-amazon.com/images/I/21Jl-Sh-rlL.jpg" style="border:none;"></a></div>
+<div style="float:left;margin-left:15px;">
+<div style="font-size:12pt"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B000PJZZA6/kamawada-22/">Premiere Pro CS3 Windows版</a></div>
+<div style="font-size:7pt;font-family:verdana;">posted with <a href="http://yusukebe.com/b/amazon/search/">yusukebe.com::AmazonSearch</a> on 2007.12.7</div>
+<div style="font-size:10pt;">
+<ul style="list-style-type:none;padding:0;">
+<li>DVD-ROM / アドビシステムズ (2007/07/13)</li>
+<li>Amazon 売り上げランキング: 2506</li>
+</ul>
+<a href="http://www.amazon.co.jp/gp/product/B000PJZZA6%3ftag=kamawada-22%26link_code=xm2%26camp=2025%26dev-t=D3QNAE4JDR26A2">Amazon.co.jpで詳細を見る</a>
+</div>
+</div>
+<div style="clear:left;"></div>
+

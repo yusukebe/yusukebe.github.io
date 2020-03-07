@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="generator" content="Hugo 0.63.2" />
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="alternate" type="application/rss+xml" href="https://yusukebe.com/index.xml" title="ゆーすけべー日記" />
+	<meta property="og:title" content="ゆーすけべー日記" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://yusukebe.com/" />
+<meta property="og:image" content="https://yusukebe.com/icons/myicon.png"/>
+<meta property="og:updated_time" content="2020-03-06T15:46:50+09:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://yusukebe.com/icons/myicon.png"/>
+
+<meta name="twitter:title" content="ゆーすけべー日記"/>
+<meta name="twitter:description" content=""/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
+	
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://yusukebe.com/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+  <div class="container wrapper">
+	<div class="header">
+	<h1 class="site-title"><a href="https://yusukebe.com/">ゆーすけべー日記</a></h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/yusukebe" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/yusukebe" title="Twitter"><i data-feather="twitter"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+	<div class="recent-posts section">
+	  <h2 class="section-header">
+		Recent posts
+	  </h2>
+	  <div class="posts">
+		
+		
+		
+		<div class="post">
+		  <div class="meta">Jan 28, 2005</div>
+		  <a class="title" href="/posts/2005/0128144009/">ついに</a> &mdash;
+		  <span class="description">
+			
+			         本棚同士で通信しだした 
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jan 27, 2005</div>
+		  <a class="title" href="/posts/2005/0126180608/">デースケドガーで４８位</a> &mdash;
+		  <span class="description">
+			
+			 デースケドガー総合研究所というところからメールが送られてきて、どうやらゆーすけべー日記: デースケドガーというエントリーが「ドースケドガー」というgoogleのキーワード検索で４８位らしい。    しらぬまにうけるー。 
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jan 26, 2005</div>
+		  <a class="title" href="/posts/2005/0126061741/">できてきた</a> &mdash;
+		  <span class="description">
+			
+			    ボクダナできてきた。左のディスプレイには友達の本棚の様子が映し出されている。          29日SFC T11という教室で15:55から15分ほど小檜山研の最終発表で発表というかデモする予定です。 
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jan 25, 2005</div>
+		  <a class="title" href="/posts/2005/0125125029/">BASCOM-AVR</a> &mdash;
+		  <span class="description">
+			
+			    BASCOM-AVR      Special commands for LCD-displays , I2C chips and 1WIRE chips, PC keyboad, matrix   keyboad, RC5 rec
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jan 25, 2005</div>
+		  <a class="title" href="/posts/2005/0125104245/">秋葉原の駐車場</a> &mdash;
+		  <span class="description">
+			
+			    秋葉原の駐車場は相場が1時間600円と高いが、15分100円のところを見つけた。安い、藤沢並みだ。俺は家から電車で行くと往復2000円くらいかかるので、滞在時間が短ければ、値段的にはあまりかわらないぞ。となると運転大好きな俺は（時間
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jan 23, 2005</div>
+		  <a class="title" href="/posts/2005/0123124240/">笑いをこらえる厄除け</a> &mdash;
+		  <span class="description">
+			
+			    今年は厄年。俺とまーぼー、しいの、ふくちゃんという厄年4人組みで鎌倉宮で厄除けをしてもらった。     笑いををこらえるのが大変だった。           これで厄が祓えているのだろうか。           グッズをもらった。5
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jan 22, 2005</div>
+		  <a class="title" href="/posts/2005/0122073929/">デースケドガー</a> &mdash;
+		  <span class="description">
+			
+			デースケドガーがゴッゴルの次の言葉らしい。そういえば鎌団子に牛タン贈らなきゃ。*追記（2005/1/26）デースケドガー以前ゴッゴル争いで、俺は鎌団子と勝負した。どっちがランク上位に食い込めるか。負けた方が買った方に仙台のおいしい牛タン（リ
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jan 22, 2005</div>
+		  <a class="title" href="/posts/2005/0122073632/">いつの間にか</a> &mdash;
+		  <span class="description">
+			
+			    車で家の周りを走っていると電柱に「ホームセンターコーナン 駐車場1450台 信号左」というような看板がかかっていた。なんだコーナンって、それにしても駐車場1450台とはでかいな、と思い看板を頼りにいってみた。いつの間にか大船玉縄に「
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jan 20, 2005</div>
+		  <a class="title" href="/posts/2005/0119153155/">SerialStroke ver0.1</a> &mdash;
+		  <span class="description">
+			
+			    COM port 4に来たシリアルの文字をそのまま、キーストロークに変えるソフト。.net frameworkが必要。外部デバイスとFlashを連動するときに便利。     SerialStrokeSetup.msi 
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jan 16, 2005</div>
+		  <a class="title" href="/posts/2005/0115180131/">続・中さんのメール通信</a> &mdash;
+		  <span class="description">
+			
+			    高校の時サッカー部にたまに来て指導してくださった、そして親父もサッカー部時代お世話になった鈴木中さん(現神奈川県サッカー協会会長)の「中さんのメール通信」が「続・中さんのメール通信」となって帰ってきた。   うれしいことだ。    
+			
+		  </span>
+		</div>
+		
+		
+
+<ul class="pagination">
+	<li class="page-item page-prev">
+	
+    <a href="/page/124/" class="page-link" aria-label="Previous"><span aria-hidden="true">← Prev page</span></a>
+	
+	</li>
+	<li class="page-item page-next">
+	
+    <a href="/page/126/" class="page-link" aria-label="Next"><span aria-hidden="true">Next page →</span></a>
+	
+	</li>
+</ul>
+
+
+	  </div>
+	</div>
+  </div>
+  <div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright yusukebe.com |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-492497-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

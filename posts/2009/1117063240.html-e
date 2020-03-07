@@ -1,0 +1,60 @@
++++
+Categories = ["tech"]
+Description = " 指定したキーワードでAVのパッケージジャケットが検索できる(かもしれない)という「AVジャケット検索」を作ってみました。  AVジャケット検索      トップページにはタグクラウドで最近の検索キーワードも表示しているので、皆さんがどのよ"
+Tags = []
+date = "2009-11-17T15:32:00+09:00"
+title = "キーワードでAVのジャケットが検索できる(かもしれない)「AVジャケット検索」"
+author = "kamawada"
+archive = ["2009"]
+draft = false
++++
+
+
+<p>
+指定したキーワードでAVのパッケージジャケットが検索できる(かもしれない)という
+「AVジャケット検索」を作ってみました。
+</p>
+<p>
+<span class="hatena-bookmark-title"><a href="http://avjacket.urasukebe.com/">AVジャケット検索</a></span> <span class="hatena-bookmark-users"><a href="http://b.hatena.ne.jp/entry/avjacket.urasukebe.com/"><img alt="AVジャケット検索" class="at-xid-6a0133f4781589970b014e8bd75109970d" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b014e8bd75109970d-pi" title="AVジャケット検索"></a></span> <span class="hatena-bookmark-b-mark"><a href="http://b.hatena.ne.jp/entry/avjacket.urasukebe.com/"><img alt="AVジャケット検索" class="at-xid-6a0133f4781589970b015435b6f515970c" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015435b6f515970c-pi" title="AVジャケット検索"></a></span> <span class="hatena-bookmark-b-ex-mark"><a href="http://b.hatena.ne.jp/my/add.confirm?url=http%3A%2F%2Favjacket.urasukebe.com%2F"><img alt="このエントリーをはてなブックマークに追加" class="at-xid-6a0133f4781589970b015435b6f51e970c" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015435b6f51e970c-pi" title="このエントリーをはてなブックマークに追加"></a></span><br>
+<a href="http://avjacket.urasukebe.com/">
+<img alt="AVJacket" class="at-xid-6a0133f4781589970b014e8bd75120970d" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b014e8bd75120970d-pi">
+</a>
+</p>
+<p>
+トップページにはタグクラウドで最近の検索キーワードも表示しているので、皆さんがどのようなエロワードに注目しているのかよくわかりますね。
+今のところパッとみ文字が大きく表示されているものと言えば「<a href="http://avjacket.urasukebe.com/av/%E5%90%89%E6%B2%A2%E6%98%8E%E6%AD%A9">吉沢明歩</a>」「<a href="http://avjacket.urasukebe.com/av/%E6%9F%9A%E6%9C%A8%E3%83%86%E3%82%A3%E3%83%8A">柚木ティナ</a>」「<a href="http://avjacket.urasukebe.com/av/%E3%81%8A%E3%81%A3%E3%81%B1%E3%81%84">おっぱい</a>」「<a href="http://avjacket.urasukebe.com/av/dankogai">dankogai</a>」「<a href="http://avjacket.urasukebe.com/av/%E5%8B%9D%E9%96%93%E5%92%8C%E4%BB%A3">勝間和代</a>」という具合です。
+</p>
+<p>
+知らないAV女優さんの名前を聞いて気になることはよくありますが、
+そういう時にぱぱっとこのサイトで調べるとパッケージ写真が大きく見れるので便利かもしれませんね。
+また、そもそも作るきっかけというのは昔、レンタルビデオ屋にいって18禁コーナーに入りエロパッケージに囲まれる感動をしばし覚えたものですが、最近、ネットが主流になってそういうことがなくなったので、その感覚をでかいパッケージ写真を見ることで得ることができないかなと思ったのからでした。それが実現できれば幸いです。
+</p>
+<p>
+実装の手順について簡単に説明。
+実はこれ、今朝一仕事終えてから考えついて午前中のうちにできたという簡単実装なのですが、
+それが実現できたのは「Google Ajax Search API」のおかげです。
+パッケージ写真は以前から気になっていたDMMのものを使用。広告目的ということを果たせばある程度自由に掲載してもよいという規定なので、リンク先をDMMのエントリーに飛ばすようにしました。
+そのような前提で、以下の手順で動いています。
+</p>
+<ol>
+<li>Google Image 検索で DMM の画像ドメインからのみキーワードで検索</li>
+<li>その際に対象の画像サイズを「large」にしておく</li>
+<li>JSONをWebアプリ側で一度パースしてページャーとか作りつつ表示</li>
+<li>パッケージと思われる写真からそのDMMのページへのリンクを生成する</li>
+<li>どうやるかと言うとこれまたGoogleを使い写真のURLについてくるIDと思われる文字列で一度Web検索</li>
+<li>検索結果の先頭に来るDMMのサイトをそのパッケージ写真のリンクとみなす</li>
+<li>すると大抵あっているのでそこへリダイレクトさせる</li>
+</ol>
+<p>
+これがなかなかいい具合に機能しています。
+</p>
+<p>
+ということでそろそろ夜になってきましたので、お好きなキーワードで、AVパッケージ(？)をお楽しみください。
+Enjoy!
+</p>
+<ul>
+  <li>
+<span class="hatena-bookmark-title"><a href="http://avjacket.urasukebe.com/">AVジャケット検索</a></span> <span class="hatena-bookmark-users"><a href="http://b.hatena.ne.jp/entry/avjacket.urasukebe.com/"><img alt="AVジャケット検索" class="at-xid-6a0133f4781589970b014e8bd75109970d" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b014e8bd75109970d-pi" title="AVジャケット検索"></a></span> <span class="hatena-bookmark-b-mark"><a href="http://b.hatena.ne.jp/entry/avjacket.urasukebe.com/"><img alt="AVジャケット検索" class="at-xid-6a0133f4781589970b015435b6f515970c" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015435b6f515970c-pi" title="AVジャケット検索"></a></span> <span class="hatena-bookmark-b-ex-mark"><a href="http://b.hatena.ne.jp/my/add.confirm?url=http%3A%2F%2Favjacket.urasukebe.com%2F"><img alt="このエントリーをはてなブックマークに追加" class="at-xid-6a0133f4781589970b015435b6f51e970c" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015435b6f51e970c-pi" title="このエントリーをはてなブックマークに追加"></a></span>
+</li>
+</ul>
+

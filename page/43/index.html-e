@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="generator" content="Hugo 0.63.2" />
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="alternate" type="application/rss+xml" href="https://yusukebe.com/index.xml" title="ゆーすけべー日記" />
+	<meta property="og:title" content="ゆーすけべー日記" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://yusukebe.com/" />
+<meta property="og:image" content="https://yusukebe.com/icons/myicon.png"/>
+<meta property="og:updated_time" content="2020-03-06T15:46:50+09:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://yusukebe.com/icons/myicon.png"/>
+
+<meta name="twitter:title" content="ゆーすけべー日記"/>
+<meta name="twitter:description" content=""/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
+	
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://yusukebe.com/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+  <div class="container wrapper">
+	<div class="header">
+	<h1 class="site-title"><a href="https://yusukebe.com/">ゆーすけべー日記</a></h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/yusukebe" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/yusukebe" title="Twitter"><i data-feather="twitter"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+	<div class="recent-posts section">
+	  <h2 class="section-header">
+		Recent posts
+	  </h2>
+	  <div class="posts">
+		
+		
+		
+		<div class="post">
+		  <div class="meta">Jul 7, 2009</div>
+		  <a class="title" href="/posts/2009/0707020233/">Senna、MySQL 周りの「sugokuii beta」対処法的チューニング</a> &mdash;
+		  <span class="description">
+			
+			 昨日公開した「sugokuii beta」。ある程度のトラフィックは予想していたものの、深夜0時を超えた当たりから急に負荷が高くなった。この深夜0時前後は魔の時間帯と俺は認識していて、他に俺が運営しているムフフなサイトも23時頃からほんと
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jul 6, 2009</div>
+		  <a class="title" href="/posts/2009/0706030849/">Senna 使って、夜の動画検索サイト「sugokuii beta」を作ってみた</a> &mdash;
+		  <span class="description">
+			
+			 ムフフな夜の動画（今のところ YourFileHost のみ対応）をキーワードで検索できるサイト「sugokuii beta」というものを作ってみました。以前作った YourAVHost とどこが違うのかと思われるかもしれませんが、You
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jun 23, 2009</div>
+		  <a class="title" href="/posts/2009/0623105600/">夜の小道具「YourFilePlayer」 に便利な「関連動画表示」「flv再生」機能を追加した</a> &mdash;
+		  <span class="description">
+			
+			 この前作った YourFilePlayer、奇麗な画質で YourFileHost の動画が再生できていいんだけど、自分で使ってみて（性的な意味でもw）不満なところがあった。     wmv を配信しているサーバーが重たい時に待たなくては
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jun 18, 2009</div>
+		  <a class="title" href="/posts/2009/0618084007/">YourFileHost のソース元 WMV ファイル再生プレイヤーサイト作った</a> &mdash;
+		  <span class="description">
+			
+			 できた。3分の1日くらいかかった。  YourFilePlayer - YourFileHost の WMV 動画再生プレーヤー      通常の YourFileHost ページでは荒い映像が流れると思うが、ここに URL をぶちこめば
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jun 17, 2009</div>
+		  <a class="title" href="/posts/2009/0616235226/">「ZonTube beta2」の Cooliris 機能がなかなかいい件</a> &mdash;
+		  <span class="description">
+			
+			 昨日公開した「ZonTube beta2」の Cooliris 機能がなかなかいい感じなので紹介します。Cooliris は Firefox や IE で動作する Web画像・動画ビューアーで、3D ギャラリー形式の迫力あるインターフェー
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jun 16, 2009</div>
+		  <a class="title" href="/posts/2009/0615235934/">CDやアーティスト別にYouTube動画をスライドショー感覚で見れる「ZonTube beta2」を公開しました</a> &mdash;
+		  <span class="description">
+			
+			 以前作った「AmazonとYouTubeの音楽マッシュアップサイト ZonTube」の新しいバージョン「beta2」を公開しました。ZonTube beta2 は 音楽 CD のトラック別、もしくはアーティストの人気の曲別などで YouT
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jun 15, 2009</div>
+		  <a class="title" href="/posts/2009/0615060611/">Bing API を使って、検索した動画と画像がアダルトかアダルトじゃないかがわかる「AdultOrNot」を作ってみた</a> &mdash;
+		  <span class="description">
+			
+			 ちょっと前に作ったのに出してなかったせいもり、若干旬を逃した感がありますが、Microsoft の新しい検索エンジン「Bing」の API を使って、キーワードで検索した結果の動画もしくは画像が「アダルト」か「アダルトじゃないか」を判定し
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">May 29, 2009</div>
+		  <a class="title" href="/posts/2009/0529032035/">Mini-ITX PC は最強の自宅サーバ/マシンになりうるか</a> &mdash;
+		  <span class="description">
+			
+			 先月、自宅のネットワーク等を再構築したのにあわせて、自宅サーバ周りのシステム見直しをしています。Amazon ec2 で運用している諸々のサービスのいくつかを移行させることも含めて、省エネ化・省力化によるランニングコストを押させるのが目的
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">May 27, 2009</div>
+		  <a class="title" href="/posts/2009/0527025754/">VeohのURLに「mp4」をつけるだけでMP4形式でダウンロードできる「VeohMP4」を作ってみた</a> &mdash;
+		  <span class="description">
+			
+			 ネタフルさんに、去年作った「YouTubeMP4」をいまさら紹介してもらって、びっくりしている今日この頃。       [N] YouTubeのURLに「mp4」をつけるだけでMP4形式でダウンロードできる「YouTubeMP4」    
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">May 26, 2009</div>
+		  <a class="title" href="/posts/2009/0526103545/">Web ページから YourFileHost へのリンクを抽出して一覧できる GetYourLinks を作ってみた</a> &mdash;
+		  <span class="description">
+			
+			 久しぶりのエロいサービス。とある Mac のソフトで、あるページのURLを入れると YourFileHost へのリンクを抽出してくれて、動画の情報が一覧で見れるってのがあるみたい（yourFileLinkと言うソフト）。それがどうもよさ
+			
+		  </span>
+		</div>
+		
+		
+
+<ul class="pagination">
+	<li class="page-item page-prev">
+	
+    <a href="/page/42/" class="page-link" aria-label="Previous"><span aria-hidden="true">← Prev page</span></a>
+	
+	</li>
+	<li class="page-item page-next">
+	
+    <a href="/page/44/" class="page-link" aria-label="Next"><span aria-hidden="true">Next page →</span></a>
+	
+	</li>
+</ul>
+
+
+	  </div>
+	</div>
+  </div>
+  <div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright yusukebe.com |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-492497-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

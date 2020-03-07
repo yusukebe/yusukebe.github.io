@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="generator" content="Hugo 0.63.2" />
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="alternate" type="application/rss+xml" href="https://yusukebe.com/index.xml" title="ゆーすけべー日記" />
+	<meta property="og:title" content="ゆーすけべー日記" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://yusukebe.com/" />
+<meta property="og:image" content="https://yusukebe.com/icons/myicon.png"/>
+<meta property="og:updated_time" content="2020-03-06T15:46:50+09:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://yusukebe.com/icons/myicon.png"/>
+
+<meta name="twitter:title" content="ゆーすけべー日記"/>
+<meta name="twitter:description" content=""/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
+	
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://yusukebe.com/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+  <div class="container wrapper">
+	<div class="header">
+	<h1 class="site-title"><a href="https://yusukebe.com/">ゆーすけべー日記</a></h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/yusukebe" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/yusukebe" title="Twitter"><i data-feather="twitter"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+	<div class="recent-posts section">
+	  <h2 class="section-header">
+		Recent posts
+	  </h2>
+	  <div class="posts">
+		
+		
+		
+		<div class="post">
+		  <div class="meta">Aug 26, 2009</div>
+		  <a class="title" href="/posts/2009/0825231055/">ギター買った</a> &mdash;
+		  <span class="description">
+			
+			 昨日、ギターを買った。Epiphone の John Lennon モデル、EJ-160E 。    ここのところ生活リズムがキチっとしてきたせいか、時間あたりの開発効率が割と高い。すると1日の目標が結構早く達成されるようになる。じゃあも
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Aug 25, 2009</div>
+		  <a class="title" href="/posts/2009/0824223601/">マイデスクトップその1、机編</a> &mdash;
+		  <span class="description">
+			
+			 ご存知の通り俺の仕事場は自宅であり、自室であります。六畳一間が物で溢れかえっているんだけど、開発を毎日やってるとだけあって、机の上は一応まとも。というかこのデスク周りは個人的にすっごくお気に入り。よく、受験勉強や試験勉強の時に「自宅」でや
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Aug 22, 2009</div>
+		  <a class="title" href="/posts/2009/0822034452/">YAPC::Asia 2009 前夜祭 で「エロサイト管理者の憂鬱2」という題名で話す</a> &mdash;
+		  <span class="description">
+			
+			 このところ、様々な小規模ウェブアプリケーションを作ってはこの日記でそのバックエンドの仕組みをいろいろ書いています。それは、個人でも運用可能でかつ、管理が容易な手法を、今まさに、自分なりにですが確立させようとしているという背景があります。 
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Aug 19, 2009</div>
+		  <a class="title" href="/posts/2009/0819123242/">YAPC::Asia 2009 で親父が話して俺がデモする</a> &mdash;
+		  <span class="description">
+			
+			 自分を鼓舞するために書く。  9月10・11日に東工大キャンパスで開催される YAPC::Asia 2009。親父と二人でやってる弊社ワディットではその中のコーポレートトラックにて「Yet Another BPM Framework Ka
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Aug 9, 2009</div>
+		  <a class="title" href="/posts/2009/0809133829/">Twitter OAuth認証を使って自分のfollowingのTwibが作れるようになりました。Twib更新情報その4</a> &mdash;
+		  <span class="description">
+			
+			 twib.jp のはてブから引用させてもらいます。   e_tsuru idを入れると自分のfollowingのTwibを作ってくれるオプションとかできたら、少しくらい金払ってもいいくらい使ってみたい  はてなブックマーク - Twib 
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Aug 7, 2009</div>
+		  <a class="title" href="/posts/2009/0807122112/">Twib の iPhone サイトを作ってみました。Twib更新情報その3</a> &mdash;
+		  <span class="description">
+			
+			 今日、待ち時間があって iPhone いじってて、Twib みたいなと思ってアクセスしてみるも、やっぱり PC 用のサイトでは見にくいですよね。ということで、Twib の iPhone 用のサイトを作ってみました。URLはこちらです。  
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Aug 7, 2009</div>
+		  <a class="title" href="/posts/2009/0807035825/">あなたのブログに「tweets数」を表示するには？ tweets数を画像で取得するAPIを実験的に公開。Twib更新情報その2</a> &mdash;
+		  <span class="description">
+			
+			 今までTwibで収集したURLを含んだつぶやきを利用して、指定したページが何件つぶやかれている＝tweetsされているかを画像で取得するAPIを実験的に公開します。  http://image.twib.jp/counter/Webページ
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Aug 7, 2009</div>
+		  <a class="title" href="/posts/2009/0806175905/">カテゴリ別RSS配信、「URLで絞り込み」など便利な機能を追加。Twib更新情報その1</a> &mdash;
+		  <span class="description">
+			
+			 3日夜にリリースした、Twitter でつぶやかれたホームページのURLを集めて人気順に並べるサービス「Twib」。いくつか Twitter上での反応や、はてぶのコメントも参考にしながらアップデートを毎日行っています。そこで、現在までに追
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Aug 4, 2009</div>
+		  <a class="title" href="/posts/2009/0804004601/">Twitterで話題のサイトをはてブ風に並べる「Twib（ツイブ!）」を公開しました</a> &mdash;
+		  <span class="description">
+			
+			 Twitter系サービス怒濤のリリース第4弾。Twitter上でつぶやかれたURLを収集し、人気順に並べるサービス「Twib（ツイブ!）」を昨晩より公開しました。はてな風味ということもありサブタイトルは「Twitter ホットエントリー」
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Aug 1, 2009</div>
+		  <a class="title" href="/posts/2009/0801074127/">Net::Twitter で簡単に作る Twitter ボットスクリプト紹介</a> &mdash;
+		  <span class="description">
+			
+			 「なでしこ」って日本語でプログラミングできて、Twitter ボットも作れるんですね！   最近、話題のマイクロブログ Twitter で自動的に発言するプログラム（通称：ボット）を作る方法を紹介します。日本語のプログラミング言語「なでし
+			
+		  </span>
+		</div>
+		
+		
+
+<ul class="pagination">
+	<li class="page-item page-prev">
+	
+    <a href="/page/40/" class="page-link" aria-label="Previous"><span aria-hidden="true">← Prev page</span></a>
+	
+	</li>
+	<li class="page-item page-next">
+	
+    <a href="/page/42/" class="page-link" aria-label="Next"><span aria-hidden="true">Next page →</span></a>
+	
+	</li>
+</ul>
+
+
+	  </div>
+	</div>
+  </div>
+  <div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright yusukebe.com |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-492497-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

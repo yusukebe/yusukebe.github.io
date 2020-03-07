@@ -1,0 +1,79 @@
++++
+Categories = ["tech"]
+Description = " 先日は「WEB+DB PRESS vol.54」に特集記事を書いたと紹介しましたが、実は現在発売中の「SoftwareDesign 2010年1月号」と「Web Site Expert #27」にもそれぞれ3ページ、2ページと記事を書かせ"
+Tags = []
+date = "2009-12-25T19:32:00+09:00"
+title = "現在発売中の「SoftwareDesign 2010年1月号」と「Web Site Expert #27」にも記事を書かせていただきました"
+author = "kamawada"
+archive = ["2009"]
+draft = false
++++
+
+
+<p>
+先日は「WEB+DB PRESS vol.54」に特集記事を書いたと紹介しましたが、
+実は現在発売中の「<strong>SoftwareDesign 2010年1月号</strong>」と「<strong>Web Site Expert #27</strong>」にも
+それぞれ3ページ、2ページと記事を書かせていただきました。
+</p>
+<p>
+SoftwareDesign の方は「コードを読む技術」という特集の中にて
+『その2 Perl - ソースコードを読んで「わかった！」瞬間を』という題名で、
+エロサイトの情報収集をするのを目的にして、Plagger の asset ファイルから正規表現を学んでいった男の話を書いています。
+一方、「Web Site Expert #27」ではクラウドの特集の中で、『「時間と場所」と「お金」のバランスを見極めて』という題名で、
+実際に Amazon EC2 を利用した経験からその利点と逆に怖い側面を取り上げています。
+</p>
+<p>
+YAPC::Asia 2009 が終わったくらいから急にこの技術評論社さんから
+出されている3つの雑誌(厳密にいえばSoftwareDesignを除いては大型本)に記事を書かせてもらうことになって、
+めでたく雑誌執筆童貞を捨てさせていただきました。
+どれももちろん読んだことがある雑誌で、SoftwareDesignについては学生時代、
+WEB+DB PRESSに至っては現在進行中で愛読中なので非常に嬉しい限りです。
+</p>
+<p>
+さてこうした「執筆」にまつわる個人的な思いは後ほどまとめるとして、
+<a href="http://astore.amazon.co.jp/yusukebe-22">
+Amazonのインスタンスストアという機能を使ってこの3冊を置いておいた
+</a>
+ので、
+もし興味のある人は「yusukebeまとめ買い」とかしてくれたら僕嬉しくなっちゃいます^^;
+ということで雑誌の方もよろしくお願いします。
+</p>
+<ul>
+  <li><a href="http://astore.amazon.co.jp/yusukebe-22">yusukebe関連本</a></li>
+</ul>
+
+<br>
+
+<div>
+<div style="float:left"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B002YJ005U/kamawada-22/"><img alt="SoftwareDesign(ソフトウェアデザイン) 2010年 01月号 [雑誌]" class="at-xid-6a0133f4781589970b014e8bd7533f970d" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b014e8bd7533f970d-pi" style="border:none;"></a></div>
+<div style="float:left;margin-left:15px;">
+<div style="font-size:12pt"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B002YJ005U/kamawada-22/">SoftwareDesign(ソフトウェアデザイン) 2010年 01月号 [雑誌]</a></div>
+<div style="font-size:7pt;font-family:verdana;">posted with <a href="http://yusukebe.com/b/amazon/search/">yusukebe.com::AmazonSearch</a> on 2009.12.25</div>
+<div style="font-size:10pt;">
+<ul style="list-style-type:none;padding:0;">
+<li>雑誌 / 技術評論社 </li>
+<li>Amazon 売り上げランキング: </li>
+</ul>
+<a href="http://www.amazon.co.jp/SoftwareDesign-%E3%82%BD%E3%83%95%E3%83%88%E3%82%A6%E3%82%A7%E3%82%A2%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3-2010%E5%B9%B4-01%E6%9C%88%E5%8F%B7-%E9%9B%91%E8%AA%8C/dp/B002YJ005U%3FSubscriptionId%3D0VEY2A9SVSFB81NQ9HG2%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB002YJ005U">Amazon.co.jpで詳細を見る</a>
+</div>
+</div>
+<div style="clear:left;"></div>
+</div>
+
+<br>
+<div>
+<div style="float:left"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4774140805/kamawada-22/"><img alt="Web Site Expert #27" class="at-xid-6a0133f4781589970b014e8bd75348970d" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b014e8bd75348970d-pi" style="border:none;"></a></div>
+<div style="float:left;margin-left:15px;">
+<div style="font-size:12pt"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4774140805/kamawada-22/">Web Site Expert #27</a></div>
+<div style="font-size:7pt;font-family:verdana;">posted with <a href="http://yusukebe.com/b/amazon/search/">yusukebe.com::AmazonSearch</a> on 2009.12.25</div>
+<div style="font-size:10pt;">
+<ul style="list-style-type:none;padding:0;">
+<li>大型本 / 技術評論社 </li>
+<li>Amazon 売り上げランキング: 73341</li>
+</ul>
+<a href="http://www.amazon.co.jp/Web-Site-Expert-27-%E7%B7%A8%E9%9B%86%E9%83%A8/dp/4774140805%3FSubscriptionId%3D0VEY2A9SVSFB81NQ9HG2%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D4774140805">Amazon.co.jpで詳細を見る</a>
+</div>
+</div>
+<div style="clear:left;"></div>
+</div>
+

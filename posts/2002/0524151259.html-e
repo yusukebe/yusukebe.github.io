@@ -1,0 +1,14 @@
++++
+Categories = ["tech"]
+Description = "Cygwinでw3mを使ってみる。日本語表示がちゃんとできてなかなかよい。普通に読みやすいし。 ちょっとマスターしよ。 http://w3m.sourceforge.net/"
+Tags = []
+date = "2002-05-25T12:12:00+09:00"
+title = "w3m"
+author = "kamawada"
+archive = ["2002"]
+draft = false
++++
+
+<p>Cygwinでw3mを使ってみる。日本語表示がちゃんとできてなかなかよい。普通に読みやすいし。<br>
+ちょっとマスターしよ。<br>
+<a href="http://w3m.sourceforge.net/" target="_new">http://w3m.sourceforge.net/</a></p>

@@ -1,0 +1,165 @@
++++
+Categories = ["tech"]
+Description = " 先日公開した「jVideos」という（エロ）サイト。   XVIDEOSをiPhoneで快適に見られる「jVideos」を作ってみた - ゆーすけべー日記  jVideos - iPhoneで日本人好みのXVIDEOS （18禁）   W"
+Tags = ["Perl", "Mojolicious"]
+date = "2012-01-15T09:58:00+09:00"
+title = "jVideosのWebアプリケーション部分技術解説"
+author = "kamawada"
+archive = ["2012"]
+draft = false
++++
+
+
+<p>先日公開した「jVideos」という（エロ）サイト。</p>
+
+<ul>
+<li><a href="http://yusukebe.com/archives/20120114/205524.html">XVIDEOSをiPhoneで快適に見られる「jVideos」を作ってみた - ゆーすけべー日記</a></li>
+<li>
+<a href="http://jvideos.tv/">jVideos - iPhoneで日本人好みのXVIDEOS</a> （18禁）</li>
+</ul>
+
+
+<p>Webアプリとしての技術的な観点で言えば、クローラーが収集したデータをただデータベースから取ってきて表示するだけの簡単なものになっている。基本的なところではJavaScriptも使ってない。そこで、「単純な上、構造がわかりやすい」いい題材と思ってこのjVideosを用いてWebアプリケーションの基本的な技術を解説したい。</p>
+
+<h3>1. Perlを使っています</h3>
+
+<p>まず、Webアプリケーションを含むバックエンドでは全てPerlを使っている。まぁ何故Perlかと今更聞かれると一番手になじむ言語だったということなんだけど、クローラーやWebのための要素は全てPerlで揃っているので問題はない。というかむしろテキスト処理が得意なPerlはテキストをベースとしたWebを扱うのに優れていると思っている。</p>
+
+<p>実はアプリケーションサーバもPerl製のStarmanという物を使っている。次に出てくるWebアプリケーションフレームワーク（WAF）で構築されたアプリをStarmanで動かしフロントエンドにはnginxを置いている。なんかこういうイメージ。</p>
+
+<pre> クライアントブラウザ =&gt; nginx =&gt; Starman
+ </pre>
+
+<h3>2. WAFにはMojolicious</h3>
+
+<p>Webアプリケーションフレームワーク（WAF）という言葉はよく聞くと思うが、これはWebアプリを作るためのひな形とそのクラス、スクリプト群である。安全で効率的に開発を進めたければ既存のよくメンテナンスされたWAFを使うのがよろしい。最近では、<a href="http://mojolicio.us/">Mojolicious</a>というWAFをよく利用させてもらっている。依存性が極端に少なく、いわゆるフルスタックな作りなんだが、基本機能に焦点を当てれば使えるので気に入っている。Mojoliciousを入れたら、mojoコマンドが使えるので、</p>
+
+<pre> $ mojo generate app JVideos::Web
+ </pre>
+
+<p>等としてアプリケーションのひな形を作る。「プロジェクト名::Web」と::Webを付けているのはディレクトリ構造を綺麗にしたいためである。</p>
+
+<h3>3. PSGIファイル</h3>
+
+<p>Mojoliciousにも起動スクリプトが付いていて簡易サーバが立ち上がるんだけど、plackup使いたいのと、PSGIで制御したいのと、結局PSGIファイルを作るのでまずjvideos_web.psgiみたいなファイルを作っちゃっている。リバースプロキシに対応させるなら以下のようなもので、Middlewareなど足したいものがあればお好きにどうぞ。</p>
+
+<pre> use Mojo::Server::PSGI;
+use File::Spec;
+use File::Basename;
+use lib File::Spec-&gt;catdir(dirname(__FILE__), 'lib');
+use Plack::Builder;
+
+my $psgi = Mojo::Server::PSGI-&gt;new( app_class =&gt; 'JVideos::Web' );
+my $app = sub { $psgi-&gt;run(@_) };
+
+builder {
+    enable_if { $_[0]-&gt;{REMOTE_ADDR} eq '127.0.0.1' }
+        "Plack::Middleware::ReverseProxy";
+    $app;
+};
+ </pre>
+
+<p>これで普通に「plackup jvideos_web.psgi」すれば動くだが、確かStarmanの場合だと、</p>
+
+<pre> $ starman -MFindBin jvideos_web.psgi
+ </pre>
+
+<p>としなくてはいけないので注意。</p>
+
+<h3>4. APIモジュールを使う</h3>
+
+<p>Mojoliciousは一般的なMVCになっているのだけれども、Mの部分の指針がない（と思う）ので独自で試行錯誤しながらやっている。なんとなく「API」と呼ばれる層を作ってデータを統合的に扱わせている。例えば「JVideos::API」や「JVideos::Web::API」のようなモジュール（クラス）を経由させてコントローラから操作するわけだ。このAPIはフレームワークに依存しないためにテストできる点やコマンドラインインターフェースから扱うことが容易だ。</p>
+
+<p>例えば、複数の記事を取得するためのAPIのメソッドは以下のようになる。</p>
+
+<pre> sub get_entries {
+    my ( $self, $cond , $attr ) = @_;
+    $attr-&gt;{pager_logic} ||= 'MySQLFoundRows';
+    $attr-&gt;{page} ||= 1;
+    $attr-&gt;{limit} ||= 5;
+    my ( $iter, $pager ) = $self-&gt;db-&gt;search_with_pager('entry', $cond, $attr);
+    my @entries;
+    while ( my $entry = $iter-&gt;next ) {
+        push @entries, $entry;
+    }
+    if( wantarray ) {
+        return (\@entries, $pager);
+    }else{
+        \@entries;
+    }
+}
+ </pre>
+
+<p>これを使い、最新記事とページャを取得するコントローラ部分はこのようになった。</p>
+
+<pre> sub index {
+    my $self = shift;
+    my $page = $self-&gt;req-&gt;param('page') || 1;
+    my ($entries, $pager) = $self-&gt;app-&gt;api-&gt;get_entries(
+        {},
+        { order_by =&gt; { created_on =&gt; 'desc' }, page =&gt; $page }
+    );
+    $self-&gt;stash-&gt;{entries} = $entries;
+    $self-&gt;stash-&gt;{pager} = $pager;
+}
+ </pre>
+
+<p>ちなみに、Mojoliciousのクラスジェネレータは貧弱なので、API群にはMouseを使っている。</p>
+
+<h3>5. 設定の引き回し</h3>
+
+<p>DBの設定など設定ファイルに環境個別で書きたい時があるが、Mojoliciousのその機能ではあまり満足できなかった気がしたので自分でその処理を書いた。大抵「JVideos-&gt;config()」といったメソッドで呼び出すことができる。コードはちょっと長いので割愛するが<a href="http://amon.64p.org/">Amon2</a>などのWAFを参考にした。</p>
+
+<h3>6. ディスパッチ</h3>
+
+<p>URLとコントローラをマッピングして適切に処理するためには、Mojoliciousでは一つのファイルにそれを記述することになる。「mojo generate app JVideos::Web」としてひな形を作ったら、「JVideos::Web」にそれを書く。現行のjVideosの「JVideos::Web」のコードは以下だ。</p>
+
+<pre> package JVideos::Web;
+use Mojo::Base 'Mojolicious';
+use JVideos::API;
+
+sub startup {
+    my $self = shift;
+    $self-&gt;attr( api =&gt; sub { JVideos::API-&gt;new } );
+    my $r = $self-&gt;routes;
+    $r-&gt;route('/')-&gt;to('root#index');
+    $r-&gt;route('/amature')-&gt;to('root#amature');
+    $r-&gt;route('/about')-&gt;to('root#about');
+    $r-&gt;route('/entry/:entry_id')-&gt;to('entry#entry');
+    $r-&gt;route('/actress/:name')-&gt;to('actress#actress');
+    $r-&gt;route('/actress')-&gt;to('actress#index');
+    $r-&gt;route('/tag/:name')-&gt;to('tag#tag');
+    $r-&gt;route('/tag')-&gt;to('tag#index');
+}
+
+1;
+ </pre>
+
+<p>シンプルである。</p>
+
+<h3>7. テンプレート処理</h3>
+
+<p>いわゆるViewであるテンプレート部分ではMojo::Templateに従って書く。これはPerlのコードが結構そのまま書ける。このような具合である（テンプレートにオブジェクトをそのまま渡すべきかの議論は置いておく）。</p>
+
+<pre> % for my $entry ( @$entries ) {
+&lt;h3&gt;&lt;%= $entry-&gt;title %&gt;&lt;/h3&gt;
+% }
+ </pre>
+
+<p>Mojo::Templateを調べていくと便利なヘルパーが見つかるがあまり使っていない。が、はまったものとしてURI Escapeをどうするかというのがあったのでやり方を紹介。これでできる。</p>
+
+<pre> &lt;a href="/actress/&lt;%= b($actress_name)-&gt;encode('UTF-8')-&gt;url_escape %&gt;"&gt;
+    &lt;b&gt;&lt;%= $actress_name %&gt;&lt;/b&gt;&lt;/a&gt;
+ </pre>
+
+<hr>
+
+<p>以上、jVideosを参考にWebアプリ構築でなりそうなところを脈絡もあまりなく紹介してきた。というよりか、最近はこんな感じでWebを作っていますという報告に近い。また気づいた点があれば本ブログで紹介していこうと思う。</p>
+
+<ul>
+<li><a href="http://yusukebe.com/archives/20120114/205524.html">XVIDEOSをiPhoneで快適に見られる「jVideos」を作ってみた - ゆーすけべー日記</a></li>
+<li>
+<a href="http://jvideos.tv/">jVideos - iPhoneで日本人好みのXVIDEOS</a> （18禁）</li>
+</ul>
+
+

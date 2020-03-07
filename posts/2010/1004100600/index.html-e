@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>YAPC::Asia 2010、来週開催！ - ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="YAPC::Asia 2010、来週開催！" />
+<meta property="og:description" content=" いよいよ、Perlの祭典YAPC::Asia 2010が来週15(金)、16(土)に迫って参りました。チケットはまだ発売中です。ちなみに前夜祭は14日(金)にPerlCasual主催、つまり僕が基本的に仕切ってやることになっています。  " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yusukebe.com/posts/2010/1004100600/" />
+<meta property="og:image" content="https://yusukebe.com/icons/myicon.png"/>
+<meta property="article:published_time" content="2010-10-04T19:06:00+09:00" />
+<meta property="article:modified_time" content="2010-10-04T19:06:00+09:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://yusukebe.com/icons/myicon.png"/>
+
+<meta name="twitter:title" content="YAPC::Asia 2010、来週開催！"/>
+<meta name="twitter:description" content=" いよいよ、Perlの祭典YAPC::Asia 2010が来週15(金)、16(土)に迫って参りました。チケットはまだ発売中です。ちなみに前夜祭は14日(金)にPerlCasual主催、つまり僕が基本的に仕切ってやることになっています。  "/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
+	
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://yusukebe.com/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper post">
+		<div class="header">
+	<h1 class="site-title"><a href="https://yusukebe.com/">ゆーすけべー日記</a></h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/yusukebe" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/yusukebe" title="Twitter"><i data-feather="twitter"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post-header">
+			<h1 class="title">YAPC::Asia 2010、来週開催！</h1>
+			<div class="meta">Posted at &mdash; Oct 4, 2010</div>
+		</div>
+
+		<div class="markdown post-body">
+			
+
+<p>
+いよいよ、Perlの祭典YAPC::Asia 2010が来週15(金)、16(土)に迫って参りました。
+チケットは<a href="http://yapcasia.org/2010/tickets.html">まだ発売中です</a>。
+ちなみに<a href="http://atnd.org/events/8375">前夜祭は14日(金)に</a>PerlCasual主催、
+つまり僕が基本的に仕切ってやることになっています。
+</p>
+<p>
+さて、このYAPC::Asia 2010。この日記では紹介してこなかったので、
+個人的な見所及び自分の発表について簡単に解説します。
+</p>
+<p>
+まずは、例年のYAPC::Asia(以後YAPC)について。
+僕がYAPCに参加したのは、一昨年なのですが、
+非常に刺激的なものでした。刺激的という言葉では簡単に言い表せないほど「感動します」。
+憧れのPerlハッカーがすぐそこにうじゃうじゃいたり、
+いきなりdankogaiさんがビール片手に宴会始めたりといったお茶目な点を見れたりするのはもちろん。
+また、技術的なことについて会社やスキルの隔たり無しにさらっと話せるのが楽しいのです。
+</p>
+<p>
+同じようなことをdankogaiさんじゃない方の「dann」さんも言っておりました。
+dannさんも一昨年から参加して、去年は発表を2本もしました。
+その去年のエントリーでこう語っています。
+</p>
+<blockquote>
+<p>
+YAPC::Asiaは純粋に技術について語れる場で、
+純粋に技術者として楽しめるところが本当に魅力的でそこに引きつけられるものがあるなぁと感じています。
+</p>
+<p>
+<a href="http://dann.g.hatena.ne.jp/dann/20090910/p1">YAPC::Asia2009で発表してきました！ - dann@webdev - dann's portal</a>
+</p>
+</blockquote>
+<p>
+また、会場の東京工業大学の雰囲気がいいですね。
+緑がたくさんあって、季節もいいのですっごい気持ちがいいんすよ。
+</p>
+<p>
+では今年のYAPC、トーク内容についてです。
+基本的にYAPCはゲストスピーカーもしくは一般応募されたスピーカーの20分もしくは40分のトークが3トラック並列に走って行われていきます。ちなみに、今回のゲストスピーカーにはあのPerl作者、ラリー・ウォールがいます！
+今年も様々なトークが目白押しな感じで興味深いです。
+</p>
+<p>
+というだけではなかなか様子を把握しづらいと思うので、トークを簡単に分類してみます。
+こんな感じのトークに分類されるでしょう。
+</p>
+<ul>
+  <li>大規模サービスでの運用を含めたPerlの活用</li>
+  <li>Perlライブラリ自体もしくは周辺の話</li>
+  <li>PerlCasual企画内、小中規模/個人でのPerl活用やコミュニティの話</li>
+  <li>その他テストについてや小話的な物</li>
+</ul>
+<p>
+mixi、DeNA、といったPerlをメインで使っている企業のサービス話はもちろん、
+はてなからGREEへのまさかの移籍を決めたnaoyaさんのトークも聞けちゃうっていうのが「大規模サービスでの運用を含めたPerlの活用」という分類です。まぁnaoyaさんのトークはPerl出てこないかもしれませんがね^^;
+</p>
+<p>
+次世代テンプレートエンジンと言われてるXslateやFlash Media Serverであるkamaitachi、そしてPlackといったPerlライブラリの話やその周辺事項のトークも例年通り注目です。
+</p>
+<p>
+また、今回はPerlCasual特別企画といたしまして、僕のトークを含む小中規模のPerl活用といったより初心者にとっても親しみやすいカジュアルな内容も用意しています。さらにコミュニティの話というちょっと例年とは特異なトークとして、地方.PMのトークセッションなんてのもあります。
+</p>
+<p>
+そして、意外と多いのが「テスト」についての話で、データベースを使ったケースのテストの話や、Ajaxアプリケーションをテストするにはなんていうかゆいところに手が届く様な話もいくつかありますね。
+</p>
+<p>
+という具合に改めて見てみるとトークの種類がやっぱり多彩で、発表する人のキャラが立っている感があるので、
+面白そうですね。
+</p>
+<p>
+<a href="http://yapcasia.org/2010/timetable.html">YAPC::Asia Tokyo 2010 Timetable</a>
+</p>
+<p>
+個人的にはPerlに少しでも興味のある人に是非参加してもらいたいと思っています。
+特に今年は二日目が土曜日なので、参加しやすいです。
+また、いい感じに土曜日にPerlCasualの枠がありますしね！
+</p>
+<p>
+さて、最後に僕の方の発表内容を簡単に説明。
+タイトルは「NoSQLで作るTwitter解析サービス」。ですが、実のところ、
+今運用しているそのTwitter解析サービスがNoSQLじゃあもはやなくなったので、
+内容は若干異なります^^;
+というのは... という理由のところもしっかり本編のところでフォローします。
+基本的には、個人とか小規模のチームがPerlでTwitter系サービスを作った場合どうなるかという、
+<a href="http://yusukebe.com/archives/09/09/14/103951.html">去年のYAPC前夜祭で行った</a>
+延長線的な話をしたいと思います。
+また、Twitter系のサービスでありがちなデータが膨んでパフォーマンスが出ない...という面での
+スケーリングを如何に省コストでやるかという内容も含んでいます。
+</p>
+<p>
+さて、長々と今年のYAPC::Asia 2010について紹介してきました。
+前夜祭ともに絶賛参加応募受付中ですので、少しでも興味のある方は是非！！
+</p>
+<ul>
+  <li><a href="http://yapcasia.org/2010/tickets.html">YAPC::Asia Tokyo 2010 [Oct 15 - Oct 16]</a></li>
+  <li><a href="http://atnd.org/events/8375">YAPC::Asia 2010 前夜祭 : ATND</a></li>
+</ul>
+
+
+		</div>
+
+		<div class="post-tags">
+			
+				
+					<nav class="nav tags">
+							<ul class="flat">
+								
+								<li><a href="/tags/perl">Perl</a></li>
+								
+							</ul>
+					</nav>
+				
+			
+		</div>
+        <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v5.0&appId=233306523373884&autoLogAppEvents=1"></script>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+
+<div class="social-button-area">
+  <ul class="social-button">
+    <li>
+      <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
+    </li>
+    <li>
+      <span class="fb-share-button"  data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2010%2f1004100600%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
+    </li>
+    <li>
+      <a href="https://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label-counter" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>
+    </li>
+  </ul>
+</div>
+
+<div class="disqus-area">
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "yusukebe-com" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<ul class="pagination">
+  
+  <li class="page-item page-prev">
+    <a href="https://yusukebe.com/posts/2010/0929151405/" class="page-link" aria-label="Previous"><span aria-hidden="true">← 【速報】YAPC::Asia 2010 前夜祭のスペシャルゲストは「岡田有花さん」です！</span></a>
+  </li>
+  
+  
+  <li class="page-item page-next">
+    <a href="https://yusukebe.com/posts/2010/1004120341/" class="page-link" aria-label="Next"><span aria-hidden="true">The Next Big Idea を求めて →</span></a>
+  </li>
+  
+</ul>
+
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright yusukebe.com |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-492497-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

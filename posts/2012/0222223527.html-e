@@ -1,0 +1,171 @@
++++
+Categories = ["tech"]
+Description = " 車輪の再発明  車輪の再発明という言葉があります。ある目的を果たすためのライブラリや先行事例があるにも関わらず、同じことを叶えるためについつい自分で作ってしまう行為を指します。例えば、SinatraというRubyの特徴的なWebアプリケー"
+Tags = ["Web Essay", "Perl", "Markdown"]
+date = "2012-02-23T07:35:00+09:00"
+title = "無ければつくる"
+author = "kamawada"
+archive = ["2012"]
+draft = false
++++
+
+
+<h4>車輪の再発明</h4>
+
+<p><strong>車輪の再発明</strong>という言葉があります。ある目的を果たすためのライブラリや先行事例があるにも関わらず、
+同じことを叶えるためについつい自分で作ってしまう行為を指します。
+例えば、<a href="http://www.sinatrarb.com/">Sinatra</a>というRubyの特徴的なWebアプリケーションフレームワークがありますが、
+そのPerlバージョンを作ろうとすれば、
+他にも<a href="http://perldancer.org/">Dancer</a>や<a href="http://mojolicio.us/">Mojolicious::Lite</a>といった似たようなものが、
+Perlのライブラリには存在していて「 <em>でも、いいっか！</em> 」と制作に入るのがまさに「車輪の再発明」な感じです。
+車輪の再発明は一般的に非効率だと言われ推奨はされません。
+ただ、僕は勉強のためならばよいと思ってSinatraライクなフレームワークを作ってたりもします。
+既存の似たようなものを参考にできるため、学ぶことが多いです。
+状況によっては再発明は効果的なこともあると思っています。</p>
+
+<p>とはいえやはり、目的を最短で果たすためには車輪の再発明は避けた方がよいでしょう。
+<a href="http://japan.perlassociation.org/">Japan Perl Association （JPA）</a>現代表理事の牧大輔さんと
+お仕事をしたことがあるのですが、その際に彼は以下のように話していました。</p>
+
+<blockquote><p>車輪の再発明はしてもいいけど、仕事の時は絶対駄目だよ</p></blockquote>
+
+<p>この端的な方針は僕も参考にしたいところです。</p>
+
+<h4>車輪が無いときは？</h4>
+
+<p>しかし、自分がこれをしたいという目的を果たすものが世の中に存在しない時も多々あります。
+特に自分一人や数名で使う特殊なケースで最適なものが無いということがよく見受けられるます。
+そのような時、あなたがクリエータ、もしくはクリエータを目指すのであれば、「<strong>無ければつくる</strong>」方針でいきましょう。</p>
+
+<h4>書籍執筆のための環境を作る</h4>
+
+<p>実は、この記事。将来出版させたい書籍のための原稿の意味も兼ねて書かれています。
+編集者さんと連絡しつつ作業をしているのですが、
+原稿を書き始めてちらほらと集まってきているのでそのドキュメントを共有したいと先日から思ってました。
+文章は記事ごとに小分けにしてMarkdown書式のプレーンテキストで執筆しています。
+ならばとDropboxの共有フォルダを作成し、
+その中にMarkdownファイルを入れれば編集者の方も見ることができるだろうと考えてみました。
+すると当然のことながらMarkdownのテキスト一覧を閲覧し、ファイルもエディタなどで開けるとのことなのですが、
+以下のような質問をいただきました。</p>
+
+<blockquote><p>ちなみにmarkdown形式のファイルは、普通にエディタで
+見ればよいのだと思いますが、適したツールなどは
+あるのでしょうか？？</p></blockquote>
+
+<p>うーん、僕が以前から自作している<a href="https://github.com/yusukebe/Yomico">Markdown Viewer</a>はありますが、
+いかんせんPerl製のコマンドラインのソフトなんで勧めてみたものの、少しハードルが高いかなぁと感じました。
+そこであらためて、僕と編集者の方、2人にとってのニーズを整理してみましょう。</p>
+
+<ul>
+<li>僕が主にファイルを編集をする</li>
+<li>編集者さんがそのMarkdownをHTMLとして確認したい</li>
+<li>ファイルはDropboxで逐一共有されている</li>
+</ul>
+
+
+<p>このニーズを簡潔に叶えるアイデアを考えてみるとこのようなものになりました。</p>
+
+<blockquote><p>Dropbox上のファイルを一覧できて、
+指定ファイルがMarkdown形式ならばHTMLにレンダリングしてかっこよく表示させる内向けのWebサービス</p></blockquote>
+
+<p>そして、このようなサービスは軽くGoogleで検索調査したところ無い、
+もしくは一般には利用できないということがわかります。</p>
+
+<p>書籍執筆のための <strong>環境も無ければつくる</strong> 。この方針にのっとります。
+DropboxのDeveloper向けサイトを見てAPIの仕様について調べます。
+どうやら作ったものを一般に公開するにはDropbox側の審査が必要になるようですが、
+開発者モードでは5名までのユーザーに使ってもらうことができそうです。
+「REST APIを使って、OAuth 1.0 で認証する」というだいたいの仕様が把握できたところで、
+Perlのライブラリ倉庫である「CPAN」を覗いてみました。
+「Dropbox」で検索をすると、いくつかライブラリが出てきまして「さすがCPAN！」と思いましたが、
+今回は「<a href="http://search.cpan.org/dist/WebService-Dropbox/">WebService::Dropbox</a>」というモジュールが分かりやすかったので、こちらを使用したいと思います。「無いものをつくるために車輪を利用している」わけですね。
+ところでこのモジュール、非常に便利です。</p>
+
+<p>実装方針が決まったところで、Dropbox APIを使ってどのようなことができるのか？どのようなデータを取得できるのか？
+を知るためにサンプルプログラムを作成。
+だいたい分かってきたのでいよいよサービスの名前を「Dropdown」として、Webアプリを作ります。
+Markdown形式のテキストをHTMLへ変換するにはこれもまたCPANモジュールの「<a href="http://search.cpan.org/dist/Text-Markdown/">Text::Markdown</a>」を使いました。
+Dropboxのファイルもしくはディレクトリの名前を受け取とり、ファイルだったらそのデータをダウンロード。
+Markdown形式にマッチすればHTMLに変換して綺麗に表示させる部分がこのアプリの肝です。
+そのControllerのコード部分はちょっと長いですが以下のようになりました。</p>
+
+<pre> package Dropdown::Dropbox;
+# Web Application FrameworkにはMojoliciousを使用した
+use Mojo::Base 'Mojolicious::Controller';
+use Text::Markdown qw/markdown/;
+use Encode;
+use Plack::Session;
+
+sub dropbox {
+    my $self = shift;
+
+    # $nameにはDropboxファイルへのパスが入る 
+    my $name    = $self-&gt;stash-&gt;{name};
+    my $dropbox = $self-&gt;app-&gt;dropbox;
+
+    # sessionにはPlack::Sessionを使用
+    my $session       = Plack::Session-&gt;new( $self-&gt;req-&gt;env );
+    my $access_token  = $session-&gt;get('access_token');
+    my $access_secret = $session-&gt;get('access_secret');
+    return $self-&gt;render_not_found if ( !$access_token &amp;&amp; !$access_secret );
+
+    $dropbox-&gt;access_token($access_token);
+    $dropbox-&gt;access_secret($access_secret);
+
+    my $list = $dropbox-&gt;metadata($name) or die $dropbox-&gt;error;
+    $self-&gt;stash-&gt;{list} = $list;
+
+    if ( !$list-&gt;{is_dir} ) {
+        my $content;
+        $dropbox-&gt;files(
+            $name, sub { $content .= $_[3]; }    # using Furl.
+        );
+
+        # 拡張子がMarkdownのものだったら 
+        if ( $name =~ m!\.(?:md|mkdn|markdown|mkd|mark|mdown)$! ) {
+            $content = decode_utf8($content);
+            $self-&gt;stash-&gt;{markdown_html} = markdown($content);
+            return $self-&gt;render(
+                template =&gt; 'dropbox/markdown',
+                format   =&gt; 'html'
+            );
+        }
+        else {
+            $self-&gt;res-&gt;headers-&gt;content_type( $list-&gt;{mime_type} );
+            return $self-&gt;render( data =&gt; $content );
+        }
+    }
+    return $self-&gt;render('dropbox/list');
+}
+1;
+ </pre>
+
+<p>ローカルで試してみて、問題ないのでパブリックな場所に置いて、サーバの設定。
+ちょっと本番環境とローカルの環境の差でつまづきましたが、無事修正は終わり、使えるようになりました。
+トップページにアクセスしてDropboxでのOAuth認証をすると見事にファイル一覧が閲覧でき、
+Markdownも綺麗に整形されています。</p>
+
+<p><img src="http://farm8.staticflickr.com/7183/6775493910_133854a654_z.jpg" alt="Dropdown Markdown表示"></p>
+
+<p>さて、これでめでたく動作が確認されたので、編集者の方にも使ってもらいたいのですが
+なにぶん出来たのが数時間前のお話なので連絡のメールがまだ見られてないようで使ってもらってないのですのよね。
+だから、もし編集者の方が「使えない＞＜」という状況になったらなんて考えるとまだ完成ではなく、
+そういう事態は起こらないでくださいと願っている最中なのです。</p>
+
+<h4>まとめ</h4>
+
+<p>車輪の再開発はしないで車輪を利用した方が早い。けれども、それが無かった場合は自分でつくる、
+という精神はずっと持っておきたいと思います。
+執筆をするような環境において必要なものもしかりです。
+また「無ければつくる」の心得はWebサービスのアイデアを考える時、モチベーションを上げる時にも発揮されますね。</p>
+
+<h4>お知らせ</h4>
+
+<p>メルマガ「ゆーすけべーラジオ」ではWebサービスにまつわる事柄を書いています。
+よろしければ覗いてみてください。</p>
+
+<ul>
+<li><a href="http://www.mag2.com/m/0001426750.html">ゆーすけべーラジオ</a></li>
+</ul>
+
+

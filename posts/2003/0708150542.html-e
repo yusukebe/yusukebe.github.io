@@ -1,0 +1,30 @@
++++
+Categories = ["tech"]
+Description = " 自然言語論のエラー は nil を nill と書いていたからだったらしい。そりゃ間違えます。普段Javaとか使っているので null って書いているし。それと問題は    lが細すぎる   ことかと。重なっているかなんてわからんよー。 "
+Tags = []
+date = "2003-07-09T12:05:00+09:00"
+title = "nullの発音"
+author = "kamawada"
+archive = ["2003"]
+draft = false
++++
+
+
+<p><a href="http://web.sfc.keio.ac.jp/~yusukebe/diary/index.cgi?200307a&amp;to=200307091#200307091" target="_new">自然言語論のエラー</a><br>
+は<br>
+<font color="5">nil</font><br>
+を<br>
+<font color="5">nill</font><br>
+と書いていたからだったらしい。そりゃ間違えます。普段Javaとか使っているので<br>
+<font color="5">null</font><br>
+って書いているし。それと問題は<br>
+</p>
+<pre>  
+lが細すぎる 
+ 
+</pre>
+<br>
+ことかと。重なっているかなんてわからんよー。<br>
+ところでnullの本当の発音はこんな感じ→<br>
+<a href="http://dictionary.goo.ne.jp/voice/n/02060587.wav" target="_new">nullの発音</a><br>
+。

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="generator" content="Hugo 0.63.2" />
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="alternate" type="application/rss+xml" href="https://yusukebe.com/index.xml" title="ゆーすけべー日記" />
+	<meta property="og:title" content="ゆーすけべー日記" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://yusukebe.com/" />
+<meta property="og:image" content="https://yusukebe.com/icons/myicon.png"/>
+<meta property="og:updated_time" content="2020-03-06T15:46:50+09:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://yusukebe.com/icons/myicon.png"/>
+
+<meta name="twitter:title" content="ゆーすけべー日記"/>
+<meta name="twitter:description" content=""/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
+	
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://yusukebe.com/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+  <div class="container wrapper">
+	<div class="header">
+	<h1 class="site-title"><a href="https://yusukebe.com/">ゆーすけべー日記</a></h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/yusukebe" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/yusukebe" title="Twitter"><i data-feather="twitter"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+	<div class="recent-posts section">
+	  <h2 class="section-header">
+		Recent posts
+	  </h2>
+	  <div class="posts">
+		
+		
+		
+		<div class="post">
+		  <div class="meta">Dec 28, 2003</div>
+		  <a class="title" href="/posts/2003/1228125318/">高山到着、牛さしを食べるが俳句合戦第4回は俺最下位。</a> &mdash;
+		  <span class="description">
+			
+			 温泉、そして飛騨牛を求めて高山へ。4時間近く電車に揺られてやっと到着。  おなかがすいたので、飛騨牛という看板を掲げている店をみるやいなや入る。そしたらそのお店でドラマが。 　 飛騨牛をテーマに、店の代金を賭けて（負けた人が全額はきついの
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Dec 28, 2003</div>
+		  <a class="title" href="/posts/2003/1228065423/">俳句合戦第3回はズッケが勝利</a> &mdash;
+		  <span class="description">
+			
+			  大垣をテーマにした俳句合戦。賭けるのはさっきの喫茶店代、審査員は電車に乗ってたおっちゃん。  一位はズッケ 柿ヨウカン すがた細くも 味広く  二位はおれ 灰色の 道にきらめく 大垣の水  三位つまり代金を払うのは鎌団子 結ぶ地で 細道
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Dec 28, 2003</div>
+		  <a class="title" href="/posts/2003/1228062742/">大垣から高山へ</a> &mdash;
+		  <span class="description">
+			
+			 温泉に入りたい ということで只今大垣をたち、高山へ向かっています。青春18切符なので、ゆっくりです。問題は高山で泊まる宿がまだとれていないこと。 悟る曰く 夏に宿をとらないでどこも泊めてくれなくて駅で寝たことあるんだよなー  それはとりあ
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Dec 28, 2003</div>
+		  <a class="title" href="/posts/2003/1228053511/">鎌団子スロットで軽く負ける、途中結果～&amp;amp;apos;03年末ネタ旅行その3</a> &mdash;
+		  <span class="description">
+			
+			 鎌団子が旅行の資金集めにスロットに行ったが2000円負けて帰ってくる。 彼曰く、    「絶対出る台だ。」   あきらめて飛騨に行く事を検討中。宿がない。   
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Dec 28, 2003</div>
+		  <a class="title" href="/posts/2003/1228041323/">携帯から投稿できるかな</a> &mdash;
+		  <span class="description">
+			
+			 てすとだよーん 
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Dec 28, 2003</div>
+		  <a class="title" href="/posts/2003/1228034523/">俳句合戦ついに始まる、途中結果～年末ネタ旅行、俳句合戦と逆奥の細道その2</a> &mdash;
+		  <span class="description">
+			
+			 ただいま、アパホテル大垣駅前の喫茶店にて休憩中です。  ついに、俳句合戦が始まりました。何か食べたり買ったりしたら、その店をテーマに3人が俳句を詠んで、それを店員に評価してもらう。最下位だった人がその御代をすべて払う。 10回戦終わったら
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Dec 28, 2003</div>
+		  <a class="title" href="/posts/2003/1228014535/">芭蕉とツーショット～年末ネタ旅行、俳句合戦と逆奥の細道その１</a> &mdash;
+		  <span class="description">
+			
+			 鎌団子とズッケと今岐阜の大垣に来ています。韓国に引き続き、年末ネタ旅行です。今回は俳句合戦と逆奥の細道というテーマ。果たしてどうなることやら。そして、yusukebe.com、ゆーすけべー日記が新しくなって再開です。    
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Nov 13, 2003</div>
+		  <a class="title" href="/posts/2003/1113140854/">オンテナヘッドライン</a> &mdash;
+		  <span class="description">
+			
+			 オンテナ の最新記事のタイトルなどを表示するFlashを作りました。この日記の左側に表示させています。ヘッドライン風味です。これ、みなさんもブログとか日記にはっつけられます。 ontennaReader.swf ←これを右クリックしてダウ
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Nov 12, 2003</div>
+		  <a class="title" href="/posts/2003/1112140853/">本日の萌えの壺→いろんなターミナル＠OSX</a> &mdash;
+		  <span class="description">
+			
+			 いまさら OSX に萌えている。OSXはWindowsと比べてOS自体の楽しみがたくさんあると思う。たとえば、ターミナル。ネイティブでUNIXが動いてるので、それをCUIで扱うインターフェースであるTerminalが付属しているのだが、日
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Nov 11, 2003</div>
+		  <a class="title" href="/posts/2003/1111140851/">Parsing FOAF with PHP、発見しただけだけど</a> &mdash;
+		  <span class="description">
+			
+			 PHP 、 PHP を使ってFOAFをパースする方法を実例とともに解説。後半では、FOAFから持ってきた自分の友達情報をRSSとして配信する方法も載っている（ようだ、たぶん）。発見しただけで、まだやっていないけど（今はのめりこむな俺）、R
+			
+		  </span>
+		</div>
+		
+		
+
+<ul class="pagination">
+	<li class="page-item page-prev">
+	
+    <a href="/page/164/" class="page-link" aria-label="Previous"><span aria-hidden="true">← Prev page</span></a>
+	
+	</li>
+	<li class="page-item page-next">
+	
+    <a href="/page/166/" class="page-link" aria-label="Next"><span aria-hidden="true">Next page →</span></a>
+	
+	</li>
+</ul>
+
+
+	  </div>
+	</div>
+  </div>
+  <div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright yusukebe.com |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-492497-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

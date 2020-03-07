@@ -1,0 +1,92 @@
++++
+Categories = ["tech"]
+Description = " iPad miniを手に入れると寝転びながらそれで映像を見たくなる。YouTubeで検索して好きなアーティストのライブ映像見たりするのもいいんだけど、エンタメなコンテンツが見たい。そういえばゴッドタンっていうテレ東の深夜番組の「キス我慢選"
+Tags = ["Perl"]
+date = "2013-01-16T12:31:00+09:00"
+title = "Dailymotionの動画を手に入れてムラムラするスクリプト"
+author = "kamawada"
+archive = ["2013"]
+draft = false
++++
+
+
+<p>iPad miniを手に入れると寝転びながらそれで映像を見たくなる。
+YouTubeで検索して好きなアーティストのライブ映像見たりするのもいいんだけど、
+エンタメなコンテンツが見たい。
+そういえば<strong>ゴッドタン</strong>っていうテレ東の深夜番組の「<strong>キス我慢選手権</strong>」がすごい面白いので、
+今まさに寝転びながらiPad miniで見たい。</p>
+
+<p><a href="http://yusukebe.com/archives/2013/01/16/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202013-01-16%200.33.48.png"><img alt="スクリーンショット 2013-01-16 0.33.48.png" src="http://yusukebe.com/archives/assets_c/2013/01/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202013-01-16%200.33.48-thumb-400x251-287.png" width="400" height="251" class="mt-image-none" style=""></a></p>
+
+<p>で、<a href="http://www.dailymotion.com/">Dailymotion</a>にキス我慢の動画がたくさん転がっているなーって知っていたので、
+DailymotionのiPad用アプリとかで試してみたんだけど、どーも回線の都合などであんまり快適ではない。
+出来る事ならば、気になる動画をファイルとしてぶっ込みたいところ。
+昔似たようなものを作っていたんだけど（ListPodと名付けていた...）、出来る事なら、
+PC側で動画を検索してプレビュー、気に入ったらリストに入れて、それがPodcastになって、
+iPadに入るなんてーいうローカルで楽しむためのWebアプリを作ろうとしている。
+さらに言えば、Dailymotionだけではなく他の動画サイトにも対応させたい。</p>
+
+<p>てなわけで、何か作ろうとしているんだが、その一歩である今日の成果発表。
+とりあえず、Dailymotionをの動画をごにょった。</p>
+
+<h3>Dailymotion上の動画を検索する</h3>
+
+<p>まず、これはDailymotionのAPIドキュメント見てもあんま載ってなかったんだけど、
+動画の検索の仕方。URLのパスに検索語を含めるらしい。そしてこうすればJSONで値が返ってくる。</p>
+
+<pre> use LWP::Simple;
+use JSON;
+use URI;
+use URI::Escape;
+use utf8;
+
+my $query = 'キス我慢選手権';
+my $uri = URI-&gt;new('http://www.dailymotion.com/');
+$uri-&gt;path( '/json/relevance/search/' . uri_escape_utf8($query) );
+my $content = get($uri);
+my $result = decode_json($content);
+use YAML;
+print Dump $result;
+ </pre>
+
+<p>はい。僕はYAMLダンプ派です。</p>
+
+<h3>Dailymotionのパーマリンクから動画ファイル（.mp4）をダウンロードする</h3>
+
+<p>お次にいよいよ、指定された映像のパーマリンクを元に、動画ファイルをダウンロードする
+スクリプト。mp4の高画質、普通画質の物が選べる（動画によっては高画質が無い模様）ので高画質を優先的にゲット。まだ動画ファイルをiPadで開いていないけど、多分フォーマット的にいけそう。</p>
+
+<pre> use LWP::Simple qw/get getstore $ua/;
+use URI::Escape;
+use JSON;
+
+$ua-&gt;show_progress(1);
+my $url = $ARGV[0] or die "URL argument is required!";
+die "URL is not dailymotion link" unless $url =~ m!^http://www\.dailymotion\.com/video/.+$!;
+my ($vid) = $url =~ m!/video/([^\?#]+)!;
+my $content = get($url);
+my ($text) = $content =~ m!"sequence":"(.+)"!m;
+my $json = uri_unescape($text);
+my $ref = decode_json($json);
+my $param = $ref-&gt;{sequence}[0]{layerList}[0]{sequenceList}[2]{layerList}[2]{param};
+my $video_url = $param-&gt;{ldURL};
+$video_url = $param-&gt;{sdURL} unless $video_url;
+getstore($video_url, $vid . '.mp4');
+ </pre>
+
+<p>ダウンロードの進捗を表示したかったので、LWP::Simpleで「$ua」をエキスポートして、
+show_progressに1を渡している。これを「dailymotion-dl.pl」として保存して、</p>
+
+<pre> $ perl dailymotion-dl.pl {動画のパーマリンクのURL}
+ </pre>
+
+<p>とすれば自動的にダウンロード開始します。
+こちらのスクリプトに関してはアレなんで使用は自己責任でお願いします。</p>
+
+<h3>終わりに</h3>
+
+<p>諸々工夫すれば、すっごく簡単に、気になるキス我慢選手権映像をチョイスして、それが自動的にiPad miniに入って、
+ベッドの中でムラムラできる仕組みが出来るはずです！</p>
+
+<p>（続く...と思う）</p>
+

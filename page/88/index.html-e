@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="generator" content="Hugo 0.63.2" />
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="alternate" type="application/rss+xml" href="https://yusukebe.com/index.xml" title="ゆーすけべー日記" />
+	<meta property="og:title" content="ゆーすけべー日記" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://yusukebe.com/" />
+<meta property="og:image" content="https://yusukebe.com/icons/myicon.png"/>
+<meta property="og:updated_time" content="2020-03-06T15:46:50+09:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://yusukebe.com/icons/myicon.png"/>
+
+<meta name="twitter:title" content="ゆーすけべー日記"/>
+<meta name="twitter:description" content=""/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
+	
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://yusukebe.com/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+  <div class="container wrapper">
+	<div class="header">
+	<h1 class="site-title"><a href="https://yusukebe.com/">ゆーすけべー日記</a></h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/yusukebe" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/yusukebe" title="Twitter"><i data-feather="twitter"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+	<div class="recent-posts section">
+	  <h2 class="section-header">
+		Recent posts
+	  </h2>
+	  <div class="posts">
+		
+		
+		
+		<div class="post">
+		  <div class="meta">Jul 31, 2006</div>
+		  <a class="title" href="/posts/2006/0731055639/">藤沢ビックカメラは8月4日オープン</a> &mdash;
+		  <span class="description">
+			
+			   藤沢の潰れた丸井跡地に開店すると言われていた、ビックカメラは8月4日にオープンするようです。    藤沢JR駅改札前で宣伝がんばるビックのお兄さん         (左)なるさんが絡んだ、(右)事前にビックカードを申し込むと1000ポ
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jul 31, 2006</div>
+		  <a class="title" href="/posts/2006/0731052632/">「椅子でボケましょう」で、Askビデオ大賞受賞</a> &mdash;
+		  <span class="description">
+			
+			   「椅子でボケましょうその5」という映像が7/30のAskビデオ大賞受賞しました。  完全に狙ってたｗ、これで2万円商品券ゲッツ！ニートのお小遣い稼ぎにはもってこいだ。  Askビデオは画質がいいし、ユーザーが結構コメントしてくれるし、
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jul 31, 2006</div>
+		  <a class="title" href="/posts/2006/0730160933/">「ウミガメの一生」 卒業祝われ飲み会後作った感動ドキュメンタリー</a> &mdash;
+		  <span class="description">
+			
+			   昨日の飲み会の3次会で撮影した映画「ウミガメの一生」、完成した！現代社会を象徴しつつ、笑える感動ドキュメンタリーに仕上がっているつもり。  英語の字幕もエキサイトで翻訳させてめちゃくちゃなのをつけました。ご覧あれ。 
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jul 30, 2006</div>
+		  <a class="title" href="/posts/2006/0729233722/">奥出研メンバーで卒業祝われ飲み会</a> &mdash;
+		  <span class="description">
+			
+			   奥出研のメンバーが、卒業する俺とあまやんを祝ってくれる「卒業生ありがとう飲み会」を開いてくれた。場所は俺の要望がかなって藤沢。メンバーは幹事のよっしー、なるさん、菅ちゃん、はたやん、うすいくん、橋本商会、そして社会人組みのヨシム、すま
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jul 29, 2006</div>
+		  <a class="title" href="/posts/2006/0729084555/">CustomFeed::YouTube_dev APIを使ってビデオ情報を取得させる</a> &mdash;
+		  <span class="description">
+			
+			   YouTubeの特定のタグが付いたビデオページを投稿時間順にRSSで取得したい。  YouTubeのサイトでもタグによるRSSフィードを以下のようなURLでも取得できるらしい(参考:[戯] YouTube でタグによる RSS フィー
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jul 29, 2006</div>
+		  <a class="title" href="/posts/2006/0729045107/">パンツ一丁でビールかけられた</a> &mdash;
+		  <span class="description">
+			
+			   これがうわさの卒業イベントでいじられたという「パンツ一丁で、スッポンドリンク一気飲み＆ビールかけられ」の映像です。    関連記事     ゆーすけべー日記: 奥出研卒業 ありがとう  
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jul 29, 2006</div>
+		  <a class="title" href="/posts/2006/0728152936/">砂山で少林寺その2</a> &mdash;
+		  <span class="description">
+			
+			       砂山で少林寺その2@Askビデオ         団子さんも加わって、だんだんと寄ってきましたよ。 
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jul 28, 2006</div>
+		  <a class="title" href="/posts/2006/0728080342/">砂山で少林寺その1</a> &mdash;
+		  <span class="description">
+			
+			   砂山で少林寺その1@Askビデオ             ネタンケンの時の砂山での少林寺。特撮に使われそうなすごい場所でしょ。 
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jul 28, 2006</div>
+		  <a class="title" href="/posts/2006/0728074253/">ニート宣言</a> &mdash;
+		  <span class="description">
+			
+			   無事卒業できそうということで、今日からしばらくニートになろうと思います。ちょっとブームに乗り遅れた感はありありなのは気にせずに。ニートは働いたら負けらしいので、働かない手段でいろいろやっていこう思います。こんなことやったら？というアイ
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jul 28, 2006</div>
+		  <a class="title" href="/posts/2006/0727195644/">椅子でぼけましょうその3</a> &mdash;
+		  <span class="description">
+			
+			   俺的に会心のテンション。 
+			
+		  </span>
+		</div>
+		
+		
+
+<ul class="pagination">
+	<li class="page-item page-prev">
+	
+    <a href="/page/87/" class="page-link" aria-label="Previous"><span aria-hidden="true">← Prev page</span></a>
+	
+	</li>
+	<li class="page-item page-next">
+	
+    <a href="/page/89/" class="page-link" aria-label="Next"><span aria-hidden="true">Next page →</span></a>
+	
+	</li>
+</ul>
+
+
+	  </div>
+	</div>
+  </div>
+  <div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright yusukebe.com |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-492497-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

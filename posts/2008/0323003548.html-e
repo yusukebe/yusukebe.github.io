@@ -1,0 +1,139 @@
++++
+Categories = ["tech"]
+Description = "   ListPod の使い方を解説します。使っている様子の画面をキャプチャした動画があるので、そちらも参考にしてください  →ListPod を使っている様子。  とりあえず今のところ ListPod の機能には主に以下があります。   "
+Tags = ["Perl"]
+date = "2008-03-23T09:35:00+09:00"
+title = "ListPod の使い方"
+author = "kamawada"
+archive = ["2008"]
+draft = false
++++
+
+
+<p>
+  <strong><a href="http://listpod.tv/">ListPod</a></strong> の使い方を解説します。
+使っている様子の画面をキャプチャした動画があるので、そちらも参考にしてください
+  →<a href="http://listpod.tv/wink">ListPod を使っている様子</a>。
+</p>
+<p>
+とりあえず今のところ ListPod の機能には主に以下があります。
+</p>
+<ul>
+  <li>YouTube にある動画を検索</li>
+  <li>マイリストを作成</li>
+  <li>マイリストに動画を追加</li>
+  <li>Podcast を iTunes に読み込む</li>
+  <li>iTunes で動画をダウンロードする</li>
+  <li>URL から Podcast を作成</li>
+  <li>ブックマークレットを使う</li>
+  <li>iPod と同期して映像を持ち歩く</li>
+</ul>
+<p>
+これらを順番に紹介していきましょう。
+</p>
+<h4>YouTube にある動画を検索</h4>
+<p>
+OpenID によるログインが済んだら自分のマイリストを作成し、動画を追加していくことが可能です。
+まずは、YouTube にある動画を ListPod から検索してみましょう。
+検索フォームにキーワードを入力するとヒットした動画を一覧で見ることができます。
+動画が再生したい時には、サムネイル画像をクリックしてみてください。再生がはじまります。
+</p>
+<p>
+  <img alt="ListPod" class="at-xid-6a0133f4781589970b015391e38f0c970b" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015391e38f0c970b-pi">
+</p>
+
+<h4>マイリストを作成</h4>
+<p>
+検索結果の画面から、新しくマイリストを作るには、動画の詳細表示の下にある「マイリストを新規作成」をクリックしましょう。
+フォームが出てくるのでそこに希望するマイリストの名前を入力して「作成」ボタンを押します。
+するとその場でマイリストができます。
+</p>
+<p>
+  <img alt="ListPod" class="at-xid-6a0133f4781589970b015391e38f15970b" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015391e38f15970b-pi">
+</p>
+
+<h4>マイリストに動画を追加</h4>
+<p>
+動画情報にあるプルダウンメニューからその動画の登録先としたいマイリストを選択して「に追加」ボタンを押せば、マイリストに追加されます。
+自分のマイリストの確認をしたい場合は、右側バーの「マイインフォ」→「マイリスト一覧」をクリックしてください。作ったマイリストの一覧が表示されます。そこでマイリストの名前のリンクをクリックすればそのマイリストの詳細ページへと飛びます。
+</p>
+<p>
+  <img alt="ListPod" class="at-xid-6a0133f4781589970b015391e38f21970b" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015391e38f21970b-pi">
+</p>
+
+<h4>Podcast を iTunes に読み込む</h4>
+<p>
+ではいよいよマイリストの Podcast を iTunes へ読み込ませてみましょう。
+といっても Podcast と書いてあるリンクをドラッグ＆ドロップで iTunes へ放り込むだけです。
+もしくは Podcast （RSS）の URL を iTunes に登録してみてください。
+ちなみに、一度マイリストを iTunes に登録しておけば、ListPod 側で動画を追加した場合に、iTunes の Podcast を更新するだけで最新の動画をダウンロードしていくことができます。
+</p>
+
+<p>
+  <img alt="ListPod" class="at-xid-6a0133f4781589970b015391e38f31970b" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015391e38f31970b-pi">
+</p>
+
+<h4>iTunes で動画をダウンロードする</h4>
+<p>
+iTunes の「Podcast」からダウンロードしたい動画を「入手」すればダウンロードが始まります。
+動画によってはダウンロードに失敗する場合がありますが、その場合もう一度「入手」ボタンを押して何度か試みてください。それでも解決しない場合がごくたまにありますが、その時は YouTube 側に動画が無いかエラーを吐いているかなので、諦めてください。
+</p>
+
+<p>
+  <img alt="ListPod" class="at-xid-6a0133f4781589970b015391e38f3c970b" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015391e38f3c970b-pi">
+</p>
+
+<h4>URL から Podcast を作成</h4>
+<p>
+キーワードによる検索結果から動画をマイリストに追加できるだけではなく、YouTube へのリンクを含むページの URL を入力することによって、そのページの Podcast を作ることもできます。
+例えば、CDTube の URL を入力し、iTunes に登録しておけば、毎週のランキングに登場した曲に関する動画を自動的に取得していくことも可能になります。
+</p>
+
+<h4>ブックマークレットを使う</h4>
+<p>
+こちら、もっと改善の余地ありですが、ブックマークレットを登録しておくと、YouTube の動画ページを見ていて、この動画をマイリストに追加したいなという時に便利です。ブックマークレットをクリックすれば ListPod の追加ページへと飛ぶようになっております。また、YouTube のページのみならず、YouTube へのリンクを含むページでブックマークレットすれば「URL から Podcast を作成」する ListPod のページへ行けます。
+</p>
+
+<h4>iPod と同期して映像を持ち歩く</h4>
+<p>
+最後に iTunes と iPod を同期させてみましょう。
+h.264 の動画再生に対応している iPod を iTunes と同期させれば自分のマイリストの映像を iPod で見ることができます。待ち時間とか電車の中で見るのもなかなかいいものですよー。
+</p>
+<p>
+  <img alt="ListPod" class="at-xid-6a0133f4781589970b015391e38f43970b" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015391e38f43970b-pi">
+</p>
+
+<ul>
+  <li><a href="http://listpod.tv/">ListPod - YouTube動画のマイリストを作ってPodcastで見よう！</a></li>
+</ul>
+
+<p></p>
+<div style="float:left"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B000IIKWM0/kamawada-22/"><img alt="Apple iPod nano 8GB ブラック MB261J/A" src="http://ecx.images-amazon.com/images/I/21%2B-zqgrIfL.jpg" style="border:none;"></a></div>
+<div style="float:left;margin-left:15px;">
+<div style="font-size:12pt"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B000IIKWM0/kamawada-22/">Apple iPod nano 8GB ブラック MB261J/A</a></div>
+<div style="font-size:7pt;font-family:verdana;">posted with <a href="http://yusukebe.com/b/amazon/search/">yusukebe.com::AmazonSearch</a> on 2008.3.23</div>
+<div style="font-size:10pt;">
+<ul style="list-style-type:none;padding:0;">
+<li>エレクトロニクス / アップルコンピュータ (2007/09/06)</li>
+<li>Amazon 売り上げランキング: 111</li>
+</ul>
+<a href="http://www.amazon.co.jp/gp/product/B000IIKWM0%3ftag=kamawada-22%26link_code=xm2%26camp=2025%26dev-t=D3QNAE4JDR26A2">Amazon.co.jpで詳細を見る</a>
+</div>
+</div>
+<div style="clear:left;"></div>
+
+<p></p>
+<div style="float:left"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B000UKMVM0/kamawada-22/"><img alt="Apple iPod touch 32GB MB376J/A" src="http://ecx.images-amazon.com/images/I/21QTDnkt67L.jpg" style="border:none;"></a></div>
+<div style="float:left;margin-left:15px;">
+<div style="font-size:12pt"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B000UKMVM0/kamawada-22/">Apple iPod touch 32GB MB376J/A</a></div>
+<div style="font-size:7pt;font-family:verdana;">posted with <a href="http://yusukebe.com/b/amazon/search/">yusukebe.com::AmazonSearch</a> on 2008.3.23</div>
+<div style="font-size:10pt;">
+<ul style="list-style-type:none;padding:0;">
+<li>エレクトロニクス / アップルコンピュータ (2008/02/06)</li>
+<li>Amazon 売り上げランキング: 259</li>
+</ul>
+<a href="http://www.amazon.co.jp/gp/product/B000UKMVM0%3ftag=kamawada-22%26link_code=xm2%26camp=2025%26dev-t=D3QNAE4JDR26A2">Amazon.co.jpで詳細を見る</a>
+</div>
+</div>
+<div style="clear:left;"></div>
+

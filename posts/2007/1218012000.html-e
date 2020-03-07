@@ -1,0 +1,52 @@
++++
+Categories = ["tech"]
+Description = "   過去のエントリー「ゆーすけべー日記: 自宅サーバー管理者にとっての停電問題 - 結論＝UPSを注文した」にて、購入することになった UPS 。APC の Smart-UPS 1500 (SUA1500JB) をチョイスし、注文したら速"
+Tags = []
+date = "2007-12-18T10:20:00+09:00"
+title = "UPS 導入 / APC Smart-UPS 1500 (SUA1500JB)"
+author = "kamawada"
+archive = ["2007"]
+draft = false
++++
+
+
+<p>
+  過去のエントリー「<a href="http://yusukebe.com/archives/07/12/12/143838.html">ゆーすけべー日記: 自宅サーバー管理者にとっての停電問題 - 結論＝UPSを注文した</a>」にて、購入することになった UPS 。
+<strong>APC の Smart-UPS 1500 (SUA1500JB)</strong> をチョイスし、注文したら速攻で届いたので、昨日設置してみた。
+</p>
+
+<p>
+  <img alt="UPS" class="at-xid-6a0133f4781589970b015391e38d27970b" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015391e38d27970b-pi">
+</p>
+<p>
+  まずは、バッテリーを本体とつないでから、電源に接続、数時間放置して充電。かなり重たいのに多少びっくりする。その後、ノートパソコンを UPS 背面のコンセント口につないでみて、UPS の大元のコンセントを抜いてみて、バッテリー供給がされているかをテスト。警告音がなり、バッテリー供給に切り替わったことを知らせるインジケーションが光り、ノートパソコンにも電力がいっていることを確認。これはいいぞ。
+以下、その様子の映像。
+</p>
+
+<h5>映像: UPS バッテリー供給テスト</h5>
+<embed flashvars="file=http://kamawada.com/~yusuke/yusukebe/archives/files/071217/ups.flv&amp;image=http://kamawada.com/~yusuke/yusukebe/archives/files/071217/ups.jpg&amp;displayheight=300&amp;title=UPS" height="360" pluginspage="http://www.macromedia.com/go/getflashplayer" src="http://yusukebe.com/v/player/jw_flvplayer.swf" type="application/x-shockwave-flash" width="400"></embed>
+
+<p>
+  PCとシリアルケーブルなどでつないで、コントロールもできるみたいだが、
+手元にあったシリアルケーブルを差すと何故かうまく起動しないみたい。なのでこの設定は後でやるとして、
+サーバーを一度止めて、電源供給口を全てこの UPS にする。
+起動時に一瞬、ファンが猛烈に回りだして結構うるさいが、すぐに収まった。
+まだ、ブレーカーが落ちるなど停電してないので、どうにもいえないが、なかなかよさげ。
+ということでひとまず、電力をたくさん消費する冬でも、安心な自宅サーバー管理ライフが送れそうです。
+</p>
+
+<p></p>
+<div style="float:left"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B0009QD926/kamawada-22/"><img alt="APC Smart-UPS 1500 (1500VA) ブラック SUA1500JB" src="http://ecx.images-amazon.com/images/I/11FB3HPNSRL.jpg" style="border:none;"></a></div>
+<div style="float:left;margin-left:15px;">
+<div style="font-size:12pt"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B0009QD926/kamawada-22/">APC Smart-UPS 1500 (1500VA) ブラック SUA1500JB</a></div>
+<div style="font-size:7pt;font-family:verdana;">posted with <a href="http://yusukebe.com/b/amazon/search/">yusukebe.com::AmazonSearch</a> on 2007.12.18</div>
+<div style="font-size:10pt;">
+<ul style="list-style-type:none;padding:0;">
+<li>エレクトロニクス / エーピーシー・ジャパン (2005/05/27)</li>
+<li>Amazon 売り上げランキング: 6576</li>
+</ul>
+<a href="http://www.amazon.co.jp/gp/product/B0009QD926%3ftag=kamawada-22%26link_code=xm2%26camp=2025%26dev-t=D3QNAE4JDR26A2">Amazon.co.jpで詳細を見る</a>
+</div>
+</div>
+<div style="clear:left;"></div>
+

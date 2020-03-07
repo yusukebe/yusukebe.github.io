@@ -1,0 +1,24 @@
++++
+Categories = ["tech"]
+Description = "   Perlで書かれたプラガブルなRSS/ATOMフィードアグリゲーター(直訳)Plaggerを使って、エロサイトを作ってみた。有名/優良なアダルトサイトのエロページを更新時間順に紹介するというもの。その名もERO Pla。場所はこちら("
+Tags = ["Perl"]
+date = "2006-08-24T19:40:00+09:00"
+title = "Plaggerでエロサイト作ってみた"
+author = "kamawada"
+archive = ["2006"]
+draft = false
++++
+
+
+<p>
+  Perlで書かれたプラガブルなRSS/ATOMフィードアグリゲーター(直訳)<strong>Plagger</strong>を使って、エロサイトを作ってみた。有名/優良なアダルトサイトのエロページを更新時間順に紹介するというもの。その名もERO Pla。場所は<a href="http://pulpsite.net/eropla/">こちら</a>(18歳未満立ち入り禁止)。作ってる間エロサイト開きまくりで、母ちゃん急に部屋入ってこないかびくびくしながらYAML書いてたｗ
+</p>
+<p>
+  <a href="http://pulpsite.net/eropla/">
+    <img alt="eropla" class="at-xid-6a0133f4781589970b014e8bd741f5970d" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b014e8bd741f5970d-pi">
+  </a>
+</p>
+<p>
+  以下ざっくりとした作り方
+</p>
+

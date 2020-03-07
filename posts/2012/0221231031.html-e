@@ -1,0 +1,306 @@
++++
+Categories = ["tech"]
+Description = " Instagramは日本のユーザーも多く、日常を切り取った写真がほとんどで、またお洒落なものも混じっているのでたまに眺めると気持ちがホッコリしたりします。特定のキーワードでInstagramの最新の写真を検索したい時があります。例えば、み"
+Tags = ["Technologies", "Web Essay", "JavaScript"]
+date = "2012-02-22T08:10:00+09:00"
+title = "30分、JavaScriptで作るWebサービスのモックアップ"
+author = "kamawada"
+archive = ["2012"]
+draft = false
++++
+
+
+<p>Instagramは日本のユーザーも多く、日常を切り取った写真がほとんどで、
+またお洒落なものも混じっているのでたまに眺めると気持ちがホッコリしたりします。
+特定のキーワードでInstagramの最新の写真を検索したい時があります。
+例えば、みんなが今どんな「ご飯」を食べているのか、今日の「日の出」はどのような具合なのか、
+がInstagramの写真を通して分かるかもしれません。
+Instagramの写真検索サービスを探してみると、
+Instagram自身が検索機能を提供してないので他の第三者が作ったサービスがいくつか出てきます。
+使ってみたところ、もう少し自分で見た目やら機能を変えてみたいなーなんて思いました。
+そこで、「<strong>Instagramの今の写真を検索できるサービス</strong>」といういわばWebサービスを作りたい欲求にかられます。
+今回はこのようなちょっとした欲求から考えた「Webサービスのモックアップ」をJavaScriptで素早く作ることについて、
+解説してみます。</p>
+
+<p>Webサービスを「誰かの欲求を満たすWebのサービス」という一面から捉えると、
+もちろん<strong>JavaScriptだけで記述可能</strong>です。HTML/CSSの知識は多少必要ですが、
+PHPやRuby、Perlなどのサーバサイドについて知らなくてもよいわけです。
+また、JavaScriptでWebサービスのモックを作る作業はサーバサイドを実装する場合でも、
+UIやアイデアを試行錯誤するための意味をなすこともあります。
+JavaScriptのAjaxと呼ばれるような仕組みを利用すれば、今回扱うようなTwitterのWeb APIとの通信も可能ですし、
+インタラクティブにブラウザ上で表示を変化させることができます。</p>
+
+<p>「Instagramの今の写真を検索できるサービス」。実際にJavaScriptで作ってみました。
+すると<strong>30分ほど集中すると、Webサービスを構成する必要最低限の行程を踏むことができた</strong>のです。
+もちろん作り込みはだいぶ必要なので、それについては後述しますが、
+実際に動くサービスを使うことが可能なのでユーザとして欲求はある程度満たせるものです。
+30分、JavaScriptでWebサービスをサクッと作る行程は以下のようなものでした
+（時間は適当な目安です）。</p>
+
+<ol>
+<li>HTMLとCSSの雛形を用意する(3分)</li>
+<li>JSの雛形を作る(2分)</li>
+<li>APIのドキュメントを読む(5分)</li>
+<li>JSコード、CSSを記述する(15分)</li>
+<li>公開する(5分)</li>
+</ol>
+
+
+<p>それぞれについて解説します。</p>
+
+<h4>1.HTMLとCSSの雛形を用意する(3分)</h4>
+
+<p>WebサービスとなるとHTMLとCSSは必須です。
+実はここを作り込むのが一番時間かかったりするのですが、
+今回は雛形だけで満足することにしましょう。<strong>CSS Framework</strong>を利用します。
+<a href="http://bluetrip.org/">BlueTrip</a>はCSSが簡素に記述されていて使いやすいだけではなく、
+zipやtarをダウンロードして解凍すれば今すぐ使えるようなファイル構成になっているのでこちらを使ってみます。</p>
+
+<p><img src="http://farm8.staticflickr.com/7070/6918752979_397522692b.jpg" alt="BlueTripを解凍したところ"></p>
+
+<p>index.htmlをエディタで編集してタイトルだけの表示にします。</p>
+
+<pre> &lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"&gt;
+&lt;html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja"&gt;
+&lt;head&gt;
+  &lt;meta http-equiv="content-type" content="text/html;charset=utf-8" /&gt;
+  &lt;title&gt;Instagram検索&lt;/title&gt;
+  &lt;link rel="stylesheet" href="css/screen.css" type="text/css" media="screen, projection" /&gt;
+  &lt;link rel="stylesheet" href="css/print.css" type="text/css" media="print" /&gt;
+  &lt;!--[if IE]&gt;
+    &lt;link rel="stylesheet" href="css/ie.css" type="text/css" media="screen, projection" /&gt;
+  &lt;![endif]--&gt;
+  &lt;link rel="stylesheet" href="css/style.css" type="text/css" media="screen, projection" /&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div class="container"&gt;
+    &lt;div class="span-24"&gt;
+      &lt;h1&gt;Instgram検索&lt;/h1&gt;
+    &lt;/div&gt;
+    &lt;div id="main" class="span-24"&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;!-- end .container --&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+ </pre>
+
+<p>ブラウザで表示を確認しつつ作業を進めます。</p>
+
+<h4>2. JSの雛形を作る(2分)</h4>
+
+<p>JavaScriptでは<strong>jQuery</strong>を使います。そのための準備と確認をしましょう。
+まず、GoogleでホスティングされているjQueryを読み込みます。
+ローカルにjsファイルをダウンロードしてもよいですが、今回は特にその必要もないので楽な方法でやります。
+また、自分で書くjsファイルは「js/instagram_search.js」とでも名前を付けるので、
+その読み込みも記述します。index.htmlのheadの最後の方でこう書きます。</p>
+
+<pre> &lt;script type="text/javascript"
+    src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="js/instagram_search.js"&gt;&lt;/script&gt;
+ </pre>
+
+<p>instagram_search.jsではjQueryが正しく動くか、その雛形を書くことで確認してみましょう。</p>
+
+<pre> $().ready(function(){
+    console.log('docoment is ready!');
+});
+ </pre>
+
+<h4>3. APIのドキュメントを読む(5分)</h4>
+
+<p>今回のサービスの仕組みは「TwitterでつぶやかれたInstagramの写真のURLを検索して、それをサムネイル表示する」
+というものです。そのためには以下の2点についてWebで仕様などを調べます。</p>
+
+<ul>
+<li>Twitterのつぶやきを検索する方法</li>
+<li>Instagramのサムネイル取得方法</li>
+</ul>
+
+
+<p>すると、Twitterについては<a href="https://dev.twitter.com/docs/api/1/get/search">Twitter Search API</a>を使えばよいことが
+分かります。InstagramについてはAPIを特に利用する必要はなく、URLに含まれる写真のIDさえ分かれば、
+画像自身へのリンクを取得できます。</p>
+
+<pre> http://instagr.am/p/{id}/media/?size=t
+ </pre>
+
+<p>当たり前のことですが、こうした<strong>技術仕様</strong>を調査する行程もWebサービスを作るには必要です。</p>
+
+<h4>4. JSコード、CSSを記述する(15分)</h4>
+
+<p>ではいよいよJavaScriptのコードやCSSの調整をしていきましょう。
+最初は「フォームから入力された値でTwitter検索をする」ことに焦点を当てるとよかったです。</p>
+
+<p>index.htmlに以下のようなフォームの記述をします。</p>
+
+<pre>   &lt;form id="form" action="#"&gt;
+    &lt;input type="text" size="40" name="q"/&gt;
+    &lt;input type="submit" value="検索" /&gt;
+  &lt;/form&gt;
+ </pre>
+
+<p>その上で、JS側では入力のイベントを受け取り、値を取得、それをもとにクエリーを生成して、Ajax通信を行います。</p>
+
+<pre> $().ready(function(){
+  $('#form').submit(function(){
+    var query = $(this).children('input=["name"]').val();
+    if(!query) return false;
+    $.ajax({
+      url : 'http://search.twitter.com/search.json',
+      data : {
+        q : query + ' instagr.am',
+        lang : 'ja',
+        rpp : '100',
+        include_entities : 1
+      },
+      dataType : 'jsonp',
+      success : function(json){
+        var entries = json.results;
+        if(!entries) return;
+        $.each(entries,function(){
+          console.log(this);
+        }
+      }
+    });
+    return false;
+  });
+});
+ </pre>
+
+
+<p>うまくいけば、ブラウザのJavaScript Consoleに「【フォームに入力した値＋instagr.am】を含むツイート」
+オブジェクトのダンプがされると思います。</p>
+
+<p>このツイートオブジェクトからInstagramの写真へのURL、IDを抽出し、サムネイルの画像リンクを生成、
+ページに描画していくことをしていけば完成しそうです。
+最低限の小細工を施すと出来たのは以下のJSコードです。</p>
+
+<pre> $().ready(function(){
+  $('#form').submit(function(){
+    $('#main').children('a').fadeOut(function(){
+      $('#main').html('');
+    });
+    var query = $(this).children('input=["name"]').val();
+    if(!query) return false;
+    $('#main').text('loading...');
+    $.ajax({
+      url : 'http://search.twitter.com/search.json',
+      data : {
+        q : query + ' instagr.am',
+        lang : 'ja',
+        rpp : '100',
+        include_entities : 1
+      },
+      dataType : 'jsonp',
+      success : function(json){
+        $('#main').html('');
+        var entries = json.results;
+        if(!entries) return;
+        $.each(entries,function(){
+          if(this.entities &amp;&amp; this.entities.urls[0]) {
+            var url = this.entities.urls[0].expanded_url;
+            if(url.match(/instagr\.am\/p\/(\w+)/)){
+              var id = RegExp.$1;
+              var a = $('&lt;a/&gt;').attr('href','http://instagr.am/p/' + id + '/');
+              a.attr('target','_blank');
+              var img = $('&lt;img/&gt;').attr('src','http://instagr.am/p/' + id + '/media/?size=t');
+              img.bind('load',function(){
+                a.hide();
+                a.append(img);
+                $('#main').prepend(a);
+                a.fadeIn();
+              });
+            }
+          }
+        });
+      }
+    });
+    return false;
+  });
+});
+ </pre>
+
+
+<p>最後にCSSファイル「css/style.css」をちょろっと調整します。</p>
+
+<pre> main a
+{
+  margin:0;
+  padding:0;
+}
+#main img
+{
+  width:120px;
+  height:120px;
+  float: left;
+}
+ </pre>
+
+
+<p>再びindex.htmlをブラウザで開き、フォームに適当な検索語を入れ確認してみます。
+キーワードにマッチする写真のサムネイルがパラパラと現れたら動作は正常です。</p>
+
+<p><img src="http://farm8.staticflickr.com/7062/6918771533_f072423da0.jpg" alt="Instagram検索、結果"></p>
+
+<h4>公開する(5分)</h4>
+
+<p>もちろん手元のファイルを使っていてもいいのですが、他の誰かに見てもらうには公開をしましょう。
+一番手っ取り早い方法はDropboxのPublicディレクトリに入れることだったりしますが、
+今回は<strong>githubのgh-pages</strong>という機能を使います。</p>
+
+<p>まずgithubでPublicなレポジトリを作ります。その後だいたいこのようなコマンドでページ公開まで行えます。</p>
+
+<pre> $ git clone git@github.com:yusukebe/Instagram-Search.git
+$ cd Instagram-Search
+$ git symbolic-ref HEAD refs/heads/gh-pages
+$ git clean -fdx
+$ cp -a ~/work/* ./
+$ git commit -a -m "initial commit"
+$ git push origin gh-pages
+ </pre>
+
+<p>できたのがこちらのページです。</p>
+
+<ul>
+<li><a href="http://yusukebe.github.com/Instagram-Search/">Instagram検索</a></li>
+</ul>
+
+
+<p>公開することで、僕も「お試しください」と言えるわけですね。</p>
+
+<h4>作り込むために</h4>
+
+<p>30分で出来たものでですから、お分かりの通り作り込みが全然たりません。
+このような作業が必要だと思われます。</p>
+
+<ul>
+<li>RTなどの作用でできてしまう重複する画像を削除する</li>
+<li>写真の表示の工夫</li>
+<li>最新のつぶやき100件から写真を抽出しているが、101件目以降も見たい</li>
+<li>つぶやきのテキスト表示</li>
+<li>そもそもUIデザインを洗練させる</li>
+<li>などなど</li>
+</ul>
+
+
+<p>こうした作り込みの作業が個性を発揮する場所だったりしますね。</p>
+
+<h4>まとめ</h4>
+
+<p>「こんなの30分で無理だよ」とか「俺だったら15分で出来るぜ」というツッコミがきそうですが、
+時間はあくまで目安ってことでお願いします。
+ようは短い時間でJavaScriptを使うと「<strong>Webサービスのアイデアの検証</strong>」ができるかもというお話でした。
+作った<a href="http://yusukebe.github.com/Instagram-Search/">Instagram検索</a>も参考までに使ってみてくださいね。</p>
+
+<h4>お知らせ</h4>
+
+<p>メルマガ「ゆーすけべーラジオ」ではこうしたWebサービスを作るにあたってのエッセイを連載中です。
+よろしければお試し購読を。</p>
+
+<ul>
+<li><a href="http://www.mag2.com/m/0001426750.html" title="ゆーすけべーラジオ">ゆーすけべーラジオ</a></li>
+</ul>
+
+

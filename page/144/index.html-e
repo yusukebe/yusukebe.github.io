@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="generator" content="Hugo 0.63.2" />
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="alternate" type="application/rss+xml" href="https://yusukebe.com/index.xml" title="ゆーすけべー日記" />
+	<meta property="og:title" content="ゆーすけべー日記" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://yusukebe.com/" />
+<meta property="og:image" content="https://yusukebe.com/icons/myicon.png"/>
+<meta property="og:updated_time" content="2020-03-06T15:46:50+09:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://yusukebe.com/icons/myicon.png"/>
+
+<meta name="twitter:title" content="ゆーすけべー日記"/>
+<meta name="twitter:description" content=""/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
+	
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://yusukebe.com/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+  <div class="container wrapper">
+	<div class="header">
+	<h1 class="site-title"><a href="https://yusukebe.com/">ゆーすけべー日記</a></h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/yusukebe" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/yusukebe" title="Twitter"><i data-feather="twitter"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+	<div class="recent-posts section">
+	  <h2 class="section-header">
+		Recent posts
+	  </h2>
+	  <div class="posts">
+		
+		
+		
+		<div class="post">
+		  <div class="meta">Jun 28, 2004</div>
+		  <a class="title" href="/posts/2004/0627171844/">リブフォエバーみたい</a> &mdash;
+		  <span class="description">
+			
+			    本人出演のoasis vs blur のドキュメンタリーらしいLive   Foreverがシネマライズに来る。行きたし。サントラもほしい。 
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jun 26, 2004</div>
+		  <a class="title" href="/posts/2004/0625163111/">お笑い早慶戦：お笑い！企画放送局</a> &mdash;
+		  <span class="description">
+			
+			今週も金曜深夜はお笑い！企画放送局のお時間です。本日は無造作紳士が初参加！（俺との無造作紳士との絡みはゆーすけべー日記内を”無造作”で検索した結果をみてね）。無造作紳士が早稲田大学生ということで慶応生の僕らと早慶戦を行いました。ひとつの卓球
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jun 22, 2004</div>
+		  <a class="title" href="/posts/2004/0622141750/">落下型RSSリーダー</a> &mdash;
+		  <span class="description">
+			
+			    C-Magazine6月号の特集「数学」を道具として使いこなす。この一番最初にある雨粒シミュレーションってのをFlashで作ってみた。      こんな感じ                                      
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jun 21, 2004</div>
+		  <a class="title" href="/posts/2004/0620175134/">結婚式披露宴2次会、お幸せに</a> &mdash;
+		  <span class="description">
+			
+			    アンフィの先輩、北城さんがついに結婚。結婚式披露宴2次会にいきました。      新郎新婦のおふたり              二人の門出を祝って、ナルさんがはしゃぎ出しました。ちなみに僕の3個上の尊敬する先輩です。      小道
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jun 19, 2004</div>
+		  <a class="title" href="/posts/2004/0619053007/">DAB@virgin radio uk</a> &mdash;
+		  <span class="description">
+			
+			    DABとはDigital   Audio Broadcasting。日本でもデジタルラジオとしてやっているけど、地上波デジタル放送でラジオを流してしまうってこと。日本ではあまり普及していないけど、アメリカやヨーロッパでは結構普及して
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jun 19, 2004</div>
+		  <a class="title" href="/posts/2004/0618203702/">Roomwareの論文を読んでのウェブ上リファレンス</a> &mdash;
+		  <span class="description">
+			
+			    Roomwareの論文、というかある本に載っている一つのChapterなんだけど、を読んでのウェブ上リファレンス。             Dr.      Dr. Norbert Streitz              論文を書
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jun 18, 2004</div>
+		  <a class="title" href="/posts/2004/0618134703/">告白をハックする：お笑い！企画放送局</a> &mdash;
+		  <span class="description">
+			
+			今週も毎週金曜日はお笑い！企画放送局、極上の笑いをパソコンの前のあなたに届けます。鎌団子とらぶさんがお休みなので、今回は俺とあまやんとマネージャーヨシムが初参加。今回は「告白をハックする」。先週に引き続きお笑いハックシリーズだが、今回は最初
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jun 16, 2004</div>
+		  <a class="title" href="/posts/2004/0616102052/">日本標準時</a> &mdash;
+		  <span class="description">
+			
+			    日本標準時＠Nict     TAOがなくなってNICTになった。上のサイトで日本の標準時がわかる。自分のPCと日本標準時との差がわかる。なんかうける。 
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jun 15, 2004</div>
+		  <a class="title" href="/posts/2004/0615082913/">アクションラジオ放送局第2回</a> &mdash;
+		  <span class="description">
+			
+			    アクションラジオ放送局第2回、本日23時からあまや家よりお届けします。     今回はあまやんがワイアレスマイクを持っていろいろ動き回ります。お楽しみを。 
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jun 14, 2004</div>
+		  <a class="title" href="/posts/2004/0614052250/">EURO2004、寝る前に見るか？寝てから見るか？</a> &mdash;
+		  <span class="description">
+			
+			    昨日のFRAVSENGは寝てから見た方がよかったかも。俺は寝る前に見たため、ハーフタイムを境に寝た。そしたら後半ロスタイムにハゲが2点。だれかが言ったがジダンはマラドーナを超えたんじゃないか。     実は優勝チーム当てで5000円
+			
+		  </span>
+		</div>
+		
+		
+
+<ul class="pagination">
+	<li class="page-item page-prev">
+	
+    <a href="/page/143/" class="page-link" aria-label="Previous"><span aria-hidden="true">← Prev page</span></a>
+	
+	</li>
+	<li class="page-item page-next">
+	
+    <a href="/page/145/" class="page-link" aria-label="Next"><span aria-hidden="true">Next page →</span></a>
+	
+	</li>
+</ul>
+
+
+	  </div>
+	</div>
+  </div>
+  <div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright yusukebe.com |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-492497-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

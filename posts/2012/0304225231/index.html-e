@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>CSS Frameworkを持つ - ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="CSS Frameworkを持つ" />
+<meta property="og:description" content=" 例えば、Webサービスのフロントエンドのコードを書き始める時にまず何をするでしょうか？デザインスケッチや画像を元にHTMLとCSSを記述していくことになると思います。少なくとも僕はそうですね。理論的にはHTMLだけでもWebサービスを作る" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yusukebe.com/posts/2012/0304225231/" />
+<meta property="og:image" content="https://yusukebe.com/icons/myicon.png"/>
+<meta property="article:published_time" content="2012-03-05T07:52:00+09:00" />
+<meta property="article:modified_time" content="2012-03-05T07:52:00+09:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://yusukebe.com/icons/myicon.png"/>
+
+<meta name="twitter:title" content="CSS Frameworkを持つ"/>
+<meta name="twitter:description" content=" 例えば、Webサービスのフロントエンドのコードを書き始める時にまず何をするでしょうか？デザインスケッチや画像を元にHTMLとCSSを記述していくことになると思います。少なくとも僕はそうですね。理論的にはHTMLだけでもWebサービスを作る"/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
+	
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://yusukebe.com/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper post">
+		<div class="header">
+	<h1 class="site-title"><a href="https://yusukebe.com/">ゆーすけべー日記</a></h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/yusukebe" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/yusukebe" title="Twitter"><i data-feather="twitter"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post-header">
+			<h1 class="title">CSS Frameworkを持つ</h1>
+			<div class="meta">Posted at &mdash; Mar 5, 2012</div>
+		</div>
+
+		<div class="markdown post-body">
+			
+
+<p>例えば、Webサービスのフロントエンドのコードを書き始める時にまず何をするでしょうか？
+デザインスケッチや画像を元にHTMLとCSSを記述していくことになると思います。
+少なくとも僕はそうですね。
+理論的にはHTMLだけでもWebサービスを作ることはもちろんできますが、
+見た目を少しでも調整したいとなるとCSSが必要になります。
+例えばCSSを使わないHTMLの場合、いくら単純なレイアウトだとしても、
+デフォルトのリンクの色を変えたかったり、フォントを変更したかったり、
+要素ごとの余白をどうにかしかったりと最低限の要望が出てきます。
+こうした最低限のCSSに対するニーズは共通化して自分なりのCSS Frameworkとして持っておくとよいと思います。
+近頃、一からCSSを記述しなくなったのもこうした考え方のおかげです。</p>
+
+<p>今Web上で配布されて利用可能なCSS Framworkが非常に増えています。
+僕も色々と探しては使ってみています。よく使われている、
+もしくは僕が使っているCSS Framworkには以下のようなものがあります。</p>
+
+<ul>
+<li>Blueprint</li>
+<li>960.gs</li>
+<li>Bluetrip</li>
+<li>YUI CSS</li>
+<li>inuit.css</li>
+<li>Twitter bootstrap</li>
+<li>jQuery UI CSS Framework</li>
+<li>Less Framework</li>
+</ul>
+
+
+<p>こうした数あるFramworkのうち、お気に入りを見つけるのもよし、
+参考にして自分なりのCSS Frameworkを作るのもよいと思います。
+そして結果的に「CSS Frameworkを持つ」ことになると開発が効率的になるのかなぁと。</p>
+
+<p>では、CSS Frameworkでは何が出来るのかを見て行きます。
+そのことで、自作のFrameworkを作る際にもどのような要素を考慮すればいいかが分かると思います。
+分かりやすい例として以前から使っている<a href="http://bluetrip.org/">BluetripというCSS Framework</a>を紹介します。
+BluetripはBlueprintや960.gsなど様々なFrameworkのいいとこ取りをした、けれども最低限のFrameworkです。</p>
+
+<p><img src="http://farm8.staticflickr.com/7045/6807644790_9f46dd517e.jpg" alt="Bluetrip"></p>
+
+<hr>
+
+<p><br></p>
+
+<h4>スタイルの初期化</h4>
+
+<p>CSS Frameworkではスタイルの初期化をしてくれるのが一番の効用かもしれません。
+Bluetripの.cssファイルを見ると最初の冒頭でリセットと呼ばれる該当する要素に対してのマージンやパディングの無効化、
+行間の調整などが一気に行われています。
+ヘッダー要素、マージンとパディングに限れば以下のようなCSSになります。</p>
+
+<pre> h1,h2,h3,h4,h5,h6{margin:0;padding:0;}
+ </pre>
+
+<p>そしてその後、要素ごとに適切なスタイルを、この場合だとマージンやパディングを設定しています。
+以下はヘッダー要素の記述です。</p>
+
+<pre> h1 { margin: 1em 0 .5em;  }
+h2 { margin: 1.07em 0 .535em; }
+h3 { margin: 1.14em 0 .57em; }
+h4 { margin: 1.23em 0 .615em; }
+h5 { margin: 1.33em 0 .67em; }
+h6 { margin: 1.6em 0 .8em; }
+ </pre>
+
+<p>配布されているCSS Frameworkはおそらく作者のポリシーも含んだマージンや行間、
+配色などの設定がなされていると思われます。そのまま使ってもよいですし、
+多少の修正を加えることもCSSを上書きするか、修正などすれば容易です。
+このスタイルの初期化によってプレーンな構造のHTMLがより見やすくなってくれます。
+また、ブラウザごとの依存を吸収してくれる作用もあります。</p>
+
+<h4>タイポグラフィー</h4>
+
+<p>スタイルの初期化とも呼べるかもしれませんが、CSS Frameworkはそれぞれなりのフォントを要素ごとに設定してくれます。
+Webで共通的に使える日本語のフォントが非常に少ないために日本人にはあまり恩恵がないかもしれませんが、
+英字に限っては効果的です。
+Bluetripはhtml要素全体と太字に対して以下のようなタイポグラフィーを設定しています。</p>
+
+<pre> html { font-size: 62.5%; font-family: "Liberation Sans", Helvetica, Arial, sans-serif; }
+strong, th, thead td, h1, h2, h3, h4, h5, h6 { font-weight: bold; }
+ </pre>
+
+<p>また、Bluetripの面白いところは「.fancy」クラスを付けた要素に対しては「かわいらしいフォント」を表示する機能があります。</p>
+
+<p><img src="http://farm8.staticflickr.com/7185/6807652332_aa80c8a05e.jpg" alt=".fancy"></p>
+
+<p>CSSの実装はこのような具合でした。</p>
+
+<pre> .fancy { color: #666; font-family: "Warnock Pro", "Goudy Old Style","Palatino","Book Antiqua", Georgia, serif; font-style: italic; font-weight: normal; }
+ </pre>
+
+<h4>グリッドレイアウト</h4>
+
+<p>スタイルの初期化の次にCSS Frameworkに欲しい機能なのがグリッドレイアウトです。
+例えば横幅が分かりやすいように900pxのページだとして、3つの領域に分けるとしたら、300pxのグリッドが3つできます。
+このグリッドに基づきコンテンツを配置していくのがグリッドレイアウトの使い方です。<br>
+Bluetripは、ページ大枠の幅は950pxなのですが、それを最適に24個のグリッドに分けています。
+例えば、左側に8個のグリッドのサイドメニュー、右側に16個のグリッドのメインコンテンツというレイアウトにしたければ、
+以下のようなHTMLを記述します。</p>
+
+<pre> &lt;div class="span-8"&gt;
+    サイドメニュー
+&lt;/div&gt;
+&lt;div class="span-16 last"&gt;
+    メインコンテンツ
+&lt;/div&gt;
+ </pre>
+
+<p>タブーと言われているようなtableレイアウトを使わずにこうしたグリッドレイアウトを記述するには、
+ちょっとした苦労とノウハウが必要なのですが既存のCSS Frameworkを使ったり、真似したりすると楽ですね。</p>
+
+<h4>パーツ</h4>
+
+<p>Bluetripでは、クラスを指定することでアンカー要素をボタンっぽく見せるための機能があったりします。
+UIを構成するパーツのスタイリングですね。</p>
+
+<pre> &lt;a class="button"&gt;OK&lt;/a&gt;
+ </pre>
+
+<p>とするだけで、見栄えの効くパーツに変換してくれます。</p>
+
+<p><img src="http://farm8.staticflickr.com/7047/6807721812_0923f2df23.jpg" alt="ボタン"></p>
+
+<h4>印刷用CSS</h4>
+
+<p>印刷用CSSが付いてくるCSS FrameworkもありBluetripもその一つです。
+このようにHTMLのhead要素内で.cssを指定します。</p>
+
+<pre>  &lt;link rel="stylesheet" href="css/print.css" type="text/css" media="print" /&gt;
+ </pre>
+
+<p>あまり意識をすることが無い印刷用CSSですが、サイトの種類によっては印刷する人が結構いるかもしれないので、
+侮れないと思いました。</p>
+
+<h4>スターターキット</h4>
+
+<p>Bluetripの優れている点はサイトからZIPやTarをダウンロードして解凍すると、
+中身のフォルダ・ファイル構造がいきなり使えるようになっていることです。</p>
+
+<p><img src="http://farm8.staticflickr.com/7049/6807659154_6ed2c7769d.jpg" alt="ダウンロード、解凍後"></p>
+
+<pre> ./
+├── css
+│   ├── ie.css
+│   ├── print.css
+│   ├── screen.css
+│   └── style.css
+├── images
+└── index.html
+ </pre>
+
+<p>フォルダ内のindex.htmlにHTMLを書いて、style.cssには自分でカスタムしたいCSSを記載します。
+フォルダのレイアウトを作ったり.cssへのパスを調べてhead内に書く作業が減るだけですが、
+それだけでも時間短縮になってよいですね。</p>
+
+<h4>まとめ</h4>
+
+<p>BluetripというCSS Frameworkには以下の要素が備わっていることが分かりました。</p>
+
+<ul>
+<li>スタイル初期化</li>
+<li>タイポグラフィー</li>
+<li>グリッドレイアウト</li>
+<li>パーツ</li>
+<li>印刷用CSS</li>
+<li>スターターキット</li>
+</ul>
+
+
+<p>これはあくまで一例なのですが、他のCSS Frameworkを吟味する際に参考にしてもらったり、
+自分でFrameworkを作る際の指針になるかと思います。
+CSS Frameworkを持つことはこうした要素を効率化していく効果があるのだと思います。</p>
+
+<hr>
+
+<p><br></p>
+
+<p>メルマガ「ゆーすけべーラジオ」でもこうしたWebサービスを作ることにまつわるエッセイを連載中です。
+よろしければお試し購読を！</p>
+
+<ul>
+<li><a href="http://www.mag2.com/m/0001426750.html" title="ゆーすけべーラジオ">ゆーすけべーラジオ</a></li>
+</ul>
+
+
+
+		</div>
+
+		<div class="post-tags">
+			
+				
+					<nav class="nav tags">
+							<ul class="flat">
+								
+								<li><a href="/tags/web-essay">Web Essay</a></li>
+								
+								<li><a href="/tags/technologies">Technologies</a></li>
+								
+								<li><a href="/tags/css">css</a></li>
+								
+							</ul>
+					</nav>
+				
+			
+		</div>
+        <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v5.0&appId=233306523373884&autoLogAppEvents=1"></script>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+
+<div class="social-button-area">
+  <ul class="social-button">
+    <li>
+      <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
+    </li>
+    <li>
+      <span class="fb-share-button"  data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2012%2f0304225231%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
+    </li>
+    <li>
+      <a href="https://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label-counter" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>
+    </li>
+  </ul>
+</div>
+
+<div class="disqus-area">
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "yusukebe-com" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<ul class="pagination">
+  
+  <li class="page-item page-prev">
+    <a href="https://yusukebe.com/posts/2012/0302221855/" class="page-link" aria-label="Previous"><span aria-hidden="true">← 月10万稼ぐにはiPhoneアプリ開発が一番速かった</span></a>
+  </li>
+  
+  
+  <li class="page-item page-next">
+    <a href="https://yusukebe.com/posts/2012/0305211542/" class="page-link" aria-label="Next"><span aria-hidden="true">全裸で学ぶMVC事始め →</span></a>
+  </li>
+  
+</ul>
+
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright yusukebe.com |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-492497-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

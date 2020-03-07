@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>現在発売中の「SoftwareDesign 2010年1月号」と「Web Site Expert #27」にも記事を書かせていただきました - ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="現在発売中の「SoftwareDesign 2010年1月号」と「Web Site Expert #27」にも記事を書かせていただきました" />
+<meta property="og:description" content=" 先日は「WEB&#43;DB PRESS vol.54」に特集記事を書いたと紹介しましたが、実は現在発売中の「SoftwareDesign 2010年1月号」と「Web Site Expert #27」にもそれぞれ3ページ、2ページと記事を書かせ" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yusukebe.com/posts/2009/1225103209/" />
+<meta property="og:image" content="https://yusukebe.com/icons/myicon.png"/>
+<meta property="article:published_time" content="2009-12-25T19:32:00+09:00" />
+<meta property="article:modified_time" content="2009-12-25T19:32:00+09:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://yusukebe.com/icons/myicon.png"/>
+
+<meta name="twitter:title" content="現在発売中の「SoftwareDesign 2010年1月号」と「Web Site Expert #27」にも記事を書かせていただきました"/>
+<meta name="twitter:description" content=" 先日は「WEB&#43;DB PRESS vol.54」に特集記事を書いたと紹介しましたが、実は現在発売中の「SoftwareDesign 2010年1月号」と「Web Site Expert #27」にもそれぞれ3ページ、2ページと記事を書かせ"/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
+	
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://yusukebe.com/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper post">
+		<div class="header">
+	<h1 class="site-title"><a href="https://yusukebe.com/">ゆーすけべー日記</a></h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/yusukebe" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/yusukebe" title="Twitter"><i data-feather="twitter"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post-header">
+			<h1 class="title">現在発売中の「SoftwareDesign 2010年1月号」と「Web Site Expert #27」にも記事を書かせていただきました</h1>
+			<div class="meta">Posted at &mdash; Dec 25, 2009</div>
+		</div>
+
+		<div class="markdown post-body">
+			
+
+<p>
+先日は「WEB+DB PRESS vol.54」に特集記事を書いたと紹介しましたが、
+実は現在発売中の「<strong>SoftwareDesign 2010年1月号</strong>」と「<strong>Web Site Expert #27</strong>」にも
+それぞれ3ページ、2ページと記事を書かせていただきました。
+</p>
+<p>
+SoftwareDesign の方は「コードを読む技術」という特集の中にて
+『その2 Perl - ソースコードを読んで「わかった！」瞬間を』という題名で、
+エロサイトの情報収集をするのを目的にして、Plagger の asset ファイルから正規表現を学んでいった男の話を書いています。
+一方、「Web Site Expert #27」ではクラウドの特集の中で、『「時間と場所」と「お金」のバランスを見極めて』という題名で、
+実際に Amazon EC2 を利用した経験からその利点と逆に怖い側面を取り上げています。
+</p>
+<p>
+YAPC::Asia 2009 が終わったくらいから急にこの技術評論社さんから
+出されている3つの雑誌(厳密にいえばSoftwareDesignを除いては大型本)に記事を書かせてもらうことになって、
+めでたく雑誌執筆童貞を捨てさせていただきました。
+どれももちろん読んだことがある雑誌で、SoftwareDesignについては学生時代、
+WEB+DB PRESSに至っては現在進行中で愛読中なので非常に嬉しい限りです。
+</p>
+<p>
+さてこうした「執筆」にまつわる個人的な思いは後ほどまとめるとして、
+<a href="http://astore.amazon.co.jp/yusukebe-22">
+Amazonのインスタンスストアという機能を使ってこの3冊を置いておいた
+</a>
+ので、
+もし興味のある人は「yusukebeまとめ買い」とかしてくれたら僕嬉しくなっちゃいます^^;
+ということで雑誌の方もよろしくお願いします。
+</p>
+<ul>
+  <li><a href="http://astore.amazon.co.jp/yusukebe-22">yusukebe関連本</a></li>
+</ul>
+
+<br>
+
+<div>
+<div style="float:left"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B002YJ005U/kamawada-22/"><img alt="SoftwareDesign(ソフトウェアデザイン) 2010年 01月号 [雑誌]" class="at-xid-6a0133f4781589970b014e8bd7533f970d" src="https://yusukebe.com/.a/6a0133f4781589970b014e8bd7533f970d-pi" style="border:none;"></a></div>
+<div style="float:left;margin-left:15px;">
+<div style="font-size:12pt"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B002YJ005U/kamawada-22/">SoftwareDesign(ソフトウェアデザイン) 2010年 01月号 [雑誌]</a></div>
+<div style="font-size:7pt;font-family:verdana;">posted with <a href="http://yusukebe.com/b/amazon/search/">yusukebe.com::AmazonSearch</a> on 2009.12.25</div>
+<div style="font-size:10pt;">
+<ul style="list-style-type:none;padding:0;">
+<li>雑誌 / 技術評論社 </li>
+<li>Amazon 売り上げランキング: </li>
+</ul>
+<a href="http://www.amazon.co.jp/SoftwareDesign-%E3%82%BD%E3%83%95%E3%83%88%E3%82%A6%E3%82%A7%E3%82%A2%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3-2010%E5%B9%B4-01%E6%9C%88%E5%8F%B7-%E9%9B%91%E8%AA%8C/dp/B002YJ005U%3FSubscriptionId%3D0VEY2A9SVSFB81NQ9HG2%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB002YJ005U">Amazon.co.jpで詳細を見る</a>
+</div>
+</div>
+<div style="clear:left;"></div>
+</div>
+
+<br>
+<div>
+<div style="float:left"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4774140805/kamawada-22/"><img alt="Web Site Expert #27" class="at-xid-6a0133f4781589970b014e8bd75348970d" src="https://yusukebe.com/.a/6a0133f4781589970b014e8bd75348970d-pi" style="border:none;"></a></div>
+<div style="float:left;margin-left:15px;">
+<div style="font-size:12pt"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4774140805/kamawada-22/">Web Site Expert #27</a></div>
+<div style="font-size:7pt;font-family:verdana;">posted with <a href="http://yusukebe.com/b/amazon/search/">yusukebe.com::AmazonSearch</a> on 2009.12.25</div>
+<div style="font-size:10pt;">
+<ul style="list-style-type:none;padding:0;">
+<li>大型本 / 技術評論社 </li>
+<li>Amazon 売り上げランキング: 73341</li>
+</ul>
+<a href="http://www.amazon.co.jp/Web-Site-Expert-27-%E7%B7%A8%E9%9B%86%E9%83%A8/dp/4774140805%3FSubscriptionId%3D0VEY2A9SVSFB81NQ9HG2%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D4774140805">Amazon.co.jpで詳細を見る</a>
+</div>
+</div>
+<div style="clear:left;"></div>
+</div>
+
+
+		</div>
+
+		<div class="post-tags">
+			
+				
+			
+		</div>
+        <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v5.0&appId=233306523373884&autoLogAppEvents=1"></script>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+
+<div class="social-button-area">
+  <ul class="social-button">
+    <li>
+      <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
+    </li>
+    <li>
+      <span class="fb-share-button"  data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2009%2f1225103209%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
+    </li>
+    <li>
+      <a href="https://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label-counter" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>
+    </li>
+  </ul>
+</div>
+
+<div class="disqus-area">
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "yusukebe-com" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<ul class="pagination">
+  
+  <li class="page-item page-prev">
+    <a href="https://yusukebe.com/posts/2009/1222153726/" class="page-link" aria-label="Previous"><span aria-hidden="true">← 本日(23日)発売の「WEB&#43;DB PRESS vol.54」の特集記事「Webサービス即日開発」を書かせていただきました</span></a>
+  </li>
+  
+  
+  <li class="page-item page-next">
+    <a href="https://yusukebe.com/posts/2010/0110120344/" class="page-link" aria-label="Next"><span aria-hidden="true">Perlの[ひいきして]10の特徴 →</span></a>
+  </li>
+  
+</ul>
+
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright yusukebe.com |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-492497-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

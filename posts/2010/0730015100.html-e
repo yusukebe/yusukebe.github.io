@@ -1,0 +1,34 @@
++++
+Categories = ["tech"]
+Description = " なんか今日の朝、急に作りたくなったので作った。  YourFileHost動画のURLをフォームに入れてボタンを押すと、その動画のFLVのパスを取得して表示してくれるというただそれだけのサービスです。  OurFLV - YourFile"
+Tags = []
+date = "2010-07-30T10:51:00+09:00"
+title = "発作的にYourFileHostのFLVをダウンロードできるサイトを作った【2】"
+author = "kamawada"
+archive = ["2010"]
+draft = false
++++
+
+
+<p>
+なんか今日の朝、急に作りたくなったので作った。
+</p>
+<p>
+YourFileHost動画のURLをフォームに入れてボタンを押すと、
+その動画のFLVのパスを取得して表示してくれるというただそれだけのサービスです。
+</p>
+<p>
+<a href="http://ourflv.urasukebe.com/">OurFLV - YourFileHostのFLVをダウンロード</a><br>
+<a href="http://ourflv.urasukebe.com/">
+<img alt="OurFLV" class="at-xid-6a0133f4781589970b015435b6f775970c" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015435b6f775970c-pi">
+</a>
+</p>
+<p>
+似たようなサイトたくさんありまして、自分も以前同じ目的の物作りましたが、
+最近になってYourFileHostのFLVパスが取得難しくなってました。
+そんでどーすんべーかなーって思っててやり方がさっき思いついたので、実装した次第です。
+まぁぶっちゃけると広告含めて「オールJS」なんですけどね！
+ということで、ブックマークレットなんてのもあるんで、もしよろしければ使ってくださいねー。
+by うらすけべー
+</p>
+

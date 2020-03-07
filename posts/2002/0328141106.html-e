@@ -1,0 +1,14 @@
++++
+Categories = ["tech"]
+Description = "天気：曇のち晴 日記管理ページで日記の様々な管理を行えます。"
+Tags = []
+date = "2002-03-28T23:11:00+09:00"
+title = "日記管理ページ"
+author = "kamawada"
+archive = ["2002"]
+draft = false
++++
+
+<p>天気：曇のち晴<br>
+<a href="admini.cgi" target="_new">日記管理ページ</a>
+で日記の様々な管理を行えます。</p>

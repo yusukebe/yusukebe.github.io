@@ -1,0 +1,103 @@
++++
+Categories = ["tech"]
+Description = " 親父と一緒にやってるBPMに変わる新しいアプリケーション「Kailas」の開発で、必要になったので Data::Validator::Simple っていうちっちゃいモジュールを作り出しました。アプリの要求として、「条件分岐」させなくては"
+Tags = ["Perl"]
+date = "2010-03-11T15:39:00+09:00"
+title = "Data::Validator::Simple ってのを作り出した"
+author = "kamawada"
+archive = ["2010"]
+draft = false
++++
+
+
+<p>
+親父と一緒にやってるBPMに変わる新しいアプリケーション「Kailas」の開発で、
+必要になったので Data::Validator::Simple っていうちっちゃいモジュールを作り出しました。
+アプリの要求として、「条件分岐」させなくてはいけないところがあって、
+その判定に使うってのが作ることになった主な目的です。
+条件分岐というと if else 使いますが、それを抽象化して、
+特定のルール、例えばその値が範囲内にあるかどうかという「BETWEEN」や、
+文字列や数値が一緒かという「EQUAL_TO」などをパラメータと共に渡せば結果が返ってくるという具合です。
+</p>
+<p>
+というといわゆるFormValidator::*を思い浮かべますし、
+実際のところそれを使ってもよかったのですが、
+今回特殊なパターンがでてくることを想定したり、
+基本的にWebのFormから受け取るようなデータは扱わないつもりなので、
+作ってみました。
+</p>
+<p>
+とはいってもFormValidatorっぽい動きもしたいよねーとも思ったりしたので、
+Data::Validator::Simple::Formオブジェクトがその役目を（ある程度）担うようにもできてます。
+実践に使ってないのでなんとも言えませんが、その辺りは改良できればします。
+</p>
+<p>
+まだdeveloper release扱いなので、APIが変わるかもしれませんが、
+以下現状のSYNOPSISを解説。
+</p>
+<p>
+まずは単一なデータの検証。
+</p>
+<pre class="brush: perl"> use Data::Validator::Simple;
+
+my $data = Data::Validator::Simple-&gt;new( data =&gt; 5 );
+my $result = $data-&gt;check( ['BETWEEN', 4, 10 ] );
+if( $result ){
+  print "valid";
+}else{
+  print "error";
+}
+ </pre>
+<p>
+複雑なパターン。checkメソッドに配列で渡せば順番で評価。
+渡す値がハッシュリファレンスでかつ評価が成功した場合、その中のsuccessを返します。
+successの中身は何でもいいので、この辺りがKailasで生きてくるはずです。
+</p>
+<pre class="brush: perl"> my $data = Data::Validator::Simple-&gt;new( data =&gt; 5 );
+my $result = $data-&gt;check(
+    {
+        rule    =&gt; [ 'EQUAL_TO', 6 ],
+        success =&gt; 'fist_message',
+    },
+    {
+        rule    =&gt; [ 'EQUAL_TO', 5 ],
+        success =&gt; 'second_message',
+    }
+);
+print $result; # second_message
+ </pre>
+<p>
+最後に、FormValidator的に使う方法。
+</p>
+<pre class="brush: perl"> my $q = CGI-&gt;new;
+$q-&gt;param( id   =&gt; 'login_id' );
+$q-&gt;param( name =&gt; 'user_name' );
+my %params = $q-&gt;Vars;
+
+my $form = Data::Validator::Simple-&gt;form;
+my $results = $form-&gt;check(
+    \%params,
+    {
+        id =&gt; [ 'ASCII', [ 'LENGTH', 4, 10 ] ],
+        name =&gt; [ 'LENGTH', 4, 20  ]
+    }
+);
+if( $results-&gt;{id} &amp;&amp; $results-&gt;{name} ){
+  print "valid";
+}
+ </pre>
+<p>
+今のところValidateに使えるルールが少ないので、これは増やしていくと共に、
+Web特有のそれ以外のケースにも対応したいです。
+で、まぁかなーりFormValidator::Simpleを参考にしているので、
+それでいいんじゃねーか！みたいなことはおいといて、
+更なる発展を自分で祈って作っていきます。
+</p>
+<p>
+0.01_01というバージョンでshipitしちゃったんで！
+そのうちsearch.cpan.orgにインデックスされると思います。
+</p>
+<ul>
+<li><a href="http://github.com/yusukebe/Data-Validator-Simple">yusukebe's Data-Validator-Simple at master - GitHub</a></li>
+</ul>
+

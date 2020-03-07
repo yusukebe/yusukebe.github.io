@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>データ表現についてわかった瞬間 - ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="データ表現についてわかった瞬間" />
+<meta property="og:description" content=" データの表現と操作  Webサービス等に必要な言語取得についてです。プログラミング言語を勉強しようという時にデータの表現方法を把握した瞬間に、「パッ」とその言語に対する理解が明るくなった気がします。  プログラミングは、抽象的に言えば、目" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yusukebe.com/posts/2012/0223030620/" />
+<meta property="og:image" content="https://yusukebe.com/icons/myicon.png"/>
+<meta property="article:published_time" content="2012-02-23T12:06:00+09:00" />
+<meta property="article:modified_time" content="2012-02-23T12:06:00+09:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://yusukebe.com/icons/myicon.png"/>
+
+<meta name="twitter:title" content="データ表現についてわかった瞬間"/>
+<meta name="twitter:description" content=" データの表現と操作  Webサービス等に必要な言語取得についてです。プログラミング言語を勉強しようという時にデータの表現方法を把握した瞬間に、「パッ」とその言語に対する理解が明るくなった気がします。  プログラミングは、抽象的に言えば、目"/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
+	
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://yusukebe.com/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper post">
+		<div class="header">
+	<h1 class="site-title"><a href="https://yusukebe.com/">ゆーすけべー日記</a></h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/yusukebe" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/yusukebe" title="Twitter"><i data-feather="twitter"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post-header">
+			<h1 class="title">データ表現についてわかった瞬間</h1>
+			<div class="meta">Posted at &mdash; Feb 23, 2012</div>
+		</div>
+
+		<div class="markdown post-body">
+			
+
+<h4>データの表現と操作</h4>
+
+<p>Webサービス等に必要な言語取得についてです。
+プログラミング言語を勉強しようという時にデータの表現方法を把握した瞬間に、
+「パッ」とその言語に対する理解が明るくなった気がします。</p>
+
+<p>プログラミングは、抽象的に言えば、目的を果たすために「データ」を「操作する」プログラムを書く行為と呼べるでしょう。
+例えば二つの数字を足し算するプログラムを考えてみます。これは「4+3=7」などを機械的に行ってくれるものです。
+プログラム内の流れはこのようになるでしょう。</p>
+
+<ol>
+<li>二つの数字を受け取り、それぞれデータとして保持する</li>
+<li>二つのデータを足し算して結果というデータに入れる</li>
+<li>結果を出力する</li>
+</ol>
+
+
+<p>実例を見た方が早いと思います。
+この足し算プログラムをエラー処理とかすっ飛ばして分かりやすいPerlのコードにするとこのようになります。</p>
+
+<pre> use strict; #おまじない
+use warnings; #おまじない
+
+my $number1 = $ARGV[0]; #第1引数を変数に入れる
+my $number2 = $ARGV[1]; #第2引数を変数に入れる
+my $result  = $number1 + $number2;  #結果に入れる
+print "Result: $result\n";
+ </pre>
+
+<p>「sum.pl」などのファイル名で保存して、ターミナルから以下のように実行します。</p>
+
+<pre> $ sum.pl 4 3
+ </pre>
+
+<p>「 <em>Result: 7</em> 」という文字列がターミナルに出力されたはずです。
+ここで出てきた「 <em>$number1</em>」「 <em>$number2</em> 」「 <em>$result</em> 」というのが、
+Perlにおいてスカラーと呼ばれるデータを表す変数になります。
+<strong>スカラー</strong> とはようは数字だったり文字だったりして「4という数字なら4だけだよ」と単一データを表せます。
+ここまでの理解はそう難しくないはずです。</p>
+
+<h4>配列とハッシュ</h4>
+
+<p>Perlで言うスカラーを理解したら、次は <strong>配列とハッシュ</strong> について把握しようというのが定石です。
+配列なら配列のみ、ハッシュならハッシュのみを表現する分にはこれも結構簡単です。</p>
+
+<p>僕の好きな食べ物を適当に列挙するとしましょう。配列を使って以下のように表現できます。</p>
+
+<pre> my @foods = ( 'ラーメン', '寿司', 'カレー', 'スパゲッティ', 'ステーキ' );
+ </pre>
+
+<p>@foodsってのには頭から</p>
+
+<ul>
+<li>ラーメン</li>
+<li>寿司</li>
+<li>カレー</li>
+<li>スパゲッティ</li>
+<li>ステーキ</li>
+</ul>
+
+
+<p>が入っています。先頭のラーメンを取得したければ「 <em>$foods[0]</em> 」と表現すればよいでしょう。
+中に入っている5つの文字列を順番に処理したければこのような「配列の操作」方法があります。</p>
+
+<pre> for my $food (@food) {
+    print "I like $food\n";
+}
+ </pre>
+
+<p>他にも配列にまつわる操作はいくつかあるので基本を押さえておいた方がよいでしょう。</p>
+
+<p>では、他の言語では連想配列とも呼ばれるハッシュについてです。
+これは「 <strong>キーとバリュー</strong> 」で構成されるものと覚えておくとよいでしょう。
+配列の場合、個々の要素にアクセスしたければ「 <em>$foods[0]</em> 」の「0」のように <strong>数字</strong> で指定をしていました。
+数字というのは配列の場合は往々にして0から始まり、1づつ加算されていく順番を意味します。
+ではハッシュってのはどうかと言うと数字を使うのじゃなくて任意の文字列を使うのです。
+それがキーと今僕が呼んでいるものです。</p>
+
+<p>人には名前がついていて、身長や体重という基本データがあります。
+そこからハッシュについて発想すると分かりやすいです。
+例えば僕の場合は名前というキーに対して「和田裕介」というバリューを持っています。
+また身長というキーに対しては「172cm」というバリューを持っているという具合です。
+これをPerlで表現するとこうなります。</p>
+
+<pre> my %ore = ( name =&gt; '和田裕介', tall =&gt; 172 );
+ </pre>
+
+<p>「name」キーの値にアクセスするためには「 <em>$ore{name}</em> 」とします。
+配列と同様ハッシュを操作するための関数もありますので、そちらもチェックです。</p>
+
+<h4>組み合わせて表現する</h4>
+
+<p>さて、次のステップが結構はまりどころ。僕がそうでした。
+上記の名前と身長のキーを持つ人が複数名いたとします。複数名いると列挙して配列として表現したいところです。
+つまり、テキストで頑張って表すと</p>
+
+<blockquote><p>最初の人（名前: Kさん、身長: 160cm）、2番目の人（名前: Yさん、身長: 182cm）、
+3番目の人（名前: Tさん、身長: 148cm）...</p></blockquote>
+
+<p>という意味を持つデータの表現をプログラムでどうするか。
+お気づきかと思いますが配列の中にハッシュをぶち込めばよいのです。
+ただ、Perlの場合には注意点があって、配列やハッシュを組み合わせたデータを表現するには、
+リファレンスというのをうまく使わないと表現しきれないのです。</p>
+
+<pre> my @people = (
+    { name =&gt; 'Kさん', tall =&gt; 160 },
+    { name =&gt; 'Yさん', tall =&gt; 182 },
+    { name =&gt; 'Tさん', tall =&gt; 148 }
+);
+ </pre>
+
+<p>細かい解説は省きますが「 <em>@people</em> 」配列内の「<em>{ name =&gt; 'Kさん', tall =&gt; '160' }</em>」というのが、
+一つのハッシュの無名リファレンスを表しています。
+2番目のYさんの身長を取り出すためには「 <em>$people[1]-&gt;{tall}</em> 」と表現します。
+リファレンスの場合、値の取り出し方が単なるハッシュとは違うので注意が必要で、
+この辺りを理解するのが当初の僕にとって大変だったのです。</p>
+
+<p>配列にもリファレンス表現があって、
+ハッシュのリファレンスとも組み合わせたりするとかなり複雑なデータ構造を表現できます。
+例えば、上記の人が3人出てくる例をもう一度使いましょう。
+それぞれが複数の好きな食べ物を持っているということを表したかったらこのようにします。</p>
+
+<pre> my @people = (
+    { name =&gt; 'Kさん', foods =&gt; [ 'カレー', 'ラーメン' ] },
+    { name  =&gt; 'Yさん', foods =&gt; [ 'ハンバーガー', '牛丼', 'チキン' ] },
+    { name =&gt; 'Tさん', foods =&gt; [ 'サラダ' ] }
+);
+ </pre>
+
+<p>通常の配列は「 <em>()</em> 」で表現していたものを今回は「 <em>[]</em> 」を使って配列の無名リファレンスとしました。
+ちなみに、この「 <em>@people</em> 」配列からみんなの好きな食べ物を一覧で出力するには以下のような操作をします。</p>
+
+<pre> for my $person (@people) {
+    for my $food ( @{ $person-&gt;{foods} } ) {
+        print "$person-&gt;{name} likes $food!!\n";
+    }
+}
+ </pre>
+
+<p>実行結果が結構面白いです。</p>
+
+<pre> Kさん likes カレー!!
+Kさん likes ラーメン!!
+Yさん likes ハンバーガー!!
+Yさん likes 牛丼!!
+Yさん likes チキン!!
+Tさん likes サラダ!!
+ </pre>
+
+<h4>スカラー、配列、ハッシュで表現する</h4>
+
+<p>実はこれまで解説してきた、スカラー、配列、ハッシュ。Perlの場合だとそれぞれのリファレンス。
+これさえ把握してしまえば、「友達の好きな食べ物」とかもわりと複雑なことでも表現できてしまうわけです。
+オブジェクト指向が少しでも分かる人ならば、「人クラス」を作るという方法もあると思うかもしれませんが、
+場合によってはクラスを作ることでクラス定義が必要だったり生成コストとかも考えると、
+ハッシュや配列だけで十分なケースもあります。
+特に最初の言語に対する入門時には、
+こうした言語にとってのプリミティブなデータ表現方法をまずは習得すると「パッ」と理解が開けるかもしれません。</p>
+
+
+		</div>
+
+		<div class="post-tags">
+			
+				
+					<nav class="nav tags">
+							<ul class="flat">
+								
+								<li><a href="/tags/web-essay">Web Essay</a></li>
+								
+								<li><a href="/tags/perl">Perl</a></li>
+								
+							</ul>
+					</nav>
+				
+			
+		</div>
+        <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v5.0&appId=233306523373884&autoLogAppEvents=1"></script>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+
+<div class="social-button-area">
+  <ul class="social-button">
+    <li>
+      <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
+    </li>
+    <li>
+      <span class="fb-share-button"  data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2012%2f0223030620%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
+    </li>
+    <li>
+      <a href="https://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label-counter" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>
+    </li>
+  </ul>
+</div>
+
+<div class="disqus-area">
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "yusukebe-com" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<ul class="pagination">
+  
+  <li class="page-item page-prev">
+    <a href="https://yusukebe.com/posts/2012/0222223527/" class="page-link" aria-label="Previous"><span aria-hidden="true">← 無ければつくる</span></a>
+  </li>
+  
+  
+  <li class="page-item page-next">
+    <a href="https://yusukebe.com/posts/2012/0223225136/" class="page-link" aria-label="Next"><span aria-hidden="true">創造のプロセスでプロジェクトを回そう！ →</span></a>
+  </li>
+  
+</ul>
+
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright yusukebe.com |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-492497-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

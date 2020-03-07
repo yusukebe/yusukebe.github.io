@@ -1,0 +1,13 @@
++++
+Categories = ["tech"]
+Description = " $ chmod 600 mt-comments.cgi  として、コメントできないようにしました。何かしら対策したらコメントオンにするのでまっててね。"
+Tags = []
+date = "2004-12-13T02:27:00+09:00"
+title = "コメントスパムでサーバーがとまりそうになるので"
+author = "kamawada"
+archive = ["2004"]
+draft = false
++++
+
+
+<pre> $ chmod 600 mt-comments.cgi  </pre>として、コメントできないようにしました。何かしら対策したらコメントオンにするのでまっててね。

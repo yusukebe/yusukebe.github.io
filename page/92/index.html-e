@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="generator" content="Hugo 0.63.2" />
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="alternate" type="application/rss+xml" href="https://yusukebe.com/index.xml" title="ゆーすけべー日記" />
+	<meta property="og:title" content="ゆーすけべー日記" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://yusukebe.com/" />
+<meta property="og:image" content="https://yusukebe.com/icons/myicon.png"/>
+<meta property="og:updated_time" content="2020-03-06T15:46:50+09:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://yusukebe.com/icons/myicon.png"/>
+
+<meta name="twitter:title" content="ゆーすけべー日記"/>
+<meta name="twitter:description" content=""/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
+	
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://yusukebe.com/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+  <div class="container wrapper">
+	<div class="header">
+	<h1 class="site-title"><a href="https://yusukebe.com/">ゆーすけべー日記</a></h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/yusukebe" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/yusukebe" title="Twitter"><i data-feather="twitter"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+	<div class="recent-posts section">
+	  <h2 class="section-header">
+		Recent posts
+	  </h2>
+	  <div class="posts">
+		
+		
+		
+		<div class="post">
+		  <div class="meta">Jun 15, 2006</div>
+		  <a class="title" href="/posts/2006/0615045625/">今日の苺</a> &mdash;
+		  <span class="description">
+			
+			   苺がなった。一粒きれいなのを見つけて食べてみた。          少々酸っぱいものの、甘さもあっておいしー。    てっきりワイルドストロベリーかと思いきや、たぶん違う苺っぽいな。  たしか、実のなる時期が変な苺ってことで珍しくて一
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jun 14, 2006</div>
+		  <a class="title" href="/posts/2006/0614051357/">裏ゆーすけべー日記、実験</a> &mdash;
+		  <span class="description">
+			
+			   この日記に裏コマンド的な機能をつける実験してます。  Yahoo!で「すけべ」と検索すると現在なぜか、  よっしーがホパンされた記事(ゆーすけべー日記: 久々に怪盗ホパンの被害を目の当たりにした)が4位に出てくる。   これじゃあ「す
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jun 14, 2006</div>
+		  <a class="title" href="/posts/2006/0614021909/">MrMax湘南藤沢に行ってみた</a> &mdash;
+		  <span class="description">
+			
+			   1日にオープンしてずっと行けてなかった「MrMax湘南藤沢ショッピングセンター」にようやく行ってみた。  場所は湘南モールFILLの真北(NOKの工場の跡地っぽい)、なんと小道をはさんで二つの大型モールが隣接という形。隣にはNOK事業
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jun 13, 2006</div>
+		  <a class="title" href="/posts/2006/0613022143/">ドイツWC日本vsオーストラリア、これがサッカー</a> &mdash;
+		  <span class="description">
+			
+			      俊輔の蹴ったクロスを相手キーパーがキャッチしようとして倒されて、    キーパーチャージじゃねーか？と一瞬疑うが得点して嬉しいのがサッカー    川口の神憑りセーブをはじめ、オーストラリアにボコられつつも「Mっけ」たっぷりに防ぐ
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jun 12, 2006</div>
+		  <a class="title" href="/posts/2006/0612113748/">おわきかサイトがポッドキャストナビ話題のVIDEOCASTに</a> &mdash;
+		  <span class="description">
+			
+			   ちょっと前の話になりますが、  おわきか / お笑い！企画放送局のサイトが  ポッドキャストナビの特集、話題のビデオキャストというページに掲載されました。    PODCAST navi ポッドキャストナビ｜話題のビデオキャスト｜おわ
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jun 12, 2006</div>
+		  <a class="title" href="/posts/2006/0612112342/">カラマーゾフの兄弟(下)</a> &mdash;
+		  <span class="description">
+			
+			   カラマーゾフの兄弟(下) ドストエフスキー著             去年の9月くらいから読み始めて10ヶ月、ついに上・中・下あわせて約1800ページ読破！        とにかく長ぇ。  しかも著者のドストエフスキーは当初二部になる
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jun 11, 2006</div>
+		  <a class="title" href="/posts/2006/0611114006/">Plagger使ってデイリーベイスターズのRSSを吐き出す</a> &mdash;
+		  <span class="description">
+			
+			   横浜ベイスターズの試合情報はデイリーベイスターズというサイトがウェブでは一番充実している。  けど、RSS吐いてない。というわけでPlaggerのFilter::EntryFullTextっての使ってRSS吐き出してみた。  これ、 
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jun 11, 2006</div>
+		  <a class="title" href="/posts/2006/0611024519/">rebooted</a> &mdash;
+		  <span class="description">
+			
+			 The system is going up for restart NOW! 
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">May 24, 2006</div>
+		  <a class="title" href="/posts/2006/0523161802/">「ピックアップ」を追加</a> &mdash;
+		  <span class="description">
+			
+			   過去の厳選記事を1時間ごとランダムにピックアップする機能をこの日記に追加しました。  トップページの左上に表示されます。 
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">May 23, 2006</div>
+		  <a class="title" href="/posts/2006/0523132816/">Broadcast To The World - Zebrahead</a> &mdash;
+		  <span class="description">
+			
+			   音楽の話を。Zebraheadの最新アルバム。ここ何ヶ月か新譜を全然チェクってなかったけど、2月に出てたんだね。    「Broad cast To The World」 - Zebrahead              ボーカルが変
+			
+		  </span>
+		</div>
+		
+		
+
+<ul class="pagination">
+	<li class="page-item page-prev">
+	
+    <a href="/page/91/" class="page-link" aria-label="Previous"><span aria-hidden="true">← Prev page</span></a>
+	
+	</li>
+	<li class="page-item page-next">
+	
+    <a href="/page/93/" class="page-link" aria-label="Next"><span aria-hidden="true">Next page →</span></a>
+	
+	</li>
+</ul>
+
+
+	  </div>
+	</div>
+  </div>
+  <div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright yusukebe.com |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-492497-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

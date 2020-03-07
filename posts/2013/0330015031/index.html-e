@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>PerlCasual #05 を開催しました #perlcasual - ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="PerlCasual #05 を開催しました #perlcasual" />
+<meta property="og:description" content=" 昨日29日（金）の夜、渋谷ヒカリエにあるNHN Japanさんのカフェスペースにて「PerlCasual #05」を開催しました。PerlCasualのイベントは、前回2011年4月29日にtomi-ruさんの「Perl CPANモジュー" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yusukebe.com/posts/2013/0330015031/" />
+<meta property="og:image" content="https://yusukebe.com/icons/myicon.png"/>
+<meta property="article:published_time" content="2013-03-30T10:50:00+09:00" />
+<meta property="article:modified_time" content="2013-03-30T10:50:00+09:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://yusukebe.com/icons/myicon.png"/>
+
+<meta name="twitter:title" content="PerlCasual #05 を開催しました #perlcasual"/>
+<meta name="twitter:description" content=" 昨日29日（金）の夜、渋谷ヒカリエにあるNHN Japanさんのカフェスペースにて「PerlCasual #05」を開催しました。PerlCasualのイベントは、前回2011年4月29日にtomi-ruさんの「Perl CPANモジュー"/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
+	
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://yusukebe.com/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper post">
+		<div class="header">
+	<h1 class="site-title"><a href="https://yusukebe.com/">ゆーすけべー日記</a></h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/yusukebe" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/yusukebe" title="Twitter"><i data-feather="twitter"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post-header">
+			<h1 class="title">PerlCasual #05 を開催しました #perlcasual</h1>
+			<div class="meta">Posted at &mdash; Mar 30, 2013</div>
+		</div>
+
+		<div class="markdown post-body">
+			
+
+<p>昨日29日（金）の夜、渋谷ヒカリエにあるNHN Japanさんのカフェスペースにて「PerlCasual #05」を開催しました。
+PerlCasualのイベントは、前回2011年4月29日に<a href="http://e8y.net/">tomi-ruさん</a>の「<a href="http://www.amazon.co.jp/exec/obidos/ASIN/486267108X/kamawada-22/ref=nosim/">Perl CPANモジュールガイド</a>」出版を記念して行ったイベントから数えて2年ぶりの開催です。発表者や関係者など合わせておおよそ70名弱の方に参加していただきました。ありがとうございます。いくつかのトピックに分けて今回のイベントを振り返ってみましょう。</p>
+
+<p><a href="http://yusukebe.com/archives/2013/03/30/IMG_0259.JPG"><img alt="IMG_0259.JPG" src="http://yusukebe.com/archives/assets_c/2013/03/IMG_0259-thumb-550x412-323.jpg" width="550" height="412" class="mt-image-none" style=""></a></p>
+
+<h3>開催に至った経緯とその準備</h3>
+
+<p>とある2月の日。大学の後輩であり現在はヒカリエの一番上に勤務しているすがちゃん（<a href="http://twitter.com/yoshirock55">@yoshirock55</a>）と夜飯を食った帰り際、久しぶりにPerlCasualのイベントをやろう！と個人的に熱くなったのが今回のモチベーションです。すがちゃんは会社の同僚と、社内ベンチャー的にWebサービスやそれと絡んだiPhone/Androidアプリを開発していて、そのバックエンドを担当するルイ（<a href="http://twitter.com/ruik">@ruik</a>）がPerlでシステムを組んでいたので、その件について何か発表する場が欲しいと言われたのでした。「あー確かにアプリケーション事例とかを発表できるイベントとしてPerlCasualをやりたいなー」と思ったので、その晩に構想をだいたい練って、次の日の午前に<a href="https://twitter.com/941">941さん</a>に会場を借りれるかを相談しつつ、発表者候補の人に個別でアプローチ。皆さん快く引き受けてくれてる風だったので、プログラムを組んで昼過ぎにATNDで募集を開始。結果夕方には参加候補の定員が埋まるという24時間かけずに勢いでイベント企画が進んだという形です。</p>
+
+<h3>今回の狙い</h3>
+
+<p>発表者に関しては全て「僕がこの人の話を聞きたい！どういうトークをするのか気になる！」という基準で声をかけたので完全に「ゆーすけべーアワー」を目指しましたw 結果的に運用系の人からRubyの人まで色々なトークが聞けて、普段あまり絡みの無い人同士の懇親もある程度深められたのでは無いかと思います。</p>
+
+<p>と、それと同時に新しいことが始まるこの時期にやったので、なるべく「Perlで（もちろんPerlじゃなくてもいいけど）こんなこと出来ます！」と言ったアプリケーション寄りの発表が多くなるようにしてみました。参加者の方が「こんなこと出来るんだ！俺も何かつくってみよう！」と感じてくれれば嬉しいですね。</p>
+
+<p>こうした諸々の結果とも言えますが、<a href="https://twitter.com/hidek">hidekさん</a>から</p>
+
+<blockquote class="twitter-tweet" lang="ja">
+<p>あんだけ Perl 書いていない人が参加してるなら、スピリチュアルな話より、初めての Perl 的なトークがもっとあっていいんじゃないかなーとかマジレス <a href="https://twitter.com/search/%23perlcasual">#perlcasual</a></p>— hidekさん (@hidek) <a href="https://twitter.com/hidek/status/317613988605214720">2013年3月29日</a>
+</blockquote>
+
+
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+<p>というマジレスをいただきまして、確かにその通りですね。今回はPerlを含めたエンジニアリングで「What=何」をやるか？やったか？みたいな点が発表の中で多く見受けられたので、次回やる時には「How=どうやって」やるのか？の部分にフォーカスしてみてもいいですね。</p>
+
+<h3>個性が出た発表達</h3>
+
+<p>冒頭のそれぞれ20分のトークではルイと<a href="http://twitter.com/koba04">@koba04</a>さんが登場。個人から少数チームで開発する過程と何をつくったかが聞けたので「カジュアル」という趣旨に非常に沿っていてよかったですね。僕も以前から小さなWebアプリをつくっては壊しているため、共感する点ポイントがたくさんあってうなずきながら聞きつつ、やる気になりました。</p>
+
+<p><a href="http://yusukebe.com/archives/2013/03/30/IMG_0260.JPG"><img alt="IMG_0260.JPG" src="http://yusukebe.com/archives/assets_c/2013/03/IMG_0260-thumb-550x412-325.jpg" width="550" height="412" class="mt-image-none" style=""></a></p>
+
+<p>その後は<a href="http://twitter.com/sugyan">@sugyan</a>によるライブコーディング。さすがに様々な要素が詰まっているWebアプリを30分でリアルタイムで書いていくのは少々無茶ぶりだった気がしますが＞＜  2分オーバーしつつも、最後Heroku上で動くものが出来てうまくまとめてくれました。</p>
+
+<p>最後のLTでは7名の方に発表していただき、冒頭「Perl書いていません」というトークが連続しつつも皆さん個性がある発表で楽しかったっすね。</p>
+
+<h3>統計情報</h3>
+
+<p>さて、イベントの参加者についての統計情報を簡単に紹介。実際に開催してATNDの募集定員が100人埋まっている状態でいわゆるドタキャンが多めに出て、上記で述べた通り会場に出入りした人はのべで70名程度となったはずです。歩留まりで実際足を運んでくれた方のパーセンテージが低めだなーという経験則からの感想ですが、期末ということもありしょうがない事ですね。結果、会場がほどよく埋まりつつ、ゆったりとしたスペースも出来たのでよかったですね。</p>
+
+<p>困ったのはすがちゃんにお任せしていた懇親会の居酒屋の予約状況だったのですが、散々「懇親会来てね！」とアナウンスしたり、当のすがちゃんの最後の押しもありで40名ほど参加していただき、会費が「炎上プライス」にならなくてよかったですw</p>
+
+<h3>次回？へ向けて</h3>
+
+<p>久しぶりですが、やってよかった！と思うのと、もう少しこーしたいな〜という反省点もあるので、不定期な形で次回、それ以降もやっていきたいです。今回開催にあたってのモチベーションになったのはすがちゃんの一声だったので、リアルでもTwitterやFacebookでも「こんなのやってよ」「こういう場が欲しい」と言っていただければ採用するかもしれないので、お気軽に声をかけてください。</p>
+
+<h3>そういえばLingrチャット</h3>
+
+<p>当日言うの忘れてたんですが、少し前から「ゆるふわにPerlの話題を話せる」チャットがLingr内で立ち上がってるので、そちら知らない方は是非Joinしてみてください！</p>
+
+<ul>
+<li><a href="http://lingr.com/room/perl_jp/">http://lingr.com/room/perl_jp/</a></li>
+</ul>
+
+
+<h3>最後に</h3>
+
+<p>参加者、発表者、お手伝いの皆様、会場を貸していただいたNHN Japan様、ありがとうございます！</p>
+
+
+		</div>
+
+		<div class="post-tags">
+			
+				
+					<nav class="nav tags">
+							<ul class="flat">
+								
+								<li><a href="/tags/perl">Perl</a></li>
+								
+							</ul>
+					</nav>
+				
+			
+		</div>
+        <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v5.0&appId=233306523373884&autoLogAppEvents=1"></script>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+
+<div class="social-button-area">
+  <ul class="social-button">
+    <li>
+      <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
+    </li>
+    <li>
+      <span class="fb-share-button"  data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2013%2f0330015031%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
+    </li>
+    <li>
+      <a href="https://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label-counter" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>
+    </li>
+  </ul>
+</div>
+
+<div class="disqus-area">
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "yusukebe-com" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<ul class="pagination">
+  
+  <li class="page-item page-prev">
+    <a href="https://yusukebe.com/posts/2013/0321014424/" class="page-link" aria-label="Previous"><span aria-hidden="true">← Webアプリエンジニアとしてのデザインとブリッジ</span></a>
+  </li>
+  
+  
+  <li class="page-item page-next">
+    <a href="https://yusukebe.com/posts/2013/0403064135/" class="page-link" aria-label="Next"><span aria-hidden="true">miyagawaさんPodcast ep7に出演しました →</span></a>
+  </li>
+  
+</ul>
+
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright yusukebe.com |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-492497-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

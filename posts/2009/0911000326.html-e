@@ -1,0 +1,98 @@
++++
+Categories = ["tech"]
+Description = " YAPC::Asia の会場では、無線LANがあるがしかし、IRCのポートは空いていないようだ。そこで、80番ポート、HTTP つなぎっぱの Stream(?) でIRCの発言を垂れ流すものがあれば苦労しないなと思い、Plack + An"
+Tags = ["Perl"]
+date = "2009-09-11T09:03:00+09:00"
+title = "IRC HTTP Stream (仮) for YAPC::Asia 2009"
+author = "kamawada"
+archive = ["2009"]
+draft = false
++++
+
+
+<p>
+YAPC::Asia の会場では、無線LANがあるがしかし、IRCのポートは空いていないようだ。
+そこで、80番ポート、HTTP つなぎっぱの Stream(?) で
+IRCの発言を垂れ流すものがあれば苦労しないなと思い、
+Plack + AnyEvent でなんとなくスクリプトを作ってみた。
+というか、昨日の tokuhirom / miyagawa セッションでのデモを Async な Plack をみていじりたくなったw
+一応動くっぽいので、稼働させている。
+</p>
+<blockquote>
+$ curl <a href="http://yapc-stream.pulpsite.net">http://yapc-stream.pulpsite.net</a>
+</blockquote>
+<p>
+とかやれば垂れ流れてきます。
+が、接続時間の問題とかで途切れたり、複数クライアントの接続があった時にどの程度まで
+耐えれるか不明。
+とりあえず、ソース張っておきます。
+ためしに、講堂の左側にあるスクリーンで映してくれたりすると嬉しいのだが、安定してないので
+なんともいえない。AnyEvent のドキュメント、読み込んでなくて見よう見まねなので、
+おかしなところあると思うのでつっこみ歓迎です。
+</p>
+
+<pre class="brush: perl"> #!/usr/bin/perl
+use strict;
+use Plack::Loader;
+use AnyEvent;
+use AnyEvent::IRC::Client;
+use DateTime;
+ 
+my $channel = shift;
+my $nick = 'irc_stream';
+my $impl = Plack::Loader-&gt;load( 'AnyEvent', port =&gt; 8080 );
+my $writer;
+ 
+my $cv = AnyEvent-&gt;condvar;
+my $pc = AnyEvent::IRC::Client-&gt;new;
+ 
+$cv-&gt;begin;
+$pc-&gt;reg_cb(
+    connect =&gt; sub {
+        my ( $pc, $err ) = @_;
+        if ( defined $err ) {
+            warn "Couldn't connect to server: $err\n";
+        }
+    },
+    registered =&gt; sub {
+        my ($self) = @_;
+        warn "join $channel\n";
+        $pc-&gt;enable_ping(60);
+    },
+    disconnect =&gt; sub {
+        warn "disconnected: $_[1]!\n";
+    },
+    irc_notice =&gt; sub {
+        http_write( @_ );
+    },
+    irc_privmsg =&gt; sub {
+        http_write ( @_ );
+    }
+);
+$pc-&gt;send_srv( "JOIN", $channel );
+$pc-&gt;connect( "irc.freenode.net", 6667,
+    { nick =&gt; $nick, user =&gt; $nick, real =&gt; $nick } );
+$cv-&gt;end;
+ 
+$impl-&gt;run(
+    sub {
+        my ( $env, $start_response ) = @_;
+        $writer = $start_response-&gt;( 200, [ 'Content-Type' =&gt; 'text/plain' ] );
+        $writer-&gt;write("IRC HTTP Stream!\n");
+        return [];
+    }
+);
+warn "start server port: $impl-&gt;{port}\n";
+$impl-&gt;run_loop;
+ 
+sub http_write {
+    my ( $name, $msg ) = @_;
+    if ( $msg-&gt;{params}-&gt;[1] &amp;&amp; $msg-&gt;{prefix} =~ /([^!]+)/ ) {
+        my $nick = $1;
+        my $text = $msg-&gt;{params}-&gt;[1];
+        my $now = DateTime-&gt;now( time_zone =&gt; 'Asia/Tokyo' );
+        $writer-&gt;write( $now-&gt;hms(':') . " $nick: $text\n" );
+    }
+}
+ </pre>
+

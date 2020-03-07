@@ -1,0 +1,72 @@
++++
+Categories = ["tech"]
+Description = " 今年も「MASHUP AWARD」が開催されますね！MASHUP AWARDとは簡単に捕捉すると、提供されるWeb APIを活用してマッシュアップサービスを作って、大賞に選ばれると100万円とかもらえちゃう割とウェブのクリエータにとっては"
+Tags = []
+date = "2010-08-14T10:45:00+09:00"
+title = "マッシュアップとライブラリ活用で「ホテルの空室検索」を作る"
+author = "kamawada"
+archive = ["2010"]
+draft = false
++++
+
+
+<p>
+今年も「<a href="http://mashupaward.jp/">MASHUP AWARD</a>」が開催されますね！
+MASHUP AWARDとは簡単に捕捉すると、提供されるWeb APIを活用してマッシュアップサービスを作って、
+大賞に選ばれると100万円とかもらえちゃう割とウェブのクリエータにとってはお祭り事かもしれませんみたいな存在です。
+微妙に関係者の方と知り合いになったりしているんですが、
+僕は受賞したことがないので今年こそはなんか取りたいとか思っています。
+</p>
+<p>
+さて、その予行練習みたいな具合で、
+マッシュアップしてかつ、便利なライブラリを活用して「<a href="http://akishitsu.pulpsite.net/">ホテルの空室検索</a>」
+サイトを作ってみました。
+条件を指定すればソート順に楽天トラベルとじゃらんのホテルの空き室が表示されるすっごいシンプルな物です。
+</p>
+<p>
+<a href="http://akishitsu.pulpsite.net/">ホテルの空室検索</a><br>
+<a href="http://akishitsu.pulpsite.net/">
+<img alt="ホテルの空室検索" class="at-xid-6a0133f4781589970b015391e3959c970b" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015391e3959c970b-pi">
+</a>
+</p>
+<p>
+作っていて思っていたのは、Web APIがあるところでは安定してきたなーということと、
+サイトを作る際に使えるライブラリがいい意味で枯れてきているなということです。
+</p>
+<p>
+Web APIのレスポンスタイムが今回使った楽天の場合はちょっと遅い感じですが、
+Google Mapsの方はすっごい速い。というかなんというかGoogle APIは総じて速いっす。
+なので、キャッシュできるところはもちろんした方がいいのですが、
+開発したての頃合ではそこまで意識する必要はないかもしれませんねぇ。
+</p>
+<p>
+ライブラリの方ですが、僕はPerlでサイトを作るので、CPANモジュールなどバックエンドで使う物は、
+もう使い方がわかってきたし、テストも十分通っている物を使っています。
+まぁ、今回はHTML::Menu::DateTimeというちょっと珍しい物を利用してみましたけどね。
+</p>
+<p>
+目を見張るべき、注目したいのはクライアントサイドの、つまりJavaScriptとCSSのライブラリです。
+jQueryがやはり定番になってきて、多くのドキュメントが検索すればでてくるようになりました。
+これは非常に貴重です。
+また、jQueryの場合はgoogleがホストしてくれているものを使えば、ローカルにJSを置く必要がありません。
+CSSのライブラリはJSのそれに比べればまだ過渡期かもしれませんが、
+BlueprintやそれをベースにしたBluetripなど非常に便利です。
+今回はBluetripを利用しました。ダウンロードして解凍すれば index.html がひな形になっているので、
+早速いじれます。
+</p>
+<p>
+もっとUIを凝りたければ、Wordpressのテーマをカスタマイズして、
+とりわけPHPじゃなくっともCSSとHTMLのスタイル部分だけもってきて、
+かっこいいページが作れちゃうわけですし、恵まれてきたと思います。
+よりインタラクションにこりたければ、jQuery UIという選択肢もありますし。
+</p>
+<p>
+ということで、「MASHUP AWARD」を制したければ、
+ライブラリも活用した方がいいのかなーなんて思って「ホテルの空室検索」、作ってみましたよ！
+</p>
+<ul>
+  <li><a href="http://jquery.com/">jQuery: The Write Less, Do More, JavaScript Library</a></li>
+  <li><a href="http://bluetrip.org/">BlueTrip CSS Framework | A beautiful and full-featured CSS framework</a></li>
+  <li><a href="http://akishitsu.pulpsite.net/">ホテルの空室検索</a></li>
+</ul>
+

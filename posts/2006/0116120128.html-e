@@ -1,0 +1,40 @@
++++
+Categories = ["tech"]
+Description = "   昨日紹介したFlashのクラスを使って、「お友達ブログバナー」なるものを作っています。  今日公開配布しようかと思ったけど、まだ細かい修正点がいくつかあります。  そこで今日は「ベータサンプル」ということで、  現在のバージョンで動い"
+Tags = []
+date = "2006-01-16T21:01:00+09:00"
+title = "「お友達ブログバナー」ベータサンプル"
+author = "kamawada"
+archive = ["2006"]
+draft = false
++++
+
+
+<p>
+  <a href="http://yusukebe.com/archives/06/01/16/011241.html">昨日紹介したFlashのクラス</a>を使って、「お友達ブログバナー」なるものを作っています。
+  今日公開配布しようかと思ったけど、まだ細かい修正点がいくつかあります。
+  そこで今日は「ベータサンプル」ということで、
+  現在のバージョンで動いている様子が見れるようにしたので、それを紹介します。
+</p>
+<p>
+  この「お友達ブログバナー」というのは自分でもいいのですが友達のブログの記事情報を取得して、友達の写真と共にアニメーションとして表示できるバナーです。
+  俺が所属する2つのコミュニティの友達のバナーをたくさん作って並べて表示させているのでご覧あれ。
+</p>
+<p>
+  </p>
+<ul>
+    <li>フットサルチーム「<a href="http://yusukebe.com/archives/community/regunary/">Regunary</a>」の→<a href="http://lab.kamawada.com/work/FriendsBlogBanner/regunary_member/member_index.html">「お友達ブログバナー」集</a>
+</li>
+    <li>
+<a href="http://yusukebe.com/archives/community/oklab/">奥出研</a>の→<a href="http://lab.kamawada.com/work/FriendsBlogBanner/oklab_member/member_index.html">「お友達ブログバナー」集</a>
+</li>
+  </ul>
+
+<p>
+ブラウザで開くとこんな感じです。わさわさたくさん友達がいます。<br>
+<img alt="サンプル画像" class="at-xid-6a0133f4781589970b014e8bd73c48970d" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b014e8bd73c48970d-pi">
+</p>
+<p>
+  近々、これを誰でも作れるように公開します。
+</p>
+

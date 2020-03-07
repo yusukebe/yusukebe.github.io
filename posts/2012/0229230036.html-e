@@ -1,0 +1,111 @@
++++
+Categories = ["tech"]
+Description = " 2年前に「Perlの入門本を書くぞ！」と意気込んでみたものの、執筆が進まず企画はお蔵入り状態になっていました＞＜とある出版社の編集の方と契約書みたいな（書籍の場合は契約書じゃなくて執筆依頼書だっけな...）の結んだのに！ただどうしても本を"
+Tags = ["Web Essay", "News"]
+date = "2012-03-01T08:00:00+09:00"
+title = "ぼくのかんがえたさいきょうの執筆スタイル"
+author = "kamawada"
+archive = ["2012"]
+draft = false
++++
+
+
+<p>2年前に「Perlの入門本を書くぞ！」と意気込んでみたものの、執筆が進まず企画はお蔵入り状態になっていました＞＜
+とある出版社の編集の方と契約書みたいな（書籍の場合は契約書じゃなくて執筆依頼書だっけな...）の結んだのに！
+ただどうしても本を出してみたいという欲望は僕の中にあるので、
+状況を打開しようと先月から新たな試みをしています。
+2年前からの反省を活かして、テーマの変更と執筆スタイルの改めを行って、
+まぁ「これでいけそーかな！」って感じで進めてます。</p>
+
+<p>まだ本が完成されたわけではないのでなんとも言えませんが、
+自分にとって方針のまとめ的にそのテーマ変更についてと執筆スタイルを書いてみます。</p>
+
+<hr>
+
+<p><br></p>
+
+<h3>Webサービス全般を網羅的に</h3>
+
+<p>Perlの入門本というとオライリーの「初めてのPerl」「続・初めてのPerl」が思い浮かびます。</p>
+
+<div class="amazlet-box" style="margin-bottom:0px;">
+<div class="amazlet-image" style="float:left;margin:0px 12px 1px 0px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4873114276/kamawada-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/51Hgdb6WcQL._SL160_.jpg" alt="初めてのPerl 第5版" style="border: none;"></a></div>
+<div class="amazlet-info" style="line-height:120%; margin-bottom: 10px">
+<div class="amazlet-name" style="margin-bottom:10px;line-height:120%">
+<a href="http://www.amazon.co.jp/exec/obidos/ASIN/4873114276/kamawada-22/ref=nosim/" name="amazletlink" target="_blank">初めてのPerl 第5版</a><div class="amazlet-powered-date" style="font-size:80%;margin-top:5px;line-height:120%">posted with <a href="http://www.amazlet.com/browse/ASIN/4873114276/kamawada-22/ref=nosim/" title="初めてのPerl 第5版" target="_blank">amazlet</a> at 12.03.01</div>
+</div>
+<div class="amazlet-detail">Randal L. Schwartz Tom Phoenix brian d foy <br>オライリージャパン <br>売り上げランキング: 18481<br>
+</div>
+<div class="amazlet-sub-info" style="float: left;"><div class="amazlet-link" style="margin-top: 5px"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4873114276/kamawada-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jp で詳細を見る</a></div></div>
+</div>
+<div class="amazlet-footer" style="clear: left"></div>
+</div>
+
+
+<p><br></p>
+
+<p>ぶっちゃけ僕がそのテーマで書いたとしてこの2冊以上のクオリティを満たすのは不可能に近いなぁとか考えてました。
+ならばいっそうテーマを変えてしまえと自分の得意な「<strong>Webサービスの企画から実装までのまとめ</strong>」を書くことに
+しました。
+編集者さんも僕が苦戦しているのを見てか「ゆーすけべーさんの書きやすいテーマで書いてください」と言われてますし。
+Webサービスのつくり方全般に関する本はAmazonで探しても出てこず、
+とはいえ、はてなブックマーク等を見ているとそういったテーマのBlog記事はホットエントリーでしばしば見かけるので、
+狙い目かなぁと思います。</p>
+
+<h3>エッセイ風にまとめる</h3>
+
+<p>目次の頭から連続的に埋めて行くというスタイルはある程度緻密な計画が必要なので取っ付きにくいです。
+僕は村上春樹さんや向田邦子さんのエッセイが好きなのですが、
+そんな気軽な感じでWebサービスのつくり方についてまとめられたらいいなぁと思って
+「<strong>エッセイ風にまとめる</strong>」というスタイルを取っています。
+これだとどこから書いてもいいので非常に書きやすいです。</p>
+
+<h3>Blogとメルマガで原稿の草案を書く</h3>
+
+<p>本Blogや<a href="http://www.mag2.com/m/0001426750.html">メルマガ</a>を定期的に読んでくれている方はお気づきかと思いますが、
+書籍の原稿の草案をバンバン載せてます。
+文章を書いたらすぐに人に見せたくなるという僕の病気とも言える衝動を押さえることができないです...
+というのは本当なのですが、見ている人からのフィードバックをすぐに得られて書籍化に向けて修正材料にもなりますし、
+ありかなーと。
+上記したとおりエッセイ風に書いているのでひとまとまりである程度完結するから掲載しやすいのもいいですね。</p>
+
+<h3>Markdownで書く</h3>
+
+<p>技術評論社さんのWEB+DB PRESS等、結構な数の雑誌に寄稿した経験があるのですが、
+最近ではMarkdownで原稿を提出するケースが多いですね。
+今回もそれに習ってMarkdownで原稿書いてます。</p>
+
+<h3>Dropboxを利用した自作プレビュー環境</h3>
+
+<p>Markdownで書いたらどうしてもHTMLで見たくなりますし、編集者さんとその結果を共有したくなります。
+Markdownファイル自体をDropboxの共有フォルダに入れるだけではなく、
+今回は自作のプレビュー環境を構築しています。
+<a href="http://yusukebe.com/archives/20120223/073527.html">作る模様は以前Blogに書いた</a>のですが、このような仕組みです。</p>
+
+<ol>
+<li>Dropboxの共有フォルダに原稿をMarkdownで書いていく</li>
+<li>僕と編集者さんだけが知っている自作プレビュー用Webサービスがある</li>
+<li>そこではDropbox内のMarkdownの文章を自動的にHTMLに変換し表示している</li>
+<li>readme.mkdnという目次ファイルから書いた分へリンクを張ってあるので状況と内容が逐一分かる！</li>
+</ol>
+
+
+<p><img src="http://yusukebe.com/archives/assets_c/2012/03/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202012-03-01%208.00.19-thumb-550x282-131.png" alt="プレビュー用Web"></p>
+
+<p>プレビュー用のCSSを調整しているので奇麗に文章が見れて、かなりいいっすよこれ。</p>
+
+<h3>今後</h3>
+
+<p>今やりたいのはMarkdownの文章群をePubに変換して、Kindleでプレビューするってことです。
+極力本に近い体裁に素早くコンバートして読んでみるってことはフィードバックを自分で得るために必要かと思います。</p>
+
+<p>以上、今このようなスタイルで本を書いているよーというお話でした。
+はてさて本は完成するのでしょうか。乞うご期待！</p>
+
+<h3>参考</h3>
+
+<ul>
+<li>メルマガ「<a href="http://www.mag2.com/m/0001426750.html">ゆーすけべーラジオ</a>」</li>
+</ul>
+
+

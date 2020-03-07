@@ -1,0 +1,184 @@
++++
+Categories = ["tech"]
+Description = " MojaMojaを使ってみてsinatraライクな micro web application framwork に興味が湧いたので、本家sinatraやMojolicious::Lite、Schenker、Dancerあたりを参考にして"
+Tags = ["Perl"]
+date = "2010-03-24T16:56:00+09:00"
+title = "sinatra ライクな micro WAF「Hitagi」を作ってみた"
+author = "kamawada"
+archive = ["2010"]
+draft = false
++++
+
+
+<p>
+MojaMojaを使ってみてsinatraライクな micro web application framwork に興味が湧いたので、
+本家sinatraやMojolicious::Lite、Schenker、Dancerあたりを参考にして
+自分なりの micro WAF を言わば「再開発」してみた。
+あくまでオレオレ。名前はアニメ化物語がインスパイアで「Hitagi」と言います。
+</p>
+<blockquote>
+<p>
+Hitagi - Shall we talk about stars and micro web application frameworks.
+</p>
+</blockquote>
+<p>
+日本人の方が(メインの)作者のCPANモジュールを組み合わせてsinatraっぽくかつ簡単な
+モデルまでサポートさせているのが特徴です。
+以下のようにモジュールを使っています。おかげでHitagiのコード量は200行弱に収まりました。
+</p>
+<ul>
+  <li>Plack::Request/Response - リクエスト/レスポンス生成</li>
+  <li>Text::MicroTemplate + Data::Section::Simple - ビュー</li>
+  <li>Router::Simple - ディスパッチャ</li>
+  <li>DBIx::Skinny - モデル(DB)</li>
+</ul>
+<p>
+簡単な使い方、SYNOPSISがこちら。モデルが戦場ヶ原ひたぎなので最後に star; と書きます。 
+</p>
+
+<pre class="brush: perl"> use Hitagi;
+get '/' =&gt; sub { render( 'index', { message =&gt; 'Hi' }) };
+star;
+
+__DATA__
+
+@@ index
+&lt;h1&gt;message : &lt;?= $message ?&gt;&lt;/h1&gt;
+ </pre>
+<p>
+これをmyapp.plとして保存して perl コマンドで実行すればデフォルト5000番ポートでサーバが立ち上がります。
+</p>
+<pre class="brush: perl"> $ perl myapp.pl
+ </pre>
+<p>
+getメソッドでディパッチとそれに対するのコントローラの定義をします。
+「__DATA__」以下のデータセクションにText::MicroTemplateの書式でテンプレートを書きます。
+renderメソッドがそのテンプレートの処理をしてくれます。
+第一引数にテンプレートの名前、第二引数にテンプレートに渡したい値やサブルーチンをハッシュリファレンスの
+形式で渡してあげます。するとハッシュのキーの名前を変数名としてそのキーに対する値やサブルーチンをテンプレートの中で扱うことができるようになります。（Text::MicroTemplate::Extendedからパクりました^^）
+</p>
+<p>
+テンプレートの扱いをちょっと便利にしていて、
+「layout」を使いまわすことが可能です。
+こう書くと index テンプレートを render すると layout テンプレートでラップしてくれます。
+</p>
+
+<pre class="brush: perl"> $ perl myapp.pl
+use Hitagi;
+
+...;
+
+__DATA__
+@@ index
+&lt;h1&gt;welcome&lt;/h1&gt;
+
+@@ layout
+&lt;html&gt;
+&lt;/head&gt;&lt;title&gt;title&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;
+&lt;div id="container"&gt;
+    &lt;?= content ?&gt;
+&lt;/div&gt;
+&lt;address&gt;This content is made by Hitagi&lt;/address&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+ </pre>
+
+<p>
+静的ファイルのサーブもstaticというディレクトリに置けばよいとデフォルトで利用可能で、
+またモデルとしてDBもサポートしています。
+詳しくはREADMEやPODを参照してもらいたいのですが、
+手っ取り早くわかるために tokuhirom の <a href="http://github.com/tokuhirom/p5-OreOre-NoPaste">
+OreOre-NoPaste</a>の仕様を真似て似た様なものを作ってみたのでそのコードを掲載します。
+</p>
+
+<pre class="brush: perl"> use Hitagi;
+use Data::UUID;
+
+my $uuid_gen = Data::UUID-&gt;new;
+
+set db =&gt; {
+    connect_info =&gt; [ 'dbi:SQLite:','', '' ],
+    schema       =&gt; qq{
+        install_table entry =&gt; schema {
+           pk 'id';
+           columns qw/id body/;
+        };
+    }
+};
+
+db-&gt;do(q{CREATE TABLE entry ( id varchar, body text )});
+
+get '/' =&gt; 'index';
+
+post '/post' =&gt; sub {
+    my $req  =  shift;
+    my $body  = $req-&gt;param('body') or redirect( $req-&gt;base );
+    my $uuid  = $uuid_gen-&gt;create_str;
+    db-&gt;insert(
+        entry =&gt; {
+            id   =&gt; $uuid,
+            body =&gt; $body,
+        }
+    );
+    return redirect( $req-&gt;base . "entry/$uuid" );
+};
+
+get '/entry/{entry_id}' =&gt; sub {
+    my ( $req, $args ) = @_;
+    my $entry_id = $args-&gt;{entry_id};
+    my $entry = db-&gt;single( entry =&gt; { id =&gt; $entry_id, } );
+    return res(404,[],'Not Found')-&gt;finalize unless $entry;
+    render( 'entry', { body =&gt; $entry-&gt;body } );
+};
+
+star;
+
+__DATA__
+
+@@ layout
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;nopaste&lt;/title&gt;
+  &lt;link rel="stylesheet" type="text/css" href="&lt;?= $base ?&gt;static/screen.css" /&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div class="container"&gt;
+  &lt;h1&gt;&lt;a href="&lt;?= $base ?&gt;"&gt;Yet Another nopaste&lt;/a&gt;&lt;/h1&gt;
+  &lt;?= content ?&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+@@ index
+&lt;form action="&lt;?= $base ?&gt;post" method="post"&gt;
+&lt;p&gt;&lt;textarea name="body" cols="60" rows="10"&gt;&lt;/textarea&gt;&lt;/p&gt;
+&lt;p&gt;&lt;input type="submit" value="no paste" /&gt;&lt;p&gt;
+&lt;/form&gt;
+
+@@ entry
+&lt;pre&gt;
+&lt;?= $body ?&gt;
+&lt;/pre&gt;
+ </pre>
+<p>
+こうすれば nopaste.pl と static/screen.css だけあればとりあえずは
+動くものができちゃいます。
+一応デプロイのことも考えていて、nopaste.pl を nopaste.cgi にするように
+拡張子によってCGIとして動作させることができます。
+また、もちろんPlackベースなのでPSGIアプリとしても利用可能で、
+今のところ $ENV{PLACK_ENV} の値をみて star メソッドがアプリケーションハンドラを返すかどうかの
+分岐をしています。
+</p>
+<p>
+一発ネタの内部的には簡単なアプリを今までわざわざCatalystで作ってたりしましたが、
+今度からHitagiベースで開発していこうかと思います。
+個人的な要望含め今後改善していくので、まぁ似た様なものありますが、気になった方は試してみてください。
+ということでEnjoy!
+ダウンロード＆githubレポジトリは以下から！
+</p>
+<ul>
+  <li><a href="http://github.com/yusukebe/Hitagi">yusukebe's Hitagi at master - GitHub</a></li>
+</ul>
+

@@ -1,0 +1,147 @@
++++
+Categories = ["tech"]
+Description = "   YourFileHostの動画をAV女優名別に、検索したり、新着動画をみたりすることができるエロサイト「YourAVHost」を作ってみました。これまでは優良であり有料なアダルトサイトを紹介するサービスを作ってきましたが、今回は強く要"
+Tags = ["Perl"]
+date = "2007-12-27T09:14:00+09:00"
+title = "yourfilehostをAV女優名で探せるエロサイトを作ってみた"
+author = "kamawada"
+archive = ["2007"]
+draft = false
++++
+
+
+<p>
+  YourFileHostの動画をAV女優名別に、検索したり、新着動画をみたりすることができるエロサイト「<strong>YourAVHost</strong>」を作ってみました。これまでは優良であり有料なアダルトサイトを紹介するサービスを作ってきましたが、今回は強く要望があった無料で見れる動画の紹介サービスになります。18禁です。
+</p>
+
+<p>
+  <a href="http://youravhost.net/">YourAVHost - YourFileHostの動画をAV女優名別で検索</a>
+  <a href="http://b.hatena.ne.jp/entry/http://youravhost.net/"><img alt="このエントリーのはてなブックマーク件数" class="at-xid-6a0133f4781589970b015435b6ef85970c" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015435b6ef85970c-pi"></a><br>
+  <a href="http://youravhost.net/">
+    <img alt="YourAVHost - YourFileHostの動画をAV女優名別で検索" class="at-xid-6a0133f4781589970b015435b6ef94970c" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015435b6ef94970c-pi">
+  </a>
+</p>
+<p>
+このサービスの鍵となる「YourFileHost」とはYouTubeのようにユーザーがアップロードした動画をブラウザで簡単に見ることができる海外のサービスなのですが、YouTubeでは厳しいエロに対する規制が全くないのでエロい動画がたくさん置いてあります。ところが、動画に対する情報＝メタ情報が非常に少なく、例えば日本語でタイトルを検索するということがこのサービス上では不可能です。某動画検索サービスを裏技的に使えば日本語での検索も可能とのことですが、
+ユーザーが検索したいキーワードはだいたい決まっているので、ここはAV女優名と決めうちをして、AV女優名で検索したり、AV女優名ごとにYourFileHostの映像が見れたら嬉しいなぁ、というのを叶えるのがこのYourAVHostとなります。
+</p>
+<p>
+補足として、YourAVHostについてより引用。
+</p>
+<blockquote>
+  <p>
+YourAVHostとは、YourFileHostの動画をAV女優名別に検索をしたり、 新着動画を見ることができるかもしれないサイトです。
+  </p>
+  <p>
+（中略）トップページからは、最近ブログにリンクが張られたYourFileHostでAV女優と関係のある動画の新着情報が表示されています。 女優タグページでは女優名がたくさん並んでおり、女優別にYourFileHostの動画を見ていくことができます。
+  </p>
+</blockquote>
+<p>
+YourFileHostの映像はよくエログとかって呼ばれているようなアダルトなブログにリンクが張られています。
+これが後述する仕組みにも直結するよいリソースとなるのですが、
+こうしたサイトのYourFileHostの動画へのリンクがいわゆるだましリンクになっているケースが非常に多くて結構うざいのです。例えば、
+</p>
+<blockquote>
+  <p>
+    白石ひより 動画1 動画2 動画3 動画4 動画 5
+  </p>
+</blockquote>
+<p>
+というように「動画No.」というテキストにリンクが張ってある風でも、実際に飛んでみたらアフィリエイトサイトだったというようなものがあります。サイト運営者側としてはYourFileHostの無料動画をえさにして、だましリンクという形で、うまくいったら紹介料を取るというまぁ古典的なやり方ですね。
+だまされずに動画までたどり着ければ、実際、YourFileHostの動画は多少画質が荒いですが、結構いい感じに見て興奮できます。ところが、まだ問題があって、よくひとつの動画が分割してアップロードされている場合があり、続きを見るにはどこのURLをたどればいいの？という罠に陥りがちです。
+今回作ったYourAVHostはAV女優名別に動画を見たいという主目的がありますが、
+個人的な目的として今述べたような問題を全てクリアに解決するサービスを目指しました。
+つまり、だましリンク無し、広告を入れるならちゃんと広告とわかる広告を内容にマッチさせてうまく入れる、
+分割された動画をまとめてひとつのエントリーとしてリンクを張る、というものです。
+</p>
+<p>
+  実際できたものを自分で使ってみると、
+</p>
+<ul>
+  <li>たまにAV女優とマッチングされた動画に出演している女優が違うことがある</li>
+  <li>まだ蓄積されている情報が少ない</li>
+</ul>
+<p>
+というシステム上のしょうがない点があるもののかなりイイ感じです。
+思うに、今まで自分が見たことのないAV女優さんの名前を見つけて、そのプレイを「試聴」のような感覚でYourFileHost映像を見るという流れができてる点が評価に値します。
+各エントリーの左側にはYourFileHostの映像のサムネイルとリンクが設けられているのですが、
+右隣にはその女優さんに関連するエロページへのリンクが張ってあります。
+オンラインで見れる優良アダルトサイトへのものが主で、気に入ったらそのサイトから購入して高画質で見ることもできます。実はこの情報、俺が以前作ったErohoo!という選りすぐった優良アダルトサイトからのみキーワードで検索できるサービスの情報をそのまま流量しています。ってか Erohoo! の API を作っていわゆるマッシュアップをしている形です。自分で作ったエロサイト同士をマッシュアップさせるなんて思ってもみなかったのですがなかなか面白いです。
+</p>
+<p>
+というわけで、夜のおかずにするなり、新しいAV女優を発掘するなり、皆さん楽しんでください。
+</p>
+<p>
+では仕組みを簡単に説明。
+ウェブアプリとしては蓄積された情報を新着順、タグ別、エントリー別に表示させるだけといういたってシンプルなものです。なので鍵となるのは情報を取ってきて、AV女優名と関連付けたりするクローラーです。
+どのようにYourFileHostの映像を探してきて、AV女優名とマッチングさせているのかというと、
+まず、technoratiのブログ検索からYourFileHostの動画へのリンクを張っているブログを探してきてフィードを取得します。それをパースして、各エントリーのtitleやdescriptionに対して、AV女優名が含まれているかどうかの判定を行っています。これは以前紹介した「<a href="http://yusukebe.com/archives/07/12/05/103614.html">Acme::JapaneseAvActress</a>を使って<a href="http://yusukebe.com/archives/07/12/07/174138.html">Perlで文章の中にAV女優の名前が含まれているかを判定する</a>」と同じアルゴリズムで行っています。ようはこの仕組みのための布石だったわけです。
+もし、AV女優名が含まれているエントリーがあればそのURLを一度フェッチして、YourFilehostへのリンクを全てひっぱてきます。これで漏れがなくなります。そのリンクを、<a href="http://yusukebe.com/tech/archives/20071227/013225.html">「実はある」というYourFilehostの裏API</a>を自作で実装したモジュール「WWW::YourFileHost」に与えてサムネイル画像を取得しています。
+やはりサムネイルがあるかないかで見た目やくいつきがだいぶ変わりますので。
+こうして集めた情報をmysqlにぶち込んで、クローラーは役目は終わり、後はCatalystで作ったウェブアプリで読み込むのみです。
+先ほども述べましたが、一応エロにはめずらしいマッシュアップサイトになっていて、以下のサービスに依存しています。
+</p>
+<ul>
+  <li>technorati</li>
+  <li>wikipedia(Acme::JapaneseAvActressで使用)</li>
+  <li>YourFileHost</li>
+  <li>Erohoo!(自作、広告で使用)</li>
+</ul>
+<p>
+ってな具合で、なかなか楽しい実装になりました。たびたび申し上げますが、よろしければ楽しんでください！
+</p>
+<h4>関連エントリー</h4>
+<ul>
+  <li><a href="http://yusukebe.com/archives/07/12/31/015942.html">ゆーすけべー日記: YourAVHostにあるお気に入りのAV女優の動画をPlaggerで一括ダウンロードしてiPodで見るエロハック</a></li>
+</ul>
+<h4>関連書籍</h4>
+<p></p>
+<div style="float:left"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4167493020/kamawada-22/"><img alt="AV女優 (文春文庫)" src="http://ecx.images-amazon.com/images/I/21HH1QV2MFL.jpg" style="border:none;"></a></div>
+<div style="float:left;margin-left:15px;">
+<div style="font-size:12pt"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4167493020/kamawada-22/">AV女優 (文春文庫)</a></div>
+<div style="font-size:7pt;font-family:verdana;">posted with <a href="http://yusukebe.com/b/amazon/search/">yusukebe.com::AmazonSearch</a> on 2008.1.5</div>
+<div style="font-size:10pt;">
+<ul style="list-style-type:none;padding:0;">
+<li>永沢 光雄  </li>
+<li>文庫 / 文藝春秋 (1999/06)</li>
+<li>Amazon 売り上げランキング: 10396</li>
+</ul>
+<ul style="list-style-type:none;padding:0;"><li>Amazon おすすめ度の平均: <img alt="4.5" class="at-xid-6a0133f4781589970b015435b6d28c970c" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015435b6d28c970c-pi" style="margin:0;"><ul style="list-style-type:none;padding-left:0;">
+<li>
+<img alt="5" class="at-xid-6a0133f4781589970b015435b6d28e970c" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015435b6d28e970c-pi" style="margin:0;"> ズシンと来ました。</li>
+<li>
+<img alt="5" class="at-xid-6a0133f4781589970b015435b6d28e970c" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015435b6d28e970c-pi" style="margin:0;"> 深くて冷たい河の中</li>
+<li>
+<img alt="5" class="at-xid-6a0133f4781589970b015435b6d28e970c" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015435b6d28e970c-pi" style="margin:0;"> 可愛かったです。とても。</li>
+</ul>
+</li></ul>
+<a href="http://www.amazon.co.jp/gp/product/4167493020%3ftag=kamawada-22%26link_code=xm2%26camp=2025%26dev-t=D3QNAE4JDR26A2">Amazon.co.jpで詳細を見る</a>
+</div>
+</div>
+<div style="clear:left;"></div>
+
+<p></p>
+<div style="float:left"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4796627693/kamawada-22/"><img alt="名前のない女たち 企画AV女優20人の人生" src="http://ecx.images-amazon.com/images/I/21FA20WW5EL.jpg" style="border:none;"></a></div>
+<div style="float:left;margin-left:15px;">
+<div style="font-size:12pt"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4796627693/kamawada-22/">名前のない女たち 企画AV女優20人の人生</a></div>
+<div style="font-size:7pt;font-family:verdana;">posted with <a href="http://yusukebe.com/b/amazon/search/">yusukebe.com::AmazonSearch</a> on 2008.1.5</div>
+<div style="font-size:10pt;">
+<ul style="list-style-type:none;padding:0;">
+<li>中村 淳彦  </li>
+<li>単行本 / 宝島社 (2002/06/14)</li>
+<li>Amazon 売り上げランキング: 52683</li>
+</ul>
+<ul style="list-style-type:none;padding:0;"><li>Amazon おすすめ度の平均: <img alt="4.5" class="at-xid-6a0133f4781589970b015435b6d28c970c" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015435b6d28c970c-pi" style="margin:0;"><ul style="list-style-type:none;padding-left:0;">
+<li>
+<img alt="4" class="at-xid-6a0133f4781589970b014e8bd727e1970d" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b014e8bd727e1970d-pi" style="margin:0;"> 企画女優達の「心の闇」</li>
+<li>
+<img alt="5" class="at-xid-6a0133f4781589970b015435b6d28e970c" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015435b6d28e970c-pi" style="margin:0;"> 現代を生きるということは</li>
+<li>
+<img alt="5" class="at-xid-6a0133f4781589970b015435b6d28e970c" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015435b6d28e970c-pi" style="margin:0;"> 引き込まれる彼女たちの生き様！</li>
+</ul>
+</li></ul>
+<a href="http://www.amazon.co.jp/gp/product/4796627693%3ftag=kamawada-22%26link_code=xm2%26camp=2025%26dev-t=D3QNAE4JDR26A2">Amazon.co.jpで詳細を見る</a>
+</div>
+</div>
+<div style="clear:left;"></div>
+

@@ -1,0 +1,157 @@
++++
+Categories = ["tech"]
+Description = "   日本で25日にASUSから発売されるウルトラモバイルPC「EeePC」。  実は、海外から既に売りだされているものを輸入して、既に俺、持っています。  「ASUS Eee 4G-Galaxy 7\" Black」OS は Linux と"
+Tags = []
+date = "2008-01-19T11:07:00+09:00"
+title = "ASUS EeePC を実は持っている、個人的 Eee PC レビュー"
+author = "kamawada"
+archive = ["2008"]
+draft = false
++++
+
+
+<p>
+  日本で25日に<strong>ASUS</strong>から発売されるウルトラモバイルPC「<strong>EeePC</strong>」。
+  実は、海外から既に売りだされているものを輸入して、既に俺、持っています。
+  「<strong>ASUS Eee 4G-Galaxy 7" Black</strong>」OS は Linux というものです。
+  去年の暮れに海外通販サイトで購入し、届いたものの、忘年会やら新年のイベントやらで、
+  あまりいじれず、この日記にもネタにできずじまいでした。
+  想定していた日本での発売が以外と早く、また、搭載する OS が Linux ではなく Windows ということで、
+  ちょっと驚いたので、そのついでに簡単なレビューをしてみます。
+</p>
+<p>
+  <img alt="Eee PC" class="at-xid-6a0133f4781589970b015435b6f035970c" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015435b6f035970c-pi">
+</p>
+<p>
+  いきなり、「あくまでこういうウルトラモバイルPCと呼ばれる物を始めて使ってみたので他の機種と比べることができない」という俺自身の、個人的な結論ですが、日本で今回発売される Windows XP 搭載で「\ <strong>49,800</strong>」という Eee PC、かなり「<strong>あり</strong>」だと思います。
+  俺は、早く手に入れたいのと、英語キーボードがよかったのと、Linux でもいいじゃんという理由で、
+  海外通販サイトにて輸入購入しました。送料込みで「\ 55,000」程度だったと思います。
+  Windows XP がプレインストールされている分、その利点はあり（後述、もちろんLinuxなりの利点もありますが）、
+  英語キーボードじゃない点を差し引いても、「このタイミングを待って購入してもよかったかな」と微妙に後悔していますが、まぁいち早く少しでも遊べてるのでよしとしましょう。つまりは俺がまだ Eee PC を持っていなかったら確実に「買い」に行っていたなということです。
+  というのも使ってみての総括として、
+</p>
+<blockquote>
+  <p>
+    「800 x 480 の解像度を許せるならば、<br>
+    ベッド際 PC としてのコストパフォーマンスはかなり高い」
+  </p>
+</blockquote>
+<p>
+  からです。「<strong>ベッド際 PC</strong> 」というのは今俺が作った言葉なのですが、
+  ベッド際にいつも置いておいて、たまにごろごろしながら扱うお遊び PC という感じです。
+  では Eee PC を簡単に触ってみてどうしてこのような価値があると判断したかを紹介します。
+</p>
+<p>
+まずは届いて箱を開けてびっくりしたという外見から。とにかく小さくて軽い。
+もちろん「ウルトラモバイルPC」と銘打っているだけあるね。
+感覚としては単行本の大きさよりも少し大きいくらい。重さは 920g らしいのだが、片手でひょいっと持ち上げられる。普通のノートパソコンだと一度使い出すとその場所にずっと置いて使う感じになるが、Eee PC の場合は、自分のその時々の気分や格好によって、それこそベッドで寝転びながら使うことが容易にできる。
+また、今回手に入れたのが black だからか、堅牢そうなイメージが見た目から出ていて、実際のところ作りも値段の割りにはかなりしっかりしている。ノート型パソコンでは鍵となるヒンジ部分も丈夫そうで、画面を開いたときのバランスもいい。キーボードも最初は小ささに違和感があったが慣れればそこまで多い文章量でなければ打てる。さすがに、本気のプログラミングをしようとは思わないけどね。
+</p>
+<p>
+  <font size="2">キーボードとヒンジ部分</font><br>
+  <img alt="Eee PC" class="at-xid-6a0133f4781589970b015435b6f03e970c" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015435b6f03e970c-pi">
+</p>
+<p>
+お次はパフォーマンス。CPUは「Celeron Mプロセッサ 900MHz」、メモリは標準で「512MB」を積んでいる。
+ま、ゲームをやるならともかく、ウェブ見るくらいだったらこのくらいで十分でしょ。
+YouTubeはもちろんニコニコ動画やVeohなどの動画共有サイトの映像が Linux OS に標準でインストールされていた FireFox でサクっと見れた。
+</p>
+<p>
+  <font size="2">Webカムが付属していて、すぐに動画・静止画の録画・再生をすることができる</font><br>
+  <img alt="Eee PC" class="at-xid-6a0133f4781589970b015435b6f047970c" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015435b6f047970c-pi">
+</p>
+<p>
+しかし、実際に使ってみて正直びみょいなと思ったのが、画面の解像度。
+  「<strong>800 x 480</strong> ドット」。やっぱり小さい。
+  Firefox でウェブブラウジングしているとたいていのサイトがはみ出て、横スクロールしなくてはいけなかったりする。また、縦 480 というもまたスクロールしなくてはいけない回数が多くなりちょっと煩雑なイメージ。
+  タッチパッドのスクロール機能が付いてる分なんとかなっているという具合。
+  では、この「800 x 480 ドット」でニコニコ動画を見てみる。
+  映像自体 Firefox をフルスクリーンモードにすれば、閲覧することに関しては、丁度よく画面内に収まってくれるので問題はない。が、コメント欄を表示しようとすると映像の画面が切れてしまうので、動画を見ながらコメントをするのは難しいというレベル。
+</p>
+<p>
+  <font size="2">Eee PC でニコニコ動画を見たところ</font><br>
+  <img alt="Eee PC" class="at-xid-6a0133f4781589970b015435b6f051970c" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015435b6f051970c-pi">
+</p>
+<p>
+  <font size="2">コメントするために下にスクロールすると映像の画面が切れる</font><br>
+  <img alt="Eee PC" class="at-xid-6a0133f4781589970b015435b6f068970c" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015435b6f068970c-pi">
+</p>
+<p>
+この解像度が我慢できる、もしくは慣れることができたら、悪くはないなという具合。
+ちなみに、Veoh という動画サイトの映像はフルスクリーンモードで閲覧したらぴったりはまっていい逆にいい感じだった。
+</p>
+<p>
+  <font size="2">Eee PC で Veoh の動画をフルスクリーンモードで見たところ</font><br>
+  <img alt="Eee PC" class="at-xid-6a0133f4781589970b015435b6f072970c" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015435b6f072970c-pi">
+</p>
+<p>
+最後に OS について。Eee PC 、俺が購入したものを含め、海外で発売された当初の物は標準搭載が、おそらく debian をカスタマイズしたと思われる Linux OS が搭載されている。
+これによってコストを抑えようということらしい。
+手に入れた当初、いざ起動してみると、設定は簡単に終わるし、メニューはGUIの綺麗なものだし、申し分ないという印象だった。だいたい Firefox 、Flash あたりが動けばベッド際におけるウェブサーフィンはこと足りるもんね。でも、日本で発売されるのが、Windows XP Home を備えている聞いてそれも悪くはないなと思った。
+もちろん普段から使い慣れている OS ということもあり、対応しているソフトウェアも多いからね。
+ただ、一番 Linux OS を使っていて Win がうらやましく思うのは何かというと、iTunes を使いたい！というピンポイントな事柄。「800 x 480」の解像度で iTunes を起動すると曲リストの表示とかどうなるのか？問題は置いといて、ベッド際 PC として個人的に iTunes は必須な機能。自宅内のファイルサーバーに mt-daapd というようはサーバー内にある mp3 を iTunes の「共有」として家庭内のネットワークから覗けるデーモンを立ち上げている。それを EeePC の iTunes で読み込み、AirMac Express につないでいるスピーカーを出力先にすれば、寝る前の BGM を自分のライブラリから寝ながらにして選ぶことができるわけだ。あーそれいいなー。XP 買えよってことだが、なんかくやしいので日本版そのものが欲しくなってきたよ。
+</p>
+<p>
+  <font size="2">Linux 版のメニュー</font><br>
+  <img alt="Eee PC" class="at-xid-6a0133f4781589970b015435b6f090970c" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015435b6f090970c-pi">
+</p>
+<p>
+せっかく Linux OS を備えているので、いろいろと遊んで Catalyst を動かしてみたりした。
+おまけの機能として、Eee PC のいいところはリカバリー領域を SSD の中に備えており、apt-get で依存性でエラーでまくって「あーもー元に戻したい」という時にものの10秒ほどで初期状態に戻せることだ。
+SSD の容量も 4G 程度ということで、元々ストレージを主に行うことは想定していない端末であることから、この機能は意外やよく使うのではないだろうか。
+</p>
+<p>
+  <font size="2">Eee PC で Catalyst を動かす</font><br>
+  <img alt="Eee PC" class="at-xid-6a0133f4781589970b015435b6f0a6970c" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015435b6f0a6970c-pi">
+</p>
+<p>
+ということで、日本発売目前の Eee PC について、俺が実は先行先取りで輸入したので紹介してきました。
+Amazon でも取り扱いを始めたみたいなので、そちらのレビューも参考にするといいかも。
+ところで、MacBook Air もいいな。でも、インプラントの手術するからお金あんま使っちゃだめよ＞俺。
+</p>
+
+<p></p>
+<div style="float:left"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B0011YTFQO/kamawada-22/"><img alt="ASUSTek ノートPC EeePC 701/4GA/512M/JPN/Win/W EeePC 701/4GA/512M/JPN/Win/W" src="http://ecx.images-amazon.com/images/I/215zvionzyL.jpg" style="border:none;"></a></div>
+<div style="float:left;margin-left:15px;">
+<div style="font-size:12pt"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B0011YTFQO/kamawada-22/">ASUSTek ノートPC EeePC 701/4GA/512M/JPN/Win/W EeePC 701/4GA/512M/JPN/Win/W</a></div>
+<div style="font-size:7pt;font-family:verdana;">posted with <a href="http://yusukebe.com/b/amazon/search/">yusukebe.com::AmazonSearch</a> on 2008.1.19</div>
+<div style="font-size:10pt;">
+<ul style="list-style-type:none;padding:0;">
+<li>Personal Computers / Asustek (2008/01/25)</li>
+<li>Amazon 売り上げランキング: 149</li>
+</ul>
+<a href="http://www.amazon.co.jp/gp/product/B0011YTFQO%3ftag=kamawada-22%26link_code=xm2%26camp=2025%26dev-t=D3QNAE4JDR26A2">Amazon.co.jpで詳細を見る</a>
+</div>
+</div>
+<div style="clear:left;"></div>
+
+<p></p>
+<div style="float:left"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B0011YTFQY/kamawada-22/"><img alt="ASUSTek ノートPC EeePC 701/4GA/512M/JPN/Win/B EeePC 701/4GA/512M/JPN/Win/B" src="http://ecx.images-amazon.com/images/I/21DgU8DzWgL.jpg" style="border:none;"></a></div>
+<div style="float:left;margin-left:15px;">
+<div style="font-size:12pt"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B0011YTFQY/kamawada-22/">ASUSTek ノートPC EeePC 701/4GA/512M/JPN/Win/B EeePC 701/4GA/512M/JPN/Win/B</a></div>
+<div style="font-size:7pt;font-family:verdana;">posted with <a href="http://yusukebe.com/b/amazon/search/">yusukebe.com::AmazonSearch</a> on 2008.1.19</div>
+<div style="font-size:10pt;">
+<ul style="list-style-type:none;padding:0;">
+<li>Personal Computers / Asustek (2008/01/25)</li>
+<li>Amazon 売り上げランキング: 151</li>
+</ul>
+<a href="http://www.amazon.co.jp/gp/product/B0011YTFQY%3ftag=kamawada-22%26link_code=xm2%26camp=2025%26dev-t=D3QNAE4JDR26A2">Amazon.co.jpで詳細を見る</a>
+</div>
+</div>
+<div style="clear:left;"></div>
+
+<p></p>
+<div style="float:left"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B0012NBJ7M/kamawada-22/"><img alt="Apple MacBook Air 13.3/1.6GHz Core 2 Duo/2G/80G/micro-DVI/BT MB003J/A" src="http://ecx.images-amazon.com/images/I/119hKc1SOhL.jpg" style="border:none;"></a></div>
+<div style="float:left;margin-left:15px;">
+<div style="font-size:12pt"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B0012NBJ7M/kamawada-22/">Apple MacBook Air 13.3/1.6GHz Core 2 Duo/2G/80G/micro-DVI/BT MB003J/A</a></div>
+<div style="font-size:7pt;font-family:verdana;">posted with <a href="http://yusukebe.com/b/amazon/search/">yusukebe.com::AmazonSearch</a> on 2008.1.19</div>
+<div style="font-size:10pt;">
+<ul style="list-style-type:none;padding:0;">
+<li>エレクトロニクス / アップルコンピュータ (2008/02/29)</li>
+<li>Amazon 売り上げランキング: 501</li>
+</ul>
+<a href="http://www.amazon.co.jp/gp/product/B0012NBJ7M%3ftag=kamawada-22%26link_code=xm2%26camp=2025%26dev-t=D3QNAE4JDR26A2">Amazon.co.jpで詳細を見る</a>
+</div>
+</div>
+<div style="clear:left;"></div>
+

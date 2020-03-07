@@ -1,0 +1,197 @@
++++
+Categories = ["tech"]
+Description = " Evernoteが好きではない。Macのアプリがイケてないからだ。変なリッチテキストみたいな奴で編集しなくてはいけなかったり、Webページからコピペした文字がスタイルを継承しちゃったり、そもそもMarkdownに対応してもらいたかったり。"
+Tags = ["Technologies", "Mac"]
+date = "2012-02-12T09:36:00+09:00"
+title = "これだけは使ってるMacアプリ10個"
+author = "kamawada"
+archive = ["2012"]
+draft = false
++++
+
+
+<p><strong>Evernoteが好きではない</strong>。Macのアプリがイケてないからだ。
+変なリッチテキストみたいな奴で編集しなくてはいけなかったり、
+Webページからコピペした文字がスタイルを継承しちゃったり、
+そもそもMarkdownに対応してもらいたかったり。
+だから巷で騒がれるほど、Evernoteはあまり使っていない。</p>
+
+<p>その代わりと言ってはなんですが、お気に入りのMacアプリもあります。
+今回はMacのApp Storeからダウンロードできるアプリの中でも、
+僕が個人的に「今なら絶対入れる」というものを<strong>10個</strong>厳選して紹介します。
+文章書くのに便利だったり、ちょっとしたライフハック的に使えたり、
+クリエイティブな活動に必要だったりするもの達です。では、行ってみよう。</p>
+
+<hr>
+
+<p><br></p>
+
+<h3>1. DAYONE</h3>
+
+<ul>
+<li><a href="http://dayoneapp.com/">Day One - Mac Journal Application for iPhone, iPad and Mac Desktop</a></li>
+</ul>
+
+
+<p><a href="http://yusukebe.com/archives/2012/02/12/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202012-02-12%208.45.09.png"><img alt="スクリーンショット 2012-02-12 8.45.09.png" src="http://yusukebe.com/archives/assets_c/2012/02/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202012-02-12%208.45.09-thumb-550x426-79.png" width="550" height="426" class="mt-image-none" style=""></a></p>
+
+<p>一言で言うならば「一人Twitter的メモ帳」。時系列で短いテキストを日記のように綴れて、
+DropboxやiCloud経由でMacとiPhoneやiPadと同期してくれるちょっとしたアプリで、
+「ちょっとした」ものなんだけど、UIが優れている。
+その特徴は、上記した通りTwitter風味なこと。
+「気軽に思ったこと、気づいたことを書く」行為を抵抗無く生活に取り入れることができる。
+Evernoteを似たような目的で使っている人がいると思うが、
+僕はこのDAYONEを「一人Twitter」として気軽なアイデアや思い出の溜め込み場として活用している。
+ちなみに実はMarkdownにも対応していて、このBlog記事も試しにDAYONEで書いている。
+なかなか快適だ。</p>
+
+<h3>2. Wunderlist</h3>
+
+<ul>
+<li><a href="http://www.6wunderkinder.com/wunderlist/">Task Management At Its Best With Wunderlist | 6Wunderkinder</a></li>
+</ul>
+
+
+<p><a href="http://yusukebe.com/archives/2012/02/12/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202012-02-12%208.57.32.png"><img alt="スクリーンショット 2012-02-12 8.57.32.png" src="http://yusukebe.com/archives/assets_c/2012/02/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202012-02-12%208.57.32-thumb-550x387-81.png" width="550" height="387" class="mt-image-none" style=""></a></p>
+
+<p>リスト、つまり箇条書き形式の情報をストックしておくにはWunderlistが一番優れていると思う。
+もちろんiPhone用アプリもあり同期をしてくれる。
+特徴はこれもやはりUIにあり、気に入っているのが背景画像がクールでかつ複数のものから選択が
+できることである。箇条書きとそのグループ管理以外、余計な機能が無いのもいい。</p>
+
+<h3>3. MarkdownNote</h3>
+
+<ul>
+<li><a href="http://www.codingrobots.com/markdownnote/">MarkdownNote</a></li>
+</ul>
+
+
+<p>前回のBlog記事「<a href="http://yusukebe.com/archives/20120207/103320.html">Markdownで文章を書こう！</a>」で紹介した通り。Markdownのテキストをプレビューしながら同時に編集ができる。
+「Markdownがどのように（HTMLとして）マークアップされているか」を知りたければ便利。</p>
+
+<h3>4. Byword</h3>
+
+<ul>
+<li><a href="http://bywordapp.com/">Byword • A Simple Text Editor for Mac</a></li>
+</ul>
+
+
+<p><a href="http://yusukebe.com/archives/2012/02/12/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202012-02-12%209.05.14.png"><img alt="スクリーンショット 2012-02-12 9.05.14.png" src="http://yusukebe.com/archives/assets_c/2012/02/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202012-02-12%209.05.14-thumb-550x358-83.png" width="550" height="358" class="mt-image-none" style=""></a></p>
+
+<p>もう一つ文章編集用のソフトを紹介する。このBywordもMarkdownに対応したアプリ
+（ただしUI的に即座にプレビューするには向かない）。
+MarkdownNoteよりクールに、特にフルスクリーンにした時に物書きに集中できるってことで、
+<a href="http://www.mag2.com/m/0001426750.html">メルマガ</a>の編集にはBywordを使っている。</p>
+
+<h3>5. ColorSchemer Studio</h3>
+
+<ul>
+<li><a href="http://www.colorschemer.com/">ColorSchemer | Instant Color Schemes</a></li>
+</ul>
+
+
+<p><a href="http://yusukebe.com/archives/2012/02/12/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202012-02-12%209.09.46.png"><img alt="スクリーンショット 2012-02-12 9.09.46.png" src="http://yusukebe.com/archives/assets_c/2012/02/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202012-02-12%209.09.46-thumb-550x416-85.png" width="550" height="416" class="mt-image-none" style=""></a></p>
+
+<p>配色のセンスが無い僕にとってこのアプリは必須。
+Webアプリなどを作るときに複数の色のセットを考える状況があると思うが、
+その時に使う。とあるベースカラーを指定すると色相を意識して他の色を提案してくれたり、
+ギャラリーからカラーセットを閲覧・使用することができたり、
+写真を読み込ませるとその写真の色要素からカラーセットを作成したりとかなり融通がきく。
+有料アプリで少々値段がはるが買ってよかったなと思うアプリ。</p>
+
+<h3>6. Pixelmator</h3>
+
+<ul>
+<li><a href="http://www.pixelmator.com/">Pixelmator</a></li>
+</ul>
+
+
+<p>Mac界では有名な画像編集ソフト、Pixelmator。やはりこちらを愛用している。
+Photoshopと比べると断然に格安なのが特徴。
+ただ、いまいち使い方が世に出回ってないが残念なところです。</p>
+
+<h3>7. iDraw</h3>
+
+<ul>
+<li><a href="http://www.indeeo.com/idraw/">iDraw - Illustration and Vector Design for Mac OS X and iPad</a></li>
+</ul>
+
+
+<p><a href="http://yusukebe.com/archives/2012/02/12/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202012-02-12%209.19.16.png"><img alt="スクリーンショット 2012-02-12 9.19.16.png" src="http://yusukebe.com/archives/assets_c/2012/02/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202012-02-12%209.19.16-thumb-550x414-87.png" width="550" height="414" class="mt-image-none" style=""></a></p>
+
+<p>ベクター形式のドローイングソフト。PixelmatorがPhotoshopの代替だとすると、
+こちらはIllustratorの代替。まだあまり使い込んでないが、概念図を図式化するような作業では大活躍した。
+UIのレイアウトについて使用感がよい。</p>
+
+<h3>8. Keynote</h3>
+
+<ul>
+<li><a href="http://www.apple.com/jp/iwork/keynote/">アップル - iWork - Keynote - 魅力的なプレゼンテーションを簡単に作成。</a></li>
+</ul>
+
+
+<p>Appleの「Microsoft Office製品対抗商品＝iWork」達は全部持っているのだけれど、
+とりわけKeynoteのできは素晴らしい。
+機能が削ぎ落され、ディテールはかっこ良くなっている。</p>
+
+<h3>9. Kindle for Mac</h3>
+
+<ul>
+<li><a href="http://www.amazon.com/gp/feature.html/ref=kcp_mac_mkt_lnd?docId=1000464931">Amazon.com: Kindle for Mac - Read Kindle eBooks on your Mac</a></li>
+</ul>
+
+
+<p><a href="http://yusukebe.com/archives/2012/02/12/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202012-02-12%209.28.15.png"><img alt="スクリーンショット 2012-02-12 9.28.15.png" src="http://yusukebe.com/archives/assets_c/2012/02/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202012-02-12%209.28.15-thumb-550x407-89.png" width="550" height="407" class="mt-image-none" style=""></a></p>
+
+<p>Macのノートパソコンなりデスクトップなりで、本を読むのは難しいかもしれないが、
+無料だし、Kindleの使用感を試すことができるということで入れている。
+洋書の技術書はKindleだと安いし、それなりに読めるのでオススメ。</p>
+
+<h3>10. MPlayerX</h3>
+
+<ul>
+<li><a href="http://mplayerx.org/">MPlayerX - The media player on Mac OS X with new eye-candy fashion</a></li>
+</ul>
+
+
+<p>動画プレイヤー。様々な形式に対応してて、
+なにより「矢印キーで若干早送り」という機能が付いててよい。
+これはなんというか、ムフフな動画を見るのに重宝する。</p>
+
+<hr>
+
+<p><br></p>
+
+<p>以上、まとめると以下10個のMacアプリについて簡単に紹介してきました。</p>
+
+<ol>
+<li>DAYONE</li>
+<li>Wunderlist</li>
+<li>MarkdownNote</li>
+<li>Byword</li>
+<li>ColorSchemer Studio</li>
+<li>Pixelmator</li>
+<li>iDraw</li>
+<li>Keynote</li>
+<li>Kindle</li>
+<li>MPlayerX</li>
+</ol>
+
+
+<p>これから活用したいアプリも含まれていますが、
+どれもだいたい機能が明確でかつ最小限、見た目が気に入ったというものばかりです。
+気になるソフトがあれば、使ってみてくださいね。</p>
+
+<h3>宣伝</h3>
+
+<p>メルマガはじめました。お次は第2回目で14日（火）に配信される予定です。
+起業奔走記やデザイン思考、Markdownについてのさらなる考察、などを書きました。
+よろしければ以下まぐまぐのサイトを見てみてください。</p>
+
+<ul>
+<li>
+<span class="hatena-bookmark-title"><a href="http://www.mag2.com/m/0001426750.html">ゆーすけべーラジオ</a></span> <span class="hatena-bookmark-users"><a href="http://b.hatena.ne.jp/entry/www.mag2.com/m/0001426750.html"><img src="http://b.hatena.ne.jp/entry/image/http://www.mag2.com/m/0001426750.html" alt="ゆーすけべーラジオ" title="ゆーすけべーラジオ"></a></span>
+</li>
+</ul>
+
+

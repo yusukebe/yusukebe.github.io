@@ -1,0 +1,14 @@
++++
+Categories = ["tech"]
+Description = "   PlaggerのPlugin、Filter::EntryFullTextでは今のところtagsを入れることができないので、入れれるようにEntryFullText.pmを修正。 "
+Tags = ["Perl"]
+date = "2006-08-30T20:41:00+09:00"
+title = "EntryFullTextをタグ入れれるように修正"
+author = "kamawada"
+archive = ["2006"]
+draft = false
++++
+
+<p>
+  PlaggerのPlugin、Filter::EntryFullTextでは今のところtagsを入れることができないので、入れれるようにEntryFullText.pmを修正。
+</p>

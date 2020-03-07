@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="generator" content="Hugo 0.63.2" />
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="alternate" type="application/rss+xml" href="https://yusukebe.com/index.xml" title="ゆーすけべー日記" />
+	<meta property="og:title" content="ゆーすけべー日記" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://yusukebe.com/" />
+<meta property="og:image" content="https://yusukebe.com/icons/myicon.png"/>
+<meta property="og:updated_time" content="2020-03-06T15:46:50+09:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://yusukebe.com/icons/myicon.png"/>
+
+<meta name="twitter:title" content="ゆーすけべー日記"/>
+<meta name="twitter:description" content=""/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
+	
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://yusukebe.com/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+  <div class="container wrapper">
+	<div class="header">
+	<h1 class="site-title"><a href="https://yusukebe.com/">ゆーすけべー日記</a></h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/yusukebe" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/yusukebe" title="Twitter"><i data-feather="twitter"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+	<div class="recent-posts section">
+	  <h2 class="section-header">
+		Recent posts
+	  </h2>
+	  <div class="posts">
+		
+		
+		
+		<div class="post">
+		  <div class="meta">Jul 13, 2006</div>
+		  <a class="title" href="/posts/2006/0713051939/">ちんや食堂</a> &mdash;
+		  <span class="description">
+			
+			   実は俺、鎌倉山に住んでおきながら今、初めてちんや食堂に行った。    12時半とりあえず今日やるべきことは終わらせて学校も無いし暇な俺。  最近(自主)退職して隣の祖母ちゃんの家に事務所らしきものを作って何やら始めようとしているものの
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jul 13, 2006</div>
+		  <a class="title" href="/posts/2006/0713005256/">今日のリス</a> &mdash;
+		  <span class="description">
+			
+			   久しぶりのリスチャーーース！          今日は接近戦だった。     
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jul 12, 2006</div>
+		  <a class="title" href="/posts/2006/0712053731/">牛田プロ初勝利 おめでとう</a> &mdash;
+		  <span class="description">
+			
+			   昨日のベイスターズが勝利したvs巨人＠札幌で、ベイのピッチャー牛田が6回1失点で初勝利をあげた。          牛田は俺と同じ年、つまり松坂世代より一個下、今だったら荒川静香世代と言ったらわかりやすいかも。同期がこうして活躍しだす
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jul 10, 2006</div>
+		  <a class="title" href="/posts/2006/0710112014/">7月22日鎌倉でFirefoxプロモーション</a> &mdash;
+		  <span class="description">
+			
+			   俺もかなり昔から愛用しているブラウザFirefoxの街頭プロモーションが各地で開催され、  鎌倉でも22日に行われる模様  Mozilla Japanは7月6日、ウェブブラウザ「Firefox」の知名度向上を目的として、街頭プロモーシ
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jul 10, 2006</div>
+		  <a class="title" href="/posts/2006/0710110040/">2006ワールドカップドイツ大会 個人的感想</a> &mdash;
+		  <span class="description">
+			
+			   本日7月9日早朝決勝戦をもって、1ヶ月に及ぶ2006ワールドカップドイツ大会が幕を閉じた。  というわけで、個人的に振り返ってみる。  決勝戦 イタリア vs フランス    まずは先ほど録画しておいたビデオを見て結果を知った決勝戦、
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jul 8, 2006</div>
+		  <a class="title" href="/posts/2006/0708010147/">ちょｗｗじいちゃん座りすぎｗｗ</a> &mdash;
+		  <span class="description">
+			
+			 ちょｗｗじいちゃん座りすぎｗｗ       
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jul 8, 2006</div>
+		  <a class="title" href="/posts/2006/0708005834/">今日のアラビアンジャスミン</a> &mdash;
+		  <span class="description">
+			
+			   アラビアンジャスミン(？たぶん)に花が咲いた。        「フワフワ」とマシュマロのような白さだ。     
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jul 7, 2006</div>
+		  <a class="title" href="/posts/2006/0707142817/">あまやんがコメダ珈琲に現れた</a> &mdash;
+		  <span class="description">
+			
+			   研究会終了後、メンバー数名とコメダ珈琲というなんか半端無い名古屋系喫茶店に行ったんですよ。    コメダ珈琲に入る俺たち       喫茶店で男6人が夕飯食うのもどうかと思われるが、ワイワイ楽しく飯を食ってた。  そしたら、同じ研究会
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jul 7, 2006</div>
+		  <a class="title" href="/posts/2006/0707141049/">P702iに機種変</a> &mdash;
+		  <span class="description">
+			
+			   壊れた携帯電話、結局P702iに機種変更した。        結構気に入った。店頭で見た感じ、デザインが平凡で親父くさい(ターゲット層は30代〜40代らしい)と思っていたが、所有してみると悪くない。むしろ好きだ。ちなみにこのカラーは「
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jul 6, 2006</div>
+		  <a class="title" href="/posts/2006/0706010802/">今日の山ユリ</a> &mdash;
+		  <span class="description">
+			
+			   ユリの花は年を重ねる毎につぼみがひとつづつ増えていく。  この山ユリは6年目にして、やたら派手な色に咲いた。        ユリは近くで見ると迫力があって、放つ芳香が妖艶な印象を漂わせる。 
+			
+		  </span>
+		</div>
+		
+		
+
+<ul class="pagination">
+	<li class="page-item page-prev">
+	
+    <a href="/page/89/" class="page-link" aria-label="Previous"><span aria-hidden="true">← Prev page</span></a>
+	
+	</li>
+	<li class="page-item page-next">
+	
+    <a href="/page/91/" class="page-link" aria-label="Next"><span aria-hidden="true">Next page →</span></a>
+	
+	</li>
+</ul>
+
+
+	  </div>
+	</div>
+  </div>
+  <div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright yusukebe.com |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-492497-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

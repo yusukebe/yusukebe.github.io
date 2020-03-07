@@ -1,0 +1,151 @@
++++
+Categories = ["tech"]
+Description = "   俗に言う「REST/XML over HTTP POX over HTTP」のウェブAPIにアクセスするためのシンプルな(？)Perlモジュール「WebService::Simple」なるものを作ってみました。REST/XML ove"
+Tags = ["Perl"]
+date = "2008-03-31T13:22:00+09:00"
+title = "POX over HTTP のウェブAPIにアクセスするためのモジュール「WebService::Simple」を作ってみた"
+author = "kamawada"
+archive = ["2008"]
+draft = false
++++
+
+
+<p>
+  俗に言う「<del>REST/XML over HTTP</del> POX over HTTP」のウェブAPIにアクセスするためのシンプルな(？)Perlモジュール「<strong>WebService::Simple</strong>」なるものを作ってみました。<del>REST/XML over HTTP</del> POX over HTTP というのは、俺の解釈でいいますと、パラメータを指定して GET （POSTの場合もある）により情報の入ったコンテンツをXML形式で取得するというものです。WebService::Simple は基本的にこれ従っていればどんな API にも対応しているはずです。もしくはそうしたいです。
+</p>
+<p>
+  追記: masakiさんからTwitter経由で<a href="http://twitter.com/ikasam_a/statuses/779973814">突っ込みをもらった</a>ので修正しておきました。確かにRESTという言葉が入っていると誤解されちゃいますよね＞＜
+  参考: <a href="http://d.hatena.ne.jp/naoya/20060303/1141381256">POX over HTTP - naoyaのはてなダイアリー</a>
+</p>
+<blockquote>
+@yusukebe あれで REST とか言うと誤解を生むから POX over HTTP と言って欲しい
+</blockquote>
+<p>
+最近こうしたウェブAPIを利用するためのプログラムをいくつか作っているのですが、何回も同じ処理をコピペしているのに気づいて、短いコードながらも（50行くらいだよ）モジュール化してみたという経緯です。
+ウェブAPI を利用するには、
+</p>
+<ol>
+  <li>リクエストURLの作成</li>
+  <li>コンテンツの取得</li>
+  <li>XMLのパース</li>
+</ol>
+<p>
+という3ステップがあるので、この処理を「WebService::Simple」に任せるようにしました。
+XMLのパースには個人的に扱いやすいと思っている XML::Simple を使っているため、返却される値はPerlオブジェクトのリファレンスとなります。
+</p>
+<p>
+例としてFlickrのAPIを挙げます。キーワードで写真を検索して結果をダンプするスクリプトは、WebService::Simple を使わないとしたら以下のように書けます。
+</p>
+
+<pre class="brush: perl"> #!/usr/bin/perl
+
+use strict;
+use warnings;
+use LWP::Simple;
+use XML::Simple;
+use URI::Escape;
+use YAML;
+use utf8;
+binmode STDOUT, ":utf8";
+
+my $api_key = "your_api_key";
+my $url     = make_url( "flickr.photos.search", { text =&gt; "猫" } );
+my $content = get($url) or die "Couldn't get xml";
+my $xs      = XML::Simple-&gt;new( forcearray =&gt; ["photo"], keyattr =&gt; [] );
+my $results = $xs-&gt;XMLin($content);
+print Dump $results;
+
+sub make_url {
+    my ( $method, $param ) = @_;
+    my $url = "http://api.flickr.com/services/rest/?";
+    $url .= "method=$method&amp;api_key=$api_key";
+    foreach my $key ( keys(%$param) ) {
+        $url .= "&amp;$key=" . URI::Escape::uri_escape_utf8( $param-&gt;{$key} ) . "&amp;";
+    }
+    return $url;
+}
+
+ </pre>
+<p>
+上記した3つのステップがコード内に入っています。では次に、WebService::Simpleを使ったサンプルコードはこちらとなります。
+</p>
+<pre class="brush: perl"> #!/usr/bin/perl
+
+use strict;
+use warnings;
+use WebService::Simple;
+use YAML;
+use utf8;
+binmode STDOUT, ":utf8";
+
+my $api_key  = "your_api_key";
+my $base_url = "http://api.flickr.com/services/rest/";
+my $flickr = WebService::Simple-&gt;new( $base_url, { api_key =&gt; $api_key } );
+my $response =
+  $flickr-&gt;get( { method =&gt; "flickr.photos.search", text =&gt; "猫" } );
+my $ref = $response-&gt;parse_xml( { forcearray =&gt; ["photo"], keyattr =&gt; [] } );
+print Dump $ref;
+
+ </pre>
+<p>
+リクエストURLを作るのとXML::Simpleのインスタンスを作成してパースという処理が無くなったためコードがすっきりしました。また、パラメータをハッシュリファレンスで指定するので、いろいろな種類のリクエストを作るのが楽です。WebService::Simple のメソッドは以下の通りです。
+</p>
+<dl>
+  <dt>new</dt>
+  <dd>第一引数にAPIのベースURL、
+    第二引数にアプリケーションIDなどそのAPIを使うにあたって常に必要になってくるパラメータを指定
+  </dd>
+  <dt>get</dt>
+  <dd>引数にはパラメータと値が格納されたハッシュリファレンスを渡す。
+    HTTP::Responseオブジェクトにparse_xmlというメソッドを追加した WebService::Simple::Response オブジェクトが返ってくる
+  </dd>
+</dl>
+<p>
+getメソッドで返される WebService::Simple::Response オブジェクトの parse_xml のパラメータには、XML::Simple の new で指定するものをハッシュリファレンスで渡してあげます。するとXML::SimpleでXMLコンテンツをパースしたリファレンスが返ってきます。
+</p>
+<p>
+もちろん Flickr 以外のAPIのアクセスにも使えて、Amazon で書籍検索するサンプルはこんな感じです。
+</p>
+<pre class="brush: perl"> #!/usr/bin/perl
+
+use strict;
+use warnings;
+use WebService::Simple;
+use YAML;
+use utf8;
+binmode STDOUT, ":utf8";
+
+my $access_key    = "your_access_key";
+my $associate_tag = "your_associate_tag";
+my $base_url      = "http://webservices.amazon.co.jp/onca/xml";
+my $param         = {
+    Operation     =&gt; "ItemSearch",
+    SearchIndex   =&gt; "Books",
+    Keywords      =&gt; "perl",
+    ResponseGroup =&gt; "Small,Images",
+};
+
+my $amazon = WebService::Simple-&gt;new(
+    $base_url,
+    {
+        Service        =&gt; "AWSECommerceService",
+        SubscriptionId =&gt; $access_key,
+        AssociateTag   =&gt; $associate_tag,
+    }
+);
+my $response = $amazon-&gt;get($param);
+my $ref =
+  $response-&gt;parse_xml( { forcearray =&gt; [ "item", "Author" ], keyattr =&gt; [] } );
+print Dump $ref;
+
+ </pre>
+<p>
+ようは、ウェブAPIを使う時に、リクエストURLをいちいち作るのめんどくせーよ、返ってきたXMLは（処理が遅くてもいいから扱いやすい）XML::Simpleで返してよ！という超個人的な要望を叶えるモジュールです。
+今後欲しい機能として、API のアプリケーションIDなどを YAML で設定ファイルとして持たせて、それを自動的に読んだりしたら楽チンだなと思っています。
+例によって CodeRepos で管理することにしましたので興味がある人は覗いてください。
+そして突っ込み、添削大歓迎です。
+</p>
+<ul>
+  <li><a href="http://coderepos.org/share/browser/lang/perl/WebService-Simple">/lang/perl/WebService-Simple - CodeRepos::Share - Trac</a></li>
+</ul>
+

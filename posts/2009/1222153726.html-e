@@ -1,0 +1,76 @@
++++
+Categories = ["tech"]
+Description = " 今日は天皇陛下の誕生日ですが、私事、僕の誕生日でもあります。そんな前提で、嬉しい誕生日プレゼントをもらいました。僕が愛してやまない雑誌である技術評論社の「WEB+DB PRESS」の「第一」特集記事、約38ページの大半を書かせていただいた"
+Tags = []
+date = "2009-12-23T12:37:00+09:00"
+title = "本日(23日)発売の「WEB+DB PRESS vol.54」の特集記事「Webサービス即日開発」を書かせていただきました"
+author = "kamawada"
+archive = ["2009"]
+draft = false
++++
+
+
+<p>
+今日は天皇陛下の誕生日ですが、私事、僕の誕生日でもあります。
+そんな前提で、嬉しい誕生日プレゼントをもらいました。
+僕が愛してやまない雑誌である技術評論社の「<strong>WEB+DB PRESS</strong>」の「第一」特集記事、
+約38ページの大半を書かせていただいたのです！
+そして、それが今日<strong>23日</strong>発売になります！
+もう既に、
+見本誌が届く方には届いてる＆発売の早い書店では手に入れることができると思います。
+</p>
+<p>
+<img alt="webdb" class="at-xid-6a0133f4781589970b014e8bd75172970d" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b014e8bd75172970d-pi">
+</p>
+<p>
+特集の題名は「<strong>Webサービス[即日]開発 - Web API、Amazon EC2で思いつきをすぐにカタチに!</strong>」。
+こちら後付けでつけたので若干あおり気味になっております。
+特集の最初にも書いてありますが、
+本来僕個人として目指したのは簡単に言えば「個人や小さな組織でもこんな感じでWebアプリを作れる(かも)よ！」
+というものです。
+今まで「ゆーすけべー」名義で、細かいですが、たくさんのサイトを作ってきたので、
+「それを思いつき、作って、運用する」全行程をなるべく紹介していこうと意気込んで書かせてもらいました。
+技術系の本にしては珍しく、企画の立て方もフューチャしていて、俺の自室にある付箋の模様が見れたりします。
+実際に誌面になった原稿を見て、至らぬところあるなぁと感じるわけですが、
+少しでも Webアプリを作りたい と思っているような方の助けになれば幸いです。
+</p>
+<p>
+最後に、この特集の最後のひと区切りを引用して終わります。
+</p>
+<blockquote>
+<p>
+ちょっとした謝辞
+</p>
+<p>
+「謝辞」という言葉に「ちょっとした」を付けるのは失礼かと思いますが、
+「文字数的な意味で」ちょっとした謝辞を最後に述べて終わりにしたいと思います。
+実は本特集が私の雑誌の執筆初体験でありまして、「雑誌執筆童貞」を捨てることを提案してくれてかつ、
+かなり自由な内容で書かせてくださいました編集者の方々に感謝します。
+また、ブログやTwitter、IRCなどオンラインでのコミュニケーションでそれとなしに、
+執筆に関しての私の質問に答えていただいた人々に感謝します。
+そして、Webサービスを作るに当たって、かかせないオープンソースプロダクトを生み出している
+偉大なコミュニティに大感謝をこの場を借りて述べたいと思います。
+最後に、私の執筆を応援してくれた友人達、ありがとうございます。
+</p>
+<p>
+以上、Enjoy !
+</p>
+</blockquote>
+<br>
+<div>
+<div style="float:left"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4774140643/kamawada-22/"><img alt="WEB+DB PRESS Vol.54" class="at-xid-6a0133f4781589970b014e8bd75191970d" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b014e8bd75191970d-pi" style="border:none;"></a></div>
+<div style="float:left;margin-left:15px;">
+<div style="font-size:12pt"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4774140643/kamawada-22/">WEB+DB PRESS Vol.54</a></div>
+<div style="font-size:7pt;font-family:verdana;">posted with <a href="http://yusukebe.com/b/amazon/search/">yusukebe.com::AmazonSearch</a> on 2009.12.23</div>
+<div style="font-size:10pt;">
+<ul style="list-style-type:none;padding:0;">
+<li>WEB+DB PRESS編集部  </li>
+<li>大型本 / 技術評論社 </li>
+<li>Amazon 売り上げランキング: 482</li>
+</ul>
+<a href="http://www.amazon.co.jp/WEB-DB-PRESS-Vol-54-PRESS%E7%B7%A8%E9%9B%86%E9%83%A8/dp/4774140643%3FSubscriptionId%3D0VEY2A9SVSFB81NQ9HG2%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D4774140643">Amazon.co.jpで詳細を見る</a>
+</div>
+</div>
+<div style="clear:left;"></div>
+</div>
+

@@ -1,0 +1,52 @@
++++
+Categories = ["tech"]
+Description = "       左から               	CGI&amp;Perlポケットリファレンス                      	Linux コマンド ポケットリファレンス                       	PHP "
+Tags = []
+date = "2006-01-20T10:03:00+09:00"
+title = "ソフトウェアづくりのリファレンス"
+author = "kamawada"
+archive = ["2006"]
+draft = false
++++
+
+
+<p>
+  <img alt="ref" class="at-xid-6a0133f4781589970b014e8bd73a9c970d" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b014e8bd73a9c970d-pi">
+</p>
+<p>
+  左から
+  </p>
+<ul>
+    <li>
+      <a href="http://www.amazon.co.jp/exec/obidos/ASIN/4774107557/kamawada-22/">
+	CGI&amp;Perlポケットリファレンス
+      </a>
+    </li>
+    <li>
+      <a href="http://www.amazon.co.jp/exec/obidos/ASIN/4774123609/kamawada-22/">
+	Linux コマンド ポケットリファレンス 
+      </a>
+    </li>
+    <li>
+      <a href="http://www.amazon.co.jp/exec/obidos/ASIN/4774125024/kamawada-22/">
+	PHP ポケットリファレンス 
+      </a>
+    </li>
+    <li>
+      <a href="http://www.amazon.co.jp/exec/obidos/ASIN/4797324295/kamawada-22/">
+	Rubyレシピブック 268の技 
+      </a>
+    </li>
+    <li>
+      <a href="http://www.amazon.co.jp/exec/obidos/ASIN/4839919100/kamawada-22/">
+	速効!図解 逆引き小事典Excel集計・分析
+      </a>
+    </li>
+  </ul>
+
+<p>
+  これと「Flashのヘルプ」、「Visual Studioのヘルプ」があれば、ソフトウェアづくりに限って大抵のことができる。
+  ウェブを検索すればいろいろと情報が出てくるが、「リファレンス」としてまとまった形になっていないとなかなか使えない。
+  逆に言えば言語の文法さえ知っていれば、レファレンスを持つだけでいろいろつくれる。
+</p>
+

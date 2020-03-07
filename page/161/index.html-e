@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="generator" content="Hugo 0.63.2" />
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="alternate" type="application/rss+xml" href="https://yusukebe.com/index.xml" title="ゆーすけべー日記" />
+	<meta property="og:title" content="ゆーすけべー日記" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://yusukebe.com/" />
+<meta property="og:image" content="https://yusukebe.com/icons/myicon.png"/>
+<meta property="og:updated_time" content="2020-03-06T15:46:50+09:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://yusukebe.com/icons/myicon.png"/>
+
+<meta name="twitter:title" content="ゆーすけべー日記"/>
+<meta name="twitter:description" content=""/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
+	
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://yusukebe.com/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+  <div class="container wrapper">
+	<div class="header">
+	<h1 class="site-title"><a href="https://yusukebe.com/">ゆーすけべー日記</a></h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/yusukebe" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/yusukebe" title="Twitter"><i data-feather="twitter"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+	<div class="recent-posts section">
+	  <h2 class="section-header">
+		Recent posts
+	  </h2>
+	  <div class="posts">
+		
+		
+		
+		<div class="post">
+		  <div class="meta">Jan 22, 2004</div>
+		  <a class="title" href="/posts/2004/0122074403/">FOAFの分散的なところがメモリを苦しめる</a> &mdash;
+		  <span class="description">
+			
+			 僕が今作っているtomobでは、HitoというムービークリップのインタスタンスにそれぞれFOAFの解析、プロパティの取得、さらに友達のインスタンス生成を任せている。tomob_degreeではこの作業を一気にとまることなくインスタンスにや
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jan 22, 2004</div>
+		  <a class="title" href="/posts/2004/0121191321/">百式の人に7つの質問</a> &mdash;
+		  <span class="description">
+			
+			 Passion For The Future: 百式2冊同時出版と管理人への7つの質問  ドットコム企業に萌え（45分）、記事をさくっと書く（15分）、みんなに見られて(ﾟДﾟ)ｳﾏｰ。毎日こういうリズムができるってのは楽しいこと。同じよ
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jan 22, 2004</div>
+		  <a class="title" href="/posts/2004/0121182133/">サッカニー</a> &mdash;
+		  <span class="description">
+			
+			  SAUCONY JAZZ NEXT(サッカニー　ジャズネクスト)グレイ/ネイビー/ブラック＠楽天  サッカニーのスニーカー買った。今はいてるのもこのサッカニー（Saucony）だが、これ履き心地がよい。ナイキ・アディダスと比べて太めなの
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jan 22, 2004</div>
+		  <a class="title" href="/posts/2004/0121181637/">渋谷の喫煙スポット、PRIME Cafe</a> &mdash;
+		  <span class="description">
+			
+			 久しぶりに渋谷に来た。東横速い。多分首都高よりも。  センター街のところを歩いていたらJTがやっているPRIME Cafeなる喫煙スポットを発見。入ってみた。   なんか変な空間だ。スポーツショップの広告なのか、アメフトのユニフォームとか
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jan 20, 2004</div>
+		  <a class="title" href="/posts/2004/0120085513/">へぇパンダはon(release)でへぇと言う</a> &mdash;
+		  <span class="description">
+			
+			 研究室に落ちてたへぇパンダ（参照：ビタミンX: うわさの「生茶パンダ」と「へぇーボタン」のコラボアイテムとは？）。   こいつの「へぇ」というタイミングがよく出来ている。手をつっこむと口の辺りにボタンがあって、パクパクさせてへぇと言う。ボ
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jan 20, 2004</div>
+		  <a class="title" href="/posts/2004/0119191958/">村井研の方がFOAFとかで修論</a> &mdash;
+		  <span class="description">
+			
+			 necoblog.: 知人関係を用いたプライバシ保護型マッチングシステムの研究  全部みてないけど、とりあえずメモ。  
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jan 20, 2004</div>
+		  <a class="title" href="/posts/2004/0119185104/">オンテナヘッドライン復活</a> &mdash;
+		  <span class="description">
+			
+			 以前紹介したオンテナヘッドラインがオンテナのサーバー移行などでとまっていたがやっとこさ復活させた。ダウンロード可能です。  →ontennaReader.zip  解凍して中に入ってるreadme.txtを参考に設置してください。  
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jan 18, 2004</div>
+		  <a class="title" href="/posts/2004/0118134104/">これでIEうらやましくない</a> &mdash;
+		  <span class="description">
+			
+			 MovableTypeで行こう！: Mozillaでもボタンを使いたい！  僕は edit_entry.tmplとbm_entry.tpmlをそのまま入れ替えちゃいました。 
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jan 18, 2004</div>
+		  <a class="title" href="/posts/2004/0117170251/">短眠法</a> &mdash;
+		  <span class="description">
+			
+			 あぶログ: 短眠法  ほえー たしか、ムツゴロウさんはマージャンしてて1週間ぐらい寝なかったという伝説があるそうな 
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jan 17, 2004</div>
+		  <a class="title" href="/posts/2004/0117055111/">12本の缶コーヒーであまやんを転がしてみる</a> &mdash;
+		  <span class="description">
+			
+			 dcgの課題をやっていたら、幸一が大量、そしてすべて種類の違う缶コーヒーを差し入れにくれた。この缶コーヒーの上にあまやんを乗せて転がしてみる。  12個、12種類の缶コーヒーとあまやん   ならべる   乗って転がる、そしてあまやんにつぶ
+			
+		  </span>
+		</div>
+		
+		
+
+<ul class="pagination">
+	<li class="page-item page-prev">
+	
+    <a href="/page/160/" class="page-link" aria-label="Previous"><span aria-hidden="true">← Prev page</span></a>
+	
+	</li>
+	<li class="page-item page-next">
+	
+    <a href="/page/162/" class="page-link" aria-label="Next"><span aria-hidden="true">Next page →</span></a>
+	
+	</li>
+</ul>
+
+
+	  </div>
+	</div>
+  </div>
+  <div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright yusukebe.com |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-492497-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

@@ -1,0 +1,84 @@
++++
+Categories = ["tech"]
+Description = " 初iPhoneアプリ公開になりますが、「ListTube」というアプリをiTunesストアにてリリースしました。YouTube動画をiPhone内のプレイリストにしてシンプルなインターフェースで楽しむというのがコンセプトのアプリです。  "
+Tags = ["Work", "iPhone", "ListTube"]
+date = "2011-12-14T12:59:00+09:00"
+title = "「ListTube」リリースと初iPhoneアプリの感想とか"
+author = "kamawada"
+archive = ["2011"]
+draft = false
++++
+
+
+<p>初iPhoneアプリ公開になりますが、「<strong><a href="http://listtube.limelightapp.com/">ListTube</a></strong>」というアプリをiTunesストアにてリリースしました。YouTube動画をiPhone内のプレイリストにしてシンプルなインターフェースで楽しむというのがコンセプトのアプリです。</p>
+
+<p>使い方はいたって簡単。</p>
+
+<ol>
+<li>プレイリストを名前を付けて作る</li>
+<li>YouTube動画を探す</li>
+<li>ワンタップでプレイリストに追加</li>
+<li>プレイリスト内の動画を連続再生</li>
+</ol>
+
+
+<p><a href="http://listtube.limelightapp.com/"><img alt="Screenshot 2011.11.29 07.50.02.png" src="http://yusukebe.com/archives/assets_c/2011/12/Screenshot%202011.11.29%2007.50.02-thumb-200x300-7.png" width="200" height="300" class="mt-image-none" style=""></a>  <a href="http://listtube.limelightapp.com/"><img alt="Screenshot 2011.11.29 07.49.32.png" src="http://yusukebe.com/archives/assets_c/2011/12/Screenshot%202011.11.29%2007.49.32-thumb-200x300-9.png" width="200" height="300" class="mt-image-none" style=""></a></p>
+
+<p>以下のような特徴があります。</p>
+
+<ul>
+<li>サジェスト機能でYouTube動画を探せる</li>
+<li>シンプルなインターフェース</li>
+<li>動画のキャッシュ機能、キャッシュされた動画はオフラインでも見れる！</li>
+<li>バックグラウンド状態でも音声再生</li>
+<li>リスト内の動画の並び替えも自由自在</li>
+</ul>
+
+
+<p>アプリの値段をどうするか迷いましたが現在のところクリスマスセールということで「85円」にて販売中です。iOS5+iPhone4では今のところ快適に使えて、普通に便利なのでよろしければお試し＆レビュー評価お願いします！</p>
+
+<ul>
+<li><a href="http://listtube.limelightapp.com/">紹介ページ</a></li>
+<li><a href="http://itunes.apple.com/jp/app/listtube/id487984113?mt=8&amp;ign-mpt=uo%3D4">ListTube on iTunes Store</a></li>
+</ul>
+
+
+<h3>iPhoneアプリ開発に当たって</h3>
+
+<p>LLというか主にPerlやJSの開発者である自分ですが、iPhoneアプリって難しいという印象がありました。が、今回はObjective-C+Xcodeによるコーディングを行いリリースまでこぎ着けたので「そんな難しいものではないかな」という印象です。当初はTitaniumによる開発を考えて、いろいろ試してみましたが以下の点で<strong>却下</strong>とさせていただきました。</p>
+
+<ul>
+<li>Titaniumは実機でのデバグが非常に遅い。iTunes経由なので？</li>
+<li>今回は、AV Foundation Frameworkを直接いじりたかったので。</li>
+</ul>
+
+
+<p>Objective-C+Xcodeでプログラミングをしてみた感想は「<strong>非常によくできたフレームワークが揃っている</strong>」というものでした。GUIを扱うプログラムはFlashを以前使ったことがあるのですが、それ以上に作りやすいと思います。nibや今回は使わなかったStoryboardとプログラムを繋ぐOutletなどの概念や、UIKit Frameworkの洗練度がたまらないです。</p>
+
+<p>ということで今回のListTubeは使い勝手が煩雑な同種のアプリと対抗するために、極力Frameworkデフォルトの機能を利用しUIを構築するという戦略で作りました。</p>
+
+<p>よいiPhoneアプリを作るための感想として、まずはUIKitベースでアプリを構築していくのは悪くないのではないかと思います。</p>
+
+<h3>iPhoneアプリというビジネスについて</h3>
+
+<p>今回のListTubeも課金しているからにはビジネスについて少しは考えました。まだ売れたというフィードバックを見れていないものなので、なんとも言えませんが、個人にとって面白いビジネスだと思います。僕が感じているポイントは、以下です。</p>
+
+<ul>
+<li>課金モデルがビジネスモデルとしてシンプル</li>
+<li>UIで勝負できる</li>
+<li>価格競争もできる</li>
+<li>スタンドアローンのアプリならば運用がいらない</li>
+</ul>
+
+
+<p>もちろんこれらの項目に加えて「アイデア勝負ができる」というのもありますが、それはどの分野でも共通だと思います。よって上記の4点がiPhoneアプリ特有のビジネス的な項目ですね。</p>
+
+<p>今回リリースしたListTubeの様子を見て、iPhoneアプリという世界にも切り込んでいきたいと思っています。</p>
+
+<h3>まとめ</h3>
+
+<p>ということでiPhoneアプリ開発は面白い＆ListTubeをよろしくお願いします。</p>
+
+<p><a href="http://itunes.apple.com/jp/app/listtube/id487984113?mt=8&amp;uo=4" target="itunes_store">ListTube - Wadit Inc.</a><br>
+<a href="http://itunes.apple.com/jp/app/listtube/id487984113?mt=8&amp;uo=4" target="itunes_store"><img src="http://ax.phobos.apple.com.edgesuite.net/ja_jp/images/web/linkmaker/badge_appstore-lrg.gif" alt="ListTube - Wadit Inc." style="border: 0;"></a></p>
+

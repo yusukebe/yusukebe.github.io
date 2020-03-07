@@ -1,0 +1,16 @@
++++
+Categories = ["tech"]
+Description = "    RFIDのアンテナ自作って結構できるんですね。            Texas InstrumentsのRFIDモジュール6350と自作アンテナの組み合わせがアンチコリジョン対応では最強っぽい。これで、線さえ伸ばせばある程度の形・"
+Tags = []
+date = "2005-01-06T04:10:00+09:00"
+title = "RFIDのアンテナ自作"
+author = "kamawada"
+archive = ["2005"]
+draft = false
++++
+
+
+<p>   RFIDのアンテナ自作って結構できるんですね。 </p>
+<p>   <a href="http://kamawada.com/~yusuke/yusukebe/archives/files/050105/DSC01484.JPG"><img alt="DSC01484.JPG" border="0" class="at-xid-6a0133f4781589970b014e8bd73861970d" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b014e8bd73861970d-pi"></a> </p>
+<p>   Texas Instrumentsの<a href="http://www.ti.com/rfid/docs/products/readers/RI-STU-TRDC.shtml">RFIDモジュール6350</a>と自作アンテナの組み合わせがアンチコリジョン対応では最強っぽい。これで、線さえ伸ばせばある程度の形・場所でリードできる。</p>
+

@@ -1,0 +1,88 @@
++++
+Categories = ["tech"]
+Description = "   とあるオジサンと YourAVHost についてチャットしていたら         AV 女優名をあまりしらないオジサン（自分）にとっては、     ジャンルとかシチュエーション別に動画が見つかったら嬉しいでござる。       と言"
+Tags = ["Perl"]
+date = "2008-02-11T10:01:00+09:00"
+title = "YourAVHost にジャンルタグ機能を追加"
+author = "kamawada"
+archive = ["2008"]
+draft = false
++++
+
+
+<p>
+  とあるオジサンと YourAVHost についてチャットしていたら
+</p>
+<blockquote>
+  <p>
+    AV 女優名をあまりしらないオジサン（自分）にとっては、<br>
+    ジャンルとかシチュエーション別に動画が見つかったら嬉しいでござる。
+  </p>
+</blockquote>
+<p>
+  と言ったとか言わないとか。とはいえ、女優名別のみならず、他の方法で動画を探す手立てが欲しいというリクエストはあったので、これを機に YourAVHost に<strong>ジャンル機能</strong>を追加しました。
+</p>
+<p>
+トップページのジャンルタグというところをクリックすればタグクラウドを見ることができ、また各エントリーにジャンルタグが表示されるようになりました。女優タグと同じくそのタグが動画の内容とマッチしているかという精度に関してはあまり確証できるものではありませんが、ひとつの目安になると思います。
+</p>
+<p>
+  <img alt="YourAVHost" class="at-xid-6a0133f4781589970b015391e38f53970b" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015391e38f53970b-pi">
+</p>
+<p>
+以下18禁リンクになりますが、メジャーなタグだと「3P」、「おっぱい」、「女子高生」とかがあります。
+珍しいのだと、「おむつ」、「ジーパン」、「電マ」とかあって結構笑えます。
+</p>
+<ul>
+  <li><a href="http://youravhost.net/genre/3P">YourAVHost - 3P のYourFileHost動画</a></li>
+  <li><a href="http://youravhost.net/genre/%E3%81%8A%E3%81%A3%E3%81%B1%E3%81%84">YourAVHost - おっぱい のYourFileHost動画</a></li>
+  <li><a href="http://youravhost.net/genre/%E5%A5%B3%E5%AD%90%E9%AB%98%E7%94%9F">YourAVHost - 女子高生 のYourFileHost動画</a></li>
+  <li><a href="http://youravhost.net/genre/%E3%81%8A%E3%82%80%E3%81%A4">YourAVHost - おむつ のYourFileHost動画</a></li>
+  <li><a href="http://youravhost.net/genre/%E3%82%B8%E3%83%BC%E3%83%91%E3%83%B3">YourAVHost - ジーパン のYourFileHost動画</a></li>
+  <li><a href="http://youravhost.net/genre/%E9%9B%BB%E3%83%9E">YourAVHost - 電マ のYourFileHost動画</a></li>
+</ul>
+<p>
+どのような言葉を拾って「ジャンル」としているかという仕組みですが、これはアダルトビデオ向けジャンル一覧の辞書を利用しています。この辞書、実はこれまた別の Web サイトを作ろうという話が昔持ち上がってそのために一緒にやっていた某鎌団子がせっせと作ってくれたものです（そのサイトはまだできてませんがそのうち作るかも）。結構網羅的でかつセンスフル、いい仕事しています。
+  そのリストを元に、テキストを渡すとジャンルの文字列を配列として返してくれる <strong>Acme::AV::Genre</strong> というPerlのモジュールをでっちあげクローラーの中で使っています。vaginarepos にうｐってますが、こんな感じで使えます。
+</p>
+
+<pre class="brush: perl"> use Acme::AV::Genre;
+use utf8;
+
+my $text =
+  "あいだゆあ　スチュワーデス姿で３Ｐファック！";
+my $genre_parser = Acme::AV::Genre-&gt;new();
+my $genres       = $genre_parser-&gt;text($text);
+foreach my $genre (@$genres) {
+  utf8::encode($genre);
+  print "$genre\n";
+}
+#「3P」と「スチュワーデス」が出力される
+ </pre>
+<p>
+  また、ジャンルタグの他にも機能追加を行いました。
+  きっかけは、「一ファン」と言う方から以下のようなメールをいただいたことです。
+</p>
+<blockquote>
+  <p>
+    ゆうすけべ様
+  </p>
+  <p>
+    いつも楽しませて頂いております。<br>
+    youravhostで、使えそうなRSSをまとめてみました。<br>
+    自らyourfilehostに動画をアップロードしているサイトばかりです。<br>
+    これらのRSSを使うと、新鮮なアップしたての動画情報が得られると思います。<br>
+    もしよろしかったら、youravhostの参照元RSSに加えてられないでしょうか？<br>
+    やはり、新しい動画を求めてしまいます＾＾；；；宜しくお願い致します。<br>
+  </p>
+</blockquote>
+<p>
+このように yourfilehost の動画を探してリンクしている質のいいブログを紹介してもらいました。
+そこでせっかくなので、今までテクノラティの検索結果だけをリソースとしていたのに対し、yourfilehost を紹介している外部のブログのフィードをリソースとするという拡張もいたしました。
+この参照元 RSS の拡張機能ですが、YourAVHost が単に外部ブログをリソースとして使うのではなく、そのブログとのやり取り（相互リンクの新しい形みたいな）ができればいいと思っています。
+</p>
+<p>
+というわけで、YourAVHost のマイナーヴァージョンアップについてでした。
+今後は、この YourAVHost のプラットフォームを利用してすごいサービスを展開しようと思っています。
+これまたお楽しみに。Enjoy！
+</p>
+

@@ -1,0 +1,55 @@
++++
+Categories = ["tech"]
+Description = "  参考文献: 「Webサーバ不要、40行程度のスクリプトひとつで動かせる Gyazoサーバー（クローン）を書いた - 今日もスミマセン。」   こちらはRubyで書いてあるので昨日の Smiley Hackathon#7 にて、Perl/"
+Tags = []
+date = "2009-12-20T09:40:00+09:00"
+title = "簡易GyazoサーバをPlackで実装したら27行くらいで書けた"
+author = "kamawada"
+archive = ["2009"]
+draft = false
++++
+
+
+<blockquote>
+<p>
+参考文献: 「<a href="http://d.hatena.ne.jp/snaka72/20090529/1243608579">Webサーバ不要、40行程度のスクリプトひとつで動かせる Gyazoサーバー（クローン）を書いた - 今日もスミマセン。</a>」
+</p>
+</blockquote>
+<p>
+こちらはRubyで書いてあるので昨日の Smiley Hackathon#7 にて、
+Perl/Plack で実装したらどうなるかをやってみた。
+dbm に入れる件を除いているのでより簡易な方法だけど 27 行くらいで書けて、
+plackup コマンドでそのまま運用できるのでなかなかお手軽でいい感じです。
+Plack::App::File で 画像のサーブが簡単にできるのが便利ですね。
+.psgi のコード貼付けておきますので参考にしてみてください。
+Plack はこのように「自分専用のお手軽 gyazo サーバが欲しい」といった個人の簡単なユースにあっていると思いましたね。
+</p>
+<pre class="brush: perl"> use Plack::App::File;
+use Plack::Builder;
+use Plack::Request;
+use Digest::MD5 qw( md5_hex );
+use IO::File;
+
+my $app = sub {
+    my $env = shift;
+    my $req = Plack::Request-&gt;new($env);
+    if ( $req-&gt;path eq '/upload' ) {
+        my $imagedata = $req-&gt;param('imagedata');
+        my $filename  = "image/" . md5_hex($imagedata) . ".png";
+        my $fh        = IO::File-&gt;new( $filename, 'w' );
+        print $fh $imagedata;
+        $fh-&gt;close;
+        my $res = Plack::Request-&gt;new_response(200);
+        $res-&gt;content_type('text/plain');
+        $res-&gt;content( $req-&gt;base() . $filename );
+        return $res-&gt;finalize;
+    }
+    return [ 404, [], [] ]; #xxx
+};
+
+builder {
+    mount "/image" =&gt; Plack::App::File-&gt;new( root =&gt; "./image" );
+    mount "/" =&gt; $app;
+}
+ </pre>
+

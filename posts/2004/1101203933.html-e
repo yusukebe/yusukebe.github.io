@@ -1,0 +1,15 @@
++++
+Categories = ["tech"]
+Description = "    ハードディスク容量まじてんぱってきたという時にはもちろんファイルを消せばいい。でも消せそうなファイルはだいたい消したぜ。というときにその名も「ディレクトリ毎サイズ一覧」。   ドライブ内の全フォルダーのサイズ一覧表示 をしてくれる。"
+Tags = []
+date = "2004-11-02T05:39:00+09:00"
+title = "ハードディスク容量まじてんぱってきたという時に使えるソフト"
+author = "kamawada"
+archive = ["2004"]
+draft = false
++++
+
+
+<p>   ハードディスク容量まじてんぱってきたという時にはもちろんファイルを消せばいい。でも消せそうなファイルはだいたい消したぜ。というときにその名も「<a href="http://www.vector.co.jp/soft/dl/win95/util/se052881.html">ディレクトリ毎サイズ一覧</a>」。   ドライブ内の全フォルダーのサイズ一覧表示 をしてくれる。するとぜんぜんいらなそうなフォルダ・ファイルがものすごいファイル容量食ってることがわかっていい。そういうファイルを消すのきもちえー。ちなみにWindowsではShift-Delでゴミ箱行かずにすぐ消せます。</p>
+<p>   <a href="http://kamawada.com/~yusuke/yusukebe/archives/files/041101/dirsize.gif"><img alt="dirsize.gif" border="0" class="at-xid-6a0133f4781589970b015391e378de970b" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015391e378de970b-pi"></a></p>
+

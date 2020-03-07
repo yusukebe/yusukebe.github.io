@@ -1,0 +1,110 @@
++++
+Categories = ["tech"]
+Description = " yusukebe Nikki Release   読者、ListPod ユーザー 各位yusukebe Nikki Release2009年7月21日--------------------------------------------"
+Tags = []
+date = "2009-07-21T10:48:00+09:00"
+title = "YouTube動画Podcast配信サービス「ListPod」をリニューアルしました"
+author = "kamawada"
+archive = ["2009"]
+draft = false
++++
+
+
+<h4>yusukebe Nikki Release</h4>
+<br>
+<pre> 読者、ListPod ユーザー 各位
+yusukebe Nikki Release
+2009年7月21日
+
+--------------------------------------------------------
+yusukebe
+YouTube動画Podcast配信サービス「ListPod」リニューアル
+英語表記やスライドショー再生などに対応した新 UI
+http://listpod.tv/
+--------------------------------------------------------
+ </pre>
+<p>
+yusukebe は 2009年7月21日(月)、個人で運用する YouTube 動画マイリスト作成・Podcast配信サービス
+「ListPod」をリニューアルした。
+特徴は英語表記に対応した他、動画をその場でスライドショー再生できる機能を追加したなど、
+ユーザーインターフェースの全面的な改善になる。
+</p>
+<p>
+
+</p>
+<p>
+<a href="http://listpod.tv/">http://listpod.tv/</a>
+</p>
+
+<p>
+<a href="http://listpod.tv/">
+<img alt="listpod" src="http://listpod.tv/static/images/listpod_logo.png">
+</a>
+</p>
+
+<h4>ListPod とは</h4>
+<p>
+ListPod は yusukebe 個人が作成、2008年3月より運用開始した
+YouTube 動画のオンライン Podcast 作成サービス。
+ユーザーはお気に入りの YouTube 動画 をマイリストとして登録。
+それらを Podcast として iTunes などのソフトウェアで読み込ませ
+iPhone、iPod といったモバイル端末で再生することができる。
+OpenID によるログイン方式を使用し、認証の手間が省かれているのが特徴である。
+利用したいユーザー名のみを入力するだけで、新規ユーザー登録は完了する。
+ListPod では、従来のテレビを見るという映像体験に加え、
+好きな動画をポータブルプレヤーで持ち歩き、好きな時に鑑賞するというスタイルを提案する。
+</p>
+
+<h4>参考キャプチャ画像</h4>
+
+<p>
+<a href="http://listpod.tv">ListPod トップページ</a><br>
+<img alt="listpod" class="at-xid-6a0133f4781589970b015435b6f35f970c" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015435b6f35f970c-pi">
+</p>
+
+<p>
+ログインをした状態<br>
+<img alt="listpod" class="at-xid-6a0133f4781589970b015435b6f374970c" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015435b6f374970c-pi">
+</p>
+
+<p>
+スライドショー再生<br>
+<img alt="listpod" class="at-xid-6a0133f4781589970b015435b6f38a970c" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015435b6f38a970c-pi">
+</p>
+
+<p>
+Cooliris ( 3Dビューアー ) にも対応する<br>
+<img alt="listpod" class="at-xid-6a0133f4781589970b015435b6f3a9970c" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015435b6f3a9970c-pi">
+</p>
+
+<h4>統計 2009年7月20日時点</h4>
+<pre> ユーザー数: 5,614
+マイリスト数: 36,504
+登録されたビデオ数のべ: 284,062
+
+OpenID 利用率:
+1. me.yahoo.co.jp: 75%
+2. www.hatena.ne.jp: 13%
+3. id.mixi.jp: 5%
+4. profile.livedoor.com: 5%
+5. openid.ne.jp: 2%
+ </pre>
+<p>
+<img alt="listpod" class="at-xid-6a0133f4781589970b015435b6f3c0970c" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015435b6f3c0970c-pi">
+</p>
+
+<p>
+ということで、この連休を使って前々からやりたかった ListPod のリニューアルを行いました。
+より多くの人に使ってもらうために、ブラウザの言語設定が日本語以外だとメニュー等が英語表記されるように、
+ローカライズしました。また、Shadowbox という JS のライブラリを使ってリストなどの動画の
+スライドショー再生や、Cooliris での閲覧にも対応いたしました。
+まだ、十分にテストされてない部分があるかと思うので、バグがありましたらご報告ください。
+また、使ったことがなくて興味を持った方は登録が簡単なので是非試してみてください。
+ということで、Enjoy!
+</p>
+<ul>
+<li>
+<a href="http://listpod.tv/">ListPod : Make your own Podcast!</a>
+</li>
+</ul>
+

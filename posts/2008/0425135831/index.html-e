@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>JavaScript 環境以外から  Google AJAX Search API を使う - ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="JavaScript 環境以外から  Google AJAX Search API を使う" />
+<meta property="og:description" content=" Google AJAX Search API ってその名の通り JavaScript から利用することを前提に作られているんだけど、  先ほどドキュメンテーションに「Flash and other Non-Javascript Envir" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yusukebe.com/posts/2008/0425135831/" />
+<meta property="og:image" content="https://yusukebe.com/icons/myicon.png"/>
+<meta property="article:published_time" content="2008-04-25T22:58:00+09:00" />
+<meta property="article:modified_time" content="2008-04-25T22:58:00+09:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://yusukebe.com/icons/myicon.png"/>
+
+<meta name="twitter:title" content="JavaScript 環境以外から  Google AJAX Search API を使う"/>
+<meta name="twitter:description" content=" Google AJAX Search API ってその名の通り JavaScript から利用することを前提に作られているんだけど、  先ほどドキュメンテーションに「Flash and other Non-Javascript Envir"/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
+	
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://yusukebe.com/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper post">
+		<div class="header">
+	<h1 class="site-title"><a href="https://yusukebe.com/">ゆーすけべー日記</a></h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/yusukebe" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/yusukebe" title="Twitter"><i data-feather="twitter"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post-header">
+			<h1 class="title">JavaScript 環境以外から  Google AJAX Search API を使う</h1>
+			<div class="meta">Posted at &mdash; Apr 25, 2008</div>
+		</div>
+
+		<div class="markdown post-body">
+			
+
+<p>
+Google AJAX Search API ってその名の通り JavaScript から利用することを前提に作られているんだけど、
+  先ほどドキュメンテーションに「<strong>Flash and other Non-Javascript Environments</strong>」という項目が追加されました。
+JavaScript 以外の環境から Google AJAX Search API をこんな風に使えますよと書かれているようです。
+今まで、例えば Perl から Web ページを検索する時には、Google のそれは「JS からしか使えないんでしょ」とあきらめて、Yahoo! の検索 API をよく使っていたところ、これで Google の検索結果も利用できるようになります。
+JavaScript のレイヤーより一つ下くらいのところで、API が使えるとなると可能性も広がるかと思います。
+ということで、早速、WebService::Simple を使って、Perl から Google AJAX Search API を使ってみたよ。
+</p>
+<p>
+サンプルを紹介する前にこの API の仕様について軽く解説。
+ベースURL は
+</p>
+<blockquote>
+<a href="http://ajax.googleapis.com/ajax/services/search/web">http://ajax.googleapis.com/ajax/services/search/web</a>
+</blockquote>
+<p>
+で、それに以下のようなパラメータを渡すと結果が JSON 形式で返ってくる。
+</p>
+<blockquote>
+  <p>
+q : 検索クエリー<br>
+v : API のヴァージョン、現時点でのデフォルトは 1.0<br>
+rsz : 検索結果をどのサイズで返して欲しいか、デフォルトは small の4件、large を指定すると8件<br>
+hl : 何語のウェブから検索したいか、日本語の場合だと ja<br>
+start : 検索結果を何番目から取得したいか、デフォルトは 0、おそらく最大で 24 っぽい<br>
+  </p>
+</blockquote>
+<p>
+詳しくはここを参照→<a href="http://code.google.com/apis/ajaxsearch/documentation/reference.html#_intro_fonje">Class Reference - Google AJAX Search API - Google Code</a>
+</p>
+<p>
+取得できる JSON の形式はこちらを参考に→<a href="http://code.google.com/apis/ajaxsearch/documentation/#fonje">Developer's Guide - Google AJAX Search API - Google Code</a>
+</p>
+<p>
+では、WebService::Simple を使ったサンプルを紹介。
+WebService::Simple には JSON のパーサーもあるので検索結果を Dump するだけのスクリプトだったらこんな簡単に書けちゃいます。
+</p>
+<pre class="brush: perl"> my $google = WebService::Simple-&gt;new(
+    base_url        =&gt; "http://ajax.googleapis.com/ajax/services/search/web",
+    response_parser =&gt; "JSON",
+    params          =&gt; { v =&gt; "1.0", rsz=&gt; "large" }
+);
+
+my $response =  $google-&gt;get( { q =&gt; "cat" , start=&gt; 0 } );
+print Dump $response-&gt;parse_response;
+ </pre>
+<p>
+次に、検索クエリーを入れるとその結果が表示されるだけの簡単な Web ページを作ってみます。
+パースしたコンテンツをそのまま Template::Toolkit のテンプレートに渡すという方針です。
+ただ、これを実現するにはちょっとしたハックが必要になりました。
+JSON のモジュールを使ってパースされたオブジェクトには utf8 フラグが立ってないっぽいんですよ。
+utf8 flagged な値も、TT に渡したいので、混在しちゃうと文字化けしちゃいます（その値を uri フィルターかけたいから、フラグを落としたくないのです、なんか間違ってたらツッコミください）。
+そこで、以下のハックで JSON モジュールが返してくれるオブジェクトに utf8 フラグを立ててます。
+</p>
+<pre class="brush: perl"> use WebService::Simple;
+use WebService::Simple::Parser::JSON;
+
+my $parser = WebService::Simple::Parser::JSON-&gt;new; # パーサーを作る
+$parser-&gt;{json}-&gt;utf8(1); # utf8 フラグが立ったオブジェクトを返してもらう
+my $google = WebService::Simple-&gt;new(
+    base_url        =&gt; "http://ajax.googleapis.com/ajax/services/search/web",
+    response_parser =&gt; $parser, # パーサーオブジェクトを指定する
+    params          =&gt; { v =&gt; "1.0", rsz =&gt; "large", hl =&gt; "ja" }
+);
+ </pre>
+<p>
+つまづいたのはこのくらい。完成版のPerl のコードと テンプレートは以下の通りです。
+</p>
+<p>
+search.cgi
+</p>
+<pre class="brush: perl"> #!/usr/bin/perl
+
+use strict;
+use warnings;
+use CGI;
+use Template;
+use WebService::Simple;
+use WebService::Simple::Parser::JSON;
+
+my $q     = CGI-&gt;new;
+my $query = $q-&gt;param('query');
+utf8::decode($query);
+my $start = $q-&gt;param('start') || 0;
+
+my $parser = WebService::Simple::Parser::JSON-&gt;new;
+$parser-&gt;{json}-&gt;utf8(1);
+my $google = WebService::Simple-&gt;new(
+    base_url        =&gt; "http://ajax.googleapis.com/ajax/services/search/web",
+    response_parser =&gt; $parser,
+    params          =&gt; { v =&gt; "1.0", rsz =&gt; "large", hl =&gt; "ja" }
+);
+my $response = $google-&gt;get( { q =&gt; $query, start =&gt; $start } );
+
+my $tt = Template-&gt;new();
+my $html;
+
+$tt-&gt;process(
+    "search.tt",
+    {
+        query    =&gt; $query,
+        response =&gt; $response-&gt;parse_response
+    },
+    \$html
+);
+
+print $q-&gt;header( -type =&gt; "text/html", -charset =&gt; "utf-8" );
+print $html;
+
+ </pre>
+<p>
+search.tt
+</p>
+<pre class="brush: perl"> 
+&lt;html&gt;
+&lt;body&gt;
+&lt;h1&gt;&lt;a href="search.cgi"&gt;Google Search&lt;/a&gt;&lt;/h1&gt;
+&lt;form action="" method="get"&gt;
+&lt;p&gt;
+&lt;input type="text" name="query" value="[% query %]" /&gt;
+&lt;input type="submit" value="Google Search" /&gt;
+&lt;/p&gt;
+&lt;/form&gt;
+&lt;p&gt;
+[% SET count = response.responseData.cursor.estimatedResultCount -%]
+[% IF count -%][% count %] pages[% END -%]
+&lt;/p&gt;
+&lt;dl&gt;
+[% FOREACH item = response.responseData.results -%]
+  &lt;dt&gt;&lt;a href="[% item.unescapedUrl %]"&gt;[% item.title %]&lt;/a&gt;&lt;/dt&gt;
+  &lt;dd&gt;[% item.content %]&lt;/dd&gt;
+[% END -%]
+&lt;/dl&gt;
+&lt;div&gt;
+  [% FOREACH page = response.responseData.cursor.pages -%]
+  &lt;a href="?query=[% query | uri %]&amp;amp;start=[% page.start %]"&gt;[% page.label %]&lt;/a&gt;
+  [% END -%]
+&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+ </pre>
+
+<p>
+  ということで、Google AJAX Search API を WebService::Simple 使って利用してみました。
+  取得できる件数に制限があるのがちょっと残念ですが、この API なかなか重宝しそうです。
+</p>
+
+
+		</div>
+
+		<div class="post-tags">
+			
+				
+					<nav class="nav tags">
+							<ul class="flat">
+								
+								<li><a href="/tags/perl">Perl</a></li>
+								
+							</ul>
+					</nav>
+				
+			
+		</div>
+        <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v5.0&appId=233306523373884&autoLogAppEvents=1"></script>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+
+<div class="social-button-area">
+  <ul class="social-button">
+    <li>
+      <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
+    </li>
+    <li>
+      <span class="fb-share-button"  data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2008%2f0425135831%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
+    </li>
+    <li>
+      <a href="https://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label-counter" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>
+    </li>
+  </ul>
+</div>
+
+<div class="disqus-area">
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "yusukebe-com" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<ul class="pagination">
+  
+  <li class="page-item page-prev">
+    <a href="https://yusukebe.com/posts/2008/0425082850/" class="page-link" aria-label="Previous"><span aria-hidden="true">← WebService-Simple-0.09 の使い方</span></a>
+  </li>
+  
+  
+  <li class="page-item page-next">
+    <a href="https://yusukebe.com/posts/2008/0428053217/" class="page-link" aria-label="Next"><span aria-hidden="true">Google Charts API を Perl から簡単に操作できるようにしたモジュール『WebService::Simple::Google::Chart』 →</span></a>
+  </li>
+  
+</ul>
+
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright yusukebe.com |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-492497-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
++++
+Categories = ["tech"]
+Description = " Archive::Zip使った。なんかEncodeの辺りが無理矢理な気がするが、こんな感じかしら。  use Archive::Zip;use File::Spec;use Encode;my $file = $ARGV[0];my $z"
+Tags = ["Perl"]
+date = "2011-10-08T14:37:00+09:00"
+title = "Windowsで作って日本語が含まれるZIPファイルをPerlで文字化けせず解凍する"
+author = "kamawada"
+archive = ["2011"]
+draft = false
++++
+
+
+<p>Archive::Zip使った。なんかEncodeの辺りが無理矢理な気がするが、こんな感じかしら。</p>
+
+
+
+
+<pre> use Archive::Zip;
+use File::Spec;
+use Encode;
+
+my $file = $ARGV[0];
+my $zip  = Archive::Zip-&gt;new();
+die 'read error' unless $zip-&gt;read($file) == &amp;Archive::Zip::AZ_OK;
+
+for my $member ( $zip-&gt;members ) {
+    my $to = File::Spec-&gt;catfile(decode('shift_jis',$member-&gt;fileName()));
+    $zip-&gt;extractMember( $member, $to );
+}
+ </pre>
+
+
+
+
+<p><a style="display: inline;" href="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015435fa8d54970c-pi"><img class="asset  asset-image at-xid-6a0133f4781589970b015435fa8d54970c image-full" alt="スクリーンショット（2011-10-08 14.34.42）" title="スクリーンショット（2011-10-08 14.34.42）" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015435fa8d54970c-800wi" border="0"></a> <br></p>
+
+

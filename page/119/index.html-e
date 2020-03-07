@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="generator" content="Hugo 0.63.2" />
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="alternate" type="application/rss+xml" href="https://yusukebe.com/index.xml" title="ゆーすけべー日記" />
+	<meta property="og:title" content="ゆーすけべー日記" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://yusukebe.com/" />
+<meta property="og:image" content="https://yusukebe.com/icons/myicon.png"/>
+<meta property="og:updated_time" content="2020-03-06T15:46:50+09:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://yusukebe.com/icons/myicon.png"/>
+
+<meta name="twitter:title" content="ゆーすけべー日記"/>
+<meta name="twitter:description" content=""/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
+	
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://yusukebe.com/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+  <div class="container wrapper">
+	<div class="header">
+	<h1 class="site-title"><a href="https://yusukebe.com/">ゆーすけべー日記</a></h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/yusukebe" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/yusukebe" title="Twitter"><i data-feather="twitter"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+	<div class="recent-posts section">
+	  <h2 class="section-header">
+		Recent posts
+	  </h2>
+	  <div class="posts">
+		
+		
+		
+		<div class="post">
+		  <div class="meta">Dec 25, 2005</div>
+		  <a class="title" href="/posts/2005/1225131057/">debian&#43;apache2でmod_perlを有効にするには</a> &mdash;
+		  <span class="description">
+			
+			 たぶん、これでいけると思う。  1.mod_perlをapt-getでインストール#apt-get install libapache2-mod-perl22.モジュールを有効化/etc/apache2/mods-available/pe
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Dec 25, 2005</div>
+		  <a class="title" href="/posts/2005/1225111907/">PCファンを利用したポータブル(?)換気扇の試作その1</a> &mdash;
+		  <span class="description">
+			
+			   先日の研究室の大掃除の時に捨てられそうになっていたPCのファンをもらってきたので、それを利用して小さなある程度「ポータブル」な換気扇を作ってみる。今回は試作第一号。    こうしたファンの仕組みは単純で、12Vくらいまでの電流をしかる
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Dec 25, 2005</div>
+		  <a class="title" href="/posts/2005/1225110139/">おめでとう＞村主(すぐり)さん</a> &mdash;
+		  <span class="description">
+			
+			 すごいよ、すごいよー。ドキドキ、ハラハラ、そして感動。また泣きそうになった。村主章枝さん、全日本フィギュアスケート選手権優勝おめでとう。そしてトリノオリンピック代表決定おめでとう。荒川さん、安藤さんもおめでとうございます。  いやーそれに
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Dec 24, 2005</div>
+		  <a class="title" href="/posts/2005/1224114426/">トラックバックを正常に受け付けない不具合を解消</a> &mdash;
+		  <span class="description">
+			
+			 トラックバックを送ると  HTTP error: 403 Throttled  というエラーが出て正常に受け付けない不具合があったので、ogawaさんのMT 3.2日本語版Unofficial Patchを当てて解消しました。 
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Dec 24, 2005</div>
+		  <a class="title" href="/posts/2005/1224112208/">感動した＞全日本フィギュアスケート選手権 女子ショート</a> &mdash;
+		  <span class="description">
+			
+			 なんか村主(すぐり)さんの演技見終わったとき、普通に泣きそうになった。他の選手もほとんどノーミスで見ごたえがあった。クリスマスイブに大切な物をもらった気がする。明日も注目じゃ。  関連記事：ゆーすけべー日記: 村主(すぐり)さんがんばれ 
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Dec 24, 2005</div>
+		  <a class="title" href="/posts/2005/1224094334/">週末作家入門 まず「仕事」を書いてみよう</a> &mdash;
+		  <span class="description">
+			
+			          週末作家入門 まず「仕事」を書いてみよう  読破    「週末」と銘を打っているだけあって、「平日」には会社勤めをしている人向けに書かれている。  なので、平日も週末もあまり関係ない一学生の俺にとって「役に立つ」といった
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Dec 23, 2005</div>
+		  <a class="title" href="/posts/2005/1223145741/">村主(すぐり)さんがんばれ</a> &mdash;
+		  <span class="description">
+			
+			 浅田真央、安藤美姫と若い選手に注目が集まる女子フィギュアスケート。いよいよ明日あさっての全日本フィギュアスケート選手権でトリノオリンピック代表選手が決まるわけですが、僕は村主章枝(すぐりふみえ)さんを応援しております。  というのも、俺が
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Dec 23, 2005</div>
+		  <a class="title" href="/posts/2005/1223072944/">ゆっけ</a> &mdash;
+		  <span class="description">
+			
+			 &#34;キモグロ派代表のゆっけ&#34;さんから「全国のゆっけ」を集めているとのこと。俺もその仲間に入った。俺の「ゆっけ」と呼ばれているそもそもの由来は、中学で鎌倉に引っ越してきて、そしたら俺どう呼ぶかって話になって、サッカー部の先輩に「ゆうすけ」とい
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Dec 23, 2005</div>
+		  <a class="title" href="/posts/2005/1223000805/">今日は天皇誕生日ということは･･･</a> &mdash;
+		  <span class="description">
+			
+			 俺の誕生日。24になりました。何気にGREEの誕生日メッセージとか嬉しい。ありがとうございました。今日は誕生日らしくなく、一日中家（最近じゃ自分で鎌倉山ラボ.と名づけておりますが）でデスクワークです。作業が一段落したら誕生日企画で一人で面
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Dec 22, 2005</div>
+		  <a class="title" href="/posts/2005/1222122517/">ミスった</a> &mdash;
+		  <span class="description">
+			
+			 うへ、いろいろいじってたら、コメントを全部消すことになった。。。コメントいただいた方ごめんなさい。。。データベースから削除されても、僕の心のデータベースには残っております。これからは気をつけるので、今後もコメントくださいね。 
+			
+		  </span>
+		</div>
+		
+		
+
+<ul class="pagination">
+	<li class="page-item page-prev">
+	
+    <a href="/page/118/" class="page-link" aria-label="Previous"><span aria-hidden="true">← Prev page</span></a>
+	
+	</li>
+	<li class="page-item page-next">
+	
+    <a href="/page/120/" class="page-link" aria-label="Next"><span aria-hidden="true">Next page →</span></a>
+	
+	</li>
+</ul>
+
+
+	  </div>
+	</div>
+  </div>
+  <div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright yusukebe.com |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-492497-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

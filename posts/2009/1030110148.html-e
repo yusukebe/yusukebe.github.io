@@ -1,0 +1,105 @@
++++
+Categories = ["tech"]
+Description = "    @oshiete_twit に向けてのつぶやきを収集    テキストをまず特徴語抽出APIに投げてキーワードを拾ってくる    キーワードをYahoo!知恵袋APIに投げて関連しそうな解決済みの質問を取ってくる    その中からラン"
+Tags = []
+date = "2009-10-30T20:01:00+09:00"
+title = "Yahoo!知恵袋とマッシュアップさせたTwitterボット作った"
+author = "kamawada"
+archive = ["2009"]
+draft = false
++++
+
+
+<ul>
+  <li>@oshiete_twit に向けてのつぶやきを収集</li>
+  <li>テキストをまず特徴語抽出APIに投げてキーワードを拾ってくる</li>
+  <li>キーワードをYahoo!知恵袋APIに投げて関連しそうな解決済みの質問を取ってくる</li>
+  <li>その中からランダムで答えを一個に絞る</li>
+  <li>さらにその最初の文を最初のつぶやきの答えとする</li>
+  <li>ボットがつぶやく</li>
+</ul>
+<p>
+ってな具合のYahoo!APIとのマッシュアップなTwitterボットを作ってみたよ！
+<a href="http://twitter.com/oshiete_twit">@oshiete_twit</a> に向って質問を投げてかけてみて！
+</p>
+<p>
+なかなかかわいいやつだからかわいがってね！
+もうねこういう返事とかフイタよ！
+</p>
+<ul>
+  <li><a href="http://twitter.com/oshiete_twit/status/5281997982">Twitter / 教えてTwit!: そうです RT @yusukebe : @oshie ...</a></li>
+  <li><a href="http://twitter.com/oshiete_twit/status/5282044409">Twitter / 教えてTwit!: キンカンは、株式会社金冠堂が製造販売元です RT @ ...</a></li>
+  <li><a href="http://twitter.com/oshiete_twit/status/5282020877">Twitter / 教えてTwit!: ご心配なさらないでください RT @nyontan ...</a></li>
+</ul>
+<p>
+以下、コーディング例
+</p>
+<pre class="brush: perl"> use strict;
+use warnings;
+use Net::Twitter;
+use List::Util qw(shuffle);
+use XML::Simple;
+use WebService::Simple;
+use WebService::Simple::Parser::XML::Simple;
+use Encode;
+use utf8;
+ 
+# local settings
+my $user = 'username';
+my $password = 'password';
+my $appid = 'myappid';
+ 
+my $nt = Net::Twitter-&gt;new(
+    traits =&gt; [qw/API::REST/],
+    username =&gt; $user,
+    password =&gt; $password
+);
+ 
+my $xs = XML::Simple-&gt;new( ForceArray =&gt; ['Result', 'Question'] );
+my $parser = WebService::Simple::Parser::XML::Simple-&gt;new( xs =&gt; $xs );
+my $yahoo_keyword = WebService::Simple-&gt;new(
+    base_url =&gt; 'http://jlp.yahooapis.jp/KeyphraseService/V1/extract',
+    params =&gt; { appid =&gt; $appid },
+    response_parser =&gt; $parser,
+);
+my $yahoo_question = WebService::Simple-&gt;new(
+    base_url =&gt; 'http://chiebukuro.yahooapis.jp/Chiebukuro/V1/questionSearch',
+    params =&gt; { appid =&gt; $appid },
+    response_parser =&gt; $parser,
+);
+ 
+for my $tweet ( @{ $nt-&gt;mentions } ){
+    my $q_text = $tweet-&gt;{text};
+    if( $q_text =~ /RT/ ){
+        next;
+    }
+    $q_text =~ s/\@oshiete_twit\s//;
+    my $a = get_answer( $q_text );
+    my $a_text = $a-&gt;{text};
+    if( $a_text &amp;&amp; $a_text =~ m/(.+?)(?:。|．)/ ){
+        $a_text = $1;
+    }
+    if( $a_text ){
+        my $text = "$a_text RT \@$tweet-&gt;{user}-&gt;{screen_name} : $tweet-&gt;{text}";
+        warn $text;
+        $nt-&gt;update($text);
+    }
+}
+ 
+sub get_answer {
+    my $sentence = shift;
+    my $res = $yahoo_keyword-&gt;get( { sentence =&gt; $sentence } );
+    my $ref = $res-&gt;parse_response();
+    my @keywords;
+    map { push( @keywords, $_-&gt;{Keyphrase} ) } @{ $ref-&gt;{Result} };
+    my $keyword = join( ' ', @keywords );
+    $res = $yahoo_question-&gt;get( { query =&gt; $keyword, condition =&gt; 'solved' } );
+    $ref = $res-&gt;parse_response();
+    my $q = shuffle( @{ $ref-&gt;{Result}-&gt;[0]-&gt;{Question} } );
+    return { text =&gt; $q-&gt;{BestAnswer}, url =&gt; $q-&gt;{Url} };
+}
+ </pre>
+<ul>
+  <li><a href="http://oshiete-twit.pulpsite.net/">教えてTwit!</a></li>
+</ul>
+

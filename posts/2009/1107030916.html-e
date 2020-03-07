@@ -1,0 +1,72 @@
++++
+Categories = ["tech"]
+Description = " Amazon専用のURL短縮サービスを作ってみました。名前は「amz.ly」です。  amz.ly   AmazonのアイテムのURL及び自分のアフィリエイトIDをフォームに入れると短縮してくれます。    書式はアイテムが「WEB+DB"
+Tags = []
+date = "2009-11-07T12:09:00+09:00"
+title = "TwitterでAmazonのURLとわかるようにURLを張るために - Amazon専用URL短縮サービス「amz.ly」"
+author = "kamawada"
+archive = ["2009"]
+draft = false
++++
+
+
+<p>
+Amazon専用のURL短縮サービスを作ってみました。名前は「amz.ly」です。
+</p>
+<p>
+<a href="http://amz.ly/">amz.ly</a><br>
+<a href="http://amz.ly/">
+<img alt="amzly" class="at-xid-6a0133f4781589970b015391e3927b970b" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015391e3927b970b-pi">
+</a>
+</p>
+<p>
+AmazonのアイテムのURL及び自分のアフィリエイトIDをフォームに入れると短縮してくれます。
+</p>
+<p>
+<img alt="amzly" class="at-xid-6a0133f4781589970b015391e3928b970b" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015391e3928b970b-pi">
+</p>
+<p>
+書式はアイテムが「WEB+DB PRESS Vol.53」で、アフィリエイトID「kamawada-22」の場合
+</p>
+<blockquote>
+<p>
+<a href="http://amz.ly/jp/477414004X/kamawada">http://amz.ly/jp/477414004X/kamawada</a>
+</p>
+</blockquote>
+<p>
+が短縮されたURLになります。
+短縮URLが表示されるページでは、ブックマークレットボタンが出てきて、また、
+その本が過去にamz.ly経由でクリックされた場合にはクリック数が出ます。
+</p>
+<p>
+<img alt="amzly" class="at-xid-6a0133f4781589970b015391e392a3970b" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015391e392a3970b-pi">
+</p>
+<p>
+Twitter にポストした際 URL が短縮されるのは40文字を超えた時なので、
+アフィリエイトIDが「-22」などのロケーションナンバーを抜いて12文字以内ならば短縮されません。
+</p>
+<p>
+<img alt="amzly" class="at-xid-6a0133f4781589970b015391e392ad970b" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015391e392ad970b-pi">
+</p>
+<p>
+TwitterのWeb画面だと残念ながらアフィリエイトID部分が表示されないのですが、
+冒頭の「amz.ly」というドメイン名とASINが確認できます。
+これで通常だとbit.lyで短縮されてしまうAmazonのURLが、amz.lyだと確実に「AmazonのURL」でかつ「誰かのアフィリエイトIDを含んでいるかもしれないぞ」ということがわかります。
+</p>
+<p>
+amz.ly を利用して Amazon のURLをTwitterにポストすることの何がいいかというと、
+他のフォローワーに「これはAmazonのURLへ転送されるからその辺注意してね！」ということを自然と伝えることができるという点です。
+アフィリエイトをむやみに踏んでしまうことを嫌がる方もいると思うので、そういう人に安心感を与えることができますね。
+ただ、amz.lyがAmazonのURL短縮サービスだということを多くの方が認知してもらわなくては、相手にも伝わらないという大きな問題があります^^;
+</p>
+<p>
+それと、どのアイテムがクリックされているかを履歴としてカウントしているので、
+そのうちどのアイテムがTwitter上で人気なのかがわかるサービスにしたいとも考えています。
+</p>
+<p>
+てなわけで「TwitterでAmazonのURLとわかるようにURLを張りたい」人はご利用ください。
+</p>
+<ul>
+  <li><a href="http://amz.ly/">amz.ly</a></li>
+</ul>
+

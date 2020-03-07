@@ -1,0 +1,14 @@
++++
+Categories = ["tech"]
+Description = "引数にString型の何か文字列を与えると それをキーボードで打ち込んでくれるプログラムを作った。 打ち込むのにはRobotというクラスを使っている。 "
+Tags = []
+date = "2001-11-27T23:09:00+09:00"
+title = "mive用JAVAプログラミング"
+author = "kamawada"
+archive = ["2001"]
+draft = false
++++
+
+<p>引数にString型の何か文字列を与えると<br>
+それをキーボードで打ち込んでくれるプログラムを作った。<br>
+打ち込むのにはRobotというクラスを使っている。<br></p>

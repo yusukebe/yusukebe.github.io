@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="generator" content="Hugo 0.63.2" />
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="alternate" type="application/rss+xml" href="https://yusukebe.com/index.xml" title="ゆーすけべー日記" />
+	<meta property="og:title" content="ゆーすけべー日記" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://yusukebe.com/" />
+<meta property="og:image" content="https://yusukebe.com/icons/myicon.png"/>
+<meta property="og:updated_time" content="2020-03-06T15:46:50+09:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://yusukebe.com/icons/myicon.png"/>
+
+<meta name="twitter:title" content="ゆーすけべー日記"/>
+<meta name="twitter:description" content=""/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
+	
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://yusukebe.com/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+  <div class="container wrapper">
+	<div class="header">
+	<h1 class="site-title"><a href="https://yusukebe.com/">ゆーすけべー日記</a></h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/yusukebe" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/yusukebe" title="Twitter"><i data-feather="twitter"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+	<div class="recent-posts section">
+	  <h2 class="section-header">
+		Recent posts
+	  </h2>
+	  <div class="posts">
+		
+		
+		
+		<div class="post">
+		  <div class="meta">Aug 10, 2007</div>
+		  <a class="title" href="/posts/2007/0810014407/">「読書の腕前」岡崎武志</a> &mdash;
+		  <span class="description">
+			
+			   本の中でも「本そのものや読書について書かれている」本に自然と惹かれてしまう。  書店で新しく出た新書を物色していると、その嗅覚からか「読書の腕前」というタイトルがひときわ大きく見えた。  作者は書評家で今年50歳になられる岡崎武志さん
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Aug 9, 2007</div>
+		  <a class="title" href="/posts/2007/0809015502/">Plaggerでニコニコ動画のFLVとコメントを一括ダウンロード！</a> &mdash;
+		  <span class="description">
+			
+			   暇さえあればニコニコ動画。  今日はそんなニコニコ動画をPlaggerを使ってもっと楽しむ方法( = ニコプラ)を教えちゃいます。  Plaggerって何？という人はこちらをご覧ください→Plaggerとは？ (Yusukebe::T
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Aug 9, 2007</div>
+		  <a class="title" href="/posts/2007/0809010842/">今日の富士山</a> &mdash;
+		  <span class="description">
+			
+			   朝、歯磨きをしながらベランダから富士山を眺める。  夏晴天ややくすり気味の空気に雄大な青いシルエットがうかぶ。  富士登山シーズンまっさかりの今は何人の人があの山にいるのだろうか。        俺も丁度去年の今頃登ったことを思い出す
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Aug 2, 2007</div>
+		  <a class="title" href="/posts/2007/0802024219/">「また、みんなで集まりませんか？」奥出研菅野エイジ再び！？</a> &mdash;
+		  <span class="description">
+			
+			   俺はしばらく鎌団子とコミュニケイトすることを封印していた。  おととい、その結界をといたら鎌団子は飢えていた。  実を言うと鎌団子だけではなく俺も少々飢えていたかもしれない。  それで早速昨日、鎌団子のいる銀座に行った。  ブレンドが
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Aug 2, 2007</div>
+		  <a class="title" href="/posts/2007/0802014425/">奥出研の最終発表で見学に来てた古川亨さんにネット越しでからんで、Blogに取り上げられた</a> &mdash;
+		  <span class="description">
+			
+			   去る7月30日(月)の夕方、久しぶりにメッセンジャーにログインしたら橋本商会からustreamのURLが送られてきて、奥出研の最終発表をやっているらしく、その様子がライブ動画で見れたりチャットできたりした。  俺以外にも卒業生の数名が
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Aug 1, 2007</div>
+		  <a class="title" href="/posts/2007/0801023904/">ヨコハマEIZONEでmoo-pongの展示をやってます〜5日(日)まで</a> &mdash;
+		  <span class="description">
+			
+			   ヨコハマEIZONEというイベントで以前私を含めた愉快な仲間達で制作した「moo-pong」が展示されています。  イベントは8月5日(日曜日)までで、時間は11時〜20時(最終日のみ11時〜18時)です。  moo-pongは赤レン
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jul 28, 2007</div>
+		  <a class="title" href="/posts/2007/0728064225/">ブログで今話題のニコニコ動画がわかるNiconorati(ニコノラティ)を作りました</a> &mdash;
+		  <span class="description">
+			
+			   みんな大好きニコニコ動画。  そんなニコニコ動画をもっと楽しめないかとブログで&#34;今&#34;話題のニコニコ動画がわかるNiconorati(ニコノラティ)というサイトを作ってみました。             Niconorati (ニコノラ
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jul 26, 2007</div>
+		  <a class="title" href="/posts/2007/0726015330/">「シリコンバレー・アドベンチャー―ザ・起業物語」</a> &mdash;
+		  <span class="description">
+			
+			   とあるおじさんに薦められて手にした本書。  「ザ・起業物語」というタイトルからよくあるベンチャー企業のサクセスストーリーを想像していたが、  それとは一線を画す、ヒューマンドラマが描かれた良質の自伝ドキュメンタリー。  ゆえに「ザ・起
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jul 24, 2007</div>
+		  <a class="title" href="/posts/2007/0724001222/">「NHKにようこそ!」</a> &mdash;
+		  <span class="description">
+			
+			   読み終わって放置してた本を振り返るシリーズその1。  まずは、アニメを見て面白かったので原作に手を出したという経緯の滝本竜彦著「NHKにようこそ!」。             NHKにようこそ!    アニメ見る前まで「NHK」ってま
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jul 22, 2007</div>
+		  <a class="title" href="/posts/2007/0722011617/">ウォーターボーイズ</a> &mdash;
+		  <span class="description">
+			
+			   金曜、フジテレビで映画「ウォーターボーイズ」を拝見。  実はこれが初見。    とある男子高校(といっても確かモデルが埼玉県の川口川越高校)の部員が1人しかいない水泳部。  突然やってきた美人顧問教師目当てに部員が増えるが、ひょんなこ
+			
+		  </span>
+		</div>
+		
+		
+
+<ul class="pagination">
+	<li class="page-item page-prev">
+	
+    <a href="/page/70/" class="page-link" aria-label="Previous"><span aria-hidden="true">← Prev page</span></a>
+	
+	</li>
+	<li class="page-item page-next">
+	
+    <a href="/page/72/" class="page-link" aria-label="Next"><span aria-hidden="true">Next page →</span></a>
+	
+	</li>
+</ul>
+
+
+	  </div>
+	</div>
+  </div>
+  <div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright yusukebe.com |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-492497-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

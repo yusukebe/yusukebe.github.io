@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="generator" content="Hugo 0.63.2" />
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="alternate" type="application/rss+xml" href="https://yusukebe.com/index.xml" title="ゆーすけべー日記" />
+	<meta property="og:title" content="ゆーすけべー日記" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://yusukebe.com/" />
+<meta property="og:image" content="https://yusukebe.com/icons/myicon.png"/>
+<meta property="og:updated_time" content="2020-03-06T15:46:50+09:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://yusukebe.com/icons/myicon.png"/>
+
+<meta name="twitter:title" content="ゆーすけべー日記"/>
+<meta name="twitter:description" content=""/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
+	
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://yusukebe.com/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+  <div class="container wrapper">
+	<div class="header">
+	<h1 class="site-title"><a href="https://yusukebe.com/">ゆーすけべー日記</a></h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/yusukebe" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/yusukebe" title="Twitter"><i data-feather="twitter"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+	<div class="recent-posts section">
+	  <h2 class="section-header">
+		Recent posts
+	  </h2>
+	  <div class="posts">
+		
+		
+		
+		<div class="post">
+		  <div class="meta">Sep 16, 2004</div>
+		  <a class="title" href="/posts/2004/0915190438/">抵抗がDNPハウスの前に落ちてた</a> &mdash;
+		  <span class="description">
+			
+			    研究室の前に抵抗が落ちてた。700KΩっぽい。      
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Sep 15, 2004</div>
+		  <a class="title" href="/posts/2004/0914193517/">ラストワンマイルカーニバル、光開通決定記念の曲</a> &mdash;
+		  <span class="description">
+			
+			 我が家のネットワーク「kamawada」についに光ファイバーが開通することが決定(10月8日)！というわけでそれを記念して、団子さんと共に曲というか歌詞を作りレコーディングした。「ナタミと引き笑い」に続き2曲目。我が家のネットワーク回線環
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Sep 14, 2004</div>
+		  <a class="title" href="/posts/2004/0914011319/">湘南台の麺屋響が８ちゃんに出てる</a> &mdash;
+		  <span class="description">
+			
+			    情報ツウかなんかに出てるYO！       
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Sep 13, 2004</div>
+		  <a class="title" href="/posts/2004/0913003925/">運転おたく</a> &mdash;
+		  <span class="description">
+			
+			    俺は運転が好きだ。ハラスは道が好きで道おたくだけど、俺は運転おたくだ。運転おたくと言うと「走り屋」かと思われるが、ぜんぜん走り屋ではない。単純に道を運転するのが好きだ。      おわきかの企画「おわきか 四國志 神奈川版」(詳細は
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Sep 10, 2004</div>
+		  <a class="title" href="/posts/2004/0909202325/">ゆるく遊ぶ</a> &mdash;
+		  <span class="description">
+			
+			    昨日飲んだ二人とゆるく遊んだ。     母校の湘南高校を訪れ、担任の石井武先生に会い、忙しそうで痩せていたが相変わらず怒鳴られる。学食で飯を食ってるところで後輩が高校で警備というか電話の留守のバイトをしているところに遭遇、そんなバイ
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Sep 9, 2004</div>
+		  <a class="title" href="/posts/2004/0908200643/">はっとり、まーぼー海外帰国組みと飲み、おまと３年ぶり!!に会う</a> &mdash;
+		  <span class="description">
+			
+			    ずっとニュージーランドの馬小屋(？とにかく馬がたくさんいるらしい)で働いていたはっとりが帰ってきた。さらに、1ヶ月カンボジアとかタイとか行ってたまーぼーが帰ってきた。その2人、海外帰国組みと藤沢で飲んだ。     (左)まーぼーとは
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Sep 7, 2004</div>
+		  <a class="title" href="/posts/2004/0906202129/">「MP3形式の音楽を、無料でダウンロードできるサイトを教えて下さい」の答え</a> &mdash;
+		  <span class="description">
+			
+			    はてなの質問、「MP3形式の音楽を、無料でダウンロードできるサイトを教えて下さい」     そんなサイトで合法サイトはない！存在しない！という答えが多いが、1番の回答にこんなサイトが紹介されてある。     http://www.s
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Sep 7, 2004</div>
+		  <a class="title" href="/posts/2004/0906175356/">PowerBookG4 12inchに外部モニタを接続して1280×1024表示</a> &mdash;
+		  <span class="description">
+			
+			    最近の俺の流行がノートパソコンをデスクトップ化させること。      PowerBookG4 12inchの本体の液晶の解像度は1024×768。しかし外部モニタへの出力は1600×1200の解像度まで可能。俺の机の上にどんと乗って
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Sep 7, 2004</div>
+		  <a class="title" href="/posts/2004/0906160504/">本棚がないので、</a> &mdash;
+		  <span class="description">
+			
+			    本棚がないので積んでみた。            なんかかっこいい。技術系の本が多いからなおさら強そうな塔だ。 
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Sep 6, 2004</div>
+		  <a class="title" href="/posts/2004/0905224738/">蔵出し映像「心霊スポットで変なの写っちゃったよ編」</a> &mdash;
+		  <span class="description">
+			
+			    部屋に転がるビデオテープの整理をしていたら「2000 11 23 サ○エさんの家 鎌倉」と書かれたDVテープが見つかった。このテープは以前、俺が大学1年生の時にバイトの友達ととある鎌倉の心霊スポットに行ったときに撮影したものである。
+			
+		  </span>
+		</div>
+		
+		
+
+<ul class="pagination">
+	<li class="page-item page-prev">
+	
+    <a href="/page/135/" class="page-link" aria-label="Previous"><span aria-hidden="true">← Prev page</span></a>
+	
+	</li>
+	<li class="page-item page-next">
+	
+    <a href="/page/137/" class="page-link" aria-label="Next"><span aria-hidden="true">Next page →</span></a>
+	
+	</li>
+</ul>
+
+
+	  </div>
+	</div>
+  </div>
+  <div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright yusukebe.com |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-492497-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

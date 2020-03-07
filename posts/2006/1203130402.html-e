@@ -1,0 +1,44 @@
++++
+Categories = ["tech"]
+Description = "   Plaggerでエロサイトばかり作っていてもなんなんで、某すがちゃんに「Plagger使ったなんか面白いアイデアない？」と聞いた。         某すがちゃん「オリコンのチャートとYouTubeをマッシュアップさせたら、カウントダウ"
+Tags = ["Perl"]
+date = "2006-12-03T22:04:00+09:00"
+title = "PlaggerとCatalystでCDTVならぬCDTube作ってみた"
+author = "kamawada"
+archive = ["2006"]
+draft = false
++++
+
+
+<p>
+  Plaggerでエロサイトばかり<a href="http://yusukebe.com/archives/06/08/24/194057.html">作って</a><a href="http://yusukebe.com/archives/06/10/21/201644.html">いても</a>なんなんで、<a href="http://web.sfc.keio.ac.jp/~yoshiro/weblog/">某すがちゃん</a>に「Plagger使ったなんか面白いアイデアない？」と聞いた。
+</p>
+<blockquote>
+  <p>
+    某すがちゃん「オリコンのチャートとYouTubeをマッシュアップさせたら、カウントダウンTVができるんじゃね？」
+  </p>
+</blockquote>
+<p>
+  <strong>それPla</strong>。というわけで早速作ってみた。
+  できたのがこれ、名づけて「CDTube」＝「カウントダウンチューブ」。→<a href="http://pulpsite.net/cdtube/">CDTube - カウントダウンチューブ</a>
+</p>
+<p>
+  <a href="http://pulpsite.net/cdtube/">
+  <img alt="CDTube" class="at-xid-6a0133f4781589970b014e8bd743ab970d" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b014e8bd743ab970d-pi">
+  </a>
+</p>
+<p>
+  CDシングルのランキング1位から100位までを表示して、その曲に関係すると思われるYouTubeの映像が見れるサイトです。ってかほとんどちゃんとPVが出てくるのがすごいんだが、権利的にものすごいグレーな感じがしてちと怖い。が、とりあえず動いて嬉しいので公開。
+</p>
+<p>
+  作り方はPlagger→db→Catalystという流れの<a href="http://yusukebe.com/tech/archives/20061203/213028.html">Plalystメソッド</a>を使用。Plaggerで曲のランキングを取得して、YouTubeとAmazonからタイトルとアーティストをキーにして検索かけてフィードを生成→dbに保存→Catalystでページ処理などの操作をできるようにした。詳しい実装方法は<a href="http://yusukebe.com/tech/archives/20061203/230822.html">こちら</a>。
+</p>
+<p>
+  ってかあんまり邦楽を聴かないので作っても自分で活用してないんだが、唯一驚いたのは今週11位にランクインしてる「<a href="http://www.amazon.co.jp/gp/product/B000J10CWG/kamawada-22/">最強パレパレード</a>」！
+  ラジオやってんだｗ
+</p>
+<h4>追記</h4>
+<p>
+  <a href="http://yusukebe.com/archives/06/12/09/192536.html">自動カウントダウン機能をつけました</a>。
+</p>
+

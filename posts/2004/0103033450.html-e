@@ -1,0 +1,12 @@
++++
+Categories = ["tech"]
+Description = " MovableTypeでtDiary風「本日のリンク元」をやるってのを導入してるんだが、javascriptがかなーりおもたい。ひとつのエントリーを表示するごとにスクリプトが実行されがんばっているって感じ。はやめにSSIを使ってサーバー側"
+Tags = []
+date = "2004-01-03T12:34:00+09:00"
+title = "本日のリンク元表示が重たい"
+author = "kamawada"
+archive = ["2004"]
+draft = false
++++
+
+<p><a href="http://www.okoshi.org/tadashi/bbs2/todayslink/">MovableTypeでtDiary風「本日のリンク元」をやる</a>ってのを導入してるんだが、javascriptがかなーりおもたい。ひとつのエントリーを表示するごとにスクリプトが実行されがんばっているって感じ。はやめにSSIを使ってサーバー側で実行するようにしよう。</p>

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>&amp;quot;Bridging the gap between writers and users.&amp;quot; - ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="&amp;quot;Bridging the gap between writers and users.&amp;quot;" />
+<meta property="og:description" content=" おととい投稿した「Where are Casual Perlers ?」という記事の続編的な扱いで今回の YAPC での印象的な経験を交えて簡単に綴ろうと思います。そして、これを持ってして YAPC::Asia 2009 関連の記事の締め" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yusukebe.com/posts/2009/0914053140/" />
+<meta property="og:image" content="https://yusukebe.com/icons/myicon.png"/>
+<meta property="article:published_time" content="2009-09-14T14:31:00+09:00" />
+<meta property="article:modified_time" content="2009-09-14T14:31:00+09:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://yusukebe.com/icons/myicon.png"/>
+
+<meta name="twitter:title" content="&amp;quot;Bridging the gap between writers and users.&amp;quot;"/>
+<meta name="twitter:description" content=" おととい投稿した「Where are Casual Perlers ?」という記事の続編的な扱いで今回の YAPC での印象的な経験を交えて簡単に綴ろうと思います。そして、これを持ってして YAPC::Asia 2009 関連の記事の締め"/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
+	
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://yusukebe.com/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper post">
+		<div class="header">
+	<h1 class="site-title"><a href="https://yusukebe.com/">ゆーすけべー日記</a></h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/yusukebe" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/yusukebe" title="Twitter"><i data-feather="twitter"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post-header">
+			<h1 class="title">&amp;quot;Bridging the gap between writers and users.&amp;quot;</h1>
+			<div class="meta">Posted at &mdash; Sep 14, 2009</div>
+		</div>
+
+		<div class="markdown post-body">
+			
+
+<p>
+おととい投稿した「<a href="http://yusukebe.com/archives/09/09/12/120113.html">Where are Casual Perlers ?</a>」という記事の続編的な扱いで
+今回の YAPC での印象的な経験を交えて簡単に綴ろうと思います。
+そして、これを持ってして YAPC::Asia 2009 関連の記事の締めとしたい。
+</p>
+<p>
+---
+</p>
+<p>
+私が投稿した記事のリアクションとして宮川さんが、
+「<a href="http://bulknews.typepad.com/blog/2009/09/on-module-writers-and-users.html">On module writers and users</a>」
+という題名でエントリーを投稿しました。素晴らしい記事なので、まだ読んでいない方は是非読んでみてください。
+</p>
+<p>
+私の「カジュアルなPerl Mongersはどこにいる？」という疑問と、
+宮川さんのエントリーを読んでいると、しっかりと考えなくてはいけないもう一つのことがあるのに気づきました。
+それは「ライターとユーザーとの関係、もしくは溝」です。
+今回 YAPC::Asia 会期中にその関係について溝が埋まっていくように思えた瞬間があったので、
+そのことについて簡単に紹介します。
+</p>
+<p>
+私にとって YAPC::Asia 2009での大きな収穫の一つに「rafl」との出会いがあります。
+rafl は現在 Catalyst のメインメンテナで、ドイツからやってきた若干23歳の長髪の青年です。
+</p>
+<p>
+彼と出会ったのは前夜祭が終わって喫煙所で一服をしている時でした。
+YAPC のゲストとしてやってきた海外の方であることはわかっていました。
+発表が終わった高揚感もあり、英語ですんなりとしゃべりかけることができました。
+最初、私は彼のID「rafl」を聞いても、すぐに Catalyst のメンテナのもので
+オンラインでもよく目にすることに気づきませんでした。
+家に返って彼の CPAN などで使われているアイコンを見るなり、
+「ああー、この人かー！」と驚いたのです。
+</p>
+<p>
+喫煙所での話に戻ります。
+「Catalyst を使っているか？」という話題になった時に、私は
+「5.7 (現在より古いバージョン) を好んで使っているよ」
+と答えました。その時はまだ彼が Catalyst のメンテナであることを知りませんでした。
+すると彼はいいました。
+「Catmooseを使ってくれ (5.8 Catalyst 内で Moose を使っていることからそのように呼ばれている)」
+と。また、5.7 から移行した場合にバグがでると思うから、その時にはレポートを送ってくれと。
+彼はそのバグを直しよりよいものにしていくから、ということを論理立てて言ってくれました。
+「ライターはユーザーの意見を求めている」。
+そう感じたのが、この瞬間でした。
+そして、バグを恐れず「5.8 を使ってみよう」と思いました。
+</p>
+<p>
+「ライターとユーザー」その間には大小なり溝があると考えています。
+しかし、今回 rafl と出会い、拙い英語でも頑張って話すことにより
+その溝はかなり埋まり、ライターとしての彼といい関係ができたのではないかと思っています。
+宮川さんの記事で、「CPANエコシステム」という単語が出てきます。
+モジュールのバグレポートを出すことは通常、勇気が必要になる作業です。
+しかし、上記のような出会いがあればそのハードルは低くなり、
+CPANエコシステムがうまく循環すると今回感じたのです。
+</p>
+<p>
+前回の記事での私の主な主張は「カジュアルな Perl Monger として存在感を高めよう」というものでした。
+それに加えて今感じるのは、
+ライターも カジュアルな Perl Mongers を含んだユーザーも、
+積極的に双方に話しかける努力をしようというものです。
+カジュアルな Perl Mongers にとって便利でクールなライブラリを開発しているライターは
+神のような存在に思えます。
+しかし、「神」だからといって話しかけてはいけないとは決してありません。
+むしろ「神」と扱うものではありません。なぜならあなたがライブラリとしてのいいアイデアがあれば、
+CPAN オーサー つまりライターにはいつでもなれるからです。
+そんなライターの方に対して、最初はとても緊張しますが、ユーザーの方は積極的に声をかけるべきかもしれません。
+また、ライターの方はユーザーに対してもっと開かれた雰囲気を持つ必要があるかもしれません。
+そのことが CPANエコシステムをよりよい方向に持っていく可能性があるのです。
+</p>
+<p>
+まずはライターもユーザーも個性を含んだ存在感を示すことが大事です。
+そして、その次は今回のテーマである「ライターとユーザーとの関係」をうまく築いていくことがテーマとなると思います。
+そのための場所はたくさんあります。
+YAPC や Shibuya.pm、Yokohama.pm などの *.pm 系イベントの懇親会、
+そして先日開設した #perl-casual@freenode などの IRC チャンネル。
+Twitter なども活用できると思います。
+CPANオーサーとしての私はユーザーの意見を求めていますし、また、ライブラリユーザーとしての私は
+ライターの方とお話できることを楽しみにしています。
+ライターの方々は怖くはありません。またユーザーはただただ利用しているだけではなく意見を持っています。
+</p>
+<p>
+オンライン、オフライン。ライター、ユーザー。
+それに限らず気軽に Perl Monger に話しかけましょう。
+そしていい Perl のカルチャーを今後も築いていきましょう。
+</p>
+<p>
+---
+</p>
+<p>
+と、なんとなく啓蒙的になって若干キモイけどw、
+ようは今回 YAPC で rafl や Sartak ( Moose メンテナ ) とかと話せてほんと嬉しかったし、
+上記したような関係が作れたことでもっと Perl が楽しくなるなと思ったということだね。
+YAPC スピーカーの皆さん、参加者の方々、そしてスタッフ、とりわけ代表だった牧さん！
+お疲れさまでした。とっても楽しい YAPC でした。来年も今からわくわくしています。
+以上！
+</p>
+
+
+		</div>
+
+		<div class="post-tags">
+			
+				
+					<nav class="nav tags">
+							<ul class="flat">
+								
+								<li><a href="/tags/perl">Perl</a></li>
+								
+								<li><a href="/tags/yapc">YAPC</a></li>
+								
+							</ul>
+					</nav>
+				
+			
+		</div>
+        <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v5.0&appId=233306523373884&autoLogAppEvents=1"></script>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+
+<div class="social-button-area">
+  <ul class="social-button">
+    <li>
+      <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
+    </li>
+    <li>
+      <span class="fb-share-button"  data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2009%2f0914053140%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
+    </li>
+    <li>
+      <a href="https://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label-counter" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>
+    </li>
+  </ul>
+</div>
+
+<div class="disqus-area">
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "yusukebe-com" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<ul class="pagination">
+  
+  <li class="page-item page-prev">
+    <a href="https://yusukebe.com/posts/2009/0914031140/" class="page-link" aria-label="Previous"><span aria-hidden="true">← 発表資料「IRC HTTP Stream」in YAPC::Asia 2009</span></a>
+  </li>
+  
+  
+  <li class="page-item page-next">
+    <a href="https://yusukebe.com/posts/2009/0914060315/" class="page-link" aria-label="Next"><span aria-hidden="true">生活に溶けこむコンテンツデザイン展 - 開催のお知らせ →</span></a>
+  </li>
+  
+</ul>
+
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright yusukebe.com |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-492497-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

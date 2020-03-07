@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="generator" content="Hugo 0.63.2" />
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="alternate" type="application/rss+xml" href="https://yusukebe.com/index.xml" title="ゆーすけべー日記" />
+	<meta property="og:title" content="ゆーすけべー日記" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://yusukebe.com/" />
+<meta property="og:image" content="https://yusukebe.com/icons/myicon.png"/>
+<meta property="og:updated_time" content="2020-03-06T15:46:50+09:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://yusukebe.com/icons/myicon.png"/>
+
+<meta name="twitter:title" content="ゆーすけべー日記"/>
+<meta name="twitter:description" content=""/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
+	
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://yusukebe.com/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+  <div class="container wrapper">
+	<div class="header">
+	<h1 class="site-title"><a href="https://yusukebe.com/">ゆーすけべー日記</a></h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/yusukebe" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/yusukebe" title="Twitter"><i data-feather="twitter"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+	<div class="recent-posts section">
+	  <h2 class="section-header">
+		Recent posts
+	  </h2>
+	  <div class="posts">
+		
+		
+		
+		<div class="post">
+		  <div class="meta">Aug 3, 2003</div>
+		  <a class="title" href="/posts/2003/0802150632/">高校サッカー部時代に足に巻いてたバンテージ</a> &mdash;
+		  <span class="description">
+			
+			  
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Aug 2, 2003</div>
+		  <a class="title" href="/posts/2003/0801150630/">TRAVIS</a> &mdash;
+		  <span class="description">
+			
+			 CDで聴いてるのと変わらないほどライブの音がよい 01年のフジロックで見たけど、今回は室内だけによりの感はあった。そして何よりもこのボーカルのフランがかっこよすぎるのよ（ちょっとデブなギターもかなり好きよ）。この人。女じゃなくても、俺が男
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Aug 2, 2003</div>
+		  <a class="title" href="/posts/2003/0801150629/">zebrahead</a> &mdash;
+		  <span class="description">
+			
+			 すげかった。しゃべるアメリカ人面白い。  
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Aug 2, 2003</div>
+		  <a class="title" href="/posts/2003/0801150627/">サマソニいってきたよ</a> &mdash;
+		  <span class="description">
+			
+			 去年に引き続き サマソニ行ってきました。 8月2日＠東京です。  最終発表の打ち上げから直接（軽く家に短パンとりに行ったけど）幕張へ  
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Aug 2, 2003</div>
+		  <a class="title" href="/posts/2003/0801150628/">観覧順</a> &mdash;
+		  <span class="description">
+			
+			 スカパラ→ハイロウズ→CHEAP TRICK→NEW FOUND GLORY→zebrahead→TRAVIS→blur(ほんのちょっと)  天気がよかったので、普通に日焼けした   
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Aug 1, 2003</div>
+		  <a class="title" href="/posts/2003/0731150622/">2003年春学期奥出研最終発表終了</a> &mdash;
+		  <span class="description">
+			
+			 僕が所属している 奥出研 の最終発表が終わりました。できたものはちゃんとこれから、みなさんが使えるようにしたいので、少々お待ちを。チームのみなさんありがとう。  僕の息子と娘たち   まさに 「奥出研の人は軍人のようだ」    ヨシムが提
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Aug 1, 2003</div>
+		  <a class="title" href="/posts/2003/0731150624/">その①コロナ</a> &mdash;
+		  <span class="description">
+			
+			 ライムもちゃんとついているコロナを最終発表の打ち上げて、くれて一気飲みさせてくれた。 
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Aug 1, 2003</div>
+		  <a class="title" href="/posts/2003/0731150625/">その②エプロン</a> &mdash;
+		  <span class="description">
+			
+			 来期の工房の時にはこのエプロンかけて工房長してください、とのこと。   
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Aug 1, 2003</div>
+		  <a class="title" href="/posts/2003/0731150626/">その③オリジナルCD-Rに入った、ビデオメッセージ</a> &mdash;
+		  <span class="description">
+			
+			 まじ萌えだね。 
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Aug 1, 2003</div>
+		  <a class="title" href="/posts/2003/0731150623/">和田工房のみなさんから愛のこもったプレゼントもらいました</a> &mdash;
+		  <span class="description">
+			
+			
+			
+		  </span>
+		</div>
+		
+		
+
+<ul class="pagination">
+	<li class="page-item page-prev">
+	
+    <a href="/page/179/" class="page-link" aria-label="Previous"><span aria-hidden="true">← Prev page</span></a>
+	
+	</li>
+	<li class="page-item page-next">
+	
+    <a href="/page/181/" class="page-link" aria-label="Next"><span aria-hidden="true">Next page →</span></a>
+	
+	</li>
+</ul>
+
+
+	  </div>
+	</div>
+  </div>
+  <div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright yusukebe.com |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-492497-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

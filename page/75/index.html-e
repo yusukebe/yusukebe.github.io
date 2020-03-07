@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="generator" content="Hugo 0.63.2" />
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="alternate" type="application/rss+xml" href="https://yusukebe.com/index.xml" title="ゆーすけべー日記" />
+	<meta property="og:title" content="ゆーすけべー日記" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://yusukebe.com/" />
+<meta property="og:image" content="https://yusukebe.com/icons/myicon.png"/>
+<meta property="og:updated_time" content="2020-03-06T15:46:50+09:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://yusukebe.com/icons/myicon.png"/>
+
+<meta name="twitter:title" content="ゆーすけべー日記"/>
+<meta name="twitter:description" content=""/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
+	
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://yusukebe.com/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+  <div class="container wrapper">
+	<div class="header">
+	<h1 class="site-title"><a href="https://yusukebe.com/">ゆーすけべー日記</a></h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/yusukebe" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/yusukebe" title="Twitter"><i data-feather="twitter"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+	<div class="recent-posts section">
+	  <h2 class="section-header">
+		Recent posts
+	  </h2>
+	  <div class="posts">
+		
+		
+		
+		<div class="post">
+		  <div class="meta">Jan 1, 2007</div>
+		  <a class="title" href="/posts/2007/0101032014/">2007年あけましておめでとうございます</a> &mdash;
+		  <span class="description">
+			
+			   あけましておめでとうございます。    いつの間にか気づいたら新年、2007年ですね。  昨年は後厄でしたので、それが明けた今年はいい年になるという「根拠の無い確信」を持っているので楽しみな年でございます。今年もよろしくお願いいたしま
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Dec 31, 2006</div>
+		  <a class="title" href="/posts/2006/1231093819/">フットサルFFC 準優勝！</a> &mdash;
+		  <span class="description">
+			
+			 我らがフットサルチーム「Regunary」、毎年大晦日恒例の「ファイナルファイヤーカップ＠ミズノフットサルプラザ藤沢」のビギナークラスに出場し、念願の準優勝を果たしました。優勝こそ逃したものの、Regunaryでは発足以来の最高順位です。
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Dec 27, 2006</div>
+		  <a class="title" href="/posts/2006/1227011709/">今日の富士山</a> &mdash;
+		  <span class="description">
+			
+			   昨日の豪雨が過ぎ去って、今日の富士山は綺麗です。     
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Dec 17, 2006</div>
+		  <a class="title" href="/posts/2006/1217075226/">winny判決についてうちのばあちゃんが</a> &mdash;
+		  <span class="description">
+			
+			   隣のばあちゃんの家にいったら、そのばあちゃんがwinny開発者の有罪判決について語りだした。  そしてこう言った。     「頭がよくて、新しいものを作った人を捕まえたら、なんにもなんないね」     ばあちゃんすげえ。 
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Dec 15, 2006</div>
+		  <a class="title" href="/posts/2006/1215000555/">HANABI - 鎌倉長谷にあるラーメン屋</a> &mdash;
+		  <span class="description">
+			
+			   この前、鎌倉の長谷に去年開店したラーメン屋「HANABI」へ1年ぶりにいってきた。  場所はここ。  やっぱりうまい。スープが魚介系と動物系のミックスで、俺の好み。  それでもって、具がそれぞれ大きくてボリュームがある。    (左)
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Dec 14, 2006</div>
+		  <a class="title" href="/posts/2006/1214133236/">Amazon.co.uk</a> &mdash;
+		  <span class="description">
+			
+			   Amazonでも動画を使ったプロモーションをしだしたみたい。  今、「Amazon UK」＞「Music」＞「Rock」の一番下あたりで  オアシスのライブ映像が見れる(Stop the Clocksのプロモーション)。  このMor
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Dec 13, 2006</div>
+		  <a class="title" href="/posts/2006/1213003807/">「文章表現400字からのレッスン」</a> &mdash;
+		  <span class="description">
+			
+			   自分にしか作れない「よい文章」を書くための心得を、400字からのレッスン形式で学んでいける本。  著者は大学の講師でありその講義が元になっているようだ。レッスンは「最初の記憶」、「水の入ったコップ」、「私の出会った人物」といったテーマ
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Dec 12, 2006</div>
+		  <a class="title" href="/posts/2006/1211232914/">「エンジニアのための時間管理術」</a> &mdash;
+		  <span class="description">
+			
+			   サクサク読めて面白い本だった。  邦題には「エンジニアのための」となっているが原題は「Time　Management　for　System Administrators」。本来はSA(システム・アドミニストレータ)のために書かれた時間
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Dec 11, 2006</div>
+		  <a class="title" href="/posts/2006/1211034435/">第4回裏箱根駅伝走破！</a> &mdash;
+		  <span class="description">
+			
+			   いやー下半身が痛くて動けねぇ。    昨日、第4回を迎える裏箱根駅伝にフットサルチーム「Regunary」で出場し、走ってきました。  裏箱根駅伝とは簡単に説明すると、箱根駅伝を見てるだけじゃなくて実際に走ってみたいと思っている人たち
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Dec 9, 2006</div>
+		  <a class="title" href="/posts/2006/1209121237/">明日は第4回裏箱根駅伝</a> &mdash;
+		  <span class="description">
+			
+			   いよいよ年末ということで恒例のイベントラッシュです。  明日(10日)は第4回裏箱根駅伝にチームRegunaryで出場します。   裏箱根駅伝     出場区間のオーダーが今日やっと決まったというほど準備があんまり整っていない状況、 
+			
+		  </span>
+		</div>
+		
+		
+
+<ul class="pagination">
+	<li class="page-item page-prev">
+	
+    <a href="/page/74/" class="page-link" aria-label="Previous"><span aria-hidden="true">← Prev page</span></a>
+	
+	</li>
+	<li class="page-item page-next">
+	
+    <a href="/page/76/" class="page-link" aria-label="Next"><span aria-hidden="true">Next page →</span></a>
+	
+	</li>
+</ul>
+
+
+	  </div>
+	</div>
+  </div>
+  <div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright yusukebe.com |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-492497-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

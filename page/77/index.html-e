@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="generator" content="Hugo 0.63.2" />
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="alternate" type="application/rss+xml" href="https://yusukebe.com/index.xml" title="ゆーすけべー日記" />
+	<meta property="og:title" content="ゆーすけべー日記" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://yusukebe.com/" />
+<meta property="og:image" content="https://yusukebe.com/icons/myicon.png"/>
+<meta property="og:updated_time" content="2020-03-06T15:46:50+09:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://yusukebe.com/icons/myicon.png"/>
+
+<meta name="twitter:title" content="ゆーすけべー日記"/>
+<meta name="twitter:description" content=""/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
+	
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://yusukebe.com/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+  <div class="container wrapper">
+	<div class="header">
+	<h1 class="site-title"><a href="https://yusukebe.com/">ゆーすけべー日記</a></h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/yusukebe" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/yusukebe" title="Twitter"><i data-feather="twitter"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+	<div class="recent-posts section">
+	  <h2 class="section-header">
+		Recent posts
+	  </h2>
+	  <div class="posts">
+		
+		
+		
+		<div class="post">
+		  <div class="meta">Nov 29, 2006</div>
+		  <a class="title" href="/posts/2006/1129004356/">「オープンソースがなぜビジネスになるのか」</a> &mdash;
+		  <span class="description">
+			
+			   「なぜビジネスになるのか」という問いがタイトルに入っているが、内容はオープンソースの過去、現状、そして簡単にこれからの指標を示すといった内容の新書。   		  			  			  オープンソースがなぜビジネスになるのか	   		 
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Nov 28, 2006</div>
+		  <a class="title" href="/posts/2006/1127225650/">鎌倉山の松田優作</a> &mdash;
+		  <span class="description">
+			
+			   最近特にこちらからアクションをとらなくてもいろいろな人に会ったり、面白い依頼が来る。  もて期なのかもしれないな。昨日は鎌倉山の松田優作にあってきた。        写真にモザイクがかかっている通り、彼のプライベートな情報をネットに公
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Nov 27, 2006</div>
+		  <a class="title" href="/posts/2006/1127001346/">Amazonで6万円分本を買う</a> &mdash;
+		  <span class="description">
+			
+			   Amazonで6万円分本を買った。ダンボールがやはりでかくて重い。  「初任給がでたので」シリーズはこれで終わりです。        部屋に本が納まらなくなってきたー。部屋を飛び出していよいよ廊下にでも本棚を作るか。 
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Nov 26, 2006</div>
+		  <a class="title" href="/posts/2006/1126120015/">「親子で紐解くWeb2.0」Planetサイト</a> &mdash;
+		  <span class="description">
+			
+			   とりあえずPlagger使って、親父と俺の記事をまとめてみた→親子で紐解くWeb2.0           
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Nov 26, 2006</div>
+		  <a class="title" href="/posts/2006/1126060330/">「親子で紐解くWeb2.0」実践編その1</a> &mdash;
+		  <span class="description">
+			
+			   さて、だんだんと我が父もWebの世界に飛び込みだしたようなので  以前から企画していた「親子で紐解くWeb2.0」をやっていきます。  以下が企画書(？)です。         ゆーすけべー日記: 「親子で紐解くWeb2.0(仮)」の
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Nov 26, 2006</div>
+		  <a class="title" href="/posts/2006/1126004720/">電子ケトル「ティファール アプレシア0.8L」</a> &mdash;
+		  <span class="description">
+			
+			   「初任給が出たので」シリーズ、  といってもいつの間にか2度目の給料が入る時期なのであんま価値がなくなってしまった感があるけども紹介。    ティファールの電子ケトル、「ティファール アプレシア0.8L」買いました。  そんな高くない
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Nov 25, 2006</div>
+		  <a class="title" href="/posts/2006/1125025459/">偶然。6年ぶりに高校の同級生に会う</a> &mdash;
+		  <span class="description">
+			
+			   ORF初日の帰り、疲れていたのと好奇心から、たぶん人生初なんじゃないかと思われるグリーン車に乗ってみた。あれ座席ついたらSuicaを真上のリーダーに「ピッ」ってやればいいんだね。ちょっと戸惑ったよ。  それで座席が快適だったので、横浜
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Nov 24, 2006</div>
+		  <a class="title" href="/posts/2006/1124144818/">ORF2006 2日目 終了！</a> &mdash;
+		  <span class="description">
+			
+			   学生でもなく現在全く学校とは関係がない僕ですが、展示の説明要員として参加したORF2006@丸の内、無事終了しました。moo-pongは2年連続のORF出展で、他の展示会にもかなり出ているので、来場者の方々からすれば「またこれか」と思
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Nov 23, 2006</div>
+		  <a class="title" href="/posts/2006/1122215134/">ORF2006 1日目</a> &mdash;
+		  <span class="description">
+			
+			   丸の内で開催されている「SFC OPEN RESEARCH FORUM(＝ORF) 2006」の1日目が終了しました。  去年までは六本木ヒルズで開催されていて、会場の勝手がなかなか都合よかったのですが、  今回は会場が3つに分散され
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Nov 21, 2006</div>
+		  <a class="title" href="/posts/2006/1121125223/">ORF2006にmoo-pongを出展します</a> &mdash;
+		  <span class="description">
+			
+			 明日11月22日(水)、23日(木・休日)に丸の内で開催される慶應塾大学湘南藤沢キャンパス＝SFCの研究発表イベント「SFC OPEN RESEARCH FORUM(＝ORF) 2006」に僕と愉快な仲間たちで作った「映像の万華鏡 moo
+			
+		  </span>
+		</div>
+		
+		
+
+<ul class="pagination">
+	<li class="page-item page-prev">
+	
+    <a href="/page/76/" class="page-link" aria-label="Previous"><span aria-hidden="true">← Prev page</span></a>
+	
+	</li>
+	<li class="page-item page-next">
+	
+    <a href="/page/78/" class="page-link" aria-label="Next"><span aria-hidden="true">Next page →</span></a>
+	
+	</li>
+</ul>
+
+
+	  </div>
+	</div>
+  </div>
+  <div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright yusukebe.com |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-492497-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

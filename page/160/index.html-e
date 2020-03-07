@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="generator" content="Hugo 0.63.2" />
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="alternate" type="application/rss+xml" href="https://yusukebe.com/index.xml" title="ゆーすけべー日記" />
+	<meta property="og:title" content="ゆーすけべー日記" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://yusukebe.com/" />
+<meta property="og:image" content="https://yusukebe.com/icons/myicon.png"/>
+<meta property="og:updated_time" content="2020-03-06T15:46:50+09:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://yusukebe.com/icons/myicon.png"/>
+
+<meta name="twitter:title" content="ゆーすけべー日記"/>
+<meta name="twitter:description" content=""/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
+	
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://yusukebe.com/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+  <div class="container wrapper">
+	<div class="header">
+	<h1 class="site-title"><a href="https://yusukebe.com/">ゆーすけべー日記</a></h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/yusukebe" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/yusukebe" title="Twitter"><i data-feather="twitter"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+	<div class="recent-posts section">
+	  <h2 class="section-header">
+		Recent posts
+	  </h2>
+	  <div class="posts">
+		
+		
+		
+		<div class="post">
+		  <div class="meta">Jan 25, 2004</div>
+		  <a class="title" href="/posts/2004/0125093614/">kamawada鯖ハードウェア点検整備による障害が発生しております</a> &mdash;
+		  <span class="description">
+			
+			 これあと5分後（7時50分）くらいから始めます。  ユッケ 題名の通りです。  ウェブサーバーなどが動いているコミュニケーションサーバー 名前：com.kamawada.com をただいまハードウェア点検、整備（アップグレードを含む）のた
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jan 25, 2004</div>
+		  <a class="title" href="/posts/2004/0125084705/">深沢にあるちゃんぽん屋、三成號</a> &mdash;
+		  <span class="description">
+			
+			 私の地元、鎌倉 深沢に突如出現した（もう結構前だけど）ちゃんぽん屋・三成號（サンセイゴウ）。バスやモノレールなどを利用しようと自宅を出て坂を下り、下り終わったなぁと思うと異様な黄色いお店ですぐわかる。小腹がすいたので今日は立ち寄ってみよう
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jan 25, 2004</div>
+		  <a class="title" href="/posts/2004/0124155850/">旧日記をインポート、完全移行達成</a> &mdash;
+		  <span class="description">
+			
+			 Hyper NIKKI Systemで運営してた旧日記のデータをMovableTypeで運用しているこの新ゆーすけべー日記（yusukebe.com）へインポートすることについさきほど達成した。  やり方は HNS独自のフォーマットで書か
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jan 25, 2004</div>
+		  <a class="title" href="/posts/2004/0124152104/">やっちまったー＠旧日記をインポート中</a> &mdash;
+		  <span class="description">
+			
+			 結局2日かかってやっている旧日記のインポート。  いよいよMTのフォーマットにそろえてインポートだ！と読み込ませてみたら、インポートファイルの文字コードがEUCのまま。このサイトはUTF-8。変換はやってくれない。ガーン。 文字化けしまく
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jan 25, 2004</div>
+		  <a class="title" href="/posts/2004/0124161919/">熱海が次回「出没！アド街ック天国」に</a> &mdash;
+		  <span class="description">
+			
+			 次回の出没！アド街ック天国は熱海。  熱海は団子さんの実家があるところで去年の夏ナタミという企画で16日間滞在したところ！  予告編でナタミ最後の日にいったアタパラカフェからみたっぽい風景や石川屋のオムライスっぽいものが映ってたYO！  
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jan 24, 2004</div>
+		  <a class="title" href="/posts/2004/0124070412/">test for import from hns</a> &mdash;
+		  <span class="description">
+			
+			 旧日記をインポートするためのテストです。   サブタイトル  サブタイトルの中身 ほほ ほほ ほほ  サブタイトル  サブタイトルの中身 ほほ ほほ ほほ 
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jan 24, 2004</div>
+		  <a class="title" href="/posts/2004/0124064120/">卒業できない夢を見た</a> &mdash;
+		  <span class="description">
+			
+			 怖かった。親父とかに謝ってた。  正夢、そりゃないよな。 
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jan 23, 2004</div>
+		  <a class="title" href="/posts/2004/0123132938/">大きすぎてメモ帳では開けません</a> &mdash;
+		  <span class="description">
+			
+			   とある３００MBほどのログファイルを開こうとしたらこうなった。  xyzzyだと開けた。さすがだ。 
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jan 23, 2004</div>
+		  <a class="title" href="/posts/2004/0123122035/">俺のちくびに触るなよ</a> &mdash;
+		  <span class="description">
+			
+			 パソコンの中身点検してたらこんなの出てきた。    
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jan 23, 2004</div>
+		  <a class="title" href="/posts/2004/0123100711/">KASHMIR ZITILITES</a> &mdash;
+		  <span class="description">
+			
+			 最近車に乗る機会がないので、CDを聴く機会があまりない、だからあまりCDへの購買意欲がわかない。とはいうもののCD屋にいったので買ってしまった。  デンマーク出身KASHMIRのシティライツ  Kashmir - Gallery←このRo
+			
+		  </span>
+		</div>
+		
+		
+
+<ul class="pagination">
+	<li class="page-item page-prev">
+	
+    <a href="/page/159/" class="page-link" aria-label="Previous"><span aria-hidden="true">← Prev page</span></a>
+	
+	</li>
+	<li class="page-item page-next">
+	
+    <a href="/page/161/" class="page-link" aria-label="Next"><span aria-hidden="true">Next page →</span></a>
+	
+	</li>
+</ul>
+
+
+	  </div>
+	</div>
+  </div>
+  <div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright yusukebe.com |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-492497-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

@@ -1,0 +1,197 @@
++++
+Categories = ["tech"]
+Description = " @shinotraさんが先日行われたHokkadio.pm #9で面白いことを発表してました。その一つがATNDのイベント参加者の名刺画像を自動生成するというモノ。神奈川にいながら北海道の熱気を感じつつ、昔同じようなことを「Faceboo"
+Tags = ["Perl", "Technologies", "Facebook"]
+date = "2013-03-11T14:00:00+09:00"
+title = "Facebookイベント参加者の名刺画像を自動生成！"
+author = "kamawada"
+archive = ["2013"]
+draft = false
++++
+
+
+<p><a href="http://twitter.com/shinotra">@shinotra</a>さんが先日行われた<a href="http://hokkaido.pm.org/event/hokkaidopm9_1.html">Hokkadio.pm #9</a>で<a href="http://www.slideshare.net/tohrushinohara/upl-17053238">面白いこと</a>を発表してました。その一つがATNDのイベント参加者の名刺画像を自動生成するというモノ。神奈川にいながら北海道の熱気を感じつつ、昔同じようなことを「Facebookのイベントを対象に」やったなーと思って、もう一度最初から書き直してみました。イベント参加者のリストを取得し、名刺っぽい画像を出力するって代物です。Facebookでの認証処理から画像生成まで興味深いポイントを含んだWebアプリになったので、つくる行程から解説してみます。</p>
+
+<p>ちなみに実装はPerl、WebフレームワークにはMojoliciousを使っていますが、他の言語でも流れは同じなので参考にしてください。</p>
+
+<h3>Facebook認証を行う</h3>
+
+<p>まず、Facebookから情報を取得するためにアプリケーション登録をします。
+「facebook developers」のページからそれが出来るのでその後以下の文字列を取得します。</p>
+
+<ul>
+<li>アプリID</li>
+<li>アプリのシークレットキー</li>
+</ul>
+
+
+<p>PerlでFacebookのAPIを扱うには、内部実装は置いておいてw <a href="http://search.cpan.org/dist/Facebook-Graph/">Facebook::Graph</a>というモジュールが便利です。使い方はこんな感じ。</p>
+
+<p>アプリIDとシークレットキーを指定してインスタンスを作成。postback パラメータってのはFacebookの認証画面に行った後に戻ってくるアプリケーションのパスを指定する。</p>
+
+<pre> use Facebook::Graph;
+
+my $fb = Facebook::Graph-&gt;new(
+    app_id =&gt; 'your_app_id',
+    secret =&gt; 'your_secret',
+    postback =&gt; 'http://localhost:3000/callback'
+);
+ </pre>
+
+<p>Facebook側で認証するためのURLを作成する。基本的に「/login」とかそういうパスにアクセスされたら、この「$uri」へリダレイクトさせる。</p>
+
+<pre> my $uri = $fb-&gt;authorize-&gt;extend_permissions(qw/user_events/)-&gt;uri_as_string;
+ </pre>
+
+<p>インスタンス作成時に postback で指定したパスへユーザーがリダイレクトされるので、その時にくっついていてくる code パラメータを食わせると access_token が取得可能になる。access_token の文字列などはセッションで覚えておくと吉。</p>
+
+<pre> $fb-&gt;request_access_token($self-&gt;req-&gt;param('code'));
+my $access_token = $fb-&gt;access_token;
+ </pre>
+
+<p>次回以降Facebook APIへアクセスするにはセッションから access_token を取得し、access_token メソッドの引数に渡しておく。</p>
+
+<pre> $fb-&gt;access_token($access_token);
+ </pre>
+
+<p>これを踏まえて、Mojolicious::Liteでの実装はこんな感じになります。helperでFacebook::Graphのインスタンスを取得する「fb」メソッドをはやしていますが、ここはもう少し工夫できるかもですね。</p>
+
+<pre> #!/usr/bin/env perl
+use Mojolicious::Lite;
+use Facebook::Graph;
+
+helper 'fb' =&gt; sub {
+    my $c = shift;
+    Facebook::Graph-&gt;new(
+        app_id   =&gt; 'your_app_id',
+        secret   =&gt; 'your_secret',
+        postback =&gt; $c-&gt;req-&gt;url-&gt;base . '/callback',
+    );
+};
+
+get '/' =&gt; sub {
+    my $self = shift;
+    my $user;
+    if ( my $access_token = $self-&gt;session('access_token') ) {
+        my $fb = $self-&gt;fb;
+        $fb-&gt;access_token($access_token);
+        $user = $fb-&gt;fetch('me');
+    }
+    $self-&gt;stash-&gt;{user} = $user;
+    $self-&gt;render('index');
+};
+
+get '/login' =&gt; sub {
+    my $self = shift;
+    my $fb   = $self-&gt;fb;
+    my $uri =
+      $fb-&gt;authorize-&gt;extend_permissions(qw/user_events/)-&gt;uri_as_string;
+    $self-&gt;redirect_to($uri);
+};
+
+get '/callback' =&gt; sub {
+    my $self = shift;
+    my $fb   = $self-&gt;fb;
+    $fb-&gt;request_access_token( $self-&gt;req-&gt;param('code') );
+    $self-&gt;session( 'access_token', $fb-&gt;access_token );
+    $self-&gt;redirect_to('/');
+};
+
+get '/logout' =&gt; sub {
+    my $self = shift;
+    $self-&gt;session( 'access_token', undef );
+    $self-&gt;redirect_to('/');
+};
+
+app-&gt;start;
+__DATA__
+
+@@ index.html.ep
+% if ($user) {
+   Hi!, &lt;%= $user-&gt;{name} %&gt; &lt;br /&gt;
+   &lt;a href="/logout"&gt;Logout&lt;/a&gt;
+% }else{
+  &lt;a href="/login"&gt;Login&lt;/a&gt;
+% }
+ </pre>
+
+<h3>APIから情報を取得する</h3>
+
+<p>Facebook APIはイベントのIDさえ分かれば「/{event_id}/invited」というパスにアクセスしてそのイベントに招待されているユーザーのリストを得る事が出来ます。IDをWebのフォームから入力してもらい、ユーザーリストを出力してみます。</p>
+
+<pre> get '/list' =&gt; sub {
+    my $self = shift;
+    my $access_token = $self-&gt;session('access_token') or $self-&gt;redirect_to('/');
+    my $fb = $self-&gt;fb;
+    $fb-&gt;access_token($access_token);
+    my $after_id = '';
+    my $users = [];
+    while (1) {
+        my $res =
+          $fb-&gt;query-&gt;find( $self-&gt;req-&gt;param('id') . '/invited' )
+          -&gt;where_until($after_id)-&gt;request-&gt;as_hashref;
+        my ($id) = $res-&gt;{paging}{next} =~ m!__after_id=([0-9]+)!;
+        last if $after_id eq $id;
+        push @$users, @{ $res-&gt;{data} };
+        $after_id = $id;
+    }
+    $self-&gt;stash-&gt;{users} = $users;
+};
+ </pre>
+
+<p>ページネーションを考慮している上、その処理を正規表現で行ってるのでややこしい感じですが、
+これでユーザーのリストをテンプレートへ渡すことが出来ます。Facebook::Graph::Query で情報取得の条件を決めています。</p>
+
+<h3>画像を出力する</h3>
+
+<p>さて、いよいよユーザーごとに画像を出力します。サクッと実装するためにこのような仕様しました。</p>
+
+<ul>
+<li>画像は名刺サイズのPNG形式で出力する</li>
+<li>画像に載せる要素はFacebookに登録しているアイコンと名前のみ</li>
+<li>/card/{user_id} というパスにアクセスするとWebアプリからIDで指定されたユーザーの画像が出力される</li>
+</ul>
+
+
+<p>画像を生成するのにImagerというライブラリを使ってみます。</p>
+
+<pre> get '/card/:id' =&gt; sub {
+    my $self = shift;
+    my $fb = $self-&gt;fb;
+    my $user = $fb-&gt;fetch($self-&gt;stash-&gt;{id});
+    my $picture_url = $fb-&gt;picture($user-&gt;{id})-&gt;uri_as_string;
+    my $ua = LWP::UserAgent-&gt;new;
+    my $res = $ua-&gt;get($picture_url);
+    my $content = $res-&gt;content;
+    my $image = Imager-&gt;new( xsize =&gt; 345, ysize =&gt; 209 );
+    $image-&gt;box( filled =&gt; 1, color =&gt; Imager::Color-&gt;new('#3b5998') );
+    my $picture = Imager-&gt;new( data =&gt; $content );
+    $image-&gt;paste( left =&gt; 30, top =&gt; 30, src =&gt; $picture );
+    my $font = Imager::Font-&gt;new( file =&gt; 'ipagp.ttf' );
+    $image-&gt;string(
+        x      =&gt; 25,
+        y      =&gt; 140,
+        string =&gt; $user-&gt;{name},
+        utf8   =&gt; 1,
+        font   =&gt; $font,
+        size   =&gt; 38,
+        aa     =&gt; 1,
+        color  =&gt; '#ffffff'
+    );
+    my $data;
+    $image-&gt;write( data =&gt; \$data, type =&gt; 'png' );
+    $self-&gt;render_data( $data, format =&gt; 'png' );
+};
+ </pre>
+
+<p>出来た画像はこちら。</p>
+
+<p><img alt="631255029.png" src="http://yusukebe.com/archives/2013/03/11/631255029.png" width="345" height="209" class="mt-image-none" style=""></p>
+
+<p>背景色として「#3b5998」を指定してFacebookっぽく雰囲気を出していますw
+この場合直接Webアプリから画像を配信していますが、ローカルに画像を書き出してごにょごにょしてもよいですね。</p>
+
+<h3>まとめ</h3>
+
+<p>実際この「Facebookイベント参加者の名刺画像を自動生成する」というユースケースは以前行われたとある集まりでも使われたもので、似たようなコードを書いて非常に実用的なものでした。<a href="http://telegnosis.orz.hm/atndnamecard/index.cgi">@shinotraさんのATND参加者から...</a> というのもニーズは結構ありそうなので応援したいところです！こういう応用的、つまりアプリケーションよりのプログラミング、個人的にガンガンやりましょう！って思っています。</p>
+

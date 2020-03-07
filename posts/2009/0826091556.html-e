@@ -1,0 +1,115 @@
++++
+Categories = ["tech"]
+Description = " 本来なら机の次は、メインのクライアントマシン Mac mini や ディスプレイを扱おうと思ったんですが、TAKESAKO さん曰く「ls ~」を晒すのが流行っているらしいので、「マイ ls ~ 」を晒しつつ、開発用として使っているサーバ"
+Tags = []
+date = "2009-08-26T18:15:00+09:00"
+title = "マイデスクトップその2「開発用サーバ、ls ~」編"
+author = "kamawada"
+archive = ["2009"]
+draft = false
++++
+
+
+<p>
+本来なら机の次は、メインのクライアントマシン Mac mini や ディスプレイを扱おうと思ったんですが、
+<a href="http://d.hatena.ne.jp/TAKESAKO/20090826/1251272210">TAKESAKO さん曰く「ls ~」を晒すのが流行っているらしい</a>
+ので、
+「マイ ls ~ 」を晒しつつ、開発用として使っているサーバの紹介します。
+</p>
+<p>
+サーバと言ってもこれも昨日紹介した机に載っています。
+Shuttle の X27D という 4コアな Atom CPU のべアボーンに SSD 入れたものです。
+写真にあるポカリの中身が透明なのは気にしないでください。
+</p>
+<p>
+<img alt="x27d" class="at-xid-6a0133f4781589970b015435b6f44d970c" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015435b6f44d970c-pi">
+</p>
+<p>
+なんで Mac あるのにそっちで開発しないの？って感じですが、
+どうも debian etch が好きなのか、本番環境と揃えてテストしたいから、いろいろ自由に実験したいからか、
+なんとなく Mac mini の Terminal からいつもこのマシンにログインして開発してます。
+そしてこの開発機のホームディレクトリはさらに納戸にあるファイルサーバのNFSをマウントしているという具合です。
+べアボーン自体は2万円程度で手に入り、かつ消費電力もそんな高い、性能もちょっと emacs の立ち上がりがもっさりかなって
+ぐらいで慣れれば気にならない。そしてもちろん、机に載るほど小さいという点でお気に入りです。
+</p>
+<p>
+さて、ではホームディレクトリで ls してみましょう。
+</p>
+<pre class="brush: perl"> yusuke@dev:~$ ls
+Desktop  changelogmemo  lab                public_html  src   wadit
+Maildir  documents      lib                repos        temp  work
+bin      groups         memcache-top-v0.6  shipit-dist  text  www
+ </pre>
+<p>
+memcache-top がなぜか直下にあるくらいで、特に面白い点はないですね。
+というのも、開発中のコードとかは全て ~/work 以下にディレクトリを掘って置いてあります。
+では、その work ディレクトリを、なんかヤバそうなのがありそうだけど、
+それは無視する方向で公開してみましょう。
+</p>
+<pre class="brush: perl"> yusuke@dev:~$ ls ~/work
+1981s             coolyourfilehost      kc             sugokuii
+AtodeYomu         coro                  kensakuplayer  takumi
+Bokudana          daratwit              kuneo          tansan
+CarTube           dmm                   lastlyrics     teletter
+CatalystTutorial  eacon                 lazy-people    temp
+Erohoo            ec2                   listpod        test
+Filter            ero                   localize       tinyshelf
+HateDigg          erocheck              log            tmpdir
+Imager            erogeek               mail           tombloo
+ItsEroi           erolyst               marionet       toolbar
+MinBuyo           fastladder            metacast       tubeero
+Netaviser         fc2                   misc           tumblr
+Niconorati        ffmpeg                miyagawanize   twib
+PinkRotor         figlet                mobilecat      twitter
+Questa            flash                 mojo           unews
+RimoChanMaker     flickr                moo-pong       urasukebe
+Shibuya.pm        flv                   moxy           vaginarepos
+ZonTube           flv2mpeg4             niconico       veoh
+ad                form                  nttgadgets     veohmp4
+adsense           fujigadgets           nuita4         video
+amapaper          getwmv                old            vmware
+amazon            getyourfile           others         vure
+angelos           getyourlinks          pastgig        whofilehost
+aniime            google_video          perl           whoseface
+apache            google_visualization  plagger        wifigadgets
+api               gungho                pligg          wikipedia
+as                hadoop                presen         xen
+assets            http-engine           python         xml
+atube             iddle                 q4m            yaml
+backlink          iddlr                 recommend      yappo
+backup            idolfiles             remedie        yokohama.pm
+benchmark         ikenai                ruby           youravhost
+bing              ikuvideo              s3             youravphoto
+bingbing          image_seek            sammy          yourfilehost
+bokete            ipnuts                satsucolla     yourfileplayer
+bot               ircbot                scraper        yourradio
+bpm               itms                  selenium       youtube
+catalyst          java                  servision      youtubemp4
+cdtube            js                    sesame         yusukebe
+chumby            jw_player             sicp
+coderepos         kailas                skype
+coderepos_con     kamawada              ssb
+ </pre>
+
+<p>
+はい。なんか恥ずかしいですね。
+ということで、開発用サーバ及びホームディレクトリ晒しでしたー。
+次回の「マイデスクトップ」もお楽しみに。
+</p>
+<br>
+<div>
+<div style="float:left"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B001PS2B1W/kamawada-22/"><img alt="X27D Shuttle 正規代理店版 ベアボーンPC" src="http://ecx.images-amazon.com/images/I/31XGmGB3VCL._SL160_.jpg" style="border:none;"></a></div>
+<div style="float:left;margin-left:15px;">
+<div style="font-size:12pt"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B001PS2B1W/kamawada-22/">X27D Shuttle 正規代理店版 ベアボーンPC</a></div>
+<div style="font-size:7pt;font-family:verdana;">posted with <a href="http://yusukebe.com/b/amazon/search/">yusukebe.com::AmazonSearch</a> on 2009.8.26</div>
+<div style="font-size:10pt;">
+<ul style="list-style-type:none;padding:0;">
+<li> / Shuttle </li>
+<li>Amazon 売り上げランキング: 101946</li>
+</ul>
+<a href="http://www.amazon.co.jp/Shuttle-X27D-%E6%AD%A3%E8%A6%8F%E4%BB%A3%E7%90%86%E5%BA%97%E7%89%88-%E3%83%99%E3%82%A2%E3%83%9C%E3%83%BC%E3%83%B3PC/dp/B001PS2B1W%3FSubscriptionId%3D0VEY2A9SVSFB81NQ9HG2%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB001PS2B1W">Amazon.co.jpで詳細を見る</a>
+</div>
+</div>
+<div style="clear:left;"></div>
+</div>
+

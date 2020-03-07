@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>はてブしたYoutube動画をPlaggerでダウンロード＆PodcastしてiPod nanoで見るライフハック(？)はすごくいい - ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="はてブしたYoutube動画をPlaggerでダウンロード＆PodcastしてiPod nanoで見るライフハック(？)はすごくいい" />
+<meta property="og:description" content=" 以前書いた記事「  ゆーすけべー日記: Plaggerでニコニコ動画を一括ダウンロード＆変換 Podcast を生成して iPod touch で見る - 2007年11月最新版」で実際にできることを確認し可能性を感じた、「動画共有サイト" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yusukebe.com/posts/2007/1127122931/" />
+<meta property="og:image" content="https://yusukebe.com/icons/myicon.png"/>
+<meta property="article:published_time" content="2007-11-27T21:29:00+09:00" />
+<meta property="article:modified_time" content="2007-11-27T21:29:00+09:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://yusukebe.com/icons/myicon.png"/>
+
+<meta name="twitter:title" content="はてブしたYoutube動画をPlaggerでダウンロード＆PodcastしてiPod nanoで見るライフハック(？)はすごくいい"/>
+<meta name="twitter:description" content=" 以前書いた記事「  ゆーすけべー日記: Plaggerでニコニコ動画を一括ダウンロード＆変換 Podcast を生成して iPod touch で見る - 2007年11月最新版」で実際にできることを確認し可能性を感じた、「動画共有サイト"/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
+	
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://yusukebe.com/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper post">
+		<div class="header">
+	<h1 class="site-title"><a href="https://yusukebe.com/">ゆーすけべー日記</a></h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/yusukebe" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/yusukebe" title="Twitter"><i data-feather="twitter"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post-header">
+			<h1 class="title">はてブしたYoutube動画をPlaggerでダウンロード＆PodcastしてiPod nanoで見るライフハック(？)はすごくいい</h1>
+			<div class="meta">Posted at &mdash; Nov 27, 2007</div>
+		</div>
+
+		<div class="markdown post-body">
+			
+
+<p>
+以前書いた記事「
+  <a href="http://yusukebe.com/archives/07/11/06/232959.html">ゆーすけべー日記: Plaggerでニコニコ動画を一括ダウンロード＆変換 Podcast を生成して iPod touch で見る - 2007年11月最新版</a>」で実際にできることを確認し可能性を感じた、「<strong>動画共有サイト＋Plagger＋iPod</strong>」 の組み合わせ。
+じゃあ実際に「できる」からと言って使うのか？というのがこういうハッキングではついてまわることだと思います。で、様々なパターンで試してみました。その結果、すごくいい組み合わせを見つけて実践しています。
+</p>
+
+<p>
+  <img alt="iPod nano" class="at-xid-6a0133f4781589970b015435b6ef1d970c" src="https://yusukebe.com/.a/6a0133f4781589970b015435b6ef1d970c-pi">
+</p>
+
+<p>
+最近仕事の関係上、週2〜3日、神奈川から都内へ電車で通うことになって電車での時間の使い方を考えるという機会に会っています。というのも個人的な話ですが、俺は生まれてこの方、電車通学・電車通勤というものをしたことがないのです。試行錯誤の上、ベストな時間の使い方はこうです。
+まず、行きはたいてい昼過ぎが多いので、車中シエスタ（昼寝）をして過ごします。
+で、帰り、例えば新橋から横浜までは小説やライトノベルなどの文庫本を読みます。
+俺が帰る時間はそこそこ混んでいて、手元が狭いので文庫本を持つのが精一杯です。
+すると丁度横浜につく頃にはだんだんと飽きてくるので、いよいよ iPod の登場です。
+iPod で Podcast に登録したアニメ
+（最近だと「電脳コイル」に夢中、最初は印象だけで「ぼくらの」のインパクトが薄い感じかなとか思っていたけど、第3話を見終わって、勇子が出てくるあたりから伏線張りまくりな感じにｗｋｔｋしっぱなし）を見ます。横浜−大船間は割りと空いているので iPod で堂々と映像見てても平気な雰囲気です。
+それに、大船からモノレールで帰る時間を合わせると丁度アニメ1話を見終わるというぴったりな時間配分になっております。
+</p>
+<p>
+  では、実際に「使っている」という具体的な「動画共有サイト＋Plagger＋iPod」のレシピはというと、以下です。
+</p>
+<ul>
+  <li>見たいYouTubeの映像を特定のタグをつけて（例: [forpodcast] ）、はてなブックマークしていく</li>
+  <li>その特定のタグのはてなブックマークのAtomフィードをPlaggerでSubscriptionする</li>
+  <li>Filter::AtomLinkRelatedでブックマーク先のYouTube映像のリンクを取得する</li>
+  <li>Filter::FetchEnclosure、以前の記事と同じようにFilter::FFmpegなどを使って動画のダウンロード、変換、Podcast化</li>
+  <li>iTunesで読み込ませる</li>
+  <li>
+<strong>iPod nano</strong> （！）に同期させる</li>
+</ul>
+<p>
+  そう、はてなブックマークを有効に活用することで、お気に入りのYouTubeの動画をPodcastに登録することを実現しています。以前の記事ではニコニコ動画の映像が素材でしたが、やはり欠けているビデオなどYouTubeの方にあったりするので最近はYouTubeが多いです。
+</p>
+
+<p>
+  <font size="2">はてなブックマークで特定のタグをつけたページ</font><br>
+  <img alt="iPod nano" class="at-xid-6a0133f4781589970b015435b6ef29970c" src="https://yusukebe.com/.a/6a0133f4781589970b015435b6ef29970c-pi">
+</p>
+
+<p>
+  <font size="2">タグ別にAtomフィードを出力してくれる</font><br>
+  <img alt="iPod nano" class="at-xid-6a0133f4781589970b015435b6ef2f970c" src="https://yusukebe.com/.a/6a0133f4781589970b015435b6ef2f970c-pi">
+</p>
+
+<p>
+  そして、最終的に見るのは新型 <strong>iPod nano</strong> がいい！のです。
+  ってか、俺、iPod touch 持っている癖に nano 持っているお！
+  ということで2つとも試した結果、iPod touch の大画面も捨てがたいところですが、
+  数十分片手で持ちながら見るにはやはり iPod nano の小ささがずいぶんと助かるものです。
+  それに、iPod nano の画面の大きさでも絵は十分追えます（アニメでしか検証していないのでドラマとかはどうなるかはわかりましぇん）。
+</p>
+
+<p>
+  <img alt="iPod nano" class="at-xid-6a0133f4781589970b015435b6ef7c970c" src="https://yusukebe.com/.a/6a0133f4781589970b015435b6ef7c970c-pi">
+</p>
+
+<p>
+以上のレシピを実現するためのPlaggerのconfigの例はこんな感じです。
+例のごとく、CodeReposにも置いておきました→<a href="http://coderepos.org/share/browser/config/plagger/yusukebe/hatebu-youtube2podcast.yaml">/config/plagger/yusukebe/hatebu-youtube2podcast.yaml - CodeRepos::Share - Trac</a>。
+</p>
+
+<pre class="brush: perl"> global:
+  assets_path: /path/to/assets/
+
+plugins:
+
+  - module: Subscription::Config
+    config:
+      feed:
+          - url: http://b.hatena.ne.jp/kamawada/atomfeed?tag=forpodcast
+
+  - module: Filter::AtomLinkRelated
+
+  - module: Filter::FindEnclosures
+  
+  - module: Filter::FetchEnclosure
+    config:
+      dir: /home/user/dir
+    rule:
+      module: Deduped
+      path: ./deduped.db
+
+  - module: Filter::FFmpeg
+    config:
+      command: /usr/bin/ffmpeg
+      ext: mp4
+      dir: /home/user/dir
+      encoding: utf8
+      extra_options: -coder 0 -level 13 -ac 2
+      options:
+        video_codec:         h264
+        bitrate:             600
+        audio_codec:         aac
+        audio_sampling_rate: 44100
+        audio_bit_rate:      128
+        frame_size:          432x320
+
+  - module: Filter::RewriteEnclosureURL
+    config:
+      rewrite:
+        - local: /home/user/dir
+          url: http://localhost/~user/dir
+
+  - module: Filter::Rule
+    rule:
+      expression: $args-&gt;{entry}-&gt;title($1) if $args-&gt;{entry}-&gt;title =~ /YouTube - (.*)/
+      
+  - module: Publish::Feed
+    config:
+      format: RSS
+      dir: /home/user/dir
+      filename: podcast.xml
+
+
+ </pre>
+
+<p>
+また、YouTubeだけじゃなくて、Veohという動画共有サイトのビデオも持ってきたかったので、
+Filter::FindEnclosuresのassetを書きました。これもまたCodeReposにアップしておきましたので、
+利用したい方は使ってください→<a href="http://coderepos.org/share/browser/lang/perl/plagger/assets/plugins/Filter-FindEnclosures/veoh.pl">/lang/perl/plagger/assets/plugins/Filter-FindEnclosures/veoh.pl - CodeRepos::Share - Trac</a>。
+</p>
+<p>
+てな感じで、はてブしたYoutubeやVeohの動画をPlaggerでダウンロード＆Podcast吐かせて、
+iPod nano で見るというライフハック（？）はすごくよくって普通に使えるよ、という話でした。
+iPod nano イイよ！（電脳コイルもいいね！見終わったらノベル買うお！）
+</p>
+
+<p></p>
+<div style="float:left"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B000IIKWM0/kamawada-22/"><img alt="Apple iPod nano 8GB ブラック MB261J/A" src="http://ecx.images-amazon.com/images/I/21%2B-zqgrIfL.jpg" style="border:none;"></a></div>
+<div style="float:left;margin-left:15px;">
+<div style="font-size:12pt"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B000IIKWM0/kamawada-22/">Apple iPod nano 8GB ブラック MB261J/A</a></div>
+<div style="font-size:7pt;font-family:verdana;">posted with <a href="http://yusukebe.com/b/amazon/search/">yusukebe.com::AmazonSearch</a> on 2007.11.27</div>
+<div style="font-size:10pt;">
+<ul style="list-style-type:none;padding:0;">
+<li>エレクトロニクス / アップルコンピュータ (2007/09/06)</li>
+<li>Amazon 売り上げランキング: 194</li>
+</ul>
+<a href="http://www.amazon.co.jp/gp/product/B000IIKWM0%3ftag=kamawada-22%26link_code=xm2%26camp=2025%26dev-t=D3QNAE4JDR26A2">Amazon.co.jpで詳細を見る</a>
+</div>
+</div>
+<div style="clear:left;"></div>
+
+<p></p>
+<div style="float:left"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B000IIJ2QC/kamawada-22/"><img alt="Apple iPod nano 8GB シルバー MA980J/A" src="http://ecx.images-amazon.com/images/I/21ar8SlFBTL.jpg" style="border:none;"></a></div>
+<div style="float:left;margin-left:15px;">
+<div style="font-size:12pt"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B000IIJ2QC/kamawada-22/">Apple iPod nano 8GB シルバー MA980J/A</a></div>
+<div style="font-size:7pt;font-family:verdana;">posted with <a href="http://yusukebe.com/b/amazon/search/">yusukebe.com::AmazonSearch</a> on 2007.11.27</div>
+<div style="font-size:10pt;">
+<ul style="list-style-type:none;padding:0;">
+<li>エレクトロニクス / アップルコンピュータ (2007/09/06)</li>
+<li>Amazon 売り上げランキング: 254</li>
+</ul>
+<a href="http://www.amazon.co.jp/gp/product/B000IIJ2QC%3ftag=kamawada-22%26link_code=xm2%26camp=2025%26dev-t=D3QNAE4JDR26A2">Amazon.co.jpで詳細を見る</a>
+</div>
+</div>
+<div style="clear:left;"></div>
+
+
+		</div>
+
+		<div class="post-tags">
+			
+				
+					<nav class="nav tags">
+							<ul class="flat">
+								
+								<li><a href="/tags/perl">Perl</a></li>
+								
+							</ul>
+					</nav>
+				
+			
+		</div>
+        <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v5.0&appId=233306523373884&autoLogAppEvents=1"></script>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+
+<div class="social-button-area">
+  <ul class="social-button">
+    <li>
+      <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
+    </li>
+    <li>
+      <span class="fb-share-button"  data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2007%2f1127122931%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
+    </li>
+    <li>
+      <a href="https://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label-counter" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>
+    </li>
+  </ul>
+</div>
+
+<div class="disqus-area">
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "yusukebe-com" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<ul class="pagination">
+  
+  <li class="page-item page-prev">
+    <a href="https://yusukebe.com/posts/2007/1127094519/" class="page-link" aria-label="Previous"><span aria-hidden="true">← 超奇遇</span></a>
+  </li>
+  
+  
+  <li class="page-item page-next">
+    <a href="https://yusukebe.com/posts/2007/1128002242/" class="page-link" aria-label="Next"><span aria-hidden="true">「いい人」になるな、「できる人」になれ - 樋口裕一 →</span></a>
+  </li>
+  
+</ul>
+
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright yusukebe.com |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-492497-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

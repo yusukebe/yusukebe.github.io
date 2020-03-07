@@ -1,0 +1,17 @@
++++
+Categories = ["tech"]
+Description = "    以前紹介したfilezillaというsftpクライアントソフト。サーバー側のファイル名が日本語Shift_JISの時にwinscpなどを使うと文字化けしてしまうが、このソフトを使うと文字化けせずに表示できるというもの。ヴァージョンが"
+Tags = []
+date = "2004-10-13T03:28:00+09:00"
+title = "filezilla、日本語表示できるsftpクライアントその２"
+author = "kamawada"
+archive = ["2004"]
+draft = false
++++
+
+
+<p>   以前紹介した<a href="http://yusukebe.com/archives/2004_03_12_033135.php">filezilla</a>というsftpクライアントソフト。サーバー側のファイル名が日本語Shift_JISの時に<a href="http://winscp.sourceforge.net/">winscp</a>などを使うと文字化けしてしまうが、このソフトを使うと文字化けせずに表示できるというもの。ヴァージョンが上がってさらにパッチを置いているサイトがなくなったので新しいヴァージョンでの使い方。（Windowsのみ対応 </p>
+<ol>   <li>      FileZilla2.2.8dをダウンロードしてインストールする<br>      <a href="http://prdownloads.sourceforge.net/filezilla/FileZilla_2_2_8d_setup.exe?download">こちら</a>のページからDownloadって欄に書いてあるファイルマークをクリックして、ダウンロード。ダウンロードしたファイルを実行するとインストールできる    </li>   <li>      <a href="http://www.unixuser.org/~haruyama/software/filezilla_patch.html">Filezilla      ファイル名 EUC&lt;-&gt;SJIS 変換パッチ</a>というサイトからパッチをダウンロードする<br>      <a href="http://www.unixuser.org/~haruyama/software/filezilla/FileZilla.exe">FileZilla.exe</a>ってのを取ってくる    </li>   <li>      パッチを適応する<br>      さっきとってきたFileZilla.exeを元々のFileZilla.exeに上書き保存する<br>      たいていC:\Program Files\FileZillaの下にあるでしょう    </li>   <li>      起動する<br>      C:\Program Files\FileZilla\FileZilla.exeを立ち上げる    </li>
+</ol>
+<p></p>
+

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Webアプリエンジニアな理由 - ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="Webアプリエンジニアな理由" />
+<meta property="og:description" content=" 株式会社ワディット代表取締役、かつ、オモロキ最高技術責任者つまりCTOという肩書をもち、先日はTechCrunch Tokyo 2014の「CTO Night」なるイベントでも登壇させていただきました。そんな僕ですが、最近では薄毛傾向が気" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yusukebe.com/posts/2014/1201171300/" />
+<meta property="og:image" content="https://yusukebe.com/icons/myicon.png"/>
+<meta property="article:published_time" content="2014-12-01T17:13:00+09:00" />
+<meta property="article:modified_time" content="2014-12-01T17:13:00+09:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://yusukebe.com/icons/myicon.png"/>
+
+<meta name="twitter:title" content="Webアプリエンジニアな理由"/>
+<meta name="twitter:description" content=" 株式会社ワディット代表取締役、かつ、オモロキ最高技術責任者つまりCTOという肩書をもち、先日はTechCrunch Tokyo 2014の「CTO Night」なるイベントでも登壇させていただきました。そんな僕ですが、最近では薄毛傾向が気"/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
+	
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://yusukebe.com/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper post">
+		<div class="header">
+	<h1 class="site-title"><a href="https://yusukebe.com/">ゆーすけべー日記</a></h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/yusukebe" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/yusukebe" title="Twitter"><i data-feather="twitter"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post-header">
+			<h1 class="title">Webアプリエンジニアな理由</h1>
+			<div class="meta">Posted at &mdash; Dec 1, 2014</div>
+		</div>
+
+		<div class="markdown post-body">
+			
+
+<p>株式会社ワディット<strong>代表取締役</strong>、かつ、オモロキ最高技術責任者つまり<strong>CTO</strong>という肩書をもち、先日は<a href="http://jp.techcrunch.com/2014/11/21/jp20141120/">TechCrunch Tokyo 2014の「CTO Night」なるイベント</a>でも登壇させていただきました。そんな僕ですが、最近では<strong>薄毛傾向</strong>が気になりながらも、シコシコと細かいWebアプリのコードを書き続けています。昨日というかさっきまでもサービス内のキャンペーンのためにフォトショップファイルを元に画像の切り出しから、HTMLコーディング、動的部分のプログラム諸々を「ちょっとキツめのスケジュール」に軽く焦りつつ実装してました。</p>
+
+
+
+
+<p>さて、一瞬立ち止まり。なぜ、僕はこうして「Webアプリエンジニア」なことを楽しみつつ生業としているのか？を考えてみます。そのことで自分の中でより自覚を持ち、また、他の種類の仕事をする際にも役に立つし、何よりも誰かがこの記事を見て、Webアプリエンジニアに興味を持ってもらえれば幸い。本記事は<a href="http://qiita.com/advent-calendar/2014/webapp_mook">Webアプリエンジニア養成読本 Advent Calendar 2014</a>の3日目の文章なんだしね。</p>
+
+
+
+
+<p>当然のことが書かれているかもしれないけど、そこは目をつむってもらって… では行ってみよー！</p>
+
+
+
+
+<h3>1. ノーリスクかつローコスト</h3>
+
+
+
+
+<p>Webアプリケーションを立ち上げるのにリスクは無い。ん？サーバー代が必要だって？いやいや、今やあなたのOSXやPC内で立ち上げたVM上で動かすことはいくらでも出来る。それでは「グローバルからアクセス出来ないじゃん！」というツッコミには「うん、その通り」と答えるしか無いかもしれないが、<strong>自分が考えたサービスのアイデアを実際に動かして検証する</strong>ことは出来て、これはとても画期的なことだと思う。挙動可能性とそれに対する体験が手元の「パソコン」一台とお金のかからないソフトウェアやライブラリ群を利用して済む。もしかしたら世界を変えるような物事がリスク無く検証できるWebアプリは魅力的である。</p>
+
+
+
+
+<p><img src="http://33.media.tumblr.com/936136002d1bf86df4a1a7f7c34325f3/tumblr_inline_nfwy6sY1Tv1qb2ehr.jpg" alt="cafe"></p>
+
+
+
+
+<p>で、ローコストってのは前述したサーバー代とかそういうことで「VPS安いじゃん！」から始まり、何よりも、今やAWSを使えばスケーリングに関わる問題を「富豪的に解決する」ことが簡易になったこともある意味他のリソースを食わないという文脈ではローコストだね。</p>
+
+
+
+
+<h3>2. スピード感がたまらない</h3>
+
+
+
+
+<p>大学生の時くらいからFlashのActionScriptを利用したプログラミングをやっていたんだけど、ある時からWebアプリ屋に引っ越ししようとした。その動機が<strong>スピード感</strong>だ。ようは単純である。Flashの場合、一般的には、プログラムを書いた後、一度Flashのオーサリングツールでレンダリングして結果を見る。また、ビジュアルを扱うような場合はマウスも触らなくてはいけない。一方、LLの世界だと、例えばTerminalソフト上でコードを書き、screenやtmuxを駆使し、もう一方のペインにスイッチしコードを実行出来る。つまり、手を動かして書いた「コード」がどのような「結果」になるのか？の答えを得るまでの時間がFlashに比べて短いのである。その短さは「ほんのちょっと」だけかもしれないが、自分が一度そのスピード感に慣れると戻れなくなる。マウスに触れなくていいし。Webのアプリの場合はTerminalのソレに加えて「Webブラウザで確認する」という作業が仲間入りするが、キーボードショートカットで切り替えられる。LLを取り上げたからと言って、コンパイルが必要な言語を非難しているわけじゃなく、こー「なんかやったら、すぐ動かしたいよね！少しでも！」って意味である。</p>
+
+
+
+
+<p><img src="http://38.media.tumblr.com/c38fcb409bbf09d1bd93706e6f2c1937/tumblr_inline_nfwxzsjRyu1qb2ehr.jpg" alt="Screen"></p>
+
+
+
+
+<p>違うコンテキストで捉えるならば、Web、もしくはWebの応用は比較的新しい技術、そして産業であり、新興のテクニックやライブラリ、概念などがどんどん出てくる。新しいからこそぶち当たる技術的、はたまた、倫理的、etcな問題を業界みんなで解決しようよね！という雰囲気も大いに好んでいる。</p>
+
+
+
+
+<h3>3. 色んな意味での「世界」がある</h3>
+
+
+
+
+<p>WebはグローバルIPにドメイン乗っければ、全世界に発信できるのも当然ながら魅力である。miyagawaさんが始めた<strong>Podcast</strong>「<a href="http://rebuild.fm/">Rebuild.fm</a>」は主に彼が居住するアメリカのサンフランシスコで録音されたコンテンツだ。それに感化され弊社オモロキ代表の鎌団子と始めた「<a href="http://dandy.fm/">だんごゆっけの平和な話</a>」は我が国、日本で収録され、TumblrとFeedburnerとAmazon S3とCloudFrontを組み合わせてでっち上げたシステムで配信しているが、当然ながらそれもRebuild.fmと同じように世界中で聴ける。「とはいえ聴く人いるのかよ！」というツッコミが飛んできそうであるが、実のところmiyagawaさんが聴いてくれていた。PodcastがWebアプリか？という議論は置いといて、Podcastは、mp3とRSSのメディア拡張を配信すれば誰でもつくれるわけなんだけど、これが昨今の「プラットフォームアプリ」とはまた違って面白いよね。</p>
+
+
+
+
+<p><img src="http://33.media.tumblr.com/3c11f2c010a7374750d8a993358a8ea1/tumblr_inline_nfwxy3zLHF1qb2ehr.jpg" alt="Podcast"></p>
+
+
+
+
+<p>さっきも話したけど、Webアプリをつくる界隈でも言語や地域で色々なエンジニアの世界があって、そこを覗くのも興味深い。しばしば土地性を考えるんだけど、まぁ大抵みんないい人だし、<a href="http://yapcasia.org/">YAPC</a>とか来る人は「いきなり技術の話をしてもみんなひかない」ので安心感あります。</p>
+
+
+
+
+<hr>
+<p>たぶんもっとたくさんあるような気がするし、もっとキレイにまとめられそうな気がするけど、今日はここまで。そういえばスティーブ・ジョブズとスティーブ・ウォズニアックのエピソードを描いた「スティーブズ」をLINE漫画で読んで、熱狂するモノ＝この漫画の場合「パーソナルコンピュータ」など<strong>Emerging</strong>な事柄にはもちろんだけど「当時」までにはない魅力があるのよね、と感じたんだけど「今」はWebアプリこそ<strong>Emerging</strong>で、だからこそ面白いのかな？ってのも思うし、もしかして、もう<strong>Emerging</strong>通り越した？とも考えたりしました。</p>
+
+
+
+
+<p>ちゃんちゃん♪</p>
+
+
+
+		</div>
+
+		<div class="post-tags">
+			
+				
+			
+		</div>
+        <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v5.0&appId=233306523373884&autoLogAppEvents=1"></script>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+
+<div class="social-button-area">
+  <ul class="social-button">
+    <li>
+      <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
+    </li>
+    <li>
+      <span class="fb-share-button"  data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2014%2f1201171300%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
+    </li>
+    <li>
+      <a href="https://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label-counter" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>
+    </li>
+  </ul>
+</div>
+
+<div class="disqus-area">
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "yusukebe-com" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<ul class="pagination">
+  
+  <li class="page-item page-prev">
+    <a href="https://yusukebe.com/posts/2014/1112052900/" class="page-link" aria-label="Previous"><span aria-hidden="true">← なんだかんだ Test::JSON::RPC::Autodoc をつくった</span></a>
+  </li>
+  
+  
+  <li class="page-item page-next">
+    <a href="https://yusukebe.com/posts/2014/1203223759/" class="page-link" aria-label="Next"><span aria-hidden="true">コードを書く。以外の仕事 →</span></a>
+  </li>
+  
+</ul>
+
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright yusukebe.com |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-492497-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

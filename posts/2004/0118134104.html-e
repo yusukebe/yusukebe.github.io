@@ -1,0 +1,17 @@
++++
+Categories = ["tech"]
+Description = " MovableTypeで行こう！: Mozillaでもボタンを使いたい！  僕は edit_entry.tmplとbm_entry.tpmlをそのまま入れ替えちゃいました。 "
+Tags = []
+date = "2004-01-18T22:41:00+09:00"
+title = "これでIEうらやましくない"
+author = "kamawada"
+archive = ["2004"]
+draft = false
++++
+
+
+<p><a href="http://cheebow.sub.jp/docmt/archives/000108.html" title="MovableTypeで行こう！: Mozillaでもボタンを使いたい！">MovableTypeで行こう！: Mozillaでもボタンを使いたい！</a></p>
+
+<p>僕は<br>
+<a href="http://www.deftone.com/blogzilla/misc/edit_entry.tmpl">edit_entry.tmpl</a>と<a href="http://kalsey.com/tools/mtplugins/files/bm_entry.tmpl">bm_entry.tpml</a>をそのまま入れ替えちゃいました。</p>
+

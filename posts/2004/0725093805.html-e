@@ -1,0 +1,21 @@
++++
+Categories = ["tech"]
+Description = "    この前作ったぐぐるボタンの発展版。テレビとかビデオとかのリモコンを使ってGoogleを起動する。リモコンは何でもOK、どんなボタンを押してもGoogleが起動します。      赤外線センサーモジュール(SPS-442-1)のアウト"
+Tags = []
+date = "2004-07-25T18:38:00+09:00"
+title = "リモコンからぐぐる、をAVRで作る"
+author = "kamawada"
+archive = ["2004"]
+draft = false
++++
+
+
+<p>   <a href="http://yusukebe.com/archives/2004_07_20_061341.php">この前作ったぐぐるボタン</a>の発展版。テレビとかビデオとかのリモコンを使ってGoogleを起動する。リモコンは何でもOK、どんなボタンを押してもGoogleが起動します。 </p>
+<p>   赤外線センサーモジュール(SPS-442-1)のアウトをAVR2313の外部割込みポートPD2に差して、立下りがあったらシリアル経由で文字を送るという具合。 </p>
+<p>   <a href="http://kamawada.com/~yusuke/yusukebe/archives/files/040725/DSC08406.JPG"><img alt="DSC08406.JPG" border="0" class="at-xid-6a0133f4781589970b015391e37719970b" height="210" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015391e37719970b-pi" width="280"></a> </p>
+<ul>   <li>      <a href="http://kamawada.com/~yusuke/yusukebe/archives/files/040725/MOV08403.MPG">動いてる様子の動画(mpeg)</a>    </li>   <li>      <a href="http://kamawada.com/~yusuke/yusukebe/archives/files/040725/sekigai.c">sekigai.c</a>(avr-gccソースファイル)    </li>
+</ul>
+<p>   次は赤外線データの解析をやろう。以下参考にさせていただいたサイトです。</p>
+<ul>   <li>      家電用赤外線リモコンで遊ぼう<br>      <a href="http://watson8.com/cmclock/ir.html">http://watson8.com/cmclock/ir.html</a>   </li>   <li>      naru 赤外線リモコンの解析<br>      <a href="http://naru-2nd.hp.infoseek.co.jp/labo/ir_rimocon/">http://naru-2nd.hp.infoseek.co.jp/labo/ir_rimocon/</a>   </li>   <li>      リモコン解析器<br>      <a href="http://www.geocities.jp/kirikohboh/rconana/rconana.html">http://www.geocities.jp/kirikohboh/rconana/rconana.html</a>   </li>   <li>      なんでもリモコン<br>      <a href="http://siva.cc.hirosaki-u.ac.jp/usr/koyama/product/nandemo.htm">http://siva.cc.hirosaki-u.ac.jp/usr/koyama/product/nandemo.htm</a>   </li>   <li>      Ir Hack<br>      <a href="http://homepage2.nifty.com/irhack/index.html">http://homepage2.nifty.com/irhack/index.html</a>   </li>   <li>      ビクタービデオ赤外線リモコンの作成       <br>      <a href="http://www.cek.ne.jp/~kunio.h/rimokon.htm">http://www.cek.ne.jp/~kunio.h/rimokon.htm</a>   </li>   <li>      Emotion Unit<br>      <a href="http://hp.vector.co.jp/authors/VA005190/ews/eu/">http://hp.vector.co.jp/authors/VA005190/ews/eu/</a>   </li>   <li>      R/C Elctric Airplanes<br>      <a href="http://www.cityfujisawa.ne.jp/~toko/index2.html">http://www.cityfujisawa.ne.jp/~toko/index2.html</a>   </li>   <li>      ＤＥＮＯＮ ＣＳ-PCMチューナー（ＤＴＵ-１６００ＡＬ）のリモコンコード解析<br>      <a href="http://members.jcom.home.ne.jp/0434383301/REMOCON.htm">http://members.jcom.home.ne.jp/0434383301/REMOCON.htm</a>   </li>   <li>      RC5 decoder<br>      <a href="http://bray.velenje.cx/avr/rc5/rc5.html">http://bray.velenje.cx/avr/rc5/rc5.html</a>   </li>   <li>      赤外線解説<br>      <a href="http://stk500.hp.infoseek.co.jp/ir_tech.html">http://stk500.hp.infoseek.co.jp/ir_tech.html</a>   </li>   <li>      AVR 超入門 No.6<br>      <a href="http://www.oyajin.gr.jp/~toko/pic/a006/">http://www.oyajin.gr.jp/~toko/pic/a006/</a>   </li>
+</ul>
+

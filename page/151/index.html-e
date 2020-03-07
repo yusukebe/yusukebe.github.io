@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="generator" content="Hugo 0.63.2" />
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="alternate" type="application/rss+xml" href="https://yusukebe.com/index.xml" title="ゆーすけべー日記" />
+	<meta property="og:title" content="ゆーすけべー日記" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://yusukebe.com/" />
+<meta property="og:image" content="https://yusukebe.com/icons/myicon.png"/>
+<meta property="og:updated_time" content="2020-03-06T15:46:50+09:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://yusukebe.com/icons/myicon.png"/>
+
+<meta name="twitter:title" content="ゆーすけべー日記"/>
+<meta name="twitter:description" content=""/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
+	
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://yusukebe.com/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+  <div class="container wrapper">
+	<div class="header">
+	<h1 class="site-title"><a href="https://yusukebe.com/">ゆーすけべー日記</a></h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/yusukebe" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/yusukebe" title="Twitter"><i data-feather="twitter"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+	<div class="recent-posts section">
+	  <h2 class="section-header">
+		Recent posts
+	  </h2>
+	  <div class="posts">
+		
+		
+		
+		<div class="post">
+		  <div class="meta">Apr 14, 2004</div>
+		  <a class="title" href="/posts/2004/0414113520/">ThinkPadの液晶に食べ物の &amp;amp;apos;イカ&amp;amp;apos; を使用しているか</a> &mdash;
+		  <span class="description">
+			
+			 ThinkPadの液晶に食べ物の &#39;イカ&#39; を使用しているか  TRIVIAL TECHNOLOGIESより。  笑った。    
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Apr 14, 2004</div>
+		  <a class="title" href="/posts/2004/0414031753/">Flash Hacks 予約</a> &mdash;
+		  <span class="description">
+			
+			 FlashHacks   5月1日発売予定。いよいよ表紙があらわになった。そしたら「フラッシュ」そのまんまじゃん。というわけで予約しました。       
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Apr 12, 2004</div>
+		  <a class="title" href="/posts/2004/0412115502/">パーム・ツリーズ・アンド・パワー・ラインズ</a> &mdash;
+		  <span class="description">
+			
+			     Sugarcultのセカンドアルバム、パーム・ツリーズ・アンド・パワー・ラインズ(CCCD)(期間限定)          やっぱり買ってしまった。スタート・スタティック も持ってるけど、聴きやすくて明るくなる、気楽に聴けるしね。
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Apr 4, 2004</div>
+		  <a class="title" href="/posts/2004/0403184649/">On my way back home</a> &mdash;
+		  <span class="description">
+			
+			     四日市に行った帰り、国道一号をひたすら上って四日市から戸塚まで一号以外使わずに14時間かけて帰ってきた。      名古屋－厚木間の東名料金6300円くらいは浮いたぜー、というわけでTSUTAYAでその分買い物をしてやる。そこで買
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Apr 4, 2004</div>
+		  <a class="title" href="/posts/2004/0403182617/">【祝1000エントリ目】四日市にあった物</a> &mdash;
+		  <span class="description">
+			
+			     旅に出ていると言ってましたが、そのお話。      が、その前に祝い事が。なんとこのエントリーでゆーすけべー日記始まって以来、1000エントリー目になります(新旧のゆーすけべー日記あわせて1000エントリー目)。         
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Apr 2, 2004</div>
+		  <a class="title" href="/posts/2004/0402114839/">旅に出てます</a> &mdash;
+		  <span class="description">
+			
+			 旅にでてます ご迷惑をかけてる皆様ごめんなさい 
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Mar 31, 2004</div>
+		  <a class="title" href="/posts/2004/0330151745/">NullSoftが出しているwindowsインストーラー作成ツール</a> &mdash;
+		  <span class="description">
+			
+			 NSIS: Home  GUIじゃなくてテキストスクリプトで作るらしい。 メモ。 
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Mar 31, 2004</div>
+		  <a class="title" href="/posts/2004/0330183631/">インスト奮闘記、Fedora CoreとZope2.7とPlone2をインストール</a> &mdash;
+		  <span class="description">
+			
+			     たくさんこの記事書いてたのに消えたー。なので簡易版。春から始まる新授業用Webのために、Plone2をいかに安定した環境で動かすか。何度も失敗したが失敗談じゃなくて、成功した方法とひっかかったポイントのまとめ。      Fedo
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Mar 30, 2004</div>
+		  <a class="title" href="/posts/2004/0330124554/">恐怖メール。</a> &mdash;
+		  <span class="description">
+			
+			     道標: 恐怖メール。 より     俺こんなメールだしたかなー。  
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Mar 30, 2004</div>
+		  <a class="title" href="/posts/2004/0330115639/">Fedora Coreはaptがバリ使える</a> &mdash;
+		  <span class="description">
+			
+			     結局諸々な関係でFedoraをインストールする。           以前使ってた7.2でもapt使えたけど、こっちの方が強力っぽい。すげーよい。  
+			
+		  </span>
+		</div>
+		
+		
+
+<ul class="pagination">
+	<li class="page-item page-prev">
+	
+    <a href="/page/150/" class="page-link" aria-label="Previous"><span aria-hidden="true">← Prev page</span></a>
+	
+	</li>
+	<li class="page-item page-next">
+	
+    <a href="/page/152/" class="page-link" aria-label="Next"><span aria-hidden="true">Next page →</span></a>
+	
+	</li>
+</ul>
+
+
+	  </div>
+	</div>
+  </div>
+  <div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright yusukebe.com |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-492497-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

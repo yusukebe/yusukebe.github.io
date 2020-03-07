@@ -1,0 +1,24 @@
++++
+Categories = ["tech"]
+Description = " 久しぶりにテクい話だが、 研究室 の各工房とか各チームサイトの最新更新時刻を取得したいなと思い なつみかん でサイトの更新時刻を取得しようとしたが、Zopeで作ってるので うまくいかん 。どうせなら、Zopeのプログラムで RSS 吐くや"
+Tags = []
+date = "2003-01-06T23:00:00+09:00"
+title = "RSSに挑戦"
+author = "kamawada"
+archive = ["2003"]
+draft = false
++++
+
+<p>久しぶりにテクい話だが、<br>
+<a href="http://zope.ok.sfc.keio.ac.jp/ok02aut" target="_new">研究室</a><br>
+の各工房とか各チームサイトの最新更新時刻を取得したいなと思い<br>
+<a href="http://amano.hauN.org/natsumican.html" target="_new">なつみかん</a><br>
+でサイトの更新時刻を取得しようとしたが、Zopeで作ってるので<br>
+<a href="http://snap.shot.cx/1020076330" target="_new">うまくいかん</a><br>
+。どうせなら、Zopeのプログラムで<br>
+<a href="http://www.kanzaki.com/docs/sw/rss.html" target="_new">RSS</a><br>
+吐くやつつくっちゃえ。<br>
+<a href="http://zope.ok.sfc.keio.ac.jp/ok02aut/rss.rdf" target="_new">こんな感じ</a><br>
+でできたけど、<br>
+<a href="http://zope.ok.sfc.keio.ac.jp/~yusuke/rdftest" target="_new">dc:dateでうまくソートされん</a><br>
+。だいたい、更新時刻もおかしいし…</p>

@@ -1,0 +1,52 @@
++++
+Categories = ["tech"]
+Description = " Google Ajax Search API の News ってやつを試したかったので、組み合わせ的にツイッターと組み合わせてみました。ツイートと共にニュースが見れて、ツイッターで話題のニュースがトップページに並ぶその名も「ニューツ!」で"
+Tags = []
+date = "2010-02-01T14:52:00+09:00"
+title = "ツイートと共にニュースが見れる「ニューツ!」を作ってみた"
+author = "kamawada"
+archive = ["2010"]
+draft = false
++++
+
+
+<p>
+Google Ajax Search API の News ってやつを試したかったので、
+組み合わせ的にツイッターと組み合わせてみました。
+ツイートと共にニュースが見れて、
+ツイッターで話題のニュースがトップページに並ぶその名も「ニューツ!」です。
+</p>
+
+<p>
+<span class="hatena-bookmark-title"><a href="http://newts.pulpsite.net/">ニューツ! - News with Tweets</a></span> <span class="hatena-bookmark-users"><a href="http://b.hatena.ne.jp/entry/newts.pulpsite.net/"><img alt="ニューツ! - News with Tweets" class="at-xid-6a0133f4781589970b015391e395c1970b" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015391e395c1970b-pi" title="ニューツ! - News with Tweets"></a></span><br>
+<img alt="SS" class="at-xid-6a0133f4781589970b015391e395d2970b" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015391e395d2970b-pi">
+</p>
+
+<p>
+まぁ、ツイッター見てれば、だいたい話題のことはわかるんですが、
+それすらめんどくさいって時にどんなニュース記事がどれだけツイートされるてるのか
+わかるので便利かもしれませんね♪
+もちろん、最近のニュース記事の検索もできて、
+それがどのようにつぶやかれているのかも知ることができます。
+</p>
+
+<p>
+この仕組み、情報を蓄積するのに一つのテーブルのみでやってるとってもシンプルな構造になっています。
+一度キーワードで検索されると一気にそのエントリーとそれに付随するツイートカウントをテーブルにぶち込みます。
+トップページでは最近の記事からツイート数でソートして表示というからくりです。
+ちなみにツイートのカウントを取得するのにtopsyというサービスのAPIを使っています。
+これだと検索時に重たいーという具合なのですが、定期的に特定の範囲をクロールする必要がなくなります。
+その代わり、検索されたキーワードのみの記事が対象となりますが、まぁその辺は実験ということで目をつぶります。
+</p>
+
+<p>
+驚いたことはこれだけの一応ソーシャルな情報がつまったニュース情報メディア？が3時間ほどで実装できたことですね。CSSのフレームワークにblueprintを使っていることを含め、開けたAPI等のおかげです。
+ということでEnjoy!
+</p>
+
+<ul>
+  <li>
+<span class="hatena-bookmark-title"><a href="http://newts.pulpsite.net/">ニューツ! - News with Tweets</a></span> <span class="hatena-bookmark-users"><a href="http://b.hatena.ne.jp/entry/newts.pulpsite.net/"><img alt="ニューツ! - News with Tweets" class="at-xid-6a0133f4781589970b015391e395c1970b" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015391e395c1970b-pi" title="ニューツ! - News with Tweets"></a></span>
+</li>
+</ul>
+

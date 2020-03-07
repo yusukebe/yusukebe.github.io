@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Hokkaido.pm#11 に行ってきた！ - ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="Hokkaido.pm#11 に行ってきた！" />
+<meta property="og:description" content=" 行ってきた。というか まだ北海道にいる んですが、先日12月28日(土) 札幌で行われた Hokkaido.pm#11 に参加してきました！    自分が話したトークの中にも出てきましたが、今年はKansai.pmで大阪、Fukuoka." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yusukebe.com/posts/2013/1230072700/" />
+<meta property="og:image" content="https://yusukebe.com/icons/myicon.png"/>
+<meta property="article:published_time" content="2013-12-30T07:27:00+09:00" />
+<meta property="article:modified_time" content="2013-12-30T07:27:00+09:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://yusukebe.com/icons/myicon.png"/>
+
+<meta name="twitter:title" content="Hokkaido.pm#11 に行ってきた！"/>
+<meta name="twitter:description" content=" 行ってきた。というか まだ北海道にいる んですが、先日12月28日(土) 札幌で行われた Hokkaido.pm#11 に参加してきました！    自分が話したトークの中にも出てきましたが、今年はKansai.pmで大阪、Fukuoka."/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
+	
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://yusukebe.com/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper post">
+		<div class="header">
+	<h1 class="site-title"><a href="https://yusukebe.com/">ゆーすけべー日記</a></h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/yusukebe" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/yusukebe" title="Twitter"><i data-feather="twitter"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post-header">
+			<h1 class="title">Hokkaido.pm#11 に行ってきた！</h1>
+			<div class="meta">Posted at &mdash; Dec 30, 2013</div>
+		</div>
+
+		<div class="markdown post-body">
+			
+
+<p>行ってきた。というか <strong>まだ北海道にいる</strong> んですが、先日12月28日(土) 札幌で行われた <strong>Hokkaido.pm#11</strong> に参加してきました！</p>
+
+
+
+
+<p><img src="http://38.media.tumblr.com/a2a7b2f4ced9fa1ec0fd3218a945cbab/tumblr_inline_mylygsZ5CB1qb2ehr.jpg" alt="Hokkaido.pm"></p>
+
+
+
+
+<p>自分が話したトークの中にも出てきましたが、今年はKansai.pmで大阪、Fukuoka.pmで福岡へ。それぞれ <a href="http://www.perlassociation.org/">Japan Perl Association=JPA</a> の講師派遣制度を利用させていただいて補助を出してもらったのですが、今回のHokkaido.pmは完全に <strong>自腹</strong> での参戦です。</p>
+
+
+
+
+<blockquote>
+  <p>年末特に予定ないからウマイもの食べることも兼ねて北海道へ行こう！</p>
+</blockquote>
+
+
+
+
+<p>という心持ちです。「何かしらトークする」旨を参加表明をした際に書いたところいつの間にか <strong>40分</strong> 話すことになっていてちょい面食らったのですがｗ ダラっと今年の振り返りをしました。フォーカスをどこに絞ろうかと思ったのですが、上記した通りに今年は大阪、福岡に加えて、アメリカのオースティンに行ってYAPC::NAに参加したり、熱海にたくさん行って「温泉発火村」なんてイベントにも飛びこんでみたり、と <strong>いろんなところに行った</strong> 年だったのでそれをお題にしてみました。結果トークのタイトルは「今年見たPerlコミュニティ そしてこれから」となりました。スライドは以下のページで見れます。</p>
+
+
+
+
+<ul>
+<li><a href="http://yusukebe.github.io/talks/hokkaidopm-011/#/"><strong>今年見たPerlコミュニティそしてこれから #hokkaidopm</strong></a></li>
+</ul>
+
+
+<p>スライド/トークの中で直前に思いついた「釣り気味の」フレーズ</p>
+
+
+
+
+<blockquote>
+  <p><strong>Perl Mongerよ 旅に出よ！</strong></p>
+</blockquote>
+
+
+
+
+<p>というのが出てくるのですが、わりと刺さってたようでよかったです。今回もこうして北海道にいるわけですが、食べ物だったり観光だったりと普段味わえないその場所の魅力があるので、それらを体験する目的も兼ねて「いわゆる」地域.pmに行くのはアリだとやっぱり思いましたね！特に僕なんてキッカケが無いとひきこもっちゃうタチなんで！</p>
+
+
+
+
+<p><img src="http://33.media.tumblr.com/e1ff010361d48603f8d94e7260402a96/tumblr_inline_myly3274xY1qb2ehr.jpg" alt="Hokkaido.pm"></p>
+
+
+
+
+<p>他の方々の発表のスライドは<a href="http://hokkaido.pm.org/event/hokkaidopm11.html">Hokkaido.pmのオフィシャルBlog記事</a>に掲載されいています。僕は最近オオヤケにアウトプットしているコードが少ないので、そうしたコードをもっと書きたいな！って刺激されるHokkaido.pmでした。懇親会では、僕が最初にHokkaido.pmに参加した時は高校生だった <a href="http://twitter.com/akiym">@akiym</a> 君も今や大学生になっていてメディアセンターアプリについて話せたのとか、Mojoliciousの濃い話が <a href="http://twitter.com/jamadam">@jamadam</a> さんとかと出来たのもよかったです。</p>
+
+
+
+
+<hr>
+<p>さて、当然ながら北海道といえば！みたいな美味しいモノをたくさん食べたのですが、その中でナンバーワンだと感じた食べ物を先ほど食したのでそちらを紹介いたしましょう。それは <strong>「<a href="http://www.suage.info/">すあげプラス</a>」のスープカレー</strong> です〜</p>
+
+
+
+
+<p><img src="http://33.media.tumblr.com/e90b3d8669c28e1eaa0de6754f0729fb/tumblr_inline_mylyvt3qFX1qb2ehr.jpg" alt="すあげプラス"></p>
+
+
+
+
+<p>これはマジでウマい。黒スープってのにしたんだけど、 <strong>コク</strong> がヤバい。あと特に野菜なんだけど <strong>具のあげ具合</strong> が程よくて切り方が大きいのにもりもり食べれます。いや～よいです。</p>
+
+
+
+
+<hr>
+<p>ってことでこれからもう少し時間を潰して神奈川へ帰ります。実は来月も札幌に来るのでまたスープカレー食べたいですね！</p>
+
+
+
+		</div>
+
+		<div class="post-tags">
+			
+				
+			
+		</div>
+        <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v5.0&appId=233306523373884&autoLogAppEvents=1"></script>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+
+<div class="social-button-area">
+  <ul class="social-button">
+    <li>
+      <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
+    </li>
+    <li>
+      <span class="fb-share-button"  data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2013%2f1230072700%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
+    </li>
+    <li>
+      <a href="https://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label-counter" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>
+    </li>
+  </ul>
+</div>
+
+<div class="disqus-area">
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "yusukebe-com" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<ul class="pagination">
+  
+  <li class="page-item page-prev">
+    <a href="https://yusukebe.com/posts/2013/1222011300/" class="page-link" aria-label="Previous"><span aria-hidden="true">← 三色ボールペンを日々の計画にも活用する</span></a>
+  </li>
+  
+  
+  <li class="page-item page-next">
+    <a href="https://yusukebe.com/posts/2014/0117120151/" class="page-link" aria-label="Next"><span aria-hidden="true">JUST MAKE IT  - 僕がつくる時に思うこと →</span></a>
+  </li>
+  
+</ul>
+
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright yusukebe.com |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-492497-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

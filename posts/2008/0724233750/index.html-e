@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Oppai-Detect 2 @ CodereposCon#1 - ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="Oppai-Detect 2 @ CodereposCon#1" />
+<meta property="og:description" content="   昨日16時開場20時過ぎくらいから株式会社ソフリット大会議室で開催された CodeRepos Conference #1 に行って来ました。  会場に着くと全裸でチンコ丸出しの人がいただんですが基本的にみなさんツッコミ無しでスルーをし" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yusukebe.com/posts/2008/0724233750/" />
+<meta property="og:image" content="https://yusukebe.com/icons/myicon.png"/>
+<meta property="article:published_time" content="2008-07-25T08:37:00+09:00" />
+<meta property="article:modified_time" content="2008-07-25T08:37:00+09:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://yusukebe.com/icons/myicon.png"/>
+
+<meta name="twitter:title" content="Oppai-Detect 2 @ CodereposCon#1"/>
+<meta name="twitter:description" content="   昨日16時開場20時過ぎくらいから株式会社ソフリット大会議室で開催された CodeRepos Conference #1 に行って来ました。  会場に着くと全裸でチンコ丸出しの人がいただんですが基本的にみなさんツッコミ無しでスルーをし"/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
+	
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://yusukebe.com/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper post">
+		<div class="header">
+	<h1 class="site-title"><a href="https://yusukebe.com/">ゆーすけべー日記</a></h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/yusukebe" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/yusukebe" title="Twitter"><i data-feather="twitter"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post-header">
+			<h1 class="title">Oppai-Detect 2 @ CodereposCon#1</h1>
+			<div class="meta">Posted at &mdash; Jul 25, 2008</div>
+		</div>
+
+		<div class="markdown post-body">
+			
+
+<p>
+  昨日16時開場20時過ぎくらいから株式会社ソフリット大会議室で開催された <a href="http://soozy.org/?CodereposCon1">CodeRepos Conference #1</a> に行って来ました。
+</p>
+<p>
+会場に着くと全裸でチンコ丸出しの人がいただんですが基本的にみなさんツッコミ無しでスルーをして、
+founder of curry こと hirose31さんが作ったカレーをいただきました。野菜とかエビとか入ってて非常においしかったです。
+</p>
+<p>
+  <img alt="CodereposCon" class="at-xid-6a0133f4781589970b014e8bd74e06970d" src="https://yusukebe.com/.a/6a0133f4781589970b014e8bd74e06970d-pi">
+  <img alt="CodereposCon" class="at-xid-6a0133f4781589970b014e8bd74e2f970d" src="https://yusukebe.com/.a/6a0133f4781589970b014e8bd74e2f970d-pi">
+</p>
+<p>
+  さてこの CodeRepos Con、参加資格が
+</p>
+<blockquote>
+  <p>
+    (1 コミット以上したことがある coderepos commiter) &amp;&amp; (founder であること)<br>
+    なお、コミッターはデフォルトでスピーカーです。
+  </p>
+</blockquote>
+<p>
+ということで、来てる人みんながそれぞれのプロダクトについて語るというものです。
+発表内容は、真面目な話からネタ的なものまで幅が広く、それでもみんなビールを飲みながら楽しく聞きました。
+このなんでも許せる感がたまらなかったです。
+</p>
+<p>
+  <img alt="CodereposCon" class="at-xid-6a0133f4781589970b014e8bd74e3a970d" src="https://yusukebe.com/.a/6a0133f4781589970b014e8bd74e3a970d-pi">
+  <img alt="CodereposCon" class="at-xid-6a0133f4781589970b014e8bd74e4f970d" src="https://yusukebe.com/.a/6a0133f4781589970b014e8bd74e4f970d-pi">
+</p>
+<p>
+  途中、夏なので花火をして第2部開始。俺もここに来ているからにはcommitterであり、つまりはスピーカーなので、founder of erogeek &amp;&amp; founder of wadit &amp;&amp; founder of ikuvideo として発表してきました。そもそも人様に見せれるようなネタが少ないことともう既に発表しつくしていることから、テーマを何にしようか迷いましたが、去年の10月の Erogeek Conference #1 からゆっくりとしたペースでやっている「Oppai-Detect」プロジェクトについて話しました。画像からおっぱいを検出することにトライする <strong>Oppai-Detect 2</strong> !! です。
+</p>
+<p>
+  「詳しくは coji さんがニコニコに発表模様の動画をうｐしてくれているのでそちらをご覧ください」といいたいところですが、普通におっぱい写りまくっていて smilevideo 的によろしく無いので、coji さんに撮影してもらった動画を yusukebe 鯖に置きますよー。ってなわけで発表内容は真面目なのですが、おっぱいが写りまくっていることをご了承の上ご覧ください。おっぱい嫌いな人、未成年者の方は <a href="http://www.nicovideo.jp/watch/sm4068875">Yappo さんの Acme::Acotie の 発表</a>とかみるといいと思います。
+</p>
+<br>
+<embed flashvars="file=http://kamawada.com/~yusuke/yusukebe/archives/files/080725/11_yusukebe.mp4&amp;image=http://kamawada.com/~yusuke/yusukebe/archives/files/080725/oppai.jpg&amp;displayheight=300&amp;title=Oppai-Detect 2 @ CodereposCon" height="360" pluginspage="http://www.macromedia.com/go/getflashplayer" src="http://yusukebe.com/v/player/jw_flvplayer.swf" type="application/x-shockwave-flash" width="400"></embed>
+<br>
+<br>
+<p>
+この動画のサンプルで使っているおっぱい検出に必要な OpenCV cascade の XML ファイルは暫定的に CodeRepos にコミットしておきました。
+</p>
+<ul>
+  <li><a href="http://coderepos.org/share/browser/docs/yusukebe/oppai-detect/data/cascade_oppai.xml">CodeRepos::Share ? Trac</a></li>
+</ul>
+<p>
+また、今回のデモで使った Perl のコードは以下のようになります。上記の XML を checkout して適切に配置すればどなたでも現状の Oppai-Detect で、写真からおっぱいを検出できますよ！
+</p>
+<pre class="brush: perl"> #!/usr/bin/perl
+use strict;
+use warnings;
+
+use Imager;
+use Image::ObjectDetect;
+
+my $file = $ARGV[0] || "picture.jpg";
+my $image = Imager-&gt;new-&gt;read(file =&gt; $file);
+my $cascade = "cascade_oppai.xml";
+
+my $detector = Image::ObjectDetect-&gt;new($cascade);
+my @oppais = $detector-&gt;detect($file);
+
+for my $oppai (@oppais) {
+    $image-&gt;box(
+        xmin   =&gt; $oppai-&gt;{x},
+        ymin   =&gt; $oppai-&gt;{y},
+        xmax   =&gt; $oppai-&gt;{x} + $oppai-&gt;{width},
+        ymax   =&gt; $oppai-&gt;{y} + $oppai-&gt;{height},
+        color  =&gt; 'red',
+        filled =&gt; 0,
+    );
+}
+
+$image-&gt;write(file =&gt; 'output.jpg');
+
+ </pre>
+<br>
+<p>
+さてこの Oppai-Detect 。発表の後半で真面目な議論をしていてうけるんですが、それも踏まえ、そろそろサービスとして始動させたいと思います。基本的なスタンスとしては今までは個人で検出用データの用意と解析をやっていたところを、いわゆる集合知とクラウドコンピューティングを利用して実用に耐えうる Oppai-Detector を作っていこうというものです。興味のある方はなんらかの形で是非ご協力していただければ幸いです。これでおっぱいの時代が来たら嬉しいですね＾＾
+</p>
+<p>
+おっぱいばっかり言いまくりましたが、CodereposCon#1、楽しかったです。すばらしく暑い会場を提供してくれた founder of soffritto の lopnor さんに感謝です。
+</p>
+
+<h4>参考ページ</h4>
+<ul>
+  <li>
+    <a href="http://coderepos.org/share">CodeRepos::Share ? Trac</a>
+  </li>
+  <li>
+    <a href="http://soozy.org/?CodereposCon1">CodereposCon1 - Soozy.org</a>
+  </li>
+  <li><a href="http://www.nicovideo.jp/mylist/7688389">マイリスト coderepos conference #1‐ニコニコ動画(夏)</a></li>
+  <li>
+    <a href="http://soffritto.org/">Soffritto Inc.</a>
+  </li>
+  <li>
+    <a href="http://yusukebe.com/archives/07/10/19/143530.html">ゆーすけべー日記: Erogeek Conference #1 が開催されました</a>
+  </li>
+</ul>
+
+<h4>参考書籍</h4>
+
+<p></p>
+<div style="float:left"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4834010635/kamawada-22/"><img alt="おっぱいのひみつ (かがくのとも傑作集)" class="at-xid-6a0133f4781589970b014e8bd74e58970d" src="https://yusukebe.com/.a/6a0133f4781589970b014e8bd74e58970d-pi" style="border:none;"></a></div>
+<div style="float:left;margin-left:15px;">
+<div style="font-size:12pt"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4834010635/kamawada-22/">おっぱいのひみつ (かがくのとも傑作集)</a></div>
+<div style="font-size:7pt;font-family:verdana;">posted with <a href="http://yusukebe.com/b/amazon/search/">yusukebe.com::AmazonSearch</a> on 2008.7.25</div>
+<div style="font-size:10pt;">
+<ul style="list-style-type:none;padding:0;">
+<li>柳生 弦一郎  </li>
+<li>大型本 / 福音館書店 </li>
+<li>Amazon 売り上げランキング: 67677</li>
+</ul>
+<ul style="list-style-type:none;padding:0;"><li>Amazon おすすめ度の平均: <img alt="5.0" class="at-xid-6a0133f4781589970b015435b6d28e970c" src="https://yusukebe.com/.a/6a0133f4781589970b015435b6d28e970c-pi" style="margin:0;"><ul style="list-style-type:none;padding-left:0;">
+<li>
+<img alt="4" class="at-xid-6a0133f4781589970b014e8bd727e1970d" src="https://yusukebe.com/.a/6a0133f4781589970b014e8bd727e1970d-pi" style="margin:0;"> おっぱいのこと・・・</li>
+<li>
+<img alt="5" class="at-xid-6a0133f4781589970b015435b6d28e970c" src="https://yusukebe.com/.a/6a0133f4781589970b015435b6d28e970c-pi" style="margin:0;"> 息子（６歳）の反応</li>
+<li>
+<img alt="5" class="at-xid-6a0133f4781589970b015435b6d28e970c" src="https://yusukebe.com/.a/6a0133f4781589970b015435b6d28e970c-pi" style="margin:0;"> おっぱい大好きな娘のために</li>
+<li>
+<img alt="5" class="at-xid-6a0133f4781589970b015435b6d28e970c" src="https://yusukebe.com/.a/6a0133f4781589970b015435b6d28e970c-pi" style="margin:0;"> むにゅんむにゅん　うっぷうっぷ</li>
+</ul>
+</li></ul>
+<a href="http://www.amazon.co.jp/%E3%81%8A%E3%81%A3%E3%81%B1%E3%81%84%E3%81%AE%E3%81%B2%E3%81%BF%E3%81%A4-%E3%81%8B%E3%81%8C%E3%81%8F%E3%81%AE%E3%81%A8%E3%82%82%E5%82%91%E4%BD%9C%E9%9B%86-%E6%9F%B3%E7%94%9F-%E5%BC%A6%E4%B8%80%E9%83%8E/dp/4834010635%3FSubscriptionId%3D13C5PCPS36EMN8C22682%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D4834010635">Amazon.co.jpで詳細を見る</a>
+</div>
+</div>
+<div style="clear:left;"></div>
+
+
+		</div>
+
+		<div class="post-tags">
+			
+				
+					<nav class="nav tags">
+							<ul class="flat">
+								
+								<li><a href="/tags/perl">Perl</a></li>
+								
+							</ul>
+					</nav>
+				
+			
+		</div>
+        <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v5.0&appId=233306523373884&autoLogAppEvents=1"></script>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+
+<div class="social-button-area">
+  <ul class="social-button">
+    <li>
+      <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
+    </li>
+    <li>
+      <span class="fb-share-button"  data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2008%2f0724233750%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
+    </li>
+    <li>
+      <a href="https://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label-counter" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>
+    </li>
+  </ul>
+</div>
+
+<div class="disqus-area">
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "yusukebe-com" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<ul class="pagination">
+  
+  <li class="page-item page-prev">
+    <a href="https://yusukebe.com/posts/2008/0721083533/" class="page-link" aria-label="Previous"><span aria-hidden="true">← iPhone を買えたという奇跡</span></a>
+  </li>
+  
+  
+  <li class="page-item page-next">
+    <a href="https://yusukebe.com/posts/2008/0803113139/" class="page-link" aria-label="Next"><span aria-hidden="true">Lazy People の人達と富士山登ってきた →</span></a>
+  </li>
+  
+</ul>
+
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright yusukebe.com |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-492497-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

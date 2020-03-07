@@ -1,0 +1,13 @@
++++
+Categories = ["tech"]
+Description = "SFCのWebサーバが移行してからNamazuが動かなかったんだけど、ようやく直した。kanwadictが見つからなかったり、namazu-for-hnsのnamazu.cgiがおかしかったり、結構苦労したYO。はぁはぁ。http://we"
+Tags = []
+date = "2002-07-21T12:13:00+09:00"
+title = "namazu復活"
+author = "kamawada"
+archive = ["2002"]
+draft = false
++++
+
+<p>SFCのWebサーバが移行してからNamazuが動かなかったんだけど、ようやく直した。kanwadictが見つからなかったり、namazu-for-hnsのnamazu.cgiがおかしかったり、結構苦労したYO。はぁはぁ。
+<a href="http://web.sfc.keio.ac.jp/~yusukebe/diary/namazu" target="_new">http://web.sfc.keio.ac.jp/~yusukebe/diary/namazu</a></p>

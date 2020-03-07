@@ -1,0 +1,200 @@
++++
+Categories = ["tech"]
+Description = "   昨日おとといと恒例の年末ネタ旅行のロケに鎌団子と行って来た。  まぁ内容は年明けに予告編映像をアップするのでそれを見てもらうとして、  その道中ひらめいたことを年末ハック、いや年末エロハックとしてやってみたというお話。    鎌団子は"
+Tags = ["Perl"]
+date = "2007-12-31T12:59:00+09:00"
+title = "YourAVHostにあるお気に入りのAV女優の動画をPlaggerで一括ダウンロードしてiPodで見るエロハック"
+author = "kamawada"
+archive = ["2007"]
+draft = false
++++
+
+
+<p>
+  昨日おとといと恒例の<a href="http://yusukebe.com/archives/neta/yearendtrip/">年末ネタ旅行</a>のロケに鎌団子と行って来た。
+  まぁ内容は年明けに予告編映像をアップするのでそれを見てもらうとして、
+  その道中ひらめいたことを年末ハック、いや年末エロハックとしてやってみたというお話。
+</p>
+<p>
+  鎌団子は最近、「サラリーマンの見方 <strong>花太郎</strong>」に通っていて、そこで鑑賞したDVDの中に、最近すごいはまったAV女優さんがいたということで盛り上がったんですよ。「おおさわゆか」っていうらしい。それ聞いて俺もたまらなく見たくなったわけ。
+</p>
+<p>
+  それで帰ってきてこの前作った<a href="http://youravhost.net/">YourAVHost</a>で検索かけてみたの。
+  そしたら<a href="http://youravhost.net/tag/%E5%A4%A7%E6%B2%A2%E4%BD%91%E9%A6%99">でてくる</a>じゃん！
+  でもね、やっぱ、鎌団子が「おおさわゆか、いいよー」って言った瞬間に二人して見たかったなーと思うわけ。
+  だからiPod touch とか iPod nano とか iPod classic でもなんでもいいんだけど、動画が見れる iPod にお気に入りのAV女優さんの映像を入れておけば楽しいんじゃね！と思った。
+というか、<a href="http://youravhost.net/">YourAVHost</a>作って使ってみて、普通に前々からもたくらんでいたことなんだけど。
+</p>
+<p>
+  かったるい前置きが長くなりましたが、何をしたいかといいますと、
+<a href="http://youravhost.net/">YourAVHost</a>のAV女優タグで指定したタグの映像をYourFileHostから一気にダウンロードしてiPodで見れる形式に変換してpodcast吐いてiTunes経由でiPodに入れてうはうは！というエロハックです。昔紹介したYouTubeとかニコニコ動画の映像をPlaggerで（ry のYourAVHost版になります。
+</p>
+
+<p>
+  <img alt="YourAVHostハック" class="at-xid-6a0133f4781589970b015391e38fb0970b" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015391e38fb0970b-pi">
+</p>
+
+<p>
+まず、これを実現するために、YourFileHostにあるFLV形式の映像ファイルへのパスをenclosureとして持つRSSを出力するようにYourAVHostに少し手を加えました。
+メインのRSSと異なり、1映像ファイルにつき 1 entry のRSSになっています。
+さらに、タグごとに絞り込んだRSSを吐かせるようにもしました。
+パスは
+</p>
+<pre> トップ（新着）が 　http://youravhost.net/rss_enclosure
+タグ別が　　　　 　http://youravhost.net/tag/タグをURIエスケープしたもの/rss_enclosure
+ </pre>
+<p>
+  となっています。リクエストごとにYourFileHostのAPIを呼ぶので出力が遅いのはご勘弁を＆過度のアクセスはご遠慮ください。
+</p>
+<p>
+  <font size="2">各女優タグページの</font><br>
+  <img alt="YourAVHostハック" class="at-xid-6a0133f4781589970b015391e38fb6970b" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015391e38fb6970b-pi">
+</p>
+
+<p>
+  <font size="2">「RSS with Enclosure (flv)」というリンクからflvのEnclosure入りフィードを吐いている</font><br>
+  <img alt="YourAVHostハック" class="at-xid-6a0133f4781589970b015391e38fc3970b" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015391e38fc3970b-pi">
+</p>
+<p>
+後は、ニコニコ動画やはてぶ＋YouTubeの時と同じようにPlaggerで料理をするだけです。
+分けると以下のようなフェーズになります。
+</p>
+<ul>
+  <li>タグ別フィードをSubscribe</li>
+  <li>Filter::FetchEnclosure でflvをダウンロード（enclosureタグがすでにRSSに入っているのでFind::Enclosureする必要無し！）</li>
+  <li>Filter::FFmpeg で h264 形式に変換</li>
+  <li>Filter::RewriteEnclosureURL でenclosureのURLを変換したものに書き換え</li>
+  <li>フィードをPublish</li>
+  <li>iTunesで読み込ませてダウンロード</li>
+  <li>iPod をつないで同期</li>
+  <li>あとは楽しむだけ</li>
+</ul>
+
+<p>
+  <font size="2">podcastをiTunesで読み込ませたところ</font><br>
+  <img alt="YourAVHostハック" class="at-xid-6a0133f4781589970b015391e38fcc970b" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015391e38fcc970b-pi">
+</p>
+
+<p>
+  <font size="2">iPod touch で見放題！</font><br>
+  <img alt="YourAVHostハック" class="at-xid-6a0133f4781589970b015391e38fd4970b" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015391e38fd4970b-pi">
+</p>
+
+<p>
+これがPlaggerの config.yaml のサンプルです。
+</p>
+
+<pre class="brush: perl"> plugins:
+
+  - module: Subscription::Config
+    config:
+      feed:
+          - url: http://youravhost.net/rss_enclosure
+
+  - module: Filter::FetchEnclosure
+    config:
+      dir: /home/user/dir
+    rule:
+      module: Deduped
+      path: ./deduped.db
+
+  - module: Filter::FFmpeg
+    config:
+      command: /usr/bin/ffmpeg
+      ext: mp4
+      dir: /home/user/dir
+      encoding: utf8
+      extra_options: -coder 0 -level 13 -ac 2
+      options:
+        video_codec:         h264
+        bitrate:             600
+        audio_codec:         aac
+        audio_sampling_rate: 44100
+        audio_bit_rate:      128
+        frame_size:          432x320
+
+  - module: Filter::RewriteEnclosureURL
+    config:
+      rewrite:
+        - local: /home/user/dir
+          url: http://localhost/~user/dir
+
+  - module: Publish::Feed
+    config:
+      format: RSS
+      dir: ./
+      filename: youravhost.xml
+
+
+ </pre>
+<p>
+このエロハックを使ってお気に入りのAV女優さんの映像を持ち歩けば、
+友達と女優さんの話をするときに超盛り上がると思うよ！
+</p>
+<p>
+Enjoy！というわけで今年最後のハックでした。
+</p>
+で、まぁ結局ネタ旅行の帰り、横浜の花太郎に行って「大沢佑香」ちゃんを探したんだけどさ。
+ただ、せっかくだから、明日FFC（ファイナルファイヤーカップ フットサルの大会）で鎌団子に会うので iPod touch 持って行こう。
+
+
+<p></p>
+<div style="float:left"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B000IDHJ30/kamawada-22/"><img alt="Apple iPod touch 8GB MA623J/A" src="http://ecx.images-amazon.com/images/I/21pbnI3NTTL.jpg" style="border:none;"></a></div>
+<div style="float:left;margin-left:15px;">
+<div style="font-size:12pt"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B000IDHJ30/kamawada-22/">Apple iPod touch 8GB MA623J/A</a></div>
+<div style="font-size:7pt;font-family:verdana;">posted with <a href="http://yusukebe.com/b/amazon/search/">yusukebe.com::AmazonSearch</a> on 2007.12.31</div>
+<div style="font-size:10pt;">
+<ul style="list-style-type:none;padding:0;">
+<li>エレクトロニクス / アップルコンピュータ (2007/09/25)</li>
+<li>Amazon 売り上げランキング: 25</li>
+</ul>
+<a href="http://www.amazon.co.jp/gp/product/B000IDHJ30%3ftag=kamawada-22%26link_code=xm2%26camp=2025%26dev-t=D3QNAE4JDR26A2">Amazon.co.jpで詳細を見る</a>
+</div>
+</div>
+<div style="clear:left;"></div>
+
+<p></p>
+<div style="float:left"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B000IIOQJK/kamawada-22/"><img alt="Apple iPod touch 16GB MA627J/A" src="http://ecx.images-amazon.com/images/I/21yw434torL.jpg" style="border:none;"></a></div>
+<div style="float:left;margin-left:15px;">
+<div style="font-size:12pt"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B000IIOQJK/kamawada-22/">Apple iPod touch 16GB MA627J/A</a></div>
+<div style="font-size:7pt;font-family:verdana;">posted with <a href="http://yusukebe.com/b/amazon/search/">yusukebe.com::AmazonSearch</a> on 2007.12.31</div>
+<div style="font-size:10pt;">
+<ul style="list-style-type:none;padding:0;">
+<li>エレクトロニクス / アップルコンピュータ (2007/09/25)</li>
+<li>Amazon 売り上げランキング: 29</li>
+</ul>
+<a href="http://www.amazon.co.jp/gp/product/B000IIOQJK%3ftag=kamawada-22%26link_code=xm2%26camp=2025%26dev-t=D3QNAE4JDR26A2">Amazon.co.jpで詳細を見る</a>
+</div>
+</div>
+<div style="clear:left;"></div>
+
+<p></p>
+<div style="float:left"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B000IIJ2LC/kamawada-22/"><img alt="Apple iPod nano 4GB シルバー MA978J/A" src="http://ecx.images-amazon.com/images/I/21ar8SlFBTL.jpg" style="border:none;"></a></div>
+<div style="float:left;margin-left:15px;">
+<div style="font-size:12pt"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B000IIJ2LC/kamawada-22/">Apple iPod nano 4GB シルバー MA978J/A</a></div>
+<div style="font-size:7pt;font-family:verdana;">posted with <a href="http://yusukebe.com/b/amazon/search/">yusukebe.com::AmazonSearch</a> on 2007.12.31</div>
+<div style="font-size:10pt;">
+<ul style="list-style-type:none;padding:0;">
+<li>エレクトロニクス / アップルコンピュータ (2007/09/06)</li>
+<li>Amazon 売り上げランキング: 17</li>
+</ul>
+<a href="http://www.amazon.co.jp/gp/product/B000IIJ2LC%3ftag=kamawada-22%26link_code=xm2%26camp=2025%26dev-t=D3QNAE4JDR26A2">Amazon.co.jpで詳細を見る</a>
+</div>
+</div>
+<div style="clear:left;"></div>
+
+<p></p>
+<div style="float:left"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B000IIKWM0/kamawada-22/"><img alt="Apple iPod nano 8GB ブラック MB261J/A" src="http://ecx.images-amazon.com/images/I/21%2B-zqgrIfL.jpg" style="border:none;"></a></div>
+<div style="float:left;margin-left:15px;">
+<div style="font-size:12pt"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B000IIKWM0/kamawada-22/">Apple iPod nano 8GB ブラック MB261J/A</a></div>
+<div style="font-size:7pt;font-family:verdana;">posted with <a href="http://yusukebe.com/b/amazon/search/">yusukebe.com::AmazonSearch</a> on 2007.12.31</div>
+<div style="font-size:10pt;">
+<ul style="list-style-type:none;padding:0;">
+<li>エレクトロニクス / アップルコンピュータ (2007/09/06)</li>
+<li>Amazon 売り上げランキング: 58</li>
+</ul>
+<a href="http://www.amazon.co.jp/gp/product/B000IIKWM0%3ftag=kamawada-22%26link_code=xm2%26camp=2025%26dev-t=D3QNAE4JDR26A2">Amazon.co.jpで詳細を見る</a>
+</div>
+</div>
+<div style="clear:left;"></div>
+

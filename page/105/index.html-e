@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="generator" content="Hugo 0.63.2" />
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="alternate" type="application/rss+xml" href="https://yusukebe.com/index.xml" title="ゆーすけべー日記" />
+	<meta property="og:title" content="ゆーすけべー日記" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://yusukebe.com/" />
+<meta property="og:image" content="https://yusukebe.com/icons/myicon.png"/>
+<meta property="og:updated_time" content="2020-03-06T15:46:50+09:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://yusukebe.com/icons/myicon.png"/>
+
+<meta name="twitter:title" content="ゆーすけべー日記"/>
+<meta name="twitter:description" content=""/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
+	
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://yusukebe.com/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+  <div class="container wrapper">
+	<div class="header">
+	<h1 class="site-title"><a href="https://yusukebe.com/">ゆーすけべー日記</a></h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/yusukebe" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/yusukebe" title="Twitter"><i data-feather="twitter"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+	<div class="recent-posts section">
+	  <h2 class="section-header">
+		Recent posts
+	  </h2>
+	  <div class="posts">
+		
+		
+		
+		<div class="post">
+		  <div class="meta">Feb 28, 2006</div>
+		  <a class="title" href="/posts/2006/0227235556/">カジノ解禁への動きの裏で、藤沢にパチンコ屋が増殖中</a> &mdash;
+		  <span class="description">
+			
+			   昨日、カジノ解禁に向けて、カジノを模擬体験しようというイベントがお台場で行われ、  自・民の国会議員が参加したりしてニュースになった。  TBSの「NEWS23」で知ったんだけど、筑紫哲也さんがいいこと言ってた。  こんな感じの内容の
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Feb 28, 2006</div>
+		  <a class="title" href="/posts/2006/0227233455/">moo-pong2/27付け日経新聞掲載、続報</a> &mdash;
+		  <span class="description">
+			
+			   昨日伝えた通りmoo-pongが2月27日付けの日本経済新聞の科学面に掲載されました。  自分の作ったものが全国紙の新聞、しかも日経に載るってのは嬉しいものです。  とりあえず3部コンビニで買い占めた。    これって権利的にやってい
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Feb 27, 2006</div>
+		  <a class="title" href="/posts/2006/0227121932/">文具スーパー事務キチ＠辻堂</a> &mdash;
+		  <span class="description">
+			
+			   「事務キチ」がまじ熱い。  場所は藤沢−辻堂間JR線沿い、PCデポ (場所：Google ローカル - PCデポ 辻堂) 隣。  文具・事務用品の揃えがよくって何より「メーカー純正」の物が安い。    暗闇に煌煌と輝く事務キチ。   
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Feb 27, 2006</div>
+		  <a class="title" href="/posts/2006/0227110412/">はてなの進行管理システム「あしか」の付箋バージョンを自作する</a> &mdash;
+		  <span class="description">
+			
+			   「へんな会社」のつくり方  で実際にはてなの会社で使っている進行管理システム「あしか」が紹介されてて、「あ、これいいな」って思った。  「あしか」とはシステムと呼んでいいのかってほどのシンプルでいい意味で簡素なもの。単にダンボールを使
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Feb 27, 2006</div>
+		  <a class="title" href="/posts/2006/0227020646/">「へんな会社」のつくり方</a> &mdash;
+		  <span class="description">
+			
+			   「へんな会社」のつくり方 近藤 淳也 (著) 翔泳社             はてな社長、近藤淳也さんが書いた自らの会社の「超オープン経営術」について語った本。  捉え方を変えて「はてなに見るオープンコラボレーション」という視点で、俺
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Feb 27, 2006</div>
+		  <a class="title" href="/posts/2006/0227000626/">moo-pongが本日(2/27)付け日経新聞に掲載</a> &mdash;
+		  <span class="description">
+			
+			   まだ自分でゲットしてないのですが、  moo-pongが本日、2月27日(月)付けの日本経済新聞、  科学面に掲載されているようです。    取り急ぎポスト。もし興味のある人は見てみてください。    俺の活動が新聞に掲載されたのは、
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Feb 26, 2006</div>
+		  <a class="title" href="/posts/2006/0225234321/">moo-pongが3月2日インタラクション2006でインタラクティブ発表を行います</a> &mdash;
+		  <span class="description">
+			
+			   moo-pong blogにもポストしましたが、  moo-pongがインタラクション2006という学会の  「インタラクティブ発表」という部門で発表・展示を行います。  場所は千代田区一ツ橋の学術総合センターです。  2日ある会期の
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Feb 25, 2006</div>
+		  <a class="title" href="/posts/2006/0225105737/">Technoratiを有効に使う</a> &mdash;
+		  <span class="description">
+			
+			   kamawadaサーバーユーザーに宛てたメール「【Tips】Technoratiを有効に使う」から。  技術の話はなるべくTechMemoというサイトに情報を載せるようにしますが、  今回はブログを書いている一般ユーザーの方に当てはま
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Feb 25, 2006</div>
+		  <a class="title" href="/posts/2006/0224224725/">今日の富士山</a> &mdash;
+		  <span class="description">
+			
+			   うぉ！久しぶりに見れた。嬉しい。       2006/02/25 08:05撮影    おまけ、カモミールの背丈がどんどん伸びておりやす。あと「ウィニー省庁侵入」という新聞の見出しをみて、  一瞬「イングランドのサッカー選手ルーニー
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Feb 24, 2006</div>
+		  <a class="title" href="/posts/2006/0224141830/">祝1500PV/1day越え</a> &mdash;
+		  <span class="description">
+			
+			   先々週ページビューレコードを更新したと思ったら、  2月15日に800ページビュー/1日、そしておととい昨日と  オリンピック効果のおかげでページビューがどちらも1500越えです(ゆーすけべー日記全体)。  嬉しいやら、サーバーが耐え
+			
+		  </span>
+		</div>
+		
+		
+
+<ul class="pagination">
+	<li class="page-item page-prev">
+	
+    <a href="/page/104/" class="page-link" aria-label="Previous"><span aria-hidden="true">← Prev page</span></a>
+	
+	</li>
+	<li class="page-item page-next">
+	
+    <a href="/page/106/" class="page-link" aria-label="Next"><span aria-hidden="true">Next page →</span></a>
+	
+	</li>
+</ul>
+
+
+	  </div>
+	</div>
+  </div>
+  <div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright yusukebe.com |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-492497-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

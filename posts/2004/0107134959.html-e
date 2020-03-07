@@ -1,0 +1,35 @@
++++
+Categories = ["tech"]
+Description = " 設問：ハイテク犯罪への対策という宿題が出ていました。いつものとおりやっつけで終わらせようというとき「さぁあなたならどうする？」  やっぱり”ハイテク犯罪”とかで「ぐぐり」ますよね「ぐぐり」ますよね。   でも今回は最近巷でうわさのFeed"
+Tags = []
+date = "2004-01-07T22:49:00+09:00"
+title = "FeedBackとBulkfeedsで宿題の調査"
+author = "kamawada"
+archive = ["2004"]
+draft = false
++++
+
+
+<p><a href="http://www.soi.wide.ad.jp/class/20030031/kadai/2/http/www.soi.wide.ad.jp/faculty/report/tmp/20030031_2.html">設問：ハイテク犯罪への対策</a>という宿題が出ていました。いつものとおりやっつけで終わらせようというとき「さぁあなたならどうする？」</p>
+
+<p>やっぱり”ハイテク犯罪”とかで「ぐぐり」ますよね「ぐぐり」ますよね。</p>
+
+<p><br>
+でも今回は最近巷でうわさの<a href="http://naoya.dyndns.org/feedback">FeedBack</a>と<a href="http://bulkfeeds.net/">Bulkfeeds</a>の検索もかけてみた。</p>
+
+<p>比較をしてみましょう。<br>
+<a href="http://www.google.co.jp/search?q=%E3%83%8F%E3%82%A4%E3%83%86%E3%82%AF%E7%8A%AF%E7%BD%AA&amp;ie=UTF-8&amp;oe=UTF-8&amp;hl=ja&amp;btnG=Google+%E6%A4%9C%E7%B4%A2&amp;lr=">Googleでの”ハイテク犯罪”の検索結果</a>約30,700件<br>
+<a href="http://naoya.dyndns.org/feedback/app/search?keyword=%A5%CF%A5%A4%A5%C6%A5%AF%C8%C8%BA%E1">FeedBackでの”ハイテク犯罪”の検索結果</a>4件<br>
+<a href="http://bulkfeeds.net/app/search2?q=%E3%83%8F%E3%82%A4%E3%83%86%E3%82%AF%E7%8A%AF%E7%BD%AA&amp;sort=date">Bulkfeedsでの”ハイテク犯罪”の検索結果</a>14件</p>
+
+<p>Googleの3万件ってのもWebページの膨大さを思い知らされるが、Bulkfeedsの14件ってのもすごいなって思った。”ハイテク犯罪”というキーワードを含むBlogのエントリーが14件もある。そんで早速<a href="http://bulkfeeds.net/app/search2?q=%E3%83%8F%E3%82%A4%E3%83%86%E3%82%AF%E7%8A%AF%E7%BD%AA&amp;sort=date">Bulkfeedsの検索</a>トップの記事をみてみたら、あらまぁびっくり同じSFCの方で同じ宿題の回答をBlogに載せたのがひっかったではありませんか。→<a href="http://web.sfc.keio.ac.jp/~t00053hi/mt/archives/001023.html">h! Log　:::　ハイログ.000: ハイテク犯罪とスパム対策</a></p>
+
+<p>これはRSS検索の特徴である”情報更新の早さ”を感じられる経験ですな（トップだったSFCの方の記事は昨日書かれたもの）。</p>
+
+<p>うんで結局参考にしたのはFeedBackにもBulkfeedsにもひっかかった<a href="http://blog.livedoor.jp/ophiuchi/archives/22528.html">酒とBlogの日々 : 不正請求に注意</a>という記事です。</p>
+
+<p>ハイテク犯罪がテーマだったのでできるだけ身近な被害の話から発展させようと思ってた。なので、FeedbackやBulkfeedsから得られるBlogの記事というのはGoogleの検索結果よりも有益だったのです。さらにBlogの記事が検索結果でかえってくる面白さはあるキーワードに関する個人の感想や思惑、経験を低ノイズ的に得ることができる点ですね。</p>
+
+<p>ココログなど優秀なBlogツールがでて多くの人がBlogを書き、その多くをFeedbackやBulkfeedsがサポートしたらGoogleよりも良質な宿題の調査ツールとなるのではないでしょうか？<br>
+</p>
+

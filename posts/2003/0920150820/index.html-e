@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>アマフラ プロト01 - ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="アマフラ プロト01" />
+<meta property="og:description" content=" プロト01(amafla_proto01.swf) ＊注意！swfを「右クリックで保存」などでローカルに保存してからフラッシュプレーヤーなどで起動してください。現在セキュリティの関係上、そうじゃないとうまく作動しません。のちのち対応させま" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yusukebe.com/posts/2003/0920150820/" />
+<meta property="og:image" content="https://yusukebe.com/icons/myicon.png"/>
+<meta property="article:published_time" content="2003-09-21T12:08:00+09:00" />
+<meta property="article:modified_time" content="2003-09-21T12:08:00+09:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://yusukebe.com/icons/myicon.png"/>
+
+<meta name="twitter:title" content="アマフラ プロト01"/>
+<meta name="twitter:description" content=" プロト01(amafla_proto01.swf) ＊注意！swfを「右クリックで保存」などでローカルに保存してからフラッシュプレーヤーなどで起動してください。現在セキュリティの関係上、そうじゃないとうまく作動しません。のちのち対応させま"/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
+	
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://yusukebe.com/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper post">
+		<div class="header">
+	<h1 class="site-title"><a href="https://yusukebe.com/">ゆーすけべー日記</a></h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/yusukebe" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/yusukebe" title="Twitter"><i data-feather="twitter"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post-header">
+			<h1 class="title">アマフラ プロト01</h1>
+			<div class="meta">Posted at &mdash; Sep 21, 2003</div>
+		</div>
+
+		<div class="markdown post-body">
+			
+
+<p><a href="http://kamawada.com/~yusuke/yusukebe/archives/files/030921/amafla_proto01.swf%20%E3%82%A2%E3%83%9E%E3%83%95%E3%83%A9" target="_new">プロト01(amafla_proto01.swf)</a><br>
+<font color="red">＊注意！swfを「右クリックで保存」などでローカルに保存してからフラッシュプレーヤーなどで起動してください。現在セキュリティの関係上、そうじゃないとうまく作動しません。のちのち対応させます。</font><br>
+<a href="http://kamawada.com/~yusuke/yusukebe/archives/files/030921/amafla_proto01.swf%20n"><img alt="プロト01スクリーンショット" src="%E3%82%A2%E3%83%9E%E3%83%95%E3%83%A9"></a><br>
+</p>
+<pre>  
+できました。このアプリの説明をすると、 
+アマゾンのウェブサービスを利用したFlashのクライアントです。 
+amafla_proto01.swfをFlashプレイヤーやブラウザで起動してみてください。 
+将来的にVACUUN!にアマゾンウェブサービスを組み込むことを 
+見越した第一歩のプロトタイプ（ビルドといった方がよいかも）です。 
+アーティスト名をフィールドに入れて、送信ボタンを 
+押すと入力されたアーティストのCD情報がリストで表示されます。 
+今のところ、CD情報は 
+・プロダクトの名前 
+・アーティストの名前 
+・マニュファクチュアラーの名前 
+・リリース日 
+・ジャケットの写真 
+・記述 
+のみですが、拡張することによって 
+・CDのトラック情報 
+・アマゾンユーザーのコメント 
+・セールスランク 
+などを表示、利用することができます。 
+日本のサイトにも対応していますが、 
+今のバージョンでは 
+「日本語アーティスト名による検索」ができません。 
+なので、「B'z」ではひっかかりますが、「ビーズ」では挙動不審です。 
+ </pre>
+
+
+		</div>
+
+		<div class="post-tags">
+			
+				
+			
+		</div>
+        <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v5.0&appId=233306523373884&autoLogAppEvents=1"></script>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+
+<div class="social-button-area">
+  <ul class="social-button">
+    <li>
+      <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
+    </li>
+    <li>
+      <span class="fb-share-button"  data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2003%2f0920150820%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
+    </li>
+    <li>
+      <a href="https://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label-counter" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>
+    </li>
+  </ul>
+</div>
+
+<div class="disqus-area">
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "yusukebe-com" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<ul class="pagination">
+  
+  <li class="page-item page-prev">
+    <a href="https://yusukebe.com/posts/2003/0911150818/" class="page-link" aria-label="Previous"><span aria-hidden="true">← Here to stay</span></a>
+  </li>
+  
+  
+  <li class="page-item page-next">
+    <a href="https://yusukebe.com/posts/2003/0920150819/" class="page-link" aria-label="Next"><span aria-hidden="true">2003年夏奥出研合宿中上級プロデュース論工房集合写真 →</span></a>
+  </li>
+  
+</ul>
+
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright yusukebe.com |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-492497-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

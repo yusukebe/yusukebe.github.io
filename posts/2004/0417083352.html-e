@@ -1,0 +1,18 @@
++++
+Categories = ["tech"]
+Description = "     eGroupsがYahoo!グループになってから使い勝手が悪くなった。      設定するためにはYahooIDを取得しなくちゃいけないし、YahooIDをゲッツするために登録しようと思ったらエラーがでるし、やっとできたと思ったら"
+Tags = []
+date = "2004-04-17T17:33:00+09:00"
+title = "Yahoo!グループうざい"
+author = "kamawada"
+archive = ["2004"]
+draft = false
++++
+
+
+<p></p>
+<p>   eGroupsが<a href="http://groups.yahoo.co.jp/">Yahoo!グループ</a>になってから使い勝手が悪くなった。 </p>
+<p>   設定するためにはYahooIDを取得しなくちゃいけないし、YahooIDをゲッツするために登録しようと思ったらエラーがでるし、やっとできたと思ったらメールの認証をしなくちゃいけないし。。。 </p>
+<p>   それになんか最近メッセージが<strong>HTMLメールでくる</strong>！携帯で受信したらタグ丸見え。HTMLメールを送る新機能をもった携帯から送られたメッセージかと思ったがそうではない。解除するにはグループのページにいって、参加設定で<small><b>HTMLメールへの変換を行わない（推奨）</b></small>   ってのにチェックをする。推奨って書いてあるのに、なんでYahooIDの登録作業したら、HTMLメールに変換されるモードになっているのか不明。</p>
+<p>   メッセージの件名にメッセージ番号をつけられるのがちょっとうれしいが。それよりこのめんどくささいやだ。やっぱり<a href="http://quickml.com/">QuickML</a>かな。いやそもそも<a href="http://japan.cnet.com/news/media/story/0,2000047715,20065478,00.htm">MLは終わりか</a>？</p>
+

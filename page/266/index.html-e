@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="generator" content="Hugo 0.63.2" />
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="alternate" type="application/rss+xml" href="https://yusukebe.com/index.xml" title="ゆーすけべー日記" />
+	<meta property="og:title" content="ゆーすけべー日記" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://yusukebe.com/" />
+<meta property="og:image" content="https://yusukebe.com/icons/myicon.png"/>
+<meta property="og:updated_time" content="2020-03-06T15:46:50+09:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://yusukebe.com/icons/myicon.png"/>
+
+<meta name="twitter:title" content="ゆーすけべー日記"/>
+<meta name="twitter:description" content=""/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
+	
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://yusukebe.com/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+  <div class="container wrapper">
+	<div class="header">
+	<h1 class="site-title"><a href="https://yusukebe.com/">ゆーすけべー日記</a></h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/yusukebe" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/yusukebe" title="Twitter"><i data-feather="twitter"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+	<div class="recent-posts section">
+	  <h2 class="section-header">
+		Recent posts
+	  </h2>
+	  <div class="posts">
+		
+		
+		
+		<div class="post">
+		  <div class="meta">Dec 18, 2001</div>
+		  <a class="title" href="/posts/2001/1218141012/">squeak</a> &mdash;
+		  <span class="description">
+			
+			http://www.ogis-ri.co.jp/otc/hiroba/technical/Squeak/squeak楽しい。
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Dec 17, 2001</div>
+		  <a class="title" href="/posts/2001/1217141010/">プリズム死亡？</a> &mdash;
+		  <span class="description">
+			
+			DNPのプリズムってマシンが死亡した。 キャプチャしたKAKEHIKIのファイルが入っているのに... はぁ、僕の苦労は水の泡。 最後の望みをかけてこれから、グラフィックボードを交換してみる。 
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Dec 17, 2001</div>
+		  <a class="title" href="/posts/2001/1217141011/">ベット大怪我？</a> &mdash;
+		  <span class="description">
+			
+			ついに家のベットがぶっこわれた。 底が抜けたのである。通販で買った安いベットなのでいつかはこうなる日が来るとは思っていたが... さすがに足を乗っけて、抜けたときはびっくりした。
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Dec 15, 2001</div>
+		  <a class="title" href="/posts/2001/1215141009/">ネットライフリウム2001</a> &mdash;
+		  <span class="description">
+			
+			ネットライフリウム2001にいってきた。 村井先生の話はいつ聞いても面白い。 個人的な感想を羅列   IPラジコン面白かった。でも1台とまっちゃった。コンパニオンの愚痴が思い浮かんだ。  テレビ電話が月300円らしい。このサービス自体はどー
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Dec 13, 2001</div>
+		  <a class="title" href="/posts/2001/1213141007/">Lynrd Skynyrd</a> &mdash;
+		  <span class="description">
+			
+			spinnerでレーナードスキナードがかかってる。 この人たち大好きだ。結構昔な人たちなのに、今聴いても新鮮。
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Dec 13, 2001</div>
+		  <a class="title" href="/posts/2001/1213141008/">マルタドメイン</a> &mdash;
+		  <span class="description">
+			
+			kamakurayama.comがとられてたので kamakura.mtはどうだろう。 実はマルタドメイン。 LINK http://www.jport.ne.jp/domain/world/malta.html
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Dec 12, 2001</div>
+		  <a class="title" href="/posts/2001/1212141006/">journal</a> &mdash;
+		  <span class="description">
+			
+			今日はコントンツの企画書をざくっと書いて、 miveの企画の技術的コメントをざくット書いて petithikiのキャプチャをどっとやって、編集もちょこっとした 明日はimglのWebだ。
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Dec 12, 2001</div>
+		  <a class="title" href="/posts/2001/1212141004/">realがmpeg4サポート</a> &mdash;
+		  <span class="description">
+			
+			したらしい。ってかrealONEってきになる。
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Dec 12, 2001</div>
+		  <a class="title" href="/posts/2001/1212141005/">saburi</a> &mdash;
+		  <span class="description">
+			
+			さぶりのページ発見 http://www.sfc.keio.ac.jp/~s00462ys/
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Dec 11, 2001</div>
+		  <a class="title" href="/posts/2001/1211141003/">コントンツ出演者について考えたこと</a> &mdash;
+		  <span class="description">
+			
+			コントンツ出演者交渉について 今週のミーティングに向けて ある程度めぼしを立てておくことが大事  めぼしを立てる→今週のミーティング→連絡先ゲット→来週会いに行って交渉  めぼし 	中央大学に関しては「落研」という名前以外で出場してもらう 
+			
+		  </span>
+		</div>
+		
+		
+
+<ul class="pagination">
+	<li class="page-item page-prev">
+	
+    <a href="/page/265/" class="page-link" aria-label="Previous"><span aria-hidden="true">← Prev page</span></a>
+	
+	</li>
+	<li class="page-item page-next">
+	
+    <a href="/page/267/" class="page-link" aria-label="Next"><span aria-hidden="true">Next page →</span></a>
+	
+	</li>
+</ul>
+
+
+	  </div>
+	</div>
+  </div>
+  <div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright yusukebe.com |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-492497-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

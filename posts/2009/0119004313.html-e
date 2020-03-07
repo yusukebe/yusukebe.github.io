@@ -1,0 +1,75 @@
++++
+Categories = ["tech"]
+Description = "   YourFileHost の次は「Tube8」が来るらしい。  ということで、YourAVHost の Tube8 版である「TubeERO」ってのを作ってみた。  YourAVHost と違う大きな特徴は、iPhone 及び 携帯 "
+Tags = ["Perl"]
+date = "2009-01-19T09:43:00+09:00"
+title = "YourAVHost の Tube8 版「TubeERO - iPhone・携帯でも見れるよ」を作ってみた"
+author = "kamawada"
+archive = ["2009"]
+draft = false
++++
+
+
+<p>
+  YourFileHost の次は「<strong>Tube8</strong>」が来るらしい。
+  ということで、YourAVHost の Tube8 版である「<strong>TubeERO</strong>」ってのを作ってみた。
+  YourAVHost と違う大きな特徴は、iPhone 及び 携帯 でも閲覧できて、
+  動画も見ることができる（かもしれない）ところ。
+  これで、トイレに一人隠れてうはうはすることもできますね。
+</p>
+
+<blockquote>
+  <p>TubeERO <strong><a href="http://tubeero.com/">http://tubeero.com/</a></strong></p>
+  <p>
+    *注意 アダルトコンテンツにつき18歳未満立ち入り禁止。あといきなりモロ画像が見えちゃってたりするので、そういう耐性が無い人はご遠慮ください。
+  </p>
+</blockquote>
+
+<p>
+<a href="http://tubeero.com/">
+  <img alt="TubeERO" class="at-xid-6a0133f4781589970b014e8bd74fda970d" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b014e8bd74fda970d-pi">
+</a>
+</p>
+
+<p>
+  同じアドレスで iPhone、携帯からもアクセスできるはず。
+  以下 iPhone で TubeERO を見た様子。
+</p>
+
+<p>
+  <font size="2">毎度の女優タグを表示</font><br>
+  <img alt="iPhone" class="at-xid-6a0133f4781589970b014e8bd74fee970d" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b014e8bd74fee970d-pi">
+</p>
+
+<p>
+  <font size="2">動画ごとにある「3gp」というリンクをタップすると...（携帯の場合はサムネイルを選択してください）</font><br>
+  <img alt="iPhone" class="at-xid-6a0133f4781589970b014e8bd74ffd970d" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b014e8bd74ffd970d-pi">
+</p>
+
+<p>
+  <font size="2">QuickTime が起動して、動画が再生された！</font><br>
+  <img alt="iPhone" class="at-xid-6a0133f4781589970b014e8bd75011970d" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b014e8bd75011970d-pi">
+  <img alt="iPhone" class="at-xid-6a0133f4781589970b014e8bd7501b970d" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b014e8bd7501b970d-pi">
+</p>
+
+<p>
+  実機がないので、確認取れてませんが、エミュレータ・Moxy では 携帯でも見れることを確認してます。
+</p>
+
+<p>
+  以前から「iPhone でエロ動画見たいー」という意見を聞いていたので、
+  どのように活用されるか気になるところ。
+  Tube8 はまだコンテンツが少ないですが、ちょっとずつ更新されているので、エロい方はお試しください。
+</p>
+
+<p>
+  実装の基本、クローリング部分に関しては、YourAVHost とほぼ同じやり方でやってます。
+  YouAVHost での情報源は technorati を使っていますが、今回は google blog search を使ってます。
+  また、ロジック部分を完全にモジュール化して、Moose で書いたので比較的綺麗な構造になりました。
+  いまさら、Moooooooooooooooooooooooooooooooooose！楽しいです。
+</p>
+
+<p>
+  Enjoy!
+</p>
+

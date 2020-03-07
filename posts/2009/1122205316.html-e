@@ -1,0 +1,94 @@
++++
+Categories = ["tech"]
+Description = " 去る20日金曜日、mixiさんに会場を提供していただき、「Perl Casual Talks#1」が開催されました。参加者は25名前後、そのうち半数以上の17人！がそれぞれ5分間発表を行いました。第1回目ということもあり、「空気」をつかむ"
+Tags = ["Perl"]
+date = "2009-11-23T05:53:00+09:00"
+title = "「Perl Casual Talks#1」が開催されました"
+author = "kamawada"
+archive = ["2009"]
+draft = false
++++
+
+
+<p>
+去る20日金曜日、mixiさんに会場を提供していただき、「Perl Casual Talks#1」が開催されました。
+参加者は25名前後、そのうち半数以上の17人！がそれぞれ5分間発表を行いました。
+第1回目ということもあり、「空気」をつかむためにも、なるべく多くの人が少ない時間でも発表するという方針でした。
+以下が会場の様子です。
+</p>
+<p>
+<img alt="perl-casual" class="at-xid-6a0133f4781589970b015391e39386970b" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015391e39386970b-pi">
+<img alt="perl-casual" class="at-xid-6a0133f4781589970b015391e39397970b" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015391e39397970b-pi">
+</p>
+<p>
+5分間という短い時間、また、今回こういう場所での発表が初めてという方が多い中、
+なかなかいい感じに「うまくまとまった」発表になりました。
+ほとんどの人が参加しぎゅうぎゅうづめで塩ホルモンを食べるという懇親会も含め、
+「カジュアル」で「ライト」な(？)Perlerの方々の顔がよくわかったのではないでしょうか。
+個人的には
+<a href="http://blog.livedoor.jp/xaicron/archives/50916419.html">xaicronさんにサインを求められ</a>、
+人生初サインを書いて喜んでもらい、自分も非常に嬉しかったwというのが印象に残った場面のひとつです。
+</p>
+<p>
+Yokohama.pm もそうですが、30人ほどのイベントって和気あいあいとして全員の顔が見えていいですね。
+あまり人数は膨らませない方向で、かつ、もっと多くの初心者の方も含めたPerlerが参加できるイベントをしていきたいです。
+次回は、今回も参加していただいた某Perlハッカーに講師をお願いして、
+すっごい「ラフ」な雰囲気での勉強会なんてのを考えていたりします。
+例えば、「実践的なテストの書き方」というようなお題を決めて、
+講師の方にライブコーディングを含む解説をしていただき、
+節目節目でラフに見ている人が質問して答えあうってのが楽しそうかなと思っている次第です。
+</p>
+<p>
+以下にスライドというほど枚数ないですが、僕が発表した際の資料を貼付けておきます。
+ということで、とりあえず皆さんこれに刺激を受けたなら「カジュアルなPerl」をそれぞれ楽しんでいきましょう。
+</p>
+
+<div id="__ss_2560329" style="width:425px;text-align:left">
+<a href="http://www.slideshare.net/yusukebe/we-are-perler-by-yusukebe" style="font:14px Helvetica,Arial,Sans-serif;display:block;margin:12px 0 3px 0;text-decoration:underline;" title="We are  カジュアルPerler by yusukebe">We are  カジュアルPerler by yusukebe</a><object height="355" style="margin:0px" width="425"><param name="movie" value="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=091120casualperl-091122152110-phpapp01&amp;stripped_title=we-are-perler-by-yusukebe">
+<param name="allowFullScreen" value="true">
+<param name="allowScriptAccess" value="always">
+<embed allowfullscreen="true" allowscriptaccess="always" height="355" src="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=091120casualperl-091122152110-phpapp01&amp;stripped_title=we-are-perler-by-yusukebe" type="application/x-shockwave-flash" width="425"></embed></object><div style="font-size:11px;font-family:tahoma,arial;height:26px;padding-top:2px;">View more <a href="http://www.slideshare.net/" style="text-decoration:underline;">documents</a> from <a href="http://www.slideshare.net/yusukebe" style="text-decoration:underline;">yusukebe</a>.</div>
+</div>
+
+<h4>関連書籍</h4>
+
+<div>
+<div style="float:left"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/477414004X/kamawada-22/"><img alt="WEB+DB PRESS Vol.53" class="at-xid-6a0133f4781589970b014e8bd750ec970d" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b014e8bd750ec970d-pi" style="border:none;"></a></div>
+<div style="float:left;margin-left:15px;">
+<div style="font-size:12pt"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/477414004X/kamawada-22/">WEB+DB PRESS Vol.53</a></div>
+<div style="font-size:7pt;font-family:verdana;">posted with <a href="http://yusukebe.com/b/amazon/search/">yusukebe.com::AmazonSearch</a> on 2009.11.23</div>
+<div style="font-size:10pt;">
+<ul style="list-style-type:none;padding:0;">
+<li>大型本 / 技術評論社 </li>
+<li>Amazon 売り上げランキング: 2822</li>
+</ul>
+<a href="http://www.amazon.co.jp/WEB-DB-PRESS-Vol-53-PRESS%E7%B7%A8%E9%9B%86%E9%83%A8/dp/477414004X%3FSubscriptionId%3D0VEY2A9SVSFB81NQ9HG2%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D477414004X">Amazon.co.jpで詳細を見る</a>
+</div>
+</div>
+<div style="clear:left;"></div>
+</div>
+<br>
+<div>
+<div style="float:left"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4798119172/kamawada-22/"><img alt="モダンPerl入門 (CodeZine BOOKS)" class="at-xid-6a0133f4781589970b015435b6f46f970c" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015435b6f46f970c-pi" style="border:none;"></a></div>
+<div style="float:left;margin-left:15px;">
+<div style="font-size:12pt"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4798119172/kamawada-22/">モダンPerl入門 (CodeZine BOOKS)</a></div>
+<div style="font-size:7pt;font-family:verdana;">posted with <a href="http://yusukebe.com/b/amazon/search/">yusukebe.com::AmazonSearch</a> on 2009.11.23</div>
+<div style="font-size:10pt;">
+<ul style="list-style-type:none;padding:0;">
+<li>牧 大輔  </li>
+<li>大型本 / 翔泳社 </li>
+<li>Amazon 売り上げランキング: 87652</li>
+</ul>
+<ul style="list-style-type:none;padding:0;"><li>Amazon おすすめ度の平均: <img alt="5.0" class="at-xid-6a0133f4781589970b015435b6d28e970c" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015435b6d28e970c-pi" style="margin:0;"><ul style="list-style-type:none;padding-left:0;">
+<li>
+<img alt="5" class="at-xid-6a0133f4781589970b015435b6d28e970c" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015435b6d28e970c-pi" style="margin:0;"> perl経験者は読んで損はしない</li>
+<li>
+<img alt="5" class="at-xid-6a0133f4781589970b015435b6d28e970c" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015435b6d28e970c-pi" style="margin:0;"> Perl中級者におすすめしたい</li>
+</ul>
+</li></ul>
+<a href="http://www.amazon.co.jp/%E3%83%A2%E3%83%80%E3%83%B3Perl%E5%85%A5%E9%96%80-CodeZine-BOOKS-%E7%89%A7-%E5%A4%A7%E8%BC%94/dp/4798119172%3FSubscriptionId%3D0VEY2A9SVSFB81NQ9HG2%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D4798119172">Amazon.co.jpで詳細を見る</a>
+</div>
+</div>
+<div style="clear:left;"></div>
+</div>
+

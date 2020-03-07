@@ -1,0 +1,17 @@
++++
+Categories = ["tech"]
+Description = "     もうすぐ春学期。新しいプロジェクトのために稼動していなかったサーバーを稼動させる。    Redhatでもaptが使えるのはとっても便利だ。     ・JPRING update を up2date から apt-get   に変"
+Tags = []
+date = "2004-03-27T19:01:00+09:00"
+title = "redhatでapt"
+author = "kamawada"
+archive = ["2004"]
+draft = false
++++
+
+
+<p></p>
+<p>   もうすぐ春学期。新しいプロジェクトのために稼動していなかったサーバーを稼動させる。<br>   Redhatでもaptが使えるのはとっても便利だ。</p>
+<p>   ・<a href="http://www.jpring.net/jitaku/apt-get.html">JPRING update を up2date から apt-get   に変更</a>   <br>   ・<a href="http://www.nurs.or.jp/~sugi/redhat-apt.htm">redhatでaptを使おう</a>   <br>   ・<a href="http://zerodimension.net/mt/archives/000139.html">ZeroDimension: RedHatでもAPTでパッケージ管理</a>   <br>   ・<a href="http://www.atmarkit.co.jp/flinux/rensai/linuxtips/446useapt.html">＠IT：Red   Hat LinuxでAPTを使うには</a></p>
+<p>   今までdebianでしか使えないと思っててredhatがあーいうことになったこともありいっそdebianに入れなおそうと思ったがaptが使えるならしばらくよいかと。</p>
+

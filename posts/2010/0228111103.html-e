@@ -1,0 +1,66 @@
++++
+Categories = ["tech"]
+Description = " Twitter上で多くつぶやかれているYouTube動画がぱっとわかって、すぐ見れて、さらにTwitter OAuthログインをすれば映像を見ながらそれについてツイートできちゃうという「Tubetter - ツベッター」というサイトを作っ"
+Tags = []
+date = "2010-02-28T20:11:00+09:00"
+title = "Twitterで話題のYouTube動画が一目でわかるTubetter - ツベッターを作ってみた"
+author = "kamawada"
+archive = ["2010"]
+draft = false
++++
+
+
+<p>
+Twitter上で多くつぶやかれているYouTube動画がぱっとわかって、すぐ見れて、
+さらにTwitter OAuthログインをすれば映像を見ながらそれについてツイートできちゃうという
+「<a href="http://tubetter.pulpsite.net/">Tubetter - ツベッター</a>」というサイトを作ってみました。
+</p>
+
+<p>
+<span class="hatena-bookmark-title"><a href="http://tubetter.pulpsite.net/">Tubetter - Twitterと一緒にYouTubeを楽しもう</a></span> <span class="hatena-bookmark-users"><a href="http://b.hatena.ne.jp/entry/tubetter.pulpsite.net/"><img alt="Tubetter - Twitterと一緒にYouTubeを楽しもう" class="at-xid-6a0133f4781589970b014e8bd75207970d" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b014e8bd75207970d-pi" title="Tubetter - Twitterと一緒にYouTubeを楽しもう"></a></span><br>
+<a href="http://tubetter.pulpsite.net/">
+<img alt="tubetter" class="at-xid-6a0133f4781589970b014e8bd75219970d" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b014e8bd75219970d-pi">
+</a>
+</p>
+
+<p>
+拙作、Twitter上での人気URLを集める
+<a href="http://twib.jp/">Twib</a>のYouTube特化版のようなものです。
+だったら、Twib上でやれよって感じですが、ちょっとシステム的にそちらの方はあまり手を加えたくないという理由もありTubetterができました。
+</p>
+<p>
+現在ページを見ると、チリ地震による津波の影響で<a href="http://tubetter.pulpsite.net/v/9iq9zoQZgwk">津波を実際に撮影した映像が今「435tweets」と多くつぶやかれていることがわかります</a>(作りが甘いのでこのページがちと重いのはあとで直します)。
+この「435tweets」というかなり多くのサンプル数はTwitterの利用頻度の高まりや気軽さを示しているかもしれませんね。実際同じ動画のはてなブックマークの数を比べてみると、それは、現在「30users」と比べようがありません。多くの人のツイートを見ながら動画を拝見するとまた違った楽しみ方があると思います。
+</p>
+<p>
+Twibと違う方法でTwitterの情報を取得している件で、今回はこのようにより多くの「tweets」を表示させることが可能になりました。
+通常ですとTwitter公式のAPIから「youtube」というような検索クエリを発行してツイートを収集するわけですが、短縮URLの問題や取りこぼしが非常に多いという問題が存在しています。
+しかし、Tubetterの場合は一部の動画、特に人気の高い動画のURLに関しては、
+<a href="http://topsy.com/">topsy</a>というサービスのAPIを使うことにより取りこぼしが少なくっています。
+topsyこそTwibのようにTwitter上でつぶやかれたURLを収集しランキングをつけて検索可能にした海外のサービスです。
+APIの性質がリアルタイム性のあるTwitter公式のものとは違い、とあるURLに対する「反応」としてツイートを扱っているので、今回のようなサービスにはある程度適して使うことができているみたいです。
+</p>
+<p>
+ちなみにtopsyのAPIを使っていたら、見たことがあるエラー画面出てきて、
+</p>
+<blockquote>
+<p>
+ちょw、Catalystのデフォルトエラーが画面じゃんwww
+</p>
+</blockquote>
+<p>
+って思ったところmiyagawaさんによれば、彼らはPerlガイとのこと。
+ということでCatalystアプリからCatalyst製のAPIをこれでもかと叩かせていただいています。
+</p>
+<p>
+ちょっとまだ作りが甘かったり、重かったりしてますが、様子をみて
+改善しますので、よろしくお願いします。
+Enjoy!
+</p>
+
+<ul>
+  <li>
+<span class="hatena-bookmark-title"><a href="http://tubetter.pulpsite.net/">Tubetter - Twitterと一緒にYouTubeを楽しもう</a></span> <span class="hatena-bookmark-users"><a href="http://b.hatena.ne.jp/entry/tubetter.pulpsite.net/"><img alt="Tubetter - Twitterと一緒にYouTubeを楽しもう" class="at-xid-6a0133f4781589970b014e8bd75207970d" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b014e8bd75207970d-pi" title="Tubetter - Twitterと一緒にYouTubeを楽しもう"></a></span>
+</li>
+</ul>
+

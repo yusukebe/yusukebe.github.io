@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Pythonでメロディー・雛・マークスを出す - ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="Pythonでメロディー・雛・マークスを出す" />
+<meta property="og:description" content="Pythonを勉強するにあたってまずはDMM Webサービスを叩きたい。 意識が低いので、新しい技術を習得する際にはDMMのAPI叩いたり、カリビアンコムのCSVパースしたり、PornhubのAPIクライ" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yusukebe.com/posts/2020/python-dmm/" />
+<meta property="og:image" content="https://yusukebe.com/images/python-dmm-002.png" />
+<meta property="article:published_time" content="2020-02-21T16:01:30+09:00" />
+<meta property="article:modified_time" content="2020-02-21T16:01:30+09:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://yusukebe.com/images/python-dmm-002.png"/>
+
+<meta name="twitter:title" content="Pythonでメロディー・雛・マークスを出す"/>
+<meta name="twitter:description" content="Pythonを勉強するにあたってまずはDMM Webサービスを叩きたい。 意識が低いので、新しい技術を習得する際にはDMMのAPI叩いたり、カリビアンコムのCSVパースしたり、PornhubのAPIクライ"/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
+	
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://yusukebe.com/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper post">
+		<div class="header">
+	<h1 class="site-title"><a href="https://yusukebe.com/">ゆーすけべー日記</a></h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/yusukebe" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/yusukebe" title="Twitter"><i data-feather="twitter"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post-header">
+			<h1 class="title">Pythonでメロディー・雛・マークスを出す</h1>
+			<div class="meta">Posted at &mdash; Feb 21, 2020</div>
+		</div>
+
+		<div class="markdown post-body">
+			<p>Pythonを勉強するにあたってまずはDMM Webサービスを叩きたい。</p>
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">意識が低いので、新しい技術を習得する際にはDMMのAPI叩いたり、カリビアンコムのCSVパースしたり、PornhubのAPIクライアント作ることでモチベーションを高めてる。…昔、ある人が言った言葉を思い出した。それはリビドードリブンデベロップメント。</p>&mdash; ゆーすけべー (@yusukebe) <a href="https://twitter.com/yusukebe/status/1230483618004254721?ref_src=twsrc%5Etfw">February 20, 2020</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<hr>
+<p>ニッポンのおもてなしデビューを果たしたという
+「<strong>メロディー・雛・マークス</strong>」の情報を女優検索APIから検索して表示させるお決まりのやつ。
+過去のメロディー・雛・マークスは以下。</p>
+<ul>
+<li><a href="https://yusukebe.com/posts/2020/vue-dmm/">Vue.jsでメロディー・雛・マークスを出す - ゆーすけべー日記</a></li>
+<li><a href="https://yusukebe.com/posts/2020/raku-dmm/">Rakuでメロディー・雛・マークスを出す - ゆーすけべー日記</a></li>
+<li><a href="https://yusukebe.com/posts/2020/node-dmm/">Node.jsでメロディー・雛・マークスを出す - ゆーすけべー日記</a></li>
+<li><a href="https://yusukebe.com/posts/2019/1226173405/">PHPでDMM Webサービスを叩いてメロディー・雛・マークスを出す - ゆーすけべー日記</a></li>
+</ul>
+<p>今回はPython3、及びせっかくだからとJupyter Notebookで表示してみたい。</p>
+<p>まずは、環境変数に入れた<code>API ID</code>と<code>AFFILIATE ID</code>を取得する。
+この2つの値はDMM APIにリクエストする際に必須になる。</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">os</span>
+
+<span class="n">api_id</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">DMM_API_ID</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">affiliate_id</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">DMM_AFFILIATE_ID</span><span class="s1">&#39;</span><span class="p">)</span>
+</code></pre></div><p>次にリクエストURLを生成する。なお、HTTPクライアントは標準の<code>urllib</code>を使うことにした。</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">urllib.request</span>
+
+<span class="o">.</span><span class="o">.</span><span class="o">.</span>
+
+<span class="n">base_url</span> <span class="o">=</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">https://api.dmm.com/affiliate/v3/ActressSearch</span><span class="s1">&#39;</span>
+<span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="sa"></span><span class="s1">&#39;</span><span class="s1">api_id</span><span class="s1">&#39;</span><span class="p">:</span> <span class="n">api_id</span><span class="p">,</span>
+    <span class="sa"></span><span class="s1">&#39;</span><span class="s1">affiliate_id</span><span class="s1">&#39;</span><span class="p">:</span> <span class="n">affiliate_id</span><span class="p">,</span>
+    <span class="sa"></span><span class="s1">&#39;</span><span class="s1">keyword</span><span class="s1">&#39;</span><span class="p">:</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">雛</span><span class="s1">&#39;</span><span class="p">,</span>
+    <span class="sa"></span><span class="s1">&#39;</span><span class="s1">hits</span><span class="s1">&#39;</span><span class="p">:</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">50</span><span class="s1">&#39;</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="sa"></span><span class="s2">&#34;</span><span class="s2">{}?{}</span><span class="s2">&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">base_url</span><span class="p">,</span> <span class="n">urllib</span><span class="o">.</span><span class="n">parse</span><span class="o">.</span><span class="n">urlencode</span><span class="p">(</span><span class="n">params</span><span class="p">)</span><span class="p">)</span>
+</code></pre></div><p>本来なら<code>keyword</code>の値をユーザー入力によって変更可能にしたいところだが、
+暫定的に「雛」とする。</p>
+<p>URLが完成したらクライアントからGET、
+中身はJSONフォーマットで返却されるので、パースして辞書型にして<code>data</code>変数に格納する。</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">urllib.request</span>
+<span class="kn">import</span> <span class="nn">json</span>
+
+<span class="o">.</span><span class="o">.</span><span class="o">.</span>
+
+<span class="n">req</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">Request</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="k">with</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">req</span><span class="p">)</span> <span class="k">as</span> <span class="n">res</span><span class="p">:</span>
+    <span class="n">body</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">body</span><span class="p">)</span>
+</code></pre></div><p>いよいよ、<code>pandas</code>ライブラリを使ってDataFrameに変換、Jupyter Notebookで描画する。
+ただ、返却されたJSONのデータ構造はそのまま使えないので、
+女優リストを取得するために<code>data</code>ディクショナリの中をたぐり、
+生のJSON文字列にしてから<code>pandas</code>の<code>read_json</code>メソッドで読み込ませる。</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+
+<span class="o">.</span><span class="o">.</span><span class="o">.</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_json</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">result</span><span class="s1">&#39;</span><span class="p">]</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">actress</span><span class="s1">&#39;</span><span class="p">]</span><span class="p">)</span><span class="p">)</span>
+</code></pre></div><p>これで、よし。全ソースコードは以下の通り。</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">urllib.request</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+
+<span class="n">api_id</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">DMM_API_ID</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">affiliate_id</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">DMM_AFFILIATE_ID</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="n">base_url</span> <span class="o">=</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">https://api.dmm.com/affiliate/v3/ActressSearch</span><span class="s1">&#39;</span>
+<span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="sa"></span><span class="s1">&#39;</span><span class="s1">api_id</span><span class="s1">&#39;</span><span class="p">:</span> <span class="n">api_id</span><span class="p">,</span>
+    <span class="sa"></span><span class="s1">&#39;</span><span class="s1">affiliate_id</span><span class="s1">&#39;</span><span class="p">:</span> <span class="n">affiliate_id</span><span class="p">,</span>
+    <span class="sa"></span><span class="s1">&#39;</span><span class="s1">keyword</span><span class="s1">&#39;</span><span class="p">:</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">雛</span><span class="s1">&#39;</span><span class="p">,</span>
+    <span class="sa"></span><span class="s1">&#39;</span><span class="s1">hits</span><span class="s1">&#39;</span><span class="p">:</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">50</span><span class="s1">&#39;</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="sa"></span><span class="s2">&#34;</span><span class="s2">{}?{}</span><span class="s2">&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">base_url</span><span class="p">,</span> <span class="n">urllib</span><span class="o">.</span><span class="n">parse</span><span class="o">.</span><span class="n">urlencode</span><span class="p">(</span><span class="n">params</span><span class="p">)</span><span class="p">)</span>
+<span class="n">req</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">Request</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="k">with</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">req</span><span class="p">)</span> <span class="k">as</span> <span class="n">res</span><span class="p">:</span>
+    <span class="n">body</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">body</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_json</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">result</span><span class="s1">&#39;</span><span class="p">]</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">actress</span><span class="s1">&#39;</span><span class="p">]</span><span class="p">)</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="p">:</span><span class="p">,</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">id</span><span class="s1">&#39;</span><span class="p">,</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">name</span><span class="s1">&#39;</span><span class="p">,</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">ruby</span><span class="s1">&#39;</span><span class="p">]</span><span class="p">]</span>
+</code></pre></div><p>Jupyter Notebookで「Controll + Enter」を押していざ実行。</p>
+<p><img src="/images/python-dmm-001.png" alt=""></p>
+<p>お、AV女優一覧が表になってる。</p>
+<p>下の方にスクロールすると…</p>
+<p><img src="/images/python-dmm-002.png" alt=""></p>
+<p>でた！メロディー・雛・マークス！黒船襲来！</p>
+
+		</div>
+
+		<div class="post-tags">
+			
+				
+					<nav class="nav tags">
+							<ul class="flat">
+								
+								<li><a href="/tags/python">Python</a></li>
+								
+							</ul>
+					</nav>
+				
+			
+		</div>
+        <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v5.0&appId=233306523373884&autoLogAppEvents=1"></script>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+
+<div class="social-button-area">
+  <ul class="social-button">
+    <li>
+      <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
+    </li>
+    <li>
+      <span class="fb-share-button"  data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2020%2fpython-dmm%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
+    </li>
+    <li>
+      <a href="https://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label-counter" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>
+    </li>
+  </ul>
+</div>
+
+<div class="disqus-area">
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "yusukebe-com" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<ul class="pagination">
+  
+  <li class="page-item page-prev">
+    <a href="https://yusukebe.com/posts/2020/raku-typecheck/" class="page-link" aria-label="Previous"><span aria-hidden="true">← RakuのType CheckとGradual Typingについて</span></a>
+  </li>
+  
+  
+  <li class="page-item page-next">
+    <a href="https://yusukebe.com/posts/2020/wakabayashi-essay/" class="page-link" aria-label="Next"><span aria-hidden="true">オードリー若林のエッセイを読んだ →</span></a>
+  </li>
+  
+</ul>
+
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright yusukebe.com |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-492497-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

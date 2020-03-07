@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Webアプリエンジニアとしてのデザインとブリッジ - ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="Webアプリエンジニアとしてのデザインとブリッジ" />
+<meta property="og:description" content=" 自分はまさに「アプリケーション」をつくることに特化したエンジニアもしくはクリエータだと思っているんだけど、その件で考えていることを散文的に書いてみる。  最近では複数のメンバーやパートナーの方と仕事をすることが多いんだけど、その時に自分に" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yusukebe.com/posts/2013/0321014424/" />
+<meta property="og:image" content="https://yusukebe.com/icons/myicon.png"/>
+<meta property="article:published_time" content="2013-03-21T10:44:00+09:00" />
+<meta property="article:modified_time" content="2013-03-21T10:44:00+09:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://yusukebe.com/icons/myicon.png"/>
+
+<meta name="twitter:title" content="Webアプリエンジニアとしてのデザインとブリッジ"/>
+<meta name="twitter:description" content=" 自分はまさに「アプリケーション」をつくることに特化したエンジニアもしくはクリエータだと思っているんだけど、その件で考えていることを散文的に書いてみる。  最近では複数のメンバーやパートナーの方と仕事をすることが多いんだけど、その時に自分に"/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
+	
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://yusukebe.com/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper post">
+		<div class="header">
+	<h1 class="site-title"><a href="https://yusukebe.com/">ゆーすけべー日記</a></h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/yusukebe" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/yusukebe" title="Twitter"><i data-feather="twitter"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post-header">
+			<h1 class="title">Webアプリエンジニアとしてのデザインとブリッジ</h1>
+			<div class="meta">Posted at &mdash; Mar 21, 2013</div>
+		</div>
+
+		<div class="markdown post-body">
+			
+
+<p>自分はまさに「アプリケーション」をつくることに特化したエンジニアもしくはクリエータだと思っているんだけど、
+その件で考えていることを散文的に書いてみる。</p>
+
+<p>最近では複数のメンバーやパートナーの方と仕事をすることが多いんだけど、その時に自分にとって有効として働くのは<strong>デザイン</strong>力である。デザインというのは広義の意味で使っていて、決して「Webページの見栄えをつくる」ようなデザインとはちと違う。Wikipediaの解説が的を射ているので紹介しよう。</p>
+
+<blockquote>
+<p>デザインの語源はデッサン(dessin)と同じく、"計画を記号に表す"という意味のラテン語designareである。
+つまりデザインとは、ある問題を解決するために思考・概念の組み立てを行い、それを様々な媒体に応じて表現することと解される。</p>
+
+<p><a href="http://ja.wikipedia.org/wiki/%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3">デザイン - Wikipedia</a> より一部引用。</p>
+</blockquote>
+
+<p>例えば、みんなで話していて「これがやりたい！」とアイデアが生まれた時に、それを実際のWebアプリの仕様に落とし込む作業や思考をめぐらせる行為を僕はデザインと呼んでいる。仕様ってのは堅苦しい書類じゃなくてもよく、データやクラスの構造とかUIの方針だったりする。まぁ、コーディングへ向かう手間に必要な想像力である。先日のAmazon Web Service（AWS）関係のイベントで考えたんだけど、インフラの構成をどう組むか？もデザインの対象になる。AWSを使う場合だったら「KVSが必要だ！SimpleDBじゃなくて速度が求められるのでDynamoDBを使おう」と言った具合。様々なAWSのサービスをどのように構成するかのパターン集が「CDP＝クラウドデザインパターン」と名付けられていて、まさに今取り上げているデザイン行為を助けるための「デザインパターン」なわけである。</p>
+
+<p>このデザインをするという行為は経験を積まないと難しく、経験が浅いと遅いものになる。自分の場合は大学生の頃からモノづくりの研究室にいたり、小さいWebアプリをたくさんつくってきたので、そこそこ速くデザインにおける思案が出来るようになってきた気がする。もちろんまだまだ精進が足りない点が多々あるし、深堀してない領域があるんだけど、ようはアイデアからデザインを行う「<strong>瞬発力</strong>」みたいなものが大事かと感じている。</p>
+
+<p>さてデザインがなんで大事かってことだけど、そもそもそれが無いとアプリがつくれないし、工数的な意味で見積もりが現実的なものになるかを決定付けるものだし、デザイン力があるとモノが速くつくれる。この辺りは自明なんだけど、人とコミュニケーションする時に役に立つかも、と最近では思いだしている。例えば企画側から指示が出た場合に即座にアプリケーションのデザインが出来れば会話がスムーズに動くかもしれない。インフラまで想像力が働けばDevOpsのような考え方にも通じるだろう。</p>
+
+<p>今一緒にプロジェクトを動かしている非エンジニアなメンバーはそれぞれ専門分野の能力だけではなく、理解力がある人ばかりなので、エンジニアとしてはデザイン力を働かせて彼らに負けないようにやり取りのスピードを上げることで貢献をしたい。</p>
+
+<p>デザインと共に取り上げたいのは「<strong>ブリッジ</strong>能力」と個人的に呼んでるもので上記したコミュニケーションも含まれるんだけど、これもまた開発者として付加価値を付けるのに重要でもある。とあるスマホアプリの中国人のブリッジ・エンジニアの方は現地の人に的確な指示を出し、企画の要望やバックエンドの仕様を把握している。すると、彼を評価する軸はコードが書けるか？という部分は内包しつつも、そのブリッジ能力となるのである。</p>
+
+<p>勝手な私感でもあるがオフショアが盛んになるとエンジニアにとってのプログラミングスキル以外の価値が問われることになる。また、オフショアどうこう関係なく、一人の個性としても、今回取り上げたデザイン力とブリッジ能力は身につけたいことである。</p>
+
+<p>体現しつつトレーニングをしている事柄、<strong>デザインとブリッジ</strong>について書いてみたがまだフワフワと説明するしか出来ないのでこの辺りを体系だって解釈したいと考えている今日この頃。繰り返しになりますが、こうした能力をつけつつ、コーディングレベルも上げたいと思います。</p>
+
+
+		</div>
+
+		<div class="post-tags">
+			
+				
+					<nav class="nav tags">
+							<ul class="flat">
+								
+								<li><a href="/tags/column">Column</a></li>
+								
+								<li><a href="/tags/technologies">Technologies</a></li>
+								
+							</ul>
+					</nav>
+				
+			
+		</div>
+        <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v5.0&appId=233306523373884&autoLogAppEvents=1"></script>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+
+<div class="social-button-area">
+  <ul class="social-button">
+    <li>
+      <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
+    </li>
+    <li>
+      <span class="fb-share-button"  data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2013%2f0321014424%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
+    </li>
+    <li>
+      <a href="https://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label-counter" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>
+    </li>
+  </ul>
+</div>
+
+<div class="disqus-area">
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "yusukebe-com" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<ul class="pagination">
+  
+  <li class="page-item page-prev">
+    <a href="https://yusukebe.com/posts/2013/0315014846/" class="page-link" aria-label="Previous"><span aria-hidden="true">← Kindle本「Perlについて語ろう」を出版しました</span></a>
+  </li>
+  
+  
+  <li class="page-item page-next">
+    <a href="https://yusukebe.com/posts/2013/0330015031/" class="page-link" aria-label="Next"><span aria-hidden="true">PerlCasual #05 を開催しました #perlcasual →</span></a>
+  </li>
+  
+</ul>
+
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright yusukebe.com |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-492497-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

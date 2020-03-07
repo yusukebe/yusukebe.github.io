@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="generator" content="Hugo 0.63.2" />
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="alternate" type="application/rss+xml" href="https://yusukebe.com/index.xml" title="ゆーすけべー日記" />
+	<meta property="og:title" content="ゆーすけべー日記" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://yusukebe.com/" />
+<meta property="og:image" content="https://yusukebe.com/icons/myicon.png"/>
+<meta property="og:updated_time" content="2020-03-06T15:46:50+09:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://yusukebe.com/icons/myicon.png"/>
+
+<meta name="twitter:title" content="ゆーすけべー日記"/>
+<meta name="twitter:description" content=""/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
+	
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://yusukebe.com/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+  <div class="container wrapper">
+	<div class="header">
+	<h1 class="site-title"><a href="https://yusukebe.com/">ゆーすけべー日記</a></h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/yusukebe" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/yusukebe" title="Twitter"><i data-feather="twitter"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+	<div class="recent-posts section">
+	  <h2 class="section-header">
+		Recent posts
+	  </h2>
+	  <div class="posts">
+		
+		
+		
+		<div class="post">
+		  <div class="meta">Jul 31, 2003</div>
+		  <a class="title" href="/posts/2003/0730150621/">ChoidashiV! ver01 リリース</a> &mdash;
+		  <span class="description">
+			
+			 ボクダナで開発中のVACUUN!の「ちょいだし」リリース版 ChoidashiV!のver01をリリースします。 http://rg.ok.sfc.keio.ac.jp/vacuun/ こちらです。 これは、mp3ファイルを聞いてmmlを
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jul 27, 2003</div>
+		  <a class="title" href="/posts/2003/0726150620/">7月27日16:45、俺のデスク</a> &mdash;
+		  <span class="description">
+			
+			  ここから作る 
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jul 26, 2003</div>
+		  <a class="title" href="/posts/2003/0725150619/">オープンキャンパス模擬授業のお手伝いをして、最後に俺が締めで言ったこと</a> &mdash;
+		  <span class="description">
+			
+			   オープンキャンパス模擬授業、  奥出先生のお手伝いをした。    (左)オープンキャンパスの昼ごはんといえばサブウェイ、  (真ん中)菅ちゃん   のおかげで俺の負荷はほとんどなかった、(右)参加者90人ほど   模擬授業の後は実際に
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jul 26, 2003</div>
+		  <a class="title" href="/posts/2003/0725150618/">ブログで使えるアイコン達</a> &mdash;
+		  <span class="description">
+			
+			 前見たことあって、便利だな、とおもたんだけど、どこにあるか忘れててやっと見つけた。 Buttons 
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jul 24, 2003</div>
+		  <a class="title" href="/posts/2003/0723150616/">バッテリー神になる～CreativeKammins</a> &mdash;
+		  <span class="description">
+			
+			 朝方、学校の帰り。お腹が空いたので、腰越の吉野家で牛丼を食べていこうと駐車場に入ると、とまっている車（Fit）の周りでカップルが困惑気味。    すいません、バッテリーをつなぐ線持ってますか？ さらに言うならば、よければバッテリー分けてく
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jul 24, 2003</div>
+		  <a class="title" href="/posts/2003/0723150617/">未踏ユース公募結果発表、スラッシュドットJに名前載る</a> &mdash;
+		  <span class="description">
+			
+			 以前採択の通知を受けた 未踏ユースだが、公に公募結果が発表された→ 平成15年度未踏ユースの公募結果 。そして、スラッシュドットJに晒されちゃった→ 平成15年度未踏ユース採択一覧 。しかしなんで、 俺の名前のリンク 先が すがメモ ！？
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jul 21, 2003</div>
+		  <a class="title" href="/posts/2003/0720150615/">とりあえず、キャニオニング。</a> &mdash;
+		  <span class="description">
+			
+			 おととい、昨日、今日と写真177枚撮ったけど、起神が降臨するまで寝なきゃいけなくて とりあえず、 キャニオニング 。 
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jul 17, 2003</div>
+		  <a class="title" href="/posts/2003/0716150613/">Symmetry～inspired by SIDE</a> &mdash;
+		  <span class="description">
+			
+			 Symmetry we can see something that is in Light Side  but we cannot see anything that is in Dark Side  LSUB http://www.a
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jul 17, 2003</div>
+		  <a class="title" href="/posts/2003/0716150614/">WILD Planet</a> &mdash;
+		  <span class="description">
+			
+			 これほしい。 Planet 。こりゃといざらす祭りだな。 
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jul 16, 2003</div>
+		  <a class="title" href="/posts/2003/0715150610/">家の駐車場にくわがたがいた</a> &mdash;
+		  <span class="description">
+			
+			   
+			
+		  </span>
+		</div>
+		
+		
+
+<ul class="pagination">
+	<li class="page-item page-prev">
+	
+    <a href="/page/180/" class="page-link" aria-label="Previous"><span aria-hidden="true">← Prev page</span></a>
+	
+	</li>
+	<li class="page-item page-next">
+	
+    <a href="/page/182/" class="page-link" aria-label="Next"><span aria-hidden="true">Next page →</span></a>
+	
+	</li>
+</ul>
+
+
+	  </div>
+	</div>
+  </div>
+  <div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright yusukebe.com |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-492497-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

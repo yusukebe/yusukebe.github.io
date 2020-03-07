@@ -1,0 +1,81 @@
++++
+Categories = ["tech"]
+Description = " 自分で持っているサイトのURLをTwitterで「ツイートする」みたいなのをHTMLのaタグのhref属性値、つまりリンクで指定する方法。いちいち各種サイト行ったり、過去のソース漁るのもメンドクサイのでまとめてみます。対象プラットフォーム"
+Tags = ["Technologies"]
+date = "2013-05-05T09:47:00+09:00"
+title = "各種シェアリンク実装まとめ"
+author = "kamawada"
+archive = ["2013"]
+draft = false
++++
+
+
+<p>自分で持っているサイトのURLをTwitterで「ツイートする」みたいなのをHTMLのaタグのhref属性値、
+つまりリンクで指定する方法。
+いちいち各種サイト行ったり、過去のソース漁るのもメンドクサイのでまとめてみます。対象プラットフォームは</p>
+
+<ul>
+<li>Twitter</li>
+<li>Facebook</li>
+<li>LINE</li>
+<li>カカオトーク</li>
+</ul>
+
+
+<p>です。スマホアプリも入っていてカスタムスキーマで呼び出します。
+前提としてシェア対象のページに「URL」と「タイトル」が存在してて、それぞれURIエスケープ出来ることとします。
+表示の際に画像のボタンを使ったりしたいところですが、ここでは分かりやすいように「XXXでシェアする」っていうテキストリンクに統一してみます。
+また、HTMLタグが長くなるので途中でぶった切ってるところがありますが、適宜くっつけて考えてくださいね。</p>
+
+<h3>Twitter</h3>
+
+<pre> &lt;a href="https://twitter.com/intent/tweet?
+url={URLをURIエスケープしたもの}&amp;text={タイトルをURIエスケープしたもの}"&gt;
+Twitterでシェアする&lt;/a&gt;
+ </pre>
+
+<h3>Facebook</h3>
+
+<pre> &lt;a href="https://www.facebook.com/sharer/sharer.php?
+u={URLをURIエスケープしたもの}&amp;t={タイトルをURIエスケープしたもの}"&gt;
+Facebookでシェアする&lt;/a&gt;
+ </pre>
+
+<h3>LINE</h3>
+
+<p>URLとタイトルを含んだ「テキスト」をつくって...</p>
+
+<pre> &lt;a href="line://msg/text/{テキストをURIエスケープしたもの}"&gt;
+LINEでシェアする&lt;/a&gt;
+ </pre>
+
+<h3>カカオトーク</h3>
+
+<p>こいつが結構やっかい。必要なパラメータがやたら多いで<a href="http://www.kakao.com/link/ja/api?tab=mobile">こちらの公式解説</a>で確認した方がいいでしょう。</p>
+
+<pre> &lt;a href="kakaolink://sendurl?
+msg={タイトルをURIエスケープしたもの}&amp;url={URLをURIエスケープしたもの}
+&amp;appid={サイトのドメインをURIエスケープしたもの}
+&amp;appname={サイトの名前をURIエスケープしたもの}"&gt;
+カカオトークでシェアする&lt;/a&gt;
+ </pre>
+
+<h3>Webアプリのテンプレート内での実装例</h3>
+
+<p>Webアプリのテンプレートでどうやるか？疑似コードっぽくかつテンプレート内にコード書いてるけどこんな具合。</p>
+
+<pre> % use URI::Escape qw/uri_escape_utf8/;
+% my $url = "http://yusukebe.com/";
+% my $title = "ゆーすけべー日記";
+
+&lt;a href="https://twitter.com/intent/tweet?url=&lt;%= uri_escape_utf8($url) %&gt;&amp;text=&lt;%= uri_escape_utf($title) %&gt;"&gt;
+  Twitterでシェアする
+&lt;/a&gt;
+ </pre>
+
+<hr>
+
+<p><br></p>
+
+<p>アプリ起動に関して、アプリを持っていない場合はAppStoreに飛ばすとかハックがあるので興味ある人はググってください。当然ですが、現時点での方法なんで今後変わるかもしれないのでご注意！</p>
+
