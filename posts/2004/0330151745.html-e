@@ -1,0 +1,17 @@
++++
+Categories = ["tech"]
+Description = " NSIS: Home  GUIじゃなくてテキストスクリプトで作るらしい。 メモ。 "
+Tags = []
+date = "2004-03-31T12:17:00+09:00"
+title = "NullSoftが出しているwindowsインストーラー作成ツール"
+author = "kamawada"
+archive = ["2004"]
+draft = false
++++
+
+
+<p><a href="http://nsis.sourceforge.net/home/" title="NSIS: Home">NSIS: Home</a></p>
+
+<p>GUIじゃなくてテキストスクリプトで作るらしい。<br>
+メモ。</p>
+

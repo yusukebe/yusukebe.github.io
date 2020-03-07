@@ -1,0 +1,132 @@
++++
+Categories = ["tech"]
+Description = "   あけましておめでとうございます。  新年の挨拶と共に去年2008年をこのゆーすけべー日記の記事を元に振り返ってみたいと思います。        昨年はとりわけ仕事において「初体験」を含む「経験」がたくさんできた年でした。  親父と弊社"
+Tags = []
+date = "2009-01-01T11:06:00+09:00"
+title = "2009年あけましておめでとうございます / 日記で去年を振り返る"
+author = "kamawada"
+archive = ["2009"]
+draft = false
++++
+
+
+<p>
+  あけましておめでとうございます。
+  新年の挨拶と共に去年2008年をこのゆーすけべー日記の記事を元に振り返ってみたいと思います。
+</p>
+<p>
+  <img alt="yusukebe" class="at-xid-6a0133f4781589970b015435b6f2b7970c" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015435b6f2b7970c-pi.jpg>
+</p>
+<p>
+  昨年はとりわけ仕事において「初体験」を含む「<strong>経験</strong>」がたくさんできた年でした。
+  親父と弊社「ワディット」を設立したのが2006年の9月。
+  それから2年目・3年目が去年にあたるわけですが、経験したことの無い形態で開発をしたり、
+  初めて「ワディット」として取材を受けたり、
+  改めて受託開発の難しさを経験したりしました。
+  また、「経験」することと同時に多くの方にお世話なり、
+  ご迷惑をおかけした点が多々ありました。自分の実力不足を実感し、
+  今年に活かしたいと思いますので、今年もなにとぞよろしくお願いいたします。
+</p>
+<p>
+  自分個人としては、去年、雑誌などへのインタビュー掲載や作ったウェブサイトが賞をいくつか
+  いただくなど、ある意味「飛躍」の年とも言えるのかなと思います。
+  しかし、まだまだ力不足ですし、最近は日々生活をしていて「余裕」をうまく作れていないと感じています。
+  そこで今年はうまくバランスをとりつつ、大きく「<strong>成長</strong>」する年にしたいと思います。
+</p>
+<p>
+  また、何よりも去年は Perl コミュニティや 1981s をはじめとして多くの方と知り合いになり、
+  そしてより仲良くなれた年でした。
+  この出会いはものすごく貴重な財産になって多くの刺激を受けています。
+  今年もどうかよろしくお願いいたします。
+</p>
+
+<p>
+  さて、では「年明け前にやれ」って感じですが、本日記の記事を元に去年2008年を振り返ってみましょう。
+</p>
+<p>
+  まず2008年、個人もしくはオモロキで作ったサービスを紹介。
+  実はある事情で日記にも書いていない裏サービスもあるのですが、
+  代表的なものは ListPod、イクイク動画、ボケての3つとなります。
+</p>
+<ul>
+  <li>
+<a href="http://yusukebe.com/archives/08/03/23/094204.html">YouTube動画のお気に入りをPodcast化してiTunesやiPod で見れるサービス「ListPod」をリリースしました</a><a href="http://b.hatena.ne.jp/entry/http://yusukebe.com/archives/08/03/23/094204.html"><img alt="このエントリーのはてなブックマーク件数" class="at-xid-6a0133f4781589970b015435b6f2c3970c" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015435b6f2c3970c-pi.gif></a>
+</li>
+  <li>
+<a href="http://yusukebe.com/archives/08/05/09/163511.html">YourFileHost のエロ動画にコメントをつけれるイクイク動画を作ってみた</a><a href="http://b.hatena.ne.jp/entry/http://yusukebe.com/archives/08/05/09/163511.html"><img alt="このエントリーのはてなブックマーク件数" class="at-xid-6a0133f4781589970b015435b6f2ca970c" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015435b6f2ca970c-pi.gif></a>
+</li>
+  <li>
+<a href="http://yusukebe.com/archives/08/09/16/111802.html">オモロキの第1弾サービス「ボケて」ベータ版を公開しました</a><a href="http://b.hatena.ne.jp/entry/http://yusukebe.com/archives/08/09/16/111802.html"><img alt="このエントリーのはてなブックマーク件数" class="at-xid-6a0133f4781589970b015435b6f2d7970c" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015435b6f2d7970c-pi.gif></a>
+</li>
+</ul>
+<p>
+ListPod に関しては、以下二つの賞を受賞しました。やったー。
+</p>
+<ul>
+  <li>
+<a href="http://yusukebe.com/archives/08/10/10/123409.html">ListPod が ネトラン「ベスト・オブ・悪用厳禁ツール＆サイト2008」で審査員特別賞をもらいました</a><a href="http://b.hatena.ne.jp/entry/http://yusukebe.com/archives/08/10/10/123409.html"><img alt="このエントリーのはてなブックマーク件数" class="at-xid-6a0133f4781589970b015435b6f2e2970c" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015435b6f2e2970c-pi.gif></a>
+</li>
+  <li>
+<a href="http://yusukebe.com/archives/08/12/12/194913.html">Listpod が「Award on rails 2008」で「クックパッド賞」を受賞しました</a><a href="http://b.hatena.ne.jp/entry/http://yusukebe.com/archives/08/12/12/194913.html"><img alt="このエントリーのはてなブックマーク件数" class="at-xid-6a0133f4781589970b015435b6f2eb970c" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015435b6f2eb970c-pi.gif></a>
+</li>
+</ul>
+<p>
+Perl コミュニティのイベントや技術系勉強会などでいろいろと発表させていただきました。
+やっぱり一番インパクトが強いのは YAPC での LT プレゼンですね。
+いい経験になりました。
+</p>
+<ul>
+  <li>
+<a href="http://yusukebe.com/archives/08/05/17/125557.html">YAPC::Asia 2008 に行ってきました＆LTで発表してきました</a><a href="http://b.hatena.ne.jp/entry/http://yusukebe.com/archives/08/05/17/125557.html"><img alt="このエントリーのはてなブックマーク件数" class="at-xid-6a0133f4781589970b015435b6f2f2970c" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015435b6f2f2970c-pi.gif></a>
+</li>
+  <li>
+<a href="http://yusukebe.com/archives/08/08/24/200952.html">Yokohama.pm tech talk #2 に行って来た＆『Perlモジュールだけで挑戦「画像の物体認識類似検索」』</a><a href="http://b.hatena.ne.jp/entry/http://yusukebe.com/archives/08/08/24/200952.html"><img alt="このエントリーのはてなブックマーク件数" class="at-xid-6a0133f4781589970b015435b6f2fb970c" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015435b6f2fb970c-pi.gif></a>
+</li>
+  <li>
+<a href="http://yusukebe.com/archives/08/07/25/083750.html">Oppai-Detect 2 @ CodereposCon#1</a><a href="http://b.hatena.ne.jp/entry/http://yusukebe.com/archives/08/07/25/083750.html"><img alt="このエントリーのはてなブックマーク件数" class="at-xid-6a0133f4781589970b015435b6f304970c" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015435b6f304970c-pi.gif></a>
+</li>
+  <li>
+<a href="http://yusukebe.com/archives/08/09/11/104859.html">「GINZA TECH LOUNGE feat. OpenID」で ListPod での OpenID 利用について LT してきた</a><a href="http://b.hatena.ne.jp/entry/http://yusukebe.com/archives/08/09/11/104859.html"><img alt="このエントリーのはてなブックマーク件数" class="at-xid-6a0133f4781589970b015435b6f313970c" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015435b6f313970c-pi.gif></a>
+</li>
+  <li>
+<a href="http://yusukebe.com/archives/08/09/14/122102.html">ワディット2周年にあたって feat. ESPer2008講演 「いつのまにか社長になっていた」</a><a href="http://b.hatena.ne.jp/entry/http://yusukebe.com/archives/08/09/14/122102.html"><img alt="このエントリーのはてなブックマーク件数" class="at-xid-6a0133f4781589970b015435b6f31f970c" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015435b6f31f970c-pi.gif></a>
+</li>
+</ul>
+<p>
+Perl と言えば、CPAN Author になりました。有益なモジュールを今年も（？）作っていきたいです。
+</p>
+<ul>
+  <li>
+<a href="http://yusukebe.com/archives/08/04/04/163142.html">CPAN Author になりました</a><a href="http://b.hatena.ne.jp/entry/http://yusukebe.com/archives/08/04/04/163142.html"><img alt="このエントリーのはてなブックマーク件数" class="at-xid-6a0133f4781589970b015435b6f331970c" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015435b6f331970c-pi.gif></a>
+</li>
+</ul>
+
+<p>
+  昨年は鎌団子と一緒にはじめた株式会社オモロキが本格始動した年でもありましたね。
+</p>
+<ul>
+  <li>
+<a href="http://yusukebe.com/archives/08/06/15/125242.html">オモロキオフィスできてきた</a><a href="http://b.hatena.ne.jp/entry/http://yusukebe.com/archives/08/06/15/125242.html"><img alt="このエントリーのはてなブックマーク件数" class="at-xid-6a0133f4781589970b015435b6f33a970c" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015435b6f33a970c-pi.gif></a>
+</li>
+</ul>
+<p>
+  そう言えば携帯電話を iPhone にしました。で、日記には書いてないのですが、Mac Book も最近買ったのでどんどんどんどん Apple に染まっていく年でもありました。
+</p>
+<ul>
+  <li>
+<a href="http://yusukebe.com/archives/08/07/21/173533.html">iPhone を買えたという奇跡</a><a href="http://b.hatena.ne.jp/entry/http://yusukebe.com/archives/08/07/21/173533.html"><img alt="このエントリーのはてなブックマーク件数" class="at-xid-6a0133f4781589970b015435b6f343970c" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015435b6f343970c-pi.gif></a>
+</li>
+</ul>
+<p>
+  最後に紹介するのは、以下の記事です。
+</p>
+<ul>
+  <li>
+<a href="http://yusukebe.com/archives/08/05/29/105145.html">LDR 購読者 1000人を突破しました</a><a href="http://b.hatena.ne.jp/entry/http://yusukebe.com/archives/08/05/29/105145.html"><img alt="このエントリーのはてなブックマーク件数" class="at-xid-6a0133f4781589970b015435b6f34c970c" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015435b6f34c970c-pi.gif></a>
+</li>
+</ul>
+<p>
+多くの方に本日記を見ていただいているということで、
+これからもゆーすけべー日記をよろしくお願いいたします。
+</p>
+

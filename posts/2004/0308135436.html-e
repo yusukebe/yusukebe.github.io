@@ -1,0 +1,23 @@
++++
+Categories = ["tech"]
+Description = "     WB Editor        クライアントのソフトからMovabletypeのエントリーをポストできるという代物。    今そのソフトから書き込んでおります。はたして書き込まれるのやら。。。      うへ！書き込まれてる！テ"
+Tags = []
+date = "2004-03-08T22:54:00+09:00"
+title = "WB Editorから書き込みテスト"
+author = "kamawada"
+archive = ["2004"]
+draft = false
++++
+
+
+<p></p>
+<p>   <a href="http://wbeditor.cweblogs.com/">WB Editor</a>    <br>   クライアントのソフトからMovabletypeのエントリーをポストできるという代物。<br>   今そのソフトから書き込んでおります。はたして書き込まれるのやら。。。 </p>
+<p>   うへ！書き込まれてる！<font color="#004080">テ</font><font color="yellow">キ</font><font color="maroon">ス</font><font color="#400080">ト</font><font color="#808040">の</font><font color="red">色</font><font color="#408080">変</font><font color="#00ff40">え</font><font color="#400000">た</font><font color="#ff0080">り</font>するの簡単！<br>   <br>   画像とかファイルのアップロードはどうなんだろうと試行錯誤。いじってみたところ画像を扱う系のボタンとかはなさそう。    <br>   とWB Editorのウェブをみてみたらロードマップのところにこう書いてあった。</p>
+<p>   <font size="3"><strong>WB Editor 1.0 -  Stand alone editor</strong></font></p>
+<p>   Features:</p>
+<ul>   <li>      Category list    </li>   <li>      New Post    </li>   <li>      Post retrieve, edit and delete    </li>   <li>      Copy IE proxy settings    </li>   <li>      Threaded server connection    </li>   <li>      Editor Options : UI culture, editor/xml charset    </li>   <li>      Trackback ping    </li>   <li>      Automatic self-upgrade    </li>   <li>      Graphic file upload    </li>   <li>      Plugins</li>
+</ul>
+<p>   1.0ではどうやら画像のアップロードに対応するらしい。こりゃ期待じゃ。 </p>
+<p>   <font style="BACKGROUND-COLOR: red">追記</font></p>
+<p>preタグとか使うとうまく改行されない。どうやら改行コードを送ってくれないみたい。<br>あと画像のアップロードに対応するっていってもこれXML-RPCで通信するんだろ。画像ファイルってXML-RPCで送れたりするのだろうか。</p>
+

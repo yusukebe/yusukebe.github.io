@@ -1,0 +1,116 @@
++++
+Categories = ["tech"]
+Description = " はてなブックマークを新聞風に表示し、閲覧できるHatebuPaperなるものを作ってみました。今日の午前1時に作り出して、7時に公開したので賞味6時間で完成です。   HatebuPaper      以前からはてなブックマークをより視覚"
+Tags = []
+date = "2010-01-19T08:12:00+09:00"
+title = "はてぶを新聞風に閲覧できるHatebuPaperを作ってみた"
+author = "kamawada"
+archive = ["2010"]
+draft = false
++++
+
+
+<p>
+はてなブックマークを新聞風に表示し、閲覧できるHatebuPaperなるものを作ってみました。
+今日の午前1時に作り出して、7時に公開したので賞味6時間で完成です。
+</p>
+<p>
+<a href="http://hatebupaper.pulpsite.net/">
+<img alt="HatebuPaper" class="at-xid-6a0133f4781589970b015435b6f70e970c" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015435b6f70e970c-pi.jpg>
+</a><br>
+<span class="hatena-bookmark-title"><a href="http://hatebupaper.pulpsite.net/">HatebuPaper</a></span> <span class="hatena-bookmark-users"><a href="http://b.hatena.ne.jp/entry/hatebupaper.pulpsite.net/"><img alt="HatebuPaper" class="at-xid-6a0133f4781589970b015435b6f71c970c" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015435b6f71c970c-pi" title="HatebuPaper"></a></span> <span class="hatena-bookmark-b-mark"><a href="http://b.hatena.ne.jp/entry/hatebupaper.pulpsite.net/"><img alt="HatebuPaper" class="at-xid-6a0133f4781589970b015435b6f515970c" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015435b6f515970c-pi" title="HatebuPaper"></a></span> <span class="hatena-bookmark-b-ex-mark"><a href="http://b.hatena.ne.jp/my/add.confirm?url=http%3A%2F%2Fhatebupaper.pulpsite.net%2F"><img alt="このエントリーをはてなブックマークに追加" class="at-xid-6a0133f4781589970b015435b6f51e970c" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015435b6f51e970c-pi.gif title="このエントリーをはてなブックマークに追加"></a></span><br>
+</p>
+<p>
+以前からはてなブックマークをより視覚的に見たいなーと思っていました。
+最近では本体の方でもエントリーによってはそのページに含まれる画像のサムネイルを表示してくれたりします。
+が、ちょっとそれだけじゃあ物足りないなーということで、
+まずは記事から特徴的なそこへ張られているイメージのURLを取って来れないか
+というのが始まりでした。
+</p>
+<p>
+で、一度 tokuhirom ware の HTML::LDRFullFeed と(それが失敗した場合に) HTML::TokeParser で、
+本文抽出を行い、その中で一番先頭に来る img タグを記事の特徴画像と見なすという
+簡単なロジックを考えやってみたところ、まーそこそこ。
+で、なんとなくかっこよーく表示させたいなぁと思っていたら、
+jQueryのpluginで、
+<a href="http://desandro.com/resources/jquery-masonry">jQuery Masonry</a>
+というもの発見。
+すげーはしょって、説明するとCSSのFloatレイアウトを「詰めて」かっこよくしてくれる便利なものです。
+ということでそれらをミックスする形でHatebuPaperができましたとさ。
+</p>
+<p>
+結構サクサクと動いて気に入ってます。
+以下に、ウェブページから特徴的な img タグの src 属性を出力する簡単なサンプルを
+貼付けておきます。ということで Enjoy!
+</p>
+
+<pre class="brush: perl"> use strict;
+use warnings;
+use HTML::ExtractContent;
+use HTML::TokeParser;
+use HTML::LDRFullFeed;
+use LWP::UserAgent;
+
+my $url         = shift || 'http://yusukebe.com/';
+my $ldrfullfeed = HTML::LDRFullFeed-&gt;new();
+my $ua          = LWP::UserAgent-&gt;new;
+my $res         = $ua-&gt;get($url);
+my $src         = $ldrfullfeed-&gt;make_full( $url, $res-&gt;content );
+unless ($src) {
+    my $extractor = HTML::ExtractContent-&gt;new;
+    $extractor-&gt;extract( $res-&gt;decoded_content );
+    $src = $extractor-&gt;as_html;
+}
+my $p = HTML::TokeParser-&gt;new( \$src );
+while ( my $token = $p-&gt;get_tag("img") ) {
+    print $token-&gt;[1]{src} . "\n";
+}
+ </pre>
+
+<ul>
+  <li>
+<span class="hatena-bookmark-title"><a href="http://hatebupaper.pulpsite.net/">HatebuPaper</a></span> <span class="hatena-bookmark-users"><a href="http://b.hatena.ne.jp/entry/hatebupaper.pulpsite.net/"><img alt="HatebuPaper" class="at-xid-6a0133f4781589970b015435b6f71c970c" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015435b6f71c970c-pi" title="HatebuPaper"></a></span> <span class="hatena-bookmark-b-mark"><a href="http://b.hatena.ne.jp/entry/hatebupaper.pulpsite.net/"><img alt="HatebuPaper" class="at-xid-6a0133f4781589970b015435b6f515970c" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015435b6f515970c-pi" title="HatebuPaper"></a></span> <span class="hatena-bookmark-b-ex-mark"><a href="http://b.hatena.ne.jp/my/add.confirm?url=http%3A%2F%2Fhatebupaper.pulpsite.net%2F"><img alt="このエントリーをはてなブックマークに追加" class="at-xid-6a0133f4781589970b015435b6f51e970c" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015435b6f51e970c-pi.gif title="このエントリーをはてなブックマークに追加"></a></span>
+</li>
+</ul>
+
+<div>
+<div style="float:left"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4774137529/kamawada-22/"><img alt="WEB+DB PRESS Vol.49" class="at-xid-6a0133f4781589970b015435b6f738970c" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015435b6f738970c-pi.jpg style="border:none;"></a></div>
+<div style="float:left;margin-left:15px;">
+<div style="font-size:12pt"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4774137529/kamawada-22/">WEB+DB PRESS Vol.49</a></div>
+<div style="font-size:7pt;font-family:verdana;">posted with <a href="http://yusukebe.com/b/amazon/search/">yusukebe.com::AmazonSearch</a> on 2010.1.19</div>
+<div style="font-size:10pt;">
+<ul style="list-style-type:none;padding:0;">
+<li>大型本 / 技術評論社 </li>
+<li>Amazon 売り上げランキング: 80156</li>
+</ul>
+<ul style="list-style-type:none;padding:0;"><li>Amazon おすすめ度の平均: <img alt="4.0" class="at-xid-6a0133f4781589970b014e8bd727e1970d" src="https://yusukebe.com/archives/.a/6a0133f4781589970b014e8bd727e1970d-pi.gif style="margin:0;"><ul style="list-style-type:none;padding-left:0;">
+<li>
+<img alt="5" class="at-xid-6a0133f4781589970b015435b6d28e970c" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015435b6d28e970c-pi.gif style="margin:0;"> 「特に面白かった」、「はてなブックマーク構築ノウハウ大公開」</li>
+<li>
+<img alt="3" class="at-xid-6a0133f4781589970b015391e3783b970b" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015391e3783b970b-pi.gif style="margin:0;"> レコメンドエンジン</li>
+</ul>
+</li></ul>
+<a href="http://www.amazon.co.jp/WEB-DB-PRESS-Vol-49-PRESS%E7%B7%A8%E9%9B%86%E9%83%A8/dp/4774137529%3FSubscriptionId%3D0VEY2A9SVSFB81NQ9HG2%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D4774137529">Amazon.co.jpで詳細を見る</a>
+</div>
+</div>
+<div style="clear:left;"></div>
+</div>
+<br>
+
+<div>
+<div style="float:left"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4844324918/kamawada-22/"><img alt="できるポケット+ はてなブックマークで情報アンテナが10倍広がる本" class="at-xid-6a0133f4781589970b015435b6f746970c" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015435b6f746970c-pi.jpg style="border:none;"></a></div>
+<div style="float:left;margin-left:15px;">
+<div style="font-size:12pt"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4844324918/kamawada-22/">できるポケット+ はてなブックマークで情報アンテナが10倍広がる本</a></div>
+<div style="font-size:7pt;font-family:verdana;">posted with <a href="http://yusukebe.com/b/amazon/search/">yusukebe.com::AmazonSearch</a> on 2010.1.19</div>
+<div style="font-size:10pt;">
+<ul style="list-style-type:none;padding:0;">
+<li>小林 祐一郎 できるシリーズ編集部  </li>
+<li>新書 / インプレスジャパン </li>
+<li>Amazon 売り上げランキング: 360345</li>
+</ul>
+<a href="http://www.amazon.co.jp/%E3%81%A7%E3%81%8D%E3%82%8B%E3%83%9D%E3%82%B1%E3%83%83%E3%83%88-%E3%81%AF%E3%81%A6%E3%81%AA%E3%83%96%E3%83%83%E3%82%AF%E3%83%9E%E3%83%BC%E3%82%AF%E3%81%A7%E6%83%85%E5%A0%B1%E3%82%A2%E3%83%B3%E3%83%86%E3%83%8A%E3%81%8C10%E5%80%8D%E5%BA%83%E3%81%8C%E3%82%8B%E6%9C%AC-%E5%B0%8F%E6%9E%97-%E7%A5%90%E4%B8%80%E9%83%8E/dp/4844324918%3FSubscriptionId%3D0VEY2A9SVSFB81NQ9HG2%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D4844324918">Amazon.co.jpで詳細を見る</a>
+</div>
+</div>
+<div style="clear:left;"></div>
+</div>
+

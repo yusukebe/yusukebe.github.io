@@ -1,0 +1,72 @@
++++
+Categories = ["tech"]
+Description = " #perl-casual@freenode で話題になって、PHPの関数の機能をPerlで実現するにはどうすればいいのかの対になったリファレンスが欲しいよねーということになりました。junichiroさんによると需要があるみたいです。詳し"
+Tags = ["Perl"]
+date = "2010-03-03T04:51:00+09:00"
+title = "PHPの小文字から始まる関数が4405個もあってびっくりした件"
+author = "kamawada"
+archive = ["2010"]
+draft = false
++++
+
+
+<p>
+#perl-casual@freenode で話題になって、
+PHPの関数の
+機能をPerlで実現するにはどうすればいいのかの対になったリファレンスが欲しいよねー
+ということになりました。junichiroさんによると需要があるみたいです。
+詳しくは<a href="http://blog.yappo.jp/">Yappoさん</a>が書いてくれると思います。
+そんで(ちょっとした僕の発言のおかげでWikiHubに迷惑をかけてごめんなさいな感じなのですがすいません＞＜)、
+PHPのリファレンスサイトにのってる関数っていったいどんなのがあるんだ！というのを
+くまなく調べることをしてみました。
+あんまPHPよくわかってないのですが、クラスから派生してるっぽい関数は除きつつ、
+小文字から始まる関数名の数を公式サイトから数えてみると、
+なんと「4405」個もあったよ！
+</p>
+<p>
+以下がそれを調べるために使えるPerlの簡単なスクレイパースクリプトです。
+</p>
+
+<pre class="brush: perl"> use Web::Scraper;
+use URI;
+my $url = 'http://php.net/manual/ja/indexes.php';
+my $scraper = scraper {
+    process 'dd.indexentry', 'functions[]' =&gt; 'TEXT';
+};
+my $res = $scraper-&gt;scrape(URI-&gt;new($url));
+my @fs = grep { $_ =~ /^[^A-Z]/ } @{$res-&gt;{functions}};
+print $#fs . "\n";
+ </pre>
+<p>
+perldoc perlfuncでPerlの標準関数を調べると数が220個ほど。
+ちょっと何を「標準」と呼んだらいいのかPHPの場合わかりかねますが、
+リファレンスサイトに載ってるその数と比べるとだいぶー違いますね。
+まぁ、Perlの場合は標準でついてくるモジュールの関数を使ったりしますから、
+一概に比較はできませんが、言語の違いってのを改めて感じました。
+</p>
+<blockquote>
+<p>
+ちょw、この関数使わないだろw
+</p>
+</blockquote>
+<p>
+みたいなのもPHPにはあったりしますが、Perlの場合はそれをCPANモジュールで解決してるわけであって、
+組み込みの関数でやるかモジュールインスコしてやるかはそれぞれ利点や不都合な点あるわけで...
+ただ、Perlの場合は配列を操作する関数であっても、
+どちらかというといくつかの関数を組み合わせて目的を達成するのに比べて、
+PHPの場合はそれぞれがひとつずつ関数になっている感じは受けました。
+僕はやっぱり柔軟なPerlのやり方の方(思想)が好きなーと思います。
+自分は、確か、Perlより、PHPの方を最初に触りました。
+問題を解決する関数がすぐに見つかればPHPは初心者にとって簡単という印象ですが、
+わかってると、少し考えればいかようにも解決ができるPerlの方がいいなという具合です(思想的にね)。
+よりスマートなやり方を好めばList::Utilモジュールを使うというような解決策もありますし。
+</p>
+<p>
+いやーでもこんなたくさんあるとは知らなんだです。
+まぁ、使う人が気持ちいい言語を使えばいいと思いましたね！
+</p>
+<ul>
+<li><a href="http://php.net/manual/ja/indexes.php">PHP: 関数一覧 - Manual</a></li>
+<li><a href="http://wikihub.org/wiki/php-funcref-in-perl">WikiHub :: php-funcref-in-perl :: README</a></li>
+</ul>
+

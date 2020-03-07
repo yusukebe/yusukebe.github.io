@@ -1,0 +1,55 @@
++++
+Categories = ["tech"]
+Description = " たまたま、こんな感じのツイートを見かけたので...   Mojoliciousで404、500等のWAFで用意されている標準画面を出さないようにする方法を知りたいのですがどなたか教えて頂く事はできますでしょうか   僕の返答   temp"
+Tags = ["Perl", "Mojolicious"]
+date = "2013-07-18T23:56:00+09:00"
+title = "Mojoliciousでエラー時に特別な処理をさせる"
+author = "kamawada"
+archive = ["2013"]
+draft = false
++++
+
+
+<p>たまたま、こんな感じのツイートを見かけたので...</p>
+
+<blockquote><p>Mojoliciousで404、500等のWAFで用意されている標準画面を出さないようにする方法を知りたいのですがどなたか教えて頂く事はできますでしょうか</p></blockquote>
+
+<p>僕の返答</p>
+
+<blockquote><p>templates/not_found.html.ep とかにテンプレート置いておくとそれがrenderされるようになりますよー</p></blockquote>
+
+<p>っていうのが常套手段なんだけど...</p>
+
+<blockquote><p>ありがとうございます！テンプレートをやっぱり設置しないといけないのですね、静的ページにリダイレクトするか、汎用例外処理みたいなのがあれば良かったんですが、CGIだと仕方ないですね...。</p></blockquote>
+
+<p>再び返答</p>
+
+<blockquote><p>あー、hook 使えばできそうっすよー＞リダイレクト。でも個人的には404ページ出した方がいい気がします</p></blockquote>
+
+<p>ってことでhookを使って500番エラーをキャッチする再現出来るコードを書いてみた。Mojolicious::Lite です。</p>
+
+<pre> use Mojolicious::Lite;
+
+app-&gt;hook(
+    after_dispatch =&gt; sub {
+        my $c = shift;
+        if ( $c-&gt;res-&gt;code =~ /500/ ) {
+            $c-&gt;render( text =&gt; 'hooked!!' );
+        }
+    }
+);
+
+get '/' =&gt; sub {
+    my $self = shift;
+    $self-&gt;render( text =&gt; 'index' );
+};
+
+get '/error' =&gt; sub {
+    die;
+};
+
+app-&gt;start;
+ </pre>
+
+<p>これで「/error」にアクセスすると「hooked!!」って出る〜！！</p>
+

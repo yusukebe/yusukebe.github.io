@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Perl徹底攻略とWeb開発の基礎徹底攻略が出ます - ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="Perl徹底攻略とWeb開発の基礎徹底攻略が出ます" />
+<meta property="og:description" content=" WEB&#43;DB PRESS plusのムック本として   Perl徹底攻略  Web開発の基礎徹底攻略   の2冊がいつもお世話になっている技術評論社さんから来週火曜日23日あたりに出ます。どちらとも以前WEB&#43;DB PRESSに寄稿した僕" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yusukebe.com/posts/2013/0718220836/" />
+<meta property="og:image" content="https://yusukebe.com/icons/myicon.png"/>
+<meta property="article:published_time" content="2013-07-19T07:08:00+09:00" />
+<meta property="article:modified_time" content="2013-07-19T07:08:00+09:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://yusukebe.com/icons/myicon.png"/>
+
+<meta name="twitter:title" content="Perl徹底攻略とWeb開発の基礎徹底攻略が出ます"/>
+<meta name="twitter:description" content=" WEB&#43;DB PRESS plusのムック本として   Perl徹底攻略  Web開発の基礎徹底攻略   の2冊がいつもお世話になっている技術評論社さんから来週火曜日23日あたりに出ます。どちらとも以前WEB&#43;DB PRESSに寄稿した僕"/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
+	
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://yusukebe.com/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper post">
+		<div class="header">
+	<h1 class="site-title"><a href="https://yusukebe.com/">ゆーすけべー日記</a></h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/yusukebe" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/yusukebe" title="Twitter"><i data-feather="twitter"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post-header">
+			<h1 class="title">Perl徹底攻略とWeb開発の基礎徹底攻略が出ます</h1>
+			<div class="meta">Posted at &mdash; Jul 19, 2013</div>
+		</div>
+
+		<div class="markdown post-body">
+			
+
+<p>WEB+DB PRESS plusのムック本として</p>
+
+<ul>
+<li><strong>Perl徹底攻略</strong></li>
+<li><strong>Web開発の基礎徹底攻略</strong></li>
+</ul>
+
+
+<p>の2冊がいつもお世話になっている技術評論社さんから来週火曜日23日あたりに出ます。どちらとも以前WEB+DB PRESSに寄稿した僕の記事が一部もしくはだいぶ修正して掲載されています。著者として献本いただき昨日手に入れましたよ。</p>
+
+<p><a href="http://yusukebe.com/archives/2013/07/19/IMG_0773.JPG"><img alt="IMG_0773.JPG" src="http://yusukebe.com/archives/assets_c/2013/07/IMG_0773-thumb-1000x750-420.jpg" width="500" class="mt-image-none" style=""></a></p>
+
+<p>僕が関係している記事は <strong>Perl徹底攻略</strong> だと、</p>
+
+<ul>
+<li>Part.3 応用と実践 第1章「YouTube Data APIから学ぶWeb APIのキホン」</li>
+<li>Pert.6 小飼弾のPerlハッカーに逢いたい♥「和田 裕介（ゆーすけべー）」</li>
+</ul>
+
+
+<p><strong>Web開発の基礎徹底攻略</strong> は</p>
+
+<ul>
+<li>一般記事「Twitter時代の技術者コミュニケーション術」</li>
+</ul>
+
+
+<p>です。特に「YouTube Data APIから学ぶWeb APIのキホン」の場合、初出の記事ではTwitter Search APIを題材にしていたのですがいかんせんAPIがVersion 1.1へ移行した関係上、OAuthの認証が必要になり、それを解説していたら本質から外れてしまうと思い、YouTubeのAPIを利用した解説記事に全面リニューアルしました。</p>
+
+<p>ざーっと眺めてみたんですが、2つの関連記事が掲載されていることもありPerl徹底攻略の方はだいぶ思い入れというか、オーガナイズしてくれているYappoさんの巻頭記事とか読んでいるとここまでまとまった形で出版できて皆さんよかった！！と <strong>熱いものが混み上がる</strong> 感じです。ってか個人的には表紙のこの並びがヤバい。</p>
+
+<p><a href="http://yusukebe.com/archives/2013/07/19/IMG_0775.jpg"><img alt="IMG_0775.jpg" src="http://yusukebe.com/archives/assets_c/2013/07/IMG_0775-thumb-1000x750-422.jpg" width="500" class="mt-image-none" style=""></a></p>
+
+<blockquote><p>ちょw ラリー、宮川さん、そして、俺とかwww</p></blockquote>
+
+<p>さて、肝心の内容、<strong>Perl徹底攻略</strong> に関しては一部気になるモノを列挙すると</p>
+
+<ul>
+<li>冒頭にらくだ本の訳者である近藤嘉雪さんの伝家の宝刀的、丁寧なリファレンス入門があり初心者も取っ付きやすい</li>
+<li>ikasam_aさんによるCarton &amp; cpanmの記事はおそらく中でも最新の記事でホットトピックス。個人的にCarton便利やわーって使いだした身なので読んでもらいたい</li>
+<li>「Amon2によるWebアプリケーションの高速開発」とか「Xslate」の記事は中の人が書いてあるので分かりやすいし、モジュールのコンセプトが分かる</li>
+<li>naoyaさんによる書き下ろしの「モダンPerlリファクタリング」はテストとCIを使ってコードをリファクタリングしている様子をmd2inaoという技術評論社さん入校向けのプログラムを題材にして解説してあってすごくいい</li>
+<li>パフォーマンス改善、ロギングなども網羅してある</li>
+<li>Perlで音ならすとかAcmeモジュールの話もある</li>
+</ul>
+
+
+<p>って感じで凝縮感たまらないっす。</p>
+
+<p><strong>Web開発徹底攻略</strong> の方はぶっちゃけあんままだ読んでないのですが、これからWeb開発をはじめるぞーって人向けにかなり優しくトピックが設定されてます。</p>
+
+<p>自分がまさに <strong>Perlで</strong>  / <strong>Web開発</strong>  を行っているので献本もらっていなかったら即買いな2冊であり、興味がある方だったら手に取ってみたり、ポチってみたりするといいんではないでしょうかね！</p>
+
+<div class="amazlet-box" style="margin-bottom:0px;">
+<div class="amazlet-image" style="float:left;margin:0px 12px 1px 0px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/477415864X/kamawada-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/61U-P7UQRZL._SL160_.jpg" alt="Perl徹底攻略 (WEB+DB PRESS plus)" style="border: none;"></a></div>
+<div class="amazlet-info" style="line-height:120%; margin-bottom: 10px">
+<div class="amazlet-name" style="margin-bottom:10px;line-height:120%">
+<a href="http://www.amazon.co.jp/exec/obidos/ASIN/477415864X/kamawada-22/ref=nosim/" name="amazletlink" target="_blank">Perl徹底攻略 (WEB+DB PRESS plus)</a><div class="amazlet-powered-date" style="font-size:80%;margin-top:5px;line-height:120%">posted with <a href="http://www.amazlet.com/" title="amazlet" target="_blank">amazlet</a> at 13.07.18</div>
+</div>
+<div class="amazlet-detail">大沢 和宏 cho45(さとう) 小林 篤 和田 裕介 嶋田 裕二(xaicron) 牧 大輔(lestrrat) 奥 一穂 広木 大地 伊藤 直也 長野 雅広 藤原 俊一郎 伊藤 智章 まかまか般若波羅蜜 小飼 弾 近藤 嘉雪 中川 勝樹 宮川 達彦 tokuhirom 藤 吾郎(gfx) 村瀬 大輔 <br>技術評論社 <br>売り上げランキング: 132<br>
+</div>
+<div class="amazlet-sub-info" style="float: left;"><div class="amazlet-link" style="margin-top: 5px"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/477415864X/kamawada-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jpで詳細を見る</a></div></div>
+</div>
+<div class="amazlet-footer" style="clear: left"></div>
+</div>
+
+
+<p><br></p>
+
+<div class="amazlet-box" style="margin-bottom:0px;">
+<div class="amazlet-image" style="float:left;margin:0px 12px 1px 0px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4774158658/kamawada-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/61XtgiEgW%2BL._SL160_.jpg" alt="Web開発の基礎徹底攻略 (WEB+DB PRESS plus)" style="border: none;"></a></div>
+<div class="amazlet-info" style="line-height:120%; margin-bottom: 10px">
+<div class="amazlet-name" style="margin-bottom:10px;line-height:120%">
+<a href="http://www.amazon.co.jp/exec/obidos/ASIN/4774158658/kamawada-22/ref=nosim/" name="amazletlink" target="_blank">Web開発の基礎徹底攻略 (WEB+DB PRESS plus)</a><div class="amazlet-powered-date" style="font-size:80%;margin-top:5px;line-height:120%">posted with <a href="http://www.amazlet.com/" title="amazlet" target="_blank">amazlet</a> at 13.07.18</div>
+</div>
+<div class="amazlet-detail">小飼 弾 田籠 聡 近藤 宇智朗 並河 祐貴 赤松 祐希 井上 誠一郎 ミック 天尋 左石 和田 裕介 <br>技術評論社 <br>売り上げランキング: 153<br>
+</div>
+<div class="amazlet-sub-info" style="float: left;"><div class="amazlet-link" style="margin-top: 5px"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4774158658/kamawada-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jpで詳細を見る</a></div></div>
+</div>
+<div class="amazlet-footer" style="clear: left"></div>
+</div>
+
+
+<p><br></p>
+
+
+		</div>
+
+		<div class="post-tags">
+			
+				
+					<nav class="nav tags">
+							<ul class="flat">
+								
+								<li><a href="/tags/news">News</a></li>
+								
+								<li><a href="/tags/perl">Perl</a></li>
+								
+								<li><a href="/tags/technologies">Technologies</a></li>
+								
+							</ul>
+					</nav>
+				
+			
+		</div>
+        <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v5.0&appId=233306523373884&autoLogAppEvents=1"></script>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+
+<div class="social-button-area">
+  <ul class="social-button">
+    <li>
+      <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
+    </li>
+    <li>
+      <span class="fb-share-button"  data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2013%2f0718220836%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
+    </li>
+    <li>
+      <a href="https://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label-counter" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>
+    </li>
+  </ul>
+</div>
+
+<div class="disqus-area">
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "yusukebe-com" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<ul class="pagination">
+  
+  <li class="page-item page-prev">
+    <a href="https://yusukebe.com/posts/2013/0718145632/" class="page-link" aria-label="Previous"><span aria-hidden="true">← Mojoliciousでエラー時に特別な処理をさせる</span></a>
+  </li>
+  
+  
+  <li class="page-item page-next">
+    <a href="https://yusukebe.com/posts/2013/0724022022/" class="page-link" aria-label="Next"><span aria-hidden="true">ORMにValidation機構を持たせる →</span></a>
+  </li>
+  
+</ul>
+
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright yusukebe.com |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-492497-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

@@ -1,0 +1,68 @@
++++
+Categories = ["tech"]
+Description = " iPhoneをずっと使っているのでAndroid端末、僕持ってないんですよねー。とはいえAndroidの環境でアプリの動作確認をしたかったりします。Nexus7のWifiモデルを買ってもいいんだけど、早急にGoogle Playで配布され"
+Tags = ["Technologies", "Android"]
+date = "2013-04-12T12:30:00+09:00"
+title = "Android端末を持ってなくてもエミュレータでGoogle Play配布アプリを動かす"
+author = "kamawada"
+archive = ["2013"]
+draft = false
++++
+
+
+<p>iPhoneをずっと使っているのでAndroid端末、僕持ってないんですよねー。とはいえAndroidの環境でアプリの動作確認をしたかったりします。Nexus7のWifiモデルを買ってもいいんだけど、早急にGoogle Playで配布されているアプリをAndroidで検証したかったので、調べつつそれが出来ないかやってみました。結果、Android SDKの中にあるAndroidのエミュレータで動かすことに成功したので、その行程を紹介します。現時点で出来るってことで今後不可能になるかもってのと、自己責任でお願いします。</p>
+
+<p>Android SDKが用意されていることを前提として、ざっくりと行程を紹介すると</p>
+
+<ol>
+<li>
+<a href="http://www.bluestacks.com/">BlueStacks</a>というソフトをインストールする</li>
+<li>そのソフト内でGoogle Playからダウンロード出来て動かせる、ただ使い難いのでSDKのエミュレータを使う</li>
+<li>
+<a href="https://play.google.com/store/apps/details?id=com.redphx.deviceid&amp;hl=ja">Device ID</a>なるAndroidアプリがあるのでこいつを入れてアカウントと紐づいたデバイスのIDを取得する</li>
+<li>デバイスのIDが分かれば<a href="http://apps.evozi.com/apk-downloader/">APK Downloader</a>というChromeのエクステンションで.apkをゲットできる</li>
+<li>SDKのエミュレータを起動</li>
+<li>.apkをエミュレータ内に仕込んでインストール</li>
+<li>動くー</li>
+</ol>
+
+
+<p>以下それぞれ詳細</p>
+
+<hr>
+
+<p><br></p>
+
+<h3>BlueStacks</h3>
+
+<p>アプリの.apkファイルさえあればSDKのエミュレータで動かすことが出来るんだけど、Google Playの配布元からは工夫しないとゲット出来ない。で工夫する際にGoogleのアカウントと紐づいたデバイスのIDが必要なんだけど、端末を持っていない僕としてはそれが無いんですよ。そこでこのBueStacksというPC/Mac用のソフトの出番です。</p>
+
+<p><a href="http://yusukebe.com/archives/2013/04/12/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202013-04-12%2012.23.20.png"><img alt="スクリーンショット 2013-04-12 12.23.20.png" src="http://yusukebe.com/archives/assets_c/2013/04/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202013-04-12%2012.23.20-thumb-400x265-341.png" width="400" height="265" class="mt-image-none" style=""></a></p>
+
+<p>BlueStacksについてどうなってるのか？よく理解してないんだけど、端末としてエミュレートされているっぽい。Google Play上のアプリをダウンロードしてインストール、そして、ソフト内で動かすことが出来ます。ただそれだと挙動が遅かったり、表示がずれたりして検証にはあんまり向いてない。けれどGoogle Playにある「Device ID」って言うソフトを使えば仮想だけど固有っぽいデバイスのIDを取得することが出来ます。</p>
+
+<p>とりあえずそのアプリを使ってデバイスIDをメモっておく。</p>
+
+<h3>APK Downloader</h3>
+
+<p>デバイスIDさえあれば、ChromeのエクステンションであるAPK Downloader経由でGoogle Play上の.apkファイルを手に入れることが出来ます。</p>
+
+<p><a href="http://yusukebe.com/archives/2013/04/12/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202013-04-12%2012.26.38.png"><img alt="スクリーンショット 2013-04-12 12.26.38.png" src="http://yusukebe.com/archives/assets_c/2013/04/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202013-04-12%2012.26.38-thumb-400x154-343.png" width="400" height="154" class="mt-image-none" style=""></a></p>
+
+<h4>エミュレータに仕込む</h4>
+
+<p>Android SDKから希望のエミュレータを起動させます。そしてその後</p>
+
+<pre> $ {Android SDKへのパス}/sdk/platform-tools/adb install ~/Download/xxxxx.apk
+ </pre>
+
+<p>というコマンドを打てばエミュレータにインスコされて、動く！</p>
+
+<p><a href="http://yusukebe.com/archives/2013/04/12/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202013-04-12%2012.32.17.png"><img alt="スクリーンショット 2013-04-12 12.32.17.png" src="http://yusukebe.com/archives/assets_c/2013/04/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202013-04-12%2012.32.17-thumb-240x315-345.png" width="240" height="315" class="mt-image-none" style=""></a></p>
+
+<hr>
+
+<p><br></p>
+
+<p>ってことでAndroidのデバグが実機持ってなくても出来ましたよー。</p>
+

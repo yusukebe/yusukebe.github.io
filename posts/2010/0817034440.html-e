@@ -1,0 +1,41 @@
++++
+Categories = ["tech"]
+Description = " とあるFlashベースの動画再生ライブラリがいい感じなので、それを利用してYourFileHostの動画を再生するサービスを作ってみた。久しぶりにAS3触りました。ただ、再生するだけじゃつまらないので、エログ等のYourFileHostの"
+Tags = []
+date = "2010-08-17T12:44:00+09:00"
+title = "エログのYourFileHost動画を連続再生「ElogPlayer」を作ってみた"
+author = "kamawada"
+archive = ["2010"]
+draft = false
++++
+
+
+<p>
+とあるFlashベースの動画再生ライブラリがいい感じなので、
+それを利用してYourFileHostの動画を再生するサービスを作ってみた。
+久しぶりにAS3触りました。
+ただ、再生するだけじゃつまらないので、
+エログ等のYourFileHostの動画のURLが含まれているページを入力すると、
+その動画を上限12として連続で見れるようにしました。
+名付けて「<a href="http://elogplayer.urasukebe.com/">ElogPlayer</a>」です。
+</p>
+<p>
+<a href="http://elogplayer.urasukebe.com/">ElogPlayer</a><br>
+<a href="http://elogplayer.urasukebe.com/">
+<img alt="ElogPlayer" class="at-xid-6a0133f4781589970b015435b6f6b2970c" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015435b6f6b2970c-pi">
+</a>
+</p>
+<p>
+似たようなサービスに「YourFileHost-Viewer」というのがあるんですが、
+しばらく動いていないので、これ使うといいですよー。
+ブックマークレットなんてあるんで、
+気になるYourFileHost動画があるエログやページで実行すれば、
+どびゃーと一気に動画を再生していくことができますね。
+残念ながらFLVベースの動画を利用しているので、
+iPhone/iPadでは見れませんが、PCだったら結構柔軟に対応できる
+いい感じのプレイヤーサービスだと思うので、ご利用ください。
+</p>
+<ul>
+  <li><a href="http://elogplayer.urasukebe.com/">ElogPlayer</a></li>
+</ul>
+

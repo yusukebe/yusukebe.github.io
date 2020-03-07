@@ -1,0 +1,68 @@
++++
+Categories = ["tech"]
+Description = " 先日発足した、  神奈川県・横浜にゆかりのある Perl な人たちで構成されているコミュニティ「Yokohama.pm」。  その第2回目イベント「Yokohama.pm technical talk #2」が開催されたので行ってきました"
+Tags = ["Perl"]
+date = "2008-08-24T20:09:00+09:00"
+title = "Yokohama.pm tech talk #2 に行って来た＆『Perlモジュールだけで挑戦「画像の物体認識類似検索」』"
+author = "kamawada"
+archive = ["2008"]
+draft = false
++++
+
+
+<p>
+先日発足した、
+  神奈川県・横浜にゆかりのある Perl な人たちで構成されているコミュニティ「<strong>Yokohama.pm</strong>」。
+  その第2回目イベント「<strong>Yokohama.pm technical talk #2</strong>」が開催されたので行ってきました。
+  参加者は30人ほどで、会場は<strong>デジハリ横浜校</strong>さんでした。とりあえず、最初に、
+会場を貸してくれたデジハリ横浜校さんありがとうございます！
+内容は10分間のメイントークが5本、5分間のライトニングトーク(LT)が6本、です。
+</p>
+<p>
+  <img alt="Yokohama.pm" class="at-xid-6a0133f4781589970b015391e38fae970b" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015391e38fae970b-pi.jpg>
+</p>
+<p>
+  自分は『<strong>Perlモジュールだけで挑戦「画像の物体認識類似検索」</strong>』という題名で LT 発表させていただきました。
+  Image::Seek という任意の画像に類似したイメージを返してくれる CPAN モジュールと、
+  物体検出ができる Image::ObjectDetect モジュールを組み合わせて、「顔チェキ」みたいなことができないかという挑戦の模様をデモ付きで話しました。
+  本当はデモを公開したいところですが、使っている写真の権利的にまずいので、とりあえず資料だけ置いておきます。そのうち内容の詳しい解説をするかも。
+</p>
+
+<ul>
+  <li><a href="http://kamawada.com/~yusuke/yusukebe/archives/files/080822/techtalk2_080822/techtalk2_080822.html">techtalk2_080822.html</a></li>
+</ul>
+
+<p>
+また、各発表の詳しい解説やレビューは以下、参加者の方によるまとめがあるのでそちらをご覧下さい。
+</p>
+<ul>
+  <li><a href="http://d.hatena.ne.jp/hiratara/20080822/1219398951">Yokohama Perl Mongers Technical Talk #2 - a geek</a></li>
+  <li><a href="http://dann.g.hatena.ne.jp/dann/20080822/p1">Yokohama.pm テクニカルトーク #2に行ってきた！ - dann@webdev - dannグループ</a></li>
+  <li><a href="http://d.hatena.ne.jp/perlcodesample/20080823/1219500519">Perlのイベント「Yokohama.pm Technical Talk #2」発表内容まとめ - Perl入門〜サンプルコードによるPerl入門〜</a></li>
+</ul>
+
+<p>
+では、今回のイベント、個人的に思ったことを簡単に。
+まず、メイントークでは Perl のイベントのくせに、Flash / ActionScript 関連のネタが3つもあるという具合で、突っ込みどころになっていたのですが、もともと Perler の人が Flash / AS を触ると何を作り出すのかがわかって興味深かったです。
+また、これが Yokohama.pm の強みだと思いますが、
+普段 Shibuya.pm などで発表したことのない人のスピーカーっぷりが見れたのでよかったです。
+例えば「Monday Module」というタイトルで発表した xeczx さんは「コードは一切出てきません。」と、
+言っておきながら、非常によくまとまった内容で関心しましたね
+（ 早速ドメインをとってるあたりもいい！ <a href="http://monday-module.org/">http://monday-module.org/</a> )。
+そして、一番印象に残ったというか残っちゃったのは、acotie の「acotie ちゃんのドキドキPerlプログラミング」でした。ZIGOROu さんが発表後に
+</p>
+<blockquote>
+  <p>
+    「とっても初々しいですね」
+  </p>
+</blockquote>
+<p>
+と言ってまとめてまさにそのとおり。題名のように非常に「ドキドキ」する発表でした。
+acotie にはこのドキドキをバネに今後も発表等してもらいたいですね。
+</p>
+<p>
+ほぼ来ていた人全員が参加した懇親会、その後の2次会ともにとても有意義な Yokohama.pm でした。
+ZIGOROu さん曰く次回はワークショップ的なものか、ハッカソンをやりたいということで今後も楽しみ！
+運営スタッフの皆様、そして参加者の皆様、お疲れさまでした！
+</p>
+

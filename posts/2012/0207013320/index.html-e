@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Markdownで文章を書こう！ - ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="Markdownで文章を書こう！" />
+<meta property="og:description" content=" みなさんはどのようなエディタでどのような記法で文章を書いていますか？状況によるとは思いますが、WordとかMacのPagesで文章を書いているという方やEvernoteでメモを取っているという方、または、Blogの投稿フォームに綴っている" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yusukebe.com/posts/2012/0207013320/" />
+<meta property="og:image" content="https://yusukebe.com/icons/myicon.png"/>
+<meta property="article:published_time" content="2012-02-07T10:33:00+09:00" />
+<meta property="article:modified_time" content="2012-02-07T10:33:00+09:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://yusukebe.com/icons/myicon.png"/>
+
+<meta name="twitter:title" content="Markdownで文章を書こう！"/>
+<meta name="twitter:description" content=" みなさんはどのようなエディタでどのような記法で文章を書いていますか？状況によるとは思いますが、WordとかMacのPagesで文章を書いているという方やEvernoteでメモを取っているという方、または、Blogの投稿フォームに綴っている"/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
+	
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://yusukebe.com/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper post">
+		<div class="header">
+	<h1 class="site-title"><a href="https://yusukebe.com/">ゆーすけべー日記</a></h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/yusukebe" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/yusukebe" title="Twitter"><i data-feather="twitter"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post-header">
+			<h1 class="title">Markdownで文章を書こう！</h1>
+			<div class="meta">Posted at &mdash; Feb 7, 2012</div>
+		</div>
+
+		<div class="markdown post-body">
+			
+
+<p>みなさんはどのようなエディタでどのような<strong>記法</strong>で文章を書いていますか？
+状況によるとは思いますが、WordとかMacのPagesで文章を書いているという方や
+Evernoteでメモを取っているという方、または、Blogの投稿フォームに綴っている方、
+様々だと思います。</p>
+
+<p>僕も書くものによってはPagesやEvernoteも使うのですが、一番文章を書く手法が「プレーンテキスト＋Markdown」というものです。今もこの手法で書いています。Blogを書く時、雑誌の原稿を書く時、はたまたメルマガの原稿を書く時、全てにおいてこのやり方は今の僕にとってベストです。</p>
+
+<h3>プレーンテキストである利点</h3>
+
+<p>そもそもプレーンテキストとは<a href="http://ja.wikipedia.org/wiki/%E3%83%97%E3%83%AC%E3%83%BC%E3%83%B3%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88">Wikipediaによると</a>、</p>
+
+<blockquote><p>プレーンテキストには文字情報以外の情報は一切含まず、テキストデータのみで構成されている。バイナリデータや文字の整形情報を持たないので、最低限の機能しか持たないテキストエディタや表示用のソフトウェアで扱えると言う点で利便性が高い。</p></blockquote>
+
+<p>ということらしいです。</p>
+
+<p>で、まさに最後の利便性の話をするのですが、「機種依存」がないのが利点ですね。文字コードの問題もなきにしもあらずですが、Windows、Mac、Linux/Unix、スマートフォンと言った多種多様な環境においてテキストエディタ、ビューアーがさえあればファイルの中身を閲覧できるのが便利です。</p>
+
+<h3>プレーンテキストである欠点</h3>
+
+<p>WordやPagesといったワードプロセッサソフトで便利なのは、章見出しや太文字とか箇条書きが簡単にできて見やすく仕上げることができることですね。見やすくというのはある意味文章情報を「構造化」させることができるという意味合いです。</p>
+
+<p>プレーンテキストではテキスト情報のみなのでなかなかそう簡単にはいきません。</p>
+
+<p>しかし、Webを構成するHTMLの中身はプレーンテキストであるように「マークアップ」という手法で構造化することができるのです。マークアップは「テキストでテキストを装飾する」ことに他なりません。</p>
+
+<h3>マークアップじゃなじゃくてMarkdown</h3>
+
+<p>このHTMLはデファクトになりましたが、じゃあちょっとした文章を書く時にHTMLでマークアップするかと言われたらちと大変です。もちろんやられる方もいらっしゃいますが...
+また、HTMLは実際にブラウザで表示しない限り見た目の確認がしにくいのです。</p>
+
+<p>そこで、マークアップをもじって出てきたが今回紹介したい「<strong>Markdown</strong>」です。</p>
+
+<p>これは記述の方法、というよりルールと解釈してもよいです。ある特定のルールを守りさえして、変換プログラムに通せばHTMLに整形されます。HTMLに整形するのが目的ではなくても、整形前の記法フォーマットで記述すればそれなりに「かなり」見やすいテキストができあがるのも特徴です。</p>
+
+<h3>Markdownでよく使う例</h3>
+
+<p>Markdownの記法ルールについては、以下のサイトをご覧ください。日本語です。</p>
+
+<ul>
+<li><a href="http://blog.2310.net/archives/6">blog::2310 » Markdown文法の全訳</a></li>
+</ul>
+
+
+<p>今回は僕がよく使うMarkdownの書き方をいくつかピックアップします。</p>
+
+<h4>見出し</h4>
+
+<p>h1、h2、h3、h4... にあたいします。</p>
+
+<pre> # 見出し1番大きいの
+ </pre>
+
+<p>と書くと、変換すれば、</p>
+
+<pre> &lt;h1&gt;見出し1番大きいの&lt;/h1&gt;
+ </pre>
+
+<p>というHTMLになる。その他は#を増やしていくだけ。</p>
+
+<pre> ## 見出し2番目に大きいの
+
+### 見出し3番目に大きいの 
+
+#### 4番目、5番目と続く
+ </pre>
+
+<h4>強調、斜体</h4>
+
+<p>strong、i にあたいします。</p>
+
+<pre> ** 強調したいところ **
+
+* 斜体にしたいところ **
+ </pre>
+
+<h4>リスト</h4>
+
+<p>ul&gt;li、ol&gt;liにあたいします。</p>
+
+<pre> - 箇条書きその1
+- 箇条書きその2
+- 箇条書きその3
+
+1. 番号付きその1
+2. 番号付きその2
+3. 番号付きその3
+ </pre>
+
+<h4>引用、ソースコード表現</h4>
+
+<p>blockquote、pre&gt;codeに値します。</p>
+
+<pre> &gt; 引用したい文章等
+
+    ←4行スペースもしくは1タブ以上でソースコード表現
+    print "hello world!";
+ </pre>
+
+<h4>罫線</h4>
+
+<p>hr タグですね。</p>
+
+<pre> - - -
+ </pre>
+
+<p>や</p>
+
+<pre> ----
+ </pre>
+
+<p>で表現可能です。</p>
+
+<h4>HTMLタグも使える</h4>
+
+<p>実は、HTMLタグも使えるので、aタグとかimgタグとか慣れている書き方がいい！っていう方はそちらを使うとよいと思います。</p>
+
+<h3>Markdownを試してみる</h3>
+
+<p>Markdownをプレビューしつつ書いていける「Markdownお試し」サイトが結構あります。
+こちらのサイトなんていかがでしょうか。</p>
+
+<ul>
+<li><a href="http://md.kaihatsubu.com/">Markdown Live Preview</a></li>
+</ul>
+
+
+<h3>ローカルで快適にプレビューしつつ編集するにはMarkdownNoteがオススメ</h3>
+
+<p>「Markdownじゃないといやん」という状態になって、Blogの記事などをMarkdownで書くようになったらローカルのエディタでプレビューも同時にしたくなりますね。
+そんな時には「<a href="http://www.codingrobots.com/markdownnote/">MarkdownNote</a>」というMacアプリがオススメ。</p>
+
+<p><a href="http://yusukebe.com/archives/2012/02/07/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202012-02-07%2010.20.48.png"><img alt="スクリーンショット 2012-02-07 10.20.48.png" src="http://yusukebe.com/archives/assets_c/2012/02/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202012-02-07%2010.20.48-thumb-550x348-77.png" width="550" height="348" class="mt-image-none" style=""></a></p>
+
+<p>左側に編集ペイン、右側にプレビューと非常にわかりやすい。プレビューされるHTML描画は簡素なもので見やすい。ちとテキストが多くなると動作が重くなるのが残念だが非常に使いやすいです。</p>
+
+<p>僕が使っているMovableTypeというBlogシステムはMarkdown形式のテキストを受け付けてHTML化してくれるので、MarkdownNoteでプレビューしつつ書いて、書き終わったら全コピしてフォームにぶち込むという作業で編集作業が終わります。非常に便利！Tumblrも確かMarkdownに対応していましたね。</p>
+
+<h3>Yomico - Yet Another Markdown Viewer</h3>
+
+<p>昔書いたMarkdownファイルをもーと綺麗なCSSでかつブラウザでプレビューしたいと思いまして、そういえば、昨日から<strong>Yomico</strong>っていうMarkdown Viewerを作り出しました。モックレベルの動作なら動きます。githubに置いてあります。</p>
+
+<ul>
+<li><a href="https://github.com/yusukebe/Yomico">yusukebe/Yomico - GitHub</a></li>
+</ul>
+
+
+<p>インストールすると、「yomico」コマンドが入るので、MarkdownファイルやMarkdownが入っているディレクトリを指定して起動するとブラウザでプレビューできる代物。ちなみに、<a href="http://www.mag2.com/m/0001426750.html">今日から創刊のメルマガ</a>はMarkdownで全て記載し、配信しているので、yomicoで開くとこんな感じになります。</p>
+
+<p><a href="http://yusukebe.com/archives/2012/02/07/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202012-02-07%2010.31.14.png"><img alt="スクリーンショット 2012-02-07 10.31.14.png" src="http://yusukebe.com/archives/assets_c/2012/02/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202012-02-07%2010.31.14-thumb-550x477-75.png" width="550" height="477" class="mt-image-none" style=""></a></p>
+
+<h3>まとめ</h3>
+
+<p>Markdownは編集時もレンダリング後も見た目があまり変わらず、プレーンテキストでありながら構造をもたらしてくれます。割とみんな使ってくれたら便利系の事柄なので、よろしければ試してみてください！</p>
+
+<p><br></p>
+
+<hr>
+
+<p><br></p>
+
+<h3>お知らせ</h3>
+
+<p>まぐまぐ！にてメルマガを創刊しました。<a href="http://www.mag2.com/m/0001426750.html">ゆーすけべーラジオ</a>といいます。日本初（？）Markdownにて書かれたメルマガですw ご興味があればサンプル号が見れるので<a href="http://www.mag2.com/m/0001426750.html">まぐまぐ！のページ</a>をご覧ください。</p>
+
+
+		</div>
+
+		<div class="post-tags">
+			
+				
+					<nav class="nav tags">
+							<ul class="flat">
+								
+								<li><a href="/tags/technologies">Technologies</a></li>
+								
+								<li><a href="/tags/markdown">Markdown</a></li>
+								
+							</ul>
+					</nav>
+				
+			
+		</div>
+        <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v5.0&appId=233306523373884&autoLogAppEvents=1"></script>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+
+<div class="social-button-area">
+  <ul class="social-button">
+    <li>
+      <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
+    </li>
+    <li>
+      <span class="fb-share-button"  data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2012%2f0207013320%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
+    </li>
+    <li>
+      <a href="https://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label-counter" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>
+    </li>
+  </ul>
+</div>
+
+<div class="disqus-area">
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "yusukebe-com" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<ul class="pagination">
+  
+  <li class="page-item page-prev">
+    <a href="https://yusukebe.com/posts/2012/0206130152/" class="page-link" aria-label="Previous"><span aria-hidden="true">← ノンコードなファイルをモジュールと一緒にインストールしたければshareディレクトリを使う</span></a>
+  </li>
+  
+  
+  <li class="page-item page-next">
+    <a href="https://yusukebe.com/posts/2012/0212003607/" class="page-link" aria-label="Next"><span aria-hidden="true">これだけは使ってるMacアプリ10個 →</span></a>
+  </li>
+  
+</ul>
+
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright yusukebe.com |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-492497-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

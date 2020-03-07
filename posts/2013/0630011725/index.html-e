@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>ナウなPerlを勉強するためのリソースはいずこ - ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="ナウなPerlを勉強するためのリソースはいずこ" />
+<meta property="og:description" content=" __papix__ 君が主催をして開催している Perl入学式 というイベントがあります。Unix/Linux/OSXの環境構築から始まり最終的にはWebアプリケーションをつくるハンズオン形式の勉強会を今年は年6回に分けて開催しているよう" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yusukebe.com/posts/2013/0630011725/" />
+<meta property="og:image" content="https://yusukebe.com/icons/myicon.png"/>
+<meta property="article:published_time" content="2013-06-30T10:17:00+09:00" />
+<meta property="article:modified_time" content="2013-06-30T10:17:00+09:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://yusukebe.com/icons/myicon.png"/>
+
+<meta name="twitter:title" content="ナウなPerlを勉強するためのリソースはいずこ"/>
+<meta name="twitter:description" content=" __papix__ 君が主催をして開催している Perl入学式 というイベントがあります。Unix/Linux/OSXの環境構築から始まり最終的にはWebアプリケーションをつくるハンズオン形式の勉強会を今年は年6回に分けて開催しているよう"/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
+	
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://yusukebe.com/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper post">
+		<div class="header">
+	<h1 class="site-title"><a href="https://yusukebe.com/">ゆーすけべー日記</a></h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/yusukebe" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/yusukebe" title="Twitter"><i data-feather="twitter"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post-header">
+			<h1 class="title">ナウなPerlを勉強するためのリソースはいずこ</h1>
+			<div class="meta">Posted at &mdash; Jun 30, 2013</div>
+		</div>
+
+		<div class="markdown post-body">
+			
+
+<p><a href="http://blog.papix.net/">__papix__</a> 君が主催をして開催している <a href="http://perl-entrance.org/">Perl入学式</a> というイベントがあります。Unix/Linux/OSXの環境構築から始まり最終的にはWebアプリケーションをつくるハンズオン形式の勉強会を今年は年6回に分けて開催しているようです。かなり丁寧にPerlを教えているという印象があって、それがどんな雰囲気か以前から気になっていたのですが、昨日「Perl入学式 in 東京 #2」にサポーターとして途中から参加させてもらいました。</p>
+
+<p><a href="http://yusukebe.com/archives/2013/06/30/IMG_0722.JPG"><img alt="IMG_0722.JPG" src="http://yusukebe.com/archives/assets_c/2013/06/IMG_0722-thumb-500x375-401.jpg" width="500" height="375" class="mt-image-none" style=""></a></p>
+
+<p>簡単に感想を述べると「これはすごくいい」。肝は最適な練習問題が所々出され、するとみんな黙々とコーディングし始めるんだけど、それが終わると、参加者同士でコードを見せ合って「これで合ってるかな？」「私はこんな風に書いたよ」と言うようなコミュニケーションが生まれてたりしているのです。正直その様子を見て感嘆しましたよ。</p>
+
+<p><a href="http://yusukebe.com/archives/2013/06/30/IMG_0724.JPG"><img alt="IMG_0724.JPG" src="http://yusukebe.com/archives/assets_c/2013/06/IMG_0724-thumb-500x375-403.jpg" width="500" height="375" class="mt-image-none" style=""></a></p>
+
+<p><br></p>
+
+<hr>
+
+<p><br></p>
+
+<h3>＊追記「Perl入学式の補講があるらしいよ！」</h3>
+
+<p>「Perl入学式 in 東京 #2」の参加に溢れちゃった人向けに補講があるらしいよ！募集人数増えるかもしれないし、いい機会だから気になった人は参加するといいかも！</p>
+
+<ul>
+<li><a href="http://www.zusaar.com/event/855004">Perl入学式in東京 #2 補講 on Zusaar</a></li>
+</ul>
+
+
+<hr>
+
+<p><br></p>
+
+<p>さて、その際に話題にあがったりしたんだけど「今風の」Perlに関する勉強するための情報はコツを掴むまではなかなか辿り付くのが難しいって思いました。例えば、Googleで「perl」と検索しても例えば「use strict; use warnings;」の解説をしてないページが上位に出てきます。そこで「ナウな」Perlの書き方を学ぶ上で参考になるリソースへどのように辿り着くか、もしくは、僕がどのようにしているかをまとめてみましょう。</p>
+
+<hr>
+
+<p><br></p>
+
+<h3>Perlビルトインの機能はリファレンスとして</h3>
+
+<p>昨日のPerl入学式でも途中で「chompってなんなんですかー？」って言う質問があったんだけど、Perlそのものに組み込まれた標準的な関数＝ビルトイン関数に関しては、ググって出て来たページを見てその場で使い方を把握するのがいいでしょう。また、Perl公式のドキュメントを日本語化した「 <a href="http://perldoc.jp">perldoc.jp</a> 」ってのもありまして、当然 <a href="http://perldoc.jp/func/chomp">chompに関する記載</a> が記述されているのですが、説明が固いのと前提知識が必要だったりするんで、これはある程度Perlに慣れて来たら使うとよいと思います。</p>
+
+<p>ちなみに <a href="http://search.cpan.org/dist/Pod-PerldocJp/">Pod::PerldocJp</a> というモジュールを入れると「perldocjp」コマンドが使えるようになりブラウザを立ち上げなくてもドキュメントを見ることが出来ます。</p>
+
+<pre> $ perldocjp -J perlfunc
+ </pre>
+
+<p>するとこんな感じ。</p>
+
+<p><a href="http://yusukebe.com/archives/2013/06/30/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202013-06-30%209.09.44.png"><img alt="スクリーンショット 2013-06-30 9.09.44.png" src="http://yusukebe.com/archives/assets_c/2013/06/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202013-06-30%209.09.44-thumb-500x315-407.png" width="500" height="315" class="mt-image-none" style=""></a></p>
+
+<p>「perldoc perlfunc」で英語のドキュメントが見れるので、ぶっちゃけこのコマンド初めて使いましたがw Perl入学式でモジュールのインスコ方法が紹介されてたっぽいので「cpanm Pod::PerldocJp」して試してみるのもいいでしょう！</p>
+
+<h3>例えば「CGI」を避ける</h3>
+
+<p>実行環境としてのCGIを否定するわけではないですが、CGI前提で書かれたWeb上のリソースはあんま信用しないっすねー。学習のとっかかりとして「PerlでCGIをしよう！」って言うのは無駄なYak Shaving（目的を達成するために他の問題が次から次へ出てくる状況 参考: <a href="http://0xcc.net/blog/archives/000196.html">yak shaving で人生の問題の80%が説明できる問題 - bkブログ</a> ）な感じがするので最低限 CLI=Command Line Interface である程度のことをしているリソースを見るといいんじゃないでしょうか。</p>
+
+<p>また、ナウなPerlではCGI以外にもWebアプリを動かす手段がいくつかあって、ってかそれがまさに「ナウな」ので「Web Application Framework」とか「デプロイ」っていうようなキーワードを使って探していくといいと思います。</p>
+
+<h3>はてぶの「perl」タグをチェックする</h3>
+
+<p>ナウなPerl情報、割とみんながBlog書いていてすごい役に立つのですが、そこまでどう辿り着くのか？色々考えたんだけど、とっかかりとしては「 <a href="http://b.hatena.ne.jp/search/tag?q=perl">はてなブックマークのperlタグの新着</a>  」を見るといいかなーって具合です。</p>
+
+<p><a href="http://yusukebe.com/archives/2013/06/30/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202013-06-30%209.24.19.png"><img alt="スクリーンショット 2013-06-30 9.24.19.png" src="http://yusukebe.com/archives/assets_c/2013/06/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202013-06-30%209.24.19-thumb-500x383-409.png" width="500" height="383" class="mt-image-none" style=""></a></p>
+
+<p>こうすれば今回のPerl入学式のようなイベント情報もキャッチアップ出来るでしょう！また、難しい話題が出てきがちですが、その辺は「あーこんなのもあるんだー」程度に把握しておくと後ほど役に立つかもです。</p>
+
+<h3>Advent Calendar がまとまっている</h3>
+
+<p>毎年年末の12月1日からクリスマスの25日に向けてリレー形式でみんなでPerlに関するTipsを掲載していくJPerl Advent Calendarってのが日本で2008年から始まりました。このJPerl Advent Calendarの記事が、特に最新のモノにしたがって、すっごく役に立ちます。これは僕自身も最近読みてて例えば、</p>
+
+<ul>
+<li><a href="http://perl-users.jp/articles/advent-calendar/2011/test/">Perl Advent Calendar Japan 2011 Test Trac</a></li>
+<li><a href="http://perl-users.jp/articles/advent-calendar/2011/teng/">Perl Advent Calendar Japan 2011 Teng Trac</a></li>
+<li><a href="http://perl-users.jp/articles/advent-calendar/2011/dbix/">Perl Advent Calendar Japan 2011 Dbix Trac</a></li>
+</ul>
+
+
+<p>あたりを参考にさせてもらってます。JPerl Advent Caledarの一覧は <a href="http://perl-users.jp/">Perl-users.jp</a> から見る事が出来ます。</p>
+
+<h3>CPANモジュールサイトの漁り方</h3>
+
+<p><a href="http://saisa.hateblo.jp/entry/2013/06/29/235051">昨日参加した人の感想Blogエントリー</a> にこんな記載が！</p>
+
+<blockquote>
+<p>あと、ゆーすけべーさんからCPANの歩き方を教えてもらった。</p>
+
+<ol>
+<li>search.cpan.orgで何かモジュールを検索。Plackとか</li>
+<li>モジュール一覧?のページに行ってBrowsをクリック</li>
+<li>Indexが表示されて、eg/に使い方の例、lib/に本体があるので読む</li>
+</ol>
+
+
+<p>「ソースコードを読むことに抵抗があるかもしれないけど、今分からなければ後で読めばいいので、とりあえず読むことが大切」と言われた。</p>
+</blockquote>
+
+<p>これ補足しておきます。まずどんなCPANモジュールがよいのかな〜と悩んだ時にはtokuhiromの記事、<a href="http://blog.64p.org/entry/20080520/1211292598">CPANソムリエになる方法</a> を実践するといいでしょう。CPANモジュールの検索は最近 <a href="https://metacpan.org/">metacpan</a> を使う人が増えてきましたが、僕は <a href="http://search.cpan.org/">search.cpan.org</a> が視覚的にしっくり来るっていう理由だけでw そちらを利用してます。</p>
+
+<p>CPANモジュールをまず使う時には各モジュールのドキュメントに書いてある「SYNOPSIS」のコードをコピペの勢いで自分で書いてみてごにょごにょすれば動きます。</p>
+
+<p><a href="http://yusukebe.com/archives/2013/06/30/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202013-06-30%209.43.56.png"><img alt="スクリーンショット 2013-06-30 9.43.56.png" src="http://yusukebe.com/archives/assets_c/2013/06/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202013-06-30%209.43.56-thumb-500x329-411.png" width="500" height="329" class="mt-image-none" style=""></a></p>
+
+<p>カジュアルに使う分にはSYNOPSISを中心に整形済みのPODドキュメントを見ていけばいいでしょう。また、ディストリビューションのページから「Browse」をクリックするとソースディレクトリがブラウザ上で見れます。</p>
+
+<p><img width="500" alt="スクリーンショット 2013-06-30 9.48.14.png" src="http://yusukebe.com/archives/2013/06/30/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202013-06-30%209.48.14.png" class="mt-image-none" style=""></p>
+
+<p>特にソースディレクトリの中でも</p>
+
+<ul>
+<li>eg/ examples/ sample と言った名前 - 使用例が書いてある</li>
+<li>t/ - テストが入ってるのでこれもモジュールを使う際に参考になる場合がある</li>
+<li>lib/ - ライブラリそのもののソース、挙動を確認したり、勉強したり</li>
+</ul>
+
+
+<p>って感じで漁っています。手元にソースをダウンロードしてgrep的なことをしたければ</p>
+
+<pre> $ cpanm --look Plack 
+ </pre>
+
+<p>とかやればパッケージをダウンロードして解凍しつつ、ソースがあるディレクトリまで移動してくれるんで便利です。</p>
+
+<h3>お気に入りのCPANオーサーを見つける</h3>
+
+<p>ライブラリを使っているとこんなケースに遭遇するかもしれません。</p>
+
+<ul>
+<li>Webアプリのフレームワークによく名前が出てくる「Amon2」っていうのを使ってみよう！</li>
+<li>cpanm Amon2 でインスコ出来るの便利や〜</li>
+<li>Pluginの使い方分からないなー、search.cpan.org/metacpanでドキュメント見てみるか〜</li>
+<li>へーAmon2って「MATSUNOさん」って言う人が書いたんだ</li>
+<li>ってか「MATSUNO★Tokuhiro」の「★」ってなんだよ！どこインスパイアだよ！</li>
+<li>あーところでフォーム値の検証したいなー</li>
+<li>色々検索したけど「FormVadalitor::Lite」ってのを使ってみよう</li>
+<li>ってこれも「MATSUNOさん」のモジュールやんけ！</li>
+<li>それに加えて外部Web APIへのアクセスを高速化したいなー</li>
+<li>Furlってのが速いらしいね</li>
+<li>ってこれも「MATSUNOさん」のモジュールやんけ！</li>
+<li>「MATSUNOさん」すごいんじゃない！？</li>
+<li>よーし「MATSUNOさん」をTwitterでフォローしちゃうぞー</li>
+<li>あれ、この人「MATSUNOさん」じゃなくて「徳永さん」なの...？</li>
+</ul>
+
+
+<p>最後は実際にこの行程を踏まないと分からないネタになりましたがw このように自分がよく使うようなモジュールオーサーの人を見つけてウォッチしていると何かしらよい情報が自然と入ってきます。また、Twitterだけでなく「GitHub」でフォローしておくと開発の様子が分かるのでいいですね。</p>
+
+<h3>YAPC::Asia 2013 へ行く</h3>
+
+<p>最後はリアルイベントに行って刺激を受けるのが一番だという話。特にYAPC::Asiaは最初参加した時にすごく楽しくて印象に残っています。トークの内容が分からなくても「衝撃を受ける」感覚だけは覚えるのでいいモチベーションアップのキッカケになります。トークの内容が分かるならばまさにナウなPerlの事情がリアルで聞けるし質問も出来ますね。まだ確定では無いですが、僕も「 <a href="http://yapcasia.org/2013/talk/show/03bedf92-c6d0-11e2-80df-039a6aeab6a4">Mojoliciousでつくる！Webアプリ入門</a> 」っていう内容でトークを応募中なのでよろしければ応援お願いします！</p>
+
+<h3>まとめ</h3>
+
+<p>Perlを勉強しよう！Googleで「Perl」と検索だ！っていう流れでは中々分かりにくい「ナウな」Perlのリソースへの辿り着き方を紹介しました。本来ならばどんどん良質なドキュメントなりが出て来てそれらが検索しやすいとベストなんですけどね。再び宣伝っぽくなりますが、Kindleにて「Perlについて語ろう」という初心者向けの本を販売しているのでよろしければそちらもどーぞー。</p>
+
+<div class="amazlet-box" style="margin-bottom:0px;">
+<div class="amazlet-image" style="float:left;margin:0px 12px 1px 0px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B00BU7DBIA/kamawada-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/41aw6M2z7eL._SL160_.jpg" alt="Perlについて語ろう" style="border: none;"></a></div>
+<div class="amazlet-info" style="line-height:120%; margin-bottom: 10px">
+<div class="amazlet-name" style="margin-bottom:10px;line-height:120%">
+<a href="http://www.amazon.co.jp/exec/obidos/ASIN/B00BU7DBIA/kamawada-22/ref=nosim/" name="amazletlink" target="_blank">Perlについて語ろう</a><div class="amazlet-powered-date" style="font-size:80%;margin-top:5px;line-height:120%">posted with <a href="http://www.amazlet.com/" title="amazlet" target="_blank">amazlet</a> at 13.06.30</div>
+</div>
+<div class="amazlet-detail">和田裕介 (2013-03-13)<br>売り上げランキング: 1,562<br>
+</div>
+<div class="amazlet-sub-info" style="float: left;"><div class="amazlet-link" style="margin-top: 5px"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B00BU7DBIA/kamawada-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jpで詳細を見る</a></div></div>
+</div>
+<div class="amazlet-footer" style="clear: left"></div>
+</div>
+
+
+<p><br></p>
+
+
+		</div>
+
+		<div class="post-tags">
+			
+				
+					<nav class="nav tags">
+							<ul class="flat">
+								
+								<li><a href="/tags/perl">Perl</a></li>
+								
+							</ul>
+					</nav>
+				
+			
+		</div>
+        <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v5.0&appId=233306523373884&autoLogAppEvents=1"></script>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+
+<div class="social-button-area">
+  <ul class="social-button">
+    <li>
+      <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
+    </li>
+    <li>
+      <span class="fb-share-button"  data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2013%2f0630011725%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
+    </li>
+    <li>
+      <a href="https://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label-counter" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>
+    </li>
+  </ul>
+</div>
+
+<div class="disqus-area">
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "yusukebe-com" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<ul class="pagination">
+  
+  <li class="page-item page-prev">
+    <a href="https://yusukebe.com/posts/2013/0623234219/" class="page-link" aria-label="Previous"><span aria-hidden="true">← Mojolicious 8-Tips</span></a>
+  </li>
+  
+  
+  <li class="page-item page-next">
+    <a href="https://yusukebe.com/posts/2013/0709121252/" class="page-link" aria-label="Next"><span aria-hidden="true">最近の開発周辺事情と職質テックトーク →</span></a>
+  </li>
+  
+</ul>
+
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright yusukebe.com |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-492497-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

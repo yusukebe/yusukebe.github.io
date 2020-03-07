@@ -1,0 +1,138 @@
++++
+Categories = ["tech"]
+Description = " Perl と PHP の比較をしてみましょう。私はPHPから入った口ですが、今は、どちらがよいかというと、個人的な意見としてはやはりPerlです。  それは、PerlにはWebアプリ以外にも使える沢山のモジュールがCPANに用意されており"
+Tags = ["Perl"]
+date = "2010-03-07T09:39:00+09:00"
+title = "Perl vs PHP"
+author = "kamawada"
+archive = ["2010"]
+draft = false
++++
+
+
+<p>
+Perl と PHP の比較をしてみましょう。
+私はPHPから入った口ですが、
+今は、どちらがよいかというと、個人的な意見としてはやはりPerlです。
+</p>
+<p>
+それは、PerlにはWebアプリ以外にも使える沢山のモジュールがCPANに用意されており、
+PHPのように膨大な標準の関数を使ってせいぜいWebアプリを作るってだけではなく、
+モジュールを入れさえすればそれで、CLI含めほぼなんでも出来てしまうからです。
+</p>
+<p>
+＊もちろんPHPもCLI作れるけどねー^^;
+</p>
+<p>
+例えば、PHPの標準のfopen関数でファイル以外にも指定したURLのコンテンツを開けます。
+ところが、Perlの場合はそれをモジュールで解決しようとします。
+</p>
+
+<pre class="brush: perl"> # cpan &gt; install LWP::Simple
+use LWP::Simple;
+my $content = get('http://yusukebe.com/');
+ </pre>
+
+<p>
+PHPの場合fopen一発でできるところ、Perlではモジュールのインストールからしなくてはいけません。
+一見するとめんどくさいですねー^^;
+ところが、ちょっと発展させて、取得したコンテンツからh2タグの中身一覧を取得するといった複雑な処理を
+考えてみましょう。
+PHPの場合、どーするかわかりませんが、Perlだと便利なモジュールがあります。
+今後、より複雑な処理を行うことを考えWeb::Scraperを使ってみます。
+</p>
+
+<pre class="brush: perl"> # cpan &gt; install Web::Scraper
+use Web::Scraper;
+use URI;
+
+my $scraper = scraper {
+    process "h2.entry-title", 'titles[]' =&gt; 'TEXT';
+};
+my $res = $scraper-&gt;scrape( URI-&gt;new('http://yusukebe.com/') );
+map { print $_ . "\n"} @{$res-&gt;{titles}};
+ </pre>
+<pre class="brush: perl"> Twib in Yokohama.pm テクニカルトーク#5
+実例で学ぶPerlにおけるリファレンス
+Perl入門本を書こうとしている話
+PHPの小文字から始まる関数が4405個もあってびっくりした件
+Perl初心者向け勉強会(by カジュアルPerl)をやりますという予告
+Twitterの友達が好きなアーティストがわかっちゃったりする「音探し」を作ってみた
+Twitterで話題のYouTube動画が一目でわかるTubetter - ツベッターを作ってみた
+CatalystアプリケーションをStarmanで運用しよう！
+3/5 Yokohama.pm #5 が開催されます
+オススメのIRCチャンネルを教えてください＠人力検索はてな
+ </pre>
+<p>
+CSSセレクタやXPathで指定した部分だけを配列に入れてくれたりして便利ですね！
+こうした便利ーなモジュールがCPANには沢山あるので、
+Perlの場合お好きな方法で楽してより多くの目的を達成することができるのです。
+</p>
+<p>
+あと、PHPの場合オフィシャルの関数リファレンスを見たりしますが、
+Perlの場合perldocというコマンドでモジュールに付属のドキュメントを見たり、
+search.cpan.orgでは整形済みのそれを見たりすることができていいですね。
+大抵「SYNOPSIS」っていうところのコードを実行すればモジュールの使い方がわかります。
+</p>
+<p>
+まぁ、サーバの負荷うんぬんってのは状況によってはmod_perl使えばいいですし、
+デプロイの話ってのはPSGIが標準化すれば手元で書いたコードがそのまま、レンタルサーバで動くぜみたいなことができるようになると思っています。
+</p>
+<p>
+それにデバッグもPHPは簡単らしいのですが、
+PerlだってData::Dumperモジュールや、YAMLモジュール使えば視覚的に中にどんなデータが入っているかが
+わかります。
+</p>
+
+<pre class="brush: perl"> use Data::Dumper;
+use YAML;
+# use utf8;
+
+my $ref = { name =&gt; 'yusukebe', zokuseis =&gt; [qw(メガネ エロ)] };
+print "Data::Dumper::Dumper\n";
+print Dumper $ref;
+print "YAML::Dump\n";
+print Dump $ref;
+ </pre>
+
+<pre class="brush: perl"> Data::Dumper::Dumper
+$VAR1 = { 
+          'zokuseis' =&gt; [ 
+                          'メガネ',
+                          'エロ'
+                        ],
+          'name' =&gt; 'yusukebe'
+        };
+YAML::Dump
+---
+name: yusukebe
+zokuseis:
+  - メガネ
+  - エロ
+ </pre>
+<p>
+私はもう今となってはPHPはほとんど触りませんが、
+やはりWebの開発から小物スクリプトまでPerlに軍配が上がる、と思います。
+</p>
+<p>
+モジュールのインストールがめんどいなーとかレンサバで動かないよーとかも
+local::libやcpanmのおかげで解決しつつありますし、
+上記した通りPSGIやPlackが頑張ってくれればWebアプリを動かすのもいろんな環境で楽できると思います。
+</p>
+<p>
+それとPHPからPerlに移行したい！って人によっては
+<a href="http://wikihub.org/wiki/php-funcref-in-perl">php-funcref-in-perl</a>っていう素晴らしいプロジェクトがあるので、
+安心ですね^^
+</p>
+<p>
+別にPHPをディスってるわけじゃないですが、
+なんとなく書いてみましたよ！
+</p>
+<p>
+元ネタ: <a href="http://phpspot.net/php/pgPHP%20vs%20Perl.html">PHP vs Perl - phpspot</a>
+</p>
+<p>
+PS. 最近「ゆーすけべー日記」がperlcodesampleさん化しつつあるのは、
+Perl書籍を書こうとしているからです^^;
+</p>
+

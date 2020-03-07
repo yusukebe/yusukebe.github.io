@@ -1,0 +1,44 @@
++++
+Categories = ["tech"]
+Description = " 某yourfilehostというファイル共有サイトには大量のエロ動画がアップロードされ、それを大勢の人が今まさに見ています。こうした「今おかず何見てる？」というのが一覧できる「だけ」の「EroStream」というサイトを作りました。例によ"
+Tags = []
+date = "2009-10-15T22:01:00+09:00"
+title = "「今おかず何見てる？」がわかるだけの「EroStream」を作りました"
+author = "kamawada"
+archive = ["2009"]
+draft = false
++++
+
+
+<p>
+某yourfilehostというファイル共有サイトには大量のエロ動画がアップロードされ、それを大勢の人が今まさに見ています。
+こうした「今おかず何見てる？」というのが一覧できる「だけ」の「EroStream」というサイトを作りました。
+例によって18禁です。
+</p>
+<p>
+<a href="http://erostream.urasukebe.com/">EroStream - What are we watching on YourFileHost now?</a><br>
+<a href="http://erostream.urasukebe.com/">
+<img alt="erostream" class="at-xid-6a0133f4781589970b014e8bd7529a970d" src="https://yusukebe.com/archives/.a/6a0133f4781589970b014e8bd7529a970d-pi.jpg>
+</a>
+</p>
+<p>
+リロードする度に新しい動画のサムネイルが刻々と表示されていくのがわかります。
+これは某yourfilehostの某ダウンロード支援サイトの最近ダウンロードされた動画の情報をほぼリアルタイムで取得して、
+閲覧可能にしたものです。
+</p>
+<p>
+ここでバックエンドの技術的解説を簡単に挟みますと、job clientがダウンロード履歴をフェッチし、job serverに投げ、
+それをjob workerが拾いサムネイル等の情報を取得し、DBに登録しているというまぁ一般的なjob queueの仕組みで成り立っています。
+job serverにはC版のgearmand、client/workerにはAnyEvent::Gearmanを利用しました。使い心地がすごくいいです。
+実はworkerの数をもっと増やせばさらに更新の頻度は短くなり、すごい勢いで新しい動画が追加表示されると思われます。
+それだけ、多くのおかず動画が同時に見られているのですね。
+</p>
+<p>
+というわけで、最近のTwitter等をみていて、「Stream」というキーワードは是非エロと結びつけたかったので、
+そのプロトタイプとしてとりあえず作ってみたという具合です。
+もしよろしければ、他の人がいない場所で、こっそりとエロのストリームを感じてみてください。
+</p>
+<ul>
+  <li><a href="http://erostream.urasukebe.com/">EroStream - What are we watching on YourFileHost now?</a></li>
+</ul>
+

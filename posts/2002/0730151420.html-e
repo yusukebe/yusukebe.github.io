@@ -1,0 +1,14 @@
++++
+Categories = ["tech"]
+Description = "トップページ↓だけでもvalidator通るようにしようと思い奮闘。http://web.sfc.keio.ac.jp/~yusukebe/main.shtml結構やばやばだったけどNOERRORにしたよ。"
+Tags = []
+date = "2002-07-31T12:14:00+09:00"
+title = "validator"
+author = "kamawada"
+archive = ["2002"]
+draft = false
++++
+
+<p>トップページ↓だけでもvalidator通るようにしようと思い奮闘。
+<a href="http://web.sfc.keio.ac.jp/~yusukebe/main.shtml" target="_new">http://web.sfc.keio.ac.jp/~yusukebe/main.shtml</a>
+結構やばやばだったけどNOERRORにしたよ。</p>

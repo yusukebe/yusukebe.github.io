@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Perlにおける「キャラクター」の特出について - ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="Perlにおける「キャラクター」の特出について" />
+<meta property="og:description" content=" 昨日開催された「Perl Casual #02 - 春のPerlフレッシュマンアワー」の冒頭で自分が話したことを、文章で練り直してまとめておきます。  Perlの最大の魅力の一つとして、再利用可能なモジュールが揃っているCPANの存在が挙" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yusukebe.com/posts/2010/0421214542/" />
+<meta property="og:image" content="https://yusukebe.com/icons/myicon.png"/>
+<meta property="article:published_time" content="2010-04-22T06:45:00+09:00" />
+<meta property="article:modified_time" content="2010-04-22T06:45:00+09:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://yusukebe.com/icons/myicon.png"/>
+
+<meta name="twitter:title" content="Perlにおける「キャラクター」の特出について"/>
+<meta name="twitter:description" content=" 昨日開催された「Perl Casual #02 - 春のPerlフレッシュマンアワー」の冒頭で自分が話したことを、文章で練り直してまとめておきます。  Perlの最大の魅力の一つとして、再利用可能なモジュールが揃っているCPANの存在が挙"/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
+	
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://yusukebe.com/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper post">
+		<div class="header">
+	<h1 class="site-title"><a href="https://yusukebe.com/">ゆーすけべー日記</a></h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/yusukebe" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/yusukebe" title="Twitter"><i data-feather="twitter"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post-header">
+			<h1 class="title">Perlにおける「キャラクター」の特出について</h1>
+			<div class="meta">Posted at &mdash; Apr 22, 2010</div>
+		</div>
+
+		<div class="markdown post-body">
+			
+
+<p>
+昨日開催された「Perl Casual #02 - 春のPerlフレッシュマンアワー」の冒頭で自分が話したことを、
+文章で練り直してまとめておきます。
+</p>
+<p>
+Perlの最大の魅力の一つとして、
+再利用可能なモジュールが揃っているCPANの存在が挙げられます。
+そしてそのCPANの特徴の一つを見ることによってPerlの興味深い点も見つけることができます。
+以前からなんとなく私も気づいていたことですが、
+昨日の朝「Perl Casual #02」向けのネタを考えている時に確信しました。
+CPANにおいてそれは単なる枯れたシステム上の問題だけなのかもしれませんが、
+とにもかくにもCPANは、
+モジュールライターの「キャラクター」が非常に押し出されている仕組みになっているということです。
+</p>
+<p>
+PHPのPEAR、RubyのRubyGemsのサイトとsearch.cpan.orgのそれを比べてみると
+一目瞭然です。前者二つのサイトにおいてライブラリを探すと
+ライブラリそのものをもちろんすぐ発見することができます。
+URLのパスもライブラリの名前のみを含んだものになります。
+しかし、search.cpan.orgの場合は、ライブラリのページが出てくると同時に、
+その作者の名前及びアイコン(設定されていれば)が前面に押し出される形で表示されます。
+URLのパスももちろんライブラリ名を含んだものですが、「~AuthorのID/モジュールのパス」 という構造になっています。
+</p>
+<p>
+これは単なるディレクトリ構造や表示の問題なだけかもしれません。
+しかし、現状としてそうなっているのは確かで、また、
+それにより私たちがCPANモジュールを利用する時に誰がメインのAUTHORなのかをより意識することになります。
+</p>
+<p>
+そうであることに関してメリット及びデメリットは様々あると思いますが、
+今回はAUTHORにとっての「責任」から話を発展させてみてましょう。
+上記した通りの構造によりCPANではAUTHORはメインメンテナとして一人ということになります。
+大きなモジュールですと他のコントリビュータもいることはもちろんですが、
+一人のAUTHORにモジュールをメンテナンスする上で良くも悪くも様々な責任がつきまいます。
+AUTHORの方がこうした責任を「うまく」果たすケースが産まれれば、
+モジュールを使うユーザ側にとってはAUTHORに対する「信頼」へと変わります。
+「あの人の書いてるモジュールだから安心できる」だとか、
+「あの人が最近CPAN AUTHORになったみたいだからちょっくら見てみるか」という好奇心が湧くわけです。
+これは一般的な「書籍」の構造に似ています。
+著者とタイトルがそのままCPANにおけるAUTHORとモジュールという形で置き換えてみることも可能です。
+そして、AUTHORに対する「信頼」がそのうち「憧れ」に変わる時があるのです。
+</p>
+<p>
+私自身これほどPerlと言い出したのは、
+その「憧れ」を幾人かの方に抱いたからと言っても過言ではありません。
+これは「キャラクタがよく見える」Perlだからこその現象なのかと今現在考えているというのが、
+私の意見です。
+</p>
+<p>
+さらにその「憧れ」の方と「ラフに」出会えるがもう一つのPerlの魅力です。
+YAPC::Asia 2008 が私にとっての初YAPC参加になるわけですが、
+それはもう興奮の瞬間でした。あの作者のあの人がいる。それだけで幸せな上に、
+同じ壇上で拙いLightning Talkまでさせていただきました。
+</p>
+<p>
+比べるのもおかしいかもしれませんが、この状況を説明するのにいい例がありますで、
+紹介してまとめていきたいと思います。
+私の好きな日本のロックアーティスト、アジアンカンフージェネレーションは
+2005年のサマーソニックフェスティバルのメインステージに午後の早い時間に登場しました。
+そしてその後(これもまた私の愛するアーティスなのですが)、
+weezer、oasisといわゆる大物がステージに立ちました。
+私が、アジアンカンフージェネレーションのギグを待つ時間に隣で話していた会話を耳にして
+はっとさせられました。
+</p>
+<blockquote>
+<p>
+これで、アジカン(アジアンカンフージェネレーションの略)は、
+(彼らが)憧れてたoasis、weezerと同じステージに立つんだよな。
+なんか感動するね。
+</p>
+</blockquote>
+<p>
+私がYAPC::AsiaでLTをしてアジカンになれた、ということを言っているわけではありません。
+「憧れ」と同じステージに立つという時に、
+例えばアジカンにとっての気持ちを思うとなんとなく共感できる部分がある気がする、
+ただそう思ったことを伝えたいと思いました。
+おそらくそれはとっても嬉しく、様々な恩恵に感謝したいもので、
+そしてさらに成長してみせると自らを鼓舞するものであったと思います。
+</p>
+<p>
+「憧れ」と同じステージに立つことが許される世界が、
+ロックにあるとしたら、Perlにもあるのです。
+</p>
+<p>
+CPANの話から脱線しつつかつ、本編で話した内容から逸脱してしまいましたが、
+簡単にまとめるとCPANのもたらすAUTHORのキャラクタの特出により、
+「憧れ」と同じステージに立つという夢を抱くこともできます。
+また、今回のPerl CasualやPerlMongersのイベントを通してまず「出会う」ことも可能です。
+</p>
+<p>
+これはどの世界でも共通かもしれません。
+ただ、いくつかのプログラミング言語やその他の体験を通して、
+私が現在進行系でめり込んでいる関心毎はPerlだ、ということはまぎれもない事実です。
+</p>
+<p>
+そういうことが言いたいんだと思います。
+</p>
+<div id="__ss_3807608" style="width:425px">
+<strong style="display:block;margin:12px 0 4px"><a href="http://www.slideshare.net/yusukebe/perl-casual-02-opening" title="Perl Casual #02 Opening">Perl Casual #02 Opening</a></strong><object height="355" width="425"><param name="movie" value="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=100421perlcasual02-100421153247-phpapp02&amp;rel=0&amp;stripped_title=perl-casual-02-opening">
+<param name="allowFullScreen" value="true">
+<param name="allowScriptAccess" value="always">
+<embed allowfullscreen="true" allowscriptaccess="always" height="355" src="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=100421perlcasual02-100421153247-phpapp02&amp;rel=0&amp;stripped_title=perl-casual-02-opening" type="application/x-shockwave-flash" width="425"></embed></object><div style="padding:5px 0 12px">View more <a href="http://www.slideshare.net/">presentations</a> from <a href="http://www.slideshare.net/yusukebe">yusukebe</a>.</div>
+</div>
+
+
+		</div>
+
+		<div class="post-tags">
+			
+				
+					<nav class="nav tags">
+							<ul class="flat">
+								
+								<li><a href="/tags/perl">Perl</a></li>
+								
+							</ul>
+					</nav>
+				
+			
+		</div>
+        <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v5.0&appId=233306523373884&autoLogAppEvents=1"></script>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+
+<div class="social-button-area">
+  <ul class="social-button">
+    <li>
+      <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
+    </li>
+    <li>
+      <span class="fb-share-button"  data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2010%2f0421214542%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
+    </li>
+    <li>
+      <a href="https://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label-counter" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>
+    </li>
+  </ul>
+</div>
+
+<div class="disqus-area">
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "yusukebe-com" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<ul class="pagination">
+  
+  <li class="page-item page-prev">
+    <a href="https://yusukebe.com/posts/2010/0420225545/" class="page-link" aria-label="Previous"><span aria-hidden="true">← 今日はPerl初心者向け勉強会 in PerlCasual#02</span></a>
+  </li>
+  
+  
+  <li class="page-item page-next">
+    <a href="https://yusukebe.com/posts/2010/0421222800/" class="page-link" aria-label="Next"><span aria-hidden="true">WEB&#43;DB PRESS vol.56 に「Twitter時代の技術者コミュニケーション術」という記事を寄稿しました →</span></a>
+  </li>
+  
+</ul>
+
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright yusukebe.com |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-492497-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

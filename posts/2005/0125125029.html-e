@@ -1,0 +1,16 @@
++++
+Categories = ["tech"]
+Description = "    BASCOM-AVR      Special commands for LCD-displays , I2C chips and 1WIRE chips, PC keyboad, matrix   keyboad, RC5 rec"
+Tags = []
+date = "2005-01-25T21:50:00+09:00"
+title = "BASCOM-AVR"
+author = "kamawada"
+archive = ["2005"]
+draft = false
++++
+
+
+<p>   <a href="http://www.mcselec.com/bascom-avr.htm">BASCOM-AVR</a> </p>
+<p>   Special commands for LCD-displays , I2C chips and 1WIRE chips, PC keyboad, matrix   keyboad, RC5 reception, software UART, SPI , graphical LCD, send IR RC5, RC6 or Sony   code. TCP/IP with W3100A chip. </p>
+<p>   とのこと。とある研究会でよく使われているようだったが、こういう機能あるのしらずにAVR-GCCばかり使ってみた。コードも読みやすいのでやってみよう。</p>
+

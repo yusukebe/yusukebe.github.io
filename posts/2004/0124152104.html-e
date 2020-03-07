@@ -1,0 +1,28 @@
++++
+Categories = ["tech"]
+Description = " 結局2日かかってやっている旧日記のインポート。  いよいよMTのフォーマットにそろえてインポートだ！と読み込ませてみたら、インポートファイルの文字コードがEUCのまま。このサイトはUTF-8。変換はやってくれない。ガーン。 文字化けしまく"
+Tags = []
+date = "2004-01-25T12:21:00+09:00"
+title = "やっちまったー＠旧日記をインポート中"
+author = "kamawada"
+archive = ["2004"]
+draft = false
++++
+
+
+<p>結局2日かかってやっている<a href="http://web.sfc.keio.ac.jp/~yusukebe/diary/">旧日記</a>のインポート。</p>
+
+<p>いよいよMTのフォーマットにそろえてインポートだ！と読み込ませてみたら、インポートファイルの文字コードがEUCのまま。このサイトはUTF-8。変換はやってくれない。ガーン。<br>
+<b>文字化けしまくり。</b></p>
+
+<p>というわけでインポート途中でいったん取り消し、既にインポートしてしまったエントリー全部消しましたよ。管理画面でちまちまチェックボックスを300以上チェックするのもだるいのでJavaScriptで全部選択するスクリプトを追加。参考にしたサイト→<a href="http://www5e.biglobe.ne.jp/%E2%80%BEaccess_r/hp/javascript/js_072.html" title="チェックボックスを全チェックON/OFFとする方法 - JavaScript">チェックボックスを全チェックON/OFFとする方法 - JavaScript</a></p>
+
+<p><a href="http://kamawada.com/~yusuke/yusukebe/archives/files/040124/hns2mt01.gif"><img alt="hns2mt01.gif" border="0" class="at-xid-6a0133f4781589970b014e8bd7327f970d" height="252" src="https://yusukebe.com/archives/.a/6a0133f4781589970b014e8bd7327f970d-pi.gif width="320"></a></p>
+
+<p>残しておきたいエントリーのチェックをはずしてこんな感じ。<br>
+<a href="http://kamawada.com/~yusuke/yusukebe/archives/files/040124/hns2mt02.gif"><img alt="hns2mt02.gif" border="0" class="at-xid-6a0133f4781589970b014e8bd732b4970d" height="176" src="https://yusukebe.com/archives/.a/6a0133f4781589970b014e8bd732b4970d-pi.gif width="376"></a></p>
+
+<p>そんでもって現在文字コードを直した2001年秋からの日記をインポート中。すげー時間かかっているけどダイジョブか^^;（以下のスクリーンショットで文字化けているのはブラウザのせいです。）<br>
+<a href="http://kamawada.com/~yusuke/yusukebe/archives/files/040124/hns2mt03.gif"><img alt="hns2mt03.gif" border="0" class="at-xid-6a0133f4781589970b014e8bd732bb970d" height="370" src="https://yusukebe.com/archives/.a/6a0133f4781589970b014e8bd732bb970d-pi.gif width="320"></a><br>
+</p>
+

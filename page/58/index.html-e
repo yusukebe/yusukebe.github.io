@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="generator" content="Hugo 0.63.2" />
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="alternate" type="application/rss+xml" href="https://yusukebe.com/index.xml" title="ゆーすけべー日記" />
+	<meta property="og:title" content="ゆーすけべー日記" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://yusukebe.com/" />
+<meta property="og:image" content="https://yusukebe.com/icons/myicon.png"/>
+<meta property="og:updated_time" content="2020-03-06T15:46:50+09:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://yusukebe.com/icons/myicon.png"/>
+
+<meta name="twitter:title" content="ゆーすけべー日記"/>
+<meta name="twitter:description" content=""/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
+	
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://yusukebe.com/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+  <div class="container wrapper">
+	<div class="header">
+	<h1 class="site-title"><a href="https://yusukebe.com/">ゆーすけべー日記</a></h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/yusukebe" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/yusukebe" title="Twitter"><i data-feather="twitter"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+	<div class="recent-posts section">
+	  <h2 class="section-header">
+		Recent posts
+	  </h2>
+	  <div class="posts">
+		
+		
+		
+		<div class="post">
+		  <div class="meta">Dec 23, 2007</div>
+		  <a class="title" href="/posts/2007/1223074846/">1981s 第1回 忘年オフ会 スペシャル</a> &mdash;
+		  <span class="description">
+			
+			 2007年12月21日、1981s の記念すべき第1回の集い、忘年オフ会が開催されました。 まず最初に、俺のむちゃぶりにもかかわらず幹事を務めてくれたamachang、 81世代でもないのに幹事マンとしてさすがなイイ仕事をしていただいたn
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Dec 21, 2007</div>
+		  <a class="title" href="/posts/2007/1221012408/">WEB&#43;DB PRESS Tech Meeting に行ってきました</a> &mdash;
+		  <span class="description">
+			
+			 雑誌って俺あんまり買わないんだけど、ひとつだけちゃんと発売したら大体買っているのがある。  それが「WEB&#43;DB PRESS」。Web周りの技術を紹介する、まぁ一般からすればコアな雑誌。以前は、そこで扱うプログラミング言語としてはJava
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Dec 20, 2007</div>
+		  <a class="title" href="/posts/2007/1220110721/">「小飼弾のAlphaギークに会いたい[LIVE] with 伊藤直也」 WEB&#43;DB PRESS Tech Meetingより</a> &mdash;
+		  <span class="description">
+			
+			   WEB&#43;DB PRESS 7周年の読者ミーティングというイベントに来ています。  あとでまとめますが、今ちょうど終わった「小飼弾のAlphaギークに会いたい[LIVE] with 伊藤直也」をログったので、興味あるかたはどうぞー。多分
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Dec 20, 2007</div>
+		  <a class="title" href="/posts/2007/1220052251/">未踏ソフトウェア創造事業オフ会に参加してきました その2 「古川享さん基調講演まとめというか古川スペシャル」</a> &mdash;
+		  <span class="description">
+			
+			   昨日ポストした未踏ソフトウェア創造事業オフ会レポートの続き。  古川享さんの基調講演を自分なりにまとめてみました。古川さんスペシャルです。      今回、改めて古川さんの話を「ちゃんと」生で聞いたのですが、スケジュール押しまくりにす
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Dec 19, 2007</div>
+		  <a class="title" href="/posts/2007/1219004952/">未踏ソフトウェア創造事業オフ会に参加してきました その1 「再会と新しい出会い」</a> &mdash;
+		  <span class="description">
+			
+			   昨日、秋葉原 富士ソフト アキバプラザで開催された、  第一回未踏ソフトウェア創造事業オフ会に、未踏ユースOBとして参加してきました。  俺の人生を変えた人の一人であり、先月ORFにて初めてお会いした古川享さんが未踏のPMに今期から就
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Dec 18, 2007</div>
+		  <a class="title" href="/posts/2007/1218012000/">UPS 導入 / APC Smart-UPS 1500 (SUA1500JB)</a> &mdash;
+		  <span class="description">
+			
+			   過去のエントリー「ゆーすけべー日記: 自宅サーバー管理者にとっての停電問題 - 結論＝UPSを注文した」にて、購入することになった UPS 。APC の Smart-UPS 1500 (SUA1500JB) をチョイスし、注文したら速
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Dec 18, 2007</div>
+		  <a class="title" href="/posts/2007/1218003540/">ハエのセックス写真【軽くグロ注意】</a> &mdash;
+		  <span class="description">
+			
+			   タイトル通り、ハエがおセックスしている最中の写真。        これはすごい。相撲東日本重量別ベストエイト富九州、現代の走れメロス、はたまた一世を風靡したバイゴの中の人ことらぶさんが撮影をしたのを写メールでもらった。  らぶさんはそ
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Dec 16, 2007</div>
+		  <a class="title" href="/posts/2007/1216142401/">第5回裏箱根駅伝走破! Regunaryは5チーム中3位!</a> &mdash;
+		  <span class="description">
+			
+			     毎年この時期になると恐怖を覚える。  何故かというと、それを強烈に望んでいなくとも、普段全然運動していない自分が、  箱根駅伝のコース20数kmを言い訳無し、  強制的に走らなくてはいけないからだ。裏箱根駅伝である。    そう、
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Dec 14, 2007</div>
+		  <a class="title" href="/posts/2007/1214121328/">アクションスクリプトお姉さんの家でAS3勉強会をしてきたよ</a> &mdash;
+		  <span class="description">
+			
+			 Flashを操作できるプログラミング言語、アクションスクリプト。昔5年くらい前にVersion1.5を結構いじっていたことがあったんだけど、AS3(アクションスクリプトVersion3)になって触ってみたら、Javaみたいになっていてびっ
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Dec 11, 2007</div>
+		  <a class="title" href="/posts/2007/1211012131/">Secret Weapon - MxPx</a> &mdash;
+		  <span class="description">
+			
+			 最近（といってもずいぶん前だけど）買った CD から音楽の話。  俺、結構パンクは聴く。若かった時よりも聴く。むしろ、高校生のくらいの時はあまり聴かなかった。いつからだろうな聴きだしたのは。多分サマソニに行きだした5年くらい前からだろうか
+			
+		  </span>
+		</div>
+		
+		
+
+<ul class="pagination">
+	<li class="page-item page-prev">
+	
+    <a href="/page/57/" class="page-link" aria-label="Previous"><span aria-hidden="true">← Prev page</span></a>
+	
+	</li>
+	<li class="page-item page-next">
+	
+    <a href="/page/59/" class="page-link" aria-label="Next"><span aria-hidden="true">Next page →</span></a>
+	
+	</li>
+</ul>
+
+
+	  </div>
+	</div>
+  </div>
+  <div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright yusukebe.com |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-492497-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
++++
+Categories = ["tech"]
+Description = " Hyper NIKKI Systemで運営してた旧日記のデータをMovableTypeで運用しているこの新ゆーすけべー日記（yusukebe.com）へインポートすることについさきほど達成した。  やり方は HNS独自のフォーマットで書か"
+Tags = ["Perl"]
+date = "2004-01-25T12:58:00+09:00"
+title = "旧日記をインポート、完全移行達成"
+author = "kamawada"
+archive = ["2004"]
+draft = false
++++
+
+
+<p><a href="http://www.h14m.org/">Hyper NIKKI System</a>で運営してた<a href="http://web.sfc.keio.ac.jp/~yusukebe/diary/index.cgi">旧日記</a>のデータを<a href="http://www.movabletype.org/">MovableType</a>で運用しているこの新ゆーすけべー日記（yusukebe.com）へインポートすることについさきほど達成した。</p>
+
+<p>やり方は<br>
+<a href="http://www.h14m.org/docs/hnf-j.html">HNS独自のフォーマットで書かれている</a>日記データを<a href="http://www.cyberoz.net/city/as/translation/MT/mtimport.html">MTのインポートフォーマット</a>に変更</p>
+
+<p>その際に<a href="http://www.ksakai.net/archives/2003/03/001493.html" title="サカイ家.NET: 過去の日記をインポート">サカイ家.NET: 過去の日記をインポート</a>にあるperlのスクリプトを改良して使わせていただいた。サカイヤ屋さんスクリプトからの変更点は<br>
+</p>
+<ul>
+<li>サカイヤさんスクリプトでは、HNSで改行を表す~を全て削除して、COVERT BREAKSに改行を任せているが、それだとかなり崩れるし、~が入るURLとかが正しく機能しないので行末にある~をbrタグに変換するようにした</li>
+<li>LINKやIMGタグのサイト名やALT名に空白が含まれるとおかしかったので修正した　（.*）を(.*?)にして最短マッチング！</li>
+<li>LNEWで題名にURLが入るときにエントリータイトルにURLが含まれてしまうので、URLを取り除き、エントリーボディーの中にリンクを表示するようにした</li>
+<li>サカイヤさんのスクリプトではSUBやLSUBで始まるブロックもひとつのエントリーとしていたが、SUBやLSUBをh4であらわし、エントリーの最小単位をNEW、LNEWで始まるブロックとした</li>
+<li>過去の日記の参照をそのままにすると新サイトに移行しても旧サイトへ飛んでしまう。自サイトへのリンクはURLから日付を抽出して、MTのDaily Archivesのhtmlへ飛ばすようにした</li>
+<li>イメージフォルダへのパスが相対だったので新サイトのアーカイブパス<a href="http://yusukebe.com/archives">http://yusukebe.com/archives</a>をつけて絶対パスにした</li>
+<li>DIVに対応させた</li>
+</ul>
+などなど
+
+<p>このようにPerl＆正規表現初心者の僕ががんばって作ったスクリプトがこちら<br>
+<a href="http://kamawada.com/~yusuke/yusukebe/archives/files/040124/hnf2mt_yusuke01.pl">hnf2mt_yusuke01.pl</a></p>
+
+<p>これをHNSの日記ファイルのあるディレクトリで実行。</p>
+
+<p>できたファイルをMTのimportフォルダの中に入れて管理画面からImport。かなり長い時間かかって完了。約１０００のエントリーになった。リビルドもたいそうな時間が。<a href="http://kamawada.com/~yusuke/yusukebe/archives/files/040124/import_result.htm">インポートログ</a>はみていて気持ちがいい。</p>
+
+<p>さあ過去のネタを掘り起こすぞ。そして掘り起こしてください（左のメニューとか検索とかから過去のネタにありつけます。面白いネタあったらコメントに書いてください。僕も掘り起こしていきます）<br>
+</p>
+

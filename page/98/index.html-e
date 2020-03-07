@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="generator" content="Hugo 0.63.2" />
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="alternate" type="application/rss+xml" href="https://yusukebe.com/index.xml" title="ゆーすけべー日記" />
+	<meta property="og:title" content="ゆーすけべー日記" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://yusukebe.com/" />
+<meta property="og:image" content="https://yusukebe.com/icons/myicon.png"/>
+<meta property="og:updated_time" content="2020-03-06T15:46:50+09:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://yusukebe.com/icons/myicon.png"/>
+
+<meta name="twitter:title" content="ゆーすけべー日記"/>
+<meta name="twitter:description" content=""/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
+	
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://yusukebe.com/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+  <div class="container wrapper">
+	<div class="header">
+	<h1 class="site-title"><a href="https://yusukebe.com/">ゆーすけべー日記</a></h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/yusukebe" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/yusukebe" title="Twitter"><i data-feather="twitter"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+	<div class="recent-posts section">
+	  <h2 class="section-header">
+		Recent posts
+	  </h2>
+	  <div class="posts">
+		
+		
+		
+		<div class="post">
+		  <div class="meta">Apr 10, 2006</div>
+		  <a class="title" href="/posts/2006/0410131032/">スイフトのサイドミラー直る</a> &mdash;
+		  <span class="description">
+			
+			   スイフトの右サイドミラーを壊してしまったのを直した。  部品を頼んでおいたので、修理のために車を預けておく時間は短く済む。今朝というか昼前に修理出して、夜受け取った。  部品代が予想していたより安かった。これは修理代行してくれた中古車
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Apr 10, 2006</div>
+		  <a class="title" href="/posts/2006/0410125417/">今期も奥出研が始まる</a> &mdash;
+		  <span class="description">
+			
+			   俺が所属する大学の地獄研究室「奥出研」の2006年度春学期がスタート。            これで俺にとっては、学部3年で正式履修した頃から数えて5年目、  居候していた頃から数えれば実に6年半目(といってもサバティカルでいなかった
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Apr 10, 2006</div>
+		  <a class="title" href="/posts/2006/0410124037/">久しぶりにバスと電車で通学すると</a> &mdash;
+		  <span class="description">
+			
+			   朝車を修理に出して、バスで藤沢まで行き、髪を切る。  腹が減っていたのとコーヒーが飲みたかったので適当にコーヒー屋で昼飯。  学校で夕方、研究会の授業があるので、電車で湘南台まで行って、バスで湘南藤沢キャンパスへ。  「久しぶりのバス
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Apr 9, 2006</div>
+		  <a class="title" href="/posts/2006/0409120123/">R8C/Tinyを使った簡単なLED点滅とその制御</a> &mdash;
+		  <span class="description">
+			
+			   テクニカルな話は別口のブログでも作ってそこに掲載していきたいと思うが、  とりあえずそちらの準備が出来る前はこの日記で紹介。  ルネサステクノロジ社のR8C/Tinyというマイコンを使って初めてのプログラミングして、動作できた。嬉しい
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Apr 9, 2006</div>
+		  <a class="title" href="/posts/2006/0409103621/">今日の庭</a> &mdash;
+		  <span class="description">
+			
+			   この時期、庭の植物たちの変化が激しい。いつの間にか背丈が高くなり、芽が出て、花が咲く。    カモミールの背丈がいつの間にか高くなり、昨日芽が出たと思ったら、今日花が咲いていた！         (左)桜草も満開、(右)最近咲き出した
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Apr 8, 2006</div>
+		  <a class="title" href="/posts/2006/0407233653/">鎌団子が寝てる</a> &mdash;
+		  <span class="description">
+			
+			 かますけ４/ふぉーをやろうとしたところ、テーマ曲作りに盛り上がってしまい、企画ができず、そして鎌団子が寝だした。    「１５分後に起きる、最近１５分寝を覚えたんだ」  とか言ってたけど、ほんとに起きんのかな 
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Apr 7, 2006</div>
+		  <a class="title" href="/posts/2006/0407140525/">かますけ4/ふぉー、やります</a> &mdash;
+		  <span class="description">
+			
+			   これから深夜に鎌団子と落ち合って、「かますけ4/ふぉー」という企画をやります。  「4/ふぉー」というのは、ロケ4時間という意味。  4時間で自分達で楽しんで、ビデオカメラ回して、面白い映像に仕上げるという試み。  今まで「48/ヨン
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Apr 7, 2006</div>
+		  <a class="title" href="/posts/2006/0407065413/">内定車</a> &mdash;
+		  <span class="description">
+			
+			   5日学校に行って、帰りに後輩を車で駅まで送った。  バカ話をしている最中、後輩の携帯に電話がかかってきて、その場で内定が決まった。  電話が切れるまで変な緊張感と高揚感、電話が切れると車中でお祭り＆撮影会。  俺の車に乗っていると内定
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Apr 5, 2006</div>
+		  <a class="title" href="/posts/2006/0405145738/">今日の晩飯</a> &mdash;
+		  <span class="description">
+			
+			   秋修了(予定)後の進路を悩みつつ、デニーズのジャンバラヤを食べる。        とりあえず、うまい。 
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Apr 5, 2006</div>
+		  <a class="title" href="/posts/2006/0404150042/">ハマスタ開幕戦横浜VS中日、壮絶</a> &mdash;
+		  <span class="description">
+			
+			   横浜ベイスターズにとってホーム「横浜スタジアム」での開幕戦、対中日ドラゴンズ。  すんげえ試合だった。  結果8対8、12回引き分け、試合時間5時間15分弱。まさに壮絶。  いきなりこんな試合していいのかよ。  ちなみに、20時前から
+			
+		  </span>
+		</div>
+		
+		
+
+<ul class="pagination">
+	<li class="page-item page-prev">
+	
+    <a href="/page/97/" class="page-link" aria-label="Previous"><span aria-hidden="true">← Prev page</span></a>
+	
+	</li>
+	<li class="page-item page-next">
+	
+    <a href="/page/99/" class="page-link" aria-label="Next"><span aria-hidden="true">Next page →</span></a>
+	
+	</li>
+</ul>
+
+
+	  </div>
+	</div>
+  </div>
+  <div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright yusukebe.com |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-492497-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

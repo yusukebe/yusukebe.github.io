@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="generator" content="Hugo 0.63.2" />
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="alternate" type="application/rss+xml" href="https://yusukebe.com/index.xml" title="ゆーすけべー日記" />
+	<meta property="og:title" content="ゆーすけべー日記" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://yusukebe.com/" />
+<meta property="og:image" content="https://yusukebe.com/icons/myicon.png"/>
+<meta property="og:updated_time" content="2020-03-06T15:46:50+09:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://yusukebe.com/icons/myicon.png"/>
+
+<meta name="twitter:title" content="ゆーすけべー日記"/>
+<meta name="twitter:description" content=""/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
+	
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://yusukebe.com/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+  <div class="container wrapper">
+	<div class="header">
+	<h1 class="site-title"><a href="https://yusukebe.com/">ゆーすけべー日記</a></h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/yusukebe" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/yusukebe" title="Twitter"><i data-feather="twitter"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+	<div class="recent-posts section">
+	  <h2 class="section-header">
+		Recent posts
+	  </h2>
+	  <div class="posts">
+		
+		
+		
+		<div class="post">
+		  <div class="meta">Apr 12, 2016</div>
+		  <a class="title" href="/posts/2016/0412120003/">とある技術顧問のお仕事</a> &mdash;
+		  <span class="description">
+			
+			 トラベルブックの技術顧問となって1年以上が経った。今ではそれに加え、ブレイブソフト、HIROKENと合計3社の顧問をやっている。僕が元から持っているオモロキでの「ボケてのバックエンド開発」は継続しつつの顧問業務である。最初は「しんどいかな
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Mar 18, 2016</div>
+		  <a class="title" href="/posts/2016/0318150640/">SlideckっていうWebサービスをつくった</a> &mdash;
+		  <span class="description">
+			
+			 tl;dr  Slideckっていうエンジニア向けっぽいWebサービスをつくりました。できたてホヤホヤです。  slideck.io  GitHubのレポジトリに、とある簡単なフォーマットに従ったMarkdownのテキストファイルを置いと
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Mar 10, 2016</div>
+		  <a class="title" href="/posts/2016/0310111138/">僕がプレゼンのスライドをつくる時に考えること</a> &mdash;
+		  <span class="description">
+			
+			 僕がひとり語りしているPodcast「wada.fm」の前回のエピソードでも話したんだけども、プレゼンテーションのスライドをどうつくるか？みたいな話。    ちょいと最近とある方に   ゆっけさん（彼は僕のことをこう呼ぶ）のプレゼン資料い
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Mar 7, 2016</div>
+		  <a class="title" href="/posts/2016/0307105325/">何をどう実装するか？コードを書かない話</a> &mdash;
+		  <span class="description">
+			
+			 最近思っていることをツラツラと。  サービスにとって「コードを書く」という行為以上に「何をどう実装するか？」を決定するスピードと精度が非常に大切だと改めて感じている。一般的な言葉で言うならば「要件定義」や「設計」に当たるところ。ある程度サ
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jan 20, 2016</div>
+		  <a class="title" href="/posts/2016/0120190458/">栄和堂を開店して2ヶ月が経った件</a> &mdash;
+		  <span class="description">
+			
+			 弟が店長、親父がカフェマスターを務めるカフェ＆バーである「ブックスペース栄和堂」が開店して2ヶ月が経った。運営するのは僕が代表、そして彼ら2人も所属する株式会社ワディットである。    僕は現状の仕事がある、そして「物理的に遠い」という理
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jan 18, 2016</div>
+		  <a class="title" href="/posts/2016/0118111838/">Golangを初めて本番投入したぜ！</a> &mdash;
+		  <span class="description">
+			
+			 先日「ボケて」サービス群の中でも「スタンプ」という機能を提供するアプリサーバがGo実装になりました。これが僕にとってほぼ初めての「Golang実戦投入」となります。Goの良さについては去年の10月に僕がやっているPodcast「wada.
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jan 14, 2016</div>
+		  <a class="title" href="/posts/2016/0114095355/">Rebuildメソッド Early 2016</a> &mdash;
+		  <span class="description">
+			
+			 いつの間にかmiyagawaさんとの間でRebuildメソッドという言葉が産まれたのでその紹介。これは決してRebuildを聴いている人向けの話じゃなくって、彼や僕みたいにPodcastをやる側の人向けのメソッドなんだけど！  以下の記事
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jan 4, 2016</div>
+		  <a class="title" href="/posts/2016/0104175732/">初めてのイギリスなう</a> &mdash;
+		  <span class="description">
+			
+			   大晦日から年明け、そして今もロンドンにいる。嫁が見つけてきたHISの格安ツアーで初めてのイギリスに訪れた。  イギリスと言えば僕の若かれし頃、その自分の労力の多くを費やしたサッカー、そしてビートルズを発端とするUKロックが産まれた場所
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Dec 20, 2015</div>
+		  <a class="title" href="/posts/2015/1220122617/">ひとり「iPad mini Advent Calendar 2015」コンプ版</a> &mdash;
+		  <span class="description">
+			
+			 この記事はiPad miniの活用法をAdvent Calendarっぽく「25個」紹介するというものです。  と言っても一般的に言われてるような使われ方というよりか「僕なり」のわりとハードボイルドな？Tipsになるかもしれません。その結
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Dec 9, 2015</div>
+		  <a class="title" href="/posts/2015/1209104244/">Webサービスを支える「Perlモジュール」20選</a> &mdash;
+		  <span class="description">
+			
+			 この記事はPerl 5 Advent Calendar 2015の一貫として「先走って」書いております。  ただいま、絶賛「IVS CTO Night&amp;amp;Day 2015 Fall」というイベントに来ていて100名ほどのスタートアッ
+			
+		  </span>
+		</div>
+		
+		
+
+<ul class="pagination">
+	<li class="page-item page-prev">
+	
+    <a href="/page/2/" class="page-link" aria-label="Previous"><span aria-hidden="true">← Prev page</span></a>
+	
+	</li>
+	<li class="page-item page-next">
+	
+    <a href="/page/4/" class="page-link" aria-label="Next"><span aria-hidden="true">Next page →</span></a>
+	
+	</li>
+</ul>
+
+
+	  </div>
+	</div>
+  </div>
+  <div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright yusukebe.com |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-492497-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

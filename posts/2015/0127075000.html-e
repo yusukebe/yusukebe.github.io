@@ -1,0 +1,260 @@
++++
+Categories = ["tech"]
+Description = " 去年鎌団子と一緒にはじめた「だんごゆっけの平和な話」に加えて、独り語りの「wada.fm」も絶賛配信しているPodcast。一時期までは特に「音のクオリティ」にそこまでこだわってなかったんだけども、ある時から気になりだして、Podcast"
+Tags = []
+date = "2015-01-27T07:50:00+09:00"
+title = "最近のPodcast収録環境 Early 2015"
+author = "kamawada"
+archive = ["2015"]
+draft = false
++++
+
+
+<p>去年鎌団子と一緒にはじめた「<a href="http://dandy.fm/">だんごゆっけの平和な話</a>」に加えて、独り語りの「<a href="http://wada.fm/">wada.fm</a>」も絶賛配信している<strong>Podcast</strong>。一時期までは特に「音のクオリティ」にそこまでこだわってなかったんだけども、ある時から気になりだして、Podcast環境を整えました。<strong>だいーぶ声が聴こえやすくなって来ました</strong>。さて、今回は現時点での最新版ってことで「録音」の際に使用する<strong>ハードウェア</strong>に注目して紹介してみたいと思います。これからPodcastをはじめる方にとって参考になれば幸いです。といいながら、音に関しては「ズブの素人」でそれなりに勉強しながらやってますゆえ、アドバイスあればツッコミ下さい！</p>
+
+
+
+
+<p><img src="http://38.media.tumblr.com/3049e2eebe4272a186c679c82f7a39e8/tumblr_inline_nitn1dsanI1qb2ehr.jpg" alt="Podcast"></p>
+
+
+
+
+<hr>
+<p>まず「wada.fm」収録時などひとりで録音する際のハードウェアは以下を使っています。</p>
+
+
+
+
+<ul>
+<li>マイク - <strong>SHURE BETA58A</strong>
+</li>
+<li>オーディオインターフェース - <strong>SHURE X2U</strong>
+</li>
+<li>スタンド - <strong>キクタニ DS-101</strong>
+</li>
+<li>ヘッドフォン - <strong>audio-technica ATH-XS7</strong>
+</li>
+</ul>
+
+
+<p>マイクには<strong>ダイナミックマイクとコンデンサマイクという2つの種類</strong>が存在しまして、最近はダイナミックマイクを使っています。この2つの差は簡単にまとめるとこんな具合かと思われます。</p>
+
+
+
+
+<ul>
+<li>
+<strong>ダイナミックマイク</strong> - 衝撃とかに強くて丈夫、<strong>感度</strong>が低い、いわゆる「カラオケマイク」</li>
+<li>
+<strong>コンデンサマイク</strong> - 衝撃とかに弱い、<strong>感度</strong>が高い、電源必要</li>
+</ul>
+
+
+<p>さて、Podcastの音源をPCで録音する場合には、それら2つを接続する必要が当然ありますが、比較的簡単な手段としてUSB接続が出来るマイクを使うという選択肢があります。マイクから直接USBが出てるモノはお気軽でよいのですが、それらはほとんどコンデンサマイクである可能性が高いです。コンデンサマイクが良い or 悪いという話でもなく、また、<em>Podcastにはコンデンサマイクが向いてるよ</em> という意見もあります。</p>
+
+
+
+
+<p>実際、今回紹介する構成をつくる前の「だんごゆっけの平和は話」は「<strong>Blue Snowball iCE</strong>」というPCとUSB接続出来るコンデンサマイクを使っていました。</p>
+
+
+
+
+<p><img src="http://31.media.tumblr.com/41068cde32f54d11437aba8fab0f3734/tumblr_inline_nitpo2mXCW1qb2ehr.jpg" alt="snowball ice"></p>
+
+
+
+
+<p>ただ、最近になってこのように「マイクが2種類ある！」ことを知って、ダイナミックマイクを使った録音を試してみたました。するとコンデンサマイクに比べて感度が低い分、周辺音を拾いにくいこともあり、かつ、構造上の問題か口を近づけて話すと「図太い」感じのハッキリとした声として収録することが出来ました。お、これはいい感じ。個人的に好きな音です。ちなみに今使っているのは音を捉える範囲＝指向性が狭い「<strong>SHURE BETA58A</strong>」という代物。</p>
+
+
+
+
+<p><img src="http://31.media.tumblr.com/7b9dfd623eacc74cf6045cf2a4514c06/tumblr_inline_nitppxMgOO1qb2ehr.jpg" alt="SHURE BETA58A"></p>
+
+
+
+
+<p>ただ、ダイナミックマイクを使ってPCで録音する時に問題がありましてー、大抵のダイナミックマイクは「USBの接続では無く」<strong>XLR</strong>と呼ばれる端子で接続することになります。当然そんな端子はMacにはついていないので一度、オーディオインターフェースでUSB接続出来るように、変換する必要があります。またオーディオインターフェースはアンプの機能をまかなうことになります。一般的なオーディオインターフェースは以下の「<strong>steinberge UR22</strong>」のような<strong>弁当箱</strong>の形状をしたモノが一般的です。</p>
+
+
+
+
+<p><img src="http://38.media.tumblr.com/e922b9d64326e7d2df60b7148925b540/tumblr_inline_nitq20V22A1qb2ehr.jpg" alt="UR22"></p>
+
+
+
+
+<p>これはXLR端子が2つ入るので「だんごゆっけの平和な話」などでゲスト含めて複数人の同時収録では助かるアイテムです。ただ、XLRケーブルが原因なのかどうしても場所によって機械音の<strong>ノイズ</strong>が入る場合がありましてー、悩んでいた時に見つけたのがこの「<strong>SHURE X2U</strong>」です。XLRの端子に直接挿して、USBが出て来ます。つまりXLRケーブルが必要ないのです。その分、環境に左右されずに拾うノイズも少く、ポータブルですごくいい！</p>
+
+
+
+
+<p><img src="http://38.media.tumblr.com/33e85350bb071b924fe09ae7034c4eb4/tumblr_inline_nitqcx0A2D1qb2ehr.jpg" alt="X2U"></p>
+
+
+
+
+<p>ってことでひとりで録音するケースでは</p>
+
+
+
+
+<ol>
+<li>SHURE BETA58A</li>
+<li>SHURE X2U</li>
+<li>USBでPCへ</li>
+</ol>
+
+
+<p>という流れ。また、複数人が同時に喋る場合は</p>
+
+
+
+
+<ol>
+<li>ダイナミックマイク2本</li>
+<li>XLRケーブル</li>
+<li>steinberge UR22</li>
+<li>USBでPCへ</li>
+</ol>
+
+
+<p>ってな構成をとっています。えー、ぶっちゃけかなり投資したので、その分キレイにとれているのではないでしょうかね！ま、静かな部屋で収録すれば安い機材でもだいぶいい音でとれるんですけどね！</p>
+
+
+
+
+<p><img src="http://33.media.tumblr.com/22fdce5a19b061bc7d02ef3957cb56eb/tumblr_inline_nitry2LMf61qb2ehr.jpg" alt="Podcast"></p>
+
+
+
+
+<hr>
+<p>では、最後にもし、これからPodcastを「ある程度のクオリティを保持しつつ」やるぞ！という場合のオススメプランを2つほど紹介します。</p>
+
+
+
+
+<p>最初は上記でもとりあげた「SHURE <strong>X2U</strong>」を使うパターンです。これとダイナミックマイク1本あれば「ひとりPodcast」がすぐにでも始められちゃいます。X2Uがおおよそ「16,000円」程度なので同じSHUREの「<strong>SM58SE</strong>」と組み合わせて3万円弱のプランです。</p>
+
+
+
+
+<div class="amazlet-box" style="margin-bottom:0;">
+<div class="amazlet-image" style="float:left;margin:0 12px 1px 0;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B001PPXFAG/kamawada-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/31hzrBsyhDL._SL160_.jpg" alt="SHURE  X2U   USBインターフェース 【国内正規品】" style="border:none;"></a></div>
+<div class="amazlet-info" style="line-height:120%;margin-bottom:10px;">
+<div class="amazlet-name" style="margin-bottom:10px;line-height:120%;">
+<a href="http://www.amazon.co.jp/exec/obidos/ASIN/B001PPXFAG/kamawada-22/ref=nosim/" name="amazletlink" target="_blank">SHURE  X2U   USBインターフェース 【国内正規品】</a><div class="amazlet-powered-date" style="font-size:80%;margin-top:5px;line-height:120%;">posted with <a href="http://www.amazlet.com/" title="amazlet" target="_blank">amazlet</a> at 15.01.27</div>
+</div>
+<div class="amazlet-detail">SHURE <br>売り上げランキング: 8,210<br>
+</div>
+<div class="amazlet-sub-info" style="float:left;"><div class="amazlet-link" style="margin-top:5px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B001PPXFAG/kamawada-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jpで詳細を見る</a></div></div>
+</div>
+<div class="amazlet-footer" style="clear:left;"></div>
+</div>
+
+
+
+
+<div class="amazlet-box" style="margin-bottom:0;">
+<div class="amazlet-image" style="float:left;margin:0 12px 1px 0;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B000GUBOYU/kamawada-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/31d24VczyrL._SL160_.jpg" alt="SHURE  SM58SE ダイナミックマイクロフォン 【国内正規品】" style="border:none;"></a></div>
+<div class="amazlet-info" style="line-height:120%;margin-bottom:10px;">
+<div class="amazlet-name" style="margin-bottom:10px;line-height:120%;">
+<a href="http://www.amazon.co.jp/exec/obidos/ASIN/B000GUBOYU/kamawada-22/ref=nosim/" name="amazletlink" target="_blank">SHURE  SM58SE ダイナミックマイクロフォン 【国内正規品】</a><div class="amazlet-powered-date" style="font-size:80%;margin-top:5px;line-height:120%;">posted with <a href="http://www.amazlet.com/" title="amazlet" target="_blank">amazlet</a> at 15.01.27</div>
+</div>
+<div class="amazlet-detail">SHURE (2000-10-01)<br>売り上げランキング: 136<br>
+</div>
+<div class="amazlet-sub-info" style="float:left;"><div class="amazlet-link" style="margin-top:5px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B000GUBOYU/kamawada-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jpで詳細を見る</a></div></div>
+</div>
+<div class="amazlet-footer" style="clear:left;"></div>
+</div>
+
+
+
+
+<p><br></p>
+
+
+
+
+<p>次に既にUSBケーブルが出てるコンデンサマイクでPodcastを収録する方法。これが一番お手軽です。僕らが最初使っていた「Blue Snowball iCE」は日本で手にい入れにくいので、ちょっとよいモノとして新し目のaudio-technicaの「<strong>AT2020USB+</strong>」なんていいかもしれないです。</p>
+
+
+
+
+<div class="amazlet-box" style="margin-bottom:0;">
+<div class="amazlet-image" style="float:left;margin:0 12px 1px 0;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B00Q3K32I8/kamawada-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/31npDvDj0IL._SL160_.jpg" alt="AUDIO-TECHNICA AT2020USB+ USBマイクロホン" style="border:none;"></a></div>
+<div class="amazlet-info" style="line-height:120%;margin-bottom:10px;">
+<div class="amazlet-name" style="margin-bottom:10px;line-height:120%;">
+<a href="http://www.amazon.co.jp/exec/obidos/ASIN/B00Q3K32I8/kamawada-22/ref=nosim/" name="amazletlink" target="_blank">AUDIO-TECHNICA AT2020USB+ USBマイクロホン</a><div class="amazlet-powered-date" style="font-size:80%;margin-top:5px;line-height:120%;">posted with <a href="http://www.amazlet.com/" title="amazlet" target="_blank">amazlet</a> at 15.01.27</div>
+</div>
+<div class="amazlet-detail">オーディオテクニカ <br>売り上げランキング: 10,589<br>
+</div>
+<div class="amazlet-sub-info" style="float:left;"><div class="amazlet-link" style="margin-top:5px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B00Q3K32I8/kamawada-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jpで詳細を見る</a></div></div>
+</div>
+<div class="amazlet-footer" style="clear:left;"></div>
+</div>
+
+
+
+
+<p><br></p>
+
+
+
+
+<hr>
+<p><strong>追記</strong></p>
+
+
+
+
+<p>miyagawaさんから指摘を受けて、確かにQ2Uあったなーと！</p>
+
+
+<p></p>
+<blockquote class="twitter-tweet" lang="ja">
+<p lang="ja" dir="ltr"><a href="https://twitter.com/yusukebe">@yusukebe</a> Samson Q2Uは紹介しない？ USBのダイナミックでXLRもついてる。</p>— Tatsuhiko Miyagawa (@miyagawa) <a href="https://twitter.com/miyagawa/status/559991361877704704">2015, 1月 27</a>
+</blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<p>ヘッドフォンがついてくるのはありかなしか？は置いといて、エントリー向けとして廉価なダイナミックマイクでかつ、USBとXLRの両方のコネクタを持っているのが良いですね。</p>
+
+
+
+
+<div class="amazlet-box" style="margin-bottom:0;">
+<div class="amazlet-image" style="float:left;margin:0 12px 1px 0;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B001R747SG/kamawada-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/51lnCEq5jPL._SL160_.jpg" alt="SAMSON Q2U USB ダイナミックマイク" style="border:none;"></a></div>
+<div class="amazlet-info" style="line-height:120%;margin-bottom:10px;">
+<div class="amazlet-name" style="margin-bottom:10px;line-height:120%;">
+<a href="http://www.amazon.co.jp/exec/obidos/ASIN/B001R747SG/kamawada-22/ref=nosim/" name="amazletlink" target="_blank">SAMSON Q2U USB ダイナミックマイク</a><div class="amazlet-powered-date" style="font-size:80%;margin-top:5px;line-height:120%;">posted with <a href="http://www.amazlet.com/" title="amazlet" target="_blank">amazlet</a> at 15.01.27</div>
+</div>
+<div class="amazlet-detail">サムソン <br>売り上げランキング: 141,783<br>
+</div>
+<div class="amazlet-sub-info" style="float:left;"><div class="amazlet-link" style="margin-top:5px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B001R747SG/kamawada-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jpで詳細を見る</a></div></div>
+</div>
+<div class="amazlet-footer" style="clear:left;"></div>
+</div>
+
+
+
+
+<p><br></p>
+
+
+
+
+<hr>
+<p><a href="http://weblog.bulknews.net/post/106673010094/podcasting-setup-2015-january">miyagawaさんも機材リストを公開していて</a> だいぶ構成が似てきたんですがｗ 彼と話した時に「機材に金かけるのもいいけど、コンテンツが重要だよね」みたいな意見もあって当然なのでｗ 楽しい配信が出来るように精進したいですね！</p>
+
+
+
+
+<ul>
+<li><a href="http://dandy.fm/">だんごゆっけの平和な話</a></li>
+<li><a href="http://wada.fm/">wada.fm</a></li>
+</ul>
+
+

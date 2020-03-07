@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="generator" content="Hugo 0.63.2" />
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="alternate" type="application/rss+xml" href="https://yusukebe.com/index.xml" title="ゆーすけべー日記" />
+	<meta property="og:title" content="ゆーすけべー日記" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://yusukebe.com/" />
+<meta property="og:image" content="https://yusukebe.com/icons/myicon.png"/>
+<meta property="og:updated_time" content="2020-03-06T15:46:50+09:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://yusukebe.com/icons/myicon.png"/>
+
+<meta name="twitter:title" content="ゆーすけべー日記"/>
+<meta name="twitter:description" content=""/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
+	
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://yusukebe.com/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+  <div class="container wrapper">
+	<div class="header">
+	<h1 class="site-title"><a href="https://yusukebe.com/">ゆーすけべー日記</a></h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/yusukebe" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/yusukebe" title="Twitter"><i data-feather="twitter"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+	<div class="recent-posts section">
+	  <h2 class="section-header">
+		Recent posts
+	  </h2>
+	  <div class="posts">
+		
+		
+		
+		<div class="post">
+		  <div class="meta">Apr 1, 2006</div>
+		  <a class="title" href="/posts/2006/0401032359/">DAIO(マツニシ)からVAIOを貰いに行く</a> &mdash;
+		  <span class="description">
+			
+			   自らネット上に「おてぃんこ大王」という名前で登場したマツニシって高校の同級生がいて、  彼から電話がかかってきた。  「今家の片付けしてて、前使ってたVAIOがあまってんだけどユッケ(俺のこと)いらない？」    いる。ということで昨
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Apr 1, 2006</div>
+		  <a class="title" href="/posts/2006/0401030828/">補毛門という人からダンボールが届く</a> &mdash;
+		  <span class="description">
+			
+			   今朝リビングに朝食を食べに行ったら、俺宛にダンボールが届いていた。    これがそのダンボール、事情により送り主からモザイクを入れろとの指示         送り主は「補毛門」、誰だよ。というか俺の名前の漢字間違ってるんですけど。  
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Mar 31, 2006</div>
+		  <a class="title" href="/posts/2006/0331144214/">moo-pongが俺と共に中国の情報サイトにたくさん出てる</a> &mdash;
+		  <span class="description">
+			
+			   moo-pongの紹介記事が中国の新聞に掲載されたっぽくて、  中国語のウェブにたくさん取上げられてる。  俺、写真に写ってます。顔うけます。  というか掲載サイトの量がかなりたくさんでうけます。  そして中国語がわからないので日本人
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Mar 31, 2006</div>
+		  <a class="title" href="/posts/2006/0331021716/">DTV(デスクトップビデオ)におけるチープ革命</a> &mdash;
+		  <span class="description">
+			
+			   今回の要点は個人が映像編集を行うことができるDTV(デスクトップビデオ)においてチープ革命が起こったという俺の経験及び感動と、  しかしこうしたチープ革命がもたらした「映像を作成できる」というテクノロジーは果たしてDTVという形で収ま
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Mar 31, 2006</div>
+		  <a class="title" href="/posts/2006/0331003112/">In The Bubble</a> &mdash;
+		  <span class="description">
+			
+			   In The Bubble: Designing In A Complex World John Thackara著             先ほどの奥出研合宿でみんなで輪読した英語の本。  作者は英国出身でデザインジャーナリストとし
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Mar 31, 2006</div>
+		  <a class="title" href="/posts/2006/0331001637/">今日の富士山</a> &mdash;
+		  <span class="description">
+			
+			   春が来て、気温が低いおかげで富士山が綺麗に見える。鎌倉山の桜も咲き出した。  我が部屋の窓の近くの桃のピンクも可愛らしい。ああなんて贅沢。       
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Mar 30, 2006</div>
+		  <a class="title" href="/posts/2006/0330112757/">サッカー日本代表VSエクアドル戦</a> &mdash;
+		  <span class="description">
+			
+			   やっといれたよー、佐藤。          前半頭と、後半中ごろから終わりにかけて、サントスが調子に乗っていたこともあり、  サイドからボールあがって「いい形」ができていた。  だが、「きき足じゃないから」かしらんが久保・玉田のシュー
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Mar 30, 2006</div>
+		  <a class="title" href="/posts/2006/0330021424/">スイフトのサイドミラーもげる、地獄合宿の代償</a> &mdash;
+		  <span class="description">
+			
+			   地獄合宿の帰り、やってしまった。  乗っていた車スイフトの右サイドミラー破損＆サイドにかすり傷。  なぜ「右側」か。細い道で対向車が来たからいつもどおり譲ろうと、  バックしたら、疲労のため感覚不一致が起こりぶつけた。  前に進む分な
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Mar 29, 2006</div>
+		  <a class="title" href="/posts/2006/0329143311/">「ウェブ進化論」丸の内線内窓上広告(〜4/27)にもゆーすけべー日記から引用掲載されている模様</a> &mdash;
+		  <span class="description">
+			
+			   3月13日朝日新聞に「ウェブ進化論」の広告が掲載され、  その中で「ゆーすけべー日記」の記事の一部が引用されました。  参考  ゆーすけべー日記: ウェブ進化論広告掲載(ゆーすけべー日記からの引用有)、本日13日(月)朝日新聞朝刊三面
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Mar 29, 2006</div>
+		  <a class="title" href="/posts/2006/0329071820/">奥出研2006春合宿、地獄研究室の地獄合宿</a> &mdash;
+		  <span class="description">
+			
+			   俺が所属する大学の研究室、「奥出研」の合宿が  25日(土)から28日(火)まで箱根で行われ帰ってきたのでレポート。  まずひとことで言うと「まさに地獄研究室の地獄合宿」。  他とは違うはんぱない、「えぐい」研究室であることはみんな気
+			
+		  </span>
+		</div>
+		
+		
+
+<ul class="pagination">
+	<li class="page-item page-prev">
+	
+    <a href="/page/99/" class="page-link" aria-label="Previous"><span aria-hidden="true">← Prev page</span></a>
+	
+	</li>
+	<li class="page-item page-next">
+	
+    <a href="/page/101/" class="page-link" aria-label="Next"><span aria-hidden="true">Next page →</span></a>
+	
+	</li>
+</ul>
+
+
+	  </div>
+	</div>
+  </div>
+  <div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright yusukebe.com |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-492497-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

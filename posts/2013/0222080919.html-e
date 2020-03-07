@@ -1,0 +1,28 @@
++++
+Categories = ["tech"]
+Description = " 一つの「lib」ディレクトリ内で複数のMojoliciousアプリを動かしてるんだけど、するとMojoliciousが使うデフォルトのテンプレート置き場「templates」ディレクトリだけじゃ管理しきれなくなってきます。そこでアプリごと"
+Tags = ["Perl", "Mojolicious"]
+date = "2013-02-22T17:09:00+09:00"
+title = "Mojoliciousでテンプレート置くディレクトリを追加したい時"
+author = "kamawada"
+archive = ["2013"]
+draft = false
++++
+
+
+<p>一つの「lib」ディレクトリ内で複数のMojoliciousアプリを動かしてるんだけど、
+するとMojoliciousが使うデフォルトのテンプレート置き場「templates」ディレクトリだけじゃ管理しきれなくなってきます。そこでアプリごとにテンプレートを置く場所を変えちゃえってのが今回の趣旨。</p>
+
+<p>といっても <a href="http://search.cpan.org/~jberger/Mojolicious-3.86/lib/Mojolicious.pm#renderer">この辺</a> のドキュメントに書いてある。Mojolicious::Rendererオブジェクトへパスを追加すればいい。Liteじゃない方のMojoliciousアプリだったら、 Mojolicious.pmを継承しているモジュールの「startup」内とかで</p>
+
+<pre> unshift @{$self-&gt;app-&gt;renderer-&gt;paths}, File::Spec-&gt;catfile(MyApp-&gt;base_dir, 'templates/sp');
+ </pre>
+
+<p>とかすればよい。ちなみに MyApp-&gt;base_dir ってのはアプリのベースディレクトリを返すモジュール及び関数が定義されている前提です。</p>
+
+<p>こうすることで例えば、想像しやすいように絶対パスで書くと</p>
+
+<blockquote><p>/home/yusuke/www/myapp/templates/sp/not_found.html.ep</p></blockquote>
+
+<p>がコントローラ内の「$self-&gt;render_not_found」で呼ばれたりします。ふぅこれである程度のことがMojoliciousで対応できる！と言う感じです。</p>
+

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="generator" content="Hugo 0.63.2" />
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="alternate" type="application/rss+xml" href="https://yusukebe.com/index.xml" title="ゆーすけべー日記" />
+	<meta property="og:title" content="ゆーすけべー日記" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://yusukebe.com/" />
+<meta property="og:image" content="https://yusukebe.com/icons/myicon.png"/>
+<meta property="og:updated_time" content="2020-03-06T15:46:50+09:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://yusukebe.com/icons/myicon.png"/>
+
+<meta name="twitter:title" content="ゆーすけべー日記"/>
+<meta name="twitter:description" content=""/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
+	
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://yusukebe.com/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+  <div class="container wrapper">
+	<div class="header">
+	<h1 class="site-title"><a href="https://yusukebe.com/">ゆーすけべー日記</a></h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/yusukebe" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/yusukebe" title="Twitter"><i data-feather="twitter"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+	<div class="recent-posts section">
+	  <h2 class="section-header">
+		Recent posts
+	  </h2>
+	  <div class="posts">
+		
+		
+		
+		<div class="post">
+		  <div class="meta">Feb 14, 2012</div>
+		  <a class="title" href="/posts/2012/0214083335/">Perlから非公式Google Reader APIにアクセスする</a> &mdash;
+		  <span class="description">
+			
+			 昔からGoogle Readerの非公式APIを使ってみたかったので、こちらを参考にPerlでアクセスしてみてる。  既読のアイテムのタイトルを表示するだけのスクリプトなら以下のコードになりました。上記のサイトだとCookieにSIDを設
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Feb 14, 2012</div>
+		  <a class="title" href="/posts/2012/0214030441/">加藤周一から学ぶ「本を読まない読書術」</a> &mdash;
+		  <span class="description">
+			
+			 毎日の定期的な読書を再開しようと習慣づける努力をしている。そういう時に「読書にまつわる本」を読むとモチベーションがあがるケースがある。僕の場合だと、斉藤孝の「読書力」やアドラーの「本を読む本」が昔そうであった。最近の本よりなるべく古典的な
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Feb 13, 2012</div>
+		  <a class="title" href="/posts/2012/0213130102/">稲刈り跡カットにした日記</a> &mdash;
+		  <span class="description">
+			
+			          今日は美容室に髪の毛を切りに行きました。担当してくれる「まめさん」が今日はどういう髪型にするか聞いてきたので、「ハードな感じに」とまずリクエストしました。その後「さっきすれ違った人の髪型がかっこよかった」と言ったら絵を描
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Feb 13, 2012</div>
+		  <a class="title" href="/posts/2012/0213003446/">これだけは持って行く山登りの装備10個</a> &mdash;
+		  <span class="description">
+			
+			 昔から山登りは年2回くらいしていて、それに必要な装備品＝ ギアの機能性とスタイルが好き でよくアウトドアショップを徘徊などしています。今月号のワンダーフォーゲルという雑誌の特集は山初心者向けのQ&amp;amp;Aになっていて、僕にとってはある程
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Feb 12, 2012</div>
+		  <a class="title" href="/posts/2012/0212103055/">ホッテントリを書いた時「自己満度」をブーストさせる方法</a> &mdash;
+		  <span class="description">
+			
+			 数ヶ月前から、アクセス解析サービスGoogle Analyticsにベータ版として「リアルタイム」機能がつきました。このリアルタイム。その名の通り今まさに起こっていることが丸わかりですっごいんです。なんというか「tail -f acces
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Feb 12, 2012</div>
+		  <a class="title" href="/posts/2012/0212003607/">これだけは使ってるMacアプリ10個</a> &mdash;
+		  <span class="description">
+			
+			 Evernoteが好きではない。Macのアプリがイケてないからだ。変なリッチテキストみたいな奴で編集しなくてはいけなかったり、Webページからコピペした文字がスタイルを継承しちゃったり、そもそもMarkdownに対応してもらいたかったり。
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Feb 7, 2012</div>
+		  <a class="title" href="/posts/2012/0207013320/">Markdownで文章を書こう！</a> &mdash;
+		  <span class="description">
+			
+			 みなさんはどのようなエディタでどのような記法で文章を書いていますか？状況によるとは思いますが、WordとかMacのPagesで文章を書いているという方やEvernoteでメモを取っているという方、または、Blogの投稿フォームに綴っている
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Feb 6, 2012</div>
+		  <a class="title" href="/posts/2012/0206130152/">ノンコードなファイルをモジュールと一緒にインストールしたければshareディレクトリを使う</a> &mdash;
+		  <span class="description">
+			
+			 Perlモジュールの話。当然のことかもしれないけど、知らなかったのでメモメモ。  配布したい小さなWebアプリがあって、出力のためのテンプレートファイルとかCSSとかどうやってモジュールに梱包したらよいだろうと思っていたんだけど、たぶんs
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Feb 6, 2012</div>
+		  <a class="title" href="/posts/2012/0206030939/">メルマガ「ゆーすけべーラジオ」明日創刊</a> &mdash;
+		  <span class="description">
+			
+			 まぐまぐ！での有料メルマガ「ゆーすけべーラジオ」を明日創刊させます。   ゆーすけべーラジオ     既に配信の準備は整ったので、あとは時間が来るのを待つのみです。ちょっとドキドキ。  そもそもメルマガをはじめようとしたキッカケはまぐまぐ
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Feb 4, 2012</div>
+		  <a class="title" href="/posts/2012/0204123716/">俺のラーメンアルバムが火を噴くぜ！</a> &mdash;
+		  <span class="description">
+			
+			 iPhoneの写真を整理していたらムフフな画像と共にラーメン写真がたくさん出てきたので店舗の情報、感想と共に紹介します。だいたいここ1年に撮った写真の中から厳選したものを、そして住んでいる場所が鎌倉ということから神奈川県のお店が多くなりま
+			
+		  </span>
+		</div>
+		
+		
+
+<ul class="pagination">
+	<li class="page-item page-prev">
+	
+    <a href="/page/20/" class="page-link" aria-label="Previous"><span aria-hidden="true">← Prev page</span></a>
+	
+	</li>
+	<li class="page-item page-next">
+	
+    <a href="/page/22/" class="page-link" aria-label="Next"><span aria-hidden="true">Next page →</span></a>
+	
+	</li>
+</ul>
+
+
+	  </div>
+	</div>
+  </div>
+  <div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright yusukebe.com |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-492497-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

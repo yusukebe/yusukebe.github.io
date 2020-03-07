@@ -1,0 +1,14 @@
++++
+Categories = ["tech"]
+Description = "SambaによるPrimary Domain Controller (PDC)の構築 まじ熱い。 http://odalab.spub.chitose.ac.jp/~oda/unix/samba.html"
+Tags = []
+date = "2002-04-29T12:11:00+09:00"
+title = "SAMBAでWindowsのドメインコントロール"
+author = "kamawada"
+archive = ["2002"]
+draft = false
++++
+
+<p>SambaによるPrimary Domain Controller (PDC)の構築<br>
+まじ熱い。<br>
+<a href="http://odalab.spub.chitose.ac.jp/~oda/unix/samba.html" target="_new">http://odalab.spub.chitose.ac.jp/~oda/unix/samba.html</a></p>

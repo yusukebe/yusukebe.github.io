@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="generator" content="Hugo 0.63.2" />
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="alternate" type="application/rss+xml" href="https://yusukebe.com/index.xml" title="ゆーすけべー日記" />
+	<meta property="og:title" content="ゆーすけべー日記" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://yusukebe.com/" />
+<meta property="og:image" content="https://yusukebe.com/icons/myicon.png"/>
+<meta property="og:updated_time" content="2020-03-06T15:46:50+09:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://yusukebe.com/icons/myicon.png"/>
+
+<meta name="twitter:title" content="ゆーすけべー日記"/>
+<meta name="twitter:description" content=""/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
+	
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://yusukebe.com/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+  <div class="container wrapper">
+	<div class="header">
+	<h1 class="site-title"><a href="https://yusukebe.com/">ゆーすけべー日記</a></h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/yusukebe" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/yusukebe" title="Twitter"><i data-feather="twitter"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+	<div class="recent-posts section">
+	  <h2 class="section-header">
+		Recent posts
+	  </h2>
+	  <div class="posts">
+		
+		
+		
+		<div class="post">
+		  <div class="meta">Dec 20, 2009</div>
+		  <a class="title" href="/posts/2009/1220004024/">簡易GyazoサーバをPlackで実装したら27行くらいで書けた</a> &mdash;
+		  <span class="description">
+			
+			  参考文献: 「Webサーバ不要、40行程度のスクリプトひとつで動かせる Gyazoサーバー（クローン）を書いた - 今日もスミマセン。」   こちらはRubyで書いてあるので昨日の Smiley Hackathon#7 にて、Perl/
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Dec 20, 2009</div>
+		  <a class="title" href="/posts/2009/1219175801/">1981年生忘年会#3 雑感</a> &mdash;
+		  <span class="description">
+			
+			 一週間遅れで、12日(土曜日)に渋谷の居酒屋にて主催した「1981年生忘年会 第3回目」について雑感を書いてみよう。  まず最初に俺がこの「81」のそもそもの言い出しっぺであり、今回も幹事をやらせてもらったのだが、 サポートチームが素晴ら
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Dec 16, 2009</div>
+		  <a class="title" href="/posts/2009/1216042414/">分速でエロ動画を貼付ける「分速YourFileHost」を作ってみた</a> &mdash;
+		  <span class="description">
+			
+			 分速、つまり1分間に一度に近いペースでYourFileHostのエロ動画を貼付けて、 その場で再生可能なサイト「分速YourFileHost」を作ってみました。 説明はそんなものでいいかと思うくらいシンプルなので後ろに人がいなければ（笑）
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Dec 11, 2009</div>
+		  <a class="title" href="/posts/2009/1211004449/">全国のTwitterでつぶやかれた曲が見れてその場で聴ける「nowp.ly」を公開します</a> &mdash;
+		  <span class="description">
+			
+			 Twitterのハッシュタグ「#nowplaying」のベストビューアーであるWebサイト「nowp.ly - #Nowplaying on Twitter」を公開します。  nowp.ly - #Nowplaying on Twitte
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Dec 11, 2009</div>
+		  <a class="title" href="/posts/2009/1211002245/">Release &amp;quot;nowp.ly - #Nowplaying on Twitter&amp;quot; !</a> &mdash;
+		  <span class="description">
+			
+			 I&#39;ve just opened a web site named &#34;nowp.ly&#34;.  nowp.ly - #Nowplaying on Twitter   nowp.ly is a simple interface for watc
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Dec 10, 2009</div>
+		  <a class="title" href="/posts/2009/1210084248/">1981年生忘年会#3 最終アナウンス</a> &mdash;
+		  <span class="description">
+			
+			 さて、いよいよあさって12日土曜日にやってくる第3回1981年生忘年会について最終の連絡です。重要なことを3つ言います。   その1: 一次会会費は4000円    その2: 自分の「番号」を覚えて来てください。   番号とはATNDで登
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Dec 8, 2009</div>
+		  <a class="title" href="/posts/2009/1208022109/">Plack::Requestを使ったプチアプリについて記事を書きました</a> &mdash;
+		  <span class="description">
+			
+			 さて絶賛連載中の「JPerl Advent Calendar 2009」ですが、昨日のCasual Trackに「Plack::Requestとか使って小さなWebアプリを作ろう！」という題名で記事を書かせていただきました。  アプリのコ
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Nov 24, 2009</div>
+		  <a class="title" href="/posts/2009/1124092629/">今年も開催！ JPerl Advent Calendar 2009</a> &mdash;
+		  <span class="description">
+			
+			 tokuhirom が一応主催ってことで今年も「JPerl Advent Calendar」が行われるみたいです！なんと今回は Hacker Track と Casual Track の2本だてです。  「Advent Calendar」
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Nov 24, 2009</div>
+		  <a class="title" href="/posts/2009/1123195925/">「Noe」ってWAFを137%くらい速くした</a> &mdash;
+		  <span class="description">
+			
+			 僕が運営しているサイトの中で一番アクセスのあるエロサイトがありまして( not YourAVHost! )、内部的には主に、gearman の worker をキックしたり、履歴を表示するだけの簡単なお仕事をしているサービスです。公開当初
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Nov 23, 2009</div>
+		  <a class="title" href="/posts/2009/1122205316/">「Perl Casual Talks#1」が開催されました</a> &mdash;
+		  <span class="description">
+			
+			 去る20日金曜日、mixiさんに会場を提供していただき、「Perl Casual Talks#1」が開催されました。参加者は25名前後、そのうち半数以上の17人！がそれぞれ5分間発表を行いました。第1回目ということもあり、「空気」をつかむ
+			
+		  </span>
+		</div>
+		
+		
+
+<ul class="pagination">
+	<li class="page-item page-prev">
+	
+    <a href="/page/35/" class="page-link" aria-label="Previous"><span aria-hidden="true">← Prev page</span></a>
+	
+	</li>
+	<li class="page-item page-next">
+	
+    <a href="/page/37/" class="page-link" aria-label="Next"><span aria-hidden="true">Next page →</span></a>
+	
+	</li>
+</ul>
+
+
+	  </div>
+	</div>
+  </div>
+  <div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright yusukebe.com |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-492497-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

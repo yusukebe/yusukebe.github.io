@@ -1,0 +1,54 @@
++++
+Categories = ["tech"]
+Description = " もう承知の方は承知かとおもいますが、最近使って感動したのでメモ。MySQLをDBにもったモジュールのテストにokukazuho wareであるTest::mysqldはすごいいい感じっす。   Test::mysqld automatic"
+Tags = ["Perl"]
+date = "2010-03-19T10:52:00+09:00"
+title = "Test::mysqld いい感じ"
+author = "kamawada"
+archive = ["2010"]
+draft = false
++++
+
+
+<p>
+もう承知の方は承知かとおもいますが、最近使って感動したのでメモ。
+MySQLをDBにもったモジュールのテストにokukazuho wareであるTest::mysqldはすごいいい感じっす。
+</p>
+<blockquote>
+<p>
+Test::mysqld automatically setups a mysqld instance in a temporary directory, and destroys it when the perl script exits.
+</p>
+<p>
+<a href="http://search.cpan.org/~kazuho/Test-mysqld-0.11/lib/Test/mysqld.pm">Test::mysqld - search.cpan.org</a>
+</p>
+</blockquote>
+<p>
+テストコードの中などで使って、mysqldを全てテンポラリーなディレクトリで立ち上げてくれて、
+そのテストが終わったら（ブロックを抜けたら）自動的にシャットダウン＆そのディレクトリものごと削除してくれるという代物。
+がががーとほんとに「自動的に」やってくれる感がたまらない。
+以下がTest::mysqld付属のテストをダンプ付きでやった時のスクリーンショット。
+これでなんとなく雰囲気がわかるはず。
+</p>
+<p>
+<img alt="" class="at-xid-6a0133f4781589970b015435b6f5ee970c" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015435b6f5ee970c-pi.jpg>
+</p>
+<p>
+そこで、Kailasのプロジェクトで使いだしました。今のところは
+個々のメソッドについては単体のテストスクリプトでテストして、
+「usecase」って名前のテストスクリプトでそのAPIを使う全体のユースケースをテストしてみてます。
+えっとーFailしてますが（汗）、まぁこんな感じで、シナリオが再現できるので楽しいです。
+</p>
+<p>
+<img alt="" class="at-xid-6a0133f4781589970b015435b6f614970c" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015435b6f614970c-pi.jpg>
+</p>
+<p>
+実はこのモジュール、<strong><a href="http://japan.perlassociation.org/">JPA</a>会長の</strong>lestrratさん（牧さん）に教えてもらったのですが、
+あの方はMakefile.PLにいろいろ仕込ませてうはうはしているみたいですね。
+</p>
+<ul>
+  <li><a href="http://mt.endeworks.jp/d-6/2009/10/things-ive-done-while-using-test-mysqld.html">Test::mysqldとかでテスト走らせる際に行ったいろんな事。 - D-6 [相変わらず根無し]</a></li>
+</ul>
+<p>
+ということで、まだ使ったこと無い人は一度試してみると楽しいかもですよ！
+</p>
+

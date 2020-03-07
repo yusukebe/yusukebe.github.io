@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="generator" content="Hugo 0.63.2" />
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="alternate" type="application/rss+xml" href="https://yusukebe.com/index.xml" title="ゆーすけべー日記" />
+	<meta property="og:title" content="ゆーすけべー日記" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://yusukebe.com/" />
+<meta property="og:image" content="https://yusukebe.com/icons/myicon.png"/>
+<meta property="og:updated_time" content="2020-03-06T15:46:50+09:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://yusukebe.com/icons/myicon.png"/>
+
+<meta name="twitter:title" content="ゆーすけべー日記"/>
+<meta name="twitter:description" content=""/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
+	
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://yusukebe.com/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+  <div class="container wrapper">
+	<div class="header">
+	<h1 class="site-title"><a href="https://yusukebe.com/">ゆーすけべー日記</a></h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/yusukebe" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/yusukebe" title="Twitter"><i data-feather="twitter"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+	<div class="recent-posts section">
+	  <h2 class="section-header">
+		Recent posts
+	  </h2>
+	  <div class="posts">
+		
+		
+		
+		<div class="post">
+		  <div class="meta">May 20, 2012</div>
+		  <a class="title" href="/posts/2012/0520074309/">Rubyやってみる！（新おっぱいスクリプトもあるぉ）</a> &mdash;
+		  <span class="description">
+			
+			 某プロジェクトでRuby on Rails使うっていぅんで「アジャイルWebアプリケーション開発」本なんて買ってチュートリアルとかやってます。ただ、Ruby自体なにも分からないので、Rails覚えてもどれだけできるかがよく分からなす。って
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">May 7, 2012</div>
+		  <a class="title" href="/posts/2012/0507112346/">実装までにする7つの企画作業</a> &mdash;
+		  <span class="description">
+			
+			 メルマガ「ゆーすけべーラジオ」にてWebサービス/アプリをつくるにあたっての僕なりのエッセイを連載中です。先週は実装前に行う企画作業についてまとめてみたのですが、評判がいいので、折角ですしBlogで公開させていただきます。特に複数名でのも
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">May 3, 2012</div>
+		  <a class="title" href="/posts/2012/0503105637/">ノマドならルノアールがはかどるよねぇ〜っていう10個の理由</a> &mdash;
+		  <span class="description">
+			
+			 遊牧民的に仕事するノマドワーク。僕は「おうち」が一番はかどったりするんですが、どうしても「おそと」で作業しなくてはいけない時があります。そんな時に心地よくノートパソコンをカタカタと打てるような空間が関東近辺で展開する喫茶ルノアール（修正：
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Apr 25, 2012</div>
+		  <a class="title" href="/posts/2012/0425020839/">「メンノン」カットにした！</a> &mdash;
+		  <span class="description">
+			
+			 稲刈りカットが伸びてきたのでいつも通り藤沢のコムズヘアーにいって担当の「まめ」さんに髪の毛を切ってもらいました。前回が結構ハードなモヒカンをベースにしたヘンテコカットだったので、僕は思わず   モヒカンだけど、「普通に」してください   
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Apr 6, 2012</div>
+		  <a class="title" href="/posts/2012/0406101902/">海外エロサイトのページを串刺し検索するサイトを速攻で作ったwww</a> &mdash;
+		  <span class="description">
+			
+			 Googleのカスタム検索っての使って海外のエロサイトを串刺し検索するサイト作ったwww 速攻でできたwww  とりあえず「eroken」って名付けた。       どんなサイトに対応しているの？  海外10個以上のサイトに対応している。
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Mar 27, 2012</div>
+		  <a class="title" href="/posts/2012/0327085645/">イカ娘でTwitter OAuth認証</a> &mdash;
+		  <span class="description">
+			
+			 Webサービスのログイン方法の一つに「Twitterログイン」が最近多く見られるようになってきました。サイト上でのユーザー登録無しでTwitterアカウントを引き回すことも工夫によってはできますので、ユーザーや開発者にとって手間が省けると
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Mar 27, 2012</div>
+		  <a class="title" href="/posts/2012/0322141018/">Markdown文章をお手軽にKindleで見る</a> &mdash;
+		  <span class="description">
+			
+			 いつの間にか手元にある「Kindle Touch」。ぐふふ。    ページめくりがもっさりしているのが気になるけど、軽くて手頃なサイズ感がいい。今なら円高なんで安く買えるし。ただ、Kindle Storeで購入する書籍も含めて英語だとなん
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Mar 22, 2012</div>
+		  <a class="title" href="/posts/2012/0322010646/">Webサービス、最初の宣伝</a> &mdash;
+		  <span class="description">
+			
+			 Webサービスのプロモーション？について個人的にまとめてみます。      Webサービスができたら想定するユーザーに使ってもらわないと寂しいところです。そこでWebサービスを多くの人に知ってもらうための宣伝をしましょう。今回はサービスを
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Mar 19, 2012</div>
+		  <a class="title" href="/posts/2012/0318195820/">DMMのAVがDMM Booksでダウンロードできる件</a> &mdash;
+		  <span class="description">
+			
+			 アニメやドラマ、映画のネット配信、DVDレンタル、今ではFX、太陽光発電のレンタルなど幅広く手がけるDMM.com。エロの分野では「DMM.R18」としてエロビエオはもちろん、ライブチャットや同人誌などを大量に扱うのでお世話になっている方
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Mar 10, 2012</div>
+		  <a class="title" href="/posts/2012/0310103401/">iPhoneアプリの販売状況を知るための3つのサイト</a> &mdash;
+		  <span class="description">
+			
+			 iPhoneアプリを公開したらその販売状況が気になるところです。いつ、どこから、何件ダウンロードされたか？もし有料アプリだったりアプリ内課金をしている場合、いくら収益が上がっているのか？今現在、僕の知る限り以下の3つのサイトでその状況を知
+			
+		  </span>
+		</div>
+		
+		
+
+<ul class="pagination">
+	<li class="page-item page-prev">
+	
+    <a href="/page/17/" class="page-link" aria-label="Previous"><span aria-hidden="true">← Prev page</span></a>
+	
+	</li>
+	<li class="page-item page-next">
+	
+    <a href="/page/19/" class="page-link" aria-label="Next"><span aria-hidden="true">Next page →</span></a>
+	
+	</li>
+</ul>
+
+
+	  </div>
+	</div>
+  </div>
+  <div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright yusukebe.com |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-492497-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

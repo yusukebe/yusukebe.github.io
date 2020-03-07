@@ -1,0 +1,72 @@
++++
+Categories = ["tech"]
+Description = " LSUB http://muse.net/ Muse.Net 自宅PCのMP3ファイルを出先で再生する「Muse.Net」サービス 。自宅鯖を持つ自分はなんとか苦労したらできなくはないことだが、これをソフトウェア、サービスとして作っちゃっ"
+Tags = []
+date = "2003-06-27T12:05:00+09:00"
+title = "部屋で一人で「すげーすげー」言っちゃうほどの発見、２つほど。"
+author = "kamawada"
+archive = ["2003"]
+draft = false
++++
+
+
+<p>LSUB <a href="http://muse.net/">http://muse.net/</a> Muse.Net<br>
+<a href="http://internet.watch.impress.co.jp/www/article/2003/0625/musenet.htm" target="_new">自宅PCのMP3ファイルを出先で再生する「Muse.Net」サービス</a><br>
+。自宅鯖を持つ自分はなんとか苦労したらできなくはないことだが、これをソフトウェア、サービスとして作っちゃった。<br>
+さすが<br>
+<a href="http://www.winamp.com/" target="_new">Nullsoft</a><br>
+（出身）の人達はすげーことやってくれます。<br>
+家のデスクトップマシン整備してそんなかにある音楽とか学校から聴いてみてー。<br>
+さらに面白いこととして、他のユーザーと<br>
+<a href="http://muse.net/faq/#u8" target="_new">自分の持っている曲情報を以下のような制限付きで共有することができる。</a><br>
+</p>
+<pre>  
+without allowing them to listen to this music 
+ 
+</pre>
+<br>
+これってもしかして。。。はぁはぁ！<br>
+音楽を再生するクライアントも<br>
+<ul>
+<br>
+<li>中はPHPで動いててブラウザ見る</li>
+<br>
+<li>Winampプラグイン</li>
+<br>
+<li>Windowsアプリケーション</li>
+<br>
+</ul>
+<br>
+とかっていろいろあってしかも<br>
+<a href="http://developer.muse.net/" target="_new">ディベロッパーページ</a><br>
+にSDKとかある！参考になるし、作るのもありあり！<br>
+LSUB <a href="http://www.screenweaver.com/">http://www.screenweaver.com/</a> Screenweaver<br>
+<a href="http://soan.jp/" target="_new">創庵さんのページ</a><br>
+で<br>
+<a href="http://soan.jp/archives/000328.html" target="_new">発見</a><br>
+！なんとFlashでデスクトップアプリケーションが作れる！<br>
+<a href="http://www.screenweavermx.com/samples.cfm?nav=1&amp;sub=2" target="_new">サンプルをダウンロード</a><br>
+してインストールして（インストーラーまでFlash！）実行！<br>
+<a href="http://www.screenweaver.com/downloads/samples/swball.zip" target="_new">ボールがデスクトップ上を弾んでるじゃないですか</a><br>
+！<br>
+<a href="http://www.screenweaver.com/downloads/showcase/vanillacoke.exe" target="_new">mp3プレイヤーで曲聴けるじゃないですか</a><br>
+！<br>
+<a href="http://www.screenweaver.com/downloads/showcase/blagorssinstaller.exe" target="_new">普通におされなRSSリーダーじゃないですか</a><br>
+！<br>
+朝6時30分、いやー思わず部屋で一人で漏らしたね<br>
+<pre>  
+「すげー、すげーって」 
+ 
+</pre>
+<br>
+そしたらmp3プレイヤーの音楽を興奮して爆音でかけてて<br>
+<a href="http://web.sfc.keio.ac.jp/~yusukebe/diary/index.cgi?200211a&amp;to=200211094S4#200211094S4" target="_new">お母ちゃん</a><br>
+に怒られた。<br>
+さぁーて<br>
+<a href="http://www.screenweaver.com/download.cfm?nav=1&amp;sub=1%20Free" target="_new">trial</a><br>
+ダウンロードして早速作ってみようかな。<br>
+<br>
+ところでこれ、<br>
+<a href="http://www.macromedia.com/software/central/%20Macromedia" target="_new">Central</a><br>
+ってのとは違うのかな？要調査だな。<br>
+

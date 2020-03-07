@@ -1,0 +1,29 @@
++++
+Categories = ["tech"]
+Description = " wget とか使えばもっと短くできそうだけど、Perl だけで頑張ってみた。  コマンド  $ perl -MLWP::Simple -MFile::Basename -e 'map{mirror($_,basename($_))} ge"
+Tags = ["Perl"]
+date = "2008-12-12T19:25:00+09:00"
+title = "エロいワンライナー"
+author = "kamawada"
+archive = ["2008"]
+draft = false
++++
+
+
+<p>
+wget とか使えばもっと短くできそうだけど、Perl だけで頑張ってみた。
+</p>
+<h4>コマンド</h4>
+<pre class="brush: perl"> $ perl -MLWP::Simple -MFile::Basename -e 'map{mirror($_,basename($_))} get($ARGV[0]) =~ m{&lt;a.*?href="(http://[^"]+\.jpg)"}gi;' http://metiss.blog92.fc2.com/blog-entry-142.html
+ </pre>
+
+<h4>結果</h4>
+<p>
+<img alt="momo" class="at-xid-6a0133f4781589970b015435b6f223970c" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015435b6f223970c-pi.jpg>
+</p>
+<br><br>
+<p>
+  この記事は、
+  <a href="http://perl-users.jp/articles/advent-calendar/2008/">JPerl Advent Calendar 2008</a>に寄稿した<a href="http://perl-users.jp/articles/advent-calendar/2008/08.html">ワンライナーで画像収集 - 8日目</a>のネタです。他の人の記事はエロくなくてしっかりと役立つ Perl の Tips が載ってるから見るといいよ！
+</p>
+

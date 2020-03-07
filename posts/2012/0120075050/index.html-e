@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>iBooks Authorで「成瀬心美入門」というサンプルを作ってみた - ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="iBooks Authorで「成瀬心美入門」というサンプルを作ってみた" />
+<meta property="og:description" content=" 電子書籍に段々と興味がわいた矢先にAppleからのiBooks Author発表があったためしばらく遊んで見ました。残念ながらiPadを僕は持っていないので実機でのプレビューすらできない状態で悶々としているのですが、このiBooks Au" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yusukebe.com/posts/2012/0120075050/" />
+<meta property="og:image" content="https://yusukebe.com/icons/myicon.png"/>
+<meta property="article:published_time" content="2012-01-20T16:50:00+09:00" />
+<meta property="article:modified_time" content="2012-01-20T16:50:00+09:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://yusukebe.com/icons/myicon.png"/>
+
+<meta name="twitter:title" content="iBooks Authorで「成瀬心美入門」というサンプルを作ってみた"/>
+<meta name="twitter:description" content=" 電子書籍に段々と興味がわいた矢先にAppleからのiBooks Author発表があったためしばらく遊んで見ました。残念ながらiPadを僕は持っていないので実機でのプレビューすらできない状態で悶々としているのですが、このiBooks Au"/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
+	
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://yusukebe.com/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper post">
+		<div class="header">
+	<h1 class="site-title"><a href="https://yusukebe.com/">ゆーすけべー日記</a></h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/yusukebe" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/yusukebe" title="Twitter"><i data-feather="twitter"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post-header">
+			<h1 class="title">iBooks Authorで「成瀬心美入門」というサンプルを作ってみた</h1>
+			<div class="meta">Posted at &mdash; Jan 20, 2012</div>
+		</div>
+
+		<div class="markdown post-body">
+			
+
+<p>電子書籍に段々と興味がわいた矢先にAppleからの<strong>iBooks Author</strong>発表があったためしばらく遊んで見ました。残念ながらiPadを僕は持っていないので実機でのプレビューすらできない状態で悶々としているのですが、このiBooks Author、素晴らしい出来です。先日からiTunes StoreでBeatlesの「Yellow Submarine」のBookが無料でダウンロードできるのですが、ああいった、アニメーションや動画をちりばめたリッチな本や雑誌などが作れてさらに課金も含めた配信までサポートする。そんなすぐそこにある未来を想像するととてもワクワクします（USなどの地域では既に有料コンテンツをユーザーが配信できるみたい）。</p>
+
+<p>で、このiBooks Authorでどれほどの事が可能か使用感をはかりつつも、iTunes Store経由じゃなくとも配信することができるのでちょい「エロ」なコンテンツを作ってみようと試みました。想像したのはよくグラビアアイドルとかが「月刊XXXXXXXX」というようなムックタイプの雑誌に動画とかインタラクティブなコンテンツが埋め込まれたBook。ただ自分はグラビアアイドルには全く興味がないので、AV女優で最近お気に入りな成瀬心美（ここみん）を紹介するBookを作ってみました。あら、「ちょい」エロじゃなくなってる？？ まぁ、iBooks Author のスクリーンショットをご覧あれ。</p>
+
+<p>まずは、Bookの表紙。一応AppleはBookを作る際に<em>様々</em>なテンプレートが選べると謳っているが、6種類でそこまで多くはない。これは「モダンタイプ」というテンプレート。なかなかそれっぽい。</p>
+
+<p><a href="http://yusukebe.com/archives/2012/01/20/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202012-01-20%2016.37.26.png"><img alt="スクリーンショット 2012-01-20 16.37.26.png" src="http://yusukebe.com/archives/assets_c/2012/01/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202012-01-20%2016.37.26-thumb-600x465-15.png" width="600" height="465" class="mt-image-none" style=""></a></p>
+
+<p>「チャプタ＞セクション＞ページ」と章立てがはっきりしてて迷わないのも割といい。</p>
+
+<p>ウィジェットと呼ばれるメニューからギャラリーを選択するとスライドさせる写真集が容易に作れる。</p>
+
+<p><a href="http://yusukebe.com/archives/2012/01/20/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202012-01-20%2016.37.43.png"><img alt="スクリーンショット 2012-01-20 16.37.43.png" src="http://yusukebe.com/archives/assets_c/2012/01/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202012-01-20%2016.37.43-thumb-600x465-17.png" width="600" height="465" class="mt-image-none" style=""></a></p>
+
+<p>以下は普通のページ。Wikipediaからのコンテンツを引用した。表組とかはもうKeynoteとかPagesまんまだね。</p>
+
+<p><a href="http://yusukebe.com/archives/2012/01/20/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202012-01-20%2016.37.47.png"><img alt="スクリーンショット 2012-01-20 16.37.47.png" src="http://yusukebe.com/archives/assets_c/2012/01/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202012-01-20%2016.37.47-thumb-600x465-19.png" width="600" height="465" class="mt-image-none" style=""></a></p>
+
+<p>YouTubeの動画も一度QuickTimeでiPhone/iPad用に変換してからドラッグ＆ドロップで挿入できる。実機の上、埋め込んだ状態で見てみたいものだ。</p>
+
+<p><a href="http://yusukebe.com/archives/2012/01/20/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202012-01-20%2016.38.00.png"><img alt="スクリーンショット 2012-01-20 16.38.00.png" src="http://yusukebe.com/archives/assets_c/2012/01/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202012-01-20%2016.38.00-thumb-600x465-21.png" width="600" height="465" class="mt-image-none" style=""></a></p>
+
+<p>と、個人的には動画が埋め込めるというのが鍵な気がしていて、短編映像と雑誌を組み合わせたようなものが流行るかどうかはしらないがいくつか出てくると思います。</p>
+
+<p>ちなみに、このBookには最後の方のページにDMM Adultへのアフィリエイトを仕込んであって、その時に電子書籍向けの広告モデルもそのうちあり得るんだろうなぁと考えたりもしました。</p>
+
+<p>さて今回は、成瀬ここみんを紹介するサンプルでiBooks Authorを使ってみました。iPadユーザーの方は以下のリンクから.ibooksというファイルをSafariで見た後にiBooksを起動すればたぶん「成瀬心美入門」が開くはず！</p>
+
+<ul>
+<li><a href="/archives/coco3n.ibooks">coco3n.ibooks</a></li>
+</ul>
+
+
+<hr>
+
+<p><br></p>
+
+<div class="amazlet-box" style="margin-bottom:0px;">
+<div class="amazlet-image" style="float:left;margin:0px 12px 1px 0px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4775605100/kamawada-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/41i3Dx6Ls1L._SL160_.jpg" alt="coco miracle―成瀬心美1st.写真集" style="border: none;"></a></div>
+<div class="amazlet-info" style="line-height:120%; margin-bottom: 10px">
+<div class="amazlet-name" style="margin-bottom:10px;line-height:120%">
+<a href="http://www.amazon.co.jp/exec/obidos/ASIN/4775605100/kamawada-22/ref=nosim/" name="amazletlink" target="_blank">coco miracle―成瀬心美1st.写真集</a><div class="amazlet-powered-date" style="font-size:80%;margin-top:5px;line-height:120%">posted with <a href="http://www.amazlet.com/browse/ASIN/4775605100/kamawada-22/ref=nosim/" title="coco miracle―成瀬心美1st.写真集" target="_blank">amazlet</a> at 12.01.20</div>
+</div>
+<div class="amazlet-detail">上野 勇 <br>彩文館出版 <br>売り上げランキング: 2395<br>
+</div>
+<div class="amazlet-sub-info" style="float: left;"><div class="amazlet-link" style="margin-top: 5px"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4775605100/kamawada-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jp で詳細を見る</a></div></div>
+</div>
+<div class="amazlet-footer" style="clear: left"></div>
+</div>
+
+
+
+		</div>
+
+		<div class="post-tags">
+			
+				
+					<nav class="nav tags">
+							<ul class="flat">
+								
+								<li><a href="/tags/technologies">Technologies</a></li>
+								
+								<li><a href="/tags/ibooks">iBooks</a></li>
+								
+							</ul>
+					</nav>
+				
+			
+		</div>
+        <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v5.0&appId=233306523373884&autoLogAppEvents=1"></script>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+
+<div class="social-button-area">
+  <ul class="social-button">
+    <li>
+      <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
+    </li>
+    <li>
+      <span class="fb-share-button"  data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2012%2f0120075050%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
+    </li>
+    <li>
+      <a href="https://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label-counter" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>
+    </li>
+  </ul>
+</div>
+
+<div class="disqus-area">
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "yusukebe-com" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<ul class="pagination">
+  
+  <li class="page-item page-prev">
+    <a href="https://yusukebe.com/posts/2012/0119092221/" class="page-link" aria-label="Previous"><span aria-hidden="true">← iPhoneアプリ公開1ヶ月経って「からの」箇条書き</span></a>
+  </li>
+  
+  
+  <li class="page-item page-next">
+    <a href="https://yusukebe.com/posts/2012/0124015731/" class="page-link" aria-label="Next"><span aria-hidden="true">Blogアクセスアップのための種まき →</span></a>
+  </li>
+  
+</ul>
+
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright yusukebe.com |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-492497-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="generator" content="Hugo 0.63.2" />
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="alternate" type="application/rss+xml" href="https://yusukebe.com/index.xml" title="ゆーすけべー日記" />
+	<meta property="og:title" content="ゆーすけべー日記" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://yusukebe.com/" />
+<meta property="og:image" content="https://yusukebe.com/icons/myicon.png"/>
+<meta property="og:updated_time" content="2020-03-06T15:46:50+09:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://yusukebe.com/icons/myicon.png"/>
+
+<meta name="twitter:title" content="ゆーすけべー日記"/>
+<meta name="twitter:description" content=""/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
+	
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://yusukebe.com/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+  <div class="container wrapper">
+	<div class="header">
+	<h1 class="site-title"><a href="https://yusukebe.com/">ゆーすけべー日記</a></h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/yusukebe" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/yusukebe" title="Twitter"><i data-feather="twitter"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+	<div class="recent-posts section">
+	  <h2 class="section-header">
+		Recent posts
+	  </h2>
+	  <div class="posts">
+		
+		
+		
+		<div class="post">
+		  <div class="meta">Jan 18, 2008</div>
+		  <a class="title" href="/posts/2008/0118023133/">「フェルマーの最終定理」 サイモン シン</a> &mdash;
+		  <span class="description">
+			
+			 サイモンシン の書いた本は以前から読みたいと思っていたが、本書「フェルマーの最終定理」が丁度よく文庫本で発売され、丁度よく親父が最高に面白いと感想を残し読み終わったようなので、手にとってみた。文庫本にして500ページ弱の大作であるにもかか
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jan 17, 2008</div>
+		  <a class="title" href="/posts/2008/0117143551/">YourAVHost その後</a> &mdash;
+		  <span class="description">
+			
+			   去年の12月26日未明にリリースし、年末の下半身に衝撃をもたらしたらしいという YourAVHost 。現在はてなブックマークしたユーザー数はエロサイトとして驚異的な「738Users」。1月6日には動ナビという日本最大の裏ポータルサ
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jan 17, 2008</div>
+		  <a class="title" href="/posts/2008/0117102109/">「ちょいデキ! 」青野慶久</a> &mdash;
+		  <span class="description">
+			
+			   去年の暮れに行われた「2007年度未踏1期畑PM採択プロジェクト 最終成果報告会」。その時のゲストの一人がサイボウズ社長「青野慶久」さんだった。青野さんは最後に、本書「ちょいデキ!」を         ま、他にもいいたいこともあります
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jan 15, 2008</div>
+		  <a class="title" href="/posts/2008/0115002446/">Chase This Light - Jimmy Eat World</a> &mdash;
+		  <span class="description">
+			
+			 音楽の話。  数ヶ月前に、藤沢のタワレコの「エモ」コーナーに置いてあったのを試聴して購入した Jimmy Eat World の 「Chase This Light」。車に積んでいつも聴いている。聴くごとに耳になじんで、味がでてきていい感
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jan 13, 2008</div>
+		  <a class="title" href="/posts/2008/0113091331/">Flickr には某氏厳選47人のグラビアアイドルにおいて画像が8407枚あり、そのうち2670枚は小倉優子</a> &mdash;
+		  <span class="description">
+			
+			   id:gamella こと大学の同期のお友達「ともちゃん」がErogeekチックなことをしていたのを発見。         今、ちょっと作成を考えているWebサービスがあって、その練習のためにFlickrから画像を取得するスクリプトを
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jan 13, 2008</div>
+		  <a class="title" href="/posts/2008/0113061055/">お年玉で買った物</a> &mdash;
+		  <span class="description">
+			
+			   お年玉と言っても、もちろんそれをもらえるような年頃ではなく、むしろあげる立場なんだけど、その辺は家族協定によりあげなくてもよい、いやむしろあげたらあげたでギブアンドテイクの関係がめんどくさくなると言われている。まあ、そんなことはどうで
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jan 13, 2008</div>
+		  <a class="title" href="/posts/2008/0113052236/">今北産業 T-shirts が当たった</a> &mdash;
+		  <span class="description">
+			
+			   技術評論者から荷物が届いていて、なんだ？と思ったら、そういえば、あれだ。  Web&#43;DB PRESS の「Tech Meeting」に参加したいがために送った 読者ハガキ でついでに応募していた読者プレゼントに当選したらしい。  荷物
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jan 9, 2008</div>
+		  <a class="title" href="/posts/2008/0109092644/">CDTubeがネトラン「ベスト・オブ・超凄サービス」の大賞を受賞しました</a> &mdash;
+		  <span class="description">
+			
+			 2006年の12月に作ったCDTubeが、今月のネットランナー内の企画「ベスト・オブ・超凄サービス」の大賞を受賞しました。開発支援金50万くれるらしいです。また、これ☆ほしいと札コラメーカーもノミネートされています。やったー。      
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jan 7, 2008</div>
+		  <a class="title" href="/posts/2008/0107104106/">全裸で、まだ正月なのに海開きしてきた</a> &mdash;
+		  <span class="description">
+			
+			   下町のジャイアンこと「ハラス」から電話がかかってきた。         「海開きするから江ノ島に0時集合ね」       1月5日深夜、まだ正月だというのに、海開きを行った。  俺は全裸になり、腰越の海に入り、砂を投げつけられつつも、
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jan 5, 2008</div>
+		  <a class="title" href="/posts/2008/0105102807/">かますけのネタ拾いの旅 - 年末ネタ旅行2007 予告編映像</a> &mdash;
+		  <span class="description">
+			
+			   鎌団子と毎年暮れ間近に、ネタを求めて全国津々浦々を旅して、「永遠の予告編」映像を年明けに作る企画、それが年末ネタ旅行。6年目となる去年の年末ネタ旅行は、ゴミ拾いならぬ、「ネタ拾い」をしに何故か廃墟に行ってきました。予告編を作っていて毎
+			
+		  </span>
+		</div>
+		
+		
+
+<ul class="pagination">
+	<li class="page-item page-prev">
+	
+    <a href="/page/55/" class="page-link" aria-label="Previous"><span aria-hidden="true">← Prev page</span></a>
+	
+	</li>
+	<li class="page-item page-next">
+	
+    <a href="/page/57/" class="page-link" aria-label="Next"><span aria-hidden="true">Next page →</span></a>
+	
+	</li>
+</ul>
+
+
+	  </div>
+	</div>
+  </div>
+  <div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright yusukebe.com |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-492497-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

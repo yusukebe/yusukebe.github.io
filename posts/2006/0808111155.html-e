@@ -1,0 +1,17 @@
++++
+Categories = ["tech"]
+Description = "   ボケましょうシリーズ、ハンガー編。こんどはPeeVee.TVに投稿してみる。 var po = new PeeVeeObject(&amp;quot;48000685/48000685peevee1166.flv&amp;quot;,"
+Tags = []
+date = "2006-08-08T20:11:00+09:00"
+title = "ハンガーでボケましょうその1"
+author = "kamawada"
+archive = ["2006"]
+draft = false
++++
+
+
+<p>
+  ボケましょうシリーズ、ハンガー編。こんどは<a href="http://peevee.tv">PeeVee.TV</a>に投稿してみる。
+</p>
+<script language="JavaScript" src="http://peevee.tv/img/pluginv2.js"></script><script language="JavaScript" type="text/JavaScript">var po = new PeeVeeObject(&quot;48000685/48000685peevee1166.flv&quot;, 685, 1166, 16);  po.write();</script>
+

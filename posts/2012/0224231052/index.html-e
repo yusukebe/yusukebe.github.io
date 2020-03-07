@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>PerlのWAFはMojolicious推しな件とそのノウハウ - ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="PerlのWAFはMojolicious推しな件とそのノウハウ" />
+<meta property="og:description" content=" Perlerな皆さん！WAFは何を使っていますかー！？昨日行われたという「Perl Beginners #1」のレポートを漁っていると@hsksyuskさんのエントリにこう書かれていましたので僕もつい乗っかってみたくなりました。  Per" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yusukebe.com/posts/2012/0224231052/" />
+<meta property="og:image" content="https://yusukebe.com/icons/myicon.png"/>
+<meta property="article:published_time" content="2012-02-25T08:10:00+09:00" />
+<meta property="article:modified_time" content="2012-02-25T08:10:00+09:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://yusukebe.com/icons/myicon.png"/>
+
+<meta name="twitter:title" content="PerlのWAFはMojolicious推しな件とそのノウハウ"/>
+<meta name="twitter:description" content=" Perlerな皆さん！WAFは何を使っていますかー！？昨日行われたという「Perl Beginners #1」のレポートを漁っていると@hsksyuskさんのエントリにこう書かれていましたので僕もつい乗っかってみたくなりました。  Per"/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
+	
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://yusukebe.com/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper post">
+		<div class="header">
+	<h1 class="site-title"><a href="https://yusukebe.com/">ゆーすけべー日記</a></h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/yusukebe" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/yusukebe" title="Twitter"><i data-feather="twitter"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post-header">
+			<h1 class="title">PerlのWAFはMojolicious推しな件とそのノウハウ</h1>
+			<div class="meta">Posted at &mdash; Feb 25, 2012</div>
+		</div>
+
+		<div class="markdown post-body">
+			
+
+<p>Perlerな皆さん！WAFは何を使っていますかー！？
+昨日行われたという「<a href="http://atnd.org/events/24780">Perl Beginners #1</a>」のレポートを漁っていると
+<a href="http://twitter.com/hsksyusk">@hsksyusk</a>さんの<a href="http://d.hatena.ne.jp/hsksnote/20120224/1330105132">エントリ</a>にこう書かれていましたので僕もつい乗っかってみたくなりました。</p>
+
+<blockquote>
+PerlのWAFは何がいいの？
+<ul>
+<li>@ytnobodyさんはKossy推し。</li>
+<li>僕はAmon2推し。</li>
+</ul>
+</blockquote>
+
+
+<p>ぼ、ぼ、ぼ、僕は<strong>Mojolicious</strong>推し！！！</p>
+
+<p>ということでなぜ僕が今、Mojolicious推しなのかを探るためにその「いい点」と思っていること列挙してみました。
+それと同時に悪い点も見えてきて、かつバッドノウハウもあるなーって感じなのでまとめてみます。</p>
+
+<hr>
+
+<p><br></p>
+
+<h3>Mojoliciousのいい点</h3>
+
+<h4>依存モジュールが無くポータブル</h4>
+
+<p>ご存知の通りMojoliciousは標準で入っているモジュールに依存しているだけで、
+残りは自前で実装しています。なので、</p>
+
+<pre> $ cpanm Mojolicious
+ </pre>
+
+<p>とすれば外部のモジュールをインストールしなくとも入るので非常にポータブル！
+以前Catalystを使っていて、Catalystが依存しているMooseのバージョンが問題になって、
+アプリが動かなくなったりCatalyst自身のアップデートができないことがありましたが、
+そういうことは起こらないですね。
+最低限のアプリならMojolicious自体だけのバージョンだけを気にしていればよいです
+（とはいえモデル層で他のモジュールに依存しがちですが！）。</p>
+
+<h4>そこそこでかいアプリも書ける</h4>
+
+<p>MojoliciousというとSinatraライクな「Mojolicious::Lite」が有名で、
+一つのファイルでコントローラもビューも書けて簡単だぜ！というのがPRとして売りになってる気がします。
+Mojolicious::Liteのアプリを作るための雛形は、</p>
+
+<pre> $ mojo generate lite_app hoge.pl
+ </pre>
+
+<p>とかして作ります。さてLiteで作ったアプリがどんどん大きくなっていくとしましょう。
+hoge.plと同じ階層に「templates」というディレクトリを作って「index.html.ep」などのテンプレートファイルを置けば、
+hoge.pl内のデータセクションに書いていたビューを切り離すことができます。
+ただ、コントローラとディスパッチャ等を分割したモジュールで管理したいという時には、
+Liteでは対応できません。そこでコマンドを打ち込みます。</p>
+
+<pre> $ mojo generate app Hoge
+ </pre>
+
+<p>すると以下の構造で「普通の」Mojoliciousアプリの雛形を作ってくれます。</p>
+
+<pre> ./
+├── lib
+│   ├── Hoge
+│   │   └── Example.pm
+│   └── Hoge.pm
+├── log
+├── public
+│   └── index.html
+├── script
+│   └── hoge
+├── t
+│   └── basic.t
+└── templates
+    ├── example
+    │   └── welcome.html.ep
+    └── layouts
+        └── default.html.ep
+ </pre>
+
+<p>「Mojolicious」でググると「Mojolicious::Lite」の話題ばかり出てくるのですが、
+僕はこちらの「普通の」Mojoliciousアプリを使うケースが多いですし、そこそこの大きさのアプリにも耐えられます。</p>
+
+<h4>Mojo::Templateが柔軟</h4>
+
+<p>Text::MicroTemplateの元になったというMojo::TemplateがPerlそのまま書けるので、一人でやる分には柔軟でよいです。
+気に入っているのはテンプレート内で使える「layout」という関数。「templates/layout/default.html.ep」がこのようにあったとして</p>
+
+<pre> &lt;html&gt;
+  &lt;body&gt;
+    &lt;%= content %&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+ </pre>
+
+<p>「templates/root/index.html.ep」でこのレイアウトを使うには冒頭にでもlayout関数を使います。</p>
+
+<pre> % layout 'default';
+
+&lt;h1&gt;Hello Hoge&lt;/h1&gt;
+ </pre>
+
+<p>レイアウトを変えることもテンプレートファイル内で容易にできるのがいいのです。</p>
+
+<h4>$selfだけ</h4>
+
+<p>コントローラではコンテキストオブジェクトを扱わずに「$self」だけでごにょれるのがいいですね。</p>
+
+<pre> sub index {
+    my $self = shift;
+    $self-&gt;stash-&gt;{message} = 'Hage';
+    $self-&gt;render('message');
+}
+ </pre>
+
+<h4>VCだけ</h4>
+
+<p>Mojoliciousはモデル部分は後述するアクセサ的の提供のみを行ってビューとコントローラのみを提供しています。
+まぁ最近の薄いWAFはだいたいそうですが、簡素でよいですね。</p>
+
+<h4>Mの登録、ディスパッチの記述</h4>
+
+<p>さて、モデルの登録には遅延させるために上記の例だと「Hoge.pm」にこうやって記述します。</p>
+
+<pre> package Hoge;
+use Mojo::Base 'Mojolicious';
+use Hoge::API;
+
+sub startup {
+    my $self = shift;
+    $self-&gt;attr( api =&gt; sub { Hoge::API-&gt;new() } );
+}
+ </pre>
+
+<p>至って簡単です。またディスパッチの記述も</p>
+
+<pre>     my $r = $self-&gt;routes;
+    $r-&gt;namespace('Hoge::Controller');
+    $r-&gt;get('/')-&gt;to( "root#index");
+ </pre>
+
+<p>なんてできて楽でかつ柔軟ですね。</p>
+
+<h4>CGIで動かす時にLiteが便利</h4>
+
+<p>たまーに面倒くさい感じでさくらの一番安いレンタルサーバーでフォームだけの処理のCGIを書くとかあるんですが、
+そういう時に依存がないMojoliciousのLiteを使ってCGIにしちゃうのは結構便利です。
+Liteのアプリを「hoge.cgi」などの拡張子にすればそのままApache経由のCGIとして動いたりしますからね。</p>
+
+<h4>ドキュメントがしっかりしている</h4>
+
+<p>さすがにMojoliciousはドキュメントがしっかりしています。
+だいたい「Mojolicious::Controller」を見ることが多いですね。</p>
+
+<h4>公式のWebページや開発モードNot Foundページがお洒落</h4>
+
+<p><a href="http://mojolicio.us/">公式のWebページ</a>がよくデザインされてかっこかわいいです。また、
+アプリのデフォルトのNot Foundページなども凝っていて、
+最新版のMojoliciousを使っていて、かつ開発モードで立ち上げてるとこのようにルーティングパスまで表示してくれて洒落てます。</p>
+
+<p><img src="http://yusukebe.com/archives/assets_c/2012/02/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202012-02-25%207.42.38-thumb-600x411-128.png" alt="開発モードのNot Found"></p>
+
+<h4>開発陣が複数人いる、開発が活発</h4>
+
+<p>開発陣がSebastian Riedelがリーダーになって複数人いて開発が活発です。</p>
+
+<hr>
+
+<p><br></p>
+
+<h3>Mojoliciousのイケてない点</h3>
+
+<p>さて、Mojoliciousのよい点ばかりを挙げてきましたが個人的に思うイケてない部分もあります。</p>
+
+<h4>5.10以上必須</h4>
+
+<p>Perl 5.10以上が必須でかつ5.12が推奨されています。
+5.8の環境って今ではあまりないですが、昔の環境でどうしても動かしたいって時に、
+せっかくのポータブルなコンセプトのMojoliciousが入らないと萎えます。</p>
+
+<h4>セッションの扱い</h4>
+
+<p>デフォルトのセッションは非常に貧弱で、暗号化した文字列をcookieに入れるだけのサポートです。
+なのでMojoliciousの機能は使わずに、
+よくPlack::Middleware::SessionとPlack::Sessionを組み合わせたセッション管理を行うことが多いです。
+アプリ用の.psgiを書いて</p>
+
+<pre> my $psgi = Mojo::Server::PSGI-&gt;new( app_class =&gt; 'Hage' );
+my $app = sub { $psgi-&gt;run(@_) };
+
+builder {
+    enable 'Session', store =&gt; 'File';
+    $app;
+};
+ </pre>
+
+<p>とします。べたにやるならコントローラの中で「use Plack::Session;」して</p>
+
+<pre> sub index {
+    my $self = shift;
+    my $session = Plack::Session-&gt;new( $self-&gt;req-&gt;env );
+    my $access_token = $session-&gt;get('access_token');
+    my $access_secret = $session-&gt;get('access_secret');
+    ...;
+}
+ </pre>
+
+<p>などとしてセッションの値を取得します。まぁ.psgiは毎回書いてそれを開発、本番用に使っているので、
+Plackのミドルウェアを使うってのはいいんですけどね。</p>
+
+<h4>redirect_toがたぶん相対パスを表す</h4>
+
+<p>こういう細かいちょっとした変なところがあるのでたまにストレスが溜まります。</p>
+
+<pre> $self-&gt;redirect_to('/hage');
+ </pre>
+
+<p>とすると302でリダレイクトしてくれるのですが、これがアプリ内の「/hage」の絶対パスじゃなくて相対パスなんで、
+本番環境だとおかしくなったりします。</p>
+
+<pre> $self-&gt;redirect_to( $self-&gt;req-&gt;url-&gt;base . '/hage' );
+ </pre>
+
+<p>とか長ったらしい記述をして回避しがちっす。
+他にも軽くはまるところがいくつかあった気がします。</p>
+
+<p><strong>＊ここについて追記＊</strong></p>
+
+<p><a href="http://d.hatena.ne.jp/kits/">id:kits</a>さんが<a href="https://gist.github.com/1904869">検証してくれた</a>通り、
+ローカルの環境だとうまくリダイレクトされるんですが、なんか本番のReverseProxy＋ホスト名だとうまくいかないケースがあったんですよね＞＜ ちょっと今、再現できないのですがLocationヘッダの中身がおかしかった気がするす。</p>
+
+<hr>
+
+<p><br></p>
+
+<h3>まとめ</h3>
+
+<p>Mojoliciousを個人的に推している理由を解説してきましたが、
+ほんとWAFは何を使ってもいいと思います。
+最近はAmon2とかKossyとか！薄くて使い勝手がよいWAFがたくさんありますしね。
+でも僕はMojolicious推しですよーというエントリでした。</p>
+
+<h3>お知らせ</h3>
+
+<p>前号Perlのコードが出てきたメルマガ「ゆーすけべーラジオ」は、
+次回28日（火）に発行です。よろしければチェックしてください。</p>
+
+<ul>
+<li><a href="http://www.mag2.com/m/0001426750.html">ゆーすけべーラジオ</a></li>
+</ul>
+
+
+
+		</div>
+
+		<div class="post-tags">
+			
+				
+					<nav class="nav tags">
+							<ul class="flat">
+								
+								<li><a href="/tags/perl">Perl</a></li>
+								
+								<li><a href="/tags/mojolicious">Mojolicious</a></li>
+								
+							</ul>
+					</nav>
+				
+			
+		</div>
+        <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v5.0&appId=233306523373884&autoLogAppEvents=1"></script>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+
+<div class="social-button-area">
+  <ul class="social-button">
+    <li>
+      <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
+    </li>
+    <li>
+      <span class="fb-share-button"  data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2012%2f0224231052%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
+    </li>
+    <li>
+      <a href="https://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label-counter" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>
+    </li>
+  </ul>
+</div>
+
+<div class="disqus-area">
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "yusukebe-com" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<ul class="pagination">
+  
+  <li class="page-item page-prev">
+    <a href="https://yusukebe.com/posts/2012/0223225136/" class="page-link" aria-label="Previous"><span aria-hidden="true">← 創造のプロセスでプロジェクトを回そう！</span></a>
+  </li>
+  
+  
+  <li class="page-item page-next">
+    <a href="https://yusukebe.com/posts/2012/0226013434/" class="page-link" aria-label="Next"><span aria-hidden="true">ノマド的に「自分一人で立つ」ために →</span></a>
+  </li>
+  
+</ul>
+
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright yusukebe.com |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-492497-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

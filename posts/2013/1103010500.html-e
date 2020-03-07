@@ -1,0 +1,60 @@
++++
+Categories = ["tech"]
+Description = " Twitter Bootstrap。せっかくなのでLESSでカスタマイズしつつ使うための手っ取り早い環境つくりについて。まず以下を入れておく。   OSXの文脈だけどhomebrewでnode  npmが使えるようになるのでRECESS "
+Tags = []
+date = "2013-11-03T01:05:00+09:00"
+title = "Twitter BootstrapをLESSでカスタマイズする環境をば"
+author = "kamawada"
+archive = ["2013"]
+draft = false
++++
+
+
+<p>Twitter Bootstrap。せっかくなのでLESSでカスタマイズしつつ使うための手っ取り早い環境つくりについて。まず以下を入れておく。</p>
+
+
+
+
+<ul>
+<li>OSXの文脈だけどhomebrewでnode</li>
+<li>npmが使えるようになるのでRECESS</li>
+</ul>
+
+
+<p>つまりこんな具合。</p>
+
+
+
+
+<pre> $ brew install node
+$ npm install -g recess
+ </pre>
+
+
+
+
+<p>次に<a href="https://github.com/twbs/bootstrap">BootstrapのGithubプロジェクトページ</a>からもしくはbower経由などでソースを引っ張ってくる。その後別ディレクトリでも切ってソース内の</p>
+
+
+
+
+<ul>
+<li>fonts/</li>
+<li>less/</li>
+</ul>
+
+
+<p>ディレクトリだけ丸っとコピーしてくる。で、css/ ディレクトリをつくってrecessコマンドを利用してBootstrapのLESSファイルをコンパイル。CSSファイルとして書き出す。</p>
+
+
+
+
+<pre> $ recess ./less/bootstrap.less --compile &gt; css/bootstrap.css
+ </pre>
+
+
+
+
+<p>それをHTMLで呼び出せば基本はOK！あとはrecessの使い方を把握して、場合によって js/ ディレクトリをよしなにすると開発出来ますね！このくらいだったら<strong>朝飯前</strong>に出来たー！</p>
+
+

@@ -1,0 +1,70 @@
++++
+Categories = ["tech"]
+Description = " もう発売になっているのですよね。WEB+DB PRESSのPerl Hackers Hubというコーナーに恐れ多くも登場させていただき早漏。    今まで執筆しているのがmiyagwaさん、牧さん、typesterさんというすごいメンツな"
+Tags = ["Perl"]
+date = "2010-08-26T07:51:00+09:00"
+title = "WEB+DB PRESS vol.58に「Twitterから学ぶWeb APIのキホン」を寄稿しました"
+author = "kamawada"
+archive = ["2010"]
+draft = false
++++
+
+
+<p>
+もう発売になっているのですよね。
+WEB+DB PRESSのPerl Hackers Hubというコーナーに恐れ多くも登場させていただき早漏。
+</p>
+<p>
+<img alt="" class="at-xid-6a0133f4781589970b015391e394b1970b" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015391e394b1970b-pi.jpg>
+</p>
+<p>
+今まで執筆しているのがmiyagwaさん、牧さん、typesterさんというすごいメンツなんで、
+僕が書けるのはなんだなーと思っていたところ、やはりWeb APIかと。
+Web APIのおかげでPerlのプログラミングでアプリ作ってるし、
+Perlのおかげ？でWeb APIが楽しくいじれるしってことでTwitter Search APIを題材にして書いてみました。
+前述の通り、PerlCasual#3 の時の発表とのメディアミックス(笑)になっております。
+</p>
+<p>
+<a href="http://yusukebe.com/archives/10/07/26/084325.html">PerlでWeb API入門/Web APIでPerl入門 - PerlCasual#3より - ゆーすけべー日記</a>
+</p>
+<p>
+とにかく3つのことだけを言うことにしました。
+</p>
+<ul>
+  <li>リクエストURIを構築する</li>
+  <li>Web APIにリクエストする</li>
+  <li>結果をパースする</li>
+</ul>
+<p>
+で、それぞれモジュールの使い方についてサンプル付きで解説している初心者向けの記事です。
+Web APIというとマッシュアップサイトとかボットを思い浮かべて、
+なんかちゃらい感じしますが、ただ結構Webのアーキテクチャを理解するための要素が詰まっているので、
+これを機に何か作る人が増えたら嬉しい早漏。
+</p>
+<p>
+そして！これ一番大事。
+興味持ってくれた人は、買ってもらって、読者はがきで
+「ゆーすけべーさんの記事がxxxでした」って感想送ってもらえると嬉しいです！
+この記事typesterさんが分かりやすいって言ってくれたしオススメだよ！
+</p>
+<p>
+ということで買ってくれるんでしょ！あざっす！
+</p>
+
+<div>
+<div style="float:left"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4774143243/kamawada-22/"><img alt="WEB+DB PRESS Vol.58" class="at-xid-6a0133f4781589970b015391e394ba970b" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015391e394ba970b-pi.jpg style="border:none;"></a></div>
+<div style="float:left;margin-left:15px;">
+<div style="font-size:12pt"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4774143243/kamawada-22/">WEB+DB PRESS Vol.58</a></div>
+<div style="font-size:7pt;font-family:verdana;">posted with <a href="http://yusukebe.com/b/amazon/search/">yusukebe.com::AmazonSearch</a> on 2010.8.26</div>
+<div style="font-size:10pt;">
+<ul style="list-style-type:none;padding:0;">
+<li>編  </li>
+<li>大型本 / 技術評論社 </li>
+<li>Amazon 売り上げランキング: 64</li>
+</ul>
+<a href="http://www.amazon.co.jp/WEB-DB-PRESS-Vol-58-%E7%B7%A8/dp/4774143243%3FSubscriptionId%3D0VEY2A9SVSFB81NQ9HG2%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D4774143243">Amazon.co.jpで詳細を見る</a>
+</div>
+</div>
+<div style="clear:left;"></div>
+</div>
+

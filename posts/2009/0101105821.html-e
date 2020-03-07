@@ -1,0 +1,91 @@
++++
+Categories = ["tech"]
+Description = " 遅ればせながら空前の Perfume ブームが俺の中で来ています。中でも「シークレットシークレット」がお気に入りなのですが、iTunes で再生してて歌詞が見たいと思いました。歌詞カードを見るのがあまり好きじゃないので、すると Web の"
+Tags = []
+date = "2009-01-01T19:58:00+09:00"
+title = "今聴いている曲の歌詞が見れる「LastLyrics」を作ってみた"
+author = "kamawada"
+archive = ["2009"]
+draft = false
++++
+
+
+<p>
+遅ればせながら空前の Perfume ブームが俺の中で来ています。
+中でも「シークレットシークレット」がお気に入りなのですが、
+iTunes で再生してて歌詞が見たいと思いました。
+歌詞カードを見るのがあまり好きじゃないので、
+すると Web の歌詞提供サービスを利用することになります。
+こういったサービス、海外のものも併せて非常に便利なのですが、
+あえて言うならアーティスト名や曲名も入れて検索する手間が省けないかと、
+Perfume を聴きながら考えました。
+</p>
+
+<p>
+  そこで、今回作ったのが「<strong>LastLyrics</strong>」というサイトです。
+iTunes などで、まさに「今」聴いてる曲の歌詞がアクセスするだけで見れるという代物。
+( * 実は何も調査せずに作ったので、もしかして似たようなサイトがあるかもしれませんがご了承くだされ。
+    あと、iTunes のプラグインみたいなソフトならあるよ！というツッコミは無しでｗ)
+</p>
+
+<p>
+  <a href="http://pulpsite.net/lastlyrics/">LastLyrics</a><br>
+  <a href="http://pulpsite.net/lastlyrics/">
+    <img alt="ss" class="at-xid-6a0133f4781589970b015435b6f481970c" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015435b6f481970c-pi.gif>
+  </a>
+</p>
+
+<p>
+利用するのにひとつ条件があって、「last.fm」というサービスを使っている必要があります。
+フォームに last.fm のユーザーID を入れると今聴いている曲と最近聴いた曲の歌詞が表示されるだけという、
+シンプルなインターフェースです。
+ある程度メジャーな曲でないと歌詞が見つからないのですが、
+Perfume の「シークレットシークレット」はありました。
+よかったです。
+ちなみに、洋楽の英語の歌詞も該当するものがあれば、でてくるようになっています。
+</p>
+<p>
+last.fm について理解するために、はてなキーワードの Audioscrobbler のページがわかりやすかったので以下引用します。Audioscrobbler というのは、last.fm の前身みたいなサービス。
+</p>
+<blockquote>
+  <p>
+ネットに接続した状態でiTunesやWinamp、Windows Media Player 9などの再生ソフトを使って音楽を聴くと、聴いている音楽のアーティスト名や曲名の情報がここのサーバーへ送られ、自分の音楽プロフィールを作ってくれるというサイト。
+  </p>
+  <p>
+利用するにはユーザー登録をし、専用のプラグインをインストールする必要がある。
+  </p>
+  <a href="http://d.hatena.ne.jp/keyword/Audioscrobbler">Audioscrobblerとは - はてなキーワード</a>
+</blockquote>
+<p>
+ということで、LastLyrics を利用するには、last.fm でアカウントを作り、
+専用のプラグインをインストールしてサーバーに再生情報を送るようにしましょう。
+一見めんどくさそうですが、
+一度利用しだすとあとは特に何もせずともプラグインが勝手にいろいろやってくれるので、まだ
+使ったことがない人は是非登録してみてください。
+そんで、ついでに LastLyrics もよろしくです。
+</p>
+<p>
+さて仕組みなのですが、邦楽の歌詞情報を取得するのに、
+Yahoo!ミュージックを利用しています。
+それぞれの曲の歌詞に対して、embed で貼り付けるためのHTMLコードが提供されているので、
+それを引っ張ってきています。
+こうしたYahoo!ミュージックの 歌詞情報 へのインターフェースとして Perl のモジュール「<a href="http://svn.coderepos.org/share/lang/perl/WWW-Yahoo-Lyrics-JP/">WWW::Yahoo::Lyrics::JP</a>」というものをこしらえました。
+また、邦楽の方は LyricWiki.org というサービスを利用して歌詞を取得しています。
+これは Perl インターフェース「<a href="http://search.cpan.org/dist/Lyrics-Fetcher-LyricWiki/">Lyrics::Fetcher::LyricWiki</a>」というのがすでに CPAN にあったのでそれを使うことにしました。
+</p>
+<p>
+一方の last.fm の情報取得について、API が提供されているので、それを WebService::Simple で扱ってます。last.fm の API は以前から使ったことがあるのですが、2.0 という新しいバージョンが出てて、ちょっとびっくり。これは今回に限らずになかなか面白そうです。ということで、上記の歌詞サービスと last.fm API を組み合わせれば出来上がりです。
+</p>
+<p>
+小粒なサービスですが、使っていただけると嬉しいです。
+以上、元旦リリース「LastLyrics」の紹介でした。
+</p>
+
+<h4>関連サイト</h4>
+<ul>
+  <li><a href="http://pulpsite.net/lastlyrics/">LastLyrics</a></li>
+  <li><a href="http://www.last.fm/home">Last.fm</a></li>
+  <li><a href="http://music.yahoo.co.jp/lyrics/">Yahoo!ミュージック - 歌詞</a></li>
+  <li><a href="http://lyricwiki.org/Main_Page">Main Page - Lyrics from LyricWiki</a></li>
+</ul>
+

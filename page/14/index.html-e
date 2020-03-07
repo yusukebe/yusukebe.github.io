@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="generator" content="Hugo 0.63.2" />
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="alternate" type="application/rss+xml" href="https://yusukebe.com/index.xml" title="ゆーすけべー日記" />
+	<meta property="og:title" content="ゆーすけべー日記" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://yusukebe.com/" />
+<meta property="og:image" content="https://yusukebe.com/icons/myicon.png"/>
+<meta property="og:updated_time" content="2020-03-06T15:46:50+09:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://yusukebe.com/icons/myicon.png"/>
+
+<meta name="twitter:title" content="ゆーすけべー日記"/>
+<meta name="twitter:description" content=""/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
+	
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://yusukebe.com/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+  <div class="container wrapper">
+	<div class="header">
+	<h1 class="site-title"><a href="https://yusukebe.com/">ゆーすけべー日記</a></h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/yusukebe" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/yusukebe" title="Twitter"><i data-feather="twitter"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+	<div class="recent-posts section">
+	  <h2 class="section-header">
+		Recent posts
+	  </h2>
+	  <div class="posts">
+		
+		
+		
+		<div class="post">
+		  <div class="meta">Mar 11, 2013</div>
+		  <a class="title" href="/posts/2013/0311050010/">Facebookイベント参加者の名刺画像を自動生成！</a> &mdash;
+		  <span class="description">
+			
+			 @shinotraさんが先日行われたHokkadio.pm #9で面白いことを発表してました。その一つがATNDのイベント参加者の名刺画像を自動生成するというモノ。神奈川にいながら北海道の熱気を感じつつ、昔同じようなことを「Faceboo
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Mar 4, 2013</div>
+		  <a class="title" href="/posts/2013/0304031456/">ボケての本が発売中です！</a> &mdash;
+		  <span class="description">
+			
+			 先日の土曜日3月2日、コアマガジンより「ボケて」の本が発売されました！実は2009年にコンビニ本として同じくコアマガジンから同じような趣旨の本を販売していたので、「ボケて本」としては第2弾となります。今回は一般書店にも置かれるような単行本
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Feb 25, 2013</div>
+		  <a class="title" href="/posts/2013/0225020413/">地域コミュニティが熱い！？Kansai.pmに行ってきました #kansaipm</a> &mdash;
+		  <span class="description">
+			
+			 先日の土曜日2月23日、大阪駅のすぐ近くYahoo!さんの会議室にてKansai.pm第15回ミーティングが開催されました。僕はJPA＝Japan Perl Associationさんの支援を受けてゲストスピーカーとして参加させていただい
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Feb 22, 2013</div>
+		  <a class="title" href="/posts/2013/0222080919/">Mojoliciousでテンプレート置くディレクトリを追加したい時</a> &mdash;
+		  <span class="description">
+			
+			 一つの「lib」ディレクトリ内で複数のMojoliciousアプリを動かしてるんだけど、するとMojoliciousが使うデフォルトのテンプレート置き場「templates」ディレクトリだけじゃ管理しきれなくなってきます。そこでアプリごと
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Feb 21, 2013</div>
+		  <a class="title" href="/posts/2013/0221075705/">PerlでGoogle AnalyticsへアクセスするならNet::Google::Analyticsが便利</a> &mdash;
+		  <span class="description">
+			
+			 fluentdとかTreasure Dataとかログを拾い集めて集計する新しい技術やプラットフォームが出て来てますが、Webの表層レベルだとGoogle Analyticsがやっぱり便利で使えます。ただ、サイト全体のトラフィックを観察する
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Feb 19, 2013</div>
+		  <a class="title" href="/posts/2013/0219065525/">学生時代の思い出とトークイベント</a> &mdash;
+		  <span class="description">
+			
+			 大学の時分、研究室の先輩だったクロさんのお誘いで就活中の学生向けのトークイベントに出演することになりました。詳細、応募ページは以下です。   「Webサービスの作り方」和田 裕介×NTT Com新卒担当トーク＆LTイベント参加者募集！ :
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Feb 15, 2013</div>
+		  <a class="title" href="/posts/2013/0215004028/">Kansai.pm 2/23 (土) でトークしてきます！</a> &mdash;
+		  <span class="description">
+			
+			 諸々な事情の結果、JPAさんのご支援でKansai.pmへ参加させてもらうことになりました。来週2月23日土曜日の「Kansai.pm 第15回ミーティング」です。ゲストスピーカーという扱いで40分間のトークをしてきます。色々話したい題目
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jan 31, 2013</div>
+		  <a class="title" href="/posts/2013/0130155741/">ちょっとしたプログラムを書く時（無意識的に）考えること</a> &mdash;
+		  <span class="description">
+			
+			 とある集まりがあってひょんなことから、とあるプログラムをその場で組んで遊んだ。40行くらいの非常に簡素なPerlスクリプトだ。どんなものかと言うと、そこにいたメンバーの一人が提案した小さなアイデアを叶えるもので、   コマンドラインで実行
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jan 30, 2013</div>
+		  <a class="title" href="/posts/2013/0130093800/">Webアプリのディレクトリ事情</a> &mdash;
+		  <span class="description">
+			
+			 現在進行中で開発・運用しているWebアプリのファイルとディレクトリが若干ゴチャゴチャしてたんで、整理したらだいーぶスッキリした。こんな感じ！  MacBook@yusuke % tree -L 1 -F.├── Makefile.PL├─
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jan 18, 2013</div>
+		  <a class="title" href="/posts/2013/0118074955/">Webアプリにおけるキャッシュ。オレオレ事例</a> &mdash;
+		  <span class="description">
+			
+			 Webアプリにおいて、アクセスやデータ量が多く/大きくなってくると、バックエンドのパフォーマンスが低下しがちです。MySQLなどのRDBMSにデータを置いている場合は適切にクエリーを改善する、インデックスを張る、といった策で解決する場合も
+			
+		  </span>
+		</div>
+		
+		
+
+<ul class="pagination">
+	<li class="page-item page-prev">
+	
+    <a href="/page/13/" class="page-link" aria-label="Previous"><span aria-hidden="true">← Prev page</span></a>
+	
+	</li>
+	<li class="page-item page-next">
+	
+    <a href="/page/15/" class="page-link" aria-label="Next"><span aria-hidden="true">Next page →</span></a>
+	
+	</li>
+</ul>
+
+
+	  </div>
+	</div>
+  </div>
+  <div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright yusukebe.com |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-492497-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

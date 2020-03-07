@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="generator" content="Hugo 0.63.2" />
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="alternate" type="application/rss+xml" href="https://yusukebe.com/index.xml" title="ゆーすけべー日記" />
+	<meta property="og:title" content="ゆーすけべー日記" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://yusukebe.com/" />
+<meta property="og:image" content="https://yusukebe.com/icons/myicon.png"/>
+<meta property="og:updated_time" content="2020-03-06T15:46:50+09:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://yusukebe.com/icons/myicon.png"/>
+
+<meta name="twitter:title" content="ゆーすけべー日記"/>
+<meta name="twitter:description" content=""/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
+	
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://yusukebe.com/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+  <div class="container wrapper">
+	<div class="header">
+	<h1 class="site-title"><a href="https://yusukebe.com/">ゆーすけべー日記</a></h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/yusukebe" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/yusukebe" title="Twitter"><i data-feather="twitter"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+	<div class="recent-posts section">
+	  <h2 class="section-header">
+		Recent posts
+	  </h2>
+	  <div class="posts">
+		
+		
+		
+		<div class="post">
+		  <div class="meta">Apr 30, 2004</div>
+		  <a class="title" href="/posts/2004/0430030000/">復旧したので昔のネタを掘り返してみるシリーズその１</a> &mdash;
+		  <span class="description">
+			
+			    復旧したので昔のネタを掘り返してみるシリーズその１。      やっぱりゆーすけべー日記といえばこれでしょう。    ↓↓↓↓↓↓↓    2002年9月7日、ああ生若菜、バスツアー実況！     あのときはまじでおしっこ我慢した。
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Apr 28, 2004</div>
+		  <a class="title" href="/posts/2004/0428090007/">うっかり削除。から復旧したよ</a> &mdash;
+		  <span class="description">
+			
+			    4月18日のエントリーの直後にウェブログの削除をしちゃったのです。            データベースの中がすっからかんになって、エントリーやアーカイブなどの書き出されたhtmlは残っているけど、編集画面に行くとゆーすけべー日記が見
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Apr 18, 2004</div>
+		  <a class="title" href="/posts/2004/0418101739/">MAROON5カコイイ</a> &mdash;
+		  <span class="description">
+			
+			   MAROON5 SongsAbout Jane     基情の試験終わったらやっぱり藤沢タワレコいっちゃった。アジカンからVINES、Rock   Against Bush 、KATE   ROSEなどなど視聴したが、MAROON5は
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Apr 18, 2004</div>
+		  <a class="title" href="/posts/2004/0418094901/">ボーダー</a> &mdash;
+		  <span class="description">
+			
+			     基本情報技術者の試験受けてきました。      というわけで早速自己採点。こういうものは速攻で解答例が出回る。おそらく俺が試験受けていたときにもうウェブで出回っていたりしたんじゃないか？      今回参考にしたのは現時点で午前も
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Apr 18, 2004</div>
+		  <a class="title" href="/posts/2004/0418000654/">基情</a> &mdash;
+		  <span class="description">
+			
+			 ただいま 辻堂駅から湘南工科大学へ歩いております。基本情報技術者試験受けてきます。ほんとは ソフトウェア開発技術者を受けたかったんだけど、申し込みで間違えて いまさら 基情 うけることに。いまさら といいつつ昨日の夜から勉強はじめたのでう
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Apr 17, 2004</div>
+		  <a class="title" href="/posts/2004/0417084644/">たけのこ出てきた</a> &mdash;
+		  <span class="description">
+			
+			     今日は夏日らしいが、ちょっと前から庭にたけのこが出てきた。この写真写ってるたけのこはもう出すぎ。土にちょっと頭を出したくらいが年老いてなくて美味しい。今年はどうやら早めににたけのこほりをしなくてはいけないみたいね。        
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Apr 17, 2004</div>
+		  <a class="title" href="/posts/2004/0417083352/">Yahoo!グループうざい</a> &mdash;
+		  <span class="description">
+			
+			     eGroupsがYahoo!グループになってから使い勝手が悪くなった。      設定するためにはYahooIDを取得しなくちゃいけないし、YahooIDをゲッツするために登録しようと思ったらエラーがでるし、やっとできたと思ったら
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Apr 15, 2004</div>
+		  <a class="title" href="/posts/2004/0415061638/">やっぱインプリが大事だよね</a> &mdash;
+		  <span class="description">
+			
+			 Kotaro Yamagishi&#39;s bJournal - 山岸広太郎のBlog（ブログ）: やっぱりインプリが大事だよね  いまさらですが昔の山岸さんのブログより。 確かに。俺もやったる。 
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Apr 15, 2004</div>
+		  <a class="title" href="/posts/2004/0414164701/">「俺もトラックバックかけてやるー」、倉木麻衣のBlog始まる</a> &mdash;
+		  <span class="description">
+			
+			 倉木麻衣のMai.K Diary:倉木麻衣です！  もうすでに124のトラックバックがあるけど、俺のトラックバックかけてやるー！！  追記 「トラックバックかける」ってなんか卑猥だな～。上で書いたように「俺のトラックバックかけてやるー」だ
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Apr 14, 2004</div>
+		  <a class="title" href="/posts/2004/0414115313/">サッカー工房のウェブ</a> &mdash;
+		  <span class="description">
+			
+			     奥徳戦が開催されるということでサッカー工房のウェブを作った。    奥出研の皆さん、よろしくです。誰か女子マネージャーいないかなー。  
+			
+		  </span>
+		</div>
+		
+		
+
+<ul class="pagination">
+	<li class="page-item page-prev">
+	
+    <a href="/page/149/" class="page-link" aria-label="Previous"><span aria-hidden="true">← Prev page</span></a>
+	
+	</li>
+	<li class="page-item page-next">
+	
+    <a href="/page/151/" class="page-link" aria-label="Next"><span aria-hidden="true">Next page →</span></a>
+	
+	</li>
+</ul>
+
+
+	  </div>
+	</div>
+  </div>
+  <div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright yusukebe.com |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-492497-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

@@ -1,0 +1,71 @@
++++
+Categories = ["tech"]
+Description = " miyagawaさんに声をかけていただき、彼のPodcast番組にゲストとして出演させていただきました。   ep7 ゲスト: ゆーすけべー (yusukebe) - Tatsuhiko Miyagawa's Podcast   「ゲスト"
+Tags = ["Perl", "News"]
+date = "2013-04-03T15:41:00+09:00"
+title = "miyagawaさんPodcast ep7に出演しました"
+author = "kamawada"
+archive = ["2013"]
+draft = false
++++
+
+
+<p>miyagawaさんに声をかけていただき、彼のPodcast番組にゲストとして出演させていただきました。</p>
+
+<ul>
+<li><a href="http://podcast.bulknews.net/post/46999935332/podcast-ep7-yusukebe">ep7 ゲスト: ゆーすけべー (yusukebe) - Tatsuhiko Miyagawa's Podcast</a></li>
+</ul>
+
+
+<p>「ゲスト呼ばれたいな〜」と思っていたのですごく嬉しい反面、Podcast番組が始まった当初から前回までそうそうたるメンツが出ていたので軽く恐縮しつつ、でも、楽しいトークでした。内容はウマい事miyagawaさんが編集して40分にまとまっているので聴いていただけばよかと思います。ここでは本編に盛り込めなかったトピックごとの詳細や個人的なエピソードを簡単に紹介します。</p>
+
+<hr>
+
+<p><br></p>
+
+<p>ノマドワーキングの話題もありましたが、基本Perlのライトな話が中心になりました。miyagawaさんのPodcastだからかもしれませんが、そこで出てきたPerlの話題ってのが、ほとんど、彼が関わっているプロダクトだったり概念だったりして面白いです。4つほど紹介しましょう。</p>
+
+<h3>Blog Hacks</h3>
+
+<p>miyagawaさんが伊藤直也さんと共著で出して、今や絶版になっている書籍。</p>
+
+<p><a href="http://yusukebe.com/archives/2013/04/03/picture_large4-87311-174-9.jpeg"><img alt="picture_large4-87311-174-9.jpeg" src="http://yusukebe.com/archives/assets_c/2013/04/picture_large4-87311-174-9-thumb-300x423-327.jpeg" width="300" height="423" class="mt-image-none" style=""></a></p>
+
+<p>番組内で触れている通り、Perlの小ネタがBlogといういじりやすいツールを対象に書かれているので、
+初学の時分だいぶ楽しく読んだ記憶があります。
+著者の二人以外にも寄稿している人が多数いてHackがバラエティに飛んでるのも良かった。
+Blogってのは書く楽しみもあるんだけど、いじる楽しみもあるんだなーってことで、
+MovableTypeをごにょごにょして動画をアップロードすると自動的にエンコードしてくれるオレオレYouTubeみたいなPluginも延長線上でつくった気がします。</p>
+
+<h3>Plagger</h3>
+
+<p>miyagawaさんがつくった「プラガブルなフィードアグリゲーター」。
+色んなところで「Plaggerがキッカケで本格的にPerlプログラミングを始めた」って言っているんだけど、
+改めて学習できるという面でもいいプロダクトだと思います。
+Filter::EntryFullTextの話で正規表現を覚えていったと語ってますが、
+他にも色々なPluginを使って最終的には満足がいかなくなってソースコードを覗いたりして勉強させてもらったなー。この「ソースコードを覗く」っていう行為が自分にとって自然に出来るようになったのはPlaggerのおかげです。</p>
+
+<h3>Plack/PSGI</h3>
+
+<p>WebアプリケーションとWebサーバーとをつなぐ取り決め＝PSGI、そのための実装＝Plack。
+miyagawaさんとtokuhiromを中心に仕様決定と開発がなされ2009年のYAPC::Asiaではホットトピックスでした。僕はその開発の瞬間をIRC等で生で見ていたのでその素早さとOpennessに感動しましたね。
+Plackが出てきて面白かったのは、本来ならばWeb Application Framework＝WAFを使わなくてはいけないところを車輪の発明的にオレオレWAFを何個かつくった件。Plack::RequestとかPlack::Utilとか使いやすいし、Router::SimpleやText::Xslateなんかも出てきたので組み合わせでだいたい出来ちゃう。今はMojoliciousをメインのWAFとして使うのに落ち着いたけど、回り道的にオレオレWAFをつくったのは勉強になったし楽しかった。</p>
+
+<h3>PerlCasual</h3>
+
+<p>これも2009年のYAPC::Asiaが終わったあとのお話。その時に気づいた事を「<a href="http://yusukebe.com/archives/20090912/120113.html">Where are "Casual Perlers" ?</a>」としてBlog記事に書いたら、
+miyagawaさんが「<a href="http://bulknews.typepad.com/blog/2009/09/on-module-writers-and-users.html">On module writers and users</a>」なるタイトルでレスポンス記事を投稿してくれた。そこがキッカケで「PerlをCasualにつかおう」っていう概念を打ち立て「PerlCasual」のイベントをやったりしてます。今日のmiyagawaさんとの話で海外のYAPCではモジュールを使ったアプリケーション事例みたいなトークが割合として多いということを聴いて興味深かったですね。</p>
+
+<hr>
+
+<p><br></p>
+
+<p>僕にとって大きな影響を与えている4つの事柄について、全てmiyagawaさんが関わっているのがやっぱすげーって感じですし、そんなmiyagawaさんから声をかけてもらって改めて嬉しかったです。</p>
+
+<p>さてPodcast番組の方、自分で聴いてみると相づちで「そうですね」「そうっすね」ってフレーズが頻出してますw 寝る前に聴く方は数えてみるとよく寝れるかもしれません！またなんとなくオチがついているのでそれにも期待して聴いていただけると幸いですー。</p>
+
+<ul>
+<li><a href="http://podcast.bulknews.net/post/46999935332/podcast-ep7-yusukebe">ep7 ゲスト: ゆーすけべー (yusukebe) - Tatsuhiko Miyagawa's Podcast</a></li>
+</ul>
+
+

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="generator" content="Hugo 0.63.2" />
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="alternate" type="application/rss+xml" href="https://yusukebe.com/index.xml" title="ゆーすけべー日記" />
+	<meta property="og:title" content="ゆーすけべー日記" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://yusukebe.com/" />
+<meta property="og:image" content="https://yusukebe.com/icons/myicon.png"/>
+<meta property="og:updated_time" content="2020-03-06T15:46:50+09:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://yusukebe.com/icons/myicon.png"/>
+
+<meta name="twitter:title" content="ゆーすけべー日記"/>
+<meta name="twitter:description" content=""/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
+	
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://yusukebe.com/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+  <div class="container wrapper">
+	<div class="header">
+	<h1 class="site-title"><a href="https://yusukebe.com/">ゆーすけべー日記</a></h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/yusukebe" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/yusukebe" title="Twitter"><i data-feather="twitter"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+	<div class="recent-posts section">
+	  <h2 class="section-header">
+		Recent posts
+	  </h2>
+	  <div class="posts">
+		
+		
+		
+		<div class="post">
+		  <div class="meta">Jun 14, 2004</div>
+		  <a class="title" href="/posts/2004/0613152641/">奥出研優勝、研究室対抗フットサル大会</a> &mdash;
+		  <span class="description">
+			
+			    昨日12日、ゆめが丘にて研究室対抗フットサル大会奥徳清萩村稲戦が行われた。      まずは、マネージャのハチミツレモンはゲットできたのか？という話。      (左)指定のあった地下鉄飯田岡駅に到着、閑散としている。(右)駅に近づ
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jun 13, 2004</div>
+		  <a class="title" href="/posts/2004/0613141249/">ほよCPUでみんなカップラーメンを食べる</a> &mdash;
+		  <span class="description">
+			
+			    ほよのCPUが完成した。俺はまだ完成していないが。研究室の工作工房でほよCPUにあわせてカップラーメンを作って食べてみました。      (左)完成したCPUとほよ、(右)どうやらクロックがうまく動かないため手動でクロックを刻む  
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jun 12, 2004</div>
+		  <a class="title" href="/posts/2004/0612073834/">マネージャの作ったハチミツレモンは手に入るのか？</a> &mdash;
+		  <span class="description">
+			
+			    本日18時から行われる研究室対抗フットサル大会奥徳清萩村稲戦！      ハチミツレモンを作って持っていくといっていたマネージャーヨシムがこれなくなった。でもハチミツレモンは作ったのでどうにかして渡したいらしい。以下サッカー工房ウェ
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jun 12, 2004</div>
+		  <a class="title" href="/posts/2004/0611163505/">お笑いハック・傘をハックする：お笑い企画放送局</a> &mdash;
+		  <span class="description">
+			
+			今週もやってまいりました金曜深夜はお笑い！企画放送局でお楽しみください。今週の映像はクオリティが高いです。今までで圧倒的に一番よいできなので、今まで敬遠していた人もご覧ください(過去の映像を見比べると成長の跡がわかります)。今回はとある僕ら
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jun 10, 2004</div>
+		  <a class="title" href="/posts/2004/0610070450/">100円の液晶モジュールとAtmelでCD-ROMドライブをCDプライヤーにしたい</a> &mdash;
+		  <span class="description">
+			
+			    昨日秋葉で手に入れた100円の液晶モジュールlm24014h。それとAtmel社の1チップマイコンを使ってCD-ROMドライブをCDプレイヤーにしたい。            というのもAtmel使ってPCとつなげてなんちゃらという
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jun 10, 2004</div>
+		  <a class="title" href="/posts/2004/0609200020/">Designing Web INTERACTION</a> &mdash;
+		  <span class="description">
+			
+			    初級工房後半戦和田班ではこんなことやります。 
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jun 9, 2004</div>
+		  <a class="title" href="/posts/2004/0608171522/">divとspanの違い</a> &mdash;
+		  <span class="description">
+			
+			    Going My Wayでもspanとdivの違いは？というエントリーがありますが、ちょっと驚きだったので。   &amp;lt;div class=&#34;title&#34;&amp;gt;と&amp;lt;span class=&#34;title&#34;&amp;gt;の違いが以下。
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jun 7, 2004</div>
+		  <a class="title" href="/posts/2004/0606214111/">AmazonのURL</a> &mdash;
+		  <span class="description">
+			
+			本を紹介する時のAmazonのURLの張り方。AmazonのURLはブラウジングしているときのURLをそのまま貼り付けると長くなるのでhttp://www.amazon.co.jp/exec/obidos/ASIN/ISBNのナンバーという
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jun 7, 2004</div>
+		  <a class="title" href="/posts/2004/0606174618/">MEMBERS CUP参戦！、Regunaryフットサル</a> &mdash;
+		  <span class="description">
+			
+			    Regunary（詳しくはゆーすけべー日記内で&#34;Regunary&#34;と検索した結果を見てください）でミズノフットサルプラザ藤沢で行われたMEMBERS   CUPという大会に参加しました。久しぶりのでかい大会に興奮。でも大雨。もちろん
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jun 7, 2004</div>
+		  <a class="title" href="/posts/2004/0606165032/">有隣堂湘南台店閉店セールその２</a> &mdash;
+		  <span class="description">
+			
+			    その１に続いて、有隣堂湘南台店閉店セール第３弾に参戦してきました。      ４階のCD売り場ほぼ全品２０％オフです。             その１の時に気になっていた金色●シールとか、その１の時には５０％オフだった緑色●シールと
+			
+		  </span>
+		</div>
+		
+		
+
+<ul class="pagination">
+	<li class="page-item page-prev">
+	
+    <a href="/page/144/" class="page-link" aria-label="Previous"><span aria-hidden="true">← Prev page</span></a>
+	
+	</li>
+	<li class="page-item page-next">
+	
+    <a href="/page/146/" class="page-link" aria-label="Next"><span aria-hidden="true">Next page →</span></a>
+	
+	</li>
+</ul>
+
+
+	  </div>
+	</div>
+  </div>
+  <div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright yusukebe.com |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-492497-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

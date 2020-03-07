@@ -1,0 +1,89 @@
++++
+Categories = ["tech"]
+Description = " 長年培ってきたテクの集大成！とまではいかない軽いものですが、ここに公開いたします。もし、使っていただける方がいたら使ってください。明日はこれを使った面白いFlashアプリを紹介しますのでお楽しみに。  ■本体         RssPar"
+Tags = []
+date = "2006-01-16T12:12:00+09:00"
+title = "Flash用RssParser,Rssクラス及びgate.php Version1.1"
+author = "kamawada"
+archive = ["2006"]
+draft = false
++++
+
+
+<p>
+長年培ってきたテクの集大成！とまではいかない軽いものですが、ここに公開いたします。
+もし、使っていただける方がいたら使ってください。
+明日はこれを使った面白いFlashアプリを紹介しますのでお楽しみに。
+</p>
+<p>
+<strong>■本体</strong>
+</p>
+<ul>
+  <li>
+    <a href="http://kamawada.com/~yusuke/yusukebe/archives/files/060118/RssParser_Release_060118/RssParser.as">RssParse.as</a> RssParserクラス
+  </li>
+  <li>
+    <a href="http://kamawada.com/~yusuke/yusukebe/archives/files/060118/RssParser_Release_060118/Rss.as">Rss.as</a> Rssクラス
+  </li>
+  <li>
+    <a href="http://kamawada.com/~yusuke/yusukebe/archives/files/060118/RssParser_Release_060118/gate.php.txt">gate.php.txt</a> DL後ファイル名から.txtを取って使用
+  </li>
+</ul>
+
+<p>
+<strong>■説明書</strong>
+</p>
+<ul>
+  <li>
+    <a href="http://kamawada.com/~yusuke/yusukebe/archives/files/060118/RssParser_Release_060118/Readme.txt">Readme.txt</a>
+  </li>
+  <li>
+    <a href="http://kamawada.com/~yusuke/yusukebe/archives/files/060118/RssParser_Release_060118/RssParser_ClassDiagram.png">RssParser_ClassDiagram.png</a> (クラス図)
+  </li>
+</ul>
+
+<p>
+<strong>■これは何か？</strong><br>
+Blogなどで配信されているRSSの情報をFlashで扱う時に便利なパーサー、クラス。
+Flash Professional 8で動作確認済み。
+読み込むRSSについては、MovableTypeで生成されるRSS1.0、2.0、0.9で動作確認済み。
+MovableTypeの新しいバージョンではデフォルトでindex.xmlとして書き出されるもの。
+このクラスを使うことによって、ある程度簡単にFlashを使ったRSSリーダーなどを作ることができる。
+また、gate.phpはFlashでRSSを読み込むときに突き当たる「ドメイン問題」などを解決するための簡易なPHPスクリプト。
+</p>
+<p>
+<strong>■どうやって使うのか？</strong><br>
+
+・クラスファイルを読み込む
+</p>
+<pre> import RssParser;
+import Rss; </pre>
+
+・RSSを読み込む
+<pre> var rp:RssParser = new RssParser("http://yoursite/index.xml"); </pre>
+
+・gate.phpを経由する場合はこんな感じ、Flashを公開するドメインと同ドメイン上にgate.phpを置くこと
+<pre> var rp:RssParser = new RssParser("http://yoursite/gate.php?target=http://yoursite/index.xml"); </pre>
+
+・RSSの読み込み終了を受けるハンドラを設定する
+<pre> rp.onParseEnd = function(){
+	gotoAndStop(2);//など
+} </pre>
+
+・パースをする
+<pre> rp.parseRss();
+//パースが終了したら上記ハンドラの中が実行される </pre>
+
+・RSSを取得する
+<pre> var rss:Rss = rp.getRss(); </pre>
+
+・ブログのタイトルとリンクを取得し、トレースしてみる
+<pre> trace(rss.getTitle());
+trace(rss.getLink()); </pre>
+
+・記事ごとのタイトルやdescriptionなどを取得したい場合は以下のようにアクセスする
+<pre> trace(rss.item[0].title);//一番最新の記事のタイトルをトレース
+trace(rss.item[0].description);//itemの添え字を0,1,2と増やしていくと新しい記事から古い記事へと参照できる
+trace(rss.item[0].date);//dateにアクセスするとFlashのDate型で日付を取得できる
+//記事のプロパティにはtitle link description dateがある </pre>
+

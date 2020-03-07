@@ -1,0 +1,24 @@
++++
+Categories = ["tech"]
+Description = "   奥出研究室の皆様のBlog/日記の更新情報をお届けするサイト「オンテナ」。  卒業するにあたって、運用を自宅のkamawadaサーバーで行うことにしました。  今、その移行の作業が終了しました。URLは以下になります。     htt"
+Tags = []
+date = "2006-08-14T10:58:00+09:00"
+title = "オンテナ移行"
+author = "kamawada"
+archive = ["2006"]
+draft = false
++++
+
+
+<p>
+  奥出研究室の皆様のBlog/日記の更新情報をお届けするサイト「オンテナ」。
+  卒業するにあたって、運用を自宅のkamawadaサーバーで行うことにしました。
+  今、その移行の作業が終了しました。URLは以下になります。
+</p>
+<ul>
+  <li><a href="http://okudelab.net/ontenna/">http://okudelab.net/ontenna/</a></li>
+</ul>
+<p>
+  PS. ちょうど今奥出研のサーバーが障害を起こしているらしくて、オンテナ見れない状態なのでちょうどいい？？アド民の人たちがんばってー
+</p>
+

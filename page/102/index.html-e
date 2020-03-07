@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="generator" content="Hugo 0.63.2" />
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="alternate" type="application/rss+xml" href="https://yusukebe.com/index.xml" title="ゆーすけべー日記" />
+	<meta property="og:title" content="ゆーすけべー日記" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://yusukebe.com/" />
+<meta property="og:image" content="https://yusukebe.com/icons/myicon.png"/>
+<meta property="og:updated_time" content="2020-03-06T15:46:50+09:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://yusukebe.com/icons/myicon.png"/>
+
+<meta name="twitter:title" content="ゆーすけべー日記"/>
+<meta name="twitter:description" content=""/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
+	
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://yusukebe.com/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+  <div class="container wrapper">
+	<div class="header">
+	<h1 class="site-title"><a href="https://yusukebe.com/">ゆーすけべー日記</a></h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/yusukebe" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/yusukebe" title="Twitter"><i data-feather="twitter"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+	<div class="recent-posts section">
+	  <h2 class="section-header">
+		Recent posts
+	  </h2>
+	  <div class="posts">
+		
+		
+		
+		<div class="post">
+		  <div class="meta">Mar 17, 2006</div>
+		  <a class="title" href="/posts/2006/0317030621/">今日の富士山</a> &mdash;
+		  <span class="description">
+			
+			   昨晩の暴風明け、今日の富士山は「かっこいい」。         2006/03/17 09:27撮影 
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Mar 16, 2006</div>
+		  <a class="title" href="/posts/2006/0316084337/">生きかた上手</a> &mdash;
+		  <span class="description">
+			
+			   生きかた上手 日野原重明(著) ユーリーグ             著者 日野原重明先生を知ったのは、確かテレビ東京のTV番組「ガイヤの夜明け」を見て。  そこで日野原先生は以下のような感じで紹介されて衝撃的だった。  「言葉で治す医
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Mar 15, 2006</div>
+		  <a class="title" href="/posts/2006/0315112148/">昨晩のお部屋</a> &mdash;
+		  <span class="description">
+			
+			   昨日は映像編集しながら、4台のPCを同時に操るという変体的なことを部屋でやってた。  混沌、だが、楽しい。     
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Mar 15, 2006</div>
+		  <a class="title" href="/posts/2006/0315111812/">今日の富士山</a> &mdash;
+		  <span class="description">
+			
+			   今日の富士山はね、白かった。       2006/03/15 08:11撮影 
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Mar 14, 2006</div>
+		  <a class="title" href="/posts/2006/0314045710/">今日の昼飯</a> &mdash;
+		  <span class="description">
+			
+			   Life@コーナン鎌倉大船モールの惣菜、助六￥298＋メンチカツ￥150        スーパーの惣菜狙いが、500円以内で充実した昼飯を食うことを達成することの一つ。  学校に用事がないときなど家で作業する時が多い。実家なので母ちゃ
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Mar 13, 2006</div>
+		  <a class="title" href="/posts/2006/0313120702/">ウェブ進化論広告掲載(ゆーすけべー日記からの引用有)、本日13日(月)朝日新聞朝刊三面</a> &mdash;
+		  <span class="description">
+			
+			   関東以北では本日13日(月)の朝日新聞三面の下部分に「ウェブ進化論」の広告が掲載され、  その広告内でゆーすけべー日記の記事「ウェブ進化論、俺を表してくれた一冊」から一部引用されました。       どのように引用されたかというとこう
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Mar 13, 2006</div>
+		  <a class="title" href="/posts/2006/0313113324/">危ねー</a> &mdash;
+		  <span class="description">
+			
+			 危ねー、久しぶりにひやひやしたよ。なんでかは秘密。はぁよかった。 
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Mar 11, 2006</div>
+		  <a class="title" href="/posts/2006/0311071326/">「AKIRA」、お気に入りの洋食屋＠湘南深沢</a> &mdash;
+		  <span class="description">
+			
+			   自宅から歩いて5分、車を使えば1分もかからないところにある「AKIRA」という洋食屋。       看板に掲げている「オムライス カレー」ももちろん、他にも揚げ物を中心とした定食が、  500円から食べれて、安いし、おいしいし、ボリュ
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Mar 11, 2006</div>
+		  <a class="title" href="/posts/2006/0311065539/">今日の水仙</a> &mdash;
+		  <span class="description">
+			
+			   たぶん、今が一番綺麗。うん綺麗としかいいようがない。     
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Mar 11, 2006</div>
+		  <a class="title" href="/posts/2006/0310160418/">ペットショップへの道をふさぐロバ？ポニー？、しまいににゃ帰路を脱糞してふさぐ</a> &mdash;
+		  <span class="description">
+			
+			   横浜ベイサイドマリーナ内にあるペットショップというか「見て・触って・買える 動物園」、NOAH。  入園料500円で中狭いわりにものすごい濃い動物達がたくさんいて、しかも身の危険を感じるほど、  襲ってきたりして面白い。  今日行った
+			
+		  </span>
+		</div>
+		
+		
+
+<ul class="pagination">
+	<li class="page-item page-prev">
+	
+    <a href="/page/101/" class="page-link" aria-label="Previous"><span aria-hidden="true">← Prev page</span></a>
+	
+	</li>
+	<li class="page-item page-next">
+	
+    <a href="/page/103/" class="page-link" aria-label="Next"><span aria-hidden="true">Next page →</span></a>
+	
+	</li>
+</ul>
+
+
+	  </div>
+	</div>
+  </div>
+  <div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright yusukebe.com |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-492497-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

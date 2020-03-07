@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Listpod が「Award on rails 2008」で「クックパッド賞」を受賞しました - ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="Listpod が「Award on rails 2008」で「クックパッド賞」を受賞しました" />
+<meta property="og:description" content=" もう3週間くらい前のことで遅ればせながら報告を。  Listpod がプログラミングコンテスト？「Award on rails 2008」で「クックパッド賞」を受賞しました！「Award on Rails」ってのは         日本生" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yusukebe.com/posts/2008/1212094913/" />
+<meta property="og:image" content="https://yusukebe.com/icons/myicon.png"/>
+<meta property="article:published_time" content="2008-12-12T18:49:00+09:00" />
+<meta property="article:modified_time" content="2008-12-12T18:49:00+09:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://yusukebe.com/icons/myicon.png"/>
+
+<meta name="twitter:title" content="Listpod が「Award on rails 2008」で「クックパッド賞」を受賞しました"/>
+<meta name="twitter:description" content=" もう3週間くらい前のことで遅ればせながら報告を。  Listpod がプログラミングコンテスト？「Award on rails 2008」で「クックパッド賞」を受賞しました！「Award on Rails」ってのは         日本生"/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
+	
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://yusukebe.com/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper post">
+		<div class="header">
+	<h1 class="site-title"><a href="https://yusukebe.com/">ゆーすけべー日記</a></h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/yusukebe" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/yusukebe" title="Twitter"><i data-feather="twitter"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post-header">
+			<h1 class="title">Listpod が「Award on rails 2008」で「クックパッド賞」を受賞しました</h1>
+			<div class="meta">Posted at &mdash; Dec 12, 2008</div>
+		</div>
+
+		<div class="markdown post-body">
+			
+
+<p>
+もう3週間くらい前のことで遅ればせながら報告を。
+  <b>Listpod がプログラミングコンテスト？「Award on rails 2008」で「クックパッド賞」を受賞しました！</b>
+「Award on Rails」ってのは
+</p>
+<blockquote>
+  <p>
+    日本生まれの言語 <strong>Ruby</strong>、そしてそれを利用した <strong>Ruby on Rails</strong> によるソフトウェア開発を発展させていくため、Webサービスの成果発表の機会、プログラミングコミュニティの活性化、並びにエンジニアの成長の機会を提供したいと考え、開催されたのがAward on Railsです。
+  </p>
+  <p>
+    <a href="http://www.web-career.com/seminar/ruby_on_rails.html">インターネットと働く人の転職支援なら--株式会社ウェブキャリア</a>より
+  </p>
+</blockquote>
+
+<p>
+というすばらしいWebアプリケーションのコンテストのことです。
+こういう機会があれば Ruby on Rails は活気つきますね＾＾；
+</p>
+<p>
+ところが、今年の「第3回 Award on Rails開催にあたって」には以下のような記述が
+</p>
+<blockquote>
+  <p>
+    ３．Ruby on Rails以外のフレームワークでの応募も受け付けます。
+  </p>
+  <p><a href="http://rails.drecom.jp/aor2008/about">Ruby on Railsコンテスト、イベント、求人・転職情報-Drecom Award on rails 2008-開催概要</a>より
+  </p>
+</blockquote>
+<p>
+うは！ということで、Ruby on Rails じゃなくて Perl の フレームワーク Catalyst を使った Listpod も対象になれたんですね。受賞式では、クックパッド CTO の橋本さんから、「前から（Listpod）使ってたんですよー」と言われて嬉しかったです。また、副賞としてクックパッドグッズをもらったのでお母ちゃんにあげたよ。
+そうそうクックパッドオリジナル納豆なんてのもあって、食べてみたけど、ぶっちゃけ（ｒｙ
+おいしかったです。
+</p>
+<p>
+  <font size="2">クックパッドグッズ</font><br>
+  <img alt="cookpad" class="at-xid-6a0133f4781589970b015435b6f4c0970c" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015435b6f4c0970c-pi.jpg>
+</p>
+<p>
+そんで、目玉の賞金100万円という大賞には知り合いの「かんさいさん」が「<a href="http://smillie.jp/">Smillie! (スマイリー!)</a>」で受賞しました。
+おめでとうございます！
+</p>
+<p>
+  <font size="2">大賞受賞の瞬間</font><br>
+  <img alt="cookpad" class="at-xid-6a0133f4781589970b015435b6f4cd970c" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015435b6f4cd970c-pi.jpg>
+</p>
+<p>
+Listpod は地味に特定の人に受けているみたいで、そして自分もたまに使うことも含め、
+なかなかいいアプリだと思っていたので、このような受賞嬉しい限りです。
+Award on Rails の中の皆さん、ありがとうございました。
+</p>
+<h4>参考サイト</h4>
+<ul>
+  <li><a href="http://rails.drecom.jp/aor2008/winner">Ruby on Railsコンテスト、イベント、求人・転職情報-Drecom Award on rails 2008-受賞作品</a></li>
+  <li><a href="http://listpod.tv/">ListPod - YouTube動画のマイリストを作ってPodcastで見よう！</a></li>
+</ul>
+<h4>もらった本</h4>
+<p></p>
+<div style="float:left"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4827542287/kamawada-22/"><img alt="100万人が選んだ大絶賛パスタ―COOKPAD (レタスクラブMOOK)" class="at-xid-6a0133f4781589970b015435b6f4d7970c" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015435b6f4d7970c-pi.jpg style="border:none;"></a></div>
+<div style="float:left;margin-left:15px;">
+<div style="font-size:12pt"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4827542287/kamawada-22/">100万人が選んだ大絶賛パスタ―COOKPAD (レタスクラブMOOK)</a></div>
+<div style="font-size:7pt;font-family:verdana;">posted with <a href="http://yusukebe.com/b/amazon/search/">yusukebe.com::AmazonSearch</a> on 2008.12.12</div>
+<div style="font-size:10pt;">
+<ul style="list-style-type:none;padding:0;">
+<li>クックパッド  </li>
+<li>単行本 / 角川SSコミュニケーションズ </li>
+<li>Amazon 売り上げランキング: 97209</li>
+</ul>
+<ul style="list-style-type:none;padding:0;"><li>Amazon おすすめ度の平均: <img alt="2.5" class="at-xid-6a0133f4781589970b015391e38af6970b" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015391e38af6970b-pi.gif style="margin:0;"><ul style="list-style-type:none;padding-left:0;">
+<li>
+<img alt="2" class="at-xid-6a0133f4781589970b015391e38ae3970b" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015391e38ae3970b-pi.gif style="margin:0;"> 100万人の口を疑います</li>
+<li>
+<img alt="1" class="at-xid-6a0133f4781589970b015391e38b00970b" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015391e38b00970b-pi.gif style="margin:0;"> 前よりは多少はマシかも</li>
+<li>
+<img alt="4" class="at-xid-6a0133f4781589970b014e8bd727e1970d" src="https://yusukebe.com/archives/.a/6a0133f4781589970b014e8bd727e1970d-pi.gif style="margin:0;"> 簡単美味しい1冊！</li>
+<li>
+<img alt="1" class="at-xid-6a0133f4781589970b015391e38b00970b" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015391e38b00970b-pi.gif style="margin:0;"> なんていうか・・・</li>
+<li>
+<img alt="4" class="at-xid-6a0133f4781589970b014e8bd727e1970d" src="https://yusukebe.com/archives/.a/6a0133f4781589970b014e8bd727e1970d-pi.gif style="margin:0;"> やっぱり美味しい！</li>
+</ul>
+</li></ul>
+<a href="http://www.amazon.co.jp/100%E4%B8%87%E4%BA%BA%E3%81%8C%E9%81%B8%E3%82%93%E3%81%A0%E5%A4%A7%E7%B5%B6%E8%B3%9B%E3%83%91%E3%82%B9%E3%82%BF%E2%80%95COOKPAD-%E3%83%AC%E3%82%BF%E3%82%B9%E3%82%AF%E3%83%A9%E3%83%96MOOK-%E3%82%AF%E3%83%83%E3%82%AF%E3%83%91%E3%83%83%E3%83%89/dp/4827542287%3FSubscriptionId%3D13C5PCPS36EMN8C22682%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D4827542287">Amazon.co.jpで詳細を見る</a>
+</div>
+</div>
+<div style="clear:left;"></div>
+
+<p></p>
+<div style="float:left"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4827542902/kamawada-22/"><img alt="100万人が選んだ大絶賛おかず―もっと料理を楽しみにCOOKPAD http://cookpad.com (レタスクラブMOOK)" class="at-xid-6a0133f4781589970b015435b6f4f1970c" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015435b6f4f1970c-pi.jpg style="border:none;"></a></div>
+<div style="float:left;margin-left:15px;">
+<div style="font-size:12pt"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4827542902/kamawada-22/">100万人が選んだ大絶賛おかず―もっと料理を楽しみにCOOKPAD http://cookpad.com (レタスクラブMOOK)</a></div>
+<div style="font-size:7pt;font-family:verdana;">posted with <a href="http://yusukebe.com/b/amazon/search/">yusukebe.com::AmazonSearch</a> on 2008.12.12</div>
+<div style="font-size:10pt;">
+<ul style="list-style-type:none;padding:0;">
+<li>単行本 / 角川・エス・エス・コミュニケーションズ </li>
+<li>Amazon 売り上げランキング: 39193</li>
+</ul>
+<ul style="list-style-type:none;padding:0;"><li>Amazon おすすめ度の平均: <img alt="2.0" class="at-xid-6a0133f4781589970b015391e38ae3970b" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015391e38ae3970b-pi.gif style="margin:0;"><ul style="list-style-type:none;padding-left:0;">
+<li>
+<img alt="2" class="at-xid-6a0133f4781589970b015391e38ae3970b" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015391e38ae3970b-pi.gif style="margin:0;"> タダで観られるのだから</li>
+<li>
+<img alt="1" class="at-xid-6a0133f4781589970b015391e38b00970b" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015391e38b00970b-pi.gif style="margin:0;"> ご本人の写真のほうが・・・</li>
+<li>
+<img alt="3" class="at-xid-6a0133f4781589970b015391e3783b970b" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015391e3783b970b-pi.gif style="margin:0;"> 一応買いました</li>
+</ul>
+</li></ul>
+<a href="http://www.amazon.co.jp/100%E4%B8%87%E4%BA%BA%E3%81%8C%E9%81%B8%E3%82%93%E3%81%A0%E5%A4%A7%E7%B5%B6%E8%B3%9B%E3%81%8A%E3%81%8B%E3%81%9A%E2%80%95%E3%82%82%E3%81%A3%E3%81%A8%E6%96%99%E7%90%86%E3%82%92%E6%A5%BD%E3%81%97%E3%81%BF%E3%81%ABCOOKPAD-http-cookpad-com-%E3%83%AC%E3%82%BF%E3%82%B9%E3%82%AF%E3%83%A9%E3%83%96MOOK/dp/4827542902%3FSubscriptionId%3D13C5PCPS36EMN8C22682%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D4827542902">Amazon.co.jpで詳細を見る</a>
+</div>
+</div>
+<div style="clear:left;"></div>
+
+
+		</div>
+
+		<div class="post-tags">
+			
+				
+			
+		</div>
+        <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v5.0&appId=233306523373884&autoLogAppEvents=1"></script>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+
+<div class="social-button-area">
+  <ul class="social-button">
+    <li>
+      <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
+    </li>
+    <li>
+      <span class="fb-share-button"  data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2008%2f1212094913%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
+    </li>
+    <li>
+      <a href="https://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label-counter" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>
+    </li>
+  </ul>
+</div>
+
+<div class="disqus-area">
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "yusukebe-com" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<ul class="pagination">
+  
+  <li class="page-item page-prev">
+    <a href="https://yusukebe.com/posts/2008/1203062324/" class="page-link" aria-label="Previous"><span aria-hidden="true">← 1981s忘年会#2 応募開始 「今年もやるよ！1981年生前後エンジニア(もしくはそうでない人も)の忘年会」</span></a>
+  </li>
+  
+  
+  <li class="page-item page-next">
+    <a href="https://yusukebe.com/posts/2008/1212102545/" class="page-link" aria-label="Next"><span aria-hidden="true">エロいワンライナー →</span></a>
+  </li>
+  
+</ul>
+
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright yusukebe.com |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-492497-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

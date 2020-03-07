@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>札コラメーカーの楽しみ方 - ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="札コラメーカーの楽しみ方" />
+<meta property="og:description" content="   先日リリースしたが、案外リアクションが薄くて、個人的に願っていた「空前の札コラブーム」を作れていない…、その札コラを簡単に作れるサービス「札コラメーカー」。とはいえ地味にリリース当初からヴァージョンアップさせていて、それの報告と共に「" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yusukebe.com/posts/2007/1024012834/" />
+<meta property="og:image" content="https://yusukebe.com/icons/myicon.png"/>
+<meta property="article:published_time" content="2007-10-24T10:28:00+09:00" />
+<meta property="article:modified_time" content="2007-10-24T10:28:00+09:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://yusukebe.com/icons/myicon.png"/>
+
+<meta name="twitter:title" content="札コラメーカーの楽しみ方"/>
+<meta name="twitter:description" content="   先日リリースしたが、案外リアクションが薄くて、個人的に願っていた「空前の札コラブーム」を作れていない…、その札コラを簡単に作れるサービス「札コラメーカー」。とはいえ地味にリリース当初からヴァージョンアップさせていて、それの報告と共に「"/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
+	
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://yusukebe.com/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper post">
+		<div class="header">
+	<h1 class="site-title"><a href="https://yusukebe.com/">ゆーすけべー日記</a></h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/yusukebe" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/yusukebe" title="Twitter"><i data-feather="twitter"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post-header">
+			<h1 class="title">札コラメーカーの楽しみ方</h1>
+			<div class="meta">Posted at &mdash; Oct 24, 2007</div>
+		</div>
+
+		<div class="markdown post-body">
+			
+
+<p>
+  先日<a href="http://yusukebe.com/archives/07/10/22/172245.html">リリースした</a>が、案外リアクションが薄くて、個人的に願っていた「空前の札コラブーム」を作れていない…、その札コラを簡単に作れるサービス「<a href="http://pulpsite.net/satsucolla/">札コラメーカー</a>」。
+とはいえ地味にリリース当初からヴァージョンアップさせていて、それの報告と共に「札コラメーカー」の楽しみ方を紹介します。
+</p>
+<p>
+  まず、最初に使って面白いと感じるのは<a href="http://pulpsite.net/satsucolla/word/%E9%9B%86%E5%90%88%E5%86%99%E7%9C%9F">「集合写真」で検索した結果</a>の画像を札コラすることですね。
+たくさんの人の顔が同じものになるということは不気味ですが、ウケます。
+</p>
+<p>
+  <a href="http://pulpsite.net/satsucolla/colla/5000?url=http%3A%2F%2Fblog.sipec-square.net%2Fo-takeda%2Fseminar%2F%25E5%2590%2588%25E5%25AE%25BF%25E9%259B%2586%25E5%2590%2588%25E5%2586%2599%25E7%259C%259F.jpg">
+    <img alt="札コラ" class="at-xid-6a0133f4781589970b015435b6ed8a970c" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015435b6ed8a970c-pi">
+  </a>
+</p>
+<p>
+  あと、検索キーワードでは「<a href="http://pulpsite.net/satsucolla/word/%E3%83%A2%E3%83%BC%E3%83%8B%E3%83%B3%E3%82%B0%E5%A8%98">モーニング娘。</a>」も割りと鉄板ネタです。LOVEマシーンのジャケットとか全員の顔がコラされているどころか、
+変なところに顔が出現していたりします ( 書いといて肖像権やばそげ… ) 。
+</p>
+<p>
+  <a href="http://pulpsite.net/satsucolla/colla/5000?url=http%3A%2F%2Fca.c.yimg.jp%2Fannex%2F1188812218%2Fnetallica.yahoo.co.jp%2Fimages%2Fcontent%2F-%2F5176.jpg">
+    <img alt="札コラ" class="at-xid-6a0133f4781589970b015435b6ed9b970c" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015435b6ed9b970c-pi">
+  </a>
+</p>
+<p>
+  次なる楽しみ方は、お札の顔にするだけではなく、違う有名なお方の顔にしちゃう機能を使うことです。
+今のところ、ルーさん、タモリさん、関根勤さん、バカ殿様さん、そしてリクエストがあったYappoさんの顔が写真の顔ととりかえっこできるように追加しました。もうこうなったら「札コラ」の領域を超えて「アイコラ
+メーカー」になってきちゃってます ( マジで権利やばいかも ) 。各変換された写真のページにそれぞれリンクを張ってあるので、そこをクリックすると変換されます。やはりそれぞれ皆さん顔のインパクトが強いですね。顔を取り替えるだけでこれだけ面白いのか、と感嘆するほど。さすがです。
+</p>
+<p>
+  <font size="2">お札な方以外に、ルー、タモリ、関根勤、バカ殿様、Yappoが並ぶ</font><br>
+  <img alt="札コラ" class="at-xid-6a0133f4781589970b015435b6edb0970c" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015435b6edb0970c-pi">
+</p>
+
+<p>
+  <font size="2">元画像は俺と研究室の後輩「ほよ」なんだがルーさんの顔になるとなんか面白い</font><br>
+  <a href="http://pulpsite.net/satsucolla/colla/100000?url=http%3A%2F%2Fwww.kamadango.com%2Farchives%2FDSC04141.JPG">
+    <img alt="札コラ" class="at-xid-6a0133f4781589970b015435b6edcb970c" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015435b6edcb970c-pi">
+  </a>
+</p>
+
+<p>
+  <font size="2">タモさんいっぱい</font><br>
+  <img alt="札コラ" class="at-xid-6a0133f4781589970b015435b6edde970c" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015435b6edde970c-pi">
+</p>
+<p>
+機能の追加として、公開当初、IRCのとあるチャンネルでご意見をもらって速攻で実装したのですが、
+Flickrの最新写真を表示して、それを札コラできるというものを付け加えました。
+Flickrの写真はサイズも解像度も大きくて変換に時間がかかりますが、
+それだけ出てきた結果が何故だかシュールになります。解像度が高い分、変なところが顔として検出されているからかもしれません。あ、あと細かいですがトップページの最近検索されたキーワードをタグクラウド風にしましたよ。
+</p>
+<p>
+  <font size="2">Flickrの新着画像</font><br>
+  <a href="http://pulpsite.net/satsucolla/flickr">
+    <img alt="札コラ" class="at-xid-6a0133f4781589970b015435b6edeb970c" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015435b6edeb970c-pi.jpg>
+  </a>
+</p>
+<p>
+さて、いろいろと面白い画像が作られるわけですが、それをみんなで共有したい！ということで、
+はてなブックマークを利用してその目的を一部果たす機能をつけました。
+出力された画像のページには、はてなスターも含め、はてなブックマークに追加ボタンがありますが、
+それをクリックして「はてブ」してもらうと、「<a href="http://pulpsite.net/satsucolla/recent">最近はてなブックマークされた札コラ</a>」というページに、少々タイムラグがありますが新着順に表示されるようになっています。また、トップページにも、一番最近はてなブックマークされた画像がリサイズされて表示されています。ですから、皆さんも、是非面白い札コラを見つけたら、はてブしてくれるとそれを共有できるかもしれません。
+</p>
+<p>
+  <font size="2">トップページ</font><br>
+  <img alt="札コラ" class="at-xid-6a0133f4781589970b015435b6edff970c" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015435b6edff970c-pi">
+</p>
+
+<p>
+また、共有のもう一つの試みとしてtumblrを共有して画像を貼り付けていこうというのをやっています。
+こちらです→<a href="http://satsucolla.tumblr.com/">札コラ/tumblr</a>
+ログイン情報を晒すと、
+</p>
+<blockquote>
+ email : satsucolla (at) pulpsite.net<br>
+ pass : ichiyo
+</blockquote>
+<p>
+  となっております。
+  tumblrの方もよかったらご利用ください。
+</p>
+<p>
+ところで「さすがだ」と思ったのは、Perlハッカーで知られるmiyagawaさんの写真を札コラしてみても、
+顔が検出されませんでした→<a href="http://pulpsite.net/satsucolla/colla/5000?url=http%3A%2F%2Fd.hatena.ne.jp%2Fimages%2Fdiary%2Fm%2Fmiyagawa%2Fmiyagawa.jpg">札コラメーカー - http://d.hatena.ne.jp/ images/diary/m/miyagawa/miyagawa.jpg の5000円コラ</a>。
+紫の何かを口に押し付けている→顔が検出されない→「札コラさせねーぞ」と対策をしているのですね。
+やはり偉大な方でございます。
+</p>
+<p>
+というわけでいろいろと紹介してきたわけですが、
+この「札コラメーカー」、使っていくと若干「樋口一葉慣れ」してしまって個人的に受けるインパクトが薄れる反面、「これはぴったりはまったなー、ワロス」という新たな発見もあります。
+暇つぶしにはもってこいですな。てな感じでまだの人は使ってみてください。フィードバック等ありましたら、
+コメント or はてブコメントにて受け付けていまーす。
+</p>
+<ul>
+  <li>
+<a href="http://pulpsite.net/satsucolla/">札コラメーカー</a>
+    <a href="http://b.hatena.ne.jp/append?http://pulpsite.net/satsucolla/">
+      <img alt="このエントリーをはてなブックマークに追加" class="at-xid-6a0133f4781589970b015435b6ee05970c" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015435b6ee05970c-pi.gif></a>
+    <a href="http://b.hatena.ne.jp/entry/http://pulpsite.net/satsucolla/">
+      <img alt="このエントリーを含むはてなブックマーク" class="at-xid-6a0133f4781589970b015435b6ee0f970c" height="12" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015435b6ee0f970c-pi.gif title="このエントリーを含むはてなブックマーク" width="16"></a>
+    <a href="http://b.hatena.ne.jp/entry/http://pulpsite.net/satsucolla/">
+      <img alt="" class="at-xid-6a0133f4781589970b015435b6ee18970c" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015435b6ee18970c-pi.gif>
+    </a>
+  </li>
+</ul>
+
+
+		</div>
+
+		<div class="post-tags">
+			
+				
+					<nav class="nav tags">
+							<ul class="flat">
+								
+								<li><a href="/tags/perl">Perl</a></li>
+								
+							</ul>
+					</nav>
+				
+			
+		</div>
+        <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v5.0&appId=233306523373884&autoLogAppEvents=1"></script>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+
+<div class="social-button-area">
+  <ul class="social-button">
+    <li>
+      <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
+    </li>
+    <li>
+      <span class="fb-share-button"  data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2007%2f1024012834%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
+    </li>
+    <li>
+      <a href="https://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label-counter" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>
+    </li>
+  </ul>
+</div>
+
+<div class="disqus-area">
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "yusukebe-com" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<ul class="pagination">
+  
+  <li class="page-item page-prev">
+    <a href="https://yusukebe.com/posts/2007/1022082245/" class="page-link" aria-label="Previous"><span aria-hidden="true">← 札コラメーカーをリリースしました</span></a>
+  </li>
+  
+  
+  <li class="page-item page-next">
+    <a href="https://yusukebe.com/posts/2007/1025022049/" class="page-link" aria-label="Next"><span aria-hidden="true">P704iに機種変 / 「FOMAカード(UIM)異常」への対処の仕方 →</span></a>
+  </li>
+  
+</ul>
+
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright yusukebe.com |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-492497-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

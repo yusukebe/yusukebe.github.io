@@ -1,0 +1,144 @@
++++
+Categories = ["tech"]
+Description = "        高橋敦の「Macでいいじゃん！」第11回：YouTubeから高画質な動画をゲットしてiPodへ直送する - ITmedia +D PC USER     若干古い記事へのレスであれですが、それ ListPod か YouTu"
+Tags = []
+date = "2008-04-11T13:57:00+09:00"
+title = "簡単に「YouTubeから高画質な動画をゲットしてiPodへ直送する」"
+author = "kamawada"
+archive = ["2008"]
+draft = false
++++
+
+
+<ul>
+  <li>
+    <a href="http://plusd.itmedia.co.jp/pcuser/articles/0804/02/news042.html">高橋敦の「Macでいいじゃん！」第11回：YouTubeから高画質な動画をゲットしてiPodへ直送する - ITmedia +D PC USER</a>
+  </li>
+</ul>
+<p>
+若干古い記事へのレスであれですが、それ ListPod か YouTubeMP4 で簡単にできるよ。
+</p>
+<p>
+*注意: 動画によっては YouTube からダウンロードする時に異様に遅いものや、mpeg4 のダウンロード自体ができないものもありますので、それに関しては諦めるしかないみたいです。
+</p>
+<h4>ひとつの YouTube動画 をダウンロードするなら YouTubeMP4</h4>
+<p>
+とりあえず YouTube 動画を一つだけダウンロードしたい場合、 YouTubeMP4 を使うといいよ。
+</p>
+<ul>
+  <li>
+<a href="http://www.youtubemp4.com/">YouTubeMP4 - YouTube の動画をmpeg4 (mp4 h.264) で高速ダウンロード / Download mpeg4 video from Youtube directly</a>
+  </li>
+</ul>
+<p>
+YouTube の URL がわかっていたらトップページのフォームにそれを入力して Submit ボタンを押すとダウンロードページに行きます。「右クリック → 名前をつけてリンク先を保存」 すれば mpeg4 （h.264コーデック）の動画をYouTube から直接ダウンロードすることができます。ファイル名もFirefoxからだと「YouTube の ビデオID.mp4」になるので、そのままでよければ書き換える必要無し。ダウンロードしたファイルを iTunes にぶちこむと映像が見れて、新しめのものだったら iPod でも再生可能です。また、YouTubeMP4 のトップページのフォームにわざわざ入力しなくても、YouTube の動画のURLを以下のように変更すれば、ダウンロードページに行きます。あとブックマークレットもあるよ。
+</p>
+<blockquote>
+  <a href="http://www.youtube.com/watch?v=FAPtTS0TYtU">http://www.youtube.com/watch?v=FAPtTS0TYtU</a> 　→　 <a href="http://www.youtubemp4.com/watch?v=FAPtTS0TYtU">http://www.youtubemp4.com/watch?v=FAPtTS0TYtU</a>
+</blockquote>
+<p>
+  URL の youtube の後に mp4 を足すと<br>
+  <img alt="YouTubeMP4" class="at-xid-6a0133f4781589970b014e8bd74c4d970d" src="https://yusukebe.com/archives/.a/6a0133f4781589970b014e8bd74c4d970d-pi.gif>
+</p>
+<p>
+  ダウンロードページに行くので、右クリックして名前をつけてリンク先を保存<br>
+  <img alt="YouTubeMP4" class="at-xid-6a0133f4781589970b014e8bd74c64970d" src="https://yusukebe.com/archives/.a/6a0133f4781589970b014e8bd74c64970d-pi.jpg>
+</p>
+
+<p>
+  ダウンロードしたファイルは mpeg4 （h.264）なので iTunes でちゃんと見れるよ<br>
+  <img alt="YouTubeMP4" class="at-xid-6a0133f4781589970b014e8bd74c79970d" src="https://yusukebe.com/archives/.a/6a0133f4781589970b014e8bd74c79970d-pi.jpg>
+</p>
+
+<h4>ListPod では YouTube 動画の Podcast もつくれちゃう</h4>
+<p>
+  複数の動画をダウンロードして iPod に入れたい場合は ListPod がオススメ。
+</p>
+<ul>
+  <li><a href="http://listpod.tv/">ListPod - YouTube動画のマイリストを作ってPodcastで見よう！</a></li>
+</ul>
+<p>
+OpenIDによるユーザー登録をすれば、自分のお気に入りの YouTube 動画を含むマイリストを作れます。YouTube 動画を検索してその中から選んだり、フォームに YouTube 動画のリンクを入力して追加したりしてマイリストに YouTube 動画を追加していきます（これもブックマークレットあるよ）。
+そしてそのマイリストは Podcast を出力するので、iTunes で読み込ませると、一気に複数の動画をダウンロードすることができます。ジャンル別などでマイリストを作れば、Podcast による分類が簡単にできます。これももちろん 同期をすれば iPod で見れます。自分が作るマイリスト以外にも、他のユーザーのマイリスト、キーワードによる検索結果、指定したページに含まれる YouTube 動画一覧も Podcast を出力しています。例えば CDTube の URL を入力してその Podcast を読み込ませておくと、自動的に CD シングルランキング上位の曲に関連する動画が手に入ったりします。
+</p>
+<p>
+  検索結果からマイリストに登録したい動画を選んで「追加」<br>
+  <img alt="ListPod" class="at-xid-6a0133f4781589970b014e8bd74c8b970d" src="https://yusukebe.com/archives/.a/6a0133f4781589970b014e8bd74c8b970d-pi.jpg>
+</p>
+<p>
+  マイリストは Podcast を出力する<br>
+  <img alt="ListPod" class="at-xid-6a0133f4781589970b014e8bd74c99970d" src="https://yusukebe.com/archives/.a/6a0133f4781589970b014e8bd74c99970d-pi.jpg>
+</p>
+<p>
+  iTunes で読み込ませてダウンロードしている様子<br>
+  <img alt="ListPod" class="at-xid-6a0133f4781589970b014e8bd74cb0970d" src="https://yusukebe.com/archives/.a/6a0133f4781589970b014e8bd74cb0970d-pi.jpg>
+</p>
+
+<p>
+  <a href="http://www.youtubemp4.com/">YouTubeMP4</a> 及び
+  <a href="http://listpod.tv/">ListPod</a> 詳しい説明はこちらから。
+</p>
+
+<ul>
+  <li><a href="http://yusukebe.com/archives/08/03/14/212653.html">ゆーすけべー日記: YouTubeのmpeg4ファイルへのリンクを簡単にみつけられるサービスを半日で作った</a></li>
+  <li><a href="http://yusukebe.com/archives/08/03/23/094204.html">ゆーすけべー日記: YouTube動画のお気に入りをPodcast化してiTunesやiPod で見れるサービス「ListPod」をリリースしました</a></li>
+  <li><a href="http://yusukebe.com/archives/08/03/23/093548.html">ゆーすけべー日記: ListPod の使い方</a></li>
+</ul>
+<br>
+
+<p></p>
+<div style="float:left"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B000IIKWM0/kamawada-22/"><img alt="Apple iPod nano 8GB ブラック MB261J/A" src="http://ecx.images-amazon.com/images/I/21%2B-zqgrIfL.jpg" style="border:none;"></a></div>
+<div style="float:left;margin-left:15px;">
+<div style="font-size:12pt"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B000IIKWM0/kamawada-22/">Apple iPod nano 8GB ブラック MB261J/A</a></div>
+<div style="font-size:7pt;font-family:verdana;">posted with <a href="http://yusukebe.com/b/amazon/search/">yusukebe.com::AmazonSearch</a> on 2008.4.11</div>
+<div style="font-size:10pt;">
+<ul style="list-style-type:none;padding:0;">
+<li>エレクトロニクス / アップルコンピュータ (2007-09-06)</li>
+<li>Amazon 売り上げランキング: 39</li>
+</ul>
+<ul style="list-style-type:none;padding:0;"><li>Amazon おすすめ度の平均: <img alt="4.5" class="at-xid-6a0133f4781589970b015435b6d28c970c" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015435b6d28c970c-pi.gif style="margin:0;"><ul style="list-style-type:none;padding-left:0;">
+<li>
+<img alt="5" class="at-xid-6a0133f4781589970b015435b6d28e970c" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015435b6d28e970c-pi.gif style="margin:0;"> 買いました</li>
+<li>
+<img alt="4" class="at-xid-6a0133f4781589970b014e8bd727e1970d" src="https://yusukebe.com/archives/.a/6a0133f4781589970b014e8bd727e1970d-pi.gif style="margin:0;"> ジョギング用に買いました</li>
+<li>
+<img alt="4" class="at-xid-6a0133f4781589970b014e8bd727e1970d" src="https://yusukebe.com/archives/.a/6a0133f4781589970b014e8bd727e1970d-pi.gif style="margin:0;"> サンタさんも楽になりました</li>
+<li>
+<img alt="4" class="at-xid-6a0133f4781589970b014e8bd727e1970d" src="https://yusukebe.com/archives/.a/6a0133f4781589970b014e8bd727e1970d-pi.gif style="margin:0;"> 古いMacユーザーは注意して下さい！</li>
+<li>
+<img alt="5" class="at-xid-6a0133f4781589970b015435b6d28e970c" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015435b6d28e970c-pi.gif style="margin:0;"> 映画を見ると目が疲れます</li>
+</ul>
+</li></ul>
+<a href="http://www.amazon.co.jp/gp/redirect.html%3FASIN=B000IIKWM0%26tag=ws%26lcode=xm2%26cID=2025%26ccmID=165953%26location=/o/ASIN/B000IIKWM0%253FSubscriptionId=13C5PCPS36EMN8C22682">Amazon.co.jpで詳細を見る</a>
+</div>
+</div>
+<div style="clear:left;"></div>
+
+<p></p>
+<div style="float:left"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B000UKMVM0/kamawada-22/"><img alt="Apple iPod touch 32GB MB376J/A" src="http://ecx.images-amazon.com/images/I/21QTDnkt67L.jpg" style="border:none;"></a></div>
+<div style="float:left;margin-left:15px;">
+<div style="font-size:12pt"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B000UKMVM0/kamawada-22/">Apple iPod touch 32GB MB376J/A</a></div>
+<div style="font-size:7pt;font-family:verdana;">posted with <a href="http://yusukebe.com/b/amazon/search/">yusukebe.com::AmazonSearch</a> on 2008.4.11</div>
+<div style="font-size:10pt;">
+<ul style="list-style-type:none;padding:0;">
+<li>エレクトロニクス / アップルコンピュータ (2008-02-06)</li>
+<li>Amazon 売り上げランキング: 732</li>
+</ul>
+<ul style="list-style-type:none;padding:0;"><li>Amazon おすすめ度の平均: <img alt="4.0" class="at-xid-6a0133f4781589970b014e8bd727e1970d" src="https://yusukebe.com/archives/.a/6a0133f4781589970b014e8bd727e1970d-pi.gif style="margin:0;"><ul style="list-style-type:none;padding-left:0;">
+<li>
+<img alt="4" class="at-xid-6a0133f4781589970b014e8bd727e1970d" src="https://yusukebe.com/archives/.a/6a0133f4781589970b014e8bd727e1970d-pi.gif style="margin:0;"> 使って楽しい、というのが何より一番です</li>
+<li>
+<img alt="4" class="at-xid-6a0133f4781589970b014e8bd727e1970d" src="https://yusukebe.com/archives/.a/6a0133f4781589970b014e8bd727e1970d-pi.gif style="margin:0;"> こりゃ楽しい♪</li>
+<li>
+<img alt="5" class="at-xid-6a0133f4781589970b015435b6d28e970c" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015435b6d28e970c-pi.gif style="margin:0;"> ビジネスと趣味　出張時には大変重宝しています。</li>
+<li>
+<img alt="4" class="at-xid-6a0133f4781589970b014e8bd727e1970d" src="https://yusukebe.com/archives/.a/6a0133f4781589970b014e8bd727e1970d-pi.gif style="margin:0;"> やっぱりでました32GB</li>
+<li>
+<img alt="5" class="at-xid-6a0133f4781589970b015435b6d28e970c" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015435b6d28e970c-pi.gif style="margin:0;"> 現時点での最強のメディアプレーヤーかも</li>
+</ul>
+</li></ul>
+<a href="http://www.amazon.co.jp/gp/redirect.html%3FASIN=B000UKMVM0%26tag=ws%26lcode=xm2%26cID=2025%26ccmID=165953%26location=/o/ASIN/B000UKMVM0%253FSubscriptionId=13C5PCPS36EMN8C22682">Amazon.co.jpで詳細を見る</a>
+</div>
+</div>
+<div style="clear:left;"></div>
+

@@ -1,0 +1,33 @@
++++
+Categories = ["tech"]
+Description = " YAPC::Asia 2009 コーポレートトラックにて、弊社ワディットが40分の発表をさせていただきました。現在、弊社、といっても親子二人で開発中の「Kailas」というアプリケーションについてです。父親がメインで話して、俺はイントロと"
+Tags = ["Perl"]
+date = "2009-09-14T11:20:00+09:00"
+title = "発表資料「Kailas - Yet Another BPM Framework」by Wadit in YAPC::Asia 2009"
+author = "kamawada"
+archive = ["2009"]
+draft = false
++++
+
+
+<p>
+YAPC::Asia 2009 コーポレートトラックにて、弊社ワディットが40分の発表をさせていただきました。
+現在、弊社、といっても親子二人で開発中の「Kailas」というアプリケーションについてです。
+父親がメインで話して、俺はイントロと技術紹介の部分について話しました。
+</p>
+<p>
+以下に vkgtaro さんに撮ってもらった写真と、発表資料を貼付けておきます( thanks to vkgtaro ) 。
+Kailas はもう少し改良・機能追加を行ってプロダクションレベルに近づいたら何かしらの形で、
+公開したいと思いますのでよろしくお願いします。
+</p>
+<p>
+<img alt="wadit" class="at-xid-6a0133f4781589970b015435b6f5cd970c" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015435b6f5cd970c-pi.jpg>
+</p>
+
+<div id="__ss_1991457" style="width:425px;text-align:left">
+<a href="http://www.slideshare.net/yusukebe/kailas-by-wadit-in-yapcasia-2009" style="font:14px Helvetica,Arial,Sans-serif;display:block;margin:12px 0 3px 0;text-decoration:underline;" title="Kailas by Wadit in YAPC::Asia 2009">Kailas by Wadit in YAPC::Asia 2009</a><object height="355" style="margin:0px" width="425"><param name="movie" value="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=yapcwadit090910-090913104315-phpapp02&amp;stripped_title=kailas-by-wadit-in-yapcasia-2009">
+<param name="allowFullScreen" value="true">
+<param name="allowScriptAccess" value="always">
+<embed allowfullscreen="true" allowscriptaccess="always" height="355" src="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=yapcwadit090910-090913104315-phpapp02&amp;stripped_title=kailas-by-wadit-in-yapcasia-2009" type="application/x-shockwave-flash" width="425"></embed></object><div style="font-size:11px;font-family:tahoma,arial;height:26px;padding-top:2px;">View more <a href="http://www.slideshare.net/" style="text-decoration:underline;">documents</a> from <a href="http://www.slideshare.net/yusukebe" style="text-decoration:underline;">yusukebe</a>.</div>
+</div>
+

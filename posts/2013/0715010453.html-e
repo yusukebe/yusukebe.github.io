@@ -1,0 +1,170 @@
++++
+Categories = ["tech"]
+Description = " 去年の11月20日に発売した拙作「Webサービスのつくり方」の Amazon Kindle版 が出ましたー！出版社である技術評論社さんに頑張ってもらいました次第。    お値段が紙の本よりほんの少々安いくらいなのですが、Kindle読める"
+Tags = ["Web Essay", "News"]
+date = "2013-07-15T10:04:00+09:00"
+title = "「Webサービスのつくり方」Kindle版発売とアップデートすべき項目"
+author = "kamawada"
+archive = ["2013"]
+draft = false
++++
+
+
+<p>去年の11月20日に発売した拙作「Webサービスのつくり方」の <a href="http://www.amazon.co.jp/exec/obidos/ASIN/B00DUSKOFA/kamawada-22/">Amazon Kindle版</a> が出ましたー！
+出版社である技術評論社さんに頑張ってもらいました次第。</p>
+
+<p><a href="http://yusukebe.com/archives/2013/07/15/IMG_0763.JPG"><img alt="IMG_0763.JPG" src="http://yusukebe.com/archives/assets_c/2013/07/IMG_0763-thumb-550x412-416.jpg" width="400" class="mt-image-none" style=""></a></p>
+
+<p>お値段が紙の本よりほんの少々安いくらいなのですが、Kindle読める端末で持ち歩けるのでよろしければどうぞ〜</p>
+
+<p>と推したいところで、書いたからには推すのですが、実は紙の書籍はもちろん、このKindle版にも「アップデートすべき項目」がいくつかあがって来ました。というのもTwitter APIを使った数カ所のコードサンプルが現状では動かなくなっているのです... 出版社さんとは相談しつつ改訂や公式のサポートページでフォローしていきますが、まずはこちらの記事でざっくりと項目と修正案を紹介したいと思います。</p>
+
+<hr>
+
+<p><br></p>
+
+<h3>「ぐだぐだ言ってないでコードを書けよ、ハゲ」で出てくるスクリプト</h3>
+
+<p>短いコードをサクっと書くことで検証も出来るよ〜という例でTwitter Search APIを使っているのですが、そのAPIが「1.1」というバージョンへ完全移行してしまったために以下のように掲載されているコードが動きません。</p>
+
+<p><img alt="screenshot_2013_07_14T23_29_23+0000.png" src="http://yusukebe.com/archives/2013/07/15/screenshot_2013_07_14T23_29_23%2B0000.png" height="500" class="mt-image-none" style="padding:1px; border:1px solid #ccc;"></p>
+
+<p>今書くならば「Net::Twitter::Lite」というモジュールを使ってこのようになります。</p>
+
+<pre> use Net::Twitter::Lite::WithAPIv1_1;
+use Config::Pit;
+use Encode;
+use utf8;
+
+binmode STDOUT, ':utf8';
+
+my $config = pit_get('twitter-api');
+my $nt = Net::Twitter::Lite::WithAPIv1_1-&gt;new(
+    consumer_key =&gt; $config-&gt;{consumer_key},
+    consumer_secret =&gt; $config-&gt;{consumer_secret},
+    access_token =&gt; $config-&gt;{token},
+    access_token_secret =&gt; $config-&gt;{token_secret}
+);
+my $result = $nt-&gt;search(
+    {
+        q =&gt; 'おはよう',
+        lang =&gt; 'ja'
+    }
+);
+
+for my $tweet ( @{ $result-&gt;{statuses} } ) {
+    print "$tweet-&gt;{text}\n";
+    print "----------------------------------------\n";
+}
+ </pre>
+
+<p>検証用のスクリプトなら既存の便利なCPANモジュールに頼っちゃった方がいいっすね。</p>
+
+<p><br></p>
+
+<h3>「30分、JavaScriptでつくるWebサービスの動くモック」に出てくるJS</h3>
+
+<p>Instagramの写真検索サービスをJavaScriptだけでつくっちゃえ、しかも30分で。という節です。
+これまた古いTwitter Search APIを使っているので認証かまさないと動きません。一旦Twitterから離れて似たように面白いサービスがつくれないか？を考えていますが、なかなか思いつかないので、TopsyというTwitterと連動する検索サービスのAPIを利用して同じ挙動を実装してみます。</p>
+
+<p>TopsyのAPIを利用するには、APIキーが必要なので、以下のページから申請をします。</p>
+
+<ul>
+<li><a href="http://manage.topsy.com/app">http://manage.topsy.com/app</a></li>
+</ul>
+
+
+<p>ちなみに無料での利用は7,000リクエストまでとなっておりそれ以上はTopsy側とご相談みたいです。モックアップをつくるレベルでは無料のお試しである程度十分だと思います。</p>
+
+<p><img alt="screenshot_2013_07_15T00_05_49+0000.png" src="http://yusukebe.com/archives/2013/07/15/screenshot_2013_07_15T00_05_49%2B0000.png" height="500" class="mt-image-none" style="padding:1px;border:1px solid #ccc;"></p>
+
+<p>このあたりのコードを以下のように修正するとTopsy APIでInstagram検索が叶えられます。</p>
+
+<pre> $(document).ready(function(){
+  var apikey = '';
+  $('#form').submit(function(){
+    var query = $(this).children('input[name="q"]').val();
+    if(!query) return false;
+    $.ajax({
+    url: 'http://otter.topsy.com/search.js',
+      data: {
+        apikey: apikey,
+        q: 'site:instagr.am ' + query,
+        allow_lang: 'ja'
+      },
+      dataType: 'jsonp',
+      success: function (json){
+        var entries = json.response.list;
+        if(!entries) return;
+        $.each(entries, function(){
+          console.log(this.content);
+          console.log(this.medium_thumbnail);
+        });
+      }
+    });
+    return false;
+  });
+});
+ </pre>
+
+<p><br></p>
+
+<h3>「Web APIで巨人の肩に立つ」の例</h3>
+
+<p>この節でもTwitter Search APIをおもっきし使ってますw
+ただ、所々の解説はWeb API全般に通じる汎用的なものとなっているので例題を返ればよいはず。
+ってことでWeb API入門として触るのに「YouTube Data API」はどうかなーって思っています。
+例えば、YouTubeにある動画の中から「歌ってみた」を検索し、人気順でURLを列挙するPerlスクリプトはこんな感じです。</p>
+
+<pre> use LWP::UserAgent;
+use URI;
+use JSON qw/decode_json/;
+use Encode qw/encode_utf8/;
+use utf8;
+
+my $query = '歌ってみた';
+my $uri = URI-&gt;new('http://gdata.youtube.com/feeds/api/videos');
+$uri-&gt;query_form(
+    alt =&gt; 'json',
+    order_by =&gt; 'rating',
+    q =&gt; $query
+);
+my $ua = LWP::UserAgent-&gt;new;
+my $res = $ua-&gt;get($uri);
+die "Error: " . $res-&gt;status_line if $res-&gt;is_error;
+my $json = $res-&gt;decoded_content;
+my $ref  = decode_json($json);
+
+for my $entry ( @{ $ref-&gt;{feed}{entry} } ) {
+    print $entry-&gt;{link}[0]{href} . "\n";
+}
+ </pre>
+
+<p><br></p>
+
+<h3>「いかにして大量のおっぱい画像をダウンロードするか」は？</h3>
+
+<p>動いてる ﾔﾀ━━━━━━ヽ(ﾟ｀∀´ﾟ)ﾉｳﾋｮ ━━━━━━!!!</p>
+
+<hr>
+
+<p><br></p>
+
+<p>休日あけたら編集者さんと相談してこれらを分かりやすく読んでもらっている方へ分かりやすく伝えるようにします。ってことで変更箇所はまだ反映されてないけど、そのうちアップデートかかると思うので、Kindle版の「Webサービスのつくり方」もよろしくお願いします。</p>
+
+<div class="amazlet-box" style="margin-bottom:0px;">
+<div class="amazlet-image" style="float:left;margin:0px 12px 1px 0px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B00DUSKOFA/kamawada-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/51jvXvZMPYL._SL160_.jpg" alt="Webサービスのつくり方　――「新しい」を生み出すための33のエッセイ (Software Design plus)" style="border: none;"></a></div>
+<div class="amazlet-info" style="line-height:120%; margin-bottom: 10px">
+<div class="amazlet-name" style="margin-bottom:10px;line-height:120%">
+<a href="http://www.amazon.co.jp/exec/obidos/ASIN/B00DUSKOFA/kamawada-22/ref=nosim/" name="amazletlink" target="_blank">Webサービスのつくり方　――「新しい」を生み出すための33のエッセイ (Software Design plus)</a><div class="amazlet-powered-date" style="font-size:80%;margin-top:5px;line-height:120%">posted with <a href="http://www.amazlet.com/" title="amazlet" target="_blank">amazlet</a> at 13.07.15</div>
+</div>
+<div class="amazlet-detail">技術評論社 (2013-07-10)<br>売り上げランキング: 2,064<br>
+</div>
+<div class="amazlet-sub-info" style="float: left;"><div class="amazlet-link" style="margin-top: 5px"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B00DUSKOFA/kamawada-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jpで詳細を見る</a></div></div>
+</div>
+<div class="amazlet-footer" style="clear: left"></div>
+</div>
+
+
+<p><br></p>
+

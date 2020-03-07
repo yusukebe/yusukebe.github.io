@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>SaaS World 2007 で「『マッシュアップって何』って聞かれた時にこれを見せれば一発でわかってもらえるサイトの紹介とか」をライトニングトークしてきました - ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="SaaS World 2007 で「『マッシュアップって何』って聞かれた時にこれを見せれば一発でわかってもらえるサイトの紹介とか」をライトニングトークしてきました" />
+<meta property="og:description" content="   28日(水)、29日(木)に SaaS World 2007 なるイベントが東京ミッドタウンにて開催され、そこで昨日、MashUpAwardのブースにてライトニングトークしてきました。        「SaaS」というとmiyagaw" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yusukebe.com/posts/2007/1130025427/" />
+<meta property="og:image" content="https://yusukebe.com/icons/myicon.png"/>
+<meta property="article:published_time" content="2007-11-30T11:54:00+09:00" />
+<meta property="article:modified_time" content="2007-11-30T11:54:00+09:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://yusukebe.com/icons/myicon.png"/>
+
+<meta name="twitter:title" content="SaaS World 2007 で「『マッシュアップって何』って聞かれた時にこれを見せれば一発でわかってもらえるサイトの紹介とか」をライトニングトークしてきました"/>
+<meta name="twitter:description" content="   28日(水)、29日(木)に SaaS World 2007 なるイベントが東京ミッドタウンにて開催され、そこで昨日、MashUpAwardのブースにてライトニングトークしてきました。        「SaaS」というとmiyagaw"/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
+	
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://yusukebe.com/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper post">
+		<div class="header">
+	<h1 class="site-title"><a href="https://yusukebe.com/">ゆーすけべー日記</a></h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/yusukebe" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/yusukebe" title="Twitter"><i data-feather="twitter"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post-header">
+			<h1 class="title">SaaS World 2007 で「『マッシュアップって何』って聞かれた時にこれを見せれば一発でわかってもらえるサイトの紹介とか」をライトニングトークしてきました</h1>
+			<div class="meta">Posted at &mdash; Nov 30, 2007</div>
+		</div>
+
+		<div class="markdown post-body">
+			
+
+<p>
+  28日(水)、29日(木)に <a href="http://www.idg.co.jp/expo/saas/"><strong>SaaS World 2007</strong></a> なるイベントが東京ミッドタウンにて開催され、
+そこで昨日、MashUpAwardのブースにてライトニングトークしてきました。
+</p>
+<p>
+  <img alt="SaaS World 2007" class="at-xid-6a0133f4781589970b014e8bd74813970d" src="https://yusukebe.com/archives/.a/6a0133f4781589970b014e8bd74813970d-pi.jpg>
+  <img alt="SaaS World 2007" class="at-xid-6a0133f4781589970b014e8bd74836970d" src="https://yusukebe.com/archives/.a/6a0133f4781589970b014e8bd74836970d-pi.jpg>
+</p>
+<p>
+「SaaS」というとmiyagawaさんが以前それ関係のニュースページかなんかを「バズワーズktkr」って感じでソーシャル・ブックマークしていた印象があるくらいでぶっちゃけ俺もよくわかりません。
+まぁビジネスよりの話で、実際会場に行ってみるとスーツ来た人ばっかりで俺が行くとめちゃくちゃ場違いな雰囲気でした。
+</p>
+
+<p>
+  <img alt="SaaS World 2007" class="at-xid-6a0133f4781589970b014e8bd7484a970d" src="https://yusukebe.com/archives/.a/6a0133f4781589970b014e8bd7484a970d-pi.jpg>
+</p>
+<p>
+発表する経緯としては、以前インタビューしていただいたMashupediaの中の人からお誘いがあり、
+「MashUpAwardの展示ブースを構えるんだけど、そこでマッシュアップをアピールしない？」ということで、
+快く承諾させていただいたという形です。
+「MashUpAward」というだけあって、歴代の Mash up Award 受賞者の方や有名なマッシュアッパー（っていうのかな？）の人がたくさん集まっていました。
+例えば、
+</p>
+<ul>
+  <li>Mash up Award 1st 最優秀賞の<a href="http://blog.calta.info/" target="_blank">CALTA Project</a>さん（<a href="http://mizube.dyndns.info/" target="_blank">みんなの水遊びMAP</a>/<a href="http://calta.jp/bybus" target="_blank">バスでお出かけMAP</a>）</li>
+  <li>Mash up Award 2nd 優秀賞の<a href="http://www.goga.co.jp/" target="_blank">株式会社ゴーガの石丸</a>さん（<a href="http://doodle.st/k/maps.php" target="_blank">doodle（ドゥードゥル）</a>）</li>
+  <li>Mash up Award 3rd 最優秀賞の<a href="http://ongmap.com/blog/" target="_blank">yuki</a>さん（<a href="http://ongmap.com/" target="_blank">ONGMAP.COM</a>）</li>
+</ul>
+<p>
+などなどの方々です。
+</p>
+<p>
+発表は1メートルという超狭い区画の中に液晶ディスプレイで画面出力して、展示会場の中でQ&amp;Aを含めた30分のプレゼンです。
+</p>
+<p>
+  <font size="2">発表しているのは<a href="http://gogo.gs/">ガソリン価格比較サイト gogo.gs</a>の小川さん</font><br>
+  <img alt="SaaS World 2007" class="at-xid-6a0133f4781589970b014e8bd74857970d" src="https://yusukebe.com/archives/.a/6a0133f4781589970b014e8bd74857970d-pi.jpg>
+  <img alt="SaaS World 2007" class="at-xid-6a0133f4781589970b014e8bd7486e970d" src="https://yusukebe.com/archives/.a/6a0133f4781589970b014e8bd7486e970d-pi.jpg>
+</p>
+<p>
+  俺は、「<strong>『マッシュアップって何』って聞かれた時にこれを見せれば一発でわかってもらえるサイトの紹介とか</strong>」と題し、CDTubeを主に紹介とデモをしてきました。
+狙って割と身を削った内容にしてみました。展示場所が入り口いきなりのところにあるので、場違いながら、そこそこの人に見てもらい、そこそこの受けはとれたんじゃないでしょうかね。
+発表資料は以下に置いておくのでよろしければどうぞー（資料作成にあたってamachangの作っているS6を使わせてもらいました。HTMLなのでこの日記を書いているような感覚で作れるのでいいね！amachang++）。
+</p>
+<ul>
+  <li><a href="http://kamawada.com/~yusuke/yusukebe/archives/files/presen/071129_saasworld/">「マッシュアップ」って何って聞かれた時にこれを見せれば一発でわかってもらえるサイトの紹介とか</a></li>
+</ul>
+<p>
+  イベントが終わった後は、秋葉原のカレー屋だけど純日本居酒屋風（もちろんカレーもおいしかった）「<strong>トプカ</strong>」にて少々早い忘年会。
+</p>
+<p>
+  <font size="2">カレー屋にしめ鯖がある</font><br>
+  <img alt="SaaS World 2007" class="at-xid-6a0133f4781589970b014e8bd74883970d" src="https://yusukebe.com/archives/.a/6a0133f4781589970b014e8bd74883970d-pi.jpg>
+  <img alt="SaaS World 2007" class="at-xid-6a0133f4781589970b014e8bd74890970d" src="https://yusukebe.com/archives/.a/6a0133f4781589970b014e8bd74890970d-pi.jpg>
+</p>
+<p>
+  そしたら俺の大ファンらしい「<a href="http://d.hatena.ne.jp/nodoguro/">のどぐろ</a>」さんがいたよ！
+この日記もずーと見ててくれるとのことで嬉しい限りです！
+のどぐろさんもそうですが、1981年世代ならぬ「72年世代」の方々がほんと多くて、
+いいお兄さんたちの話を聞けてとっても楽しかった。
+Shibuya.pm のような方々とお話するのももちろん面白いですが、
+今回来ていたような人たちは、自分で会社を起こしたり、フリーでやっている方も結構いて、そういう意味で興味深かったです。
+ところで、俺がああいう会に行くとエロトークという方向になるのはやっぱりエロギークだからでしょうかね。
+</p>
+<p>
+  <img alt="SaaS World 2007" class="at-xid-6a0133f4781589970b014e8bd7489b970d" src="https://yusukebe.com/archives/.a/6a0133f4781589970b014e8bd7489b970d-pi.jpg>
+  <img alt="SaaS World 2007" class="at-xid-6a0133f4781589970b014e8bd748a3970d" src="https://yusukebe.com/archives/.a/6a0133f4781589970b014e8bd748a3970d-pi.jpg>
+</p>
+<p>
+ちゅーことで、果たしてそれがマッシュアップと呼べるものなのかどうなのかはわかりませんが、
+新しくて面白いサービスをこれからもどんどん作っていきたいと刺激されたイベント＆集まりでした。
+今回お会いした人たちとは是非また出会えることを楽しみにしていまーす。
+これからもよろしくです。
+</p>
+
+
+		</div>
+
+		<div class="post-tags">
+			
+				
+			
+		</div>
+        <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v5.0&appId=233306523373884&autoLogAppEvents=1"></script>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+
+<div class="social-button-area">
+  <ul class="social-button">
+    <li>
+      <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
+    </li>
+    <li>
+      <span class="fb-share-button"  data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2007%2f1130025427%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
+    </li>
+    <li>
+      <a href="https://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label-counter" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>
+    </li>
+  </ul>
+</div>
+
+<div class="disqus-area">
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "yusukebe-com" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<ul class="pagination">
+  
+  <li class="page-item page-prev">
+    <a href="https://yusukebe.com/posts/2007/1128082216/" class="page-link" aria-label="Previous"><span aria-hidden="true">← 1981 世代のエンジニア（もしくはそうじゃない人も）で集まってなんかしよう</span></a>
+  </li>
+  
+  
+  <li class="page-item page-next">
+    <a href="https://yusukebe.com/posts/2007/1130033024/" class="page-link" aria-label="Next"><span aria-hidden="true">PlaggerでCDTube(シングルランキング)の映像をまとめてダウンロード＆Podcast →</span></a>
+  </li>
+  
+</ul>
+
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright yusukebe.com |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-492497-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

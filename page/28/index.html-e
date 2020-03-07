@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="generator" content="Hugo 0.63.2" />
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="alternate" type="application/rss+xml" href="https://yusukebe.com/index.xml" title="ゆーすけべー日記" />
+	<meta property="og:title" content="ゆーすけべー日記" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://yusukebe.com/" />
+<meta property="og:image" content="https://yusukebe.com/icons/myicon.png"/>
+<meta property="og:updated_time" content="2020-03-06T15:46:50+09:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://yusukebe.com/icons/myicon.png"/>
+
+<meta name="twitter:title" content="ゆーすけべー日記"/>
+<meta name="twitter:description" content=""/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
+	
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://yusukebe.com/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+  <div class="container wrapper">
+	<div class="header">
+	<h1 class="site-title"><a href="https://yusukebe.com/">ゆーすけべー日記</a></h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/yusukebe" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/yusukebe" title="Twitter"><i data-feather="twitter"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+	<div class="recent-posts section">
+	  <h2 class="section-header">
+		Recent posts
+	  </h2>
+	  <div class="posts">
+		
+		
+		
+		<div class="post">
+		  <div class="meta">Aug 31, 2010</div>
+		  <a class="title" href="/posts/2010/0831013338/">ディレクトリ配下の.pmファイルでuseしているCPANモジュールを一気にインストールする</a> &mdash;
+		  <span class="description">
+			
+			 これが一番簡単っぽい？ Module::Usedなるモジュールをインストールして付属のmodules-usedコマンドを使ってみる。  $ cpanm --sudo Module::Used$ modules-used ./ | cpan
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Aug 27, 2010</div>
+		  <a class="title" href="/posts/2010/0827021741/">話題のサイトをみつけるならTwib! - リニューアルしたよ</a> &mdash;
+		  <span class="description">
+			
+			 Twitterでつぶやかれた日本語ポストを収集して人気順に並べるサービスTwibがリリース一周年記念ということでリニューアルしたよ。    はてぶに似たデザインになって見やすくなって、はてぶとは違ってみんなのツイート付きだったりして楽しい
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Aug 26, 2010</div>
+		  <a class="title" href="/posts/2010/0825225120/">WEB&#43;DB PRESS vol.58に「Twitterから学ぶWeb APIのキホン」を寄稿しました</a> &mdash;
+		  <span class="description">
+			
+			 もう発売になっているのですよね。WEB&#43;DB PRESSのPerl Hackers Hubというコーナーに恐れ多くも登場させていただき早漏。    今まで執筆しているのがmiyagwaさん、牧さん、typesterさんというすごいメンツな
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Aug 18, 2010</div>
+		  <a class="title" href="/posts/2010/0818125541/">エロサイトのSEO対策、キーワード解析に「エロワード」始動！</a> &mdash;
+		  <span class="description">
+			
+			 新しく始動したサイトについて説明します。僕自身、SEOについて特別な知識を持っているわけではないことを前提にしてください。  たくさんエロサイト作っているとSEO対策にそれらのサイトを集めて、相互リンクを自動的に張る様な仕組みが欲しくなっ
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Aug 17, 2010</div>
+		  <a class="title" href="/posts/2010/0817034440/">エログのYourFileHost動画を連続再生「ElogPlayer」を作ってみた</a> &mdash;
+		  <span class="description">
+			
+			 とあるFlashベースの動画再生ライブラリがいい感じなので、それを利用してYourFileHostの動画を再生するサービスを作ってみた。久しぶりにAS3触りました。ただ、再生するだけじゃつまらないので、エログ等のYourFileHostの
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Aug 14, 2010</div>
+		  <a class="title" href="/posts/2010/0814014523/">マッシュアップとライブラリ活用で「ホテルの空室検索」を作る</a> &mdash;
+		  <span class="description">
+			
+			 今年も「MASHUP AWARD」が開催されますね！MASHUP AWARDとは簡単に捕捉すると、提供されるWeb APIを活用してマッシュアップサービスを作って、大賞に選ばれると100万円とかもらえちゃう割とウェブのクリエータにとっては
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Aug 12, 2010</div>
+		  <a class="title" href="/posts/2010/0811163658/">痔にはレンシン</a> &mdash;
+		  <span class="description">
+			
+			 TwitterのTLを眺めていると@ny○ntanという人が痔の話題ばかりしているので、「時代は痔か！」と思って痔について調べてみました。どうもレンシンという薬が効くようですね。こちらのページのレビューをみても、   レンシンが痔にいいと
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Aug 10, 2010</div>
+		  <a class="title" href="/posts/2010/0809222827/">iPhoneエロサイトの決定版！？「AVPhone」</a> &mdash;
+		  <span class="description">
+			
+			 今までiPhone/iPad用のエロサイトをいくつか作ってきましたが、決定版！？という具合のいい作品ができたので紹介します。名前は「AVPhone」。「YourAVHost for iPhone/iPad」という今までのサービスの生まれ変
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Aug 6, 2010</div>
+		  <a class="title" href="/posts/2010/0806100224/">YourAVHostの次へ「PornStar*」始動</a> &mdash;
+		  <span class="description">
+			
+			 YourAVHostはYourFileHostの動画を、AV女優の辞書とエロ動画紹介ブログ(エログ)とのマッチングによりタグ別で表示させるサービスでそれなりに人気を博し、博している。しかし、以下のグラフを見て欲しい。その動画の供給源である
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jul 30, 2010</div>
+		  <a class="title" href="/posts/2010/0730015100/">発作的にYourFileHostのFLVをダウンロードできるサイトを作った【2】</a> &mdash;
+		  <span class="description">
+			
+			 なんか今日の朝、急に作りたくなったので作った。  YourFileHost動画のURLをフォームに入れてボタンを押すと、その動画のFLVのパスを取得して表示してくれるというただそれだけのサービスです。  OurFLV - YourFile
+			
+		  </span>
+		</div>
+		
+		
+
+<ul class="pagination">
+	<li class="page-item page-prev">
+	
+    <a href="/page/27/" class="page-link" aria-label="Previous"><span aria-hidden="true">← Prev page</span></a>
+	
+	</li>
+	<li class="page-item page-next">
+	
+    <a href="/page/29/" class="page-link" aria-label="Next"><span aria-hidden="true">Next page →</span></a>
+	
+	</li>
+</ul>
+
+
+	  </div>
+	</div>
+  </div>
+  <div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright yusukebe.com |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-492497-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

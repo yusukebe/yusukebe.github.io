@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="generator" content="Hugo 0.63.2" />
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="alternate" type="application/rss+xml" href="https://yusukebe.com/index.xml" title="ゆーすけべー日記" />
+	<meta property="og:title" content="ゆーすけべー日記" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://yusukebe.com/" />
+<meta property="og:image" content="https://yusukebe.com/icons/myicon.png"/>
+<meta property="og:updated_time" content="2020-03-06T15:46:50+09:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://yusukebe.com/icons/myicon.png"/>
+
+<meta name="twitter:title" content="ゆーすけべー日記"/>
+<meta name="twitter:description" content=""/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
+	
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://yusukebe.com/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+  <div class="container wrapper">
+	<div class="header">
+	<h1 class="site-title"><a href="https://yusukebe.com/">ゆーすけべー日記</a></h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/yusukebe" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/yusukebe" title="Twitter"><i data-feather="twitter"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+	<div class="recent-posts section">
+	  <h2 class="section-header">
+		Recent posts
+	  </h2>
+	  <div class="posts">
+		
+		
+		
+		<div class="post">
+		  <div class="meta">Nov 26, 2001</div>
+		  <a class="title" href="/posts/2001/1126140943/">おれだよおれさんから送られたメッセージ</a> &mdash;
+		  <span class="description">
+			
+			ありがとう。 [2001/11/27:18:43:39 &#43;0900]RURI3c035f5b61b77 1 おれだよおれyou@somewhere.orghttp://digitention.comだよ！！おい！！感想などなにもねーよ！！お
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Nov 25, 2001</div>
+		  <a class="title" href="/posts/2001/1125140941/">PETITHIKI</a> &mdash;
+		  <span class="description">
+			
+			今日は撮影、やっと台本が完成したぜい！ http://web.sfc.keio.ac.jp/~yusukebe/kakehiki/
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Nov 24, 2001</div>
+		  <a class="title" href="/posts/2001/1124140940/">petithiki</a> &mdash;
+		  <span class="description">
+			
+			天気：はれ いよいよ明日はDD1のプロトタイプ撮影。 実はMIVEの準備もあって、マジてんてこ舞い。 ガンバらんと。
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Nov 24, 2001</div>
+		  <a class="title" href="/posts/2001/1124140939/">法事</a> &mdash;
+		  <span class="description">
+			
+			天気：はれ 今日は、母方のおじいちゃんの7回忌だった。 久しぶりに家族行事にでた。 親父のクルマが修理にでているのでドライバーをやった。 寺の坊主が代わっていた。 前の坊主は競輪にお金を使っていて、おろされたらしい 今の坊主の方が断然良い。
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Nov 22, 2001</div>
+		  <a class="title" href="/posts/2001/1122140937/">冬</a> &mdash;
+		  <span class="description">
+			
+			いよいよ冬がやってきた。 三田祭&#43;休日で人がすくないSFC。木々が紅葉している。 なんかたそがれてしまう。 冬になる直前の寒さ、空気の匂いはそんな力がある。
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Nov 21, 2001</div>
+		  <a class="title" href="/posts/2001/1121140936/">でももし</a> &mdash;
+		  <span class="description">
+			
+			でももし俺が番号みまちがえてたりしたらどうなる？ 自慢しておいて、合格通知が届かないとか。 まじ寒い。~ そんな自分を想像してテンションちょい下がる。
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Nov 21, 2001</div>
+		  <a class="title" href="/posts/2001/1121140935/">初級シスアド合格!!!!!!!!!!!!!!!!!!!!!!!!!!!</a> &mdash;
+		  <span class="description">
+			
+			今秋受けた初級シスアドの結果がついにでました。 http://www.jitec.jipdec.or.jp/1_05goukaku/ad20012_kysi89iomgzued6/AD35002.htmlもう発表になってました。 どきどきし
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Nov 20, 2001</div>
+		  <a class="title" href="/posts/2001/1120140934/">ユージュアルサスペクツ</a> &mdash;
+		  <span class="description">
+			
+			天気：晴れ この映画にはマジびびった！！ DD1のグルワで参考にしようってみたんだけど、すげかったぜー 最後の最後にひっくり返された。半端なかった これ見たあとMBrowserのコンテンツ考えたら、すっげー映画っぽくなっちまった。 それほど
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Nov 19, 2001</div>
+		  <a class="title" href="/posts/2001/1119140930/">theme変更</a> &mdash;
+		  <span class="description">
+			
+			ついでにthemeもjikenbo&#43;にした。 ちょいと見栄えが分かったかな。あとはCSSとか直せばバッチしだね。
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Nov 19, 2001</div>
+		  <a class="title" href="/posts/2001/1119140929/">Webから日記を更新</a> &mdash;
+		  <span class="description">
+			
+			Webから日記を更新できるようにした。 これだとめちゃらくだ。今まではSSHでSFCに入ってemacsで書き換えてたからねー いまでmail2hnfがうまくいかなかったんだよねー。 どうやら、forwardファイルの置き場所がよくなった見た
+			
+		  </span>
+		</div>
+		
+		
+
+<ul class="pagination">
+	<li class="page-item page-prev">
+	
+    <a href="/page/268/" class="page-link" aria-label="Previous"><span aria-hidden="true">← Prev page</span></a>
+	
+	</li>
+	<li class="page-item page-next">
+	
+    <a href="/page/270/" class="page-link" aria-label="Next"><span aria-hidden="true">Next page →</span></a>
+	
+	</li>
+</ul>
+
+
+	  </div>
+	</div>
+  </div>
+  <div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright yusukebe.com |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-492497-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

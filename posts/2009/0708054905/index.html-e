@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>静的コンテンツを Amazon S3 でサーブさせるのはなかなかいい - ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="静的コンテンツを Amazon S3 でサーブさせるのはなかなかいい" />
+<meta property="og:description" content=" mod_perl などを使ったアプリケーションの場合、パフォーマンスを引き出すための Web サーバ構成は apache を使った場合最低でも、「アプリケーションサーバ（e.g. apache with mod_perl）」、「静的コンテ" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yusukebe.com/posts/2009/0708054905/" />
+<meta property="og:image" content="https://yusukebe.com/icons/myicon.png"/>
+<meta property="article:published_time" content="2009-07-08T14:49:00+09:00" />
+<meta property="article:modified_time" content="2009-07-08T14:49:00+09:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://yusukebe.com/icons/myicon.png"/>
+
+<meta name="twitter:title" content="静的コンテンツを Amazon S3 でサーブさせるのはなかなかいい"/>
+<meta name="twitter:description" content=" mod_perl などを使ったアプリケーションの場合、パフォーマンスを引き出すための Web サーバ構成は apache を使った場合最低でも、「アプリケーションサーバ（e.g. apache with mod_perl）」、「静的コンテ"/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
+	
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://yusukebe.com/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper post">
+		<div class="header">
+	<h1 class="site-title"><a href="https://yusukebe.com/">ゆーすけべー日記</a></h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/yusukebe" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/yusukebe" title="Twitter"><i data-feather="twitter"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post-header">
+			<h1 class="title">静的コンテンツを Amazon S3 でサーブさせるのはなかなかいい</h1>
+			<div class="meta">Posted at &mdash; Jul 8, 2009</div>
+		</div>
+
+		<div class="markdown post-body">
+			
+
+<p>
+mod_perl などを使ったアプリケーションの場合、
+パフォーマンスを引き出すための Web サーバ構成は apache を使った場合最低でも、
+「アプリケーションサーバ（e.g. apache with mod_perl）」、
+「静的コンテンツをサーブするサーバ」の2つが必要になると思います（ lighttpd とか使ったらまた違うかもしれません）。
+ただ、俺の場合この 2つの apache を用意するのが面倒なパターンというのがあって、
+例えば先ほどの「sugokuii beta」の場合がそうです。
+つまり、
+</p>
+<ul>
+  <li>アプリケーションへの負荷はそこそこ高い</li>
+  <li>だが、静的コンテンツは非常に少ない（e.g. jsひとつ、cssひとつ、faviconひとつ）</li>
+  <li>規模としては小さく、サーバ構成は1台のみ</li>
+</ul>
+<p>
+といった時です。
+こうしたケースにおいては、Amazon の S3 を静的コンテンツをサーブするサーバとして活用し、
+サーバ内では mod_perl な apache 1台のみを動かすという方法が簡単でよいです。
+自分は、debian を使っているので、apt-get でインストールした apache2 を
+</p>
+<pre> # /etc/init.d/apache2 start
+ </pre>
+<p>
+と付属しているスクリプトだけで動かせるので、これも利点です。
+S3 でサーブする時に気になるのはコンテンツのヘッダの設定ですが、
+GUI のクライアントでは「Fire Bucket」や「S3HUB」といったものを使えば、
+Expires ヘッダなどを設定でき、閲覧者のブラウザにコンテンツをキャッシュさせることができます。
+Fire Bucket の場合は Expires の文字列を手動でいれなくては行けないので、
+以下のようなスクリプトで 10年後の日付を出力させてコピペしてます。
+</p>
+
+<pre class="brush: perl"> #!/usr/bin/perl
+use strict;
+use warnings;
+use HTTP::Date;
+
+my $ten_years_sec = 10 * 365 * 24 * 60 * 60;
+my $string = time2str( time() + $ten_years_sec );
+print $string . "\n";
+ </pre>
+<p>
+また、S3HUB ではもっと簡単に指定できて、
+「Expires ( Far Future ) 」という項目がすでにありますので、これを選べば OK です。
+S3HUB は今日から使い始めているのですが、動作も軽快でなかなかよさげです。
+</p>
+<p>
+<img alt="s3hub" class="at-xid-6a0133f4781589970b015435b6f389970c" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015435b6f389970c-pi.jpg>
+</p>
+<p>
+さらに、
+Amazon Cloud Front を使えばもっと効率的かつ低コストにコンテンツを配信できると思います。
+S3 をこうして利用するのは、
+小規模サービスでかつ静的コンテンツが少ない場合には有効な手ではないでしょうかね。
+</p>
+<ul>
+<li><a href="https://addons.mozilla.org/ja/firefox/addon/11162">Fire Bucket: Amazon S3 manager :: Firefox Add-ons</a></li>
+<li><a href="http://s3hub.com/#">S3Hub: S3 Client (for Mac OS X)</a></li>
+</ul>
+<h4>参考文献</h4>
+<div>
+<div style="float:left"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4798021555/kamawada-22/"><img alt="Amazon EC2/S3クラウド入門" class="at-xid-6a0133f4781589970b015435b6f3a3970c" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015435b6f3a3970c-pi.jpg style="border:none;"></a></div>
+<div style="float:left;margin-left:15px;">
+<div style="font-size:12pt"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4798021555/kamawada-22/">Amazon EC2/S3クラウド入門</a></div>
+<div style="font-size:7pt;font-family:verdana;">posted with <a href="http://yusukebe.com/b/amazon/search/">yusukebe.com::AmazonSearch</a> on 2009.7.8</div>
+<div style="font-size:10pt;">
+<ul style="list-style-type:none;padding:0;">
+<li>学びing  </li>
+<li>単行本 / 秀和システム </li>
+<li>Amazon 売り上げランキング: 40064</li>
+</ul>
+<ul style="list-style-type:none;padding:0;"><li>Amazon おすすめ度の平均: <img alt="3.5" class="at-xid-6a0133f4781589970b015435b6ebc7970c" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015435b6ebc7970c-pi.gif style="margin:0;"><ul style="list-style-type:none;padding-left:0;">
+<li>
+<img alt="2" class="at-xid-6a0133f4781589970b015391e38ae3970b" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015391e38ae3970b-pi.gif style="margin:0;"> 入門書です</li>
+<li>
+<img alt="4" class="at-xid-6a0133f4781589970b014e8bd727e1970d" src="https://yusukebe.com/archives/.a/6a0133f4781589970b014e8bd727e1970d-pi.gif style="margin:0;"> Amazonを使ってクラウドビジネスを始めたいと思う人におすすめ</li>
+<li>
+<img alt="3" class="at-xid-6a0133f4781589970b015391e3783b970b" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015391e3783b970b-pi.gif style="margin:0;"> 情報収集が面倒な方にはちょうどよいです</li>
+<li>
+<img alt="5" class="at-xid-6a0133f4781589970b015435b6d28e970c" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015435b6d28e970c-pi.gif style="margin:0;"> すぐに試したい人におすすめ</li>
+<li>
+<img alt="4" class="at-xid-6a0133f4781589970b014e8bd727e1970d" src="https://yusukebe.com/archives/.a/6a0133f4781589970b014e8bd727e1970d-pi.gif style="margin:0;"> 先進ユーザーによる実例本</li>
+</ul>
+</li></ul>
+<a href="http://www.amazon.co.jp/Amazon-EC2-S3%E3%82%AF%E3%83%A9%E3%82%A6%E3%83%89%E5%85%A5%E9%96%80-%E5%AD%A6%E3%81%B3ing/dp/4798021555%3FSubscriptionId%3D13C5PCPS36EMN8C22682%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D4798021555">Amazon.co.jpで詳細を見る</a>
+</div>
+</div>
+<div style="clear:left;"></div>
+</div>
+
+
+		</div>
+
+		<div class="post-tags">
+			
+				
+					<nav class="nav tags">
+							<ul class="flat">
+								
+								<li><a href="/tags/perl">Perl</a></li>
+								
+							</ul>
+					</nav>
+				
+			
+		</div>
+        <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v5.0&appId=233306523373884&autoLogAppEvents=1"></script>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+
+<div class="social-button-area">
+  <ul class="social-button">
+    <li>
+      <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
+    </li>
+    <li>
+      <span class="fb-share-button"  data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2009%2f0708054905%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
+    </li>
+    <li>
+      <a href="https://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label-counter" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>
+    </li>
+  </ul>
+</div>
+
+<div class="disqus-area">
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "yusukebe-com" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<ul class="pagination">
+  
+  <li class="page-item page-prev">
+    <a href="https://yusukebe.com/posts/2009/0708050928/" class="page-link" aria-label="Previous"><span aria-hidden="true">← エロ動画の検索結果を3Dウォールギャラリーで閲覧鑑賞すると「すごくいい」かも</span></a>
+  </li>
+  
+  
+  <li class="page-item page-next">
+    <a href="https://yusukebe.com/posts/2009/0709012654/" class="page-link" aria-label="Next"><span aria-hidden="true">Plagger の Notify Plugin を AnyEvent::XMPP::Client で書いてみた →</span></a>
+  </li>
+  
+</ul>
+
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright yusukebe.com |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-492497-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

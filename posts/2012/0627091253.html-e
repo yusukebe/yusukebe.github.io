@@ -1,0 +1,397 @@
++++
+Categories = ["tech"]
+Description = " 僕はWebアプリの開発言語にPerlを使っていますが、Perlで書くためのWeb Application Frameworkとして、Mojoliciousを最近では利用しています。  Web Application Framework（W"
+Tags = ["Perl", "Mojolicious"]
+date = "2012-06-27T18:12:00+09:00"
+title = "MojoliciousとCPANモジュールで作る「Nopaste」チュートリアル"
+author = "kamawada"
+archive = ["2012"]
+draft = false
++++
+
+
+<p>僕はWebアプリの開発言語にPerlを使っていますが、Perlで書くためのWeb Application Frameworkとして、
+Mojoliciousを最近では利用しています。</p>
+
+<p>Web Application Framework（WAF）とは、
+Webアプリケーションの開発を効率的に行うためのライブラリ群（つまりフレームワーク）で、これがなければ少しでも大きめのアプリになると大変な思いをします。以下Mojoliciousについてとりあえずの、参考リンクです。
+ちなみに昨日かな？Mojoliciousはバージョン3.0が出ました。</p>
+
+<ul>
+<li><a href="http://yusukebe.com/archives/20120225/081052.html">PerlのWAFはMojolicious推しな件とそのノウハウ - ゆーすけべー日記</a></li>
+<li><a href="http://mojolicio.us/">Mojolicious - Perl real-time web framework</a></li>
+<li><a href="http://blog.kraih.com/mojolicious-30-released">Mojolicious 3.0 released: Perl real-time web framework - Sebastian Riedel about Perl and the Web</a></li>
+</ul>
+
+
+<p><a href="http://yusukebe.com/archives/2012/06/27/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202012-06-27%2018.12.24.png"><img alt="スクリーンショット 2012-06-27 18.12.24.png" src="http://yusukebe.com/archives/assets_c/2012/06/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202012-06-27%2018.12.24-thumb-600x370-204.png" width="600" height="370" class="mt-image-none" style=""></a></p>
+
+<p>基本的には上記の記事で書いてる通り僕は「WAFはMojolicious推し」なのですが、イマイチ浸透していない感があるので、
+ちょっと実用的なチュートリアルを載せてみます。Mojoliciousの他にもCPANモジュールをいくつか使っています。
+作るアプリは「Nopaste」アプリと言って、タイトルとコメントを入力するとユニークなURLでページを生成して表示させるという代物です。よく、プログラミングのコードの一部などをコメント欄に入力して、出来たページを他の人に見せるなどという使われ方をされますね。</p>
+
+<p><a href="http://yusukebe.com/archives/2012/06/27/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202012-06-27%2018.15.20.png"><img alt="スクリーンショット 2012-06-27 18.15.20.png" src="http://yusukebe.com/archives/assets_c/2012/06/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202012-06-27%2018.15.20-thumb-600x453-206.png" width="600" height="453" class="mt-image-none" style=""></a></p>
+
+<p>では、駆け足になるかもしれませんが、行ってみましょうー！</p>
+
+<hr>
+
+<p><br></p>
+
+<h3>インストール＆ひな形を生成する</h3>
+
+<p>MojoliciousはCPANモジュールなので、cpanmコマンドなどからインストールできます。</p>
+
+<pre> $ cpanm Mojolicious
+ </pre>
+
+<p>もしくはシステム全体にインストールするならば、</p>
+
+<pre> $ cpanm --sudo Mojolicious
+ </pre>
+
+<p>としてください。正常にインストールされれば、「mojo」コマンドが使えるようになりますので、プロジェクトのひな形を作ります。本当に小さいアプリならば、Mojolicious::LiteというRubyで言うSinatraチックな記述の仕方が出来ますが、今回は通常の「アプリ」としてひな形を生成します。</p>
+
+<pre> $ mojo generate app Nopaste::Web
+ </pre>
+
+<p>ここで、ネームスペースをNopaste「::Web」としているのは、個人的な趣向で、Webのライブラリを置く領域とその他DBなどをしっかりと分けたいからです。作られる「nopaste_web」ディレクトリに潜ると以下のファイルがあると思います。これらがWebアプリを作るためのひな形となります。</p>
+
+<pre> ./
+├── lib
+│   └── Nopaste
+│       ├── Web
+│       │   └── Example.pm
+│       └── Web.pm
+├── log
+├── public
+│   └── index.html
+├── script
+│   └── nopaste_web
+├── t
+│   └── basic.t
+└── templates
+    ├── example
+    │   └── welcome.html.ep
+    └── layouts
+        └── default.html.ep
+ </pre>
+
+<h3>アプリを立ち上げる</h3>
+
+<p>ひな形の状態でテストとしてアプリを立ち上げてみましょう。Mojoliciousには「morbo」というサーバコマンドが付属しているのでそれを使います。</p>
+
+<pre> $ morbo script/nopaste_web
+ </pre>
+
+<p>すると、デフォルトだと起動したホストの「3000」番ポートでアプリが立ち上がります。お使いのブラウザで「<a href="http://localhost:3000/">http://localhost:3000/</a>」にアクセスしてみると、「Welcome to the Mojolicious real-time web framework!」と書かれたWelcomeページが見えると思います。
+ちなみに「plackup」でもアプリを立ち上げることが出来ます。</p>
+
+<pre> $ plackup -p 3000 script/nopaste_web
+ </pre>
+
+<h3>トップページを作る</h3>
+
+<p>トップページではタイトルとコメントを受け付けるフォームを表示します。では、トップページを作ってみましょう。
+「lib/Nopaste/Web.pm」を編集します。このファイルはアプリのセットアップをする部分ですが、その中のルーティングと呼ばれる部分を記述するのです。アクセスされるURLとそれに対応するコントローラの対応付けをします。
+いらない部分を消して以下のようにします。</p>
+
+<pre> package Nopaste::Web;
+use Mojo::Base 'Mojolicious';
+
+sub startup {
+     my $self = shift;
+     my $r = $self-&gt;routes;
+     $r-&gt;get('/')-&gt;to('root#index');
+}
+
+1;
+ </pre>
+
+<p>「$r-&gt;get('/')-&gt;to('root#index')」の部分が「/」というパス、つまりトップページにGETでアクセスされた時に、「Nopaste::Web::Root」というコントローラの「index」メソッドを呼び出すという意味になります。</p>
+
+<p>次にNopaste::Web::Rootコントローラを作りましょう。とはいっても、現段階ではindexメソッドがHTMLを描画するだけなので、こんな感じになります。「lib/Nopaste/Web/Root.pm」というファイルです。</p>
+
+<pre> package Nopaste::Web::Root;
+use Mojo::Base 'Mojolicious::Controller';
+
+sub index {
+    my $self = shift;
+    $self-&gt;render();
+}
+
+1;
+ </pre>
+
+<p>さて肝心のHTML、正確にはHTMLを出力するためのテンプレートファイルをどこに、どう書くかですが、
+「templates/root/index.html.ep」をいじります。そう、Mojoliciousのテンプレートファイルの拡張子は「.html.ep」なのです。</p>
+
+<pre> % layout 'default';
+
+&lt;form action="/" method="post"&gt;
+  Title &lt;input type="text" name="title" size="40" /&gt;
+  Source &lt;textarea name="body" rows="15" cols="40"&gt;&lt;/textarea&gt;
+  &lt;input type="submit" value="paste" /&gt;
+&lt;/form&gt;
+ </pre>
+
+<p>HTMLでは見慣れない「% layout 'default';」という記述がありますね。Mojoliciousのテンプレートでは「%」などを駆使して、変数を展開したり、Perlコードを書いたり、レイアウトに使用するテンプレートを選択したりします。ここでのlayoutコマンドは「templates/layouts/default.html.ep 」というテンプレートをレイアウトに使うという意味です。
+余裕があったらレイアウトファイルをいじってみてください。</p>
+
+<h3>入力値チェックを行う</h3>
+
+<p>「lib/Nopaste/Web.pm」を再びいじり、トップページからのPOSTを受け付けるようにしましょう。</p>
+
+<pre>     my $r    = $self-&gt;routes;
+    $r-&gt;get('/')-&gt;to('root#index');
+    $r-&gt;post('/')-&gt;to('root#post'); # ここを追加する
+ </pre>
+
+<p>次にRootコントローラに追加します。先ほど作った「lib/Nopaste/Web/Root.pm」というファイルですね。
+何を追加するかと言うと、入力値のチェック（＝ヴァリデーション）をするロジックです。例えばタイトルが空だったり、コメントが空だったりしたら、エラーを表示させます。「ベタ」で書いてもいいのですが、今回は拡張性も考えてFormValidator::Liteというモジュールを使ってみましょう（これから紹介する足りないモジュールについてはcpanmなどを利用してインストールしてください）。</p>
+
+<p>また、エラーメッセージを表示する時に、入力された値が消えないようにHTML::FilInForm::Liteというモジュールを使って工夫をします。ちょっと読み解くのに時間がかかるかもしれませんがRootコントローラは以下のメソッドを追加します。</p>
+
+<pre> package Nopaste::Web::Root;
+use Mojo::Base 'Mojolicious::Controller';
+use FormValidator::Lite; # 追加
+use HTML::FillInForm::Lite; #追加
+
+...;
+
+sub post {
+     my $self = shift;
+     my $validator = FormValidator::Lite-&gt;new($self-&gt;req);
+
+     # エラーメッセージを設定
+     $validator-&gt;set_message(
+        'title.not_null' =&gt; 'Title is Empty',
+        'body.not_null' =&gt; 'Body is Empty',
+    );
+    # 入力値チェック
+    my $res = $validator-&gt;check(
+        title =&gt; [qw/NOT_NULL/],
+        body =&gt; [qw/NOT_NULL/],
+    );
+    # もし入力値が正しくなかったら
+    if ($validator-&gt;has_error) {
+        my @messages = $validator-&gt;get_error_messages;
+        $self-&gt;stash-&gt;{error_messages} = \@messages;
+        # 入力された値を充填しながら、描画
+        my $html = $self-&gt;render_partial('root/index')-&gt;to_string;
+        return $self-&gt;render_text(
+            HTML::FillInForm::Lite-&gt;fill(\$html, $self-&gt;req-&gt;params),
+            format =&gt; 'html',
+        );
+    }
+    # 入力値の妥当性が保証された
+    # 続きは後ほど
+}
+
+1;
+ </pre>
+
+<p>先ほど作った「templates/root/index.html.ep」テンプレートをエラーの時にも利用しています。エラーメッセージを表示させるためにも、以下のように編集します。</p>
+
+<pre> % layout 'default';
+
+% if ($self-&gt;stash-&gt;{error_messages}) {
+&lt;ul id="caution"&gt;
+% for my $message ( @{$self-&gt;stash-&gt;{error_messages}} ) {
+&lt;li&gt;&lt;%= $message %&gt;&lt;/li&gt;
+% }
+&lt;/ul&gt;
+% }
+
+&lt;!-- 以下は先ほどの通り --&gt;
+ </pre>
+
+<p>テンプレートの機能「%」と「&lt;%= 変数 %&gt;」を利用してエラーメッセージを描画しています。
+この状態では、ヴァリデーションがうまく行かない場合、つまりタイトルとコメントが空の時、指定したエラーメッセージが表示されます。</p>
+
+<p><a href="http://yusukebe.com/archives/2012/06/27/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202012-06-27%2018.27.07.png"><img alt="スクリーンショット 2012-06-27 18.27.07.png" src="http://yusukebe.com/archives/assets_c/2012/06/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202012-06-27%2018.27.07-thumb-600x481-210.png" width="600" height="481" class="mt-image-none" style=""></a></p>
+
+<p>逆にどちらも内容が入っていて、ヴァリデーションを通ったケースには何も記述していません（分かりにくい感じになっちゃいましたがその場合「Mojolicious」のエラーが出るかもです）。</p>
+
+<h3>DBを扱う</h3>
+
+<p>入力値が妥当であればそれをDBに格納しないといけません。RailsのActiveRecordのようなDBに関わる便利なものはMojoliciousにはついていません！そこで外部のO/R Mapperと呼ばれるモジュールなどを使うとよいでしょう。
+今回は詳しい記述はしませんが、十分枯れているDBIx::Skinnyを使います。
+と、その前にSQLのテーブル定義です。MySQLを一応想定しています。</p>
+
+<pre> CREATE TABLE entry (
+    `id` VARCHAR(36) NOT NULL,
+    `title` VARCHAR(255) NOT NULL,
+    `body` TEXT NOT NULL,
+    `created_on` DATETIME NOT NULL,
+    PRIMARY KEY (`id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+ </pre>
+
+<p>仮として、「nopaste」という名前のデータベースを作って上記のSQLを実行したとしておきます。
+次にDBIx::Skinnyのところ。「lib/Nopaste/DB.pm」を作ります。</p>
+
+<pre> package Nopaste::DB;
+use DBIx::Skinny;
+1;
+ </pre>
+
+<p>これだけ。ただ、「lib/Nopaste/DB/Schema.pm」というファイルも作らなくてはいけません。</p>
+
+<pre>  package Nopaste::DB::Schema;
+ use DBIx::Skinny::Schema;
+ use DateTime;
+ use DateTime::Format::Strptime;
+ use DateTime::Format::MySQL;
+ sub pre_insert_hook {
+     my ( $class, $args ) = @_;
+     $args-&gt;{created_on} = DateTime-&gt;now( time_zone =&gt; 'Asia/Tokyo' );
+}
+
+install_inflate_rule '^.+_on$' =&gt; callback {
+     inflate {
+         my $value = shift;
+         my $dt = DateTime::Format::Strptime-&gt;new(
+             pattern =&gt; '%Y-%m-%d %H:%M:%S',
+             time_zone =&gt; container('timezone'),
+         )-&gt;parse_datetime($value);
+         return DateTime-&gt;from_object( object =&gt; $dt );
+     };
+     deflate {
+         my $value = shift;
+         return DateTime::Format::MySQL-&gt;format_datetime($value);
+     };
+ };
+
+install_table entry =&gt; schema {
+     pk 'id';
+     columns qw/id title body created_on/;
+     trigger pre_insert =&gt; \&amp;pre_insert_hook;
+};
+
+ install_utf8_columns qw/title body/;
+
+1;
+ </pre>
+
+<p>ふぅ。今度はこのデータベースを操作するクラスのインスタンスをMojoliciousのコントローラから利用できるようにします。と、その前に... データベースの設定を読み込ますための設定ファイルを書きましょう。これはMojoliciousの機能で後ほど読み込むことが出来ます。アプリケーションのディレクトリの直下に「nopaste.conf」というファイルを作り、各自の設定にあわせて記述します。</p>
+
+<pre> +{
+    db =&gt; {
+        dsn =&gt; 'dbi:mysql:nopaste',
+        username =&gt; 'root',
+        password =&gt; undef,
+    }
+};
+ </pre>
+
+<p>そして、「lib/Nopaste/Web.pm」に以下を追加です。</p>
+
+<pre> sub startup {
+    my $self = shift;
+    my $config = $self-&gt;plugin('Config', { file =&gt; 'nopaste.conf' }); # 追加
+    $self-&gt;attr( db =&gt; sub { Nopaste::DB-&gt;new( $config-&gt;{db} ) } ); # 追加
+    ...;
+ </pre>
+
+<p>これで、Rootコントローラからデータベースを操作できる（コントローラでデータベースを操作するかどうか議論がありますが、今回はより簡便化するためにコントローラでDB操作をしています）！
+タイトルとコメント欄の値をユニークなIDと共に「insert」しましょう。「lib/Nopaste/Web/Root.pm」のpostメソッドに以下を追加します。</p>
+
+<pre> package Nopaste::Web::Root;
+use Mojo::Base 'Mojolicious::Controller';
+...;
+use Data::GUID::URLSafe; # 追加
+...;
+
+sub post {
+...;
+# 入力値の妥当性をチェックしたら...
+
+    my $entry = $self-&gt;app-&gt;db-&gt;insert('entry',{
+        id =&gt; Data::GUID-&gt;new-&gt;as_base64_urlsafe,
+        title =&gt; $self-&gt;req-&gt;param('title'),
+        body =&gt; $self-&gt;req-&gt;param('body'),
+    });
+
+    $self-&gt;redirect_to('/paste/' . $entry-&gt;id );
+}
+ </pre>
+
+<p>お分かりの通りDBIx::Skinnyを継承して作った「Nopaste::DB」のインスタンスはコントローラから「$self-&gt;app-&gt;db」でアクセス出来るのですね。postメソッドの最後には、生成されたページへリダレイクトさせています。</p>
+
+<h3>仕上げ</h3>
+
+<p>タイトル、コメントを含むエントリーを投稿、つまりDBにinsert出来たら、次はページの表示です。
+上記で「生成されたページへリダレイクト」させてますが、今のところNot Foundな状態なので描画するようにしましょう。ルーティングの記述、コントローラへのメソッドの追加、テンプレートを書く、この順序で行きましょう。</p>
+
+<p>まずは「lib/Nopaste/Web.pm」。最後に一行追加します。</p>
+
+<pre>     ...;
+    $r-&gt;route('/paste/:id')-&gt;to('root#entry');
+}
+
+1;
+ </pre>
+
+<p>次に「lib/Nopaste/Web/Root.pm」に「entry」メソッドのコードを書きます。
+無駄にシャレてコメント欄（bodyフィールドの値）をText::VimColor使ってシンタックスハイライトさせてます。</p>
+
+<pre> package Nopaste::Web::Root;
+use Mojo::Base 'Mojolicious::Controller';
+...;
+use Text::VimColor; #追加
+use Encode; #追加
+
+...;
+
+sub entry {
+    my $self = shift;
+    my $entry = $self-&gt;app-&gt;db-&gt;single('entry',{ id =&gt; $self-&gt;stash-&gt;{id} });
+    unless( $entry ){
+        return $self-&gt;render_not_found;
+    }
+    my $syntax = Text::VimColor-&gt;new(
+        filetype =&gt; 'perl',
+        string   =&gt; encode_utf8( $entry-&gt;body )
+    );
+    $self-&gt;stash-&gt;{code} = decode_utf8($syntax-&gt;html);
+    $self-&gt;stash-&gt;{entry} = $entry;
+}
+
+1;
+ </pre>
+
+<p>次に「templates/root/entry.html.ep」を作ります。</p>
+
+<pre>  % layout 'default';
+ % title $entry-&gt;title;
+
+&lt;div id="entry"&gt;
+&lt;h2&gt;&lt;%= $entry-&gt;title %&gt;&lt;/h2&gt;
+&lt;pre&gt;&lt;%== $code %&gt;&lt;/pre&gt;
+&lt;/div&gt;
+ </pre>
+
+<p>これで、一通り完成です。トップページに行き、タイトルとコメントを埋めて投稿して見てください。
+ページが生成され入力した値が見れるはずです。
+また、CSSを調整すればコメント欄に入れたPerlコードがシンタックスハイライトされてかっこよく表示されると思います。</p>
+
+<p><a href="http://yusukebe.com/archives/2012/06/27/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202012-06-27%2018.17.02.png"><img alt="スクリーンショット 2012-06-27 18.17.02.png" src="http://yusukebe.com/archives/assets_c/2012/06/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202012-06-27%2018.17.02-thumb-600x481-208.png" width="600" height="481" class="mt-image-none" style=""></a></p>
+
+<hr>
+
+<p><br></p>
+
+<h3>まとめ</h3>
+
+<p>PerlのWeb Application Framework「Mojolicious」やその他CPANモジュールを使って、入力値の妥当性チェックやDB操作を行う機能を持ったWebアプリのチュートリアル？を解説しました。サンプルとなるNopasteアプリは以下のgithubにあげてありますのでご参考にしてください。</p>
+
+<ul>
+<li><a href="https://github.com/yusukebe/Nopaste">yusukebe/Nopaste</a></li>
+</ul>
+
+
+<p>なんか駆け足というか舌足らずというかやってることのボリュームがありすぎる感じだったりとかで、うまく伝わらないかもしれませんが、気になる人はMojoliciousをチェックしてみるといいんじゃないでしょうか。</p>
+
+<p>ちなみに、<a href="http://yusukebe.com/archives/20120627/104541.html">メルマガでPerl初心者向けコンテンツを開始しました</a>、という通りなんで有料で申し訳ないのですが、興味のある方はお試し購読してみてください。</p>
+

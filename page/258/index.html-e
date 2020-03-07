@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="generator" content="Hugo 0.63.2" />
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="alternate" type="application/rss+xml" href="https://yusukebe.com/index.xml" title="ゆーすけべー日記" />
+	<meta property="og:title" content="ゆーすけべー日記" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://yusukebe.com/" />
+<meta property="og:image" content="https://yusukebe.com/icons/myicon.png"/>
+<meta property="og:updated_time" content="2020-03-06T15:46:50+09:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://yusukebe.com/icons/myicon.png"/>
+
+<meta name="twitter:title" content="ゆーすけべー日記"/>
+<meta name="twitter:description" content=""/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
+	
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://yusukebe.com/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+  <div class="container wrapper">
+	<div class="header">
+	<h1 class="site-title"><a href="https://yusukebe.com/">ゆーすけべー日記</a></h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/yusukebe" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/yusukebe" title="Twitter"><i data-feather="twitter"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+	<div class="recent-posts section">
+	  <h2 class="section-header">
+		Recent posts
+	  </h2>
+	  <div class="posts">
+		
+		
+		
+		<div class="post">
+		  <div class="meta">Apr 30, 2002</div>
+		  <a class="title" href="/posts/2002/0429151152/">ロマーリオ</a> &mdash;
+		  <span class="description">
+			
+			ああ、日本でロマーリオがみたい。 そんでもって、ゴール決めて、ち○ぽを晒してほしい。 
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Apr 29, 2002</div>
+		  <a class="title" href="/posts/2002/0428151145/">SAMBAでWindowsのドメインコントロール</a> &mdash;
+		  <span class="description">
+			
+			SambaによるPrimary Domain Controller (PDC)の構築 まじ熱い。 http://odalab.spub.chitose.ac.jp/~oda/unix/samba.html
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Apr 29, 2002</div>
+		  <a class="title" href="/posts/2002/0428151149/">おかみさんドスコイ</a> &mdash;
+		  <span class="description">
+			
+			くそーなんかみてしまうよこの番組。歌も気になる。 http://mbs.jp/dosukoi/
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Apr 29, 2002</div>
+		  <a class="title" href="/posts/2002/0428151148/">すろばきあ</a> &mdash;
+		  <span class="description">
+			
+			日本対スロバキアにあわせて今日の予定がきまる。 16:10からって微妙すぎるよ～
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Apr 29, 2002</div>
+		  <a class="title" href="/posts/2002/0428151147/">スロバキア戦実況</a> &mdash;
+		  <span class="description">
+			
+			中田浩二のスパイク汚い 俊輔イイ！！  今日もオカドス。 の発言 :取るし絵監督は屈強な人が好きなんだ今日もオカドス。 の発言 :ホモか… そがはたはどこのチーム？→あごとらーず 
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Apr 29, 2002</div>
+		  <a class="title" href="/posts/2002/0428151146/">小池○子</a> &mdash;
+		  <span class="description">
+			
+			どう？似てる？ 
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Apr 28, 2002</div>
+		  <a class="title" href="/posts/2002/0427151142/">DMZ</a> &mdash;
+		  <span class="description">
+			
+			今日はじめて知った言葉。DeMilitarized Zoneの略。http://yougo.ascii24.com/gh/76/007659.html
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Apr 28, 2002</div>
+		  <a class="title" href="/posts/2002/0427151144/">MAYA</a> &mdash;
+		  <span class="description">
+			
+			うごいた。そこまで遅くないって感じ。 
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Apr 28, 2002</div>
+		  <a class="title" href="/posts/2002/0427151141/">やヴぁい</a> &mdash;
+		  <span class="description">
+			
+			この写真やヴぁいのが多い。http://web.sfc.keio.ac.jp/~yusukebe/99yellow/photo/02bounenkai/
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Apr 28, 2002</div>
+		  <a class="title" href="/posts/2002/0427151140/">フットボールの母国</a> &mdash;
+		  <span class="description">
+			
+			フットボールの祖国はイングランドだ。言われなきゃ、意識しないってほどのことだな。 プレミアリーグはその誇りがあるから、マルチボールシステムではないらしい。
+			
+		  </span>
+		</div>
+		
+		
+
+<ul class="pagination">
+	<li class="page-item page-prev">
+	
+    <a href="/page/257/" class="page-link" aria-label="Previous"><span aria-hidden="true">← Prev page</span></a>
+	
+	</li>
+	<li class="page-item page-next">
+	
+    <a href="/page/259/" class="page-link" aria-label="Next"><span aria-hidden="true">Next page →</span></a>
+	
+	</li>
+</ul>
+
+
+	  </div>
+	</div>
+  </div>
+  <div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright yusukebe.com |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-492497-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

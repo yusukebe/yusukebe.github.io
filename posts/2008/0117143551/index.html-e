@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>YourAVHost その後 - ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="YourAVHost その後" />
+<meta property="og:description" content="   去年の12月26日未明にリリースし、年末の下半身に衝撃をもたらしたらしいという YourAVHost 。現在はてなブックマークしたユーザー数はエロサイトとして驚異的な「738Users」。1月6日には動ナビという日本最大の裏ポータルサ" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yusukebe.com/posts/2008/0117143551/" />
+<meta property="og:image" content="https://yusukebe.com/icons/myicon.png"/>
+<meta property="article:published_time" content="2008-01-17T23:35:00+09:00" />
+<meta property="article:modified_time" content="2008-01-17T23:35:00+09:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://yusukebe.com/icons/myicon.png"/>
+
+<meta name="twitter:title" content="YourAVHost その後"/>
+<meta name="twitter:description" content="   去年の12月26日未明にリリースし、年末の下半身に衝撃をもたらしたらしいという YourAVHost 。現在はてなブックマークしたユーザー数はエロサイトとして驚異的な「738Users」。1月6日には動ナビという日本最大の裏ポータルサ"/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
+	
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://yusukebe.com/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper post">
+		<div class="header">
+	<h1 class="site-title"><a href="https://yusukebe.com/">ゆーすけべー日記</a></h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/yusukebe" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/yusukebe" title="Twitter"><i data-feather="twitter"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post-header">
+			<h1 class="title">YourAVHost その後</h1>
+			<div class="meta">Posted at &mdash; Jan 17, 2008</div>
+		</div>
+
+		<div class="markdown post-body">
+			
+
+<p>
+  去年の12月26日未明にリリースし、年末の下半身に衝撃をもたらしたらしいという <a href="http://youravhost.net/">YourAVHost</a> 。
+現在はてなブックマークしたユーザー数はエロサイトとして驚異的な「738Users」。
+<a href="http://blognavi.info/news/entry/31987/index.html">1月6日には動ナビという日本最大の裏ポータルサイトにも取り上げられ</a>、ピーク時にはサイト内合計で 12万PV / 1day 。
+友達にも何故か「おめでとう」という電話が深夜にかかってきて、サイトを作ったことを褒めてもらいました。
+</p>
+<p>
+そんなYourAVHost、公開してから地味にいくつかの新機能の実装、アクセス対策、また広告の変更などを行ってきました。ようやくアクセスが落ち着いた段階なのでこのようなYourAVHostの変更点や俺が学んだことなどを簡単に紹介していきたいと思います。
+</p>
+
+<h4>12万PV / 1day のアクセス</h4>
+<p>
+ある程度予想はしていましたが、さすがにエロサイトなので、これほどのアクセスが来るとは思ってもいませんでした（というか今考えたらエロサイトだからアクセスが来たとも言えるかもしれませんね）。
+これは完全に後述する俺のWebサーバー周りの設定サボリが原因なのですが、
+サーバー止まりまくりです。リリースした初日、次の日とはてなブックマーク経由のユーザーが押し寄せ、
+apache のプロセスが立ち上がりまくって、3G 積んでいるメモリを圧迫。
+そのまま Swap を食いつぶしてフリーズするという事態が多々起こりました。
+また、動ナビに取り上げられた日には先ほど述べた通り、12万PV / 1day のアクセス。
+メモリを食いつぶす以前に、apache の MaxClients で設定している 256 を上回り瞬間的に処理しきれない状態が続きました。
+</p>
+<p>
+  <font size="2">Google Analytics のグラフ</font><br>
+  <img alt="YourAVHost" class="at-xid-6a0133f4781589970b015391e38dd5970b" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015391e38dd5970b-pi.gif>
+</p>
+<p>
+そもそも、10万PV / 1day レベルのアクセスというのはそれほど多いわけではなく、普通に運用している方であれば簡単にさばくことができるものだと思います。
+完全に俺がやっているコンテンツをサーブする仕方がまずかったようで、今思うとお恥ずかしいばかりです。
+Webサーバーの構成は、静的コンテンツを扱いまたリバースプロキシの役割も負う apache2 と、
+今回作ったYourAVHostのページなどダイナミックなコンテンツを扱う mod_perl を読み込んだ apache1.3 と2つのWebサーバーを物理的に1台のサーバーでまかなうという具合で成り立っています。これを踏まえて、大きな問題は以下の2つでした。
+</p>
+<ul>
+  <li>1.YourAVHostのページ内に含まれる画像を全て mod_perl の apache でサーブしていた</li>
+  <li>2.そこで画像を全て static なコンテンツを扱う apache2 でサーブさせようとしたが、キャッシュの設定、具体的には mod_expire の設定を何もしていなかった</li>
+</ul>
+<p>
+1 の全てを mod_perl でサーブするというのはあまりにも致命的なやり方でした。
+mod_perl 環境では、apache のプロセス上にコンパイル済みの Perl プログラムが常駐することになり、プロセスひとつに付きメモリ使用量が top コマンドで 50M 前後、いやそれ以上になることがあります。
+YourAVHost には画像がたくさんありますから、それらを読み込むたびに 50M のプロセスが動くことを考えるとすぐにサーバー全体のメモリを食いつぶしてしまうことは明白です。
+さすがにこれはないなと、自分で気づき、すぐさまスタティックなコンテンツを扱うホストを立て、
+mod_perl を組み込んでいない apache 2 の方で画像をサーブするようにしました（ サーバーを変えずとも httpd.conf で設定し mod_perl を組み込まずサーブする方法もあると思います ）。
+これで圧倒的にページ全体の読み込み速度が速くなりました。
+</p>
+<p>
+ところが、動ナビに取り上げられた日は、apache2 の MaxClients である 256 のアクセスを同時にさばくことができなくなりました。KeepAlive の設定なども確かなはずです。
+そこで次の日 IRC の #catalyst-ja な方々にアドバイスをいただきました。
+とりあえずサイトのパフォーマンスを計測してくれる YSlow という聞いたことはあるが使ったことのない、Firefox の アドオンを勧められて入れてみました→<a href="https://addons.mozilla.org/ja/firefox/addon/5369">YSlow :: Firefox Add-ons</a>。
+で、だからといって今だサイトの評価は最低の「F」ランクなのですが、
+問題2 のコンテンツのキャッシュについて問題ありだと言うことを気づかせてくれました。
+具体的にはmiyagawaさんに言われたのですが、静的コンテンツをサーブする apache2 に mod_expire を導入して設定するということです。
+その結果、YourAVHost で扱うような画像は変更されることがありませんから、それをそれぞれの HTTPレスポンスヘッダに Expires を付加するという形で「1週間は変更されないよ」という風にブラウザ側に教えてあげることができます。するとブラウザは一度読み込んだ画像に対して、expire していなければサーバー側に問い合わせることがなくなり、apache2 へのアクセスはかなり軽減されるようになります。
+この設定をするだけで、負荷は大きく減り、次の日も同じくらいのアクセスがあったのですが、問題無くさばくことができました。
+catalyst-ja の皆様、へっぽこな質問に答えていただきありがとうございます。
+</p>
+<p>
+ということでまとめると、
+</p>
+<ul>
+  <li>mod_perl で処理する必要の無い静的コンテンツは mod_perl で扱うな</li>
+  <li>静的コンテンツには mod_expire で Expires ヘッダーをつけてキャッシングさせよ</li>
+</ul>
+<p>
+となります。
+いやぁ、ほんとに俺のやり方が単にまずかっただけですが、
+まさに経験をもってこれら設定の仕方と効果を感じることができて、とても勉強になりました。
+</p>
+
+<h4>新機能</h4>
+<p>
+次にYourAVHostの地味な新機能を2つ紹介します。
+まずサイトを AutoPagerize に対応させました。
+</p>
+<blockquote>
+  <p>AutoPagerizeはページ分割されたWebサイトを自動的に下に継ぎ足して表示するスクリプト。FirefoxのGreaseMonkey上で動作する。
+  </p>
+  <p>
+    <a href="http://d.hatena.ne.jp/keyword/AutoPagerize">AutoPagerizeとは - はてなダイアリー</a>より
+  </p>
+</blockquote>
+<p>
+これによりAutoPagerizeをインストールし、Onにしていると、
+トップページから2ページ目に行くためにいちいちクリックしていなくてはいけないところ、
+次のページが自動的に継ぎ足される形になります。これで、どんどんとエロファイルを見ていくことができるようになりましたね！
+</p>
+<p>
+もうひとつの新機能、と呼ぶまでもないかもしれませんが、サイトの更新を知らせる Twitterボット を作りました。こちらです。
+</p>
+<ul>
+  <li><a href="http://twitter.com/YourAVHost">Twitter / YourAVHost</a></li>
+</ul>
+<p>
+とある人から熱烈なリクエストがあったので。サイト自体がRSSを出力しているから、Plagger::Plugin::Publish::Twitterが使えてあっさりできました。
+follow していれば、YourAVHostの最新情報がいつでも手に入るよ！
+</p>
+
+<h4>広告を全面的DMMに、自作APIでコンテンツマッチ</h4>
+<p>
+これは、自分にとっては大きなことで、実装も結構パワー使いました。
+YourAVHost の広告というか、サイト上での導線について個人的に意見を持っていて、
+実際に自分もある程度実践していることがあります。
+YourAVHost経由で、YourFileHost にて見たエロ動画が気に入って、
+好きになった女優さんがいたら、次は高画質なのを見たくなるだろう。
+それでその女優さんが出ている気になる高画質のビデオがすぐ見れるとなったら、お金払ってもいいよね、
+というものです。
+その高画質なビデオの供給先となりうるのが、今回扱うことにした DMM.Adult です。
+いろいろと徘徊して判明したのですが、YourAVHost で登場する女優さんたちに関するビデオがほとんど DMM.Adult にはあります。Amazon もDVDの品揃えはかなりいいのですが、DMM.Adult の場合は月額ブロードバンドもしくは単品ブロードバンドにより、DVDの到着を待たずにすぐに見ることができるという利点があります。
+</p>
+<p>
+DMM.Adult にはそれぞれ女優さんのページ、そして各作品のページが存在します。これをいかに、YourAVHost のエントリーとマッチングさせて表示させるかが、上記した導線を実現するかの鍵になってきます。
+YourAVHost のエントリーに紐づいている女優さんの出演しているビデオの広告がそのエントリーの隣に表示されればいいわけです。ところが、DMM は Amazon のように API を提供していないので、コンテンツを探して、その情報を持ってくるということがそのままではできません。
+そこで、APIを自作することにしました。今ではサイトと統合されてうまく表示されています。ビデオに対するレビューなどもちゃんとそれっぽい感じに見せています。
+</p>
+<p>
+  <img alt="YourAVHost" class="at-xid-6a0133f4781589970b015391e38dee970b" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015391e38dee970b-pi.jpg>
+</p>
+<p>
+ではどうやってこの情報をとってきて API としたか。
+よい子は真似しないでください。スクレイピングするクローラーを書いて、それを長い時間動かし、データを DB にぶちこんだのです。公開はしていませんが、WWW::DMM::Adult という Perl のモジュールを作りました。
+以下のような形で、検索し、WWW::DMM::Adult::Item オブジェクトを取得することができます。
+</p>
+<pre class="brush: perl"> use WWW::DMM::Adult;
+use Encode;
+use utf8;
+my $dmm   = WWW::DMM::Adult-&gt;new;
+my $result = $dmm-&gt;search("柚木ティナ", { num =&gt; 3 });
+my @items = @{$result-&gt;{items}};
+foreach my $item (@items) {
+    print Encode::encode( "utf-8", $item-&gt;title ) . "\n";
+}
+ </pre>
+<p>
+このモジュールと Wikipedia にあるAV女優一覧を使えばAPIで使用するデータを取得することができます。
+まとめると
+</p>
+<ul>
+  <li>マッチングさせたい対象の辞書（AV女優一覧）を持っている</li>
+  <li>検索してアイテムを返すページがある（DMM.Adultの検索ページ）</li>
+  <li>アイテムごとのページが構造化されている（DMM.Adultの各ビデオページ）</li>
+</ul>
+<p>
+場合にAPIは自作して作ることができる場合があります。
+</p>
+<p>
+ここで大きな問題は、この情報を自サイトに組み込んで掲載していいかということです。
+それに関しては俺が怒られるかどうか？ということで体当たりで実証しています。というのは半分冗談の半分本気です。実際にはまだ怒られてはいません。
+が、これがOKな場合もあると考えていて、例えば自作APIで持ってきた情報によりユーザーの購買行為に結び付く時には DMM.Adult 側にも利益があるわけで、Win-Winなわけです。
+とはいえ、サイトには著作権があります。真似しないようにしましょう。
+気が向いたら YourFileHost だけじゃなくて DMM.Adult の作品も見たらいいと思うよ！とアサマシならぬエロアサマシ。
+</p>
+
+<h4>その他</h4>
+<p>
+そのほかの動きとして、YourFileHost がクッキーを読むようになって、動画を複数見ていると登録しろと言われるようになりました。これは、捨てアドというか適当なメールアドレスで登録してもOKみたいです。
+また、ブラウザの設定をかえることによって、登録の画面を出さない方法もあります。
+</p>
+<ul>
+  <li><a href="http://blog80.fc2.com/s/shane01/file/yhf.html">★えろつべ★YourFileHostの動画を見るための解説</a></li>
+</ul>
+<p>
+まぁ、このくらいでしょうかね。ということで、YourAVHost からいろいろなことを学びました。
+  これからも <a href="http://youravhost.net/">YourAVHost</a> をよろしくね！あ、要望があったら教えてください。できる範囲で対応したいと思います。
+</p>
+
+
+		</div>
+
+		<div class="post-tags">
+			
+				
+					<nav class="nav tags">
+							<ul class="flat">
+								
+								<li><a href="/tags/perl">Perl</a></li>
+								
+							</ul>
+					</nav>
+				
+			
+		</div>
+        <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v5.0&appId=233306523373884&autoLogAppEvents=1"></script>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+
+<div class="social-button-area">
+  <ul class="social-button">
+    <li>
+      <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
+    </li>
+    <li>
+      <span class="fb-share-button"  data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2008%2f0117143551%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
+    </li>
+    <li>
+      <a href="https://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label-counter" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>
+    </li>
+  </ul>
+</div>
+
+<div class="disqus-area">
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "yusukebe-com" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<ul class="pagination">
+  
+  <li class="page-item page-prev">
+    <a href="https://yusukebe.com/posts/2008/0117102109/" class="page-link" aria-label="Previous"><span aria-hidden="true">← 「ちょいデキ! 」青野慶久</span></a>
+  </li>
+  
+  
+  <li class="page-item page-next">
+    <a href="https://yusukebe.com/posts/2008/0118023133/" class="page-link" aria-label="Next"><span aria-hidden="true">「フェルマーの最終定理」 サイモン シン →</span></a>
+  </li>
+  
+</ul>
+
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright yusukebe.com |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-492497-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

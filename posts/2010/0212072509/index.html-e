@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>いかにしておっぱいをだら見する仕組みを作るか「DaraPic Searchってのを作ったよ」 - ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="いかにしておっぱいをだら見する仕組みを作るか「DaraPic Searchってのを作ったよ」" />
+<meta property="og:description" content=" 先ほどTumblr、Twitpicの写真をだら見するビューアーを作りましたが、やっぱりおっぱいをだら見したいよねということで、おっぱいやおっぱいやおっぱい以外のもの画像検索キーワード結果をだら見する「DaraPic Search」というの" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yusukebe.com/posts/2010/0212072509/" />
+<meta property="og:image" content="https://yusukebe.com/icons/myicon.png"/>
+<meta property="article:published_time" content="2010-02-12T16:25:00+09:00" />
+<meta property="article:modified_time" content="2010-02-12T16:25:00+09:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://yusukebe.com/icons/myicon.png"/>
+
+<meta name="twitter:title" content="いかにしておっぱいをだら見する仕組みを作るか「DaraPic Searchってのを作ったよ」"/>
+<meta name="twitter:description" content=" 先ほどTumblr、Twitpicの写真をだら見するビューアーを作りましたが、やっぱりおっぱいをだら見したいよねということで、おっぱいやおっぱいやおっぱい以外のもの画像検索キーワード結果をだら見する「DaraPic Search」というの"/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
+	
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://yusukebe.com/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper post">
+		<div class="header">
+	<h1 class="site-title"><a href="https://yusukebe.com/">ゆーすけべー日記</a></h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/yusukebe" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/yusukebe" title="Twitter"><i data-feather="twitter"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post-header">
+			<h1 class="title">いかにしておっぱいをだら見する仕組みを作るか「DaraPic Searchってのを作ったよ」</h1>
+			<div class="meta">Posted at &mdash; Feb 12, 2010</div>
+		</div>
+
+		<div class="markdown post-body">
+			
+
+<p>
+先ほどTumblr、Twitpicの写真をだら見するビューアーを作りましたが、
+<strong>やっぱりおっぱいをだら見したいよね</strong>
+ということで、おっぱいやおっぱいやおっぱい以外のもの画像検索キーワード結果を
+だら見する「<a href="http://darapic.pulpsite.net/">DaraPic Search</a>」というのを作りました。
+</p>
+
+<p>
+この「<strong>おっぱいをだら見する仕組みを作る</strong>」という命題は、
+凝りだすと結構コツがいるので、それを課題ごとに解説します。
+</p>
+
+<h4>1.おっぱい画像を検索する</h4>
+
+<p>
+最初に直面した問題はこれです。
+どこからキーワード「おっぱい」として画像検索して、
+JSを使いたかったのでJSONでひっぱってこれるかということです。
+当初、写真だったらFlickrだろ！ということでFlickrで「おっぱい」と検索してみても、
+どーも刺激の非常に低いものばかり。お次に検索エンジンで！ということで、
+Google Ajax Search API を使おうということで、
+エロい画像がでてくるのを確認済みでやってみようとしましたが、
+はたと思い出しました。
+Google Ajax Search API って検索結果の件数に確かすごい制限があるんですよね。
+100枚ももってこれねーんじゃないかな。
+ということで今回はYahoo、しかも米のものを使うことにしました。
+日本のAPIはJSONでとって来れないのよね〜
+このYahoo API、やはり検索結果の件数に規制があるものの確か1000件まではいけるので、
+こちらを使います。
+</p>
+
+<h4>2.にょろにょろ出す</h4>
+<p>
+JSで、というかjQueryで上から下へスライドダウンしながら、
+かつフェードインさせると気持ちよく画像が見れます。
+そのソースがこんな感じです。
+この二つのエフェクトを同時にするってのが肝ですね。
+</p>
+
+<pre class="brush: perl"> var div = $("&lt;div/&gt;");
+//画像をdivに入れたりする
+div.hide();
+$("#panel").prepend(div); //#panelの頭に挿入
+div.animate({
+  "height": "toggle", "opacity": "toggle"
+}, 500 );
+ </pre>
+
+<h4>3.画像を先読みさせる</h4>
+<p>
+にょろにょろ出すことには出せたんですが、
+その瞬間に画像のロードがかかるんで、なんかスムーズじゃないです。
+ということで、画像をあらかじめ検索結果を取得した時点で、
+先読みさせて、のちほどインターバルを置いていっこいっこ描画する際には
+もうすでにロードされているということにしましょう。
+するとスムーズに描画されます。
+</p>
+
+<pre class="brush: perl"> //JSONを持ってきて、結果をループで回している時に
+//jQueryでimg要素を作って描画させておく
+$("&lt;img/&gt;").attr("src", this.Url);
+ </pre>
+
+<h4>4.リファラがないと表示できない系の画像はYahooにあるサムネイル画像を使う</h4>
+<p>
+某fc2.comとかdtiblogとかに張ってある画像はリファラがなくって
+直接閲覧しようとすると404かなんかを返してみれません＞＜
+よく「おっぱい」でひっかる画像がそういうの多いので、
+これじゃあ悲しいので、そういう時はYahooの検索APIで用意されているサムネイル画像を使いましょう。
+</p>
+
+<pre class="brush: perl"> var photoUrl = photo.Url;
+if( photo.Url.match(/\.fc2\.com|dtiblog\.com/) ){
+  photoUrl = photo.Thumbnail.Url;
+}
+ </pre>
+<p>
+まずは簡単に正規表現で決めうちマッチさせたものはサムネイルでって感じにします。
+それでもこのパターンにひっかからずに描画できないものもありますよね。
+ということでそういうのは、スキップします。
+imgという変数で写真のURLを読み込ませてあるので、
+attr('width')を使って写真の幅を取得し、それが0の時には描画処理を飛ばします。
+</p>
+
+<pre class="brush: perl"> var img = $("&lt;img/&gt;");
+img.attr('src',photoUrl);
+if(img.attr('width') &gt; 0 ){
+  //描画処理
+}
+ </pre>
+
+<h4>5.まとめ</h4>
+<p>
+てな感じで、おっぱいだら見が気持ちよーくできるようになりましたとさ。
+よかったらだら見してください。
+</p>
+
+<ul>
+  <li>
+<span class="hatena-bookmark-title"><a href="http://darapic.pulpsite.net/">Darapic Search</a></span> <span class="hatena-bookmark-users"><a href="http://b.hatena.ne.jp/entry/darapic.pulpsite.net/"><img alt="Darapic Search" class="at-xid-6a0133f4781589970b015435b6f687970c" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015435b6f687970c-pi.gif title="Darapic Search"></a></span>
+</li>
+</ul>
+
+
+		</div>
+
+		<div class="post-tags">
+			
+				
+			
+		</div>
+        <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v5.0&appId=233306523373884&autoLogAppEvents=1"></script>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+
+<div class="social-button-area">
+  <ul class="social-button">
+    <li>
+      <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
+    </li>
+    <li>
+      <span class="fb-share-button"  data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2010%2f0212072509%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
+    </li>
+    <li>
+      <a href="https://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label-counter" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>
+    </li>
+  </ul>
+</div>
+
+<div class="disqus-area">
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "yusukebe-com" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<ul class="pagination">
+  
+  <li class="page-item page-prev">
+    <a href="https://yusukebe.com/posts/2010/0211161719/" class="page-link" aria-label="Previous"><span aria-hidden="true">← 日本人がうpしたTwitPicの画像をだら見できるTwitPic Stream (ja)ってのを作ったよ</span></a>
+  </li>
+  
+  
+  <li class="page-item page-next">
+    <a href="https://yusukebe.com/posts/2010/0214125554/" class="page-link" aria-label="Next"><span aria-hidden="true">オススメのIRCチャンネルを教えてください＠人力検索はてな →</span></a>
+  </li>
+  
+</ul>
+
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright yusukebe.com |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-492497-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

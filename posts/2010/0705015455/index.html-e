@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Twib(地味に)アップデート！ - ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="Twib(地味に)アップデート！" />
+<meta property="og:description" content=" TwitterでつぶやかれたURLをひたすら収集し、人気順に並べるTwib!このサイトを見るとTwitterで話題のサイトがわかるというサービスです。実のところ、ほったらかしだったところ、ここ2週間くらいかけてバリバリにチューニングして、" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yusukebe.com/posts/2010/0705015455/" />
+<meta property="og:image" content="https://yusukebe.com/icons/myicon.png"/>
+<meta property="article:published_time" content="2010-07-05T10:54:00+09:00" />
+<meta property="article:modified_time" content="2010-07-05T10:54:00+09:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://yusukebe.com/icons/myicon.png"/>
+
+<meta name="twitter:title" content="Twib(地味に)アップデート！"/>
+<meta name="twitter:description" content=" TwitterでつぶやかれたURLをひたすら収集し、人気順に並べるTwib!このサイトを見るとTwitterで話題のサイトがわかるというサービスです。実のところ、ほったらかしだったところ、ここ2週間くらいかけてバリバリにチューニングして、"/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
+	
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://yusukebe.com/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper post">
+		<div class="header">
+	<h1 class="site-title"><a href="https://yusukebe.com/">ゆーすけべー日記</a></h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/yusukebe" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/yusukebe" title="Twitter"><i data-feather="twitter"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post-header">
+			<h1 class="title">Twib(地味に)アップデート！</h1>
+			<div class="meta">Posted at &mdash; Jul 5, 2010</div>
+		</div>
+
+		<div class="markdown post-body">
+			
+
+<p>
+TwitterでつぶやかれたURLをひたすら収集し、人気順に並べる<a href="http://twib.jp/"><strong>Twib!</strong></a>
+このサイトを見ると<strong>Twitterで話題のサイトがわかる</strong>というサービスです。
+実のところ、ほったらかしだったところ、
+ここ2週間くらいかけてバリバリにチューニングして、
+機能追加をしました。
+</p>
+<p>
+内部のシステムの苦労話は後ほどということでどのようなアップデートがあったかを紹介します。
+非常に使い心地がよくなったので、気になったら覗いてみてください。
+さて、主に以下の<b>8つのアップデート</b>になります。
+</p>
+
+<h4>1. 表示速度、最大10倍速の高速化</h4>
+<p style="padding:10px;border:1px solid #999;margin-top:10px;">
+<img alt="twib" class="at-xid-6a0133f4781589970b014e8bd752d5970d" src="https://yusukebe.com/archives/.a/6a0133f4781589970b014e8bd752d5970d-pi.jpg>
+</p>
+<p>
+トップページ及びその他のページにおいて過去の最大10倍以上、表示の時間が速くなりました。
+これで快適に人気記事が見れますね。
+</p>
+<h4>2. ツイートの取得が最大5倍に性能アップ</h4>
+<p style="padding:10px;border:1px solid #999;margin-top:10px;">
+<img alt="twib" class="at-xid-6a0133f4781589970b014e8bd752df970d" src="https://yusukebe.com/archives/.a/6a0133f4781589970b014e8bd752df970d-pi.jpg>
+</p>
+<p>
+今までに比べて最大時で5倍のURL付きツイートを取得するようになりました。
+これまでは取りこぼしが多かったものをがんばってゲッツすることで多くのつぶやきから真の人気エントリーが分かります。また、トップページ上位に来るエントリーのツイート数も1000以上を超えることがよくありTwitterのユーザー数の多さが分かりますね。
+</p>
+<h4>3. 記事のサマリー表示の精度を向上</h4>
+<p style="padding:10px;border:1px solid #999;margin-top:10px;">
+<img alt="twib" class="at-xid-6a0133f4781589970b014e8bd752ee970d" src="https://yusukebe.com/archives/.a/6a0133f4781589970b014e8bd752ee970d-pi.jpg>
+</p>
+<p>
+これまで記事のサマリー表示をしていたのですが、その取得方法を改善したために、
+精度が向上しました。ブログサイトやニュースサイトなど主なメディアに対応しています。
+サマリーを見て興味が湧いたら本文のあるサイトへという導線が楽しめるようになりましたね。
+</p>
+<h4>4. 一部に特徴的なサムネイル画像の導入</h4>
+<p style="padding:10px;border:1px solid #999;margin-top:10px;">
+<img alt="twib" class="at-xid-6a0133f4781589970b014e8bd752fb970d" src="https://yusukebe.com/archives/.a/6a0133f4781589970b014e8bd752fb970d-pi.jpg>
+</p>
+<p>
+新機能です。記事ごとに特徴的な画像を抽出してサムネイル表示するようにしました。
+そこそこ精度がよいのでぱっとみためだけでそれぞれの記事がどんな内容かがビジュアルでわかります。
+</p>
+<h4>5. Twitter Anywhereによるその場でつぶやく機能</h4>
+<p style="padding:10px;border:1px solid #999;margin-top:10px;">
+<img alt="twib" class="at-xid-6a0133f4781589970b014e8bd7530c970d" src="https://yusukebe.com/archives/.a/6a0133f4781589970b014e8bd7530c970d-pi.jpg>
+</p>
+<p>
+これも新機能です。Twitter Anywhere という Twitter 公式の機能を導入しました。
+つぶやきのユーザー情報をマウスオーバーすれば見れるだけではなく、
+安全なログインをすれば記事に対してその場でつぶやくこともできますよ。
+</p>
+<h4>6. カテゴリ分けでお好きな記事を</h4>
+<p style="padding:10px;border:1px solid #999;margin-top:10px;">
+<img alt="twib" class="at-xid-6a0133f4781589970b014e8bd75312970d" src="https://yusukebe.com/archives/.a/6a0133f4781589970b014e8bd75312970d-pi.jpg>
+</p>
+<p>
+今までできていないかったカテゴリ分けをすることにより、
+特化した記事をまとめてみていくことができますね。
+</p>
+<h4>7. どのページをフィードを出力</h4>
+<p style="padding:10px;border:1px solid #999;margin-top:10px;">
+<img alt="twib" class="at-xid-6a0133f4781589970b014e8bd7531a970d" src="https://yusukebe.com/archives/.a/6a0133f4781589970b014e8bd7531a970d-pi.jpg>
+</p>
+<p>
+トップページはもちろん、上記したカテゴリごと、またエントリーのコメントなどもRSSとしてフィードを出力しています。情報を追いかけたければお好きなフィードを購読してください。
+</p>
+<h4>8. ボットもアップデート</h4>
+<p style="padding:10px;border:1px solid #999;margin-top:10px;">
+<img alt="twib" class="at-xid-6a0133f4781589970b014e8bd75322970d" src="https://yusukebe.com/archives/.a/6a0133f4781589970b014e8bd75322970d-pi.jpg>
+</p>
+<p>
+ボットをアップデートしました。末尾にエントリーのURLの他にもう一つその記事に対するTwibのURLを張っているので、みんながその記事に対してどんなツイートをしているのか気になったらクリックしてみたらどうでしょうかね。
+</p>
+<br>
+<p>
+というわけである程度当初あったやりたいことがだいたい実装されたって感じですが、
+まだまだ要望等に答えてアップデートしていくのでよろしくお願いします！
+</p>
+<ul>
+  <li>
+<span class="hatena-bookmark-title"><a href="http://twib.jp/">Twib - Twitter ホットエントリー</a></span> <span class="hatena-bookmark-users"><a href="http://b.hatena.ne.jp/entry/twib.jp/"><img alt="Twib - Twitter ホットエントリー" class="at-xid-6a0133f4781589970b014e8bd7532c970d" src="https://yusukebe.com/archives/.a/6a0133f4781589970b014e8bd7532c970d-pi" title="Twib - Twitter ホットエントリー"></a></span> <span class="hatena-bookmark-b-mark"><a href="http://b.hatena.ne.jp/entry/twib.jp/"><img alt="Twib - Twitter ホットエントリー" class="at-xid-6a0133f4781589970b015435b6f515970c" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015435b6f515970c-pi" title="Twib - Twitter ホットエントリー"></a></span> <span class="hatena-bookmark-b-ex-mark"><a href="http://b.hatena.ne.jp/my/add.confirm?url=http%3A%2F%2Ftwib.jp%2F"><img alt="このエントリーをはてなブックマークに追加" class="at-xid-6a0133f4781589970b015435b6f51e970c" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015435b6f51e970c-pi.gif title="このエントリーをはてなブックマークに追加"></a></span>
+</li>
+<li><a href="http://bizmakoto.jp/bizid/articles/0910/26/news049.html">誠 Biz.ID：Webサービス図鑑／Twitter関連：Twib</a></li>
+</ul>
+
+
+		</div>
+
+		<div class="post-tags">
+			
+				
+			
+		</div>
+        <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v5.0&appId=233306523373884&autoLogAppEvents=1"></script>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+
+<div class="social-button-area">
+  <ul class="social-button">
+    <li>
+      <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
+    </li>
+    <li>
+      <span class="fb-share-button"  data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2010%2f0705015455%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
+    </li>
+    <li>
+      <a href="https://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label-counter" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>
+    </li>
+  </ul>
+</div>
+
+<div class="disqus-area">
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "yusukebe-com" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<ul class="pagination">
+  
+  <li class="page-item page-prev">
+    <a href="https://yusukebe.com/posts/2010/0702035550/" class="page-link" aria-label="Previous"><span aria-hidden="true">← Catalystで作る占いアプリ！</span></a>
+  </li>
+  
+  
+  <li class="page-item page-next">
+    <a href="https://yusukebe.com/posts/2010/0705031432/" class="page-link" aria-label="Next"><span aria-hidden="true">Twitterで新しくつぶやかれているURLは1日43万件 →</span></a>
+  </li>
+  
+</ul>
+
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright yusukebe.com |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-492497-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

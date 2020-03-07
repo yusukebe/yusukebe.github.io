@@ -1,0 +1,18 @@
++++
+Categories = ["tech"]
+Description = "Webから日記を更新できるようにした。 これだとめちゃらくだ。今まではSSHでSFCに入ってemacsで書き換えてたからねー いまでmail2hnfがうまくいかなかったんだよねー。 どうやら、forwardファイルの置き場所がよくなった見た"
+Tags = []
+date = "2001-11-19T23:09:00+09:00"
+title = "Webから日記を更新"
+author = "kamawada"
+archive = ["2001"]
+draft = false
++++
+
+<p>Webから日記を更新できるようにした。<br>
+これだとめちゃらくだ。今まではSSHでSFCに入ってemacsで書き換えてたからねー<br>
+いまでmail2hnfがうまくいかなかったんだよねー。<br>
+どうやら、forwardファイルの置き場所がよくなった見たい。<br>
+SFCの場合はmailってホストにログインして<br>
+/var/spool/forward<br>
+に自分のログイン名のフォワードファイルを作らなきゃいけないんだよね。</p>

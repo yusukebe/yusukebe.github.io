@@ -1,0 +1,68 @@
++++
+Categories = ["tech"]
+Description = " 年末のこの時期にクリスマスまでの日数を数える風習から派生して、12月1日から25日まで、毎日ひとり〜複数人で、テック系記事を書くAdvent Calendarが定着しています。以前はインデペンデントでやっていたりしてましたが、最近ではQi"
+Tags = []
+date = "2015-12-02T10:20:00+09:00"
+title = "Wadavent CalendarというAdvent Calendarはじめました！"
+author = "kamawada"
+archive = ["2015"]
+draft = false
++++
+
+
+<p>年末のこの時期にクリスマスまでの日数を数える風習から派生して、12月1日から25日まで、毎日ひとり〜複数人で、テック系記事を書く<strong>Advent Calendar</strong>が定着しています。以前はインデペンデントでやっていたりしてましたが、最近ではQiitaなどがAdvent Calendarに特化した機能を持っていて便利〜なわけです。さて、そんな僕はこの、Advent Calendarの存在を完全に<strong>忘れていて</strong>、「この際ひとりでAdvent Calendarでもやるか！」なんて思っていたら、いつのまにか<strong>Wada</strong>vent Calendarなんてものをつくってました。わだべんとかれんだ〜 ですよ！</p>
+
+<p><iframe src="//hatenablog-parts.com/embed?url=http%3A%2F%2Fwww.adventar.org%2Fcalendars%2F1235" title="Wadavent Calendar Advent Calendar 2015 - Adventar" class="embed-card embed-webcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;"></iframe><cite class="hatena-citation"><a href="http://www.adventar.org/calendars/1235">www.adventar.org</a></cite></p>
+
+<p>テーマなんでもあり、内容も雑でOKなんだけど、<strong>Wada</strong>vent Calendarだけあって「ただし！書けるのは<strong>わだ</strong>さんだけ！」のAdvent Calendarです。ちなみに最初Qiitaで書いてたんですが、</p>
+
+<blockquote><p>Qiitaでのアドベントカレンダーはプログラミングに関連するものに限定しております</p></blockquote>
+
+<p>とのことで利用規約違反になっちゃってすいません＞＜ <strong>Adventar</strong>使うことにしました！もう既に1日目のエントリーは僕が書きました〜</p>
+
+<p><iframe src="http://blog.yusuke.be/embed/2015/12/01/194223" title="和田と鎌倉 - ゆーすけべー日記" class="embed-card embed-blogcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 190px; max-width: 500px; margin: 10px 0px;"></iframe><cite class="hatena-citation"><a href="http://blog.yusuke.be/entry/2015/12/01/194223">blog.yusuke.be</a></cite></p>
+
+<p>ところでこの<strong>Wada</strong>vent Calendarでは何も<code>/^わだ$/</code>に限る とは明記していないので、つまり全国の</p>
+
+<ul>
+<li>おおわださん</li>
+<li>こわださん</li>
+<li>おわださん</li>
+<li>さわださん</li>
+<li>たわださん</li>
+<li>かわださん</li>
+<li>きみわださん</li>
+<li>とうわださん</li>
+<li>わだちさん</li>
+<li>その他<code>*わだ*</code>さん</li>
+</ul>
+
+
+<p>も書いていただけます！全国の「わだ」が含まれる名前をお持ちの方、<strong>Wada</strong>vent Calendarへのご参加お待ちしております！</p>
+
+<ul>
+<li><a href="http://www.adventar.org/calendars/1235">Wadavent Calendar - Adventar</a></li>
+</ul>
+
+
+<hr>
+
+<p></p>
+<div class="hatena-asin-detail">
+<a href="http://www.amazon.co.jp/exec/obidos/ASIN/4998064738/kamawada-22/"><img src="http://d.hatena.ne.jp/images/hatena_aws.gif" class="hatena-asin-detail-image" alt="大江伝記・鎌倉和田軍記" title="大江伝記・鎌倉和田軍記"></a><div class="hatena-asin-detail-info">
+<p class="hatena-asin-detail-title"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4998064738/kamawada-22/">大江伝記・鎌倉和田軍記</a></p>
+<ul>
+<li>
+<span class="hatena-asin-detail-label">作者:</span> 和田悌五郎,和田佳子</li>
+<li>
+<span class="hatena-asin-detail-label">出版社/メーカー:</span> 和田悌五郎</li>
+<li>
+<span class="hatena-asin-detail-label">発売日:</span> 1998/06</li>
+<li>
+<span class="hatena-asin-detail-label">メディア:</span> 単行本</li>
+<li><a href="http://d.hatena.ne.jp/asin/4998064738/kamawada-22" target="_blank">この商品を含むブログを見る</a></li>
+</ul>
+</div>
+<div class="hatena-asin-detail-foot"></div>
+</div>
+

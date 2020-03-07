@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="generator" content="Hugo 0.63.2" />
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="alternate" type="application/rss+xml" href="https://yusukebe.com/index.xml" title="ゆーすけべー日記" />
+	<meta property="og:title" content="ゆーすけべー日記" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://yusukebe.com/" />
+<meta property="og:image" content="https://yusukebe.com/icons/myicon.png"/>
+<meta property="og:updated_time" content="2020-03-06T15:46:50+09:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://yusukebe.com/icons/myicon.png"/>
+
+<meta name="twitter:title" content="ゆーすけべー日記"/>
+<meta name="twitter:description" content=""/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
+	
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://yusukebe.com/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+  <div class="container wrapper">
+	<div class="header">
+	<h1 class="site-title"><a href="https://yusukebe.com/">ゆーすけべー日記</a></h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/yusukebe" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/yusukebe" title="Twitter"><i data-feather="twitter"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+	<div class="recent-posts section">
+	  <h2 class="section-header">
+		Recent posts
+	  </h2>
+	  <div class="posts">
+		
+		
+		
+		<div class="post">
+		  <div class="meta">Oct 31, 2004</div>
+		  <a class="title" href="/posts/2004/1030195437/">インターコンチの壁にチャン・ツィイー</a> &mdash;
+		  <span class="description">
+			
+			    アジエンスのキャンペーンでインターコンチネンタルホテルの壁にチャン・ツィイーを映し出すというイベント。      こんな感じでチャン・ツィイーが映し出されていた。でけえ。身長何メートルだよ。映像というかスライドショーって感じ。   
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Oct 31, 2004</div>
+		  <a class="title" href="/posts/2004/1030160136/">久々にホパンの被害</a> &mdash;
+		  <span class="description">
+			
+			    研究室でノーパソを放置して置くとホパンが現れてノーパソにいたずらをする悪い奴。その名もホパン（ゆーすけべー日記内を”ホパン”で検索）。最近またホパンの被害が増えているようだ。俺はスタートメニューのアプリやフォルダなどのショートカット
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Oct 30, 2004</div>
+		  <a class="title" href="/posts/2004/1029152553/">正義飲み方～お笑い！企画放送局</a> &mdash;
+		  <span class="description">
+			
+			本日のおわきか。30秒で飲用水のCMを作る。俺は団子さんと組む。おやじっぽい作品に仕上がった。正義飲み方（wmv形式、30秒）
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Oct 30, 2004</div>
+		  <a class="title" href="/posts/2004/1029211348/">バインゴの中の人</a> &mdash;
+		  <span class="description">
+			
+			    巷で有名なバインゴことらぶさん。かわいいピカチュウの衣装を脱いだらこんなに怖い。      
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Oct 30, 2004</div>
+		  <a class="title" href="/posts/2004/1029211008/">いまさらtheSpoke購入</a> &mdash;
+		  <span class="description">
+			
+			    いまさらながらVisual   Studio .NET theSpoke Premium Version 2003をアマゾンで購入。学生なら3800円という激安価格でC#などの開発環境を手に入れられる。VS2002の環境を持っていた
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Oct 30, 2004</div>
+		  <a class="title" href="/posts/2004/1029210400/">松屋俺流スペシャルメニュー</a> &mdash;
+		  <span class="description">
+			
+			    まじ、満足。          牛皿定食 650円    牛めしセットを大盛りにする券 100円    生野菜 100円    温泉卵 80円    味噌汁(2杯目) 60円    紅しょうがご飯の上にてんこ盛り プライスレス   
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Oct 29, 2004</div>
+		  <a class="title" href="/posts/2004/1028185831/">ログのようにマニュアルを作れるソフト</a> &mdash;
+		  <span class="description">
+			
+			    Click!レコーダー 大向さんの日記より     すごい便利。こういうマニュアル、授業のSAとか、バイトとかで作ったよー。スクリーンキャプチャして、テキストつけて、テキストつけるときに「このウィンドウの正式名称ってなんだ？」とか悩
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Oct 25, 2004</div>
+		  <a class="title" href="/posts/2004/1025144054/">人体通信</a> &mdash;
+		  <span class="description">
+			
+			これ、すごいんだよね
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Oct 25, 2004</div>
+		  <a class="title" href="/posts/2004/1025043511/">まだわかんないよ</a> &mdash;
+		  <span class="description">
+			
+			    googru.net vs goggoru.org     まだわかんなよ 
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Oct 25, 2004</div>
+		  <a class="title" href="/posts/2004/1025040238/">500mhz搭載adidasスニーカー</a> &mdash;
+		  <span class="description">
+			
+			    これすごいんだよね。 
+			
+		  </span>
+		</div>
+		
+		
+
+<ul class="pagination">
+	<li class="page-item page-prev">
+	
+    <a href="/page/130/" class="page-link" aria-label="Previous"><span aria-hidden="true">← Prev page</span></a>
+	
+	</li>
+	<li class="page-item page-next">
+	
+    <a href="/page/132/" class="page-link" aria-label="Next"><span aria-hidden="true">Next page →</span></a>
+	
+	</li>
+</ul>
+
+
+	  </div>
+	</div>
+  </div>
+  <div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright yusukebe.com |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-492497-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

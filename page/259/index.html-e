@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="generator" content="Hugo 0.63.2" />
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="alternate" type="application/rss+xml" href="https://yusukebe.com/index.xml" title="ゆーすけべー日記" />
+	<meta property="og:title" content="ゆーすけべー日記" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://yusukebe.com/" />
+<meta property="og:image" content="https://yusukebe.com/icons/myicon.png"/>
+<meta property="og:updated_time" content="2020-03-06T15:46:50+09:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://yusukebe.com/icons/myicon.png"/>
+
+<meta name="twitter:title" content="ゆーすけべー日記"/>
+<meta name="twitter:description" content=""/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
+	
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://yusukebe.com/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+  <div class="container wrapper">
+	<div class="header">
+	<h1 class="site-title"><a href="https://yusukebe.com/">ゆーすけべー日記</a></h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/yusukebe" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/yusukebe" title="Twitter"><i data-feather="twitter"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+	<div class="recent-posts section">
+	  <h2 class="section-header">
+		Recent posts
+	  </h2>
+	  <div class="posts">
+		
+		
+		
+		<div class="post">
+		  <div class="meta">Apr 28, 2002</div>
+		  <a class="title" href="/posts/2002/0427151143/">眠る</a> &mdash;
+		  <span class="description">
+			
+			意識的にだが、１１時間寝てしまった。（汗；；
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Apr 27, 2002</div>
+		  <a class="title" href="/posts/2002/0426151135/">maya</a> &mdash;
+		  <span class="description">
+			
+			MAYAのFree版、Personal Learning EditionをSFCで落として、Thinkpadにインストールした。 http://www.aliaswavefront.com/freemayaでも怖くて、立ち上げられない…
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Apr 27, 2002</div>
+		  <a class="title" href="/posts/2002/0426151138/">teratermでOSAKAフォントを使う方法。</a> &mdash;
+		  <span class="description">
+			
+			 まず、OSAKAフォントを自分の使っているWindowsに入れる。 Macの見やすいOsakaフォントをWinで使おうプロジェクト→http://osakattf.hoops.ne.jp/これのOsaka.zipってやつをダウンロード＆W
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Apr 27, 2002</div>
+		  <a class="title" href="/posts/2002/0426151139/">今日のログイン名</a> &mdash;
+		  <span class="description">
+			
+			シスプロマリオ3面クリア。
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Apr 27, 2002</div>
+		  <a class="title" href="/posts/2002/0426151137/">日記のテーマ変更</a> &mdash;
+		  <span class="description">
+			
+			日記のテーマ（デザイン）をスラッシュドット風にしました。 スラッシュ　ドット　ジャパン↓ http://slashdot.jp/前の読みにくかったからね。今回シンプルになっていいね。
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Apr 27, 2002</div>
+		  <a class="title" href="/posts/2002/0426151136/">本能のハイキック！</a> &mdash;
+		  <span class="description">
+			
+			http://www.fujitv.co.jp/jp/b_hp/highkick/吉岡美穂イイ…
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Apr 26, 2002</div>
+		  <a class="title" href="/posts/2002/0425151133/">テラタームでOSAKAフォント</a> &mdash;
+		  <span class="description">
+			
+			 イイ！！        
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Apr 26, 2002</div>
+		  <a class="title" href="/posts/2002/0425151132/">今日のサインイン名</a> &mdash;
+		  <span class="description">
+			
+			マリオにフンつぶされたノコノコ（プログラミング中）   
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Apr 26, 2002</div>
+		  <a class="title" href="/posts/2002/0425151131/">楠本先生の宿題</a> &mdash;
+		  <span class="description">
+			
+			これからシステムプログラミングの宿題をやります。一人でやります。 できなかったら楠本先生許してください。 
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Apr 26, 2002</div>
+		  <a class="title" href="/posts/2002/0425151134/">死すプロの課題（マリオ3面）クリア!!</a> &mdash;
+		  <span class="description">
+			
+			渾身の108行、ついにクリア。 俺は所詮のこのこさ。こんな汚いプログラムでもピーチ姫を救ってやる。  /* t00274yw 和田裕介作成                            *//* 著作権は和田裕介に帰属 無断転用禁止
+			
+		  </span>
+		</div>
+		
+		
+
+<ul class="pagination">
+	<li class="page-item page-prev">
+	
+    <a href="/page/258/" class="page-link" aria-label="Previous"><span aria-hidden="true">← Prev page</span></a>
+	
+	</li>
+	<li class="page-item page-next">
+	
+    <a href="/page/260/" class="page-link" aria-label="Next"><span aria-hidden="true">Next page →</span></a>
+	
+	</li>
+</ul>
+
+
+	  </div>
+	</div>
+  </div>
+  <div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright yusukebe.com |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-492497-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

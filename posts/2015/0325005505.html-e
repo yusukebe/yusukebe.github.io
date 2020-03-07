@@ -1,0 +1,105 @@
++++
+Categories = ["tech"]
+Description = " Webアプリケーションの開発にあたって手元で開発用サーバーを起てるのはよくあるケースですが、同時に他のミドルウェアやCSS/JSの拡張メタ言語のコンパイラを立ち上げておきたい時があります。以下のようなprocletファイルをつくって fo"
+Tags = []
+date = "2015-03-25T00:55:00+09:00"
+title = "プロジェクトに合わせて設定を変える起動スクリプトをProcletでつくる"
+author = "kamawada"
+archive = ["2015"]
+draft = false
++++
+
+
+<p>Webアプリケーションの開発にあたって手元で開発用サーバーを起てるのはよくあるケースですが、同時に他のミドルウェアやCSS/JSの拡張メタ言語のコンパイラを立ち上げておきたい時があります。以下のようなprocletファイルをつくって <code>foreman</code> やPerl製のProcletディストリビューションに同封の <code>proclet</code> コマンドを立ち上げればそれが実現出来ます。</p>
+
+
+
+
+<pre> web: carton exec plackup -R templates,lib --no-default-middleware -p 5001 psgi/bokete_front_web.psgi
+compass: cd assets/pc &amp;&amp; compass watch sass/style.scss
+ </pre>
+
+
+
+
+<p>上記のファイルを用意して…</p>
+
+
+
+
+<pre> $ proclet start -f procfile_for_pc
+ </pre>
+
+
+
+
+<p>とすればOKです。</p>
+
+
+
+
+<p>PSGIなWebアプリと <code>comapss</code> コマンドを同時に動かしてますね。ただこれだと、1つのプロジェクトディレクトリにいくつかのアプリケーションが混在している時（うちの場合はよくあるんです）に、procletファイルが多数必要になって格好が悪い。そこで、  <code>Proclet::Declare</code> を使って軽いスクリプトを書いてみたら、対象のアプリを指定するだけで 1ファイルにまとまってよい感じです。</p>
+
+
+
+
+<pre> #! /usr/bin/env perl
+use strict;
+use warnings;
+use Proclet::Declare;
+use Getopt::Long qw/:config posix_default no_ignore_case pass_through/;
+use Pod::Usage qw/pod2usage/;
+
+color(1);
+
+my $map = {
+    pc =&gt; { psgi =&gt; 'bokete_front_web.psgi', assets =&gt; 'pc' },
+    sp =&gt; { psgi =&gt; 'bokete_front_sp.psgi', assets =&gt; 'sp' },
+    select =&gt; { psgi =&gt; 'bokete_front_select.psgi', assets =&gt; 'select' },
+    au =&gt; { psgi =&gt; 'bokete_front_au.psgi', assets =&gt; 'au' },
+};
+
+my %args;
+GetOptions(
+    %args,
+    qw/
+      port|p=i
+      app|a=s
+    /
+);
+
+my $port = $args{port} || 5000;
+my $mode = $args{app} or pod2usage(2);
+my $config = $map-&gt;{$mode};
+
+service( 'web', "carton exec plackup -R templates,lib --no-default-middleware -p $port psgi/$config-&gt;{psgi}" );
+service( 'compass', "cd assets/$config-&gt;{assets} &amp;&amp; compass watch sass/style.scss");
+
+run;
+
+__END__
+
+=head1 DESCRIPTION
+
+develop
+
+=head1 SYNOPSIS
+
+    $ ./develop -a [pc|sp|select|au] --port 5001
+
+=cut
+ </pre>
+
+
+
+
+<p>PODにもあるようにスマートフォン版の（フロントエンドな）Webアプリを立ち上げて、かつソレ用のSASSファイルを <code>compass</code> コマンドでコンパイルしています。なんか適当に書いたコードですが、これで無駄なコードが減ってスッキリしましたね。ご参考までに。</p>
+
+
+
+
+<ul>
+<li><a href="http://search.cpan.org/dist/Proclet/">Masahiro Nagano / Proclet - search.cpan.org</a></li>
+</ul>
+
+

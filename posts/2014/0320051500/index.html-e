@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Perlによる速習プランもしくは「Webアプリエンジニア養成読本」番外編 - ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="Perlによる速習プランもしくは「Webアプリエンジニア養成読本」番外編" />
+<meta property="og:description" content=" 先日共著で出版し、本日出版記念のイベントが行われる「Webアプリエンジニア養成読本」。基礎知識から運用まで一気通貫でWebアプリ周辺の教本を目指してアレンジしました。      Webアプリエンジニア養成読本[しくみ、開発、環境構築・運用" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yusukebe.com/posts/2014/0320051500/" />
+<meta property="og:image" content="https://yusukebe.com/icons/myicon.png"/>
+<meta property="article:published_time" content="2014-03-20T05:15:00+09:00" />
+<meta property="article:modified_time" content="2014-03-20T05:15:00+09:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://yusukebe.com/icons/myicon.png"/>
+
+<meta name="twitter:title" content="Perlによる速習プランもしくは「Webアプリエンジニア養成読本」番外編"/>
+<meta name="twitter:description" content=" 先日共著で出版し、本日出版記念のイベントが行われる「Webアプリエンジニア養成読本」。基礎知識から運用まで一気通貫でWebアプリ周辺の教本を目指してアレンジしました。      Webアプリエンジニア養成読本[しくみ、開発、環境構築・運用"/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
+	
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://yusukebe.com/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper post">
+		<div class="header">
+	<h1 class="site-title"><a href="https://yusukebe.com/">ゆーすけべー日記</a></h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/yusukebe" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/yusukebe" title="Twitter"><i data-feather="twitter"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post-header">
+			<h1 class="title">Perlによる速習プランもしくは「Webアプリエンジニア養成読本」番外編</h1>
+			<div class="meta">Posted at &mdash; Mar 20, 2014</div>
+		</div>
+
+		<div class="markdown post-body">
+			
+
+<p>先日共著で出版し、本日出版記念のイベントが行われる「Webアプリエンジニア養成読本」。基礎知識から運用まで<strong>一気通貫で</strong>Webアプリ周辺の教本を目指してアレンジしました。</p>
+
+
+
+
+<div class="amazlet-box" style="margin-bottom:0;">
+<div class="amazlet-image" style="float:left;margin:0 12px 1px 0;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4774163678/kamawada-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/51VavR1gcyL._SL160_.jpg" alt="Webアプリエンジニア養成読本[しくみ、開発、環境構築・運用…全体像を最新知識で最初から! ] (Software Design plus)" style="border:none;"></a></div>
+<div class="amazlet-info" style="line-height:120%;margin-bottom:10px;">
+<div class="amazlet-name" style="margin-bottom:10px;line-height:120%;">
+<a href="http://www.amazon.co.jp/exec/obidos/ASIN/4774163678/kamawada-22/ref=nosim/" name="amazletlink" target="_blank">Webアプリエンジニア養成読本[しくみ、開発、環境構築・運用…全体像を最新知識で最初から! ] (Software Design plus)</a><div class="amazlet-powered-date" style="font-size:80%;margin-top:5px;line-height:120%;">posted with <a href="http://www.amazlet.com/" title="amazlet" target="_blank">amazlet</a> at 14.03.20</div>
+</div>
+<div class="amazlet-detail">和田 裕介 石田 絢一 (uzulla) すがわら まさのり 斎藤 祐一郎 <br>技術評論社 <br>売り上げランキング: 285<br>
+</div>
+<div class="amazlet-sub-info" style="float:left;"><div class="amazlet-link" style="margin-top:5px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4774163678/kamawada-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jpで詳細を見る</a></div></div>
+</div>
+<div class="amazlet-footer" style="clear:left;"></div>
+</div>
+
+
+
+
+<p><br></p>
+
+
+
+
+<p>目玉となるアプリケーションのプログラミングを行う第2章では、諸々の関係上、<strong>PHPとRubyのみ</strong>の実装を扱っています。執筆時期の最後の方で「2ページ空きが出来たからなんか書いて！」と言われ悪あがき的に<strong>Perl</strong>の紹介を書きましたがそれではさすがにページ数が足りません。そこで今回は「PHP/Rubyによる速習プラン」に追加する形で「<strong>Perlによる速習プラン</strong>」をお届けいたします。</p>
+
+
+
+
+<p>とは言ってもPerlとはなんぞや？から入ると書くのが大変ですので、その辺りは「<a href="http://www.amazon.co.jp/exec/obidos/ASIN/4873115671/kamawada-22/ref=nosim/">初めてのPerl</a>」や「<a href="http://www.amazon.co.jp/exec/obidos/ASIN/4873116287/kamawada-22/ref=nosim/">続・初めてのPerl</a>」などで補ってください。今回は最も肝心なところの例として、Ruby編のサンプルアプリをつくる件、をPerlで実装してみたコードを紹介します。該当部分の作者である<strong>すがさん</strong>によると…</p>
+
+
+
+
+<blockquote>
+  <p>はてなブックマークには及びませんが、素敵なWebアプリケーションを作成してきましょう。</p>
+</blockquote>
+
+
+
+
+<p>ということで<strong>Shiori</strong>というブックマークWebアプリをつくります。</p>
+
+
+
+
+<p><img src="http://33.media.tumblr.com/86f604d081c398e8aae09626ad995cb9/tumblr_inline_n2py3efGIG1qb2ehr.png" alt="投稿フォーム"></p>
+
+
+
+
+<p>既にあがっているコードはこちら。</p>
+
+
+
+
+<ul>
+<li><a href="https://github.com/yusukebe/Shiori">https://github.com/yusukebe/Shiori</a></li>
+</ul>
+
+
+<hr>
+<h3>仕様</h3>
+
+
+
+
+<p>分かりやすいようにすがさんの書いた箇所を今回つくるアプリなりにアレンジしつつ列挙します。まず、ユースケースは以下の2つ。</p>
+
+
+
+
+<ul>
+<li>URLを登録出来る</li>
+<li>登録したURLの一覧を参照出来る</li>
+</ul>
+
+
+<p>次にデータベースの構造は<code>bookmark</code>テーブルひとつとなります。MySQL/InnoDBでの開発運用を見据えて、SQL文で書くとこんな具合になりました。</p>
+
+
+
+
+<pre> CREATE TABLE bookmark (
+    id INT UNSIGNED AUTO_INCREMENT,
+    url TEXT NOT NULL,
+    created_at DATETIME NOT NULL,
+    updated_at DATETIME NOT NULL,
+    PRIMARY KEY (`id`)
+) DEFAULT CHARACTER SET 'utf8' engine=InnoDB;
+ </pre>
+
+
+
+
+<p>URLのエンドポイントは以下の3つです。</p>
+
+
+
+
+<ul>
+<li>
+<code>GET /</code> =&gt; 登録されたURLの一覧が見れる</li>
+<li>
+<code>GET /new</code> =&gt; URLを登録するフォーム画面</li>
+<li>
+<code>POST /create</code> =&gt; 上記フォームがPOSTする先</li>
+</ul>
+
+
+<hr>
+<h3>Mojoliciousによる実装</h3>
+
+
+
+
+<p>Perl編ってことでWAFは「Mojolicious」を使います。Amon2でもやり方はそんな変わらないはずです。</p>
+
+
+
+
+<p>まずMojolicious付属の<code>mojo</code>コマンドで雛形をつくります。</p>
+
+
+
+
+<pre> $ mojo generatge app Shiori::Web
+ </pre>
+
+
+
+
+<p>ディレクトリとファイルが生成されますが、これはそのまま使わず一部カスタムして利用します。最終的なディレクトリ構造は以下の通りです。完全僕の趣味が出てます。</p>
+
+
+
+
+<pre> .
+├── etc # SQLのスキーマファイルなど入れる
+├── lib
+│   └── Shiori
+│       ├── DB # これから説明するTeng::*を継承したモジュール群
+│       ├── Model # ロジック
+│       └── Web # Webに関係するもの
+│           └── Controller # コントローラー
+├── log # Mojoliciousのログ、レポジトリには入れない
+├── script # 自動生成されたスクリプトがあるが使わない
+├── t # テストコード
+└── templates
+    ├── layouts # テンプレートの大枠
+    └── root # 個別テンプレート
+ </pre>
+
+
+
+
+<h3>.psgiの作成</h3>
+
+
+
+
+<p><code>.psgi</code>ファイルをつくっておくと<code>Plack::Middleware::*</code>が使えたりして何かと便利なのでつくります。</p>
+
+
+
+
+<pre> use strict;
+use warnings;
+use FindBin;
+use lib "$FindBin::Bin/lib";
+use Mojo::Server::PSGI;
+use Plack::Builder;
+use Shiori::Web;
+
+my $psgi = Mojo::Server::PSGI-&gt;new(app =&gt; Shiori::Web-&gt;new);
+my $app = $psgi-&gt;to_psgi_app;
+
+builder {
+    # ここでPlack::Middleware::*を使う記述をする
+    $app;
+};
+ </pre>
+
+
+
+
+<p>これを<code>shiori_web.psgi</code>という名前に保存して<code>plackup</code>するとよいでしょう。</p>
+
+
+
+
+<pre> $ plackup -R templates,lib -p 5000 shiori_web.psgi
+ </pre>
+
+
+
+
+<h3>設定ファイルのロード</h3>
+
+
+
+
+<p>Mojoliciousにも設定ファイルをロードする機能はありますが、これをそのまま使うとMojolicious依存が強すぎちゃうんで独自でつくりましょう。環境変数<code>PLACK_ENV</code>を覗いてその状態によりロードするファイルを分岐させています。Config::PLを使ったコードを<code>lib/Shiori.pm</code>に書いてます。</p>
+
+
+
+
+<pre> package Shiori;
+use strict;
+use warnings;
+use Config::PL;
+
+our $VERSION = '0.01';
+my $config;
+
+sub _load_config {
+    my $mode = $ENV{PLACK_ENV} || 'development';
+    my $filename = "config_${mode}.pl";
+    return config_do $filename;
+}
+
+sub config {
+    return $config if $config;
+    $config = Shiori-&gt;_load_config();
+    return $config;
+}
+
+1;
+ </pre>
+
+
+
+
+<p>この設定ファイルがしっかりロードさせれているか？をテストコード書いて確かめましょう。実際に扱う<code>config_development.pl</code> が存在しつつハッシュリファレンスを返せないととテストが通らないという、ちょっとよろしくない実装になってますが、分かりやすいので紹介します。<code>t/config.t</code>がこちら。</p>
+
+
+
+
+<pre> use strict;
+use Test::More;
+
+BEGIN {
+    use_ok('Shiori');
+}
+
+subtest 'load_config' =&gt; sub {
+    $ENV{PLACK_ENV} = 'development';
+    my $config = Shiori-&gt;config();
+    ok $config;
+    isa_ok $config, 'HASH';
+};
+
+done_testing();
+ </pre>
+
+
+
+
+<p>テストコードはこのように通常<code>t/</code>ディレクトリに置いて、<code>prove -l</code>コマンドで実行します。</p>
+
+
+
+
+<pre> $ prove -l t/config.t
+ </pre>
+
+
+
+
+<h3>Tengでデータベースを扱う</h3>
+
+
+
+
+<p>O/R MapperにはTengを利用してみましょう。<code>lib/Shiori/DB.pm</code>及び<code>lib/Shiori/DB/Schema.pm</code>を以下のように実装します。</p>
+
+
+
+
+<pre> package Shiori::DB;
+use parent 'Teng';
+__PACKAGE__-&gt;load_plugin('Pager'); # 後ほどページャーをつくるのでPluginをロード
+1;
+ </pre>
+
+
+
+
+<p><code>Shiori::DB::Schema</code>は日付を扱うフィールドに対し、更新時DateTime型を与えられる、もしくは参照時にDateTime型で取得可能にするために<code>inflate</code>と<code>deflate</code>の設定をしています。</p>
+
+
+
+
+<pre> package Shiori::DB::Schema;
+use Teng::Schema::Declare;
+use DateTime::Format::MySQL;
+
+table {
+    name 'bookmark';
+    pk 'id';
+    columns qw/id url created_at updated_at/;
+    inflate qr/.+_at/ =&gt; sub {
+        my $value = shift;
+        return DateTime::Format::MySQL-&gt;parse_datetime($value);
+    };
+    deflate qr/.+_at/ =&gt; sub {
+        my $value = shift;
+        return DateTime::Format::MySQL-&gt;format_datetime($value);
+    };
+};
+
+1;
+ </pre>
+
+
+
+
+<p>ここまでくれば…</p>
+
+
+
+
+<pre> my $db = Shiori::DB-&gt;new( connect_info =&gt; [ 'dbi:mysql:shiori:localhost', 'root', undef ] );
+my $bookmark = $db-&gt;single('bookmark', { id =&gt; 1 });
+print $bookmark-&gt;url;
+ </pre>
+
+
+
+
+<p>のような操作を行うことでデータベースを操作可能です。</p>
+
+
+
+
+<h3>モデルをつくる</h3>
+
+
+
+
+<p>上記の<code>Shiori::DB</code>を直接コントローラーで処理してもいいのですが、後の拡張性を考えた場合にもう一層モデルをかませた方がいいでしょう。ユースケースを元に</p>
+
+
+
+
+<ul>
+<li>
+<code>create</code> =&gt; パラメータを元にブックマークを作成する</li>
+<li>
+<code>entries</code> =&gt; パラメータを元にブックマーク一覧を返却する</li>
+</ul>
+
+
+<p>という二つのメソッドを持つモデルにします。この実装では<code>create</code>メソッドで引数の検証を行います。コントローラーでも使うことが出来る<code>FormValidator::Lite</code>を利用してバリデーション。エラーだった場合とDBへのInsertが成功した場合で返却されるハッシュリファレンスの構造を変えることで呼び出し側が判断出来るようにしています。ちなみにこちらもMojolicious依存を避けるためにMojo::Baseは使わずにMouseなクラスにしています。</p>
+
+
+
+
+<pre> package Shiori::Model::Bookmark;
+use Mouse;
+use Shiori;
+use Shiori::DB;
+use DateTime;
+use FormValidator::Lite;
+
+FormValidator::Lite-&gt;load_constraints(qw/URL/);
+
+has 'connect_info' =&gt; (
+    is      =&gt; 'ro',
+    isa     =&gt; 'ArrayRef',
+    default =&gt; sub {
+       return Shiori-&gt;config-&gt;{connect_info};
+    }
+);
+has 'db' =&gt; ( is =&gt; 'ro', isa =&gt; 'Shiori::DB', lazy_build =&gt; 1 );
+
+sub _build_db {
+    my $self = shift;
+    Shiori::DB-&gt;new(
+        connect_info =&gt; $self-&gt;connect_info()
+    );
+}
+
+sub create {
+    my ($self, $args) = @_;
+    my $validator = FormValidator::Lite-&gt;new($args);
+    $validator-&gt;load_function_message('en');
+    $validator-&gt;set_param_message( url =&gt; 'URL' );
+    my $res = $validator-&gt;check(
+        url =&gt; [qw/NOT_NULL HTTP_URL/],
+    );
+    if($validator-&gt;has_error) {
+        my $messages = $validator-&gt;get_error_messages();
+        return { error =&gt; { messages =&gt; $messages } };
+    }
+    my $now = $self-&gt;now;
+    my $bookmark = $self-&gt;db-&gt;insert('bookmark', {
+        url =&gt; $args-&gt;{url},
+        created_at =&gt; $now,
+        updated_at =&gt; $now
+    });
+    return { success =&gt; { bookmark =&gt; $bookmark } };
+}
+
+sub entries {
+    my ($self, $args) = @_;
+    my $limit = $args-&gt;{limit} || 10;
+    my $page = $args-&gt;{page} || 1;
+    my ( $entries, $pager ) = $self-&gt;db-&gt;search_with_pager( 'bookmark', {},
+        { 
+            page =&gt; $page,
+            rows =&gt; $limit,
+            order_by =&gt; 'id DESC'
+        }
+    );
+    if(wantarray) {
+        return ($entries, $pager);
+    }else{
+        return $entries;
+    }
+}
+
+sub now {
+    DateTime-&gt;now( time_zone =&gt; 'Asia/Tokyo' );
+}
+
+__PACKAGE__-&gt;meta-&gt;make_immutable();
+ </pre>
+
+
+
+
+<p>さて、こちらもテストしていきましょう。DBを扱うのでローカルなどに立ててるテスト用のサーバーにアクセスさせてもいいですが、その都度追加したレコードを削除しなくてはいけなかったり扱いが面倒です。そこでTest::mysqldを使い専用のテンポラリなMySQLサーバをつくり出しそれを参照させます。</p>
+
+
+
+
+<pre> use strict;
+use Test::More;
+use FindBin;
+use lib "$FindBin::Bin/lib";
+use DBI;
+use SQL::SplitStatement;
+use Path::Tiny;
+use Test::mysqld;
+use Shiori::Model::Bookmark;
+
+ subtest 'bookmark' =&gt; sub {
+    my $mysqld = Test::mysqld-&gt;new(
+        my_cnf =&gt; {
+            'skip-networking' =&gt; '',
+        }
+    ) or die $Test::mysqld::errstr;
+    my $dbh = DBI-&gt;connect($mysqld-&gt;dsn, 'root', undef);
+    my $schema_file = path('etc', 'shiori_schema.sql');
+    my $schema_sql  = $schema_file-&gt;slurp();
+    my $initial_sql = &lt;&lt;"SQL";
+USE test;
+$schema_sql
+SQL
+    my $splitter = SQL::SplitStatement-&gt;new(
+        keep_terminator      =&gt; 1,
+        keep_comments        =&gt; 0,
+        keep_empty_statement =&gt; 0,
+    );
+    for ( $splitter-&gt;split($initial_sql) ) {
+        $dbh-&gt;do($_) or die($dbh-&gt;errstr);
+    }
+    my $dsn = $mysqld-&gt;dsn();
+    ok $dsn;
+
+    my $model = Shiori::Model::Bookmark-&gt;new(connect_info =&gt; [ $dsn, 'root', undef ]);
+    ok $model;
+    my $res = $model-&gt;create({ url =&gt; 'htt://example.jp/' });
+    ok $res-&gt;{error};
+    $res = $model-&gt;create({ url =&gt; 'http://example.jp/' });
+    ok $res-&gt;{success};
+    isa_ok $res-&gt;{success}{bookmark}, 'Shiori::DB::Row::Bookmark';
+
+    my ($entries, $pager) = $model-&gt;entries({ page =&gt; 1 , limit =&gt; 1 });
+    ok $entries;
+    isa_ok $pager, 'Data::Page::NoTotalEntries';
+};
+
+done_testing();
+ </pre>
+
+
+
+
+<h3>Web.pmとコントローラをつくる</h3>
+
+
+
+
+<p>モデルが出来ればあとはすんなりいくでしょう。<code>lib/Shiori/Web.pm</code>を以下のように変更します。Mojoliciousの機能である<code>helper</code>でモデルの呼び出しを可能にしています。コントローラー内で<code>$self-&gt;model</code>メソッドが使えるようになるのです。</p>
+
+
+
+
+<pre> package Shiori::Web;
+use Mojo::Base 'Mojolicious';
+use Shiori::Model::Bookmark;
+
+sub startup {
+    my $self = shift;
+
+    my $model = Shiori::Model::Bookmark-&gt;new();
+    $self-&gt;helper(
+        model =&gt; sub {
+            return $model;
+        }
+    );
+
+    my $r = $self-&gt;routes;
+    $r-&gt;namespaces([qw/Shiori::Web::Controller/]);
+    $r-&gt;get('/')-&gt;to('root#index');
+    $r-&gt;get('/new')-&gt;to('root#post');
+    $r-&gt;post('/create')-&gt;to('root#create');
+}
+
+1;
+ </pre>
+
+
+
+
+<p>まだブックマークが登録されていないと思いますが、トップページのコントローラに該当する部分はこうでしょう。</p>
+
+
+
+
+<pre> sub index {
+    my $self = shift;
+    my $page = $self-&gt;param('page') || 1;
+    my ($entries, $pager) = $self-&gt;model-&gt;entries({ page =&gt; $page, limit =&gt; 10 });
+    $self-&gt;stash-&gt;{entries} = $entries;
+    $self-&gt;stash-&gt;{pager} = $pager;
+    $self-&gt;render();
+}
+ </pre>
+
+
+
+
+<p>対応するテンプレートは以下のとおりです。Mojo::Templateを使っているのでPerlが直接書けちゃいます。</p>
+
+
+
+
+<pre> % title 'Top';
+% layout 'default';
+
+&lt;h1&gt;URL LIST&lt;/h1&gt;
+&lt;p&gt;
+  &lt;a href="/new"&gt;&lt;button type="button" class="btn btn-default"&gt;NEW POST&lt;/button&gt;&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;table class="table table-striped table-bordered table-hover"&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;ID&lt;/th&gt;
+      &lt;th&gt;URL&lt;/th&gt;
+      &lt;th&gt;DATE&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+% for my $entry (@$entries) {
+      &lt;tr&gt;
+        &lt;td&gt;&lt;%= $entry-&gt;id %&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;a href="&lt;%= $entry-&gt;url %&gt;" target="_blank"&gt;&lt;%= $entry-&gt;url %&gt;&lt;/a&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;%= $entry-&gt;created_at-&gt;ymd('/') %&gt; &lt;%= $entry-&gt;created_at-&gt;hms(':') %&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+% }
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;ul class="pagination"&gt;
+% if (my $prev_page = $pager-&gt;prev_page) {
+  &lt;li&gt;&lt;a href="/?page=&lt;%= $prev_page %&gt;"&gt;&amp;laquo;&lt;/a&gt;&lt;/li&gt;
+% }
+  &lt;li&gt;&lt;a href="#"&gt;&lt;%= $pager-&gt;current_page %&gt;&lt;/a&gt;&lt;/li&gt;
+% if (my $next_page = $pager-&gt;next_page) {
+  &lt;li&gt;&lt;a href="/?page=&lt;%= $next_page %&gt;"&gt;&amp;raquo;&lt;/a&gt;&lt;/li&gt;
+% }
+&lt;/ul&gt;
+ </pre>
+
+
+
+
+<p>投稿用フォームを表示する<code>/new</code>というパスに対応するコントローラーの<code>/post</code>メソッドはこれだけでよいです。</p>
+
+
+
+
+<pre> sub post {
+    my $self = shift;
+    $self-&gt;stash-&gt;{messages} = undef;
+    $self-&gt;render();
+}
+ </pre>
+
+
+
+
+<p>諸事情で<code>stash</code>の<code>messages</code>という変数に<code>undef</code>を渡しております。テンプレートは以下のとおり。エラーが出た際の表示も担っています。</p>
+
+
+
+
+<pre> % title 'POST URL';
+% layout 'default';
+
+ &lt;h1&gt;POST URL&lt;/h1&gt;
+
+% if ($messages) {
+  &lt;div class="alert alert-danger"&gt;
+    &lt;ul&gt;
+% for my $message (@$messages) {
+      &lt;li&gt;&lt;/li&gt;
+% }
+    &lt;/ul&gt;
+  &lt;/div&gt;
+% }
+
+&lt;form method="post" action="/create"&gt;
+  &lt;div class="form-group"&gt;
+    " type="hidden" /&gt;
+    URL
+    
+  &lt;/div&gt;
+  &lt;button type="submit" class="btn btn-default"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;
+ </pre>
+
+
+
+
+<p>いよいよ、投稿のエンドポイント<code>POST /create</code>に対するコントローラーメソッドは以下です。モデルからエラーが来た場合に適切に処理しています。</p>
+
+
+
+
+<pre> sub create {
+    my $self = shift;
+    my $validation = $self-&gt;validation();
+    if( $validation-&gt;csrf_protect-&gt;has_error() ){
+        return $self-&gt;render_not_found();
+    }
+    my $res = $self-&gt;model-&gt;create({ url =&gt; $self-&gt;param('url') });
+    if( $res-&gt;{error} ) {
+        $self-&gt;stash-&gt;{messages} = $res-&gt;{error}{messages};
+        return $self-&gt;render('root/new');
+    }
+    $self-&gt;redirect_to('/');
+}
+ </pre>
+
+
+
+
+<h3>完成</h3>
+
+
+
+
+<p>これまで紹介した個別のテンプレートファイルの外枠となるべき<code>templates/layouts/default.html.ep</code>にてCSSフレームワークのBootstrapを読みこませれば完成です。</p>
+
+
+
+
+<pre> &lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Shiori - &lt;%= title %&gt;&lt;/title&gt;
+    &lt;link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"&gt;
+    &lt;link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css"&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div class="navbar navbar-inverse"&gt;
+      &lt;div class="container"&gt;
+        &lt;a class="navbar-brand" href="/"&gt;Shiori&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="container"&gt;
+    &lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+ </pre>
+
+
+
+
+<p>では<code>plackup</code>でアプリを起動し「<a href="http://localhost:5000/">http://localhost:5000/</a>」などにアクセスしてみましょう！</p>
+
+
+
+
+<p><img src="http://31.media.tumblr.com/0ef679aa25922c8c15688751d07fdbb1/tumblr_inline_n2pxsePIGh1qb2ehr.png" alt="Shiori"></p>
+
+
+
+
+<p>出来ましたね！</p>
+
+
+
+
+<h3>まとめ</h3>
+
+
+
+
+<p>コードばかりでかつ駆け足になっちゃいましたが、分からないところは適宜ドキュメントやWeb上のリソースを見てください！また、</p>
+
+
+
+
+<ul>
+<li>Mojoliciousでいいのか？</li>
+<li>DateTimeでいいのか？</li>
+<li>画像やJSなど静的ファイルはどこに置くのか？</li>
+<li>
+<code>subtest</code>の粒度が荒いんだけどどうすれば？</li>
+<li>Test::mysqldを毎スコープごとに立ち上げるの辛い</li>
+<li>テーブルが増えた時Join的なのはどうするのか？</li>
+<li>本番サーバーで運用するには？</li>
+</ul>
+
+
+<p>などの課題があると思うのでその点も意識しつつ、徐々にノウハウを貯めていければよいでしょう。今回のサンプルを含め、つくり方は色々なんで皆さんなりのWebアプリのつくり方を身につけてくださいね！そんでもって「Webアプリエンジニア養成読本」もよろしく！</p>
+
+
+
+
+<div class="amazlet-box" style="margin-bottom:0;">
+<div class="amazlet-image" style="float:left;margin:0 12px 1px 0;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4774163678/kamawada-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/51VavR1gcyL._SL160_.jpg" alt="Webアプリエンジニア養成読本[しくみ、開発、環境構築・運用…全体像を最新知識で最初から! ] (Software Design plus)" style="border:none;"></a></div>
+<div class="amazlet-info" style="line-height:120%;margin-bottom:10px;">
+<div class="amazlet-name" style="margin-bottom:10px;line-height:120%;">
+<a href="http://www.amazon.co.jp/exec/obidos/ASIN/4774163678/kamawada-22/ref=nosim/" name="amazletlink" target="_blank">Webアプリエンジニア養成読本[しくみ、開発、環境構築・運用…全体像を最新知識で最初から! ] (Software Design plus)</a><div class="amazlet-powered-date" style="font-size:80%;margin-top:5px;line-height:120%;">posted with <a href="http://www.amazlet.com/" title="amazlet" target="_blank">amazlet</a> at 14.03.20</div>
+</div>
+<div class="amazlet-detail">和田 裕介 石田 絢一 (uzulla) すがわら まさのり 斎藤 祐一郎 <br>技術評論社 <br>売り上げランキング: 285<br>
+</div>
+<div class="amazlet-sub-info" style="float:left;"><div class="amazlet-link" style="margin-top:5px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4774163678/kamawada-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jpで詳細を見る</a></div></div>
+</div>
+<div class="amazlet-footer" style="clear:left;"></div>
+</div>
+
+
+
+
+<p><br></p>
+
+
+
+		</div>
+
+		<div class="post-tags">
+			
+				
+			
+		</div>
+        <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v5.0&appId=233306523373884&autoLogAppEvents=1"></script>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+
+<div class="social-button-area">
+  <ul class="social-button">
+    <li>
+      <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
+    </li>
+    <li>
+      <span class="fb-share-button"  data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2014%2f0320051500%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
+    </li>
+    <li>
+      <a href="https://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label-counter" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>
+    </li>
+  </ul>
+</div>
+
+<div class="disqus-area">
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "yusukebe-com" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<ul class="pagination">
+  
+  <li class="page-item page-prev">
+    <a href="https://yusukebe.com/posts/2014/0224000600/" class="page-link" aria-label="Previous"><span aria-hidden="true">← みんなで「Webアプリエンジニア養成読本」を書きました！</span></a>
+  </li>
+  
+  
+  <li class="page-item page-next">
+    <a href="https://yusukebe.com/posts/2014/0406000110/" class="page-link" aria-label="Next"><span aria-hidden="true">とあるエロサイトの改修 →</span></a>
+  </li>
+  
+</ul>
+
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright yusukebe.com |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-492497-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

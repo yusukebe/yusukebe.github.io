@@ -1,0 +1,101 @@
++++
+Categories = ["tech"]
+Description = " mod_perl などを使ったアプリケーションの場合、パフォーマンスを引き出すための Web サーバ構成は apache を使った場合最低でも、「アプリケーションサーバ（e.g. apache with mod_perl）」、「静的コンテ"
+Tags = ["Perl"]
+date = "2009-07-08T14:49:00+09:00"
+title = "静的コンテンツを Amazon S3 でサーブさせるのはなかなかいい"
+author = "kamawada"
+archive = ["2009"]
+draft = false
++++
+
+
+<p>
+mod_perl などを使ったアプリケーションの場合、
+パフォーマンスを引き出すための Web サーバ構成は apache を使った場合最低でも、
+「アプリケーションサーバ（e.g. apache with mod_perl）」、
+「静的コンテンツをサーブするサーバ」の2つが必要になると思います（ lighttpd とか使ったらまた違うかもしれません）。
+ただ、俺の場合この 2つの apache を用意するのが面倒なパターンというのがあって、
+例えば先ほどの「sugokuii beta」の場合がそうです。
+つまり、
+</p>
+<ul>
+  <li>アプリケーションへの負荷はそこそこ高い</li>
+  <li>だが、静的コンテンツは非常に少ない（e.g. jsひとつ、cssひとつ、faviconひとつ）</li>
+  <li>規模としては小さく、サーバ構成は1台のみ</li>
+</ul>
+<p>
+といった時です。
+こうしたケースにおいては、Amazon の S3 を静的コンテンツをサーブするサーバとして活用し、
+サーバ内では mod_perl な apache 1台のみを動かすという方法が簡単でよいです。
+自分は、debian を使っているので、apt-get でインストールした apache2 を
+</p>
+<pre> # /etc/init.d/apache2 start
+ </pre>
+<p>
+と付属しているスクリプトだけで動かせるので、これも利点です。
+S3 でサーブする時に気になるのはコンテンツのヘッダの設定ですが、
+GUI のクライアントでは「Fire Bucket」や「S3HUB」といったものを使えば、
+Expires ヘッダなどを設定でき、閲覧者のブラウザにコンテンツをキャッシュさせることができます。
+Fire Bucket の場合は Expires の文字列を手動でいれなくては行けないので、
+以下のようなスクリプトで 10年後の日付を出力させてコピペしてます。
+</p>
+
+<pre class="brush: perl"> #!/usr/bin/perl
+use strict;
+use warnings;
+use HTTP::Date;
+
+my $ten_years_sec = 10 * 365 * 24 * 60 * 60;
+my $string = time2str( time() + $ten_years_sec );
+print $string . "\n";
+ </pre>
+<p>
+また、S3HUB ではもっと簡単に指定できて、
+「Expires ( Far Future ) 」という項目がすでにありますので、これを選べば OK です。
+S3HUB は今日から使い始めているのですが、動作も軽快でなかなかよさげです。
+</p>
+<p>
+<img alt="s3hub" class="at-xid-6a0133f4781589970b015435b6f389970c" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015435b6f389970c-pi.jpg>
+</p>
+<p>
+さらに、
+Amazon Cloud Front を使えばもっと効率的かつ低コストにコンテンツを配信できると思います。
+S3 をこうして利用するのは、
+小規模サービスでかつ静的コンテンツが少ない場合には有効な手ではないでしょうかね。
+</p>
+<ul>
+<li><a href="https://addons.mozilla.org/ja/firefox/addon/11162">Fire Bucket: Amazon S3 manager :: Firefox Add-ons</a></li>
+<li><a href="http://s3hub.com/#">S3Hub: S3 Client (for Mac OS X)</a></li>
+</ul>
+<h4>参考文献</h4>
+<div>
+<div style="float:left"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4798021555/kamawada-22/"><img alt="Amazon EC2/S3クラウド入門" class="at-xid-6a0133f4781589970b015435b6f3a3970c" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015435b6f3a3970c-pi.jpg style="border:none;"></a></div>
+<div style="float:left;margin-left:15px;">
+<div style="font-size:12pt"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4798021555/kamawada-22/">Amazon EC2/S3クラウド入門</a></div>
+<div style="font-size:7pt;font-family:verdana;">posted with <a href="http://yusukebe.com/b/amazon/search/">yusukebe.com::AmazonSearch</a> on 2009.7.8</div>
+<div style="font-size:10pt;">
+<ul style="list-style-type:none;padding:0;">
+<li>学びing  </li>
+<li>単行本 / 秀和システム </li>
+<li>Amazon 売り上げランキング: 40064</li>
+</ul>
+<ul style="list-style-type:none;padding:0;"><li>Amazon おすすめ度の平均: <img alt="3.5" class="at-xid-6a0133f4781589970b015435b6ebc7970c" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015435b6ebc7970c-pi.gif style="margin:0;"><ul style="list-style-type:none;padding-left:0;">
+<li>
+<img alt="2" class="at-xid-6a0133f4781589970b015391e38ae3970b" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015391e38ae3970b-pi.gif style="margin:0;"> 入門書です</li>
+<li>
+<img alt="4" class="at-xid-6a0133f4781589970b014e8bd727e1970d" src="https://yusukebe.com/archives/.a/6a0133f4781589970b014e8bd727e1970d-pi.gif style="margin:0;"> Amazonを使ってクラウドビジネスを始めたいと思う人におすすめ</li>
+<li>
+<img alt="3" class="at-xid-6a0133f4781589970b015391e3783b970b" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015391e3783b970b-pi.gif style="margin:0;"> 情報収集が面倒な方にはちょうどよいです</li>
+<li>
+<img alt="5" class="at-xid-6a0133f4781589970b015435b6d28e970c" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015435b6d28e970c-pi.gif style="margin:0;"> すぐに試したい人におすすめ</li>
+<li>
+<img alt="4" class="at-xid-6a0133f4781589970b014e8bd727e1970d" src="https://yusukebe.com/archives/.a/6a0133f4781589970b014e8bd727e1970d-pi.gif style="margin:0;"> 先進ユーザーによる実例本</li>
+</ul>
+</li></ul>
+<a href="http://www.amazon.co.jp/Amazon-EC2-S3%E3%82%AF%E3%83%A9%E3%82%A6%E3%83%89%E5%85%A5%E9%96%80-%E5%AD%A6%E3%81%B3ing/dp/4798021555%3FSubscriptionId%3D13C5PCPS36EMN8C22682%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D4798021555">Amazon.co.jpで詳細を見る</a>
+</div>
+</div>
+<div style="clear:left;"></div>
+</div>
+

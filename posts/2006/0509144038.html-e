@@ -1,0 +1,55 @@
++++
+Categories = ["tech"]
+Description = "   以前作ったiTunesコントローラーを改良/一部変更、  今までブレッドボードで動かしていたのを基盤実装して(とりあえず)完成させた。    これが本体、PCと接続してiTunesを操作できる       (左)こんな感じに置いて使用"
+Tags = []
+date = "2006-05-09T23:40:00+09:00"
+title = "iTunesコントローラー(とりあえず)完成"
+author = "kamawada"
+archive = ["2006"]
+draft = false
++++
+
+
+<p>
+  <a href="http://yusukebe.com/archives/06/04/11/232232.html">以前作った</a>iTunesコントローラーを改良/一部変更、
+  今までブレッドボードで動かしていたのを基盤実装して(とりあえず)完成させた。
+</p>
+<p>
+  これが本体、PCと接続してiTunesを操作できる<br>
+  <img alt="iTunesコントローラー" class="at-xid-6a0133f4781589970b015435b6e773970c" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015435b6e773970c-pi.jpg>
+</p>
+<p>
+  (左)こんな感じに置いて使用、(右)マイコンなどを含む基盤とボタンなど操作系統の基盤を分けて2階建てに<br>
+  <img alt="iTunesコントローラー" class="at-xid-6a0133f4781589970b015435b6e77f970c" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015435b6e77f970c-pi.jpg>
+  <img alt="iTunesコントローラー" class="at-xid-6a0133f4781589970b015435b6e78a970c" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015435b6e78a970c-pi.jpg>
+</p>
+<ul>
+  <li>→<a href="http://kamawada.com/~yusuke/yusukebe/archives/files/060509/itunescontroller.wmv">動いてる様子の動画</a>
+</li>
+</ul>
+<p>
+  まじ使える。自分のため(だけ)だけどちゃんと「物」としての形にしてそれがかつ動くのは(大なり小なり)なんとも楽しいものだ
+  (かつ論理的に動くはずだ、と自分で設計してそれを実際にはんだ付けして実装してみると最初は動かなくて、
+  目で見てチェックして修正すると急に動き出したのがたまらん、ただ今回筐体作るのサボりました^^;なので「とりあえず」)。
+  これでブレッドボードが空いたから、新しいもの作るのもいいし、電子工作物品どけて勉強モードにでもするべ。
+</p>
+<h4>技術的な解説</h4>
+<p>
+  この前はルネサスのR8C/Tinyというマイコンを使ったけど、やっぱやめた。
+  最初に電子工作の楽しさを教えてくれたAVRのAT90S2313を使うことにした。
+  デジタルI/OとUARTを扱うだけだったら秋月で￥150円で売ってるコイツを使うのでいいんじゃないの、と自分なりの結論にいたった。
+  あとボリュームコントロールにロータリエンコーダを使った。
+  これによって精度がアップ。ほぼ100％に近い確立でボリュームアップ＆ダウンができるし、細かく刻める。
+  よってPC側ソフトウェアの仕様もそれにあわせて変更。
+  iTunesのボリュームを「2」刻みでアップ＆ダウンできるようにした。
+  以下回路図とプログラムソース。AVRのソース、タイマーの部分はかなり適当。でも動いてるからとりあえずよし。
+</p>
+<ul>
+  <li><a href="http://kamawada.com/~yusuke/yusukebe/archives/files/060509/itunesController.gif">回路図</a></li>
+  <li><a href="http://kamawada.com/~yusuke/yusukebe/archives/files/060509/main.c">AVRマイコンプログラムソース(avr-gcc)</a></li>
+  <li><a href="http://kamawada.com/~yusuke/yusukebe/archives/files/060509/Program.cs">PC側ソフトウェアソース(Visual Studio C#)</a></li>
+</ul>
+<p>
+  詳しい仕様、いきさつは<a href="http://yusukebe.com/archives/06/04/11/232232.html">ゆーすけべー日記: iTunesコントローラーBeta、R8C/Tiny+VS2005C#を使用</a>を参考に。
+</p>
+

@@ -1,0 +1,85 @@
++++
+Categories = ["tech"]
+Description = " あなたのブログやニュースサイトに「この記事についてTwitterでつぶやく」といったtweetボタンを簡単に設置する方法を紹介します。具体的にはページのタイトルとその短縮URLを投稿するためのTwitterページに飛ぶリンクボタンです。ま"
+Tags = []
+date = "2010-07-07T09:02:00+09:00"
+title = "簡単にtweetボタンとtweets数を設置する方法"
+author = "kamawada"
+archive = ["2010"]
+draft = false
++++
+
+
+<p>
+あなたのブログやニュースサイトに「この記事についてTwitterでつぶやく」といった<strong>tweetボタン</strong>を簡単に設置する方法を紹介します。具体的にはページのタイトルとその短縮URLを投稿するためのTwitterページに飛ぶリンクボタンです。また、<a href="http://twib.jp/">Twib</a>を使ったその記事がTwitter上でどれだけつぶやかれたかの<strong>tweet数</strong>を表示する仕方も同時に解説していきます。
+</p>
+<p>
+<img alt="tweetボタン" class="at-xid-6a0133f4781589970b014e8bd75369970d" src="https://yusukebe.com/archives/.a/6a0133f4781589970b014e8bd75369970d-pi.jpg>
+</p>
+<p>
+javascriptが必要なくテンプレートタグを変更するだけで対応するのでお気軽です。
+例としてfc2ブログとlivedoor Blogをあげますので参考にしてください。
+</p>
+<h4>fc2ブログの場合</h4>
+<br>
+<p>
+「テンプレートの設定＞修正」から「HTMLの編集」を以下のように編集します。(「default」テンプレートの場合)
+</p>
+<pre class="brush: perl"> ...
+&lt;!--deny_comment--&gt;コメント(-)&lt;!--/deny_comment--&gt;
+&lt;/li&gt;
+...
+ </pre>
+<p>
+を
+</p>
+<pre class="brush: perl"> ...
+&lt;!--deny_comment--&gt;コメント(-)&lt;!--/deny_comment--&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://twib.jp/share?url="
+target="_blank" rel="nofollow"&gt;
+&lt;img src="http://twib.jp/static/images/t.png" alt="このエントリーをつぶやく" /&gt;
+&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=""&gt;http://twib.jp/url/"&gt;
+&lt;img src="http://image.twib.jp/counter/"
+alt="Twib - &lt;%topentry_title&gt;" title="Twib - &lt;%topentry_title&gt;" /&gt;
+&lt;/a&gt;&lt;/li&gt;
+...
+ </pre>
+<br>
+<p>
+のように記述して保存してください。
+</p>
+<h4>livedoor Blogの場合</h4>
+<br>
+<p>
+「管理ページトップ＞カスタマイズ/管理」より「デザインのカスタマイズ」を選択。
+「トップページ」「個別記事ページ」「カテゴリアーカイブ」「月別アーカイブ」のテンプレートをそれぞれ以下のように編集します。
+</p>
+<pre class="brush: perl"> ...
+ &lt;li class="article-tool-box"&gt;&lt;$ArticleToolBox$&gt;&lt;/li&gt;
+ &lt;/ul&gt;
+...
+ </pre>
+<p>
+を
+</p>
+<pre class="brush: perl"> ...
+&lt;li class="article-tool-box"&gt;&lt;$ArticleToolBox$&gt;
+&lt;a href="http://twib.jp/share?url= URIESCAPE$&gt;"
+target="_blank" rel="nofollow"&gt;
+&lt;img src="http://twib.jp/static/images/t.png" alt="このエントリーをつぶやく" border="0"/&gt;
+&lt;a href=""&gt;http://twib.jp/url/"&gt;
+&lt;img src="http://image.twib.jp/counter/"
+alt="Twib - &lt;$ArticleTitle ESCAPE$&gt;"
+title="Twib - &lt;$ArticleTitle ESCAPE$&gt;" border="0" /&gt;
+&lt;/a&gt;
+&lt;/li&gt;
+...
+ </pre>
+<p>
+その他のブログでも同じようなことは可能です。
+詳しくは、<a href="http://twib.jp/api">Twib - Twib API</a> をご覧ください。
+Enjoy!
+</p>
+

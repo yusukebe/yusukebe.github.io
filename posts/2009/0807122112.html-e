@@ -1,0 +1,74 @@
++++
+Categories = ["tech"]
+Description = " 今日、待ち時間があって iPhone いじってて、Twib みたいなと思ってアクセスしてみるも、やっぱり PC 用のサイトでは見にくいですよね。ということで、Twib の iPhone 用のサイトを作ってみました。URLはこちらです。  "
+Tags = []
+date = "2009-08-07T21:21:00+09:00"
+title = "Twib の iPhone サイトを作ってみました。Twib更新情報その3"
+author = "kamawada"
+archive = ["2009"]
+draft = false
++++
+
+
+<p>
+今日、待ち時間があって iPhone いじってて、
+Twib みたいなと思ってアクセスしてみるも、やっぱり PC 用のサイトでは見にくいですよね。
+ということで、Twib の iPhone 用のサイトを作ってみました。
+URLはこちらです。
+</p>
+
+<blockquote>
+<a href="http://twib.jp/i/">http://twib.jp/i/</a>
+</blockquote>
+
+<p>
+特にトップページでユーザーエージェントをみて振り分けてるわけじゃないので、
+アクセスする方は上記 URL から、もしくは Twib のトップのヘッダにリンク張ってあるのでそちらからどうぞ。
+機能としては、「人気」「新着」「Photo」「YouTube」の4つが例のごとく見れます。
+以下スクリーンキャプチャです。
+</p>
+
+<p>
+<strong>トップページ</strong><br>
+</p>
+<p>
+<img alt="Twib iPhone" class="at-xid-6a0133f4781589970b015391e39110970b" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015391e39110970b-pi.jpg>
+</p>
+<br>
+<p>
+<strong>人気エントリ一覧</strong><br>
+
+</p>
+<p>
+<img alt="Twib iPhone" class="at-xid-6a0133f4781589970b015391e39122970b" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015391e39122970b-pi.jpg>
+</p>
+<br>
+<p>
+<strong>記事へのパーマリンク、つぶやきも見れます</strong><br>
+</p>
+<p>
+<img alt="Twib iPhone" class="at-xid-6a0133f4781589970b015391e39142970b" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015391e39142970b-pi.jpg>
+</p>
+<br>
+<p>
+<strong>Photo 一覧はビューアーっぽく</strong><br>
+</p>
+<p>
+<img alt="Twib iPhone" class="at-xid-6a0133f4781589970b015391e39158970b" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015391e39158970b-pi.jpg>
+</p>
+<br>
+<p><strong>
+YouTube 一覧はちょっとしたサムネイル付き</strong><br>
+</p>
+<p>
+<img alt="Twib iPhone" class="at-xid-6a0133f4781589970b015391e39162970b" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015391e39162970b-pi.jpg>
+</p>
+<br>
+<p>
+ということで、iPhone を持っている方は暇つぶしにどうぞー。
+</p>
+
+<ul>
+  <li><a href="http://twib.jp/i/">Twib iPhone</a></li>
+</ul>
+

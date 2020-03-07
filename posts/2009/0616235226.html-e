@@ -1,0 +1,72 @@
++++
+Categories = ["tech"]
+Description = " 昨日公開した「ZonTube beta2」の Cooliris 機能がなかなかいい感じなので紹介します。Cooliris は Firefox や IE で動作する Web画像・動画ビューアーで、3D ギャラリー形式の迫力あるインターフェー"
+Tags = []
+date = "2009-06-17T08:52:00+09:00"
+title = "「ZonTube beta2」の Cooliris 機能がなかなかいい件"
+author = "kamawada"
+archive = ["2009"]
+draft = false
++++
+
+
+<p>
+昨日公開した「<strong><a href="http://zontube.pulpsite.net/">ZonTube beta2</a></strong>」の <strong>Cooliris</strong> 機能がなかなかいい感じなので紹介します。
+Cooliris は Firefox や IE で動作する Web画像・動画ビューアーで、
+3D ギャラリー形式の迫力あるインターフェースが特徴です。
+Google や YouTube などある特定のサイトで動作が可能なのですが、
+「ZonTube beta2」では、アルバムページ、アーティストページなどを Cooliris に対応させました。
+動作している様子のイメージを見るとわかりやすいのでそれとともに解説。
+もちろん、ブラウザに Cooliris がインストールされていることが前提です。
+</p>
+<p>
+まず、おもむろに気になったアルバムのページに行きます。
+ページのロードが終わると右上の Cooliris ボタンに色がつきます。
+「このページは Cooliris に対応してますよー」という合図ですね。
+さてではこのボタンを押します。
+</p>
+
+<p>
+<img alt="cooliris" class="at-xid-6a0133f4781589970b014e8bd74eca970d" src="https://yusukebe.com/archives/.a/6a0133f4781589970b014e8bd74eca970d-pi">
+</p>
+
+<p>
+すると、全画面表示でそのアルバムに含まれるヒットした YouTube 動画が「うにょーん」と現れ、一覧でみれます。
+ここで、Cooliris の特徴である 3D 操作ができてカッコいい！
+</p>
+
+<p>
+<img alt="cooliris" class="at-xid-6a0133f4781589970b014e8bd74edf970d" src="https://yusukebe.com/archives/.a/6a0133f4781589970b014e8bd74edf970d-pi">
+</p>
+
+<p>
+<img alt="cooliris" class="at-xid-6a0133f4781589970b014e8bd74eee970d" src="https://yusukebe.com/archives/.a/6a0133f4781589970b014e8bd74eee970d-pi.jpg>
+</p>
+
+<p>
+Cooliris 内での動画の再生ももちろん可能。
+サムネイルを選択し、クリックすると。。。
+</p>
+
+<p>
+<img alt="cooliris" class="at-xid-6a0133f4781589970b014e8bd74f06970d" src="https://yusukebe.com/archives/.a/6a0133f4781589970b014e8bd74f06970d-pi">
+</p>
+
+<p>
+動画の再生はじまた。
+</p>
+
+<p>
+<img alt="cooliris" class="at-xid-6a0133f4781589970b014e8bd74f18970d" src="https://yusukebe.com/archives/.a/6a0133f4781589970b014e8bd74f18970d-pi">
+</p>
+<p>
+まだ、試してない方はぜひ。
+ちなみに、ZonTube 本体の Shadowbox による動画のプレビュー機能ですが、
+今のところ Firefox と IE に最適化させていて、Safari とかじゃうまく動作しないかもしれませんが、
+ご了承ください。というわけでEnjoy!
+</p>
+<ul>
+  <li><a href="http://www.cooliris.com/">Cooliris | Discover More</a></li>
+  <li><a href="http://zontube.pulpsite.net/">ZonTube beta 2 : Amazon with YouTube</a></li>
+</ul>
+

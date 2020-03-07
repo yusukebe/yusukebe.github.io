@@ -1,0 +1,90 @@
++++
+Categories = ["tech"]
+Description = " かの有名なsugyanの全裸ボット。適当に人の発言に対して「全裸で」を付けて発言するボットなんだけど...これと、似た様なボットをたくさん作ろうとすると...例えば「全裸で」を「動詞」の前につけるという部分のロジック、つまり「zenriz"
+Tags = ["Perl"]
+date = "2010-11-17T11:13:00+09:00"
+title = "日本語の文章をzenrize(全裸化)するAcme::Zenraっていうのを作った"
+author = "kamawada"
+archive = ["2010"]
+draft = false
++++
+
+
+<p>
+かの有名なsugyanの全裸ボット。適当に人の発言に対して「全裸で」を付けて発言するボットなんだけど...
+これと、似た様なボットをたくさん作ろうとすると...
+例えば「全裸で」を「動詞」の前につけるという部分のロジック、
+つまり「zenrize」の部分を重複して作ることになる。
+「夜の」というのを「名詞」の前につけて「夜のボット」を作りたい時も...
+</p>
+<p>
+なので、「zenrize」を汎用的に行うAcme::Zenraっていうモジュールをでっちあげてみた。
+githubにおいてあります。
+</p>
+<p>
+<a href="https://github.com/yusukebe/Acme-Zenra">yusukebe's Acme-Zenra at master - GitHub</a>
+</p>
+<p>
+このモジュールを使えば、IRCの発言をzenrizeしてNOTICEで返すIRC botも簡単に作れます。
+</p>
+<p>
+実行例。
+</p>
+<blockquote>
+<p>
+11:51 yusukebe: お腹が空きました<br>
+11:51 zenra_bot: 「お腹が全裸で空きました」ですね。わかります<br>
+</p>
+</blockquote>
+<p>
+IRCボットのコード例。
+</p>
+<pre class="brush: perl"> #!/usr/bin/perl
+use Acme::Zenra;
+use AnyEvent;
+use AnyEvent::IRC::Client;
+use Encode;
+use utf8;
+
+my $channel = $ARGV[0]          or die 'channel name is needed!';
+my $appid   = $ENV{YAHOO_APPID} or die 'set $ENV{YAHOO_APPID}';
+my $zenra = Acme::Zenra-&gt;new( yahoo_appid =&gt; $appid );
+
+my $c   = AnyEvent-&gt;condvar;
+my $irc = new AnyEvent::IRC::Client;
+
+$irc-&gt;reg_cb( connect    =&gt; sub { print "connected\n" } );
+$irc-&gt;reg_cb( registered =&gt; sub { print "registered\n"; } );
+$irc-&gt;reg_cb( disconnect =&gt; sub { print "disconnet\n"; } );
+$irc-&gt;reg_cb(
+    publicmsg =&gt; sub {
+        my ( $irc, $chan, $msg ) = @_;
+        my $message = decode_utf8( $msg-&gt;{params}-&gt;[1] );
+        my $result = $zenra-&gt;zenrize( $message );
+        if ($message ne $result ) {
+            $message = encode_utf8(
+                '「' . $result . '」ですね。わかります' );
+            $irc-&gt;send_chan( $channel, "NOTICE", $channel, $message );
+        }
+    }
+);
+$irc-&gt;connect( "chat.freenode.net", 6667, { nick =&gt; 'zenra_bot' } );
+$irc-&gt;send_srv( "JOIN", $channel );
+$c-&gt;recv;
+ </pre>
+<p>
+このモジュールのいい点は先ほど言ったように「名詞」の前に「夜の」を付けて「nightize」させたいなんて時にも対応できる点です。newする時にこんな風に指定すればいいのです。
+</p>
+<pre class="brush: perl"> my $zenra = Acme::Zenra-&gt;new(
+    yahoo_appid =&gt; $ENV{YAHOO_APPID},
+    position    =&gt; '名詞',
+    text        =&gt; '夜の'
+);
+my $result = $zenra-&gt;zenrize('お腹が空いたのでスパゲッティが食べたい');
+print encode_utf8($result)    # 夜のお腹が空いたので夜のスパゲッティが食べたい
+ </pre>
+<p>
+作ってみたものの、誰得な気がして、watchするのもsugyanとmakamakaさんくらいだろーなーとという感じですが、
+希望があればアップデートします。
+</p>
+

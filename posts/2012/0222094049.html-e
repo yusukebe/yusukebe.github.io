@@ -1,0 +1,113 @@
++++
+Categories = ["tech"]
+Description = " 構造化された文章をプレーンテキストで書くためにMarkdown形式を使っているというお話を以前しました。   Markdownで文章を書こう！ - ゆーすけべー日記   上記の記事でも触れているのですが、Yomico（よみこ）というPer"
+Tags = ["Perl", "Yomico"]
+date = "2012-02-22T18:40:00+09:00"
+title = "Yomico。Markdownを快適に閲覧するために"
+author = "kamawada"
+archive = ["2012"]
+draft = false
++++
+
+
+<p>構造化された文章をプレーンテキストで書くためにMarkdown形式を使っているというお話を以前しました。</p>
+
+<ul>
+<li><a href="http://yusukebe.com/archives/20120207/103320.html">Markdownで文章を書こう！ - ゆーすけべー日記</a></li>
+</ul>
+
+
+<p>上記の記事でも触れているのですが、<strong>Yomico（よみこ）というPerl製のMarkdownビューアー</strong>を作りつつ使っていて、
+結構いい感じなので紹介いたします。
+お気づきの方もいるかも知れませんが、YomicoというネーミングはTV、OVAアニメや小説などで展開している
+「<strong>R.O.D -READ OR DIE-</strong>」の登場人物である「<strong>読子・リードマン</strong>」に由来しています。
+この読子。神保町に本を置くだけのためのビルをまるごと借りるなど生粋の読書好き＝ビブリオマニアなのです。
+理想として、このYomicoを使って読子にMarkdownのテキストを快適にガンガン読んでもらいたいなー
+なんて思って名付けました。</p>
+
+<div class="amazlet-box" style="margin-bottom:0px;">
+<div class="amazlet-image" style="float:left;margin:0px 12px 1px 0px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B00005HY8S/kamawada-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/213JTM7V0KL._SL160_.jpg" alt="R.O.D-READ OR DIE- 第1巻 [DVD]" style="border: none;"></a></div>
+<div class="amazlet-info" style="line-height:120%; margin-bottom: 10px">
+<div class="amazlet-name" style="margin-bottom:10px;line-height:120%">
+<a href="http://www.amazon.co.jp/exec/obidos/ASIN/B00005HY8S/kamawada-22/ref=nosim/" name="amazletlink" target="_blank">R.O.D-READ OR DIE- 第1巻 [DVD]</a><div class="amazlet-powered-date" style="font-size:80%;margin-top:5px;line-height:120%">posted with <a href="http://www.amazlet.com/browse/ASIN/B00005HY8S/kamawada-22/ref=nosim/" title="R.O.D-READ OR DIE- 第1巻 [DVD]" target="_blank">amazlet</a> at 12.02.22</div>
+</div>
+<div class="amazlet-detail">SME・ビジュアルワークス (2001-05-23)<br>売り上げランキング: 37562<br>
+</div>
+<div class="amazlet-sub-info" style="float: left;"><div class="amazlet-link" style="margin-top: 5px"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B00005HY8S/kamawada-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jp で詳細を見る</a></div></div>
+</div>
+<div class="amazlet-footer" style="clear: left"></div>
+</div>
+
+
+<p><br></p>
+
+<p><a href="http://www.mag2.com/m/0001426750.html">メルマガ</a>やこのBlogの記事も含めてMarkdownの文章を書く機会が
+急に多くなったんですが、そのMarkdown書式のテキストファイルをHTMLに変換しつつブラウザでサクッと
+見たいなっていうのが、Yomicoを作っている動機です。
+Mac OSXだと<a href="http://www.codingrobots.com/markdownnote/">MarkdownNote</a>というソフトがあって、
+それを使えば編集とプレビューの2ペインを同時に見ることができて同じような目的を果たすことができるのですが、
+なんとなく「編集は<a href="http://bywordapp.com/">Byword</a>っていう他のソフトを使いたいなぁ」とか、
+「編集とプレビューは同時に見えない方が逆にいいんじゃね？」とか思って自作した次第です。</p>
+
+<p>開発はgithubで公開しつつ行っています。</p>
+
+<ul>
+<li><a href="https://github.com/yusukebe/Yomico">yusukebe/Yomico - GitHub</a></li>
+</ul>
+
+
+<p>久しぶりに人に見せられて、頻繁にアップデートしたいと思うソフトです。まぁとはいえPerlのコード部分は200行弱の
+短いものなんですけどねぇ。</p>
+
+<p>Yomicoをインストールすると以下のことができます。</p>
+
+<ul>
+<li>「yomico」コマンドを使うことができる</li>
+<li>ターミナルからMarkdownファイルを指定してyomicoコマンドを実行するとブラウザで整形したMarkdownが見られる</li>
+<li>ファイル単体だけでなくてフォルダも指定可能</li>
+<li>起動ポートはデフォルトで5000だけど変更できる</li>
+<li>CSS Frameworkに「<a href="http://yusukebe.com/archives/20120203/104140.html">inuitcss</a>」を使っており文字が読みやすい</li>
+<li>Faviconもちゃんと設定したぉ</li>
+</ul>
+
+
+<p>以下がこの記事自体を書きながらプレビューしている様子のスクリーンショットです。</p>
+
+<p><img src="http://yusukebe.com/archives/assets_c/2012/02/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202012-02-22%2018.40.38-thumb-550x395-124.png" alt="Yomicoスクリーンショット"></p>
+
+<p>インストールは「cpanm」というコマンドを入れて、ターミナルからこんな感じで行います。</p>
+
+<pre> $ git clone git://github.com/yusukebe/Yomico.git
+$ cd Yomico 
+$ cpanm .
+ </pre>
+
+<p>うまく入れば、「yomico」コマンドを使うことができるので、
+ファイルを指定したりディレクトリを指定したりして実行してください。</p>
+
+<pre> $ cd notes
+$ yomico README.mkdn
+ </pre>
+
+<p>とか、カレント指定しつつポートも任意のものにする場合は</p>
+
+<pre> $ cd notes
+$ yomico . -p 5001
+ </pre>
+
+<p>という具合です。デフォルトの場合は「<a href="http://localhost:5000">http://localhost:5000</a>」にお使いのブラウザでアクセスすると整形したMarkdownもしくはファイル一覧を見ることができます。</p>
+
+<p>現状の機能だけでも数週間使ってて大きな不満はないのですが、以下の点が今のところのTODOとして挙げられます。</p>
+
+<ul>
+<li>自分でCSSを指定できるカスタムCSS機能</li>
+<li>ディレクトリ一覧などでオシャレなアイコンを使う</li>
+<li>pre codeで囲まれたところをシンタックスハイライトしたい</li>
+<li>ナビゲーションバーを付ける？</li>
+<li>文字数カウンターが地味に欲しい</li>
+</ul>
+
+
+<p>もし、Yomicoを使ってみて「こんな機能欲しい！」「ここを改善して欲しい！」という要望があれば、
+教えてもらえるか、githubでごにょごにょしてもらえると嬉しいです！以上、開発途中のYomicoの紹介でしたー。</p>
+

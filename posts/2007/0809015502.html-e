@@ -1,0 +1,239 @@
++++
+Categories = ["tech"]
+Description = "   暇さえあればニコニコ動画。  今日はそんなニコニコ動画をPlaggerを使ってもっと楽しむ方法( = ニコプラ)を教えちゃいます。  Plaggerって何？という人はこちらをご覧ください→Plaggerとは？ (Yusukebe::T"
+Tags = ["Perl"]
+date = "2007-08-09T10:55:00+09:00"
+title = "Plaggerでニコニコ動画のFLVとコメントを一括ダウンロード！"
+author = "kamawada"
+archive = ["2007"]
+draft = false
++++
+
+
+<p>
+  暇さえあればニコニコ動画。
+  今日はそんなニコニコ動画をPlaggerを使ってもっと楽しむ方法( = <strong>ニコプラ</strong>)を教えちゃいます。
+  Plaggerって何？という人はこちらをご覧ください→<a href="http://yusukebe.com/tech/archives/20061109/193704.html">Plaggerとは？ (Yusukebe::Tech)</a>。
+</p>
+<p>
+  本日紹介するのは、<a href="http://zio3.net/nicoRss/">ニコRSS</a>というサイトが配信しているニコニコ動画のRSSや、<a href="http://blog.nicovideo.jp/2007/08/post_146.php">ニコニコ動画にひっそりと実装されている</a>マイリストのRSSをPlaggerで読み込んで、その動画を一括でダウンロードするというレシピです。
+</p>
+<p>
+  ニコRSSさんは「本日のランキング動画」や「タグ」「検索結果」の動画へのRSSフィードを提供してくれているとても便利なサービスです。例えば「本日のマイリスト登録ランキングのRSS」はこちらで取得できます→
+  <a href="http://zio3.net/nicoRss/Handler.ashx">http://zio3.net/nicoRss/Handler.ashx</a>
+  このように、RSSのエントリーのリンク先がニコニコ動画の動画ページ、つまり
+  「<a href="http://www.nicovideo.jp/watch/sm000000">http://www.nicovideo.jp/watch/sm000000</a>」という形式になっている場合に、
+  その動画のFLV(Flashビデオ形式)ファイルとXML形式のコメントファイルをダウンロードしてくれるPlaggerのPluginを作りました。
+  それがこちらです→<a href="http://yusukebe.com/tech/archives/20070808/110245.html">Plagger::Plugin::Filter::FetchNicoVideo / ver0.01 (Yusukebe::Tech)</a>。
+  これをPerlの@INCディレクトリなどに適切に配置するかPlaggerのconfigファイルで指定するPluginディレクトリなどにぶち込めば最初の準備は完了です。
+  早速config.yamlに以下を書いて、plagger -c config.yaml と実行すると、
+  「本日のマイリスト登録ランキング」100件の動画をダウンロードしはじめます。
+  いきなり100件もダウンロードしたくねぇえーーという人は途中でCtr-Cとか押して中断してください。
+  というかほとんどの人はそうした方がいいです^^;
+</p>
+<pre> plugins:
+
+  - module: Subscription::Config
+    config:
+      feed:
+         - url: http://zio3.net/nicoRss/Handler.ashx
+
+  - module: Filter::FetchNicoVideo
+    config:
+      mail: your@mailaddress
+      password: yourpassword
+      dir: ./tmp/
+      filename_encode: shift-jis #OSによって変えてください
+      download_comment: 1 #コメントをダウンロードしたいときに1としてください
+
+ </pre>
+<p>
+  <font size="2">端末から plagger -c config.yaml コマンドを実行してダウンロードしている様子</font><br>
+  <img alt="ニコプラ" class="at-xid-6a0133f4781589970b015391e388d6970b" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015391e388d6970b-pi.gif>
+</p>
+<p>
+  <font size="2">ダウンロードされたFLVとXML、更新日時でソートするとダウンロードされた順に並べられる</font><br>
+  <img alt="ニコプラ" class="at-xid-6a0133f4781589970b015391e388e4970b" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015391e388e4970b-pi.gif>
+</p>
+<p>
+  一応これだけでもダウンロードできることはできるのですが、少々問題があります。
+  まず、ニコRSSのランキングだと100件と件数が多いので、それを制御したいということ。
+  そして、このままだと重複して同じ動画をダウンロードする場合あって、それではニコニコ動画サーバーに余計な負荷をかけてしまいます。
+  そこで、Plaggerの機能であるRuleを使います。件数の制御には
+  <a href="http://plagger.org/trac/browser/trunk/plagger/lib/Plagger/Rule/RecentN.pm">RecentN</a>を、
+  重複の制御にはDedupedを使います。
+  この場合のDedupedのengineにはmanabouさんの<a href="http://d.hatena.ne.jp/manabou/20070208/1170943271">DB_File_URL</a>を使った方がよいでしょう(通常のDedupedではpermalinkとdateをあわせたキーで重複をチェックしているが、ニコRSSの場合、permalinkだけの重複チェックの方がいいから)。
+  それらを組み合わせたconfig.yamlはこんな感じになります。
+  (追記: Dedupedに関しては<a href="http://yusukebe.com/archives/07/08/09/105502.html#comment-271104">otsuneさんからコメントいただきました</a>。このハックの方がいいかもですね。)
+</p>
+<pre> plugins:
+
+  - module: Subscription::Config
+    config:
+      feed:
+         - url: http://zio3.net/nicoRss/Handler.ashx
+
+  - module: Filter::FetchNicoVideo
+    rule:
+      - module: RecentN
+        count: 20
+      - module: Deduped
+        engine: DB_File_URL
+        path: ./deduped.db
+    config:
+      mail: your@mailaddress
+      password: yourpassword
+      dir: ./tmp/
+      filename_encode: shift-jis
+      download_comment: 1
+
+ </pre>
+<p>
+  ダウンロードしたFLVをファイルを視聴するにはWindows限定ですが<a href="http://eigoukaiki.s101.xrea.com/software/nicoplayer/">NicoPlayer</a>がオススメです。
+  FLVファイルを直接開くことができて、さらに、同名のコメントXMLファイルがあればコメントもニコニコ動画のサイトで見るのと同じようスクロールしたりして表示してくれちゃいます。
+</p>
+<p>
+  <img alt="ニコプラ" class="at-xid-6a0133f4781589970b015391e388f0970b" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015391e388f0970b-pi.gif>
+</p>
+<p>
+  さて、次は冒頭で述べたニコニコ動画にこっそりと実装されているマイリストのRSSを読んで、
+  そのマイリストの動画を一気にダウンロードしてみましょう。
+  とはいえ自分でマイリストを作っている人はそれで試してみるのもいいのですが、
+  作ってない人いたりして(自分もそうでした)、
+  欲を言えば、他の人が作ったマイリストがどんなのあるか知りたいところ。
+  というわけで、ニコニコ動画のマイリストの全てとはいきませんが、ある程度一部をキーワードで検索できるページをGoogle Coopという便利なツールを使ってさくっと作ってみました。
+  こちらです→<a href="http://pulpsite.net/nicovideomylistsearch/">ニコニコ動画 マイリスト検索</a>
+</p>
+<p>
+  <a href="http://pulpsite.net/nicovideomylistsearch/">
+    <img alt="ニコプラ" class="at-xid-6a0133f4781589970b015391e388fd970b" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015391e388fd970b-pi.gif>
+  </a>
+</p>
+<p>
+  では、このマイリスト検索で「全てのマイリストの検索結果」を表示するとトップに表示される
+  「<a href="http://www.nicovideo.jp/mylist/174381/1698397">マイリスト びゃあ゛ぁ゛゛うまひぃ゛ぃぃぃ゛ぃ゛い逆から読んだらい゛ぃ゛ぃぃぃぃ゛ぃひまう゛゛ぁ゛あゃび</a>」
+  をPlaggerで読み込ませ、このマイリストに登録されている動画を全てダウンロードしてみましょう。
+  config.yamlの例はこんな感じです。
+</p>
+<pre> plugins:
+
+  - module: Subscription::Config
+    config:
+      feed:
+         - url: http://www.nicovideo.jp/mylist/174381/1698397
+         #↑URLはRSSのURLじゃなくてもいい
+
+  - module: Filter::FetchNicoVideo
+    config:
+      mail: your@mailaddress
+      password: yourpassword
+      dir: ./tmp/
+      filename_encode: shift-jis
+      download_comment: 1
+
+ </pre>
+<p>
+  最後に、SoftwareDesign 2006年10月号のPlagger特集でのmizzyさんの記事「PlaggerでYouTube Casting」を参考に、ダウンロードしたニコニコ動画の動画ファイルをiTunesで閲覧できるMPEG4フォーマットに変換してVodcastingするという超絶ワザを紹介します。
+  といってもまだちゃんと試したわけではないので動作の保障はしかねます^^;
+  config.yamlはこれでうまくいくんじゃないかなー
+</p>
+<pre> plugins:
+
+  - module: Subscription::Config
+    config:
+      feed:
+         - url: http://zio3.net/nicoRss/Handler.ashx
+
+  - module: Filter::FetchNicoVideo
+    rule:
+      - module: RecentN
+        count: 20
+      - module: Deduped
+        engine: DB_File_URL
+        path: ./deduped.db
+    config:
+      mail: your@mailaddress
+      password: yourpassword
+      dir: /home/yusuke/nicovideo
+
+  - module: Filter::FFmpeg
+    config:
+      command: /usr/local/bin/ffmpeg
+      device: ipod
+      dir: /home/yusuke/nicovideo
+
+  - module: Filter::RewriteEnclosureURL
+    config:
+      rewrite:
+        - local: /home/yusuke/nicovideo
+          url: http://hogehoge.fuga/nicovideo
+
+  - module: Publish::Feed
+    config:
+      dir: /home/yusuke/nicovideo
+      filename: %t.rss
+      format: RSS
+
+ </pre>
+<p>
+  <font size="2">一応mpeg4に変換してiTunesにぶちこむところはできた</font><br>
+  <img alt="ニコプラ" class="at-xid-6a0133f4781589970b015391e38905970b" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015391e38905970b-pi.gif>
+</p>
+<p>
+  変換のオプションを変えればPSPフォーマットの映像も作ることができるので、
+  PSPやiPodなどにニコニコ動画を入れて、みんなで動画を見て実際にその場で会った人の間で「ニコニコ」するのも楽しいかもしれませんね。
+</p>
+<p>
+  というわけで、ながながと自分が作ったモジュールの宣伝をしてきたわけですが、
+  これを機にPlaggerに触れてみるのもいいかなと思います。
+  あとはFilter::FetchNicoVideoの詳しい使い方についてはPODを参照してください。
+  最後にPlaggerを使うにあたって参考になる書籍を紹介しておきます。
+</p>
+<p></p>
+<div style="float:left"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B000ICL4U0/kamawada-22/"><img alt="Software Design (ソフトウエア デザイン) 2006年 10月号 [雑誌]" src="http://ec1.images-amazon.com/images/I/31YY55W7VKL.jpg" style="border:none;"></a></div>
+<div style="float:left;margin-left:15px;">
+<div style="font-size:12pt"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B000ICL4U0/kamawada-22/">Software Design (ソフトウエア デザイン) 2006年 10月号 [雑誌]</a></div>
+<div style="font-size:7pt;font-family:verdana;">posted with <a href="http://yusukebe.com/b/amazon/search/">yusukebe.com::AmazonSearch</a> on 2007.8.9</div>
+<div style="font-size:10pt;">
+<ul style="list-style-type:none;padding:0;">
+<li>雑誌 / 技術評論社 (2006/09/16)</li>
+<li>Amazon 売り上げランキング: </li>
+</ul>
+<a href="http://www.amazon.co.jp/gp/product/B000ICL4U0%3ftag=kamawada-22%26link_code=xm2%26camp=2025%26dev-t=D3QNAE4JDR26A2">Amazon.co.jpで詳細を見る</a>
+</div>
+</div>
+<div style="clear:left;"></div>
+<p></p>
+<div style="float:left"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4844322893/kamawada-22/"><img alt="まるごとPerl! Vol.1" src="http://ec1.images-amazon.com/images/I/31122XTWW7L.jpg" style="border:none;"></a></div>
+<div style="float:left;margin-left:15px;">
+<div style="font-size:12pt"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4844322893/kamawada-22/">まるごとPerl! Vol.1</a></div>
+<div style="font-size:7pt;font-family:verdana;">posted with <a href="http://yusukebe.com/b/amazon/search/">yusukebe.com::AmazonSearch</a> on 2007.8.9</div>
+<div style="font-size:10pt;">
+<ul style="list-style-type:none;padding:0;">
+<li>小飼 弾 宮川 達彦 伊藤 直也 川合 孝典 水野 貴明  </li>
+<li>大型本 / インプレスコミュニケーションズ (2006/08/24)</li>
+<li>Amazon 売り上げランキング: 46246</li>
+</ul>
+<ul style="list-style-type:none;padding:0;"><li>Amazon おすすめ度の平均: <img alt="5.0" class="at-xid-6a0133f4781589970b015435b6d28e970c" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015435b6d28e970c-pi.gif style="margin:0;"><ul style="list-style-type:none;padding-left:0;"><li>
+<img alt="5" class="at-xid-6a0133f4781589970b015435b6d28e970c" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015435b6d28e970c-pi.gif style="margin:0;"> 技術書・解説書というよりはマイルストーン</li></ul>
+</li></ul>
+<a href="http://www.amazon.co.jp/gp/product/4844322893%3ftag=kamawada-22%26link_code=xm2%26camp=2025%26dev-t=D3QNAE4JDR26A2">Amazon.co.jpで詳細を見る</a>
+</div>
+</div>
+<div style="clear:left;"></div>
+<p></p>
+<div style="float:left"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/482222841X/kamawada-22/"><img alt="ずばりわかる!Webプログラミング2.0―最新のWeb技術を一挙解説" class="at-xid-6a0133f4781589970b015391e38916970b" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015391e38916970b-pi.gif style="border:none;"></a></div>
+<div style="float:left;margin-left:15px;">
+<div style="font-size:12pt"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/482222841X/kamawada-22/">ずばりわかる!Webプログラミング2.0―最新のWeb技術を一挙解説</a></div>
+<div style="font-size:7pt;font-family:verdana;">posted with <a href="http://yusukebe.com/b/amazon/search/">yusukebe.com::AmazonSearch</a> on 2007.8.9</div>
+<div style="font-size:10pt;">
+<ul style="list-style-type:none;padding:0;">
+<li>日経ソフトウエア  </li>
+<li>大型本 / 日経BP社 (2007/04)</li>
+<li>Amazon 売り上げランキング: 21745</li>
+</ul>
+<a href="http://www.amazon.co.jp/gp/product/482222841X%3ftag=kamawada-22%26link_code=xm2%26camp=2025%26dev-t=D3QNAE4JDR26A2">Amazon.co.jpで詳細を見る</a>
+</div>
+</div>
+<div style="clear:left;"></div>
+

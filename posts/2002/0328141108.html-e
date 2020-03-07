@@ -1,0 +1,20 @@
++++
+Categories = ["tech"]
+Description = "天気：曇のち晴 RTcaption   = ちょっと複雑な表delimiter = :A :  B :  C : == :  D :  E1 :  2 :  3 :  4 :  5 :  67 : == : || :  8 : == :  "
+Tags = []
+date = "2002-03-28T23:11:00+09:00"
+title = "テーブル"
+author = "kamawada"
+archive = ["2002"]
+draft = false
++++
+
+<p>天気：曇のち晴<br>
+RT
+caption   = ちょっと複雑な表
+delimiter = :
+A :  B :  C : == :  D :  E
+1 :  2 :  3 :  4 :  5 :  6
+7 : == : || :  8 : == :  9
+10 : 11 : 12 : || : == : 13
+/RT</p>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="generator" content="Hugo 0.63.2" />
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="alternate" type="application/rss+xml" href="https://yusukebe.com/index.xml" title="ゆーすけべー日記" />
+	<meta property="og:title" content="ゆーすけべー日記" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://yusukebe.com/" />
+<meta property="og:image" content="https://yusukebe.com/icons/myicon.png"/>
+<meta property="og:updated_time" content="2020-03-06T15:46:50+09:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://yusukebe.com/icons/myicon.png"/>
+
+<meta name="twitter:title" content="ゆーすけべー日記"/>
+<meta name="twitter:description" content=""/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
+	
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://yusukebe.com/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+  <div class="container wrapper">
+	<div class="header">
+	<h1 class="site-title"><a href="https://yusukebe.com/">ゆーすけべー日記</a></h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/yusukebe" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/yusukebe" title="Twitter"><i data-feather="twitter"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+	<div class="recent-posts section">
+	  <h2 class="section-header">
+		Recent posts
+	  </h2>
+	  <div class="posts">
+		
+		
+		
+		<div class="post">
+		  <div class="meta">May 14, 2003</div>
+		  <a class="title" href="/posts/2003/0513150237/">なんとなくなじんでしまった無造作紳士(左)、そしてなぜか土下座(右)</a> &mdash;
+		  <span class="description">
+			
+			   
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">May 14, 2003</div>
+		  <a class="title" href="/posts/2003/0513150239/">ひよこ環境構築</a> &mdash;
+		  <span class="description">
+			
+			 DNPハウスの最強マシン、その名も ひよこ 。今まで、映像編集するのに配線しなおしたり、音がうまくでなかったりといやだったので、何もせずに誰でも速攻で映像編集できる環境を作ってみた。これで、映像ソースとアウトプットを管理するマトリックを経
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">May 14, 2003</div>
+		  <a class="title" href="/posts/2003/0513150235/">テアトロン付近でビギニング＆フィニッシュトュなカップルハケーソ。拡大写真に微妙に写ってる(右)</a> &mdash;
+		  <span class="description">
+			
+			   
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">May 14, 2003</div>
+		  <a class="title" href="/posts/2003/0513150238/">俊輔の液晶が壊れた</a> &mdash;
+		  <span class="description">
+			
+			 もうすでに 話題になってますが、 ゆるちゃん に引き続き 俊輔 の液晶が壊れた。  
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">May 14, 2003</div>
+		  <a class="title" href="/posts/2003/0513150232/">大学の殺伐感、個人プレー感に(((( ；゜Д゜)))ガクガクブルブル((((して登場した無造作紳士</a> &mdash;
+		  <span class="description">
+			
+			  
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">May 14, 2003</div>
+		  <a class="title" href="/posts/2003/0513150230/">無造作紳士祭り</a> &mdash;
+		  <span class="description">
+			
+			 松方弘樹にソックリで体格が佐竹並みで髪型がチャオズっぽくて口調がフリーザで性格はDr.コパ。 戦隊掲示板より。SFCのAO入学を目指す彼が今、バスで湘南台からSFCへむかっています。テンション高めらしいです。どうなることやら。
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">May 14, 2003</div>
+		  <a class="title" href="/posts/2003/0513150231/">無造作紳士祭りレポート</a> &mdash;
+		  <span class="description">
+			
+			 鎌ちゃん と面白そうだからという単純な理由で、（とりあえず）メッセ友達になった あまやん から紹介された 無造作紳士 。実は彼、 湘南高校 の後輩で、3つ違い（？つまり、俺が高校3年の時中学3年）。ちなみに    松方弘樹にソックリで体格
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">May 13, 2003</div>
+		  <a class="title" href="/posts/2003/0512150229/">ここにもコラつくってるやつが</a> &mdash;
+		  <span class="description">
+			
+			 BTTF祭り の直後に じゅんちゃんがコラつくってた 。    はやいものがちだったりします by じゅんいち   
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">May 13, 2003</div>
+		  <a class="title" href="/posts/2003/0512150227/">ボクダナ＋α飲み</a> &mdash;
+		  <span class="description">
+			
+			 研究会のチーム＋αでのみました。 湘南台サンクスの裏にある関西風おでんやつゆ   どこか似ている２人組み２組   ノリ でカラオケに行くことに。 熱唱するみなさん。    
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">May 13, 2003</div>
+		  <a class="title" href="/posts/2003/0512150228/">友達アイコラ</a> &mdash;
+		  <span class="description">
+			
+			 飲んだ後鎌ちゃん家で、俊輔と菅ちゃんの顔写真使ってアイコラ作らせてもらいました。  とりあえずおみくじから(左)、そしてイラスト系(右)   デュアル俊輔(左)、飲み親父菅ちゃん(右)   一万円見せびらかす2人   最後に俺の体と組み合
+			
+		  </span>
+		</div>
+		
+		
+
+<ul class="pagination">
+	<li class="page-item page-prev">
+	
+    <a href="/page/203/" class="page-link" aria-label="Previous"><span aria-hidden="true">← Prev page</span></a>
+	
+	</li>
+	<li class="page-item page-next">
+	
+    <a href="/page/205/" class="page-link" aria-label="Next"><span aria-hidden="true">Next page →</span></a>
+	
+	</li>
+</ul>
+
+
+	  </div>
+	</div>
+  </div>
+  <div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright yusukebe.com |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-492497-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

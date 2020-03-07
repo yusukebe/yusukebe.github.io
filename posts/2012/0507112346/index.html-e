@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>実装までにする7つの企画作業 - ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="実装までにする7つの企画作業" />
+<meta property="og:description" content=" メルマガ「ゆーすけべーラジオ」にてWebサービス/アプリをつくるにあたっての僕なりのエッセイを連載中です。先週は実装前に行う企画作業についてまとめてみたのですが、評判がいいので、折角ですしBlogで公開させていただきます。特に複数名でのも" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yusukebe.com/posts/2012/0507112346/" />
+<meta property="og:image" content="https://yusukebe.com/icons/myicon.png"/>
+<meta property="article:published_time" content="2012-05-07T20:23:00+09:00" />
+<meta property="article:modified_time" content="2012-05-07T20:23:00+09:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://yusukebe.com/icons/myicon.png"/>
+
+<meta name="twitter:title" content="実装までにする7つの企画作業"/>
+<meta name="twitter:description" content=" メルマガ「ゆーすけべーラジオ」にてWebサービス/アプリをつくるにあたっての僕なりのエッセイを連載中です。先週は実装前に行う企画作業についてまとめてみたのですが、評判がいいので、折角ですしBlogで公開させていただきます。特に複数名でのも"/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
+	
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://yusukebe.com/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper post">
+		<div class="header">
+	<h1 class="site-title"><a href="https://yusukebe.com/">ゆーすけべー日記</a></h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/yusukebe" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/yusukebe" title="Twitter"><i data-feather="twitter"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post-header">
+			<h1 class="title">実装までにする7つの企画作業</h1>
+			<div class="meta">Posted at &mdash; May 7, 2012</div>
+		</div>
+
+		<div class="markdown post-body">
+			
+
+<p><a href="http://www.mag2.com/m/0001426750.html">メルマガ「ゆーすけべーラジオ」</a>にてWebサービス/アプリをつくるにあたっての僕なりのエッセイを連載中です。先週は実装前に行う企画作業についてまとめてみたのですが、評判がいいので、折角ですしBlogで公開させていただきます。特に複数名でのものづくりに参考にしてみてください！</p>
+
+<hr>
+
+<p><br></p>
+
+<h3>実装までにする7つの企画作業</h3>
+
+<p>何度か述べている通り、Webサービスにおいて「何を」つくるかは最も重要なことであり、いくら崇高な技術を持っていても「何を」つくるかによって、その技術が生きるか死ぬかが決まってきます。何をつくるかをしっかり決めることにより、実際に本番用のコードを書く実装の段階にも確信が持てますし、リリースした際のフィードバックも活きてくるでしょう。世の中でよく使われているサービスやアプリを見るとアイデアに富んだ今まで無かったと言われるような「何」がしっかりとしたものが多いと思います。</p>
+
+<p>こうしたサービスの企画をつくるに当たっては各自の流儀に負うところが多く、世に言う企画書の書き方が十人十色のように、何を持って企画とするかも人それぞれです。また、各々のやり方といっても「企画」というものをうまく定型化できずに、頭の中でぼんやりと抱いているものを企画としてしまっているケースが多いかもしれません。特に複数人によるチームで企画を決める時に、皆がそのような意識であると企画をつめるに当たって「何を決めればいいのか？」が明確化されずに何となく実装に入ってしまうことも多々あります。ものづくりをしていて、自分（達）はいったい何がつくりたかったのか？と路頭に迷うことは最悪のケースです。</p>
+
+<p>今回は、いまいち定型化しずらいとされている企画のつくり方をいくつかの段階に分けて解説していきます。これらは僕がデザイン思考で著名な奥出直人氏の研究会で長年学んだことや東大MOTで有名な宮田秀明氏の書籍「仕事のやり方間違えてます」に記載されていた事柄をまとめた結果でもあります。まず、企画と僕が言っているものには以下7つの項目を決めることです。</p>
+
+<ol>
+<li>哲学</li>
+<li>アイデア</li>
+<li>テーマ</li>
+<li>コンセプト</li>
+<li>名前</li>
+<li>デザイン</li>
+<li>内部設計</li>
+</ol>
+
+
+<p><img src="http://farm8.staticflickr.com/7189/7152069083_385bacab66.jpg" alt="実装までの企画作業"></p>
+
+<p>それでは一つ一つ見ていきましょう。</p>
+
+<hr>
+
+<p><br></p>
+
+<h4>1. 哲学</h4>
+
+<p>個々人が持っている特定の興味に関する揺るがない気持ちのことです。サービスやアプリをつくる原動力の根底になります。</p>
+
+<p>例えば、今ではiPhoneなどのスマートフォンに取って代わってしまっているかもしれませんが、よいプロダクトの例としてAppleのiPodを挙げて行きましょう。iPodを開発した人のおそらく根底にあるのは「音楽をもっと楽しみたい」という揺るがない気持ちです。そこに「なぜ音楽を楽しむ必要があるのか？」といった問いに対する理論的な理由は存在しなくてよいのです。「『音楽が好きだから』もっと身近にいつでも楽しめていいじゃないか」と反論できればいいです。各々の日々の生活から得られる「音楽が好き」といった強い気持ちが哲学として反映されるのです。</p>
+
+<p>企画を考えていく上で後述するアイデアやコンセプトの部分は右往左往するかもしれませんが、哲学の部分は決して変わらないように日々興味のあることをピックアップしていけばよいでしょう。そして、それを一言で言い表すとよりよいです。</p>
+
+<h4>2. アイデア</h4>
+
+<p>哲学を叶えるための個別具体的なアイデアです。一つのサービスやアプリ、プロダクトに対してたくさんのアイデアがあってよいでしょう。</p>
+
+<p>「これが欲しい」という哲学から発想していくと細かいアイデアがいくつか浮かんでくると思います。例えば、iPodの場合を考えてみましょう。いくつかアイデアと思われるものを汲み取ることができます。</p>
+
+<ul>
+<li>所有している曲全てを持ち歩ける</li>
+<li>ディスプレイとコントローラだけのなるべく小さいサイズのデバイス</li>
+<li>専用のソフトウェア（iTunes）で曲を管理しデバイスと同期させる</li>
+<li>コントローラは曲の選択とプレイヤーの操作だけできればよい</li>
+<li>アルバム別だけじゃなくてアーティスト別や年代別、ジャンル別などで再生できる</li>
+<li>再生中は曲のアートワークをかっこよく表示させる</li>
+<li>販売サイト（iTunes Music Store）で曲を買ったらそのままデバイスにも同期される</li>
+</ul>
+
+
+<p>こうしたアイデアは最終的にiPodというプロダクトに活かされているものですが、おそらく企画をつくるに当たって没になったアイデアもいくつかあることでしょう。たくさんの個別具体的なアイデアを持っておき、後ほど吟味するとよいです。</p>
+
+<h4>3. テーマ</h4>
+
+<p>テーマとは哲学をより具体的にした勝負する領域のことを言います。アイデアを出していく過程などで固まっていくことが多いです。</p>
+
+<p>iPodの場合は「携帯音楽プレイヤー」がテーマと言えるでしょう。ただ、Appleの戦略としてはiPodが単なる単体のプレイヤーというデバイスにとどまっていないのが妙でしょう。というのはiPodは音楽ソフトであるiTunesとオンラインの音楽販売ショップであるiTunes Music Storeとの連動により活かされる点が多分にあるからです。</p>
+
+<p>AppleのiPod、iTunes、iTunes Music Storeのような絶妙なコンビネーションを考える必要はありませんが、テーマを定めることは必要です。テーマを認識することで、同じテーマの既存サービスやアプリを調査することができるからです。</p>
+
+<h4>4. コンセプト</h4>
+
+<p>アイデアがたくさん出て、テーマも定まったならば、自ずと何を作るかのイメージが頭の中に浮かぶはずです。それを一言で表したものがコンセプトです。コンセプトはテーマに沿った、アイデアを形成するための骨格のようなものです。</p>
+
+<p>iPodの場合だとコンセプトは以下の文章になるでしょう。</p>
+
+<blockquote><p>専用の音楽ソフトを経由して所有する曲全てを持ち運べる携帯型音楽プレイヤー</p></blockquote>
+
+<p>肝は「所有する曲全てを持ち運べる」という点ですね。このコンセプトに対して上記で挙げた個別のアイデアが付随してそれ何であるかを説明するという具合になります。このようにコンセプトとアイデア、テーマと分けて考えることにより、人に説明がつきやすい企画になります。例えば、「私たちがつくるものは」とはじめテーマ、コンセプト、アイデアという順番で説明していけば、抽象的なところからより具体的なところへと解説するので相手にもイメージが着きやすくなります。説明しやすいということはその企画は自分（達）の中でも明確化されているということなのです。</p>
+
+<h4>5. 名前</h4>
+
+<p>そのプロダクト、サービス、アプリの名前を決めることは非常に重要なことです。</p>
+
+<p>焦る必要はありませんが、なるべく早い段階で名前を決めておくことをオススメします。もちろん仮でもよいです。というのは、これからつくろうとしているものを自分（達）で呼ぶのに名前が無いと気持ちが入りませんし、先に進まないケースもあります。例えばこれまで決まったアイデアやコンセプトなどの企画をまとめてデジタル化したい時、PCに作業用のフォルダをつくるとします。その際に仮でもいいですから名前があればそれを使ってフォルダ名とすればよいわけです。名前が無かったらどんな名前でフォルダ名を作ればいいか無駄に途方に暮れるかもしれません。些細な例でしたが、同じような悩みには多々遭遇するはずです。</p>
+
+<h4>6. デザイン</h4>
+
+<p>デザインというと見た目のデザインが思い浮かぶかもしれませんが、それだけではなく、全体のディテールを詳細に決めていく作業です。モックアップと呼ばれる一部の機能を叶える試作品をつくったり、同じテーマのプロダクトを調査する過程で固まっていきます。</p>
+
+<p>コンセプトやアイデアを洗練させていくと無駄なものが削ぎ落され、最低限のサービスやアプリに対する機能が抽出されます。それらに対してユーザーがどういう風に使っていくかを具体的なイラストなどを元に試行錯誤していく作業を行っていきます。iPodの場合は「デザインがよい」という評判を聞きますが、それは機能を絞り込みそこに対するディテールをいかに使いやすく突き詰めたかの結果によるものでもあります。実装作業に入る前にiPodのような物理的なものならば木材や粘土などを用いたモックアップを作ることや、Webサービスであれば紙にUIのイラストを書くような作業を何度も繰り返すとよいでしょう。デザインに関しては様々な具現化の方法があると思いますが、複数人のプロジェクトにおいても、不思議と一つの形に定まっていくことが多いです。</p>
+
+<h4>7. 内部設計</h4>
+
+<p>今まではサービスやプロダクトを外から見た際の企画について考えてきましたが、内部的にどのように実現するかを設計していくことももちろん必要です。</p>
+
+<p>Webサービスならば、情報の区分けを行いデータモデルを記述する、物理的な観点とソフトウェア的観点をあわせて大きな枠組みを考えるアーキテクチャ図を書くといった作業です。ユースケースと呼ばれるユーザーから見たシステムの振る舞いを書いてから作業に移るとよいでしょう。極力ユースケースに従った形で最低限の内部構造を持つことを考えていくと最初は作りやすいです。また、Webサービスの場合、他にもサービスのエンドポイントを決めるURI設計や、内部のクラス構造を考えるAPI設計なども設計作業に入ります。専用のモデリングツールと呼ばれるソフトウェアを使うのもよいですが、まずは、大きめの紙とペンで行います。</p>
+
+<h4>まとめ</h4>
+
+<p>以上、サービスを実装する前の企画とは何を決めなくてはいけないかを、7項目に分けて紹介してきました。この7つの項目はWebサービスだけではなく、ものづくり全てにある程度共通することではないかと思います。まずは、何度かこの項目に従ってつくり、自分なりのものづくりの方法を築いていくのもいいと思います。</p>
+
+<hr>
+
+<p><br></p>
+
+<h3>参考</h3>
+
+<ul>
+<li><a href="http://www.mag2.com/m/0001426750.html">ゆーすけべーラジオ</a></li>
+<li><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4152087994/kamawada-22/ref=nosim/">デザイン思考の道具箱</a></li>
+<li><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4396612117/kamawada-22/ref=nosim/">仕事のやり方間違えてます</a></li>
+</ul>
+
+
+
+		</div>
+
+		<div class="post-tags">
+			
+				
+					<nav class="nav tags">
+							<ul class="flat">
+								
+								<li><a href="/tags/web-essay">Web Essay</a></li>
+								
+								<li><a href="/tags/column">Column</a></li>
+								
+							</ul>
+					</nav>
+				
+			
+		</div>
+        <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v5.0&appId=233306523373884&autoLogAppEvents=1"></script>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+
+<div class="social-button-area">
+  <ul class="social-button">
+    <li>
+      <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
+    </li>
+    <li>
+      <span class="fb-share-button"  data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2012%2f0507112346%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
+    </li>
+    <li>
+      <a href="https://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label-counter" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>
+    </li>
+  </ul>
+</div>
+
+<div class="disqus-area">
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "yusukebe-com" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<ul class="pagination">
+  
+  <li class="page-item page-prev">
+    <a href="https://yusukebe.com/posts/2012/0503105637/" class="page-link" aria-label="Previous"><span aria-hidden="true">← ノマドならルノアールがはかどるよねぇ〜っていう10個の理由</span></a>
+  </li>
+  
+  
+  <li class="page-item page-next">
+    <a href="https://yusukebe.com/posts/2012/0520074309/" class="page-link" aria-label="Next"><span aria-hidden="true">Rubyやってみる！（新おっぱいスクリプトもあるぉ） →</span></a>
+  </li>
+  
+</ul>
+
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright yusukebe.com |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-492497-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

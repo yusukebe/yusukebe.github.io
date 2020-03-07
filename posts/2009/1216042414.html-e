@@ -1,0 +1,25 @@
++++
+Categories = ["tech"]
+Description = " 分速、つまり1分間に一度に近いペースでYourFileHostのエロ動画を貼付けて、 その場で再生可能なサイト「分速YourFileHost」を作ってみました。 説明はそんなものでいいかと思うくらいシンプルなので後ろに人がいなければ（笑）"
+Tags = []
+date = "2009-12-16T13:24:00+09:00"
+title = "分速でエロ動画を貼付ける「分速YourFileHost」を作ってみた"
+author = "kamawada"
+archive = ["2009"]
+draft = false
++++
+
+
+<p>分速、つまり1分間に一度に近いペースでYourFileHostのエロ動画を貼付けて、 その場で再生可能なサイト「分速YourFileHost」を作ってみました。 説明はそんなものでいいかと思うくらいシンプルなので後ろに人がいなければ（笑）見てみてください。</p>
+<p>簡単な仕組みについて流れを解説。</p>
+<ol>
+<li>とあるところから最近ダウンロードされたYourFileHostのリンクを拾ってくる</li>
+<li>リンクを解析して連番のグループを形成</li>
+<li>その動画の名前でGoogle検索をして記述があれば補足情報として紐づける</li>
+<li>裏APIを叩いてサムネイルをとってくる</li>
+<li>時系列で表示</li>
+<li>動画のプレビュー再生部分は独自に開発したAPIでFLVのパスを持って来て再生させる</li>
+</ol>
+<p>という具合です。今見たところ分速強くらいのスピードはでてるみたいです。 「YourAVHostの女優ものはあわない」、「もっとたくさんのエロ動画を知りたい！」、「今日のおかず欲しい！」 という方は是非覗いてみてください。 Enjoy!</p>
+<p><br> <iframe src="http://b.hatena.ne.jp/entry.parts?url=http%3A%2F%2Ffunsoku.urasukebe.com%2F" width="500" height="230" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe></p>
+

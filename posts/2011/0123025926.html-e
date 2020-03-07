@@ -1,0 +1,88 @@
++++
+Categories = ["tech"]
+Description = " オシャレな写真共有iPhoneアプリのinstagramでは、「Popular」ってメニューがあって今人気の写真(オシャレな)を閲覧することができて結構楽しかったり、そこに載るのがモチベーションになったりします。が、それ以上におそらく使わ"
+Tags = []
+date = "2011-01-23T11:59:00+09:00"
+title = "Twitpicなど写真共有サイトのランキングサイト「Picst(ピクスト)」を公開!"
+author = "kamawada"
+archive = ["2011"]
+draft = false
++++
+
+
+<p>
+オシャレな写真共有iPhoneアプリのinstagramでは、
+「Popular」ってメニューがあって今人気の写真(オシャレな)を閲覧することができて
+結構楽しかったり、そこに載るのがモチベーションになったりします。
+が、それ以上におそらく使われているであろうTwitterと連動する写真共有サイト
+Twitpicの「Popular」な写真ってなかなかわからないですね。
+</p>
+<p>
+昔から<a href="http://twib.jp/">Twib</a>というTwitterでつぶやかれたURLをひたすら収集する、
+サービスをやってるもんで、人気のTwitpic URLはなんとなく分かるんですが、
+Twitpicを含む写真共有サイトのランキング専用サイトが欲しくなりました。
+</p>
+<p>
+そこで、とりあえずTwitpic、Flickr、instagramという3つのサービスの個別エントリー記事(つまり写真が載ってるページ)を、Twitter APIから解析して、人気の写真を出すというサービスを作ってみました。
+名前は「Picst」、読みは「ピクスト」、URLは「<a href="http://pic.st/">http://pic.st/</a>」です。
+</p>
+
+<p>
+<span class="hatena-bookmark-title"><a href="http://pic.st/">Picst | Popular ranking of twitpic, instagram and flickr pictures.</a></span> <span class="hatena-bookmark-users"><a href="http://b.hatena.ne.jp/entry/pic.st/"><img alt="Picst | Popular ranking of twitpic, instagram and flickr pictures." class="at-xid-6a0133f4781589970b015391e395dc970b" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015391e395dc970b-pi.gif title="Picst | Popular ranking of twitpic, instagram and flickr pictures."></a></span><br>
+<a href="http://pic.st/">
+<img alt="Picst" class="at-xid-6a0133f4781589970b015391e395f5970b" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015391e395f5970b-pi.jpg>
+</a>
+</p>
+<p>
+本当はグローバルなサービスにしたかったのですが、
+現在のところ、日本語のみ対応してます。
+というのも、当初は「日本語のみ」というフィルターを通さずにやっていたのですが、
+でてくるのが外人の写真ばっかりで何が面白いのかという尺度がわからなかったので、
+今のところそうしてます。
+</p>
+<p>
+で、実際にツイートを集めてランキング順に並べてみると、
+ランキング上Twitpicばっかりなのですが、
+結構面白い写真がでてきていい感じです。
+やっぱり「おわらい系」写真が人気ありますね。
+一日一回見てくすっと笑えるサイトを目指す感じですかね。
+</p>
+<p>
+ちなみに、Twitterはもちろんのこと、Facebookとの連動も割と考えて作っています。
+Like ButtonやShare Button、さらにはComment Boxなんてのも設置して、
+面白かった写真をFacebook上で共有してもらって、
+さらにはバイラルにPicst自体も広がっていけばいかなーと思っています。
+</p>
+<p>
+さて簡単な技術的な解説。
+サービスのエントリーへのツイートが何件あるかはお得意の
+Twitter Stream APIとSearch APIの兼用という方法を取っています。
+問題となるのは、写真のサムネイルURLやタイトルなどの情報の取得なのですが、
+これはembedly APIのみを使用しています。
+30以上の写真共有サイトを共通のインターフェースに従い、
+eEmbed形式で情報をゲットできるのでまさにこのサービスにふさわしいものです。
+</p>
+<p>
+また、運用にもちょっと力を入れていて、
+今回はVPSをlinodeでしっかりと借りています。
+そして、バックエンドに関して、
+Web Application Frameworkには最近自作している
+<a href="http://github.com/yusukebe/Rumi">Rumi</a>、
+APIが安定しているという理由(言い訳?)でO/R MapperにはDBIx::Skinnyを利用しています。
+モックを作った時にはCatalyst+DBIx::Classだったのですが、
+かなりリソースが節約された感じです。
+</p>
+
+<p>
+というわけで、今話題の写真を見つけるなら「Picst!」。
+よかったら見てみてね。
+Enjoy!
+</p>
+
+<ul>
+<li>
+<span class="hatena-bookmark-title"><a href="http://pic.st/">Picst | Popular ranking of twitpic, instagram and flickr pictures.</a></span> <span class="hatena-bookmark-users"><a href="http://b.hatena.ne.jp/entry/pic.st/"><img alt="Picst | Popular ranking of twitpic, instagram and flickr pictures." class="at-xid-6a0133f4781589970b015391e395dc970b" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015391e395dc970b-pi.gif title="Picst | Popular ranking of twitpic, instagram and flickr pictures."></a></span>
+</li>
+<li><a href="http://www.facebook.com/apps/application.php?id=195614470448681">Picst、Facebookのファンページ</a></li>
+</ul>
+

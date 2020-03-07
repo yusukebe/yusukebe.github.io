@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="generator" content="Hugo 0.63.2" />
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="alternate" type="application/rss+xml" href="https://yusukebe.com/index.xml" title="ゆーすけべー日記" />
+	<meta property="og:title" content="ゆーすけべー日記" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://yusukebe.com/" />
+<meta property="og:image" content="https://yusukebe.com/icons/myicon.png"/>
+<meta property="og:updated_time" content="2020-03-06T15:46:50+09:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://yusukebe.com/icons/myicon.png"/>
+
+<meta name="twitter:title" content="ゆーすけべー日記"/>
+<meta name="twitter:description" content=""/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
+	
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://yusukebe.com/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+  <div class="container wrapper">
+	<div class="header">
+	<h1 class="site-title"><a href="https://yusukebe.com/">ゆーすけべー日記</a></h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/yusukebe" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/yusukebe" title="Twitter"><i data-feather="twitter"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+	<div class="recent-posts section">
+	  <h2 class="section-header">
+		Recent posts
+	  </h2>
+	  <div class="posts">
+		
+		
+		
+		<div class="post">
+		  <div class="meta">Jul 13, 2007</div>
+		  <a class="title" href="/posts/2007/0713004512/">空気清浄機のフィルター交換</a> &mdash;
+		  <span class="description">
+			
+			   母の寝室がカビ臭いらしくて空気清浄機(SANYO ABC-HR15)をカシテタラ、そののち50畳用くらいなんじゃねーかと思うくらい強力な新しいのを購入したらしく、そのついでにかしてた御礼ということで交換用フィルターをカッテクレタ。  
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jul 12, 2007</div>
+		  <a class="title" href="/posts/2007/0712024108/">某ウェブサービスを使ってエロサイト検索「Erohoo!」を作ってみた</a> &mdash;
+		  <span class="description">
+			
+			   ERO Plaネトラン掲載記念ということで(もないんだけど)、某ウェブサービスを使ってオトナ向けサイトだけを対象にキーワードでムフフなページを検索できるサイト「Erohoo!」を作ってみました。        検索対象になっているペー
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jul 11, 2007</div>
+		  <a class="title" href="/posts/2007/0711005135/">ネトラン8月号にERO PlaとCDTubeとCarTubeが掲載</a> &mdash;
+		  <span class="description">
+			
+			   現在発売中8月号のネットランナーの「超凄サービス ねとみしゅらん」というコーナーでERO PlaとCDTubeとCarTubeの3つが紹介されました。ERO Plaはアダルトサイトの更新情報を1ページで表示するだけという単純な、しかも
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">May 31, 2007</div>
+		  <a class="title" href="/posts/2007/0531021659/">今日の苺</a> &mdash;
+		  <span class="description">
+			
+			   去年9月に大量に購入した苺の苗。  結局時期を逃し、植え込みもしないまま放置していたら、ここ最近実を付け出した。  普通の苺に比べて時期が遅いような気がするが、それは栄養が足りないからだろうか。  とはいえ、食べてみると甘酸っぱくてお
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">May 30, 2007</div>
+		  <a class="title" href="/posts/2007/0530040815/">麺や鐙(あぶみ)＠茅ヶ崎</a> &mdash;
+		  <span class="description">
+			
+			   家で晩飯が配給されなかった。そこで、深夜までやっている・前々から気になっていたという理由で、茅ヶ崎にあるラーメン屋「麺や鐙(あぶみと読む)」に行って来た。旨かった。    0時30分という時間のなのに俺が入店する前に2人お客さんが、そ
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">May 28, 2007</div>
+		  <a class="title" href="/posts/2007/0528055338/">Googleのイメージ検索で顔だけ検索</a> &mdash;
+		  <span class="description">
+			
+			   Googleのイメージ検索でURLに&amp;amp;imgtype=faceを渡すと「顔だけ」検索して表示してくれるらしい(Googleで顔だけ検索するおまじない - CloseBox and OpenPod [ITmedia オルタナティ
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">May 24, 2007</div>
+		  <a class="title" href="/posts/2007/0524132433/">せたが屋＠品達</a> &mdash;
+		  <span class="description">
+			
+			   先日の日曜日、品川に行く機会があったので、有名ラーメン店7軒が軒をそろえる「品達」で初めてラーメンを食すことにした。日曜だと言うのに午後4時という時間からか閑散とした様子。開店当初すごい混雑していたという話を聞いたか聞かないか、もっと
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">May 20, 2007</div>
+		  <a class="title" href="/posts/2007/0520042611/">パッチギ!</a> &mdash;
+		  <span class="description">
+			
+			   金曜ロードショーで見た「パッチギ!」が予想外に(ってか事前知識が無さすぎた)面白かった。  井筒監督を見直した。  1968年の京都を舞台にした地元高校生と朝鮮学校生との抗争物語というのが主軸のストーリー。  ではあるが、当初みんな同
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">May 20, 2007</div>
+		  <a class="title" href="/posts/2007/0520015050/">本を捨てる</a> &mdash;
+		  <span class="description">
+			
+			   手元に毎日読むと決めてる本とかリファレンス本を置いときたいけどそこには雑誌が並べてあってじゃまだからそれを移動させるスペースを確保しようといらない本をピックアップして捨てた。  コンピュータ関係の古い書籍が主なので、懐かしいソフトやら
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">May 18, 2007</div>
+		  <a class="title" href="/posts/2007/0518040302/">20代の日記で1位だよ。すけべ</a> &mdash;
+		  <span class="description">
+			
+			   最近全然更新してないのに、「ブログランキング ドット ネット」というランキングサイトの「日記 : 20代」というサブカテゴリで1位になってる。        これは大いに、「すけべ」でキーワード検索をすると上位にこの日記が出現するとい
+			
+		  </span>
+		</div>
+		
+		
+
+<ul class="pagination">
+	<li class="page-item page-prev">
+	
+    <a href="/page/71/" class="page-link" aria-label="Previous"><span aria-hidden="true">← Prev page</span></a>
+	
+	</li>
+	<li class="page-item page-next">
+	
+    <a href="/page/73/" class="page-link" aria-label="Next"><span aria-hidden="true">Next page →</span></a>
+	
+	</li>
+</ul>
+
+
+	  </div>
+	</div>
+  </div>
+  <div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright yusukebe.com |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-492497-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

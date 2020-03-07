@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>YouTube動画のリストを作成/共有するFacebookアプリ「Risuto」を作ってみた - ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="YouTube動画のリストを作成/共有するFacebookアプリ「Risuto」を作ってみた" />
+<meta property="og:description" content=" 先日の土曜日に台風が来ていたので、「台風なのでこの土日でFacebookアプリハッカソンでもしましょう(オンラインで)」ってことで「Risuto」というアプリを作ってみました。    RisutoはYouTubeの動画のプレイリストを自分" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yusukebe.com/posts/2010/1101011322/" />
+<meta property="og:image" content="https://yusukebe.com/icons/myicon.png"/>
+<meta property="article:published_time" content="2010-11-01T10:13:00+09:00" />
+<meta property="article:modified_time" content="2010-11-01T10:13:00+09:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://yusukebe.com/icons/myicon.png"/>
+
+<meta name="twitter:title" content="YouTube動画のリストを作成/共有するFacebookアプリ「Risuto」を作ってみた"/>
+<meta name="twitter:description" content=" 先日の土曜日に台風が来ていたので、「台風なのでこの土日でFacebookアプリハッカソンでもしましょう(オンラインで)」ってことで「Risuto」というアプリを作ってみました。    RisutoはYouTubeの動画のプレイリストを自分"/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
+	
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://yusukebe.com/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper post">
+		<div class="header">
+	<h1 class="site-title"><a href="https://yusukebe.com/">ゆーすけべー日記</a></h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/yusukebe" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/yusukebe" title="Twitter"><i data-feather="twitter"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post-header">
+			<h1 class="title">YouTube動画のリストを作成/共有するFacebookアプリ「Risuto」を作ってみた</h1>
+			<div class="meta">Posted at &mdash; Nov 1, 2010</div>
+		</div>
+
+		<div class="markdown post-body">
+			
+
+<p>
+先日の土曜日に台風が来ていたので、
+「台風なのでこの土日でFacebookアプリハッカソンでもしましょう(オンラインで)」
+ってことで「Risuto」というアプリを作ってみました。
+</p>
+<p>
+<img alt="risuto" class="at-xid-6a0133f4781589970b015391e394fb970b" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015391e394fb970b-pi.jpg style="padding:1px;border:1px solid #ccc;">
+</p>
+<p>
+RisutoはYouTubeの動画のプレイリストを自分で作れて、友達とかと共有するサービスです。
+ご存知の方もいるかもしれませんが、僕が以前作ったListPodというサービスの亜種的存在になります
+（ListPod自体はYouTubeからの規制でそもそものPodcastを作れるコンセプトを実現できなくなり停止中です＞＜）
+</p>
+<p>
+<a href="http://japan.cnet.com/news/media/story/0,2000056023,20369960,00.htm">YouTubeの動画をリストで保存、動画ポッドキャストを楽しめる「ListPod」 - CNET Japan</a>
+</p>
+<p>
+Facebook上で動作し、認証を行うと自分でリストを作ることができます。
+例えば「Perfume」の動画集を作りたければ、「Perfume」というキーワードで動画を検索し、
+「Perfume」という名前のリストを作り、どんどん動画を追加していきます。
+</p>
+<p>
+<img alt="risuto" class="at-xid-6a0133f4781589970b015391e39516970b" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015391e39516970b-pi.jpg style="padding:1px;border:1px solid #ccc;">
+</p>
+<p>
+出来上がったリストの動画はそれぞれプレイヤーで見ることができ、連続再生にも対応しています。
+また、自分のFacebook上の友達がどんなリストを最近作ったかがトップページに表示されるので、
+友達がどんな趣味、特に音楽に関して、を持っているのかが分かって面白いです。
+</p>
+<p>
+<img alt="risuto" class="at-xid-6a0133f4781589970b015391e3952b970b" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015391e3952b970b-pi.jpg style="padding:1px;border:1px solid #ccc;">
+</p>
+<p>
+二日というか実質一日くらいで作ったものでまだ甘い部分あるかと思いますが、
+よかったら使ってみてください。作業用BGMにいいかもです。
+</p>
+<ul>
+<li>
+<a href="http://www.facebook.com/apps/application.php?id=161724367191311">Facebook | Risuto</a>(Fanpage)</li>
+</ul>
+<p>
+でアプリ本体の解説はこのくらいにとどめて、
+今回「Risuto」というFacebookアプリを作って思ったことをまとめます。
+</p>
+<p>
+既存のFacebookアプリを使ってみたり、
+そもそもFacebookで遊んでみたりとどんなアプリがウケるかなー、
+作ってて楽しいかなーと考えています。
+アプリにもいろいろと種類があると思うのですが、
+有効なのが
+「ユーザーにアプリ内で特有のコンテンツを作ってもらいそれをFacebookの機構で共有してもらう」
+アプリだと思いました。
+僕は使ってないのですが「instagr.am」なんてちょっとそれっぽいです。
+Facebook上のアプリではないのですが、加工された写真を含むオリジナルのコンテンツをユーザーに作成させる機能を持ち、連動させてその人のWallに流すという具合です。
+FacebookのWallにポストできるのは通常のテキスト/写真/動画/リンクといくつか種類があるのですが、
+つまり、これをアプリで拡張させるのです。
+すると「このアプリでしかできない」という付加価値を付けることができます。
+また、Facebookと連動させることで、ソーシャルな機能をFacebookに委譲させることができます。
+ユーザー独自のコンテンツを作ってもらえば、
+それを友人間で共有してもらうということが容易になるのです。
+するとサービスの特徴的なコンテンツをユーザーに作成してもらい、
+それを配信することに注力しつつソーシャルなアプリケーションが有効に作れることになります。
+</p>
+<p>
+「ソーシャルな機能をFacebookに委譲する」
+「ポストを拡張する」この2点に関してはアプリのプロモーションにおいて非常に有効です。
+例えば、Risutoの各リストページには「likeボタン」を設置しています。
+likeボタンによる波及効果はすでに語られている通りですが、
+友人のつながりを通しての伝搬が可能です。
+独自のフォーマットでWallへポストする機能も重要です。
+Risutoにもリストのサマリーと共に
+「こんなリスト作ったよー」というようなメッセージを付け加えることができるようにしています。
+</p>
+<p>
+これを踏まえると、Risutoはユーザーに「自分のお気に入り動画集」というコンテンツを作ってもらい、
+それをFacebookプラットフォーム上で共有するという仕組みなのです。
+</p>
+<p>
+とまとめてみましたが、まだまだ個人的に分からないことがあるソーシャルアプリという分野なんで、
+実際に自分で使いつつ、作りつつ面白いものを作っていきたいと思います。
+</p>
+
+
+		</div>
+
+		<div class="post-tags">
+			
+				
+			
+		</div>
+        <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v5.0&appId=233306523373884&autoLogAppEvents=1"></script>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+
+<div class="social-button-area">
+  <ul class="social-button">
+    <li>
+      <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
+    </li>
+    <li>
+      <span class="fb-share-button"  data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2010%2f1101011322%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
+    </li>
+    <li>
+      <a href="https://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label-counter" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>
+    </li>
+  </ul>
+</div>
+
+<div class="disqus-area">
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "yusukebe-com" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<ul class="pagination">
+  
+  <li class="page-item page-prev">
+    <a href="https://yusukebe.com/posts/2010/1030014927/" class="page-link" aria-label="Previous"><span aria-hidden="true">← 自分のWallにポストするFacebookアプリを簡単に作る</span></a>
+  </li>
+  
+  
+  <li class="page-item page-next">
+    <a href="https://yusukebe.com/posts/2010/1107101322/" class="page-link" aria-label="Next"><span aria-hidden="true">ネット時代の「ムーブメント」という目的 →</span></a>
+  </li>
+  
+</ul>
+
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright yusukebe.com |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-492497-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

@@ -1,0 +1,113 @@
++++
+Categories = ["tech"]
+Description = " 2020年はどうなるかは置いておいて、2019年の最先端のPerl開発ボイラープレート - Qiitaを参考にする。   Moo  strictures  Function::Parameters  Type::Tiny   あたりを使う"
+Tags = []
+date = "2020-01-15T07:05:00+09:00"
+title = "2019年っぽいPerl OOPらしい"
+author = "kamawada"
+archive = ["2020"]
+draft = false
++++
+
+
+<p>2020年はどうなるかは置いておいて、<a href="https://qiita.com/karupanerura/items/8182f7ef650fd314e591">2019年の最先端のPerl開発ボイラープレート - Qiita</a>を参考にする。</p>
+
+<ul>
+<li>Moo</li>
+<li>strictures</li>
+<li>Function::Parameters</li>
+<li>Type::Tiny</li>
+</ul>
+
+
+<p>あたりを使う。</p>
+
+<p>最近、<a class="keyword" href="http://d.hatena.ne.jp/keyword/Moose">Moose</a>を使って<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%C7%A5%B6%A5%A4%A5%F3%A5%D1%A5%BF%A1%BC%A5%F3">デザインパターン</a>を実装してみてるのでこれらを使って、Chain of Responsibilityパターンをなんとなく書いてみた。ちなみに以下の<a class="keyword" href="http://d.hatena.ne.jp/keyword/Java">Java</a>実装が解説を含めて分かりやすいので、ポーティングするような形で書いている。</p>
+
+<ul>
+<li><a href="https://qiita.com/i-tanaka730/items/c63c6c22abd1477e0ba0">GoFのデザインパターンまとめ - Qiita</a></li>
+</ul>
+
+
+<p><a class="keyword" href="http://d.hatena.ne.jp/keyword/Java">Java</a>実装との最大の差はInterfaceとか抽象クラスという概念がp5-<a class="keyword" href="http://d.hatena.ne.jp/keyword/Moose">Moose</a>/Mooにはないことなんだけど、Roleがハマる時はRoleを使って表現している（といってもそのまま書き写すんじゃなくて<a class="keyword" href="http://d.hatena.ne.jp/keyword/Perl">Perl</a>っぽい書き方で書いてるつもり）。</p>
+
+<p><code>Support.pm</code>。<a class="keyword" href="http://d.hatena.ne.jp/keyword/Java">Java</a>では抽象クラスで書かれてたけど、今回はRoleを使った。</p>
+
+<pre class="code lang-perl" data-lang="perl" data-unlink>
+package Support;
+use Moo::Role;
+use strictures 2;
+use namespace::clean;
+use Function::Parameters;
+use Types::Standard qw/Str Object/;
+
+has 'name' =&gt; (
+    is =&gt; 'ro',
+    isa =&gt; Str,
+);
+
+has 'next' =&gt; (
+    is =&gt; 'rw',
+    isa =&gt; Object,
+);
+
+requires 'resolve';
+
+method support($trouble) {
+    if ( $self-&gt;resolve($trouble) ) {
+        $self-&gt;done($trouble);
+    } elsif ( $self-&gt;next ) {
+        $self-&gt;next-&gt;support($trouble);
+    } else {
+        $self-&gt;fail($trouble);
+    }
+}
+
+method done($trouble) {
+    print $trouble-&gt;to_string . " is resolve by [" . $self-&gt;name . "].\n";
+}
+
+method fail($trouble) {
+    print $trouble-&gt;to_string . " is cannot be resolved.\n";
+}
+
+1;
+ </pre>
+
+
+<p><code>method</code>カッコイイ。ほんとは<code>next</code>プロパティでSupportロールを実装しているクラスの<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A4%A5%F3%A5%B9%A5%BF%A5%F3%A5%B9">インスタンス</a>、ってのを指定したかったけど（<a class="keyword" href="http://d.hatena.ne.jp/keyword/Moose">Moose</a>だとできる）、<code>Type::Standard</code>にはそういうのなさそうなので（<code>RoleName</code>っていうTypeならある）<code>Object</code>を指定してる。</p>
+
+<p><code>SpecialSupport.pm</code>では上記のRoleを<code>with</code>して実装。</p>
+
+<pre class="code lang-perl" data-lang="perl" data-unlink>
+package SpecialSupport;
+use Moo;
+use strictures 2;
+use namespace::clean;
+use Function::Parameters;
+use Types::Standard qw/Int/;
+
+with 'Support';
+
+has 'number' =&gt; (
+    is =&gt; 'ro',
+    isa =&gt; Int,
+);
+
+method resolve($trouble) {
+    return $trouble-&gt;number == $self-&gt;number;
+}
+
+1;
+ </pre>
+
+
+<p><code>method</code>カッコイイ（2度目）。</p>
+
+<p>Data::Validatorでやってたような、メソッドの引数の型チェックをType::Tinyと組み合わせて「かっこよく」書けるかな？って思った。以下、実装の全部。</p>
+
+<ul>
+<li><a href="https://github.com/yusukebe/p5-design-patterns/tree/master/ChainOfResponsibility">https://github.com/yusukebe/p5-design-patterns/tree/master/ChainOfResponsibility</a></li>
+</ul>
+
+

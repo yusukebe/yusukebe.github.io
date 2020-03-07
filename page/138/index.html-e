@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="generator" content="Hugo 0.63.2" />
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="alternate" type="application/rss+xml" href="https://yusukebe.com/index.xml" title="ゆーすけべー日記" />
+	<meta property="og:title" content="ゆーすけべー日記" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://yusukebe.com/" />
+<meta property="og:image" content="https://yusukebe.com/icons/myicon.png"/>
+<meta property="og:updated_time" content="2020-03-06T15:46:50+09:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://yusukebe.com/icons/myicon.png"/>
+
+<meta name="twitter:title" content="ゆーすけべー日記"/>
+<meta name="twitter:description" content=""/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
+	
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://yusukebe.com/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+  <div class="container wrapper">
+	<div class="header">
+	<h1 class="site-title"><a href="https://yusukebe.com/">ゆーすけべー日記</a></h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/yusukebe" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/yusukebe" title="Twitter"><i data-feather="twitter"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+	<div class="recent-posts section">
+	  <h2 class="section-header">
+		Recent posts
+	  </h2>
+	  <div class="posts">
+		
+		
+		
+		<div class="post">
+		  <div class="meta">Aug 28, 2004</div>
+		  <a class="title" href="/posts/2004/0828080638/">おわきかが神南２４時間インターネットＴＶに出演します</a> &mdash;
+		  <span class="description">
+			
+			    お笑い！企画放送局が本日行われる神南２４時間インターネットＴＶの深夜1時から2時まで出演します。活動の紹介と過去の作品を時系列にみて成長の跡をたどる。ぜひお暇なら見てください。     現在鎌団子家にて放送の準備と、おわきか公式ペー
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Aug 28, 2004</div>
+		  <a class="title" href="/posts/2004/0827194935/">水上でキャニオニング体験</a> &mdash;
+		  <span class="description">
+			
+			    群馬県水上に半日キャニオニングしてきました。キャニオンズってところがやっている半日キャニオニングです。はたやんに誘われたので、奥出研メンバーwithゴブリンメンバーで。      キャニオニングとは、身一つで滝や渓流を降りていくこと
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Aug 27, 2004</div>
+		  <a class="title" href="/posts/2004/0826193043/">ヨン様＠通販生活</a> &mdash;
+		  <span class="description">
+			
+			          顔が笑える。dan様のチヂミソナタでは、これ装着して笑顔でチヂミ売りたい。 
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Aug 27, 2004</div>
+		  <a class="title" href="/posts/2004/0826191521/">ライブドア社長の本、図解本、経理の人の本。今日読んだ本。</a> &mdash;
+		  <span class="description">
+			
+			    今日は何かと待ち時間があってその時間で3冊(最後の本は半分までだから2と1/2冊か)の本を読んだ。             稼ぐが勝ち      ゼロから100億、ボクのやり方                            
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Aug 26, 2004</div>
+		  <a class="title" href="/posts/2004/0826053948/">チヂミ試作第1号、dan様のチヂミソナタ藤沢市民まつり出店へ向けて</a> &mdash;
+		  <span class="description">
+			
+			    藤沢市民まつり屋台村出店に向けて。dan様のチヂミソナタという店を出すので、チヂミを作ってみた。      材料(フライパン2枚分、祭りで売るときはフライパン1枚が1人前くらいかな)             小麦粉1カップ     
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Aug 26, 2004</div>
+		  <a class="title" href="/posts/2004/0825192347/">スチャダラパーのジャケットビルダー</a> &mdash;
+		  <span class="description">
+			
+			    はるみ姉さんの日記で紹介されていたスチャダラパーのジャケットビルダー、やってみた。           ちょっとシュールになった。でもこういうの好きです。 
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Aug 26, 2004</div>
+		  <a class="title" href="/posts/2004/0825174709/">熱海ゆかたまつりポスター</a> &mdash;
+		  <span class="description">
+			
+			    去年ナタミの時に出演した熱海ゆかたまつり、ゆかたコンテスト（詳しくはこことかこことかみてね。）。俺の部屋にはその熱海ゆかたまつりのポスターが張ってある。テンション高めのイラストが気に入っている。そして今年の分も入荷したので隣に張って
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Aug 24, 2004</div>
+		  <a class="title" href="/posts/2004/0824055928/">馬鹿飲みする世代じゃないのだ</a> &mdash;
+		  <span class="description">
+			
+			    最近の若いヤツは・・・酒を飲まないのだ 酔っ払いはダサい！？＠be   reportより     納得できる。特に俺ら1981年生まれくらいの世代から顕著じゃないのかな。2,3つ上の先輩は馬鹿飲み、一気、コールが大好きで、1つ上の先
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Aug 24, 2004</div>
+		  <a class="title" href="/posts/2004/0823153236/">ドラマを見たい、うちの母ちゃんの数少ないニーズを叶えたい</a> &mdash;
+		  <span class="description">
+			
+			    うちの母ちゃん(写真を見たい方は以前部屋の大掃除をしていたら見つかった写真をご覧ください)が新聞記事を見せてきた。 トレソーラの特集記事だった。トレソーラとはTBS、フジテレビ、テレビ朝日が出資している会社。インターネットやケーブル
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Aug 24, 2004</div>
+		  <a class="title" href="/posts/2004/0823195107/">ビクター、4GB HDD内蔵小型MPEG-2カメラ? のティザー広告開始</a> &mdash;
+		  <span class="description">
+			
+			    http://www.watch.impress.co.jp/av/docs/yajiuma/20040819/victor1.jpg        http://www.watch.impress.co.jp/av/docs/ya
+			
+		  </span>
+		</div>
+		
+		
+
+<ul class="pagination">
+	<li class="page-item page-prev">
+	
+    <a href="/page/137/" class="page-link" aria-label="Previous"><span aria-hidden="true">← Prev page</span></a>
+	
+	</li>
+	<li class="page-item page-next">
+	
+    <a href="/page/139/" class="page-link" aria-label="Next"><span aria-hidden="true">Next page →</span></a>
+	
+	</li>
+</ul>
+
+
+	  </div>
+	</div>
+  </div>
+  <div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright yusukebe.com |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-492497-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

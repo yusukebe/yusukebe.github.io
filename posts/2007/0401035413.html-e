@@ -1,0 +1,20 @@
++++
+Categories = ["tech"]
+Description = "   昨日公開した RimoChanMaker - Rimoちゃんメーカー。こいつで作ることができるようなユーザチャンネルを管理・共有するサービスRimoCh(名前が紛らわしいですが…)というのがありまして、これと連動したいなーと思っていた"
+Tags = ["Perl"]
+date = "2007-04-01T12:54:00+09:00"
+title = "RimoChanMakerをRimoChと連動できるようにしました"
+author = "kamawada"
+archive = ["2007"]
+draft = false
++++
+
+
+<p>
+  <a href="http://yusukebe.com/archives/07/03/31/234044.html">昨日公開した</a> <a href="http://pulpsite.net/rimochanmaker/">RimoChanMaker - Rimoちゃんメーカー</a>。こいつで作ることができるようなユーザチャンネルを管理・共有するサービス<a href="http://rimoch.org/">RimoCh</a>(名前が紛らわしいですが…)というのがありまして、これと連動したいなーと思っていたら<a href="http://d.hatena.ne.jp/antipop/20070401/1175360009">早速作者のkentaroさんが対応してくれました</a>(getベースのURLでチャンネル作成可能)。
+  リストを作ると「RimoChでチャンネル」というリンクが出てくるのでそれをクリックするとRimoChでチャンネルを作ることができます。これで「チャンネル作成＠RimoChanMaker」→「自分のお気に入りを管理＠RimoCh」→「チャンネルを見る＠Rimo」という流れができましたね。
+</p>
+<p>
+  ちなみに俺が作ったチャンネルは「<a href="http://rimoch.org/user/kamawada">RimoCh - kamawada のチャンネル一覧</a>」ここに置かれていくことになります。
+</p>
+

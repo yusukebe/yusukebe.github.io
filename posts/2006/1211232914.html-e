@@ -1,0 +1,43 @@
++++
+Categories = ["tech"]
+Description = "   サクサク読めて面白い本だった。  邦題には「エンジニアのための」となっているが原題は「Time　Management　for　System Administrators」。本来はSA(システム・アドミニストレータ)のために書かれた時間"
+Tags = []
+date = "2006-12-12T08:29:00+09:00"
+title = "「エンジニアのための時間管理術」"
+author = "kamawada"
+archive = ["2006"]
+draft = false
++++
+
+
+<p>
+  サクサク読めて面白い本だった。
+  邦題には「エンジニアのための」となっているが原題は「Time　Management　for　<strong>System Administrators</strong>」。本来はSA(システム・アドミニストレータ)のために書かれた時間管理術のようだ。
+  よって具体例としてSAが取り上げられていて、ところどころSA用語が出てくる。が、SAじゃないエンジニアの人でもわかる程度の言葉だし、説明も丁寧、なんちゃってエンジニアの俺でも事例がよく把握できて楽しかった。
+  その実、仕事やプライベートの有限な時間を自分でどう使っていくかに関して、わりかし本質を突いている気がする。
+</p>
+<table border="0" cellpadding="5">
+  <tr>
+	<td valign="top">
+	  <a href="http://www.amazon.co.jp/exec/obidos/ASIN/4873113075/kamawada-22/">
+		<img alt="エンジニアのための時間管理術" class="at-xid-6a0133f4781589970b015435b6e9d8970c" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015435b6e9d8970c-pi.jpg>
+	  </a>
+	</td>
+	<td valign="top">
+	  <a href="http://www.amazon.co.jp/exec/obidos/ASIN/4873113075/kamawada-22/">エンジニアのための時間管理術</a>
+	  <ul>
+		<li>Thomas A. Limoncelli 株式会社クイープ  </li>
+		<li>オライリー・ジャパン 単行本（ソフトカバー） </li>
+		<li>Amazon売り上げランキング: 11860</li>
+		<li>Amazonおすすめ度: 5.0</li>
+		<li><a href="http://www.amazon.co.jp/gp/product/4873113075%3ftag=kamawada-22%26link_code=xm2%26camp=2025%26dev-t=D3QNAE4JDR26A2">Amazonで詳しくみる</a></li>
+	  </ul>
+	</td>
+  </tr>
+</table>
+<p>
+  オライリー本らしく、出てくる事例がいい意味での軽い洒落がきいていて面白い。
+  数あるテクニックの中に「マルチタスキング」、「割り込み」、「リクエストトラッカー」、「リポジトリ」、「Makefile」といった単語が出てくるのがたまらない。
+  そいえば以前読んだフランクリン・コヴィーの「<a href="http://www.amazon.co.jp/exec/obidos/ASIN/4906638309/kamawada-22/">人生は手帳で変わる 3週間実践ワークブック</a>」を思い出した。こちらもオススメ。
+</p>
+

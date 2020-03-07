@@ -1,0 +1,50 @@
++++
+Categories = ["tech"]
+Description = " Yokoahama.pm テクニカルトーク#5 に参加＆発表して来ました。いやー和気あいあいとしていて、かつ初参加の人も結構いたのでよかったですね。自分は、Twib というサービスを「いかに個人でやりつつ、パフォーマンス上げてくか」みたい"
+Tags = ["Perl"]
+date = "2010-03-06T09:09:00+09:00"
+title = "Twib in Yokohama.pm テクニカルトーク#5"
+author = "kamawada"
+archive = ["2010"]
+draft = false
++++
+
+
+<p>
+Yokoahama.pm テクニカルトーク#5 に参加＆発表して来ました。
+いやー和気あいあいとしていて、かつ初参加の人も結構いたのでよかったですね。
+自分は、Twib というサービスを「いかに個人でやりつつ、パフォーマンス上げてくか」
+みたいな話を中心にさせていただきました。
+今まで記事にしてなかった Twib の裏側現状編という感じです。
+</p>
+<p>
+スライドはいかにアップしておきました。
+</p>
+<div id="__ss_3348201" style="width:425px">
+<strong style="display:block;margin:12px 0 4px"><a href="http://www.slideshare.net/yusukebe/twib" title="Twib in Yokoahma.pm 2010/3/5">Twib in Yokoahma.pm 2010/3/5</a></strong><object height="355" width="425"><param name="movie" value="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=100304yokohamapm-100305183125-phpapp01&amp;stripped_title=twib">
+<param name="allowFullScreen" value="true">
+<param name="allowScriptAccess" value="always">
+<embed allowfullscreen="true" allowscriptaccess="always" height="355" src="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=100304yokohamapm-100305183125-phpapp01&amp;stripped_title=twib" type="application/x-shockwave-flash" width="425"></embed></object><div style="padding:5px 0 12px">View more <a href="http://www.slideshare.net/">presentations</a> from <a href="http://www.slideshare.net/yusukebe">yusukebe</a>.</div>
+</div>
+
+<p>
+注釈としてここで出てくる「取りこぼし」の問題の件なのですが、
+これはTwitter APIを頑張って用いても、対象となる全件のツイートを取得するのが無理だという話ですね。
+なんとかしたいっすなー。
+他の方の発表はみなさん自由な雰囲気がよろしくて、
+しっかりとそれぞれのPerlの話をしていました。
+</p>
+<p>
+<img alt="gfx" class="at-xid-6a0133f4781589970b015391e3935b970b" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015391e3935b970b-pi.jpg>
+</p>
+<p>
+内容のログはいつも通り丁寧にhirataraさんがまとめてくていれますので、
+参考にしてください。
+Yokohama.pmというと我先に！と発表したがっちゃう自分がいますが、
+まだ発表したことない！という方も次回はチャレンジしてみたらいかがでしょうかと思いました。
+</p>
+
+<ul>
+  <li><a href="http://d.hatena.ne.jp/hiratara/20100305/1267747275">今日は Yokohama.pm #5 の日です - a geek born in Tomakomai</a></li>
+</ul>
+

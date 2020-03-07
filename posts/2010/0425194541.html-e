@@ -1,0 +1,74 @@
++++
+Categories = ["tech"]
+Description = " とあるイカサマ氏経由で技術評論社の編集の人伝えてもらって献本してもらった、山本陽平さん著の「Webを支える技術 - HTTP、URI、HTML、そしてREST」。送ってもらったくせにこう言うのもなんだが、ようやく書評を書くになったというか"
+Tags = []
+date = "2010-04-26T04:45:00+09:00"
+title = "「Webを支える技術 - HTTP、URI、HTML、そしてREST」"
+author = "kamawada"
+archive = ["2010"]
+draft = false
++++
+
+
+<p>
+とあるイカサマ氏経由で技術評論社の編集の人伝えてもらって献本してもらった、
+山本陽平さん著の「Webを支える技術 - HTTP、URI、HTML、そしてREST」。
+送ってもらったくせにこう言うのもなんだが、
+ようやく書評を書くになったというか、さきほど多少合点がいったので、ご紹介。
+</p>
+<p>
+<img alt="webtechbook" class="at-xid-6a0133f4781589970b015435b6f6c7970c" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015435b6f6c7970c-pi.jpg>
+</p>
+<p>
+最初にパラパラと速読して感じたのは、
+この本は、俺個人にとっては目新しいものはあまり無い本であるということだ。
+だからといってオススメできないとかそういうのではない。
+むしろ「ちょーオススメしたい」その分野の書籍である。
+何故かと言うと俺個人が必死に何十ものWebサービスを個人で作ったり、
+業務での開発を含めて考えてきた「Web」のあり方についてまとまっている
+唯一の本だからだ。
+付け加えるとこの「まとまりっぷり」、解説が平易でかつ無駄がなく、つまり「半端ない」。
+</p>
+<p>
+俺が、Web Application Framework(以降WAF) を使ってアプリケーションを組みだしたのが、
+2006年の秋だからもう3年以上前になる。
+特にそれは、WAFを使ったアプリに限ったことではないが、
+その頃から正しい「Web」としてのものを意識しだした。
+「かっこいいURIはどんなのだろう」「GETとPOSTを使い分けた方がいい」「HTML以外にRSSやJSONといったフォーマットを扱わないと」といろいろ思考しながらここまで来た。
+そして、このタイミングで「Webを支える技術」を読むとある程度自分が正しかったことに気付きつつ、
+もちろん間違った認識に対しては勉強させていただき、さらに、
+著者の陽平さんの「クールなWeb」に対する熱意を感じ背筋が伸びる思いがするのだ。
+個人的には自分の3年という経験が陽平さんの手によってうまくまとまり、
+さらに詳細なスペックへのリファレンスも含んでいる。そんな本なのだ。
+</p>
+<p>
+だいたい、Webがどのような仕組みで動いているかをしらずにWebアプリケーションを作るのは、
+手探り状態なわけで、危険である。
+ただ、それをある種の熱意をもってわかり易くまとまっている書籍というのは、
+世の中に存在しなかったのが現状だ。
+</p>
+<p>
+もし、あなたがクールなWebアプリケーションを作りたいのならば、
+手に馴染むWAFと本書を手に入れれば、高速道路に乗れる。
+そんな気がする「Webを支える技術」ということでまとめさせていただきたい。
+Enjoy Web Tech Book!
+</p>
+
+<br>
+<div>
+<div style="float:left"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4774142042/kamawada-22/"><img alt="Webを支える技術 -HTTP、URI、HTML、そしてREST (WEB+DB PRESSプラスシリーズ)" class="at-xid-6a0133f4781589970b015435b6f6d1970c" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015435b6f6d1970c-pi.jpg style="border:none;"></a></div>
+<div style="float:left;margin-left:15px;">
+<div style="font-size:12pt"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4774142042/kamawada-22/">Webを支える技術 -HTTP、URI、HTML、そしてREST (WEB+DB PRESSプラスシリーズ)</a></div>
+<div style="font-size:7pt;font-family:verdana;">posted with <a href="http://yusukebe.com/b/amazon/search/">yusukebe.com::AmazonSearch</a> on 2010.4.26</div>
+<div style="font-size:10pt;">
+<ul style="list-style-type:none;padding:0;">
+<li>山本 陽平  </li>
+<li>単行本（ソフトカバー） / 技術評論社 </li>
+<li>Amazon 売り上げランキング: 153</li>
+</ul>
+<a href="http://www.amazon.co.jp/Web%E3%82%92%E6%94%AF%E3%81%88%E3%82%8B%E6%8A%80%E8%A1%93-HTTP%E3%80%81URI%E3%80%81HTML%E3%80%81%E3%81%9D%E3%81%97%E3%81%A6REST-WEB-DB-PRESS%E3%83%97%E3%83%A9%E3%82%B9%E3%82%B7%E3%83%AA%E3%83%BC%E3%82%BA/dp/4774142042%3FSubscriptionId%3D0VEY2A9SVSFB81NQ9HG2%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D4774142042">Amazon.co.jpで詳細を見る</a>
+</div>
+</div>
+<div style="clear:left;"></div>
+</div>
+

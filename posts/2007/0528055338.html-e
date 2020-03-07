@@ -1,0 +1,35 @@
++++
+Categories = ["tech"]
+Description = "   Googleのイメージ検索でURLに&amp;imgtype=faceを渡すと「顔だけ」検索して表示してくれるらしい(Googleで顔だけ検索するおまじない - CloseBox and OpenPod [ITmedia オルタナティ"
+Tags = []
+date = "2007-05-28T14:53:00+09:00"
+title = "Googleのイメージ検索で顔だけ検索"
+author = "kamawada"
+archive = ["2007"]
+draft = false
++++
+
+
+<p>
+  Googleのイメージ検索でURLに&amp;imgtype=faceを渡すと「顔だけ」検索して表示してくれるらしい(<a href="http://blogs.itmedia.co.jp/closebox/2007/05/google_ed4e.html?ref=rssall">Googleで顔だけ検索するおまじない - CloseBox and OpenPod [ITmedia オルタナティブ・ブログ]</a>より)。
+  ということでキーワード「ゆーすけべー」でやってみた。
+</p>
+<p>
+  オプション無しの<a href="http://images.google.com/images?q=%E3%82%86%E3%83%BC%E3%81%99%E3%81%91%E3%81%B9%E3%83%BC">検索結果。</a><br>
+  <img alt="顔だけ検索" class="at-xid-6a0133f4781589970b014e8bd74582970d" src="https://yusukebe.com/archives/.a/6a0133f4781589970b014e8bd74582970d-pi.jpg>
+</p>
+<p>
+  <a href="http://images.google.com/images?q=%E3%82%86%E3%83%BC%E3%81%99%E3%81%91%E3%81%B9%E3%83%BC&amp;imgtype=face">顔だけ検索の結果</a>。<br>
+  <img alt="顔だけ検索" class="at-xid-6a0133f4781589970b014e8bd74593970d" src="https://yusukebe.com/archives/.a/6a0133f4781589970b014e8bd74593970d-pi.jpg>
+</p>
+<p>
+  おおすごい。顔だけ検索だとほんとに人の顔ばかり出てくる。といっても、出てくる顔が「ゆーすけべー」じゃない人の顔が多い（汗。
+  これは結構遊べそうですな。以下のフォームから検索できます。
+</p>
+<form action="http://images.google.com/images" name="f">
+  <input name="hl" type="hidden" value="ja">
+  <input name="imgtype" type="hidden" value="face">
+  <input maxlength="2048" name="q" size="25" title="Search" value="">
+  <input name="btnG" type="submit" value="顔だけ検索">
+</form>
+

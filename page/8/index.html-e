@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="generator" content="Hugo 0.63.2" />
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="alternate" type="application/rss+xml" href="https://yusukebe.com/index.xml" title="ゆーすけべー日記" />
+	<meta property="og:title" content="ゆーすけべー日記" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://yusukebe.com/" />
+<meta property="og:image" content="https://yusukebe.com/icons/myicon.png"/>
+<meta property="og:updated_time" content="2020-03-06T15:46:50+09:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://yusukebe.com/icons/myicon.png"/>
+
+<meta name="twitter:title" content="ゆーすけべー日記"/>
+<meta name="twitter:description" content=""/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
+	
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://yusukebe.com/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+  <div class="container wrapper">
+	<div class="header">
+	<h1 class="site-title"><a href="https://yusukebe.com/">ゆーすけべー日記</a></h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/yusukebe" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/yusukebe" title="Twitter"><i data-feather="twitter"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+	<div class="recent-posts section">
+	  <h2 class="section-header">
+		Recent posts
+	  </h2>
+	  <div class="posts">
+		
+		
+		
+		<div class="post">
+		  <div class="meta">Jan 27, 2014</div>
+		  <a class="title" href="/posts/2014/0127161300/">Podcast「だんごゆっけの平和な話」を始めました #dandyfm</a> &mdash;
+		  <span class="description">
+			
+			 仲良しな「だんごさん」と俺「ゆっけさん」が緩くお話をするPodcast「 だんごゆっけの平和な話 」をはじめました！既に dango and yukke を文字ったドメイン「dandy.fm」を取得し、フィードの出力やサイトのホスティング
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jan 23, 2014</div>
+		  <a class="title" href="/posts/2014/0123011321/">AWS S3 の認証リクエストをつくる「その 1」</a> &mdash;
+		  <span class="description">
+			
+			 PerlのAWS関係のライブラリについて。  ファイルのアップロードなどS3の操作に関して、現在Net::Amazon::S3を使っているのですが、深遠な理由からかもっさりしているのと、バージョンアップが頻繁ではないので、それとはまた別コ
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jan 17, 2014</div>
+		  <a class="title" href="/posts/2014/0117120151/">JUST MAKE IT  - 僕がつくる時に思うこと</a> &mdash;
+		  <span class="description">
+			
+			 年末に引き続きまたまた北海道に来ました！  HOKKAIDO アイデアソン＆ハッカソン2014セミナー で発表した資料でございます！ 
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Dec 30, 2013</div>
+		  <a class="title" href="/posts/2013/1230072700/">Hokkaido.pm#11 に行ってきた！</a> &mdash;
+		  <span class="description">
+			
+			 行ってきた。というか まだ北海道にいる んですが、先日12月28日(土) 札幌で行われた Hokkaido.pm#11 に参加してきました！    自分が話したトークの中にも出てきましたが、今年はKansai.pmで大阪、Fukuoka.
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Dec 22, 2013</div>
+		  <a class="title" href="/posts/2013/1222011300/">三色ボールペンを日々の計画にも活用する</a> &mdash;
+		  <span class="description">
+			
+			 デスクに向かっている時。紙に何か書く際はLAMYの万年筆を使っていたんだけど、昔愛用していた 三色ボールペン に変えました。というか戻した。正確に言えば「黒」も合わせると四色ボールペンなんだけど、これから説明するように巷で三色ボールペンと
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Dec 21, 2013</div>
+		  <a class="title" href="/posts/2013/1221082908/">最強の「動画だら観」環境をつくる</a> &mdash;
+		  <span class="description">
+			
+			 我が家には テレビが無い 。実家に住んでいた時にも部屋にテレビはあったもののヘンテコリンな場所に置いてたためにほとんど観なかった。ようはテレビが無くても暮らせるなーと思ったわけです。ところで、特に通うべきオフィスの無い僕は自宅で仕事をして
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Dec 21, 2013</div>
+		  <a class="title" href="/posts/2013/1221024330/">自炊メインの生活に変えてから1ヶ月が経った</a> &mdash;
+		  <span class="description">
+			
+			 一人暮らし  最近。実家がある鎌倉と、なんだかんだ週に3回くらい行く都内との中間地点ってことで横浜に一人暮らしをしています。駅まで歩いてジャスト10分。横浜駅は電車が   JR / 東海道線、横須賀線、湘南新宿ライン、京浜東北線  東急東
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Dec 13, 2013</div>
+		  <a class="title" href="/posts/2013/1213113900/">AngularJSの勉強してたら「作業用BGMサービス」が出来た</a> &mdash;
+		  <span class="description">
+			
+			 久しぶりにWebのフロントエンドの実装をするため最近流行りの AngularJS に入門してみる。オフィシャルのチュートリアルをざっと見ても感覚がつかめないので、具体的で簡易なアプリをつくった方が勉強になるだろうと思い… 結果的に FMT
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Dec 9, 2013</div>
+		  <a class="title" href="/posts/2013/1209024600/">ハチイチ忘年会第7回目をやってきた！ #1981s</a> &mdash;
+		  <span class="description">
+			
+			 去る12月7日(土)から次の日にかけてハチイチ忘年会の第7回目を「一応」幹事リーダーとして開催してきました。    一次会が110人弱。延べ参加者で120人強の方々が参加。そもそも僕（を含む数名）が「やりたい！」と言って7年前からやりだし
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Dec 4, 2013</div>
+		  <a class="title" href="/posts/2013/1204233758/">2014年は日本でフィットネス系デバイスがくる！はず…そして</a> &mdash;
+		  <span class="description">
+			
+			 一時期外食。ってか主にラーメンを毎日のごとく食べていて見事に太ってしまったわけなんだけど、とある健康診断的な検査で中性脂肪がありえない！ってほど高い数字を記録してしまって、中性脂肪を下げる薬を処方された。「そんな薬あるんだ〜 へぇ〜」って
+			
+		  </span>
+		</div>
+		
+		
+
+<ul class="pagination">
+	<li class="page-item page-prev">
+	
+    <a href="/page/7/" class="page-link" aria-label="Previous"><span aria-hidden="true">← Prev page</span></a>
+	
+	</li>
+	<li class="page-item page-next">
+	
+    <a href="/page/9/" class="page-link" aria-label="Next"><span aria-hidden="true">Next page →</span></a>
+	
+	</li>
+</ul>
+
+
+	  </div>
+	</div>
+  </div>
+  <div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright yusukebe.com |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-492497-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

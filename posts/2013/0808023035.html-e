@@ -1,0 +1,77 @@
++++
+Categories = ["tech"]
+Description = " Perlだけじゃない？エンジニアの祭典「 YAPC::Asia 2013 」が9月に行われます。   9月19日(木)  前夜祭  9月20日(金) 本編1日目  9月21日(土) 本編2日目   YAPCというイベントは2008年から参"
+Tags = ["Perl", "YAPC"]
+date = "2013-08-08T11:30:00+09:00"
+title = "YAPC::Asia 2013 でMojoliciousについてのトークをします #yapcasia"
+author = "kamawada"
+archive = ["2013"]
+draft = false
++++
+
+
+<p>Perlだけじゃない？エンジニアの祭典「 <strong>YAPC::Asia 2013</strong> 」が9月に行われます。</p>
+
+<ul>
+<li>9月19日(木)  前夜祭</li>
+<li>9月20日(金) 本編1日目</li>
+<li>9月21日(土) 本編2日目</li>
+</ul>
+
+
+<p>YAPCというイベントは2008年から参加していて... ってことを今思い出すと僕にとっては今年が5年目のYAPC体験なんですね。スーツ率が異常に低いカジュアルな雰囲気があり、憧れのギークの話が聞けたり、たっぷりの熱気が充満していて、かつ自由に過ごせる個人的にはベストなイベントです。</p>
+
+<p><a href="http://yusukebe.com/archives/2013/08/08/IMG_1570.JPG"><img alt="IMG_1570.JPG" src="http://yusukebe.com/archives/assets_c/2013/08/IMG_1570-thumb-500x373-424.jpg" width="500" height="373" class="mt-image-none" style=""></a></p>
+
+<p>初参加した時を思い出すと、トークの内容が分からなくても「なんかすごい！」「あの人カッコいい」と刺激をもらえる場所です。Perl初心者な方にもオススメなんで、興味ある方はチケット買って参加してみるとよいでしょう！締め切りが11日(日) と迫っています。</p>
+
+<ul>
+<li><a href="http://yapcasia.org/2013/tickets/">http://yapcasia.org/2013/tickets/</a></li>
+</ul>
+
+
+<p>さて、僕は以前から「 <strong>Mojoliciousでつくる！Webアプリ入門</strong> 」というタイトルで40分のトークを応募していたのですが、おかげさまで採択されまして発表させていただきます。去年のYAPC::Asiaでは「ベストスピーカー賞」をいただいたのですが、今回の発表もその時と同じ「土曜日の朝一」「大ホール」という条件です！！</p>
+
+<p>内容はタイトルから分かる通り「Mojolicious」というPerlのフレームワークを取り扱うのですが、結果的にMojoliciousを使わないにしろ、Webアプリケーションの実装項目を網羅的に把握出来るような内容、チュートリアルになるかもです。以下、予定しているトピックのリスト。たっぷりなので全部は取り扱えないと思われますが参考にしてください。</p>
+
+<hr>
+
+<p><br></p>
+
+<ul>
+<li>Web Applicationをつくろう！</li>
+<li>Web Application Framework = WAFって？</li>
+<li>MVCフレームワーク概要</li>
+<li>Mojoliciousの紹介</li>
+<li>Mojolicious::Liteを使った第一歩</li>
+<li>VCオンリーな件</li>
+<li>柔軟なルーティング</li>
+<li>シンプルなコントローラ記述</li>
+<li>Perlが書けるテンプレート</li>
+<li>CPANモジュールを組み合わせて使う</li>
+<li>FormValidator::Liteを使った入力値の検証</li>
+<li>Mouseを使ったクラス作成</li>
+<li>Tengを使ったDB操作</li>
+<li>実用的なアプリをつくる</li>
+<li>Twitterログインによる「gist」モドキ</li>
+<li>セッションの管理と応用</li>
+<li>フックについて</li>
+<li>デプロイ構成例</li>
+<li>PSGIによる起動</li>
+<li>Cartonを使ったモジュール管理</li>
+<li>今後へ</li>
+<li>まとめ</li>
+</ul>
+
+
+<hr>
+
+<p><br></p>
+
+<p>またMojoliciousの発表だけではなく、LTにも応募しようとしていますし！「<a href="http://yapcasia.org/2013/event/show/bbab526e-cdb2-11e2-9748-37516aeab6a4">大人のYAPC</a>」と呼ばれる非公式のイベントでも話す予定です！気になった方は是非。重要なのでもう一度言いますが、チケットの発売は11日(日) までですよ！</p>
+
+<ul>
+<li><a href="http://yapcasia.org/2013/tickets/">http://yapcasia.org/2013/tickets/</a></li>
+</ul>
+
+

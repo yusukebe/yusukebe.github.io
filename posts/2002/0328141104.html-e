@@ -1,0 +1,56 @@
++++
+Categories = ["tech"]
+Description = "天気：曇のち晴 これは日記のサンプルです．ファイル名は d20020329.hnf です．通常 ~/diary/2002/ にあります． サブタイトルのテスト このようにサブタイトルを記述することもできます。HyperNikkiSystem"
+Tags = []
+date = "2002-03-28T23:11:00+09:00"
+title = "日記のサンプル"
+author = "kamawada"
+archive = ["2002"]
+draft = false
++++
+
+
+<p>天気：曇のち晴<br>
+これは日記のサンプルです．ファイル名は d20020329.hnf です．
+通常 ~/diary/2002/ にあります．
+</p>
+<h4>サブタイトルのテスト</h4>
+このようにサブタイトルを記述することもできます。
+<a href="http://www.h14m.org/" target="_new">HyperNikkiSystem Project</a>
+このようにリンクも張れます．
+URLコマンドを使えば，
+<a href="http://www.h14m.org/" target="_new">HyperNikkiSystem Project</a>
+と URL を明示できます．
+<h4>フォントの装飾</h4>
+<strike>STRIKE</strike>や
+<font color="red">赤い文字</font>
+などの表現も可能です．
+<h4>リスト</h4>
+<ul>
+<li>あいうえお
+</li>
+<li>かきくけこ
+</li>
+<li>さしすせそ
+</li>
+</ul>
+のようなリストや
+<ol>
+<li>たちつてと
+</li>
+<li>なにぬねの
+LI はひふへほ<br>
+まみむめも
+</li>
+</ol>
+番号付きのリストも使えます．
+<h4>脚注</h4>
+FNコマンド
+FN
+Foot Note の略で脚注のことです．
+/FN
+FN
+コマンドの詳細は添付のドキュメントをご覧下さい．
+/FN
+も実装されています．
+難解なウェブ日記には脚注を付けることができます。

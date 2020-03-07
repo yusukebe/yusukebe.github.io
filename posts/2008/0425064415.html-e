@@ -1,0 +1,67 @@
++++
+Categories = ["tech"]
+Description = " 俺の CPAN モジュール処女作である WebService::Simple を見てYappo さんは全然エロくないって DNBK していたけど、このモジュールそこそこ評判がいいみたい。それで、CodeRepos にて開発をしているんだが"
+Tags = ["Perl"]
+date = "2008-04-25T15:44:00+09:00"
+title = "CodeRepos にてスーパーハカーがものすごい勢いでコードを書き換えてくれた件"
+author = "kamawada"
+archive = ["2008"]
+draft = false
++++
+
+
+<p>
+俺の CPAN モジュール処女作である WebService::Simple を見て
+Yappo さんは全然エロくないって DNBK していたけど、
+このモジュールそこそこ評判がいいみたい。
+それで、CodeRepos にて開発をしているんだが、スーパーハカーの dmaki (lestrrat) さんに、
+「（ WebService::Simple を）全部書き換えたコードがあるんだけど、（CodeReposの）コード書き換えていいかな？」みたいなことを言われた。とりあえず branch で開発してもらうようにしてもらい、
+いざコードを見るとほんとに全部書き換えられてたｗ
+</p>
+<p>
+詳しくは次のエントリーで、最新版の WebService::Simple について書くつもりなのでそれを参照してもらいたいんだけど、LWP::UserAgent を継承するようになったり、さらに Parser を自分で選択できるようになってたりと拡張性がまして面白い感じになっている。
+</p>
+<p>
+その後もものすごい勢いで、dmaki さんは機能追加やバグ修正をしてくれて、さらに tokuhirom も一部のコードを書いてくれた。lestrrat++, tokuhirom++ そして trunk にマージしたので、昨日から CPAN にうｐってる。
+</p>
+<p>
+つまり、最初に自分が作ったコードが CodeRepos 上にてスーパーハカーの人たちの手にかかり、もっとよく、もっと綺麗になったという感じ。これってすごい嬉しい。
+単にモジュールの完成度が高まったこともその理由のひとつなんだけど、自分が作ったそのコンセプトをある程度認めてくれた（？）ということもあるし、コードが書き換わることによって「あ、こういう書き方があるのか！」という発見があってとっても勉強になる。
+</p>
+<p>
+だからこんなモジュール欲しいなと思って、それが世の中に存在しないのであれば、自分のコーディングのレベルを気にせずにとりあえず動くものを作って CodeRepos にうｐればいいと思う。
+もし気に入ってもらえれば、今回のようにスーパーハカーの人が直してくれたりするかもYO！
+あと、CodeRepos の IRC 見てると、最近では、他のモジュールも lestrrat, tokuhirom, Yappo の3人がものすごい勢いでコーディングしているっぽくてその様子を見ると刺激を受ける。
+</p>
+<p>
+そんなことが可能になる CodeRepos はすごくいいと思います、ということを言いたかった。CodeRepos++
+これからも CodeRepos で勉強させてください！
+</p>
+<ul>
+  <li><a href="http://coderepos.org/share">CodeRepos::Share - Trac</a></li>
+  <li><a href="http://coderepos.org/share/browser/lang/perl/WebService-Simple">/lang/perl/WebService-Simple - CodeRepos::Share - Trac</a></li>
+</ul>
+
+<p></p>
+<div style="float:left"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4274066800/kamawada-22/"><img alt="Subversion実践入門:達人プログラマに学ぶバージョン管理(第2版)" class="at-xid-6a0133f4781589970b015391e38fbe970b" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015391e38fbe970b-pi.jpg style="border:none;"></a></div>
+<div style="float:left;margin-left:15px;">
+<div style="font-size:12pt"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4274066800/kamawada-22/">Subversion実践入門:達人プログラマに学ぶバージョン管理(第2版)</a></div>
+<div style="font-size:7pt;font-family:verdana;">posted with <a href="http://yusukebe.com/b/amazon/search/">yusukebe.com::AmazonSearch</a> on 2008.4.25</div>
+<div style="font-size:10pt;">
+<ul style="list-style-type:none;padding:0;">
+<li>Mike Mason  </li>
+<li>単行本（ソフトカバー） / オーム社 </li>
+<li>Amazon 売り上げランキング: 1666</li>
+</ul>
+<ul style="list-style-type:none;padding:0;"><li>Amazon おすすめ度の平均: <img alt="3.5" class="at-xid-6a0133f4781589970b015435b6ebc7970c" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015435b6ebc7970c-pi.gif style="margin:0;"><ul style="list-style-type:none;padding-left:0;">
+<li>
+<img alt="2" class="at-xid-6a0133f4781589970b015391e38ae3970b" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015391e38ae3970b-pi.gif style="margin:0;"> Subversionを使う上で"は"よい本だと思う</li>
+<li>
+<img alt="5" class="at-xid-6a0133f4781589970b015435b6d28e970c" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015435b6d28e970c-pi.gif style="margin:0;"> 日本語のSubversion解説本の最高作</li>
+</ul>
+</li></ul>
+<a href="http://www.amazon.co.jp/gp/redirect.html%3FASIN=4274066800%26tag=ws%26lcode=xm2%26cID=2025%26ccmID=165953%26location=/o/ASIN/4274066800%253FSubscriptionId=13C5PCPS36EMN8C22682">Amazon.co.jpで詳細を見る</a>
+</div>
+</div>
+<div style="clear:left;"></div>
+

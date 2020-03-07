@@ -1,0 +1,75 @@
++++
+Categories = ["tech"]
+Description = "   ギークなお姉さんは好きですか TwitterにRSSフィードを自動投稿してくれるアカウント作った！ より         Twitterを使ってもっと何かしたい          今は feed.xml を POST してるんだけど、"
+Tags = ["Perl"]
+date = "2009-01-22T04:26:00+09:00"
+title = "CGI で受け取ったコメントを Twitter にポストする"
+author = "kamawada"
+archive = ["2009"]
+draft = false
++++
+
+
+<p>
+  <a href="http://lovecall.dtiblog.com/blog-entry-71.html">ギークなお姉さんは好きですか TwitterにRSSフィードを自動投稿してくれるアカウント作った！</a> より
+</p>
+<blockquote>
+  <p>
+    Twitterを使ってもっと何かしたい
+  </p>
+  <p>
+    今は feed.xml を POST してるんだけど、TwitterFeed を使ってほかにも何かできないかなぁ。
+  </p>
+  <p>…</p>
+  <p>TOP ページに「 geekDB に話しかけてみる！」というメッセージフォームを置いて、
+    @geekDB をデフォでテキストボックスに入れておくとか。
+  </p>
+  <p>
+    …
+  </p>
+  <p>
+    やはり手始めは @geekDB がいいだろうなぁ。ハタからみたら自己レスになるが。 
+  </p>
+</blockquote>
+<p>
+  まじ自己レスして何がしたいんだかよくわからないが、それ、Perlなら10行で書けるお（ モジュール使えばだけどね ）。
+</p>
+<pre class="brush: perl"> #!/usr/bin/perl
+use strict;
+use warnings;
+use CGI;
+use Net::Twitter;
+
+my $q = CGI-&gt;new;
+my $comment = $q-&gt;param('comment'); # TODO : show error message if comment is blank
+my $twitter = Net::Twitter-&gt;new( username =&gt; "yourusername", password =&gt; "yourpassword" );
+my $result  = $twitter-&gt;update( "\@geekDB " . $comment ); # line : 10
+
+__END__
+some message ...
+ </pre>
+<p>
+  PHP はわかりません＞＜ でも、danさんをコンパイルして、もっと喜ばせるためには Perl の方がいいかもね！
+</p>
+
+<p>
+  ちなみに、Perl について学びたかったら最初は「初めてのPerl」＋「続・初めてのPerl」がいいけど、
+  その次に読む本として、もうすぐ発売される「<strong>モダンPerl入門</strong>」もお勧めだと思うよ！
+</p>
+
+<p></p>
+<div style="float:left"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4798119172/kamawada-22/"><img alt="モダンPerl入門" src="http://ecx.images-amazon.com/images/I/51fKqQq6cgL._SL160_.jpg" style="border:none;"></a></div>
+<div style="float:left;margin-left:15px;">
+<div style="font-size:12pt"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4798119172/kamawada-22/">モダンPerl入門</a></div>
+<div style="font-size:7pt;font-family:verdana;">posted with <a href="http://yusukebe.com/b/amazon/search/">yusukebe.com::AmazonSearch</a> on 2009.1.22</div>
+<div style="font-size:10pt;">
+<ul style="list-style-type:none;padding:0;">
+<li>牧 大輔  </li>
+<li>大型本 / 翔泳社 </li>
+<li>Amazon 売り上げランキング: 601</li>
+</ul>
+<a href="http://www.amazon.co.jp/%E3%83%A2%E3%83%80%E3%83%B3Perl%E5%85%A5%E9%96%80-%E7%89%A7-%E5%A4%A7%E8%BC%94/dp/4798119172%3FSubscriptionId%3D13C5PCPS36EMN8C22682%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D4798119172">Amazon.co.jpで詳細を見る</a>
+</div>
+</div>
+<div style="clear:left;"></div>
+

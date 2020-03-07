@@ -1,0 +1,21 @@
++++
+Categories = ["tech"]
+Description = " 今までAction  Scriptの編集にはxyzzyのJScriptモードを使っていたのだが、SEPYというAcrionScript Editorを試してみた。    Action Script2.0にも対応して、コードヒントとかでてき"
+Tags = []
+date = "2004-03-08T01:10:00+09:00"
+title = "ActionScript Editor SE|PY"
+author = "kamawada"
+archive = ["2004"]
+draft = false
++++
+
+
+<p>今までAction  Scriptの編集にはxyzzyの<a href="http://www.geocities.co.jp/SiliconValley-PaloAlto/5042/xyzzy/jscript-mode.l.txt">JScript</a>モードを使っていたのだが、<a href="http://www.sephiroth.it/python/sepy.php">SEPYというAcrionScript Editor</a>を試してみた。</p>
+
+<p><a href="http://kamawada.com/~yusuke/yusukebe/archives/files/040307/sepy.gif"><img alt="sepy.gif" border="0" class="at-xid-6a0133f4781589970b014e8bd73337970d" height="276" src="https://yusukebe.com/archives/.a/6a0133f4781589970b014e8bd73337970d-pi.gif width="400"></a></p>
+
+<p>Action Script2.0にも対応して、コードヒントとかでてきて便利。エラーが出るがなんとか日本語も使えるし。</p>
+
+<p>これと<a href="http://www.cam.hi-ho.ne.jp/oishi/">XKeymacs</a>を使えばxyzzyに勝るかな。しばらく使ってみます。<br>
+</p>
+

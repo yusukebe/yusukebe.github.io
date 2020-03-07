@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>2019年っぽいPerl OOPらしい - ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="2019年っぽいPerl OOPらしい" />
+<meta property="og:description" content=" 2020年はどうなるかは置いておいて、2019年の最先端のPerl開発ボイラープレート - Qiitaを参考にする。   Moo  strictures  Function::Parameters  Type::Tiny   あたりを使う" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yusukebe.com/posts/2020/0115070548/" />
+<meta property="og:image" content="https://yusukebe.com/icons/myicon.png"/>
+<meta property="article:published_time" content="2020-01-15T07:05:00+09:00" />
+<meta property="article:modified_time" content="2020-01-15T07:05:00+09:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://yusukebe.com/icons/myicon.png"/>
+
+<meta name="twitter:title" content="2019年っぽいPerl OOPらしい"/>
+<meta name="twitter:description" content=" 2020年はどうなるかは置いておいて、2019年の最先端のPerl開発ボイラープレート - Qiitaを参考にする。   Moo  strictures  Function::Parameters  Type::Tiny   あたりを使う"/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
+	
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://yusukebe.com/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper post">
+		<div class="header">
+	<h1 class="site-title"><a href="https://yusukebe.com/">ゆーすけべー日記</a></h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/yusukebe" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/yusukebe" title="Twitter"><i data-feather="twitter"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post-header">
+			<h1 class="title">2019年っぽいPerl OOPらしい</h1>
+			<div class="meta">Posted at &mdash; Jan 15, 2020</div>
+		</div>
+
+		<div class="markdown post-body">
+			
+
+<p>2020年はどうなるかは置いておいて、<a href="https://qiita.com/karupanerura/items/8182f7ef650fd314e591">2019年の最先端のPerl開発ボイラープレート - Qiita</a>を参考にする。</p>
+
+<ul>
+<li>Moo</li>
+<li>strictures</li>
+<li>Function::Parameters</li>
+<li>Type::Tiny</li>
+</ul>
+
+
+<p>あたりを使う。</p>
+
+<p>最近、<a class="keyword" href="http://d.hatena.ne.jp/keyword/Moose">Moose</a>を使って<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%C7%A5%B6%A5%A4%A5%F3%A5%D1%A5%BF%A1%BC%A5%F3">デザインパターン</a>を実装してみてるのでこれらを使って、Chain of Responsibilityパターンをなんとなく書いてみた。ちなみに以下の<a class="keyword" href="http://d.hatena.ne.jp/keyword/Java">Java</a>実装が解説を含めて分かりやすいので、ポーティングするような形で書いている。</p>
+
+<ul>
+<li><a href="https://qiita.com/i-tanaka730/items/c63c6c22abd1477e0ba0">GoFのデザインパターンまとめ - Qiita</a></li>
+</ul>
+
+
+<p><a class="keyword" href="http://d.hatena.ne.jp/keyword/Java">Java</a>実装との最大の差はInterfaceとか抽象クラスという概念がp5-<a class="keyword" href="http://d.hatena.ne.jp/keyword/Moose">Moose</a>/Mooにはないことなんだけど、Roleがハマる時はRoleを使って表現している（といってもそのまま書き写すんじゃなくて<a class="keyword" href="http://d.hatena.ne.jp/keyword/Perl">Perl</a>っぽい書き方で書いてるつもり）。</p>
+
+<p><code>Support.pm</code>。<a class="keyword" href="http://d.hatena.ne.jp/keyword/Java">Java</a>では抽象クラスで書かれてたけど、今回はRoleを使った。</p>
+
+<pre class="code lang-perl" data-lang="perl" data-unlink>
+package Support;
+use Moo::Role;
+use strictures 2;
+use namespace::clean;
+use Function::Parameters;
+use Types::Standard qw/Str Object/;
+
+has 'name' =&gt; (
+    is =&gt; 'ro',
+    isa =&gt; Str,
+);
+
+has 'next' =&gt; (
+    is =&gt; 'rw',
+    isa =&gt; Object,
+);
+
+requires 'resolve';
+
+method support($trouble) {
+    if ( $self-&gt;resolve($trouble) ) {
+        $self-&gt;done($trouble);
+    } elsif ( $self-&gt;next ) {
+        $self-&gt;next-&gt;support($trouble);
+    } else {
+        $self-&gt;fail($trouble);
+    }
+}
+
+method done($trouble) {
+    print $trouble-&gt;to_string . " is resolve by [" . $self-&gt;name . "].\n";
+}
+
+method fail($trouble) {
+    print $trouble-&gt;to_string . " is cannot be resolved.\n";
+}
+
+1;
+ </pre>
+
+
+<p><code>method</code>カッコイイ。ほんとは<code>next</code>プロパティでSupportロールを実装しているクラスの<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A4%A5%F3%A5%B9%A5%BF%A5%F3%A5%B9">インスタンス</a>、ってのを指定したかったけど（<a class="keyword" href="http://d.hatena.ne.jp/keyword/Moose">Moose</a>だとできる）、<code>Type::Standard</code>にはそういうのなさそうなので（<code>RoleName</code>っていうTypeならある）<code>Object</code>を指定してる。</p>
+
+<p><code>SpecialSupport.pm</code>では上記のRoleを<code>with</code>して実装。</p>
+
+<pre class="code lang-perl" data-lang="perl" data-unlink>
+package SpecialSupport;
+use Moo;
+use strictures 2;
+use namespace::clean;
+use Function::Parameters;
+use Types::Standard qw/Int/;
+
+with 'Support';
+
+has 'number' =&gt; (
+    is =&gt; 'ro',
+    isa =&gt; Int,
+);
+
+method resolve($trouble) {
+    return $trouble-&gt;number == $self-&gt;number;
+}
+
+1;
+ </pre>
+
+
+<p><code>method</code>カッコイイ（2度目）。</p>
+
+<p>Data::Validatorでやってたような、メソッドの引数の型チェックをType::Tinyと組み合わせて「かっこよく」書けるかな？って思った。以下、実装の全部。</p>
+
+<ul>
+<li><a href="https://github.com/yusukebe/p5-design-patterns/tree/master/ChainOfResponsibility">https://github.com/yusukebe/p5-design-patterns/tree/master/ChainOfResponsibility</a></li>
+</ul>
+
+
+
+		</div>
+
+		<div class="post-tags">
+			
+				
+			
+		</div>
+        <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v5.0&appId=233306523373884&autoLogAppEvents=1"></script>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+
+<div class="social-button-area">
+  <ul class="social-button">
+    <li>
+      <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
+    </li>
+    <li>
+      <span class="fb-share-button"  data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2020%2f0115070548%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
+    </li>
+    <li>
+      <a href="https://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label-counter" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>
+    </li>
+  </ul>
+</div>
+
+<div class="disqus-area">
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "yusukebe-com" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<ul class="pagination">
+  
+  <li class="page-item page-prev">
+    <a href="https://yusukebe.com/posts/2019/1226173405/" class="page-link" aria-label="Previous"><span aria-hidden="true">← PHPでDMM Webサービスを叩いてメロディー・雛・マークスを出す</span></a>
+  </li>
+  
+  
+  <li class="page-item page-next">
+    <a href="https://yusukebe.com/posts/2020/0115093400/" class="page-link" aria-label="Next"><span aria-hidden="true">DBIx::Mint、使ってみる →</span></a>
+  </li>
+  
+</ul>
+
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright yusukebe.com |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-492497-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

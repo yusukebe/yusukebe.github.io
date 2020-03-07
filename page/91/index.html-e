@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="generator" content="Hugo 0.63.2" />
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="alternate" type="application/rss+xml" href="https://yusukebe.com/index.xml" title="ゆーすけべー日記" />
+	<meta property="og:title" content="ゆーすけべー日記" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://yusukebe.com/" />
+<meta property="og:image" content="https://yusukebe.com/icons/myicon.png"/>
+<meta property="og:updated_time" content="2020-03-06T15:46:50+09:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://yusukebe.com/icons/myicon.png"/>
+
+<meta name="twitter:title" content="ゆーすけべー日記"/>
+<meta name="twitter:description" content=""/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
+	
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://yusukebe.com/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+  <div class="container wrapper">
+	<div class="header">
+	<h1 class="site-title"><a href="https://yusukebe.com/">ゆーすけべー日記</a></h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/yusukebe" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/yusukebe" title="Twitter"><i data-feather="twitter"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+	<div class="recent-posts section">
+	  <h2 class="section-header">
+		Recent posts
+	  </h2>
+	  <div class="posts">
+		
+		
+		
+		<div class="post">
+		  <div class="meta">Jul 5, 2006</div>
+		  <a class="title" href="/posts/2006/0705092528/">携帯電話</a> &mdash;
+		  <span class="description">
+			
+			 ただいま携帯電話故障中につき、ゆーすけべーは電話に出られません。御用のある方はこちらの記事にコメントするか、Eメールでご連絡ください。    この際、機変しようかと思っているんだけど、docomo携帯どれもいまいちだな。  今のpremi
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jul 1, 2006</div>
+		  <a class="title" href="/posts/2006/0701123938/">コメントスパムをはじかなくなってる？？</a> &mdash;
+		  <span class="description">
+			
+			   MovableType3.3がリリースされたあたりから急にコメントスパムが溜まるようになった。  3.2付属のスパムフィルターがうまくはじいてくれない。  これはなに、早くバージョンアップしる、ってことか！？ 
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jul 1, 2006</div>
+		  <a class="title" href="/posts/2006/0701010115/">藤沢小田急屋上にフットサル場</a> &mdash;
+		  <span class="description">
+			
+			   いつの間にか、6月14日に藤沢の小田急屋上にフットサル場がオープンしていた模様。    フットサルコート：藤沢・小田急百貨店の屋上に完成　／神奈川：MSN毎日インタラクティブ    湘南ベルマーレのフットサルコートで人工芝のフィールド
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jun 23, 2006</div>
+		  <a class="title" href="/posts/2006/0623044010/">今夏初クワガタ</a> &mdash;
+		  <span class="description">
+			
+			   19日(月)の夜。今年の夏初めてのクワガタが我が家にやって来た。        なかなか立派だがノロマなのか、危うく雨戸で巻き込み事故りそうになったじゃないか。     
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jun 18, 2006</div>
+		  <a class="title" href="/posts/2006/0618040622/">カモミールが・・・</a> &mdash;
+		  <span class="description">
+			
+			   4月4日に満開を迎えたカモミールさんですが、気温が上がると共に元気をなくし出し、ついに昨日の段階でこんな状態に。。。    両隣のミントとレモンバームはめちゃくちゃ元気でやたらにょきにょきしておるが。        カモミールさんは絡
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jun 17, 2006</div>
+		  <a class="title" href="/posts/2006/0617094904/">富貴堂、藤沢のカレーうどん屋</a> &mdash;
+		  <span class="description">
+			
+			   藤沢へ、親父の携帯電話を買いに行くのに付き合って、帰りがけに親父のお勧めで富貴堂(ふうきどう)という「うどん居酒屋」というか「カレーうどん屋」に行った。  場所は北口方面、トポスの近く。Googleマップだとこの辺。俺は野菜かき揚げカ
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jun 16, 2006</div>
+		  <a class="title" href="/posts/2006/0616144614/">メッシ</a> &mdash;
+		  <span class="description">
+			
+			 メッシがきめた。すげえええ。それにさんまもマラドーナもうける。なんでマラドーナが一番喜んでんだよ 
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jun 16, 2006</div>
+		  <a class="title" href="/posts/2006/0616115838/">陽気なギャングが地球を回す</a> &mdash;
+		  <span class="description">
+			
+			   久しぶりにいい意味で「軽い」、そして楽しい小説を読んだ。   		  			  			  陽気なギャングが地球を回す	   		 伊坂 幸太郎 		 祥伝社 文庫 (2006/02) 		 Amazonで詳しくみる 	   	    
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jun 16, 2006</div>
+		  <a class="title" href="/posts/2006/0616003958/">盆踊りのルーツは藤沢 遊行寺(?)</a> &mdash;
+		  <span class="description">
+			
+			   今日発行のタウンニュース(鎌倉版)を見て発見。  盆踊りのルーツは藤沢にある遊行寺「ではないか」ということで7月22、23日にイベントが開催される模様。  地元の盆踊りをやるだけじゃなくて、全国の盆踊り、例えば風の盆で有名な越中おわら
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Jun 16, 2006</div>
+		  <a class="title" href="/posts/2006/0616002812/">たらみ「キラリ 白桃ゼリー」がやたらうまい</a> &mdash;
+		  <span class="description">
+			
+			   たらみの「キラリ」というゼリーの「白桃」がやたらうまい。        中には白桃が半個くらいまるまる入っていて、ボリューム感と歯ごたえがたまらん。        「桃缶食えばいいじゃん」、という話ではない。これじゃないとだめなんだな
+			
+		  </span>
+		</div>
+		
+		
+
+<ul class="pagination">
+	<li class="page-item page-prev">
+	
+    <a href="/page/90/" class="page-link" aria-label="Previous"><span aria-hidden="true">← Prev page</span></a>
+	
+	</li>
+	<li class="page-item page-next">
+	
+    <a href="/page/92/" class="page-link" aria-label="Next"><span aria-hidden="true">Next page →</span></a>
+	
+	</li>
+</ul>
+
+
+	  </div>
+	</div>
+  </div>
+  <div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright yusukebe.com |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-492497-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

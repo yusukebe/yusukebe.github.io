@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>マイデスクトップその3「トリプルディスプレイ、Mac mini」編 - ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="マイデスクトップその3「トリプルディスプレイ、Mac mini」編" />
+<meta property="og:description" content=" 自分の机の上の物を晒していく「マイデスクトップ」。ようやく連載っぽくなってきた、3回目です。昨日は開発用サーバについて書きましたが、今回はメインの開発及び娯楽でももちろん使っているクライアントマシン「Mac mini」と机の上のどかんとの" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yusukebe.com/posts/2009/0827001216/" />
+<meta property="og:image" content="https://yusukebe.com/icons/myicon.png"/>
+<meta property="article:published_time" content="2009-08-27T09:12:00+09:00" />
+<meta property="article:modified_time" content="2009-08-27T09:12:00+09:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://yusukebe.com/icons/myicon.png"/>
+
+<meta name="twitter:title" content="マイデスクトップその3「トリプルディスプレイ、Mac mini」編"/>
+<meta name="twitter:description" content=" 自分の机の上の物を晒していく「マイデスクトップ」。ようやく連載っぽくなってきた、3回目です。昨日は開発用サーバについて書きましたが、今回はメインの開発及び娯楽でももちろん使っているクライアントマシン「Mac mini」と机の上のどかんとの"/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
+	
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://yusukebe.com/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper post">
+		<div class="header">
+	<h1 class="site-title"><a href="https://yusukebe.com/">ゆーすけべー日記</a></h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/yusukebe" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/yusukebe" title="Twitter"><i data-feather="twitter"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post-header">
+			<h1 class="title">マイデスクトップその3「トリプルディスプレイ、Mac mini」編</h1>
+			<div class="meta">Posted at &mdash; Aug 27, 2009</div>
+		</div>
+
+		<div class="markdown post-body">
+			
+
+<p>
+自分の机の上の物を晒していく「マイデスクトップ」。
+ようやく連載っぽくなってきた、3回目です。
+昨日は開発用サーバについて書きましたが、今回はメインの開発及び娯楽でももちろん使っている
+クライアントマシン「Mac mini」と机の上のどかんとのっかっている3つのディスプレイの紹介です。
+</p>
+<p>
+今でこそそれが当たり前のようになっていますが、
+自分がマックをメインのマシンとして使用し始めたのは、割と後発気味で、
+今の型のMac miniが発売された今年の春前からです。
+メモリ4G 積んで、ストレージは Itel の SSD に置換しました。
+Windows マシンで使っていたフォトショップとイラレがネイティブで動かない、というかソフトを持っていないのが
+個人的に痛いのですが、ターミナルをメインで使うようになって、それが標準でついてくるというところが
+まーマニアックな点かもしれませんけど、マックの一番気に入っているところです。
+ちなみに、どうしてもロゴ加工とかでDTPソフトを使いたい時は、
+VMWare Fusion で Win XP を立ち上げてその中でなんとかお絵描きしてます。
+Mac miniのスペックでも十分動きますね。
+それとやはり、フォントが奇麗だったり、ちょっとしたエフェクトもしかり、
+ヴィジュアルと動きが「気持ちいい」のも気に入っています。
+</p>
+<p>
+このMac miniを発売当初に購入したのは理由がありまして、
+それは以前の型ではできなかった「デュアルディスプレイ」をサポートしているからです。
+このおかげで、こちらのdell製ディスプレイ、「27インチ」と「19インチくらい？」を二つ繋いでいます。
+</p>
+
+<p>
+<img alt="desk" class="at-xid-6a0133f4781589970b014e8bd74f4e970d" src="https://yusukebe.com/archives/.a/6a0133f4781589970b014e8bd74f4e970d-pi.jpg>
+</p>
+<p>
+「19インチくらい？」の方は、机に固定したディスプレイアームにつなげてあるので、
+うまいこと27インチのディスプレイと位置を合わせることができたり、
+上にティルトさせて奥に手を伸ばせたりしてなかなかいい感じです。
+</p>
+<p>
+<img alt="desk" class="at-xid-6a0133f4781589970b014e8bd74f77970d" src="https://yusukebe.com/archives/.a/6a0133f4781589970b014e8bd74f77970d-pi.jpg>
+</p>
+<p>
+ディスプレイがたくさんされば、作業効率が必ず上がるとは限らないと思っています。
+外出先で開発する時はMacBookを使うのですが、その時とデスクトップ環境での開発効率を比べてもあまり
+変わらない気もします。
+ただ、情報への可読性やファインダビリティが高いため、ストレスが低いことはもちろん、
+うまい使い方をすればコンピュータを使う作業においてのイマジネーションの向上というのでしょうか、
+そういったよさがあります。
+例えば、今もメインのディスプレイにある emacs でこの文章を書きつつも、
+撮影した写真をプレビューでサブのディスプレイに表示させているので、
+記事の完成系のイメージが非常に湧きやすくなります。
+</p>
+<p>
+ちなみに、定番のアプリケーション配置というのがありまして、
+メインディスプレイには主に今いじってる使っているターミナルとブラウザを置いて、
+サブディスプレイ上部には IRC チャットやメッセンジャー系ソフト、
+下の部分にはデバグ用のターミナルを立ち上げています。
+日常、継続的にリラックスして開発するにはこの2つのディスプレイのサイズ感や配置が非常に
+合ってる気がしますね。
+</p>
+<p>
+<img alt="desk" class="at-xid-6a0133f4781589970b014e8bd74f84970d" src="https://yusukebe.com/archives/.a/6a0133f4781589970b014e8bd74f84970d-pi.jpg>
+</p>
+<p>
+さて、題名にトリプルディスプレイとありますが、
+これは、Mac miniへ強引に3つのディスプレイを繋いでいるということではありません。
+以前、ノリで購入した Asus の eee という「UMPC」ノートパソコンに繋いでいる余った19インチの液晶ディスプレイがそれで、
+メインの机の隣にあるガラス机にちょこんと置いてあります。
+普段は待機状態か電源を切っていて、気になった時に起動させています。
+で、そこには何が表示されているかというと、サーバのモニタリング情報を映しています。
+</p>
+<p>
+<img alt="desk" class="at-xid-6a0133f4781589970b014e8bd74f9d970d" src="https://yusukebe.com/archives/.a/6a0133f4781589970b014e8bd74f9d970d-pi.jpg>
+</p>
+<p>
+自宅のサーバが複数あるのはご存知かもしれませんが、
+それらを監視するのに Cacti というソフトを使っています。
+ただ、それだけでは足りないリアルタイムのモニタをしたい時に、
+ちょっとした小物のような感覚でこのディスプレイを使っているのです。
+実は top コマンド使ったり 「watch tail access.log」って打ったりして、
+サーバの現状を眺めるがのが大好きだったりします。
+</p>
+<p>
+てなわけで、俺の机にはどかんと合計で3つのディスプレイが並んでいます。
+やはり日々ディスプレイを眺めるのが仕事であり、楽しみでもあるので、
+なかなかこの規模感はちょうどよく、お気に入りの環境です。
+第3回はメインのPC、Mac miniと3つのディスプレイについて紹介しました。
+今後はちょっとした机の上の小物について書いていこうと思います。
+</p>
+<br>
+<div>
+<div style="float:left"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B001UHN7QQ/kamawada-22/"><img alt="Apple Mac mini/2GHz/2GB/320GB/SD MB464J/A" class="at-xid-6a0133f4781589970b014e8bd74fac970d" src="https://yusukebe.com/archives/.a/6a0133f4781589970b014e8bd74fac970d-pi.jpg style="border:none;"></a></div>
+<div style="float:left;margin-left:15px;">
+<div style="font-size:12pt"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B001UHN7QQ/kamawada-22/">Apple Mac mini/2GHz/2GB/320GB/SD MB464J/A</a></div>
+<div style="font-size:7pt;font-family:verdana;">posted with <a href="http://yusukebe.com/b/amazon/search/">yusukebe.com::AmazonSearch</a> on 2009.8.27</div>
+<div style="font-size:10pt;">
+<ul style="list-style-type:none;padding:0;">
+<li>エレクトロニクス / アップル (2009-03-04)</li>
+<li>Amazon 売り上げランキング: 29405</li>
+</ul>
+<a href="http://www.amazon.co.jp/Apple-mini-2GHz-320GB-MB464J/dp/B001UHN7QQ%3FSubscriptionId%3D0VEY2A9SVSFB81NQ9HG2%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB001UHN7QQ">Amazon.co.jpで詳細を見る</a>
+</div>
+</div>
+<div style="clear:left;"></div>
+</div>
+
+
+		</div>
+
+		<div class="post-tags">
+			
+				
+			
+		</div>
+        <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v5.0&appId=233306523373884&autoLogAppEvents=1"></script>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+
+<div class="social-button-area">
+  <ul class="social-button">
+    <li>
+      <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
+    </li>
+    <li>
+      <span class="fb-share-button"  data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2009%2f0827001216%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
+    </li>
+    <li>
+      <a href="https://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label-counter" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>
+    </li>
+  </ul>
+</div>
+
+<div class="disqus-area">
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "yusukebe-com" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<ul class="pagination">
+  
+  <li class="page-item page-prev">
+    <a href="https://yusukebe.com/posts/2009/0826091556/" class="page-link" aria-label="Previous"><span aria-hidden="true">← マイデスクトップその2「開発用サーバ、ls ~」編</span></a>
+  </li>
+  
+  
+  <li class="page-item page-next">
+    <a href="https://yusukebe.com/posts/2009/0828031757/" class="page-link" aria-label="Next"><span aria-hidden="true">マイデスクトップその4「Happy Hacking Keyboard」編 →</span></a>
+  </li>
+  
+</ul>
+
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright yusukebe.com |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-492497-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

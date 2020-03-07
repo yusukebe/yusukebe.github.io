@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="generator" content="Hugo 0.63.2" />
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="alternate" type="application/rss+xml" href="https://yusukebe.com/index.xml" title="ゆーすけべー日記" />
+	<meta property="og:title" content="ゆーすけべー日記" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://yusukebe.com/" />
+<meta property="og:image" content="https://yusukebe.com/icons/myicon.png"/>
+<meta property="og:updated_time" content="2020-03-06T15:46:50+09:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://yusukebe.com/icons/myicon.png"/>
+
+<meta name="twitter:title" content="ゆーすけべー日記"/>
+<meta name="twitter:description" content=""/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
+	
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://yusukebe.com/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+  <div class="container wrapper">
+	<div class="header">
+	<h1 class="site-title"><a href="https://yusukebe.com/">ゆーすけべー日記</a></h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/yusukebe" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/yusukebe" title="Twitter"><i data-feather="twitter"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+	<div class="recent-posts section">
+	  <h2 class="section-header">
+		Recent posts
+	  </h2>
+	  <div class="posts">
+		
+		
+		
+		<div class="post">
+		  <div class="meta">Apr 4, 2008</div>
+		  <a class="title" href="/posts/2008/0404073142/">CPAN Author になりました</a> &mdash;
+		  <span class="description">
+			
+			 先日から紹介している WebService::Simple というモジュールを CPAN に登録するため、CPAN Author になりました。少し前からもそれになるべく PAUSE の申請をしていて、理由に「Acme::PornStar
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Apr 4, 2008</div>
+		  <a class="title" href="/posts/2008/0404020802/">「生き方」稲盛和夫</a> &mdash;
+		  <span class="description">
+			
+			   京セラ現名誉会長、稲盛和夫氏の「実学」という本がかなりよかった思い出があったので、本屋で見かけて購入。氏が著した「生き方」。    稲盛和夫           題名の通り「生き方」を問い、稲盛氏の経験から得られた原則を元に指針を示し
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Apr 2, 2008</div>
+		  <a class="title" href="/posts/2008/0402013648/">「2ちゃんねるはなぜ潰れないのか?」西村博之</a> &mdash;
+		  <span class="description">
+			
+			   今年で60になる親父からこの本を借りるというのもなんとも変な感じだが、ひろゆき著の「2ちゃんねるはなぜ潰れないのか?」を読んだ。「頭がいい」とする定義は様々で、いろいろな種類の「頭のよさ」があると思うが、本書はひろゆきと、また最後の対
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Apr 1, 2008</div>
+		  <a class="title" href="/posts/2008/0401122449/">WebService::Simple でキャッシュできるようにしたよ</a> &mdash;
+		  <span class="description">
+			
+			 dannさんを囲む会で何故か本人が店の予約をしていることで有名なdannさんから「WebService::Simpleで（取得したコンテンツを）キャッシュしたいよ！」と言われて、俺もその機能欲しかったので追加しました。それに伴いnewメソ
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Mar 31, 2008</div>
+		  <a class="title" href="/posts/2008/0331042218/">POX over HTTP のウェブAPIにアクセスするためのモジュール「WebService::Simple」を作ってみた</a> &mdash;
+		  <span class="description">
+			
+			   俗に言う「REST/XML over HTTP POX over HTTP」のウェブAPIにアクセスするためのシンプルな(？)Perlモジュール「WebService::Simple」なるものを作ってみました。REST/XML ove
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Mar 30, 2008</div>
+		  <a class="title" href="/posts/2008/0330022356/">「アプリケーションサーバを追加しました」自宅サーバ管理者の憂鬱</a> &mdash;
+		  <span class="description">
+			
+			 この日記も運用している我が家の自宅サーバ環境にアプリケーションサーバを追加投入しました。といっても3ヶ月ほど前のことになります。こうしたサーバ運用は全て独学でやっているため、突っ込みどころ満載かもしれませんが、経緯と何をしたかというのを紹
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Mar 29, 2008</div>
+		  <a class="title" href="/posts/2008/0329012311/">「コンサルタントの秘密 - 技術アドバイスの人間学」G.M.ワインバーグ</a> &mdash;
+		  <span class="description">
+			
+			   コンサルタントとは何ぞやということに興味があり、「コンサルタント」と名が付く本を5冊くらいAmazonで注文して読んでみた。しかし、本書以外のものについては、確かになんとなく「コンサルタント」について把握することができたが、ぶっちゃけ
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Mar 28, 2008</div>
+		  <a class="title" href="/posts/2008/0328011405/">「文章のみがき方」辰濃和男</a> &mdash;
+		  <span class="description">
+			
+			   親父から「これ面白いよ」と渡された新書。今昔の多くの作家・文豪達による「文章を書く」と言う行為へのこだわりがびしびし伝わってくる。そこが一番の「面白さ」で、とても刺激を受けた。天声人語の執筆を以前担当していた辰濃和男氏による「文章のみ
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Mar 27, 2008</div>
+		  <a class="title" href="/posts/2008/0327010938/">今日の桃の花</a> &mdash;
+		  <span class="description">
+			
+			 俺の部屋の窓際すぐに隣に、毎年実が一つだけなるが高いところにあるため採れなくて腐り落ちてしまう、という桃の木がある。桜もちらほらを咲き始めたようだが、その桃の花も開きだした。      山に囲まれているところで日々過ごしている身として、今
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Mar 26, 2008</div>
+		  <a class="title" href="/posts/2008/0326032130/">nipotan と nagayaman を送り出す nipotan nite に行ってきた</a> &mdash;
+		  <span class="description">
+			
+			   Livedoor の nipotan さんがアメリカに旅立つということで昨日25日に開催された「nipotan nite」に参加してきました。はてなの nagayaman も京都に行っちゃうってことで nagayaman の壮行会も兼
+			
+		  </span>
+		</div>
+		
+		
+
+<ul class="pagination">
+	<li class="page-item page-prev">
+	
+    <a href="/page/50/" class="page-link" aria-label="Previous"><span aria-hidden="true">← Prev page</span></a>
+	
+	</li>
+	<li class="page-item page-next">
+	
+    <a href="/page/52/" class="page-link" aria-label="Next"><span aria-hidden="true">Next page →</span></a>
+	
+	</li>
+</ul>
+
+
+	  </div>
+	</div>
+  </div>
+  <div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright yusukebe.com |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-492497-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

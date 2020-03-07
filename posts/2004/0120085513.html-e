@@ -1,0 +1,24 @@
++++
+Categories = ["tech"]
+Description = " 研究室に落ちてたへぇパンダ（参照：ビタミンX: うわさの「生茶パンダ」と「へぇーボタン」のコラボアイテムとは？）。   こいつの「へぇ」というタイミングがよく出来ている。手をつっこむと口の辺りにボタンがあって、パクパクさせてへぇと言う。ボ"
+Tags = []
+date = "2004-01-20T17:55:00+09:00"
+title = "へぇパンダはon(release)でへぇと言う"
+author = "kamawada"
+archive = ["2004"]
+draft = false
++++
+
+
+<p>研究室に落ちてたへぇパンダ（参照：<a href="http://vitamin.staba.jp/archives/000335.html" title="ビタミンX: うわさの「生茶パンダ」と「へぇーボタン」のコラボアイテムとは？">ビタミンX: うわさの「生茶パンダ」と「へぇーボタン」のコラボアイテムとは？</a>）。<br>
+<a href="http://kamawada.com/~yusuke/yusukebe/archives/files/040120/DSC07097.JPG"><img alt="DSC07097.JPG" border="0" class="at-xid-6a0133f4781589970b015391e373a6970b" height="180" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015391e373a6970b-pi.jpg width="240"></a></p>
+
+<p>こいつの「へぇ」というタイミングがよく出来ている。手をつっこむと口の辺りにボタンがあって、パクパクさせてへぇと言う。ボタンを押しただけでは、「へぇ」と言わずに、ボタンを離したときつまり口をあけたときに「へぇ」と言う。これFlashのアクションスクリプトで言うとon(press)ではなくon(release)のタイミングだ。実際のプログラムで書くとこうなる。</p>
+
+<pre> on(release){
+     trace("へぇ");
+} </pre>
+
+<p>（左）口を閉じた状態では「へぇ」とは言わない、(右)口をあけるとつまりon(release)の時に「へぇ」と言う。<br>
+<a href="http://kamawada.com/~yusuke/yusukebe/archives/files/040120/DSC07098.JPG"><img alt="DSC07098.JPG" border="0" class="at-xid-6a0133f4781589970b015391e373ae970b" height="180" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015391e373ae970b-pi" width="240"></a><a href="http://kamawada.com/~yusuke/yusukebe/archives/files/040120/DSC07099.JPG"><img alt="DSC07099.JPG" border="0" class="at-xid-6a0133f4781589970b015391e373c0970b" height="180" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015391e373c0970b-pi.jpg width="240"></a></p>
+

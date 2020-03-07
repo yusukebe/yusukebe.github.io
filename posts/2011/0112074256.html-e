@@ -1,0 +1,62 @@
++++
+Categories = ["tech"]
+Description = " 昼、Facebookを見てたら、とある友達がInstagramのPC向けのサイトを作って公開しているのを発見しました。     listagram（リスタグラム）   ちょろっと聞いたら、Instagramの非公開のAPIを使った「それの"
+Tags = []
+date = "2011-01-12T16:42:00+09:00"
+title = "Instagramをだら見できる「InstaStream」を作ってみた"
+author = "kamawada"
+archive = ["2011"]
+draft = false
++++
+
+
+<p>
+昼、Facebookを見てたら、とある友達がInstagramのPC向けのサイトを作って公開しているのを発見しました。
+</p>
+<ul>
+  <li><a href="http://listagram.chibatch.jp/">listagram（リスタグラム）</a></li>
+</ul>
+<p>
+ちょろっと聞いたら、
+Instagramの非公開のAPIを使った「それのプロキシ経由的な」APIを使って構築しているみたいです。
+以下がその解説。
+</p>
+<ul>
+  <li><a href="https://github.com/mislav/instagram/wiki">Instagram api - instagram - GitHub</a></li>
+</ul>
+<p>
+で、友達が作ったlistagramではPopularはでるけど、
+Twitterで言うpublic_timelineがないのがちょっと物足りない気がしました。
+そのようなものは、InstagramのAPIでも派生APIでもどうしても取れないみたいです。
+そこで、Twitter Search APIから最新のInstagramの個別エントリーpermalinkを取得する方法を試してみました。
+どうも「Twitterに投稿されたInstagramの写真」のみ！ならば、public_timeline的なものは
+(こぼしがあるかも知れませんが)取れる模様です。
+</p>
+<p>
+てなわけで、その実験結果からInstagramのタイムラインをだら見する
+(ただしそこに出てくる写真はTwitterに関連づけられたもののみ！)
+というサイトを3時間くらいでさくっと作ってみました。
+名前は「InstaStream」です。
+</p>
+<p>
+<a href="http://instastream.pulpsite.net/">InstaStream - Instagram photo stream</a>
+<br>
+<a href="http://instastream.pulpsite.net/">
+<img alt="instastream" class="at-xid-6a0133f4781589970b015391e39640970b" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015391e39640970b-pi">
+</a>
+</p>
+<p>
+Instagramの最新の写真がとにかくだらだら流れます。
+よかったら見てみてください！
+</p>
+<p>
+PCからひたすら閲覧しにくいInstagramなんで、評判が良ければ機能を追加していきたいと思います。
+まぁInstagramさんから怒られたらやめますけど！
+ということでよろしく！
+</p>
+<ul>
+<li>
+<span class="hatena-bookmark-title"><a href="http://instastream.pulpsite.net/">InstaStream - Instagram photo stream</a></span> <span class="hatena-bookmark-users"><a href="http://b.hatena.ne.jp/entry/instastream.pulpsite.net/"><img alt="InstaStream - Instagram photo stream" class="at-xid-6a0133f4781589970b015391e3964b970b" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015391e3964b970b-pi" title="InstaStream - Instagram photo stream"></a></span>
+</li>
+</ul>
+

@@ -1,0 +1,19 @@
++++
+Categories = ["tech"]
+Description = "http://infosys.sys.i.kyoto-u.ac.jp/~tsasaki/Nikki/こちらのページからこの日記にリンクが張られていた。 たどってみると、HNSの日記なのにコメントができる！Board0.0.9ってのがいつの間"
+Tags = []
+date = "2002-04-30T12:11:00+09:00"
+title = "コメント機能追加"
+author = "kamawada"
+archive = ["2002"]
+draft = false
++++
+
+
+<a href="http://infosys.sys.i.kyoto-u.ac.jp/~tsasaki/Nikki/" target="_new">http://infosys.sys.i.kyoto-u.ac.jp/~tsasaki/Nikki/</a>
+こちらのページからこの日記にリンクが張られていた。<br>
+たどってみると、HNSの日記なのにコメントができる！
+Board0.0.9ってのがいつの間にか配布されているらしい。<br>
+<a href="http://www.h14m.org/dist/contrib/web_board_for_hns/" target="_new">http://www.h14m.org/dist/contrib/web_board_for_hns/</a>
+というわけで早速入れてみました。みなさまコメントくだされ。<br>
+

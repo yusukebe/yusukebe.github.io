@@ -1,0 +1,13 @@
++++
+Categories = ["tech"]
+Description = "やっとこさpremiereでREXを動かすことができたんだけど、ビデオを再生させようとすると 「処理が間に合わない」んだって。ほんとやんなっちゃうよねー"
+Tags = []
+date = "2001-12-20T23:10:00+09:00"
+title = "DV-REXをSPIDERに移植"
+author = "kamawada"
+archive = ["2001"]
+draft = false
++++
+
+<p>やっとこさpremiereでREXを動かすことができたんだけど、ビデオを再生させようとすると<br>
+「処理が間に合わない」んだって。ほんとやんなっちゃうよねー</p>

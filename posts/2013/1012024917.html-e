@@ -1,0 +1,48 @@
++++
+Categories = ["tech"]
+Description = " Plack::App::URLMap 使えば出来るんですが... リクエストをPlack::Requestとしてゴニョってレスポンスが配列リファレンスなコードリファレンスを返す「 素Plack 」なアプリと Mojolicious アプリ"
+Tags = ["Perl", "Mojolicious"]
+date = "2013-10-12T11:49:00+09:00"
+title = "素PlackアプリとMojoliciousアプリを同居させる"
+author = "kamawada"
+archive = ["2013"]
+draft = false
++++
+
+
+<p><strong>Plack::App::URLMap</strong> 使えば出来るんですが... リクエストをPlack::Requestとしてゴニョってレスポンスが配列リファレンスなコードリファレンスを返す「 <strong>素Plack</strong> 」なアプリと <strong>Mojolicious</strong> アプリをパスによって振り分けて同居させるもうひとつの方法の例。</p>
+
+<p>Web::MojoliciousはMojoliciousクラスを継承したアプリのベースクラスね。to_appメソッドでコードリファレンス返しているんで.psgiではこれを呼び出せばOK。ってかもう一度言いますがほとんどのケースは <strong>Plack::App::URLMap</strong> で間に合うかと思われます。</p>
+
+<pre> package Web;
+use strict;
+use warnings;
+use Plack::Request;
+use Web::Mojolicious;
+use Mojo::Server::PSGI;
+
+sub new {
+    my ($class, %opt) = @_;
+    my $self = bless {}, $class;
+    my $mojo_app = Mojo::Server::PSGI-&gt;new( app =&gt; Web::Mojolicious-&gt;new );
+    $self-&gt;{mojo_app} = $mojo_app;
+    return $self;
+}
+
+sub to_app {
+    my $self = shift;
+    return sub {
+        my $env = shift;
+        my $req = Plack::Request-&gt;new($env);
+        if( $req-&gt;path_info =~ m!^/mojo! ) {
+            return $self-&gt;{mojo_app}-&gt;run($req-&gt;env);
+        }
+        return [200, [ 'Content-Type' =&gt; 'text/plain' ], ['This is not Mojolicious app.']]
+    }
+}
+
+1;
+ </pre>
+
+<p>Plack::Requestのインスタンスを使ってディスパッチする前とかに2つのアプリ共通の処理が起こるケースあるかなーと思って考えてみた次第。三度言いますが <strong>Plack::App::URLMap</strong> でおおよそ解決出来るかと！</p>
+

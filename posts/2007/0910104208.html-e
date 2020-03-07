@@ -1,0 +1,202 @@
++++
+Categories = ["tech"]
+Description = "   つい先日「iPod Touch」などを衝動買いしてしまった僕ですが、  そんな物欲をさらに加速させるようなサイト「これ☆ほしい」を作ってみました。  「これ☆ほしい」とは、ウェブで話題の「みんなの物欲」がひとめでわかるサイトであります"
+Tags = ["Perl"]
+date = "2007-09-10T19:42:00+09:00"
+title = "はてブでみんながほしいと感じた記事がひとめでわかる「これ☆ほしい」を作ってみた"
+author = "kamawada"
+archive = ["2007"]
+draft = false
++++
+
+
+<p>
+  つい先日<a href="http://yusukebe.com/archives/07/09/07/144759.html">「iPod Touch」などを衝動買いしてしまった</a>僕ですが、
+  そんな物欲をさらに加速させるようなサイト「<strong><a href="http://pulpsite.net/wewantit/">これ☆ほしい</a></strong>」を作ってみました。
+  「これ☆ほしい」とは、<strong>ウェブで話題の「みんなの物欲」がひとめでわかる</strong>サイトであります。
+  はてなブックマークされたエントリーの中からユーザーが「欲しい」とか「買いたい」などといった、
+  タグやコメントをつけたものをピックアップし、カウントして表示しています。
+</p>
+<p>
+  <a href="http://pulpsite.net/wewantit/">これ☆ほしい - みんなの物欲</a>
+  <a href="http://b.hatena.ne.jp/append?http%3A%2F%2Fpulpsite.net%2Fwewantit%2F">
+    <img alt="このエントリーをブックマークに追加" class="at-xid-6a0133f4781589970b015435b6ec68970c" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015435b6ec68970c-pi.gif>
+  </a>
+  <a href="http://b.hatena.ne.jp/entry/http://pulpsite.net/wewantit/">
+    <img alt="このエントリーを含むはてなブックマーク" class="at-xid-6a0133f4781589970b015435b6ec76970c" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015435b6ec76970c-pi.gif>
+  </a>
+  <br>
+  <a href="http://pulpsite.net/wewantit/">
+    <img alt="これ☆ほしい" class="at-xid-6a0133f4781589970b015391e38bdf970b" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015391e38bdf970b-pi">
+  </a>
+</p>
+<p>
+  機能としては、
+</p>
+<ul>
+  <li>トップページにて最近みんなが「ほしい」と注目されているエントリーを閲覧できる</li>
+  <li>24時間以内、今週、などといった期間別に人気の記事を並べ替える</li>
+  <li>タグ別に絞り込む</li>
+  <li>楽天及びAmazonの注目アイテムを詳細とともに見る</li>
+  <li>といったものがあります。</li>
+</ul>
+<p>
+  ウェブの記事に対してどれだけの人がほしいと思っているかをカウントするために、
+  「欲しい」「買いたい」などといったキーワードと、
+  はてなブックマークのタグ及びコメントをマッチングさせています。
+  複数のキーワードに対応していて、いろいろそれっぽいのを登録しました。
+  こうしてカウントすることで「10 ほしい」といった数字が出てくるわけですね。
+</p>
+<p>
+  さてご覧いただくとお判りの通り、2ヶ月ほど前に話題となった
+  「<strong><a href="http://xn--n8j3a4dxap8m.gaasuu.com/" target="_blank">これはひどい</a></strong>」、「<strong><a href="http://xn--n8j3adt3ith.heypo.net/" target="_blank">これはすごい</a></strong>」というサイトにインスパイアされて作りました。
+  「これ☆ほしい」を作ったいきさつはこんな感じです。
+</p>
+<ol>
+  <li>これはひどい＆これはすごいを見て、「<strong>それPlaggerでできるんじゃね？</strong>」</li>
+  <li>じゃあ俺が作るんだったら「<strong>これはエロい</strong>」だな</li>
+  <li>実際作ってみる</li>
+  <li>はてなブックマークで「これはエロい」とか「エロ」などのタグをつけているエントリーを集めて、並べる。が、しかし</li>
+  <li>「<b>ちょｗｗｗ、テラスパムサイト多いんだけどｗｗｗ</b>」</li>
+  <li>萎える</li>
+  <li>でも、せっかくそれ用にPlaggerのPluginとか作ったからなんか他に収集したら面白いキーワードないかな？</li>
+  <li>丁度その頃、「Mash up Award 3rd」の対象APIに楽天のウェブサービスが入っていることを知る</li>
+  <li>楽天と言えば、「商品」だよな</li>
+  <li>じゃあ、楽天に限らず「商品」、「物」の販売ページや紹介サイトの記事の中でどれだけみんなが欲しがっているかがわかったらいいかも</li>
+  <li>それ、はてなブックマークで「これほしい」とか「買いたい」とかのタグをカウントすればよさげ</li>
+  <li>やってみる、結構おもろいかも</li>
+  <li>せっかくなので「Mash up Award 3rd」に出したい。そこで、楽天のアイテムに関してはAPIを使って詳細情報を埋め込むことにした</li>
+  <li>さらに、「注目のAmazon」も加えた</li>
+  <li>とりあえず、動作確認</li>
+  <li>「<b>おお、iPod Touch みんな欲しがってるー</b>」</li>
+  <li>ネーミングで悩むがストレートな「これほしい」にして、さらにブームが去りつつあるかもしれんが「<b>☆</b>」を入れる(ちなみに、Englishネームは"wewantit"、開発時のコードネームは「みんぶよ」)</li>
+  <li>公開←今ここ</li>
+</ol>
+<p>
+  では、作り方を解説。基本的には<a href="http://yusukebe.com/archives/06/10/21/201644.html">Erolyst</a>や<a href="http://yusukebe.com/archives/06/12/03/230402.html">CDTube</a>と同じく、
+  「<strong>Plagger</strong>でアグリゲート→Store-DBIC→sqliteのDB→<strong>Catalyst</strong>で読み込んで表示」という具合で動いています。
+  以前名づけた「<a href="http://yusukebe.com/tech/archives/20061203/213028.html">Plalyst or PlaCata</a>」メソッドです。
+  Plaggerの部分で、以下のオリジナルPlugin4つ使ってます。やたら作りました。
+</p>
+<ul>
+  <li><a href="http://yusukebe.com/tech/archives/20070910/124339.html">Subscription::HatenaBookmark</a></li>
+  <li><a href="http://yusukebe.com/tech/archives/20070828/130044.html">Filter::AddHatenaBookmarkTagsCount</a></li>
+  <li><a href="http://yusukebe.com/tech/archives/20070910/125915.html">Filter::RakutenWebService</a></li>
+  <li><a href="http://yusukebe.com/tech/archives/20070910/130458.html">Filter::AddAmazonDescription</a></li>
+</ul>
+<p>
+  以下はconfig.yamlの例です。
+</p>
+<pre class="brush: perl"> global:
+  assets_path: /path/to/assets
+  timezone: Asia/Tokyo
+
+plugins:
+  - module: Subscription::HatenaBookmark
+    config:
+      tags:
+        - これ欲しい
+        - これほしい
+        - 欲しい
+        - ほしい
+        - これは欲しい
+        - これはほしい
+        - 物欲
+        - 買う
+        - 買い物
+        - 買いたい！
+        - あとで買う
+        - 欲しいもの
+        - 購入候補
+        - ちょっと欲しいもの
+        - +ほしい
+        - shopping
+        - ショッピング
+        - goods
+        - グッズ
+        - wishlist
+
+  - module: Subscription::Config
+    config:
+      feed:
+       - http://b.hatena.ne.jp/entrylist?mode=rss&amp;url=http%3A%2F%2Fitem.rakuten.co.jp&amp;sort=hot&amp;threshold=2
+       - http://b.hatena.ne.jp/entrylist?mode=rss&amp;url=http%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fproduct%2F&amp;sort=hot&amp;threshold=2
+        
+  - module: Filter::AddHatenaBookmarkTagsCount
+    config:
+      tags:
+        - これ欲しい
+        - これほしい
+        - 欲しい
+        - ほしい
+        - ほすぃ
+        - 買おう
+        - これは欲しい
+        - これはほしい
+        - 欲っしー
+        - 物欲
+        - 買う
+        - 買い物
+        - 買いたい！
+        - あとで買う
+        - 欲しいもの
+        - 購入候補
+        - ちょっと欲しいもの
+        - +ほしい
+        - wishlist
+      add_count_to_rate: 1
+      body_check: 1
+      date_as_newest: 1
+
+  - module: Filter::RakutenWebService
+    config:
+      developer_id: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      affiliate_id: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+  - module: Filter::AddAmazonDescription
+    config:
+      associate_id: XXXXXXXXXX-22
+      developer_token: XXXXXXXXXXXX
+      locale: jp
+      set_title: 1
+      template: amazon.tt
+
+  - module: Filter::HTMLScrubber
+    config:
+      rules:
+        br: 0
+        style: 0
+        script: 0
+        img: 0
+        b: 0
+        table: 0
+
+
+  - module: Filter::Rule
+    rule:
+      module: Deduped
+      path: ./deduped.db
+
+  - module: Store::DBIC
+    config:
+      schema_class: Plagger::Schema::SQLite
+      connect_info: [ 'dbi:SQLite:/path/to/plagger.db', ]
+
+ </pre>
+<p>
+  ということで、物欲を刺激されたい方、衝動買いをしたい方、
+  <a href="http://yusukebe.com/archives/07/09/04/114840.html">エロサイト富豪</a>でお金を持て余らしている方、などなど、興味のある方はチェクってみてください。
+</p>
+<ul>
+  <li>
+<a href="http://pulpsite.net/wewantit/">これ☆ほしい - みんなの物欲</a>
+    <a href="http://b.hatena.ne.jp/append?http%3A%2F%2Fpulpsite.net%2Fwewantit%2F">
+      <img alt="このエントリーをブックマークに追加" class="at-xid-6a0133f4781589970b015435b6ec68970c" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015435b6ec68970c-pi.gif>
+    </a>
+    <a href="http://b.hatena.ne.jp/entry/http://pulpsite.net/wewantit/">
+      <img alt="このエントリーを含むはてなブックマーク" class="at-xid-6a0133f4781589970b015435b6ec76970c" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015435b6ec76970c-pi.gif>
+    </a>
+  </li>
+  <li><a href="http://b.hatena.ne.jp/entry/http://pulpsite.net/wewantit/">はてなブックマーク - これ☆ほしい - みんなの物欲</a></li>
+</ul>
+

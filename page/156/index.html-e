@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="generator" content="Hugo 0.63.2" />
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="alternate" type="application/rss+xml" href="https://yusukebe.com/index.xml" title="ゆーすけべー日記" />
+	<meta property="og:title" content="ゆーすけべー日記" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://yusukebe.com/" />
+<meta property="og:image" content="https://yusukebe.com/icons/myicon.png"/>
+<meta property="og:updated_time" content="2020-03-06T15:46:50+09:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://yusukebe.com/icons/myicon.png"/>
+
+<meta name="twitter:title" content="ゆーすけべー日記"/>
+<meta name="twitter:description" content=""/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
+	
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://yusukebe.com/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+  <div class="container wrapper">
+	<div class="header">
+	<h1 class="site-title"><a href="https://yusukebe.com/">ゆーすけべー日記</a></h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/yusukebe" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/yusukebe" title="Twitter"><i data-feather="twitter"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+	<div class="recent-posts section">
+	  <h2 class="section-header">
+		Recent posts
+	  </h2>
+	  <div class="posts">
+		
+		
+		
+		<div class="post">
+		  <div class="meta">Feb 19, 2004</div>
+		  <a class="title" href="/posts/2004/0219073617/">VACUUN!ウェブ動いています</a> &mdash;
+		  <span class="description">
+			
+			 地味にVACUUN!のウェブが動いてます   
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Feb 19, 2004</div>
+		  <a class="title" href="/posts/2004/0218155545/">すがメモリーダー ヴァージョン0.1くらい</a> &mdash;
+		  <span class="description">
+			
+			 すがちゃん誕生日おめでとう！  というわけで恒例の誕生日プレゼントです（まだまだヴァージョンアップする可能性あり）。 →すがメモリーダー ヴァージョン0.1くらい（sugamemoReader.exe）  *実行するには.NET Fram
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Feb 17, 2004</div>
+		  <a class="title" href="/posts/2004/0217132141/">3Dウェブ検索やってみました</a> &mdash;
+		  <span class="description">
+			
+			 話題のgooによる3Dウェブ検索やってみました。  すけべの検索結果。   結果であるウェブページが画像として見れるのは非常にうれしい。特に「すけべ」なんて検索結果だとウェブページ画像を見ただけでこれはエロサイトだろうな、というのがたくさ
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Feb 15, 2004</div>
+		  <a class="title" href="/posts/2004/0215113433/">malformed header from script.</a> &mdash;
+		  <span class="description">
+			
+			 futomi&#39;s CGI Cafe - CGI エラー特定の方法  メモ。   #!/usr/bin/perl    print &#34;test&#34;; というような簡単なperlでもCGIでアクセスするとInternal Server Erro
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Feb 15, 2004</div>
+		  <a class="title" href="/posts/2004/0215023645/">自動車用語辞典</a> &mdash;
+		  <span class="description">
+			
+			 ＡＧＮ　自動車用語辞典  メモ。意外としらないことが多い車用語がのってる。  
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Feb 13, 2004</div>
+		  <a class="title" href="/posts/2004/0213071720/">FLASH HACKS</a> &mdash;
+		  <span class="description">
+			
+			 Action Script Cookbookにひきつづき見つけた。  Flash Hacks  これはまだ発売していないので買えないが、調子にのって２つのHACK本を注文してしまった。  Amazon Hacks: 100 Industr
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Feb 13, 2004</div>
+		  <a class="title" href="/posts/2004/0213042130/">はるみ姉さんのハーゲンダッツ</a> &mdash;
+		  <span class="description">
+			
+			 新宿のハーゲンダッツにははるみ姉さんが働いている。  日本のハーゲンダッツで働いている人のなかで5本の指に入るほどの実力を持つはるみ姉さん  彼女の必殺技は、サインと素手ドライアイス割。その技を見せてくれるというのでつい乗せられてトリュフ
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Feb 13, 2004</div>
+		  <a class="title" href="/posts/2004/0213023728/">YRICK</a> &mdash;
+		  <span class="description">
+			
+			 TRICKの中にYRICKが紛れ込んでいました。   
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Feb 12, 2004</div>
+		  <a class="title" href="/posts/2004/0212020415/">コマンドライン はぁはぁ なんか立ち上がるんですけど</a> &mdash;
+		  <span class="description">
+			
+			 あまやんがコマンドラインで   (;´Д`)ﾊｧﾊｧ と入力したら ﾊｧﾊｧの使い方が間違っています。 ってWindowsに怒られてた。→こぶろぐ: コマンドライン (;´Д`)ﾊｧﾊｧ  ﾊｧﾊｧが半角カタカナなのがいけないのだと思い、
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Feb 12, 2004</div>
+		  <a class="title" href="/posts/2004/0211160000/">vacuunGG Build ver1.0リリース</a> &mdash;
+		  <span class="description">
+			
+			 vacuunGG Buildのヴァージョン1.0をリリースします。 Gather＆Grooveというコンセプトをシンプルにあらわしたビルドです。  今聴いている曲を通じて友達と盛り上がり、他の友達がどんな曲で盛り上がっているのかを知ること
+			
+		  </span>
+		</div>
+		
+		
+
+<ul class="pagination">
+	<li class="page-item page-prev">
+	
+    <a href="/page/155/" class="page-link" aria-label="Previous"><span aria-hidden="true">← Prev page</span></a>
+	
+	</li>
+	<li class="page-item page-next">
+	
+    <a href="/page/157/" class="page-link" aria-label="Next"><span aria-hidden="true">Next page →</span></a>
+	
+	</li>
+</ul>
+
+
+	  </div>
+	</div>
+  </div>
+  <div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright yusukebe.com |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-492497-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Catalyst Conference #1 に行ってきました - ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="Catalyst Conference #1 に行ってきました" />
+<meta property="og:description" content="   昨日行われた Catalyst Conference #1 に行ってきました。ここで言う Catalyst とは Perl の Web Application Framework なんですが、  発表者のうち Yappo さんだけが " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yusukebe.com/posts/2008/0423035842/" />
+<meta property="og:image" content="https://yusukebe.com/icons/myicon.png"/>
+<meta property="article:published_time" content="2008-04-23T12:58:00+09:00" />
+<meta property="article:modified_time" content="2008-04-23T12:58:00+09:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://yusukebe.com/icons/myicon.png"/>
+
+<meta name="twitter:title" content="Catalyst Conference #1 に行ってきました"/>
+<meta name="twitter:description" content="   昨日行われた Catalyst Conference #1 に行ってきました。ここで言う Catalyst とは Perl の Web Application Framework なんですが、  発表者のうち Yappo さんだけが "/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
+	
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://yusukebe.com/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper post">
+		<div class="header">
+	<h1 class="site-title"><a href="https://yusukebe.com/">ゆーすけべー日記</a></h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/yusukebe" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/yusukebe" title="Twitter"><i data-feather="twitter"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post-header">
+			<h1 class="title">Catalyst Conference #1 に行ってきました</h1>
+			<div class="meta">Posted at &mdash; Apr 23, 2008</div>
+		</div>
+
+		<div class="markdown post-body">
+			
+
+<p>
+  昨日行われた <strong>Catalyst Conference #1</strong> に行ってきました。
+ここで言う Catalyst とは Perl の Web Application Framework なんですが、
+  発表者のうち Yappo さんだけが Cisco の<del>ルータ</del>スイッチの話をしようとしててびっくりしました。
+それはさておき、Talk の内容は以下のようなものでした。
+</p>
+<ul>
+  <li>
+<a href="http://blog.hatena.ne.jp/dann/">id:dann</a> のCatalystとMVC論 (15min)</li>
+  <li>
+<a href="http://blog.hatena.ne.jp/ikasam_a/">id:ikasam_a</a> によるCatalyst::Controller::Resources (15min)</li>
+  <li>$c &lt;3 C (charsbar) (15min) </li>
+  <li>コピペをしないための10の方法 (typester) (5min)</li>
+  <li>Model::Adaptor的な話 (@hidek) (5min)</li>
+  <li>yappo 2924あたりでも持ってきます (5min)</li>
+  <li>Catalyst☆Complex tokuhirom (5min)</li>
+</ul>
+<p>
+皆さん Catalyst Conference の癖に Catalyst を DIS りつつ、それを解決するためのそれぞれの方法や考え方を提案というパターンが主で、非常に面白かったです。
+特に <a href="http://blog.hatena.ne.jp/dann/">id:dann</a> さんと <a href="http://blog.hatena.ne.jp/ikasam_a/">id:ikasam_a</a> さんはブログで Catalyst のネタを結構書いているのですが、今回実際にリアルの場での発表で、それぞれの考えを知ることができてよかったです。<a href="http://blog.hatena.ne.jp/ikasam_a/">id:ikasam_a</a> さんの Catalyst::Controller::Resources 、今まで触ったことがなかったのですが、発表聞くとかなりよさげなので使ってみたいと思います。
+</p>
+<p>
+<img alt="Catalyst Conference" class="at-xid-6a0133f4781589970b015435b6f235970c" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015435b6f235970c-pi">
+</p>
+<p>
+自分が Catalyst を使うケースって、仕事の受託開発ではほとんどなくて、pulpsite.net などで公開している yusukebe products が主です。
+よって、全くの個人で開発していることと、サービスが小規模であるという点で、今回発表された方々とは多少違ったコンテキストで Catalyst を使っているのかなぁと感じました。
+それを踏まえていい機会なので、Catalyst を今まで触ってきて、多少工夫しているところ、思っていることを（ほんの少し＆よく知られているものですが）挙げてみました。
+</p>
+<dl>
+  <dt>Controller にロジックを書くのはよくない</dt>
+  <dd style="margin-left:15px">少量のメソッドだったら MyApp.pm ?<br>
+  モジュール化できるものはモジュール化(POPO)させる＋ Model::Adaptor<br>
+  例: Web API / fetch して parse する / WebService::Simple<br>
+    Logic を扱う名前空間を作ってそこに置く<br>
+    →再利用性、テストがやりやすい
+  </dd>
+  <dt>script/myapp_create.pl model ...</dt>
+  <dd style="margin-left:15px">自前で DBIx::Class::Schema::Loader::make_schema_atを呼び出すスクリプトを作った方がいい</dd>
+  <dt>運用の時、アクセスの多い静的ファイルを Catalyst でサーブするのはマジ無い</dt>
+  <dd style="margin-left:15px">mod_perl で処理する必要の無い静的コンテンツは mod_perl で扱わない</dd>
+  <dt>Config の YAML を環境によって書き換えてる</dt>
+  <dd style="margin-left:15px">myapp_local.ymlを使う、最近はじめて知った</dd>
+  <dt>CLI から model というか DBIC を呼ぶ時にどうするか</dt>
+  <dd style="margin-left:15px">CLI スクリプトに Catalyst の myapp.yml で定義した情報をコピペしがち、DRYじゃない＞＜<br>
+    ベストな解決策はなんだろう
+  </dd>
+</dl>
+<p>
+昔のコードとか今見返すととりあえず動けばいいや的にテラひどいコードになってるんですが（今もひどいが）、
+最近になって再利用性とか URI の設計とか気にしだしました。
+今回の発表内容や皆さんのブログの記事などで、もっと勉強していきたいと思います。
+</p>
+<p>
+  あーあと、補足として感じたことは、今回来れなかった人を含めどのくらいの人がどのように Catalyst を使っているのかもっと知りたいと思いました（<del>ルータ</del>スイッチも含めるとYappoさんは自宅で Catalyst を使っているということで興味深い）。
+</p>
+<p>
+第2回もあるかもしれないということで、とりあえず
+発表者の皆さん、お疲れさまでした！＆会場を提供してくれたサイボウズラボに感謝！
+</p>
+
+
+		</div>
+
+		<div class="post-tags">
+			
+				
+					<nav class="nav tags">
+							<ul class="flat">
+								
+								<li><a href="/tags/perl">Perl</a></li>
+								
+							</ul>
+					</nav>
+				
+			
+		</div>
+        <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v5.0&appId=233306523373884&autoLogAppEvents=1"></script>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+
+<div class="social-button-area">
+  <ul class="social-button">
+    <li>
+      <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
+    </li>
+    <li>
+      <span class="fb-share-button"  data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2008%2f0423035842%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
+    </li>
+    <li>
+      <a href="https://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label-counter" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>
+    </li>
+  </ul>
+</div>
+
+<div class="disqus-area">
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "yusukebe-com" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<ul class="pagination">
+  
+  <li class="page-item page-prev">
+    <a href="https://yusukebe.com/posts/2008/0421022341/" class="page-link" aria-label="Previous"><span aria-hidden="true">← Make</span></a>
+  </li>
+  
+  
+  <li class="page-item page-next">
+    <a href="https://yusukebe.com/posts/2008/0425064415/" class="page-link" aria-label="Next"><span aria-hidden="true">CodeRepos にてスーパーハカーがものすごい勢いでコードを書き換えてくれた件 →</span></a>
+  </li>
+  
+</ul>
+
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright yusukebe.com |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-492497-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

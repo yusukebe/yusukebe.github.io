@@ -1,0 +1,17 @@
++++
+Categories = ["tech"]
+Description = " トラックバックを送ると  HTTP error: 403 Throttled  というエラーが出て正常に受け付けない不具合があったので、ogawaさんのMT 3.2日本語版Unofficial Patchを当てて解消しました。 "
+Tags = []
+date = "2005-12-24T20:44:00+09:00"
+title = "トラックバックを正常に受け付けない不具合を解消"
+author = "kamawada"
+archive = ["2005"]
+draft = false
++++
+
+
+<p>トラックバックを送ると</p>
+<pre> HTTP error: 403 Throttled </pre>
+<p>というエラーが出て正常に受け付けない不具合があったので、ogawaさんの<a href="http://as-is.net/blog/archives/001053.html">MT 3.2日本語版Unofficial Patch</a>を当てて解消しました。
+</p>
+

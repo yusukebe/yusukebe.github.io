@@ -1,0 +1,110 @@
++++
+Categories = ["tech"]
+Description = " 先日紹介した、日本のAV女優一覧を取得するPerlモジュール「  Acme::JapaneseAvActress」。Danさんに添削されたことはひとまず置いておいて、これを応用したスクリプトを書いてみました。文章の中にAV女優の名前が含ま"
+Tags = ["Perl"]
+date = "2007-12-07T16:41:00+09:00"
+title = "Perlで文章の中にAV女優の名前が含まれているかを判定する"
+author = "kamawada"
+archive = ["2007"]
+draft = false
++++
+
+
+<p>
+先日紹介した、日本のAV女優一覧を取得するPerlモジュール「
+<a href="http://yusukebe.com/archives/07/12/05/103614.html">
+  Acme::JapaneseAvActress
+</a>
+」。Danさんに添削されたことはひとまず置いておいて、
+これを応用したスクリプトを書いてみました。
+文章の中にAV女優の名前が含まれていたら、そのAV女優オブジェクトを返すというものです。
+テキストを解析するに当たって <a href="http://d.hatena.ne.jp/woremacx/20071205/1196855594">woremacx さんが作った</a>「WebService::YahooJP::TextParse」を使わせていただきました。woremacx ++;
+</p>
+<p>
+例えば「白石ひよりと柚木ティナとおいかわなおはやっぱカワイなぁ」という文章を解析する
+コードはこんな具合です。
+</p>
+<pre class="brush: perl"> #!/usr/bin/perl
+
+use strict;
+use warnings;
+use WebService::YahooJP::TextParse;
+use Acme::JapaneseAvActress;
+use Encode;
+use Data::Dumper;
+
+my $text =
+"白石ひよりと柚木ティナとおいかわなおはやっぱカワイなぁ";
+
+my $config  = { appid =&gt; "" };
+my $ma      = WebService::YahooJP::TextParse-&gt;new(%$config);
+my $actress = Acme::JapaneseAvActress-&gt;new(
+    {
+        'cache_root'      =&gt; '/tmp/avactress',
+        'default_expires' =&gt; '7days',
+    }
+);
+$actress-&gt;get;
+
+my $iter  = $ma-&gt;analysis($text);
+my @temp = ("","");
+my @actress;
+while ( $iter-&gt;hasNext ) {
+    my $word = $iter-&gt;getNext();
+    my $name = $temp[0] . $word-&gt;{surface};
+    my $yomi = $temp[1] . $word-&gt;{reading};
+    utf8::encode($name);
+    utf8::encode($yomi);
+    if ( $actress-&gt;name($name) ) {
+        push( @actress, $actress-&gt;name($name) );
+    }
+    elsif ( $actress-&gt;yomi($yomi) ) {
+        push( @actress, $actress-&gt;yomi($yomi) );
+    }
+    $temp[0]  = $word-&gt;{surface};
+    $temp[1]  = $word-&gt;{reading};
+}
+
+print Dumper( \@actress );
+
+ </pre>
+<p>
+結果は
+</p>
+<pre class="brush: perl"> yusuke@com:~/work/ero$ perl textparse.pl
+$VAR1 = [
+          bless( {
+                   'name' =&gt; '白石ひより',
+                   'yomi' =&gt; 'しらいし ひより',
+                   'initial' =&gt; 'し',
+                   'year' =&gt; '2002'
+                 }, 'Acme::JapaneseAvActress::Actress' ),
+          bless( {
+                   'name' =&gt; '柚木ティナ',
+                   'yomi' =&gt; 'ゆずき てぃな',
+                   'initial' =&gt; 'ゆ',
+                   'year' =&gt; '2005'
+                 }, 'Acme::JapaneseAvActress::Actress' ),
+          bless( {
+                   'name' =&gt; '及川奈央',
+                   'yomi' =&gt; 'おいかわ なお',
+                   'initial' =&gt; 'お',
+                   'year' =&gt; '2000'
+                 }, 'Acme::JapaneseAvActress::Actress' )
+        ];
+
+ </pre>
+<p>
+とちゃんと返ってきます。
+ちょっと、ひらがなの場合だとテキスト解析の方が細かく区切りすぎちゃって、
+正しく抽出できないところがあるのは勘弁。
+ついでにこのコードを流量して、
+Webで試せるサイトも作りました。子供の名前をつけるときにAV女優の名前とかぶらないようにしたい場合とかに使ってください。
+</p>
+<ul>
+  <li><a href="http://pulpsite.net/avcheck/">文章の中にAV女優の名前が含まれているかを判定するよ</a></li>
+</ul>
+<p>
+ところで、このコードは俺が本当に作りたいサービスの布石でしかない。
+</p>
+

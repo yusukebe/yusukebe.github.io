@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Catalystで作る占いアプリ！ - ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="Catalystで作る占いアプリ！" />
+<meta property="og:description" content=" Perlで何かしらのアプリケーションを作りたい！という要望の中にはWebアプリケーションという選択が多く含まれています。ただ、Webアプリケーションを始めるのにいいキッカケが最近Web上のドキュメンに無い気がします。そこで、僕が一番最初に" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yusukebe.com/posts/2010/0702035550/" />
+<meta property="og:image" content="https://yusukebe.com/icons/myicon.png"/>
+<meta property="article:published_time" content="2010-07-02T12:55:00+09:00" />
+<meta property="article:modified_time" content="2010-07-02T12:55:00+09:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://yusukebe.com/icons/myicon.png"/>
+
+<meta name="twitter:title" content="Catalystで作る占いアプリ！"/>
+<meta name="twitter:description" content=" Perlで何かしらのアプリケーションを作りたい！という要望の中にはWebアプリケーションという選択が多く含まれています。ただ、Webアプリケーションを始めるのにいいキッカケが最近Web上のドキュメンに無い気がします。そこで、僕が一番最初に"/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
+	
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://yusukebe.com/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper post">
+		<div class="header">
+	<h1 class="site-title"><a href="https://yusukebe.com/">ゆーすけべー日記</a></h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/yusukebe" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/yusukebe" title="Twitter"><i data-feather="twitter"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post-header">
+			<h1 class="title">Catalystで作る占いアプリ！</h1>
+			<div class="meta">Posted at &mdash; Jul 2, 2010</div>
+		</div>
+
+		<div class="markdown post-body">
+			
+
+<p>
+Perlで何かしらのアプリケーションを作りたい！という要望の中にはWebアプリケーションという選択が多く含まれています。
+ただ、Webアプリケーションを始めるのにいいキッカケが最近Web上のドキュメンに無い気がします。
+そこで、僕が一番最初に手にして今でも使っている、Web Application Framework = WAF の
+Catalyst を例に紹介しましょう。
+Catalystに限らず WAF はMVCモデルを採用しているものがだいたいなのでその概念は知っておいた方がいいかもしれません。が、習うより慣れろの部分もあるので今回は例として占いアプリを作ってみます。
+</p>
+
+<h4>1. Catalystをインストールする</h4>
+<p>
+おそらく今回の行程でこれが一番難しいですw
+CPANシェル、もしくは cpanminus 等を使って適当な場所にインストールしてください。
+依存モジュールが多いので時間がかかります。コーヒーを用意しましょう。
+</p>
+
+<pre class="brush: perl"> $ cpanm Catalyst
+ </pre>
+
+<br>
+<h4>2. ひな形を作る</h4>
+<p>
+見事インストールできたら catalyst.pl コマンドが使えます。
+今回はシンプルに「Uranai」という名前でアプリを作ります。
+</p>
+
+<pre class="brush: perl"> $ catalyst.pl Uranai
+ </pre>
+<br>
+
+<h4>3. テストサーバを起動する</h4>
+<p>
+Catalyst にはテスト用のサーバが付属しています。-r オプションは更新ファイルがあったら再起動、
+-d オプションはデバグモードにするという意味です。たぶん。
+</p>
+
+<pre class="brush: perl"> $ cd Uranai/
+$ ./script/uranai_server.pl -r -d
+ </pre>
+<br>
+
+<h4>4. 確認する</h4>
+<p>
+デフォルトではそのホストの3000番ポートで起動します。ブラウザから確認して、
+かっこいいロゴ画面がでるのを確認しましょう。
+</p>
+<blockquote>
+<a href="http://localhost:3000/">http://localhost:3000/</a>
+</blockquote>
+<br>
+
+<h4>5. Viewクラスを作る</h4>
+
+<p>
+さて、オリジナルのHTMLを表示したいものです。Viewと呼ばれる表示系のクラスを作ります。
+
+</p>
+<pre class="brush: perl"> $ ./script/uranai_create.pl view TT TT
+ </pre>
+<p>
+そして、lib/Uranai/Controller/Root.pm の index メソッドを以下のように書き換えると、
+自然とそのパスに応じてテンプレートファイルが呼び出されるようになります。
+この場合は index.tt というファイルです。
+</p>
+
+<pre class="brush: perl"> sub index :Path :Args(0) {
+    my ( $self, $c ) = @_;
+}
+ </pre>
+<p>
+index.tt が無いので作ります。
+今回の占いアプリはフォームに名前を入れてもらうとそれをハッシュ関数というものに渡して、
+占いの結果からその名前に対応するものを表示するページへ遷移するという仕様になっています。
+なのでフォームを書き書きします。
+</p>
+
+<pre class="brush: perl"> &lt;!-- root/index.tt --&gt;
+
+&lt;h1&gt;Uranau&lt;/h1&gt;
+
+&lt;form action="[% c.uri_for('/uranau') %]" method="get"&gt;
+    &lt;input type="text" name="name" /&gt;
+    &lt;input type="submit" value="占う" /&gt;
+&lt;/form&gt;
+ </pre>
+
+<p>
+ついでに、結果表示のテンプレートも書いちゃいます。
+今は何書いてるか分からなくてもそのうちわかります。
+ちなみにテンプレートエンジンはTemplate-Toolkitというものを今回は使っているので、
+そのドキュメントを見るといろいろな応用の仕方がわかりますね。
+</p>
+
+<pre class="brush: perl"> &lt;!-- root/uranau.tt --&gt;
+
+&lt;h1&gt;Result&lt;/h1&gt;
+
+&lt;p&gt;[% c.req.param('name') | html %]さん、[% result | html %]&lt;/p&gt;
+ </pre>
+<br>
+
+<h4>6. モデルを作る</h4>
+
+<p>
+次に実際に占いのロジックが走るモデルを作ります。
+</p>
+<pre class="brush: perl"> $ ./script/uranai_create.pl model Uranai
+ </pre>
+<p>
+以下がひな形で作られたものを改造したその占いクラスなのですが、
+use Moose; なんてしてるものですからわかりにくいかもですね。
+ようは結果のテキストが入ってるリストを定義して、
+uranauメソッドでは名前を受け取ってハッシュ関数に渡して、返却された値に対応する
+リストの要素を返すとしてます。
+</p>
+<pre class="brush: perl"> package Uranai::Model::Uranai;
+use Moose;
+use namespace::autoclean;
+use Encode;
+use utf8;
+extends 'Catalyst::Model';
+
+has 'lists' =&gt; (
+    is      =&gt; 'ro',
+    isa     =&gt; 'ArrayRef',
+    default =&gt; sub {
+        [
+            qw/あなたは結婚できません。
+              あなたは不幸に会います。
+              あなたは貧乏になります。
+              あなたは事故にあいます。
+              あなたは死にます。
+              /
+        ];
+    },
+    auto_deref =&gt; 1,
+);
+
+sub uranau {
+    my ($self, $name ) = @_;
+    my @lists = $self-&gt;lists;
+    my $number = $self-&gt;get_number( $name, $#lists + 1 );
+    return encode_utf8( $lists[$number] );
+}
+
+sub get_number {
+    my ($self, $str, $max) = @_;
+    my $num = 0;
+    $num += ord( $_ ) for split //, $str;
+    return $num % $max;
+}
+
+__PACKAGE__-&gt;meta-&gt;make_immutable;
+
+1;
+
+ </pre>
+<br>
+<p>
+ちなみにハッシュ関数とはある値を与えると決まってある違う値が戻るという関数です。
+たぶん。
+</p>
+
+<h4>7. Controllerに追加する</h4>
+
+<p>
+最後に実際に占いの結果を見せる、<a href="http://localhost:3000/uranau">http://localhost:3000/uranau</a>
+というページを作ります。
+先ほどの Root.pm に uranau メソッドを作ります。アトリビュートという特殊なもので Local と指定しています。ここ、なんて書くかによって挙動変わりますので、ドキュメントで確認してくださいね。
+</p>
+<pre class="brush: perl"> 
+# lib/Uranai/Controller/Root.pm
+
+sub uranau :Local {
+    my ( $self, $c ) = @_;
+    my $name = $c-&gt;req-&gt;param('name');
+    unless( $name ) {
+        $c-&gt;forward('/default');
+        return;
+    }
+    my $result = $c-&gt;model('Uranai')-&gt;uranau( $name );
+    $c-&gt;stash-&gt;{result} = $result;
+}
+ </pre>
+<p>
+$c-&gt;req-&gt;param('name') でクエリパラメータを取得し、もし入ってなければ default というメソッドへ飛ばし、404を出しています。
+そして上記のモデル Uranai さんを呼び出すには $c-&gt;model('Uranai') として結果をもらってます。
+$c-&gt;stash-&gt;{result} ってのでテンプレートに値が渡るんですね。
+</p>
+<p>
+はい！できました！
+スクリーンショットはこれ！
+</p>
+<p>
+<img alt="cat" class="at-xid-6a0133f4781589970b015435b6f69b970c" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015435b6f69b970c-pi.jpg>
+</p>
+<p>
+<img alt="cat" class="at-xid-6a0133f4781589970b015435b6f6ac970c" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015435b6f6ac970c-pi.jpg>
+</p>
+<p>
+Enjoy Catalyst!!
+</p>
+<br>
+<div>
+<div style="float:left"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4844328654/kamawada-22/"><img alt="PerlフレームワークCatalyst完全入門" class="at-xid-6a0133f4781589970b015435b6f6b6970c" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015435b6f6b6970c-pi.jpg style="border:none;"></a></div>
+<div style="float:left;margin-left:15px;">
+<div style="font-size:12pt"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4844328654/kamawada-22/">PerlフレームワークCatalyst完全入門</a></div>
+<div style="font-size:7pt;font-family:verdana;">posted with <a href="http://yusukebe.com/b/amazon/search/">yusukebe.com::AmazonSearch</a> on 2010.7.2</div>
+<div style="font-size:10pt;">
+<ul style="list-style-type:none;padding:0;">
+<li>山田 祥寛  </li>
+<li>単行本（ソフトカバー） / インプレスジャパン </li>
+<li>Amazon 売り上げランキング: 180030</li>
+</ul>
+<a href="http://www.amazon.co.jp/Perl%E3%83%95%E3%83%AC%E3%83%BC%E3%83%A0%E3%83%AF%E3%83%BC%E3%82%AFCatalyst%E5%AE%8C%E5%85%A8%E5%85%A5%E9%96%80-%E5%B1%B1%E7%94%B0-%E7%A5%A5%E5%AF%9B/dp/4844328654%3FSubscriptionId%3D0VEY2A9SVSFB81NQ9HG2%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D4844328654">Amazon.co.jpで詳細を見る</a>
+</div>
+</div>
+<div style="clear:left;"></div>
+</div>
+<br>
+<div>
+<div style="float:left"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4798119172/kamawada-22/"><img alt="モダンPerl入門 (CodeZine BOOKS)" class="at-xid-6a0133f4781589970b015435b6f46f970c" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015435b6f46f970c-pi.jpg style="border:none;"></a></div>
+<div style="float:left;margin-left:15px;">
+<div style="font-size:12pt"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4798119172/kamawada-22/">モダンPerl入門 (CodeZine BOOKS)</a></div>
+<div style="font-size:7pt;font-family:verdana;">posted with <a href="http://yusukebe.com/b/amazon/search/">yusukebe.com::AmazonSearch</a> on 2010.7.2</div>
+<div style="font-size:10pt;">
+<ul style="list-style-type:none;padding:0;">
+<li>牧 大輔  </li>
+<li>大型本 / 翔泳社 </li>
+<li>Amazon 売り上げランキング: 60987</li>
+</ul>
+<ul style="list-style-type:none;padding:0;"><li>Amazon おすすめ度の平均: <img alt="4.0" class="at-xid-6a0133f4781589970b014e8bd727e1970d" src="https://yusukebe.com/archives/.a/6a0133f4781589970b014e8bd727e1970d-pi.gif style="margin:0;"><ul style="list-style-type:none;padding-left:0;">
+<li>
+<img alt="4" class="at-xid-6a0133f4781589970b014e8bd727e1970d" src="https://yusukebe.com/archives/.a/6a0133f4781589970b014e8bd727e1970d-pi.gif style="margin:0;"> これがいつまで 「モダン」なのか</li>
+<li>
+<img alt="3" class="at-xid-6a0133f4781589970b015391e3783b970b" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015391e3783b970b-pi.gif style="margin:0;"> 日曜Pgには難しいです。</li>
+<li>
+<img alt="5" class="at-xid-6a0133f4781589970b015435b6d28e970c" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015435b6d28e970c-pi.gif style="margin:0;"> perl経験者は読んで損はしない</li>
+<li>
+<img alt="5" class="at-xid-6a0133f4781589970b015435b6d28e970c" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015435b6d28e970c-pi.gif style="margin:0;"> Perl中級者におすすめしたい</li>
+</ul>
+</li></ul>
+<a href="http://www.amazon.co.jp/%E3%83%A2%E3%83%80%E3%83%B3Perl%E5%85%A5%E9%96%80-CodeZine-BOOKS-%E7%89%A7-%E5%A4%A7%E8%BC%94/dp/4798119172%3FSubscriptionId%3D0VEY2A9SVSFB81NQ9HG2%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D4798119172">Amazon.co.jpで詳細を見る</a>
+</div>
+</div>
+<div style="clear:left;"></div>
+</div>
+
+
+		</div>
+
+		<div class="post-tags">
+			
+				
+					<nav class="nav tags">
+							<ul class="flat">
+								
+								<li><a href="/tags/perl">Perl</a></li>
+								
+							</ul>
+					</nav>
+				
+			
+		</div>
+        <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v5.0&appId=233306523373884&autoLogAppEvents=1"></script>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+
+<div class="social-button-area">
+  <ul class="social-button">
+    <li>
+      <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
+    </li>
+    <li>
+      <span class="fb-share-button"  data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2010%2f0702035550%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
+    </li>
+    <li>
+      <a href="https://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label-counter" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>
+    </li>
+  </ul>
+</div>
+
+<div class="disqus-area">
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "yusukebe-com" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<ul class="pagination">
+  
+  <li class="page-item page-prev">
+    <a href="https://yusukebe.com/posts/2010/0628135031/" class="page-link" aria-label="Previous"><span aria-hidden="true">← Twitterで話題の写真をみつけるならTwib！</span></a>
+  </li>
+  
+  
+  <li class="page-item page-next">
+    <a href="https://yusukebe.com/posts/2010/0705015455/" class="page-link" aria-label="Next"><span aria-hidden="true">Twib(地味に)アップデート！ →</span></a>
+  </li>
+  
+</ul>
+
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright yusukebe.com |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-492497-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

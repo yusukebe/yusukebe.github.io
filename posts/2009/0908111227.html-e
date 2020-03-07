@@ -1,0 +1,90 @@
++++
+Categories = ["tech"]
+Description = " めんどくさいの箇条書き。   YAPC::Asia 2009 前夜祭 出張 Yokohama.pm の参加希望者がもうすぐ100人!  ATND で募集してるので、そのページを再読み込みしまくり  それ AnyEvent::Feed と "
+Tags = ["Perl"]
+date = "2009-09-08T20:12:00+09:00"
+title = "ATNDの参加状況をIRCのチャンネルに投稿するbotをAnyEvent::*で作ってみた"
+author = "kamawada"
+archive = ["2009"]
+draft = false
++++
+
+
+<p>
+めんどくさいの箇条書き。
+</p>
+<ol>
+<li>YAPC::Asia 2009 前夜祭 出張 Yokohama.pm の参加希望者がもうすぐ100人!</li>
+<li>ATND で募集してるので、そのページを再読み込みしまくり</li>
+<li>それ AnyEvent::Feed と AnyEvent::IRC::Client でほぼリアルタイムに #yokohama.pm に流せばいいんじゃね？</li>
+<li>作り始める</li>
+<li>楽しくなってくる</li>
+<li>できたー</li>
+<li>#yokohama.pm に投入</li>
+<li>既に100人定員に達している</li>
+<li>いまさらすぐるw</li>
+</ol>
+<p>
+というネタ。
+</p>
+<p>
+ソース。某 typostar さんによれば Superfeedr 使うと polling しなくていいらしいお！
+</p>
+<pre class="brush: perl"> #!/usr/bin/perl
+use strict;
+use warnings;
+use AnyEvent::Feed;
+use AnyEvent::IRC::Client;
+use AnyEvent;
+use Encode;
+ 
+my $channel = "#yokohama.pm";
+my $cv = AnyEvent-&gt;condvar;
+ 
+my $pc = AnyEvent::IRC::Client-&gt;new;
+$pc-&gt;reg_cb(
+    connect =&gt; sub {
+        my ( $pc, $err ) = @_;
+        if ( defined $err ) {
+            print "Couldn't connect to server: $err\n";
+        }
+    },
+    registered =&gt; sub {
+        my ($self) = @_;
+        print "registered!\n";
+        $pc-&gt;enable_ping(60);
+    },
+    disconnect =&gt; sub {
+        print "disconnected: $_[1]!\n";
+    }
+);
+$pc-&gt;send_srv( "JOIN", $channel );
+$pc-&gt;send_chan( $channel, "NOTICE", $channel, "hi" );
+$pc-&gt;connect( "irc.freenode.net", 6667,
+    { nick =&gt; 'atnd_bot', user =&gt; 'atnd_bot', real =&gt; 'ATND bot' } );
+ 
+my $feed = AnyEvent::Feed-&gt;new(
+    url =&gt; "http://atnd.org/events/show/1304.rss",
+    interval =&gt; 60 * 1,
+    on_fetch =&gt; sub {
+        my ( $fee, $ent, $feed, $er ) = @_;
+        if ( defined $er ) {
+            warn "ERROR: $er\n";
+            $cv-&gt;send;
+            return;
+        }
+        my @msg;
+        for (@$ent) {
+            my $str = $_-&gt;[1]-&gt;content-&gt;body;
+            $str =~ s/\n//gm;
+            $str =~ s/\s+/ /gm;
+            $str = encode( 'utf8', $_-&gt;[1]-&gt;title . $str );
+            print "$str\n";
+            $pc-&gt;send_chan( $channel, "NOTICE", $channel, $str );
+        }
+    }
+);
+ 
+$cv-&gt;recv;
+ </pre>
+

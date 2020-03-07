@@ -1,0 +1,97 @@
++++
+Categories = ["tech"]
+Description = " Amazon Web Services＝AWSの話。実運用で使うかどうかは検討中なんだけど、とあるELBにぶら下がっているEC2インスタンスを自動的に取得して、それに対してデプロイ等を行うってのをPerlでやってみた。デプロイツールとして"
+Tags = ["Perl", "AWS"]
+date = "2013-05-20T11:07:00+09:00"
+title = "ELB配下のEC2インスタンスにデプロイをする"
+author = "kamawada"
+archive = ["2013"]
+draft = false
++++
+
+
+<p>Amazon Web Services＝AWSの話。実運用で使うかどうかは検討中なんだけど、とあるELBにぶら下がっているEC2インスタンスを自動的に取得して、それに対してデプロイ等を行うってのをPerlでやってみた。デプロイツールとしてCinnamonを使い、ELBやEC2情報を取得するのにAWS::CLIWrapperを利用した。</p>
+
+<p>awscliのPerlラッパーであるAWS::CLIWrapperを使うにはそもそも「awscli」をインストールしなくてはいけないので入れる。</p>
+
+<pre> % sudo eazy_install awscli
+ </pre>
+
+<p>これでawsコマンドが使えるようになるんだけど、補完が効いた方がいいので、設定する。zshの場合はちょっと工夫が必要で以下のようにする。どのファイルを扱うかはお好きなように。</p>
+
+<pre> % mkdir ~/.zsh &amp;&amp; cd ~/.zsh
+% wget "https://raw.github.com/aws/aws-cli/develop/bin/aws_zsh_completer.sh"
+% echo "source ~/.zsh/aws_zsh_completer.sh" &gt;&gt; ~/.zshrc
+% source ~/.zshrc
+ </pre>
+
+<p>ターミナルで素早くコマンドを試したい時にはこのawsコマンドを使う。</p>
+
+<p>さて、ここからが本題。デプロイ先はEC2のPublic DNS Nameを利用すると仮定し、そのリストをAWS::CLIWrapperを使って取得し、Cinammonに渡せばいい。流れは以下の通り。</p>
+
+<ul>
+<li>elb describe-load-balancers を実行してターゲットとするELBの情報を一覧で取得する</li>
+<li>ELBの情報には、それぞれ組み付いているEC2インスタンスのIDのみが入っている</li>
+<li>ecs describe-instances を実行してEC2の情報を一覧で取得する</li>
+<li>一覧をループで回して先ほどのELBと関連しているEC2のIDと比較する</li>
+<li>マッチしたらそのPublic DNS Nameを配列リファレンスに入れる</li>
+<li>Cinnamonの「Lazily evaluated」機能を使ってそのホスト情報でデプロイさせる</li>
+</ul>
+
+
+<p>動作可能性の高いコードは以下の通り。具体的な設定をしたら動きました。</p>
+
+<pre> use AWS::CLIWrapper;
+use Cinnamon::DSL;
+use YAML;
+
+my $aws = AWS::CLIWrapper-&gt;new();
+
+role api =&gt; sub {
+    my $res = $aws-&gt;elb('describe-load-balancers');
+    die Dump $AWS::CLIWrapper::Error unless $res;
+    my $elb;
+    for my $r (@$res) {
+        if ( $r-&gt;{LoadBalancerName} eq 'myapp-test-elb' ) {
+            $elb = $r;
+        }
+    }
+    die get('target_elb_name') . " is not found." unless $elb;
+
+    $res = $aws-&gt;ec2('describe-instances');
+    die Dump $AWS::CLIWrapper::Error unless $res;
+    my $hosts;
+    for my $r ( @{ $res-&gt;{Reservations} } ) {
+        for my $i ( @{ $r-&gt;{Instances} } ) {
+            for my $elb_instance ( @{ $elb-&gt;{Instances} } ) {
+                if ( $i-&gt;{InstanceId} eq $elb_instance-&gt;{InstanceId} ) {
+                    push @$hosts, $i-&gt;{PublicDnsName};
+                }
+            }
+        }
+    }
+    return $hosts;
+  },
+{ deploy_to =&gt; '/home/user/www/myapp', };
+
+task deploy =&gt; {
+    update =&gt; sub {
+        my ( $host, @args ) = @_;
+        my $deploy_to = get('deploy_to');
+        remote {
+            run "cd $deploy_to &amp;&amp; git fetch origin &amp;&amp; git checkout -q origin/master &amp;&amp; git submodule update --init";
+        }
+        $host;
+    },
+};
+ </pre>
+
+<h3>参考リンク</h3>
+
+<ul>
+<li><a href="http://d.hatena.ne.jp/hirose31/20130121/1358740081#">aws-cliのラッパーモジュールを作りました - AWS::CLIWrapper - (ひ)メモ</a></li>
+<li><a href="http://shibayu36.hatenablog.com/entry/2013/02/24/203754">Kansai.pmに行ってCinnamonというデプロイツールについて発表しました - $shibayu36-&gt;blog;</a></li>
+<li><a href="http://qiita.com/items/0131c542a8951de557fd">CapistranoでELB配下のEC2インスタンスを取得してデプロイ #Ruby #AWS - Qiita [キータ]</a></li>
+</ul>
+
+

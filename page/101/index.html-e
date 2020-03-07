@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="generator" content="Hugo 0.63.2" />
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="alternate" type="application/rss+xml" href="https://yusukebe.com/index.xml" title="ゆーすけべー日記" />
+	<meta property="og:title" content="ゆーすけべー日記" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://yusukebe.com/" />
+<meta property="og:image" content="https://yusukebe.com/icons/myicon.png"/>
+<meta property="og:updated_time" content="2020-03-06T15:46:50+09:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://yusukebe.com/icons/myicon.png"/>
+
+<meta name="twitter:title" content="ゆーすけべー日記"/>
+<meta name="twitter:description" content=""/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
+	
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://yusukebe.com/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+  <div class="container wrapper">
+	<div class="header">
+	<h1 class="site-title"><a href="https://yusukebe.com/">ゆーすけべー日記</a></h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/yusukebe" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/yusukebe" title="Twitter"><i data-feather="twitter"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+	<div class="recent-posts section">
+	  <h2 class="section-header">
+		Recent posts
+	  </h2>
+	  <div class="posts">
+		
+		
+		
+		<div class="post">
+		  <div class="meta">Mar 24, 2006</div>
+		  <a class="title" href="/posts/2006/0324062702/">おっしゃ</a> &mdash;
+		  <span class="description">
+			
+			 おっしゃ、サブミッション完了！次は明日からの合宿準備だ 
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Mar 23, 2006</div>
+		  <a class="title" href="/posts/2006/0322224103/">今日の桃</a> &mdash;
+		  <span class="description">
+			
+			   俺の部屋から望める桃の木。つぼみが出だして、フライングで咲きそうなのもちらほら。  梅の次は桃、そして桜だ。       
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Mar 22, 2006</div>
+		  <a class="title" href="/posts/2006/0322093534/">コレステロール値が低いと言われた</a> &mdash;
+		  <span class="description">
+			
+			   「コレステロール値が高い」なんてというのは世間的によく言われるようだけど、  俺はどうやら「コレステロール値が低い」らしい。ちょっと前に血液検査をしたんだけど、基準値を下回ってる･･･。  血糖値も低い。逆に心配されてしまった。  あ
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Mar 21, 2006</div>
+		  <a class="title" href="/posts/2006/0321104330/">WBC優勝、やった</a> &mdash;
+		  <span class="description">
+			
+			   都合により試合見れなくてハイライトも見てないけど、WBC(ワールド・ベースボール・クラシック)日本代表優勝！  やった。世代的には俺より1個上の松坂MVP、おめでとう。  いやー最近スポーツ面白いな。来週はフィギュアとチャンピオンズリ
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Mar 20, 2006</div>
+		  <a class="title" href="/posts/2006/0320132713/">全身写真</a> &mdash;
+		  <span class="description">
+			
+			   俺の全身写真が欲しいと、熱烈なファン(ウソ)からリクエストがあったので、  親父に頼んで撮ってもらった。          右側の写真、最初庭で撮ったら緑のパーカーを着て緑の眼鏡をかけてるもんだから周りと同化しちゃった。  しっかし、
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Mar 19, 2006</div>
+		  <a class="title" href="/posts/2006/0319083749/">高校同窓会、大切な仲間と一人の先輩</a> &mdash;
+		  <span class="description">
+			
+			   昨日、年に2回くらいやってる高校のクラスの同窓会に行ってきた。  参加者は担任(であり同じ高校の先輩)を含めて、2次会あわせ15人ほど。  男性陣が少なかったのが少々残念だが、こうした同窓会は毎回参加する毎に楽しくなっていく気がする。
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Mar 19, 2006</div>
+		  <a class="title" href="/posts/2006/0319060915/">WBC準決勝 韓国に勝利 決勝進出、おたけび響く</a> &mdash;
+		  <span class="description">
+			
+			   福留キタ。ここまで勝ち残ったのはほんと幸運だが、やはり日本が勝つのは嬉しい。  しかも、韓国には3度目の正直での勝利、そして決勝進出。  イチローが前回の敗退で野球人生初めてめちゃくちゃになるまで飲んだというエピソードや、  今回の試
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Mar 17, 2006</div>
+		  <a class="title" href="/posts/2006/0317113552/">「裕介 幼少期」8mmフィルム映像に浸る</a> &mdash;
+		  <span class="description">
+			
+			   以前発掘した子供の頃の俺を撮影した8mmフィルムを、  外注でDVテープという形式に変換してもらった。  サービスでテープにタイトルをつけてくれた、「裕介 幼少期」。        どきどきしながらテープの映像を見た。  フィルム独特
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Mar 17, 2006</div>
+		  <a class="title" href="/posts/2006/0317080605/">今日の富士山2</a> &mdash;
+		  <span class="description">
+			
+			   ちょっと何これ、富士山見えるところにいる人は今すぐ見てみて！すごいから。         2006/03/17 18:00撮影 
+			
+		  </span>
+		</div>
+		
+		<div class="post">
+		  <div class="meta">Mar 17, 2006</div>
+		  <a class="title" href="/posts/2006/0317034759/">いくら物が安いとはいえ</a> &mdash;
+		  <span class="description">
+			
+			   昨日事務キチで見かけたTFT 7インチテレビ。  「￥12,800」のところをとんだ勘違いして「￥2,800」だと思い込んでこりゃ買いだ、と朝一で買いに行ってしまった。        PCにつなげて、映像モニター用に使おうと思ったけど
+			
+		  </span>
+		</div>
+		
+		
+
+<ul class="pagination">
+	<li class="page-item page-prev">
+	
+    <a href="/page/100/" class="page-link" aria-label="Previous"><span aria-hidden="true">← Prev page</span></a>
+	
+	</li>
+	<li class="page-item page-next">
+	
+    <a href="/page/102/" class="page-link" aria-label="Next"><span aria-hidden="true">Next page →</span></a>
+	
+	</li>
+</ul>
+
+
+	  </div>
+	</div>
+  </div>
+  <div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright yusukebe.com |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-492497-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

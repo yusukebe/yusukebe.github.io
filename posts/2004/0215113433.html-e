@@ -1,0 +1,22 @@
++++
+Categories = ["tech"]
+Description = " futomi's CGI Cafe - CGI エラー特定の方法  メモ。   #!/usr/bin/perl    print \"test\"; というような簡単なperlでもCGIでアクセスするとInternal Server Erro"
+Tags = []
+date = "2004-02-15T20:34:00+09:00"
+title = "malformed header from script."
+author = "kamawada"
+archive = ["2004"]
+draft = false
++++
+
+
+<p><a href="http://www.futomi.com/lecture/apache/cgierror.html" title="futomi's CGI Cafe - CGI エラー特定の方法">futomi's CGI Cafe - CGI エラー特定の方法</a></p>
+
+<p>メモ。<br>
+</p>
+<pre> #!/usr/bin/perl  </pre>
+
+<p>print "test";<br>
+というような簡単なperlでもCGIでアクセスするとInternal Server Error 500がでる。その原因と解決方法。<br>
+</p>
+

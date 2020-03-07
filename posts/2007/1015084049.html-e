@@ -1,0 +1,143 @@
++++
+Categories = ["tech"]
+Description = "   Erogeekとしてとある実験のため、大量のおっぱいが写った画像ファイルが必要になった。  しかも何千枚という枚数である。  なので、アダルトサイトなどに行って右クリックで保存などという、  ちまちましたやりかたではやってられない。 "
+Tags = ["Perl"]
+date = "2007-10-15T17:40:00+09:00"
+title = "いかにして効率よく大量のおっぱい画像をダウンロードするか"
+author = "kamawada"
+archive = ["2007"]
+draft = false
++++
+
+
+<p>
+  Erogeekとしてとある実験のため、大量のおっぱいが写った画像ファイルが必要になった。
+  しかも何千枚という枚数である。
+  なので、アダルトサイトなどに行って右クリックで保存などという、
+  ちまちましたやりかたではやってられない。
+</p>
+<blockquote>
+  <p>
+    <strong>いかにして効率よく大量のおっぱい画像をダウンロードするか</strong>
+  </p>
+</blockquote>
+<p>
+  とりあえず、俺は後ほど紹介するスクリプトで8000枚近くのおっぱい画像をダウンロードすることに成功した。
+</p>
+<p>
+  <img alt="おっぱい" src="http://kamawada.com/~yusuke/yusukebe/archives/files/071015/oppai02.jpg">
+</p>
+<p>
+  <img alt="おっぱい" class="at-xid-6a0133f4781589970b014e8bd74809970d" src="https://yusukebe.com/archives/.a/6a0133f4781589970b014e8bd74809970d-pi.gif>
+  <img alt="おっぱい" class="at-xid-6a0133f4781589970b014e8bd74833970d" src="https://yusukebe.com/archives/.a/6a0133f4781589970b014e8bd74833970d-pi.gif>
+</p>
+<p>
+  <font size="2">実行している様子</font><br>
+  <img alt="おっぱい" class="at-xid-6a0133f4781589970b014e8bd74845970d" src="https://yusukebe.com/archives/.a/6a0133f4781589970b014e8bd74845970d-pi.gif>
+</p>
+<p>
+  詳しい解説はしませんゆえ、コードみてください。
+  あとこのスクリプトを使ってなんか問題が起こっても俺は何も責任を負いませんよー。
+  他にもっと効率よく大量のおっぱい画像をダウンロードできる方いらしたら教えてちょ！
+</p>
+
+<pre class="brush: perl"> #!/usr/bin/perl
+
+use strict;
+use warnings;
+use Yahoo::Search;
+use LWP::UserAgent;
+use Digest::MD5 qw(md5_hex);
+use Path::Class qw(file);
+
+my $query       = "おっぱい";
+my $image_dir   = "./temp";
+my $yahoo_appid = "";
+
+my $start = 0;
+my $num   = 1;
+my $count = 50;
+
+my $ua          = LWP::UserAgent-&gt;new;
+
+while () {
+    my $result_num = search($start);
+    last unless $result_num;
+    $start = $start + $count;
+}
+
+sub search {
+    my $start = shift;
+    my @Results;
+    for my $try (1..100){
+    @Results = Yahoo::Search-&gt;Results(
+                         Image      =&gt; $query,
+                         AppId      =&gt; $yahoo_appid,
+                         Mode       =&gt; 'all',
+                         Start      =&gt; $start,
+                         Count      =&gt; $count,
+                         AllowAdult =&gt; 1,
+                     );
+    last if @Results;
+    sleep 10;
+    warn($@) if $try == 100;
+    }
+    map { fetch($_) } @Results;
+    return $#Results + 1;
+}
+
+sub fetch {
+    my $result = shift;
+    my $head = $ua-&gt;head($result-&gt;Url);
+    my $url;
+    if( $head-&gt;content_type =~ /image/ ){
+    $url = $result-&gt;Url;
+    }else{
+    $url = $result-&gt;ThumbUrl;
+    }
+    my $filename = Digest::MD5::md5_hex($url);
+    my $filepath = file($image_dir , $filename);
+    print "$num DownLoading... $url\n";
+    unless(-f $filepath-&gt;stringify . ".jpg" )
+    {
+    $ua-&gt;get( $url, ":content_file" =&gt; $filepath-&gt;stringify . ".jpg");
+    }
+    $num ++;
+}
+
+ </pre>
+<h4>関連記事</h4>
+<ul>
+<li>
+<a href="http://yusukebe.com/archives/07/10/02/123306.html">Shibuya.pm tech talk #8 で 「リビドー駆動開発によるPlaggerとCatalystを使ったサイト開発」を発表してきました</a>
+</li>
+<li>
+<a href="http://yusukebe.com/archives/07/09/29/170535.html">Erogeek宣言</a>
+</li>
+</ul>
+<h4>参考文献</h4>
+<p></p>
+<div style="float:left"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4621045938/kamawada-22/"><img alt="いかにして問題をとくか" src="http://ecx.images-amazon.com/images/I/21G7TF5B3GL.jpg" style="border:none;"></a></div>
+<div style="float:left;margin-left:15px;">
+<div style="font-size:12pt"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4621045938/kamawada-22/">いかにして問題をとくか</a></div>
+<div style="font-size:7pt;font-family:verdana;">posted with <a href="http://yusukebe.com/b/amazon/search/">yusukebe.com::AmazonSearch</a> on 2007.10.17</div>
+<div style="font-size:10pt;">
+<ul style="list-style-type:none;padding:0;">
+<li>G. ポリア G. Polya 柿内 賢信  </li>
+<li>単行本 / 丸善 (1999/07)</li>
+<li>Amazon 売り上げランキング: 2100</li>
+</ul>
+<ul style="list-style-type:none;padding:0;"><li>Amazon おすすめ度の平均: <img alt="4.5" class="at-xid-6a0133f4781589970b015435b6d28c970c" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015435b6d28c970c-pi.gif style="margin:0;"><ul style="list-style-type:none;padding-left:0;">
+<li>
+<img alt="4" class="at-xid-6a0133f4781589970b014e8bd727e1970d" src="https://yusukebe.com/archives/.a/6a0133f4781589970b014e8bd727e1970d-pi.gif style="margin:0;"> 汎用性の高い問題解決法</li>
+<li>
+<img alt="5" class="at-xid-6a0133f4781589970b015435b6d28e970c" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015435b6d28e970c-pi.gif style="margin:0;"> 「ひらめき」の種明かし</li>
+<li>
+<img alt="4" class="at-xid-6a0133f4781589970b014e8bd727e1970d" src="https://yusukebe.com/archives/.a/6a0133f4781589970b014e8bd727e1970d-pi.gif style="margin:0;"> 丸善はいい仕事をしています</li>
+</ul>
+</li></ul>
+<a href="http://www.amazon.co.jp/gp/product/4621045938%3ftag=kamawada-22%26link_code=xm2%26camp=2025%26dev-t=D3QNAE4JDR26A2">Amazon.co.jpで詳細を見る</a>
+</div>
+</div>
+<div style="clear:left;"></div>
+

@@ -1,0 +1,156 @@
++++
+Categories = ["tech"]
+Description = " 九州・福岡のPerlに興味がある人達。つまり「Perl Mongers」の集まり「 Fukuoka.pm 」のイベントに参加してきました！ってかまだ福岡にいるんですがｗ 鉄が熱いうちにレポート書きますね。概要はこんな感じでした。   20"
+Tags = []
+date = "2013-10-27T02:36:00+09:00"
+title = "福岡のPerl Workshop「Fukuoka.pm#24」に行ってきました！"
+author = "kamawada"
+archive = ["2013"]
+draft = false
++++
+
+
+<p>九州・福岡のPerlに興味がある人達。つまり「Perl Mongers」の集まり「 <strong><a href="http://fukuoka.pm.org/">Fukuoka.pm</a></strong> 」のイベントに参加してきました！ってかまだ福岡にいるんですがｗ 鉄が熱いうちにレポート書きますね。概要はこんな感じでした。</p>
+
+
+
+
+<ul>
+<li>2013年10月26日(土) 開催。ようは昨日！</li>
+<li>会場はBacklogやCacooで有名な <a href="http://www.nulab.co.jp/">ヌーラボさん</a>
+</li>
+<li>14時から18時が各々のトーク発表とそれを聞く形式</li>
+<li>それ以後モツ鍋を含む懇親会！</li>
+<li>今回のテーマは一応「YAPC::Asia 2013レポート」</li>
+</ul>
+
+
+<p><img src="http://33.media.tumblr.com/a9f8ced156234d8c68ae45c57c2bfc5d/tumblr_inline_mvb18xwsVS1qb2ehr.jpg" alt="Fukuoka.pm#24"></p>
+
+
+
+
+<p>今回僕は <strong><a href="http://www.perlassociation.org/">Japan Perl Association = JPA</a></strong> の講師派遣制度の支援を受け参加させていただきました。ありがとうございますm(_ _)m ちなみに東京からはcharsbarさんが参加。さらに某氏のスポンサードが急遽なされたためpapixが臨時参戦しました。</p>
+
+
+
+
+<h3>Fukuoka.pm Workshopについて</h3>
+
+
+
+
+<p>では諸々書きたいことがありますが、まずはイベントのWorkshop自体について。</p>
+
+
+
+
+<p>募集をしていた <a href="http://atnd.org/events/44025">応募ページATND</a> 上の参加人数は14名と都内のイベントと比べてしまうと少人数のものですが、会場のレイアウトも相まっていい雰囲気だったんじゃないかと思います。というのも発表者と参加者の物理的な距離が近い！だからトークの合間合間にラフな質問などが出来て楽しいっす。</p>
+
+
+
+
+<p><img src="http://38.media.tumblr.com/184f74516ea8a5f36ccedb3019d4ac85/tumblr_inline_mvb15pZj2d1qb2ehr.jpg" alt="Fukuoka.pm#24"></p>
+
+
+
+
+<p>charsbarさんにMinillaやモジュールのCPAN化のこまい事について聞いてみたり、ヒラタさん（<a href="https://twitter.com/debility">@debility</a>）のネタに感嘆したり、papixのGPGPUの話にツッコんだりの、コミュニケーションが和やかに出来ましたね。Fukuoka.pmの代表のツル君（<a href="https://twitter.com/d_tsuru">@d_tsuru</a>）が参加人数が少ないことを後ほど嘆いていましたが、個人的にはこの雰囲気。好きです！</p>
+
+
+
+
+<p><img src="http://33.media.tumblr.com/f9f4a77ff1a5b66c0e56fa55483fb2fa/tumblr_inline_mvb15s7DMn1qb2ehr.jpg" alt="papix"></p>
+
+
+
+
+<h3>自分のトーク</h3>
+
+
+
+
+<p>僕は「The master plan of scaling a web application」という気取ったタイトルで最近「ボケて（bokete）」の開発で計画しているWebアプリの構造化について話しました。資料はこちらです。</p>
+
+
+
+
+<iframe src="//www.slideshare.net/slideshow/embed_code/key/GN26eB9MninijR" width="425" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
+
+
+<p> </p>
+<div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/yusukebe/fukuokapm24" title="The master plan of scaling a web application" target="_blank">The master plan ofscaling a web application</a> </strong> from <strong><a href="//www.slideshare.net/yusukebe" target="_blank">Yusuke Wada</a></strong> </div>
+
+<p>要約すると、今まで僕一人が担当していたバックエンドのシステム開発を分業するために、コアのロジックAPIをしっかり整備して、Webやモバイル・アプリを含めたクライアントは全てそこを経由させてスコープを分けるという施策です。そのために認証認可についてはOAuth、情報のやりとりに関してはJSON-RPCという既に世の中に存在する仕様を利用します。CPANにはOAuth::Lite2及びJSON::RPCモジュールという使いやすいライブラリがもうあるので、それをラップする形で上位のフレームワークをつくってる話をしました。</p>
+
+
+
+
+<p>これがウマくイケばというかほぼほぼ出来てるのですが、例えばWebアプリのコントローラーではこのような簡略化した記述でWeb APIをコールすることが可能です。</p>
+
+
+
+
+<pre> # presudo code
+get '/boke/recent' =&gt; sub {
+    my $self = shift;
+    my $result = $self-&gt;call_api({
+        method =&gt; ‘get_recent_bokes’,
+        params =&gt; { limit =&gt; 10 }
+    });
+    $self-&gt;stash-&gt;{entries} = $result-&gt;{entries};
+    $self-&gt;render();
+};
+ </pre>
+
+
+
+
+<p>資料を見てくれたsongmuさんからの意見をもらって、APIのメソッドとパラメータを自動的にドキュメンテーションすれば楽出来きて面白いなーなんて思ってます。</p>
+
+
+
+
+<h3>福岡について</h3>
+
+
+
+
+<p>実は僕。福岡のみならず九州に来るのが今回初めてでした。イベントが行われる前日の金曜から＝10月25日からいるのですが、だいぶ「福岡サイコー！」とか思うようになってきましたｗ</p>
+
+
+
+
+<p><img src="http://33.media.tumblr.com/95f71cecaad22dbf27f404b58a4bc5eb/tumblr_inline_mvb2kn1DmI1qb2ehr.jpg" alt="ヌーラボ付近にて"></p>
+
+
+
+
+<p>金曜日は早めに来ていて、夜、中洲あたりをフラフラしていたら突然ヌーラボのはやしのよっちゃん（<a href="https://twitter.com/hayashi_77">@hayashi_77</a>）に声をかけていただいて「特にIT系に限らない」人達との飲みに合流しました。話を聞くと、どうもここ独特の「飲み友達文化」みたいなのがあるっぽくて「屋台で飲んでたら友達になった」みたいなケースが多いっぽいっすね。また、個人的に、興味深い話としましてー、いわゆる「独身女性」の方々の割合が福岡は異常に高いらしく、某氏がとある街コンみたいなものを主催した際に男性陣に対して3倍の女性からの応募があったとかなかったとか… 楽しそうでいいですね ＾＾</p>
+
+
+
+
+<p>もちろん言われている通り、飯がウマい！福岡はラーメンの印象しかなかったのですが、魚がとりわけウマくて感動しました。</p>
+
+
+
+
+<p><img src="http://38.media.tumblr.com/33d1995fa20aefe54eea23b2985b0a09/tumblr_inline_mvb2jj6OQi1qb2ehr.jpg" alt="福岡の魚"></p>
+
+
+
+
+<p>そして、福岡は規模感とか物理的な大きさがちょうどよくて、東京で言う「丸の内、銀座、歌舞伎町、渋谷…」の機能がほどよく狭い範囲に集中しているのが嬉しいっすね。</p>
+
+
+
+
+<h3>まとめ</h3>
+
+
+
+
+<p>福岡の魅力を把握したので今後もFukuoka.pmのイベントをキッカケとして遊びに行きたいなーなんて思います。その土地の雰囲気を楽しみつつ、Perlの話が出来るのは楽しいことです。以上、<a href="http://www.perlassociation.org/">JPA</a>、代表のツル君含めFukuoka.pmの皆様、ありがとうございます！まだ帰りのフライトまでは時間があるのでギリギリまで楽しみます。</p>
+
+

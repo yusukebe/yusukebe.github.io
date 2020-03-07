@@ -1,0 +1,147 @@
++++
+Categories = ["tech"]
+Description = " #plagger-jaにて  15:09 (Yappo) Plaggerファウンデーションにyusukebeさんの会社から寄付があるという都市伝説    A☆RI☆U☆RU　寄付ならずとも何かの形で還元したい。  そこで、有名エロ動画配信"
+Tags = ["Perl"]
+date = "2007-09-06T22:59:00+09:00"
+title = "「人として恥軸がぶれている」"
+author = "kamawada"
+archive = ["2007"]
+draft = false
++++
+
+
+<p>#plagger-jaにて</p>
+<pre> 15:09 (Yappo) Plaggerファウンデーションにyusukebeさんの会社から寄付があるという都市伝説
+ </pre>
+<p>
+  <strong>A☆RI☆U☆RU</strong>　寄付ならずとも何かの形で還元したい。
+  そこで、有名エロ動画配信サイトをほぼ網羅した、PlaggerのFilter::EntryFullTextのYAMLがあることを発言。
+</p>
+<pre> 20:10 (yusukebe) $ ls
+20:10 (yusukebe) 1046034.yaml cutie82.yaml g-area.yaml omany.yaml sukiyakiav.yaml
+20:10 (yusukebe) 10musume.yaml dmm_monthly.yaml h4610.yaml onacle.yaml tokyo-247.yaml
+20:10 (yusukebe) 1pondo.yaml duga.yaml himemix.yaml peachbomb.yaml tora-tora-tora.yaml
+20:10 (yusukebe) 99bb.yaml eroerooyaji.yaml ittele.yaml r-shodo.yaml
+20:10 (yusukebe) ademusume.yaml eroseven.yaml movie-girls.yaml s-angels.yaml
+20:10 (yusukebe) caribbeancom.yaml exotica-xxx.yaml newplay-st.com.yaml smooth-movie.yaml
+20:10 (hsbt) うは
+20:10 (hsbt) 網羅してるな
+20:10 (otsune) 夢が詰まってる
+ </pre>
+<p>
+それらエロコンフィグ、エロプログラミングソースを共有すれば、
+PlaggerファウンデーションもしくはPerl界隈の方に何かしらの恩返しができるのではないかと考える。
+</p>
+<pre> 20:34 (yusukebe) いやーでもPlaggerにはお世話になってますよ
+20:34 (yusukebe) PlaggerでPerlと正規表現覚えたもの
+ </pre>
+<p>
+時間が前後するが、コードシェアに関して、
+</p>
+<pre> 20:08 (tokuhirom) それ coderepos.org でできるよ
+ </pre>
+<p>
+  <strong><a href="http://coderepos.org/share">CodeRepos</a> ktkr!</strong>
+</p>
+<pre> 20:14 (Yappo) 今北産業
+20:14 (Yappo) まだhtpasswdきてないよ
+ </pre>
+<p>
+  htpasswd送る。いきなり幼稚園児の俺がCodeReposのcommiterになる。
+  が、しかし
+</p>
+<pre> 21:38 (yusukebe) ちょ、今見たけど、俺のコード汚すぎて見せるのはずかしす
+
+21:39 (otsune) エロサイトははずかしくないのに
+21:39 (otsune) ソースは恥ずかしがるってのは
+21:39 (otsune) どういう羞恥心だ
+ </pre>
+<p>
+そして、名言が生まれる。
+</p>
+<pre> 21:40 (mala__) 恥軸がぶれている
+ </pre>
+<p>
+  ということでInspired by malaさんの
+  「<strong>人として恥軸がぶれている</strong>」歌詞完成。
+  まさに今の俺の心情を表している。
+</p>
+
+<pre> 「人として恥軸がぶれている」
+
+深夜俺はブログを見ていた
+やることもないからぼーっと見ていた
+コーディング成功者がはてぶされていた
+あの人は軸がぶれてない　素敵
+嫉妬するや　そう思って閉じたよ
+もう寝るぜ　明日からまたサイト管理だ
+
+勃起せずに俺はエロ本をめくった
+AVの女優　あえいでいた
+巨根ちんぽが私のタイプなのよ
+彼らったら軸がぶれてない　素敵
+
+わかったぜ(エロサイトで)報われた　その訳
+人として　俺恥軸がぶれてんだ
+それならば
+
+居直れ　もう えろえろえろえろまくって
+(エロサイト)管理者なの　わかんねぇようにしてやれ
+しこるぜ　もうえろえろ人間でもきっと
+君がいたら やれる
+(あたしも見てるの 気づいて)
+
+軸のぶれをバイブと考えろ
+このぶれがエロ界をも変えるだろう
+人も俺のサイトに気づかざるを得ない
+今はただ震えて見えたって
+
+もう　わかったぜ(エロサイトで)報われた　その訳
+人として　恥軸がぶれているのさ
+
+ああ　わかったぜ震えてる　その訳
+それPlaから支えられていたからさ
+居直るんだ
+
+僕らは　もうえろえろえろえろまくって
+(エロサイト)管理者なの　わかんねぇようにしてやれ
+しこるぜ　もうえろえろ人間でもきっと
+君に会えば やれる
+(あたしがいるの 気づいて)
+ </pre>
+<h4>人として軸がぶれている from YouTube</h4>
+
+<object height="353" width="425"><param name="movie" value="http://www.youtube.com/v/bObDDuFYDf0">
+<param name="wmode" value="transparent">
+<embed height="353" src="http://www.youtube.com/v/bObDDuFYDf0" type="application/x-shockwave-flash" width="425" wmode="transparent"></embed></object>
+
+<h4>ことの発端になった記事</h4>
+<ul>
+  <li><a href="http://yusukebe.com/archives/07/09/04/114840.html">ゆーすけべー日記: エロサイトの管理人説</a></li>
+</ul>
+<h4>人として軸がぶれている @ Amazon</h4>
+<p></p>
+<div style="float:left"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B000SKNQBC/kamawada-22/"><img alt="人として軸がぶれている" src="http://ec1.images-amazon.com/images/I/31-APxfUoNL.jpg" style="border:none;"></a></div>
+<div style="float:left;margin-left:15px;">
+<div style="font-size:12pt"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B000SKNQBC/kamawada-22/">人として軸がぶれている</a></div>
+<div style="font-size:7pt;font-family:verdana;">posted with <a href="http://yusukebe.com/b/amazon/search/">yusukebe.com::AmazonSearch</a> on 2007.9.6</div>
+<div style="font-size:10pt;">
+<ul style="list-style-type:none;padding:0;">
+<li>大槻ケンヂと絶望少女達  </li>
+<li>CD / キングレコード (2007/08/22)</li>
+<li>Amazon 売り上げランキング: 44</li>
+</ul>
+<ul style="list-style-type:none;padding:0;"><li>Amazon おすすめ度の平均: <img alt="4.5" class="at-xid-6a0133f4781589970b015435b6d28c970c" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015435b6d28c970c-pi.gif style="margin:0;"><ul style="list-style-type:none;padding-left:0;">
+<li>
+<img alt="5" class="at-xid-6a0133f4781589970b015435b6d28e970c" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015435b6d28e970c-pi.gif style="margin:0;"> あの人は軸がぶれてない　素敵！</li>
+<li>
+<img alt="5" class="at-xid-6a0133f4781589970b015435b6d28e970c" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015435b6d28e970c-pi.gif style="margin:0;"> ぶれぶれぶれぶれ♪</li>
+<li>
+<img alt="5" class="at-xid-6a0133f4781589970b015435b6d28e970c" src="https://yusukebe.com/archives/.a/6a0133f4781589970b015435b6d28e970c-pi.gif style="margin:0;"> ★特撮の皆さん、良い仕事しています★</li>
+</ul>
+</li></ul>
+<a href="http://www.amazon.co.jp/gp/product/B000SKNQBC%3ftag=kamawada-22%26link_code=xm2%26camp=2025%26dev-t=D3QNAE4JDR26A2">Amazon.co.jpで詳細を見る</a>
+</div>
+</div>
+<div style="clear:left;"></div>
+
