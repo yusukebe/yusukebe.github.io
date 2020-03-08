@@ -64,8 +64,11 @@ img {
     margin:1.5rem 0;
 }
 blockquote {
-    margin:2rem 0;
-    font-size:1.1rem;
+    margin:1.4rem 0;
+    font-size:1rem;
+    border: 1px dotted #a00;
+    background-color: #fafafa;
+    font-family: 'ヒラギノ角ゴ Pro W3';
 }
 pre {
     font-size: 0.9em;
