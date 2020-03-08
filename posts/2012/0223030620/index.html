@@ -86,19 +86,17 @@
 <p>実例を見た方が早いと思います。
 この足し算プログラムをエラー処理とかすっ飛ばして分かりやすいPerlのコードにするとこのようになります。</p>
 
-<pre> use strict; #おまじない
+<pre class="code">use strict; #おまじない
 use warnings; #おまじない
 
 my $number1 = $ARGV[0]; #第1引数を変数に入れる
 my $number2 = $ARGV[1]; #第2引数を変数に入れる
 my $result  = $number1 + $number2;  #結果に入れる
-print "Result: $result\n";
- </pre>
+print "Result: $result\n";</pre>
 
 <p>「sum.pl」などのファイル名で保存して、ターミナルから以下のように実行します。</p>
 
-<pre> $ sum.pl 4 3
- </pre>
+<pre class="code">$ sum.pl 4 3</pre>
 
 <p>「 <em>Result: 7</em> 」という文字列がターミナルに出力されたはずです。
 ここで出てきた「 <em>$number1</em>」「 <em>$number2</em> 」「 <em>$result</em> 」というのが、
@@ -113,8 +111,7 @@ Perlにおいてスカラーと呼ばれるデータを表す変数になりま�
 
 <p>僕の好きな食べ物を適当に列挙するとしましょう。配列を使って以下のように表現できます。</p>
 
-<pre> my @foods = ( 'ラーメン', '寿司', 'カレー', 'スパゲッティ', 'ステーキ' );
- </pre>
+<pre class="code">my @foods = ( 'ラーメン', '寿司', 'カレー', 'スパゲッティ', 'ステーキ' );</pre>
 
 <p>@foodsってのには頭から</p>
 
@@ -130,10 +127,9 @@ Perlにおいてスカラーと呼ばれるデータを表す変数になりま�
 <p>が入っています。先頭のラーメンを取得したければ「 <em>$foods[0]</em> 」と表現すればよいでしょう。
 中に入っている5つの文字列を順番に処理したければこのような「配列の操作」方法があります。</p>
 
-<pre> for my $food (@food) {
+<pre class="code">for my $food (@food) {
     print "I like $food\n";
-}
- </pre>
+}</pre>
 
 <p>他にも配列にまつわる操作はいくつかあるので基本を押さえておいた方がよいでしょう。</p>
 
@@ -150,8 +146,7 @@ Perlにおいてスカラーと呼ばれるデータを表す変数になりま�
 また身長というキーに対しては「172cm」というバリューを持っているという具合です。
 これをPerlで表現するとこうなります。</p>
 
-<pre> my %ore = ( name =&gt; '和田裕介', tall =&gt; 172 );
- </pre>
+<pre class="code">my %ore = ( name =&gt; '和田裕介', tall =&gt; 172 );</pre>
 
 <p>「name」キーの値にアクセスするためには「 <em>$ore{name}</em> 」とします。
 配列と同様ハッシュを操作するための関数もありますので、そちらもチェックです。</p>
@@ -170,12 +165,11 @@ Perlにおいてスカラーと呼ばれるデータを表す変数になりま�
 ただ、Perlの場合には注意点があって、配列やハッシュを組み合わせたデータを表現するには、
 リファレンスというのをうまく使わないと表現しきれないのです。</p>
 
-<pre> my @people = (
+<pre class="code">my @people = (
     { name =&gt; 'Kさん', tall =&gt; 160 },
     { name =&gt; 'Yさん', tall =&gt; 182 },
     { name =&gt; 'Tさん', tall =&gt; 148 }
-);
- </pre>
+);</pre>
 
 <p>細かい解説は省きますが「 <em>@people</em> 」配列内の「<em>{ name =&gt; 'Kさん', tall =&gt; '160' }</em>」というのが、
 一つのハッシュの無名リファレンスを表しています。
@@ -188,32 +182,29 @@ Perlにおいてスカラーと呼ばれるデータを表す変数になりま�
 例えば、上記の人が3人出てくる例をもう一度使いましょう。
 それぞれが複数の好きな食べ物を持っているということを表したかったらこのようにします。</p>
 
-<pre> my @people = (
+<pre class="code">my @people = (
     { name =&gt; 'Kさん', foods =&gt; [ 'カレー', 'ラーメン' ] },
     { name  =&gt; 'Yさん', foods =&gt; [ 'ハンバーガー', '牛丼', 'チキン' ] },
     { name =&gt; 'Tさん', foods =&gt; [ 'サラダ' ] }
-);
- </pre>
+);</pre>
 
 <p>通常の配列は「 <em>()</em> 」で表現していたものを今回は「 <em>[]</em> 」を使って配列の無名リファレンスとしました。
 ちなみに、この「 <em>@people</em> 」配列からみんなの好きな食べ物を一覧で出力するには以下のような操作をします。</p>
 
-<pre> for my $person (@people) {
+<pre class="code">for my $person (@people) {
     for my $food ( @{ $person-&gt;{foods} } ) {
         print "$person-&gt;{name} likes $food!!\n";
     }
-}
- </pre>
+}</pre>
 
 <p>実行結果が結構面白いです。</p>
 
-<pre> Kさん likes カレー!!
+<pre class="code">Kさん likes カレー!!
 Kさん likes ラーメン!!
 Yさん likes ハンバーガー!!
 Yさん likes 牛丼!!
 Yさん likes チキン!!
-Tさん likes サラダ!!
- </pre>
+Tさん likes サラダ!!</pre>
 
 <h4>スカラー、配列、ハッシュで表現する</h4>
 

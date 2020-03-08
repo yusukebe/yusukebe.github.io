@@ -216,9 +216,7 @@ iPod touch の「ビデオ」→ Podcast のところに映像が入っている
     config:
       format: RSS
       dir: /home/user/dir
-      filename: nicopla.xml
-
- </pre>
+      filename: nicopla.xml</pre>
 <br>
 <h5>簡易版</h5>
 
@@ -261,9 +259,7 @@ iPod touch の「ビデオ」→ Podcast のところに映像が入っている
     config:
       format: RSS
       dir: /home/user/dir
-      filename: nicopla.xml
-
- </pre>
+      filename: nicopla.xml</pre>
 <p>
 また、CodeReposにもアップしてあります→<a href="http://coderepos.org/share/browser/config/plagger/yusukebe/yusukebe-config-nicopla.yaml">/config/plagger/yusukebe/yusukebe-config-nicopla.yaml - CodeRepos::Share - Trac</a>
 </p>
@@ -292,28 +288,23 @@ iPod touch の「ビデオ」→ Podcast のところに映像が入っている
 <p>
 subversionが入っていれば
 </p>
-<pre> $ svn co http://svn.coderepos.org/share/lang/perl/plagger/lib/Plagger/Plugin/Filter/
- </pre>
+<pre class="code">$ svn co http://svn.coderepos.org/share/lang/perl/plagger/lib/Plagger/Plugin/Filter/</pre>
 <p>
 とでもすればFilter以下のモジュールを持ってくることができます。
 それをPerlの@INCディレクトリなどに適切に配置するか、別個にディレクトリを作ってPlaggerのconfigファイルで指定するパスを指定すればOKです。
 めんどくさかったら、ホームディレクトリで
 </p>
-<pre> $ svn co http://svn.coderepos.org/share/lang/perl/plagger/lib/
- </pre>
+<pre class="code">$ svn co http://svn.coderepos.org/share/lang/perl/plagger/lib/</pre>
 <p>
   ってやって config.yaml の先頭に
 </p>
-<pre> global:
+<pre class="code">global:
   plugin_path:
-    - /home/user/perl/plagger/lib/Plagger/Plugin
-
- </pre>
+    - /home/user/perl/plagger/lib/Plagger/Plugin</pre>
 <p>
 とするかシェルの設定ファイルにPERL5LIBのパスを足せばいいと思います。bashの場合はこんな感じ
 </p>
-<pre> export PERL5LIB=/home/user/lib/perl
- </pre>
+<pre class="code">export PERL5LIB=/home/user/lib/perl</pre>
 <p>
 この、ニコニコ動画の映像を最終的には iPod touch で見れるようにするというレシピ。使うためには、まず当たり前ですが、Plaggerが動く環境ないといけないのと、Podcastを読み込むためapacheなどのWebサーバーを持つ必要があります。
 最近ではapacheがOSXに付属しているとはいえ、このように結構敷居の高い障壁＝キャズム（？）が存在していることは確かです。

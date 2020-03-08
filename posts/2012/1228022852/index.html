@@ -68,8 +68,7 @@
 
 <p>タイトルの通り、CSSやJSを含むHTMLを編集していたとします。開発中のローカルのPCでのブラウザを使った確認は、「file://」から始まるURIをアドレスとすればできますね。これは当然です。まどろっこしく例を挙げると、ターミナル上で編集中のHTMLを指定してopenコマンドを叩き、ブラウザを立ち上げると再現できます。</p>
 
-<pre> $ open index.html
- </pre>
+<pre class="code">$ open index.html</pre>
 
 <p>ただ、スマホやタブレットを含んだマルチデバイスでの挙動を実機で確認したい時ってあります。すると「file://」から始まるURIによる参照は他の端末では出来ないので、サーバ上にファイルを置く等の施策が必要になります。それをいちいちFTPやSCPを使い、グローバルなサーバ上にアップロードしてWebサーバでサーブして... ってのはめんどくさ過ぎます。最近だとDropboxで共有かけちゃえ！ってのもやり方としてはアリですが、同期のタイムラグが若干気になったり。</p>
 
@@ -97,8 +96,7 @@
 
 <p>ドキュメント読めば分かるけど、インストール後、ディレクトリにいって</p>
 
-<pre> $ pad
- </pre>
+<pre class="code">$ pad</pre>
 
 <p>ってすれば望む挙動をしてくれるし、オプションを選んだり、Markdownプレビュー向けのPluginがあったりする！
 punytan++ すぎる！</p>
@@ -111,13 +109,11 @@ punytan++ すぎる！</p>
 
 <p>で、肝心のサーバを立てるコマンドですが、予め</p>
 
-<pre> $ cpanm Plack L
- </pre>
+<pre class="code">$ cpanm Plack L</pre>
 
 <p>とPlack、Lというライブラリをインストールしておき、HTMLファイルのあるディレクトリまで移って</p>
 
-<pre> $ plackup -ML -e 'Plack::App::File-&gt;new-&gt;to_app'
- </pre>
+<pre class="code">$ plackup -ML -e 'Plack::App::File-&gt;new-&gt;to_app'</pre>
 
 <p>コマンドを実行。「<a href="http://localhost:5000/">http://localhost:5000/</a>」または、「http://{LAN内のIPアドレス}:5000/」としてWebサーバが立ち上がります。もし開発中のマシンのLAN内のIPアドレスが「192.168.1.100」で「test.html」というファイルを、同じLAN内のその他デバイスで閲覧したければ</p>
 

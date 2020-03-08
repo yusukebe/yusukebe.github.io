@@ -99,34 +99,29 @@ githubなどでは無料で公開レポジトリが持てますが、プライ�
 新たなレポジトリを追加したりする際に「管理用のレポジトリ」を取ってきてpushするだけで済むのが非常によいですね。
 例えばレポジトリ「Hoge」を追加するとします。管理レポジトリを取ってきて</p>
 
-<pre> $ git clone git@yourdomain:gitolite-admin.git
-$ cd gitolite-admin
- </pre>
+<pre class="code">$ git clone git@yourdomain:gitolite-admin.git
+$ cd gitolite-admin</pre>
 
 <p>「conf/gitolite.conf」に以下を追加します。</p>
 
-<pre> repo    Hoge
-        RW+     =   @all
- </pre>
+<pre class="code">repo    Hoge
+        RW+     =   @all</pre>
 
 <p>そしてcommitしてpush。</p>
 
-<pre> $ git commit -a -m 'add Hoge repo.'
-$ git push
- </pre>
+<pre class="code">$ git commit -a -m 'add Hoge repo.'
+$ git push</pre>
 
 <p>自動的に「Hoge」レポジトリを作ってくれます。</p>
 
-<pre> remote: creating Hoge...
-remote: Initialized empty Git repository in /home/git/repositories/Hoge.git/
- </pre>
+<pre class="code">remote: creating Hoge...
+remote: Initialized empty Git repository in /home/git/repositories/Hoge.git/</pre>
 
 <p>そのままgit cloneすれば空のレポジトリを取ってこれますね。</p>
 
-<pre> $ git clone git@yourdomain:Hoge.git
+<pre class="code">$ git clone git@yourdomain:Hoge.git
 Cloning into Hoge...
-warning: You appear to have cloned an empty repository.
- </pre>
+warning: You appear to have cloned an empty repository.</pre>
 
 <p>他にもgitosisなどの管理ツールはありますが、色々ためしてこのgitoliteに落ち着きました。</p>
 
@@ -142,12 +137,11 @@ warning: You appear to have cloned an empty repository.
 僕は980円VPSにApacheを入れていないので特殊な方法で立ち上げてます。
 PerlモジュールであるPlackを入れて、</p>
 
-<pre> $ cpanm Plack
- </pre>
+<pre class="code">$ cpanm Plack</pre>
 
 <p>以下のような.psgiというファイルを書きます。</p>
 
-<pre> use Plack::App::WrapCGI;
+<pre class="code">use Plack::App::WrapCGI;
 use Plack::Builder;
 
 my $app =  Plack::App::WrapCGI-&gt;new( script =&gt; '/home/git/gitweb/gitweb.cgi' )-&gt;to_app;
@@ -156,13 +150,11 @@ builder {
       path =&gt; qr{^/static/},
       root =&gt; '/home/git/gitweb/';
     $app;
-};
- </pre>
+};</pre>
 
 <p>そしてplackupで起動すれば「<a href="http://yourdomain:3000/">http://yourdomain:3000/</a>」などのアドレスで閲覧することができます。</p>
 
-<pre> $ plackup gitweb.psgi
- </pre>
+<pre class="code">$ plackup gitweb.psgi</pre>
 
 <p>工夫してBasic認証などを書ければ誰にも閲覧されない「俺だけの」レポジトリビューアーが完成です。</p>
 
@@ -178,7 +170,7 @@ BlogはMovableTypeで動いていて、投稿時にHTMLなどの静的ファイ�
 gitweb.cgiの時も使ったPlackで動かしましょう。
 以下のようなMTディレクトリと同じ階層に置く.psgiを利用しています。</p>
 
-<pre> use File::Basename;
+<pre class="code">use File::Basename;
 use Plack::Builder;
 use Plack::App::CGIBin;
 my $base_dir = dirname(__FILE__);
@@ -188,8 +180,7 @@ builder {
       root =&gt; $base_dir;
       mount "/" =&gt;
           Plack::App::CGIBin-&gt;new( root =&gt; $base_dir, exec_cb =&gt; sub { 1 } )-&gt;to_app;
-};
- </pre>
+};</pre>
 
 <p>これもplackupコマンドで立ち上げて、
 「<a href="http://yourdomain:3000/">http://yourdomain:3000/</a>」などにアクセスすれば管理画面を見ることができるはずです。</p>

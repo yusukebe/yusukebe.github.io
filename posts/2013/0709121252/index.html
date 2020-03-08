@@ -78,13 +78,11 @@
 
 <p>Perl における Ruby の Bundler に相当するのが Carton です。「v1.0.0 が出るまで API の変更の可能性がある！」... けれど、現行 CPAN に上がっている v0.9.15 を使っています。モジュールのバージョンまで面倒を見て依存性を解決して環境をつくることが可能です。例えば分かりやすい例を挙げると Mojolicious が最近メジャーバージョンアップして 3.xx 系から 4.xx 系にアップグレードしたのですが、どーしても 3.xx 系を使いたいよねぇ〜 なんて時は cpanfile でバージョン指定しちゃうことが出来ます。</p>
 
-<pre> requires 'Mojolicious', '== 3.97';
- </pre>
+<pre class="code">requires 'Mojolicious', '== 3.97';</pre>
 
 <p>この cpanfile を用意して</p>
 
-<pre> $ carton install
- </pre>
+<pre class="code">$ carton install</pre>
 
 <p>するといい具合に 3.97 がプロジェクトのディレクトリ内に入ります。</p>
 
@@ -92,8 +90,7 @@
 
 <p>この Carton で入れたモジュールとコアモジュールだけを使ってアプリを起動するには</p>
 
-<pre> $ carton exec -- mojo generate app MyApp
- </pre>
+<pre class="code">$ carton exec -- mojo generate app MyApp</pre>
 
 <p>とかやります。現在、本番のアプリケーションも全てこの「carton exec」経由で立ち上げています。Perlbrewやplenvなどをで同じバージョンのPerlをインストールすれば「同じ環境である」という再現性が非常に高くなるので、下手に依存問題などで悩まなくて済んでよいです。</p>
 
@@ -108,8 +105,7 @@
 
 <p>テストを走らせるコマンド prove の Plugin になるのが便利で、.proverc に以下を追加しています。</p>
 
-<pre> -PHarriet=t/harriet/
- </pre>
+<pre class="code">-PHarriet=t/harriet/</pre>
 
 <p>今回対象となるアプリは、実際に立ち上げる時に dsn 情報や memcached のアドレスなどをPerlスクリプトの設定ファイルから読み出すのですが、テストの際には Harriet で有効になった環境変数の情報を元に設定を動的につくっています。これでアプリを通常使うのと同じようにテストでも API 呼び出しが出来ますね。</p>
 
@@ -117,11 +113,10 @@
 
 <p>Mojolicious に付属の Test モジュール。コントローラをテストするのに使います。こんな感じの使い勝手です。</p>
 
-<pre> my $t = Mojo::Test-&gt;new('MyApp::Web');
+<pre class="code">my $t = Mojo::Test-&gt;new('MyApp::Web');
 $t-&gt;get_ok('/')-&gt;status_is(200);
 $t-&gt;post_ok('/new',
-    form =&gt; { title =&gt; 'title', body =&gt; 'body' } )-&gt;status_is(200);
- </pre>
+    form =&gt; { title =&gt; 'title', body =&gt; 'body' } )-&gt;status_is(200);</pre>
 
 <p>Mojolicious クラスを継承しているモジュールを指定して何も考えずにそのままテスト書けます。</p>
 

@@ -128,15 +128,13 @@ Mojoliciousばかり。WAFにCatalystほど重厚なものはいらないと思�
 
 <p>また、Mojoliciousをうまいこと使って、Controllerから内部APIやModelを呼び出すときには、</p>
 
-<pre> my ($bokes, $pager) = $self-&gt;model('Boke')-&gt;get_recent_entries();
- </pre>
+<pre class="code">my ($bokes, $pager) = $self-&gt;model('Boke')-&gt;get_recent_entries();</pre>
 
 <p>と直感的な記述で行えるようにしました。Validationの処理もFormの定義をしておけば、こんな感じでできます。</p>
 
-<pre> if($self-&gt;form('Boke')-&gt;has_error) {
+<pre class="code">if($self-&gt;form('Boke')-&gt;has_error) {
     return $self-&gt;render_fill('/boke/post');
-}
- </pre>
+}</pre>
 
 <h3>キャッシュ戦略</h3>
 
@@ -145,15 +143,14 @@ Mojoliciousばかり。WAFにCatalystほど重厚なものはいらないと思�
 
 <p>で、参照系は生のDBIを使って参照させてるのですが、簡単なラッパーをつくってその生DBIを使いやすくしてます。O/R Mapperは結果をオブジェクトを返しますが、そのラッパーはハッシュレフで返してくれます。以下の例だと「$self-&gt;dbx」がそれなんですが、「search」メソッドはこのように使います。</p>
 
-<pre> $bokes = $self-&gt;dbx-&gt;search(
+<pre class="code">$bokes = $self-&gt;dbx-&gt;search(
     'boke', [ $cond ], [ { -desc =&gt; 'id' } ],
     {
         limit  =&gt; $limit,
         offset =&gt; $offset,
         expire =&gt; 60 * 60,
     }
-);
- </pre>
+);</pre>
 
 <p>条件にあう、最新のボケ一覧を取得していますが、「expire」という引数を与えると自動的にクエリーからキーを生成してそのキーに結果をキャッシュするという仕組みになっています。強制的にキーを組み立てて、そのキーに当てはまるキャッシュを強制的に削除するメソッドも用意しているので、場合によってキャッシュのコントロールができるわけです。</p>
 

@@ -91,14 +91,13 @@ MySQLなどのRDBMSにデータを置いている場合は適切に
 
 <p>この「ゆーすけべー日記」のAtomフィードをどこかのアプリケーションで利用するとして以下のようなコードを書きます。parse_feed っていうのが出て来ますがこれはフィードをパースするためのメソッドが定義されていると仮定してください。</p>
 
-<pre> use LWP::Simple qw/get/;
+<pre class="code">use LWP::Simple qw/get/;
 
 ...;
 
 my $content = get('http://yusukebe.com/atom.xml');
 my $data = parse_feed($content);
-print $data-&gt;title . "\n";
- </pre>
+print $data-&gt;title . "\n";</pre>
 
 <p>もし、更新を逐一知りたかったらこのコードを改良していけばいいのですが、
 例えば、エントリーのタイトルをとあるWebアプリのサイドバーに一覧表示させたいなんて時があります。
@@ -125,7 +124,7 @@ print $data-&gt;title . "\n";
 <p>キャッシュを実装する時にはまずは「get」「set」「delete」辺りのメソッドを覚えておけばいいのですが、
 それを使って疑似コードで表現するとこんな感じになります。</p>
 
-<pre> use LWP::Simple qw//; # get メソッドが紛らわしいのでエクスポートしない
+<pre class="code">use LWP::Simple qw//; # get メソッドが紛らわしいのでエクスポートしない
 
 ...;
 
@@ -137,8 +136,7 @@ unless($data) {
     $data = parse_feed($content); # フィードをフェッチしてパースする
     $cache-&gt;set($key, $data, 60 * 30); # キー、値、有効期限の秒数、この順番でset
 }
-do_something($data); # 何かする
- </pre>
+do_something($data); # 何かする</pre>
 
 <p>memcachedなどのをバックエンドにしたキャッシュでは、このようにキャッシュを保持する有効期限を決めることが出来、上記のフローはキャッシュを使うに当たっての定石かと言えます。キャッシュについてとその実装を軽く説明したところで事例に入りましょう。</p>
 
@@ -153,8 +151,7 @@ do_something($data); # 何かする
 <p>これもアプリケーションの性質にだいぶ左右されてしまう問題ですが、とあるエロサイトでは更新が少ないために、
 SQLのクエリーで言う</p>
 
-<pre> SELECT * FROM entry WHERE actress = '成瀬心美' ORDER BY created_on DESC LIMIT 20;
- </pre>
+<pre class="code">SELECT * FROM entry WHERE actress = '成瀬心美' ORDER BY created_on DESC LIMIT 20;</pre>
 
 <p>の結果をそのまま有効期限付きでキャッシュに突っ込んでおります。
 サイトの特性上これで十分ですし、サーバリソースを減らせることになります。</p>
@@ -194,7 +191,7 @@ SQLのクエリーで言う</p>
 フックとテンプレートレンダリングの機能を使って実現することが出来ます。
 例えば「MyApp::Web.pm」などで</p>
 
-<pre> package MyApp::Web;
+<pre class="code">package MyApp::Web;
 
 sub startup {
     my $self = shift;
@@ -215,8 +212,7 @@ sub startup {
         }
     );
 }
-...;
- </pre>
+...;</pre>
 
 <p>とし、テンプレート内では「right_container」という名の変数をエスケープせずそのまま展開すればOKです。
 今回はアプリケーションレイヤーでHTMLを読み込んでますが、書き出してフロントに近いところでインクルードしてもいいですね。</p>
@@ -227,7 +223,7 @@ sub startup {
 
 <p>こうした透過キャッシュは便利ですが、上記で述べたキャッシュによる不整合を招く弊害があるので、一概にオススメできません。ただ、エロサイトの例のような更新が少ない簡単なアプリケーションには有効です。僕はこの透過的なキャッシュを自作して利用しています。O/R Mapperなどに投げるクエリーをハッシュ関数へ通してキーにして、結果をキャッシュするという戦略です。これも疑似コードを見てみましょう。get_entries がエントリー一覧を取得するためのメソッドで「条件」と「オーダーなどのオプション」を引数に取ります。make_key サブルーティンでハッシュ関数に通してキーを生成しています。</p>
 
-<pre> use Digest::SHA1 qw/sha1_hex/;
+<pre class="code">use Digest::SHA1 qw/sha1_hex/;
 use Storable qw/nfreeze/;
 ...;
 
@@ -248,8 +244,7 @@ sub make_key {
     return sha1_hex(nfreeze({ data =&gt; \@data }));
 }
 
-...;
- </pre>
+...;</pre>
 
 <p>ちなみに、<a href="http://search.cpan.org/dist/DBIx-Class-Cursor-Cached/">DBIx::Class::Cursor::Cached</a>というモジュールを参考にしてキー作成等を実装しています。</p>
 

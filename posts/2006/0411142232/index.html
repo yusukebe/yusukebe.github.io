@@ -116,13 +116,12 @@
   iTunesを操作するために「iTunes COM」ライブラリを使用した。
   マイコンから送られてくる文字列とそれに対応する「iTunes COM」の操作は以下の通り。
 </p>
-<pre> 操作　　　　マイコンから送信文字　 PC側メソッド
+<pre class="code">操作　　　　マイコンから送信文字　 PC側メソッド
 再生停止　　p　　　　　　　　　　　　Play()もしくはPause()
 次曲　　　　f　　　　　　　　　　　　NextTrack()
 前曲　　　　b　　　　　　　　　　　　PreviousTrack()
 音量上　　　u　　　　　　　　　　　　SoundVolume = SoundVolume + 10;
-音量下　　　d　　　　　　　　　　　　SoundVolume = SoundVolume - 10;
- </pre>
+音量下　　　d　　　　　　　　　　　　SoundVolume = SoundVolume - 10;</pre>
 <p>
   マイコン「R8C/Tiny」にはSunhayatoのMB-R8CSを使用し、今回は試作のためブレッドボード上に全てを実装した。
   ボリューム調整用の回転ノブにはDR-AR10という回転4接点式ボタン？を使用。

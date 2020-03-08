@@ -101,8 +101,7 @@ use Lingua::JA::Hepburn::Passport;
 
 my $hepburn = Lingua::JA::Hepburn::Passport-&gt;new;
 print $hepburn-&gt;romanize("ゆうこ") . "\n"; #YUKO
-print kana2romaji(decode_utf8 "ゆうこ") . "\n"; #yuuko
- </pre>
+print kana2romaji(decode_utf8 "ゆうこ") . "\n"; #yuuko</pre>
 <p>
 おおー、miyagawa++; 。
 ってなわけで、Lingua::JA::Hepburn::Passport を使って Acme::JapaneseAvActress の女優さんクラスに engname メソッドを追加しました。
@@ -113,8 +112,7 @@ print kana2romaji(decode_utf8 "ゆうこ") . "\n"; #yuuko
     $yomi = decode("utf-8",$yomi);
     my $hepburn = Lingua::JA::Hepburn::Passport-&gt;new;
     return $hepburn-&gt;romanize($yomi);
-}
- </pre>
+}</pre>
 <p>
 これで、海外のエロギークが喜ぶかもね！
 </p>

@@ -112,12 +112,11 @@ Webページ自体のレスポンスを返すのが遅いのか、ページ内�
 
 <p>「<a href="http://127.0.0.1:5000/">http://127.0.0.1:5000/</a>」にリクエストしてパフォーマンスを計測するには以下のようなコマンドを実行します。</p>
 
-<pre> $ ab -n 100 -c 10 "http://127.0.0.1:5000/"
- </pre>
+<pre class="code">$ ab -n 100 -c 10 "http://127.0.0.1:5000/"</pre>
 
 <p>オプションの「-n」はリクエストの回数、「-c」は同時接続数を意味します。結果は以下のように出力されます。</p>
 
-<pre> Benchmarking 127.0.0.1 (be patient).....done
+<pre class="code">Benchmarking 127.0.0.1 (be patient).....done
 
 Server Software:        
 Server Hostname:        127.0.0.1
@@ -154,13 +153,11 @@ Percentage of the requests served within a certain time (ms)
   95%     46
   98%     56
   99%    104
- 100%    104 (longest request)
- </pre>
+ 100%    104 (longest request)</pre>
 
 <p>ここで注目したいのは「Request per second」という欄ですね。</p>
 
-<pre> Requests per second:    440.95 [#/sec] (mean)
- </pre>
+<pre class="code">Requests per second:    440.95 [#/sec] (mean)</pre>
 
 <p>これは秒間に「440.95リクエスト」を処理しているということを意味しています。
 「Hello World」程度のWebアプリなので速い数字が出てます。
@@ -193,29 +190,25 @@ nginxがCSSや画像ファイルなどの静的コンテンツの配信とリバ
 キャッシュプログラムでよく使うのは「set」と「get」で、それぞれ簡単な概念です。
 とあるキーを指定して、値をキャッシュするにはこのようなプログラムになるでしょう。</p>
 
-<pre>  $cache-&gt;set('key', $value);
- </pre>
+<pre class="code">$cache-&gt;set('key', $value);</pre>
 
 <p>値を取り出す時は、</p>
 
-<pre> my $cached_value = $cache-&gt;get('key');
- </pre>
+<pre class="code">my $cached_value = $cache-&gt;get('key');</pre>
 
 <p>とします。memcachedなどを利用した場合、「set」する際にキャッシュの有効期限を指定することができます。
 例えば、24時間だけ値をキャッシュしたい時には</p>
 
-<pre> $cache-&gt;set('key', $value, 60 * 60 * 24);
- </pre>
+<pre class="code">$cache-&gt;set('key', $value, 60 * 60 * 24);</pre>
 
 <p>と、秒単位で時間を記述します。この有効期限を利用して、
 サイト内で頻繁にアクセスのあるデータをある一定時間キャッシュさせるということをサイトAでは行っています。</p>
 
-<pre> my $data = $cache-&gt;get('key');
+<pre class="code">my $data = $cache-&gt;get('key');
 return $data if $data;
 $data = $api-&gt;get_data();
 $cache-&gt;set('key', $data, 60 * 60 * 24);
-return $data;
- </pre>
+return $data;</pre>
 
 <p>このコードは、もし、キャッシュにヒットしたらその値を即座に返し、そうじゃなかったらデータを取得し、
 キャッシュに設定するということを意味しています。
@@ -242,17 +235,15 @@ Web Application Framework内でビューを通してレンダリングした結�
 特に「expires header」を適切に設定することでクライアント側に画像やCSSなどのファイルのキャッシュをすることができます。
 サイトAでは極力長く1年間のexpiresを設定しています。nginxのコンフィグファイルは以下のように記述しています。</p>
 
-<pre> location ~ ^/(favicon.ico|images|js|css)/  {
+<pre class="code">location ~ ^/(favicon.ico|images|js|css)/  {
     expires 1y;
-}
- </pre>
+}</pre>
 
 <p>注意したいのはこちらが意図的に「/css/style.css」を書き換えたとすると、
 そのファイルのクライアント側のキャッシュを解除しなくてはいけません。
 対象となるCSSを読み込むHTMLでファイル名にパラメータを付加することで強制的に書き換えた新しいものを読み込ませています。</p>
 
-<pre> &lt;link rel="stylesheet" href="/css/style.css?v=0002" /&gt;
- </pre>
+<pre class="code">&lt;link rel="stylesheet" href="/css/style.css?v=0002" /&gt;</pre>
 
 <p>クライアントサイドに関して様々な環境が存在するので、ある程度慎重にパフォーマンスを改善していくことがいいと思います。
 ちなみにフロントとクライアントサイドのチューニングについては以下の書籍が詳しいです。</p>

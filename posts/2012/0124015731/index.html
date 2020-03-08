@@ -88,7 +88,7 @@
 
 <p>例えば、Blogにおいてはその記事において、同一カテゴリーの最新エントリー5件を文章の下に配置するなどである。より、目にとまりやすいようにはてなブックマークの「users」を表示するためにはMovableTypeで以下のようなタグを書くとよい。</p>
 
-<pre> &lt;mt:If tag="CategoryLabel"&gt;
+<pre class="code">&lt;mt:If tag="CategoryLabel"&gt;
   &lt;mt:SetVars&gt;
     category_label=&lt;$mt:CategoryLabel$&gt;
   &lt;/mt:SetVars&gt;
@@ -111,8 +111,7 @@
       &lt;/mt:Entries&gt;
     &lt;/div&gt;
   &lt;/mt:If&gt;
-&lt;/mt:If&gt;
- </pre>
+&lt;/mt:If&gt;</pre>
 
 <p>こういったMovableTypeのTipsも当たり前のようにやられてはいるが、上記の仮説から導きだした対策だと考えると納得がいく。</p>
 

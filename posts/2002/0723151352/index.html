@@ -68,10 +68,9 @@
 
 <a href="http://web.sfc.keio.ac.jp/~yusukebe/99yellow/hina/index.html" target="_new">http://web.sfc.keio.ac.jp/~yusukebe/99yellow/hina/index.html</a>
 更新順でソートさせるようにした。hina.shで単純に
-<pre> sort -r 
- </pre>
+<pre class="code">sort -r</pre>
 とかやると「電波届かなぁい」日記たちが一番上の方にいってしまう。なので以下のように修正。
-<pre> if [ -s /tmp/hina.$$ ]
+<pre class="code">if [ -s /tmp/hina.$$ ]
 then
         cat /tmp/hina.$$ |grep HINA_OK | sort -r &gt; hina_ok.html
         cat /tmp/hina.$$ |grep HINA_REMOTE_OUT &gt; hina_out.html
@@ -81,8 +80,7 @@ else
 fi
 $NKF -s hina_ok.html hina_out.html &gt; body.html
 $NKF -s header.html body.html footer.html &gt; ~/public_html/99yellow/hina/index.html
-rm hina_ok.html hina_out.html
- </pre>
+rm hina_ok.html hina_out.html</pre>
 シェルスクリプトというものをはじめていじった。
 
 		</div>

@@ -118,9 +118,7 @@ sub search {
     my $ref = $xs-&gt;XMLin( $res-&gt;{_content} );
     return 0 unless $ref-&gt;{photos}-&gt;{total};
     return $ref-&gt;{photos}-&gt;{total};
-}
-
- </pre>
+}</pre>
 <p>
 このコードを使い、日本語の名前とアルファベット名でそれぞれ検索して total のカウントを足して数えてみると、一位はダントツ<strong>2670枚で小倉優子</strong>りん。2位が沢尻エリカの633枚だからすごい差。ちなみに、1枚しかなかったのは最下位、和希沙也ちゃんだった。
 </p>
@@ -318,8 +316,7 @@ ja: ' 木下優樹菜'
 ---
 count: 1
 en: Kazuki Saya
-ja: ' 和希沙也'
- </pre>
+ja: ' 和希沙也'</pre>
 <p>
 ところで、よくよく、リストとか写真とか見てみると、「三津谷葉子」とか「夏川純」、そして「磯山さやか」とうまいこと俺の趣向に合っていることが判明した。ともちゃんGJ！
 もちろん、ゲットした画像は iPod touch でくぱぁしたよ！
@@ -384,9 +381,7 @@ sub search {
         my $res = $ua-&gt;mirror( $url, $file-&gt;absolute );
         print "try to fetch : " . $res-&gt;status_line . " : $url\n";
     }
-}
-
- </pre>
+}</pre>
 
 <h4>お決まりの iPod touch アサマシ</h4>
 

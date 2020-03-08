@@ -87,7 +87,7 @@
   いきなり100件もダウンロードしたくねぇえーーという人は途中でCtr-Cとか押して中断してください。
   というかほとんどの人はそうした方がいいです^^;
 </p>
-<pre> plugins:
+<pre class="code">plugins:
 
   - module: Subscription::Config
     config:
@@ -100,9 +100,7 @@
       password: yourpassword
       dir: ./tmp/
       filename_encode: shift-jis #OSによって変えてください
-      download_comment: 1 #コメントをダウンロードしたいときに1としてください
-
- </pre>
+      download_comment: 1 #コメントをダウンロードしたいときに1としてください</pre>
 <p>
   <font size="2">端末から plagger -c config.yaml コマンドを実行してダウンロードしている様子</font><br>
   <img alt="ニコプラ" class="at-xid-6a0133f4781589970b015391e388d6970b" src="https://yusukebe.com/archives/a/6a0133f4781589970b015391e388d6970b-pi.gif">
@@ -122,7 +120,7 @@
   それらを組み合わせたconfig.yamlはこんな感じになります。
   (追記: Dedupedに関しては<a href="http://yusukebe.com/archives/07/08/09/105502.html#comment-271104">otsuneさんからコメントいただきました</a>。このハックの方がいいかもですね。)
 </p>
-<pre> plugins:
+<pre class="code">plugins:
 
   - module: Subscription::Config
     config:
@@ -141,9 +139,7 @@
       password: yourpassword
       dir: ./tmp/
       filename_encode: shift-jis
-      download_comment: 1
-
- </pre>
+      download_comment: 1</pre>
 <p>
   ダウンロードしたFLVをファイルを視聴するにはWindows限定ですが<a href="http://eigoukaiki.s101.xrea.com/software/nicoplayer/">NicoPlayer</a>がオススメです。
   FLVファイルを直接開くことができて、さらに、同名のコメントXMLファイルがあればコメントもニコニコ動画のサイトで見るのと同じようスクロールしたりして表示してくれちゃいます。
@@ -171,7 +167,7 @@
   をPlaggerで読み込ませ、このマイリストに登録されている動画を全てダウンロードしてみましょう。
   config.yamlの例はこんな感じです。
 </p>
-<pre> plugins:
+<pre class="code">plugins:
 
   - module: Subscription::Config
     config:
@@ -185,15 +181,13 @@
       password: yourpassword
       dir: ./tmp/
       filename_encode: shift-jis
-      download_comment: 1
-
- </pre>
+      download_comment: 1</pre>
 <p>
   最後に、SoftwareDesign 2006年10月号のPlagger特集でのmizzyさんの記事「PlaggerでYouTube Casting」を参考に、ダウンロードしたニコニコ動画の動画ファイルをiTunesで閲覧できるMPEG4フォーマットに変換してVodcastingするという超絶ワザを紹介します。
   といってもまだちゃんと試したわけではないので動作の保障はしかねます^^;
   config.yamlはこれでうまくいくんじゃないかなー
 </p>
-<pre> plugins:
+<pre class="code">plugins:
 
   - module: Subscription::Config
     config:
@@ -228,9 +222,7 @@
     config:
       dir: /home/yusuke/nicovideo
       filename: %t.rss
-      format: RSS
-
- </pre>
+      format: RSS</pre>
 <p>
   <font size="2">一応mpeg4に変換してiTunesにぶちこむところはできた</font><br>
   <img alt="ニコプラ" class="at-xid-6a0133f4781589970b015391e38905970b" src="https://yusukebe.com/archives/a/6a0133f4781589970b015391e38905970b-pi.gif">

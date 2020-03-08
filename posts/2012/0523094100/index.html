@@ -75,7 +75,7 @@ Hachioji.pmが中心となって開発している<a href="https://github.com/uz
 
 <p>app.psgiはこんな感じっす。</p>
 
-<pre> use Mojo::Server::PSGI;
+<pre class="code">use Mojo::Server::PSGI;
 use File::Spec;
 use File::Basename;
 use lib File::Spec-&gt;catdir(dirname(__FILE__), 'lib');
@@ -88,12 +88,11 @@ my $app = sub { $psgi-&gt;run(@_) };
 builder {
     mount '/socket.io' =&gt; PocketIO-&gt;new( class =&gt; 'App::Handler', method =&gt; 'run' );
     mount '/' =&gt; $app;
-};
- </pre>
+};</pre>
 
 <p>lib/App/Web.pmには普通にMojoliciousのルーティング等を書いて...</p>
 
-<pre> package App::Web;
+<pre class="code">package App::Web;
 use Mojo::Base 'Mojolicious';
 
 sub startup {
@@ -102,12 +101,11 @@ sub startup {
     $r-&gt;route('/')-&gt;to('root#index');
 }
 
-1;
- </pre>
+1;</pre>
 
 <p>lib/App/Handler.pmには飛んできたテキストをイカ娘語変換して返すようにして...</p>
 
-<pre> package App::Handler;
+<pre class="code">package App::Handler;
 use Acme::Ikamusume;
 use strict;
 use warnings;
@@ -132,23 +130,21 @@ sub run {
     };
  }
 
-1;
- </pre>
+1;</pre>
 
 <p>publicディレクトリにjs等を配置する...</p>
 
-<pre> $ tree ./public/
+<pre class="code">$ tree ./public/
 ./public/
 └── js
     ├── WebSocketMain.swf
     ├── WebSocketMainInsecure.swf
     ├── app.js
-    └── socket.io.js
- </pre>
+    └── socket.io.js</pre>
 
 <p>templates/root/index.html.ep にこうやって記述...</p>
 
-<pre> &lt;html&gt;
+<pre class="code">&lt;html&gt;
 &lt;head&gt;
 &lt;script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"&gt;&lt;/script&gt;
 &lt;script src="/js/socket.io.js"&gt;&lt;/script&gt;
@@ -163,12 +159,11 @@ sub run {
   &lt;/p&gt;
   &lt;p id="output"&gt;&lt;/p&gt;
 &lt;/body&gt;
-&lt;/html&gt;
- </pre>
+&lt;/html&gt;</pre>
 
 <p>public/js/app.jsはこんな感じ...</p>
 
-<pre> $(function(){
+<pre class="code">$(function(){
     var socket = io.connect();
     socket.on('message', function (data) {
         $('#output').text(data);
@@ -178,13 +173,11 @@ sub run {
         socket.send(message);
         return false;
     });
-});
- </pre>
+});</pre>
 
 <p>Twiggyでapp.psgiを立ち上げてみる...</p>
 
-<pre> $ twiggy app.psgi 
- </pre>
+<pre class="code">$ twiggy app.psgi</pre>
 
 <p>ブラウザからテキストを入力してみると...</p>
 

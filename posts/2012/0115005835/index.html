@@ -83,15 +83,13 @@
 
 <p>実はアプリケーションサーバもPerl製のStarmanという物を使っている。次に出てくるWebアプリケーションフレームワーク（WAF）で構築されたアプリをStarmanで動かしフロントエンドにはnginxを置いている。なんかこういうイメージ。</p>
 
-<pre> クライアントブラウザ =&gt; nginx =&gt; Starman
- </pre>
+<pre class="code">クライアントブラウザ =&gt; nginx =&gt; Starman</pre>
 
 <h3>2. WAFにはMojolicious</h3>
 
 <p>Webアプリケーションフレームワーク（WAF）という言葉はよく聞くと思うが、これはWebアプリを作るためのひな形とそのクラス、スクリプト群である。安全で効率的に開発を進めたければ既存のよくメンテナンスされたWAFを使うのがよろしい。最近では、<a href="http://mojolicio.us/">Mojolicious</a>というWAFをよく利用させてもらっている。依存性が極端に少なく、いわゆるフルスタックな作りなんだが、基本機能に焦点を当てれば使えるので気に入っている。Mojoliciousを入れたら、mojoコマンドが使えるので、</p>
 
-<pre> $ mojo generate app JVideos::Web
- </pre>
+<pre class="code">$ mojo generate app JVideos::Web</pre>
 
 <p>等としてアプリケーションのひな形を作る。「プロジェクト名::Web」と::Webを付けているのはディレクトリ構造を綺麗にしたいためである。</p>
 
@@ -99,7 +97,7 @@
 
 <p>Mojoliciousにも起動スクリプトが付いていて簡易サーバが立ち上がるんだけど、plackup使いたいのと、PSGIで制御したいのと、結局PSGIファイルを作るのでまずjvideos_web.psgiみたいなファイルを作っちゃっている。リバースプロキシに対応させるなら以下のようなもので、Middlewareなど足したいものがあればお好きにどうぞ。</p>
 
-<pre> use Mojo::Server::PSGI;
+<pre class="code">use Mojo::Server::PSGI;
 use File::Spec;
 use File::Basename;
 use lib File::Spec-&gt;catdir(dirname(__FILE__), 'lib');
@@ -112,13 +110,11 @@ builder {
     enable_if { $_[0]-&gt;{REMOTE_ADDR} eq '127.0.0.1' }
         "Plack::Middleware::ReverseProxy";
     $app;
-};
- </pre>
+};</pre>
 
 <p>これで普通に「plackup jvideos_web.psgi」すれば動くだが、確かStarmanの場合だと、</p>
 
-<pre> $ starman -MFindBin jvideos_web.psgi
- </pre>
+<pre class="code">$ starman -MFindBin jvideos_web.psgi</pre>
 
 <p>としなくてはいけないので注意。</p>
 
@@ -128,7 +124,7 @@ builder {
 
 <p>例えば、複数の記事を取得するためのAPIのメソッドは以下のようになる。</p>
 
-<pre> sub get_entries {
+<pre class="code">sub get_entries {
     my ( $self, $cond , $attr ) = @_;
     $attr-&gt;{pager_logic} ||= 'MySQLFoundRows';
     $attr-&gt;{page} ||= 1;
@@ -143,12 +139,11 @@ builder {
     }else{
         \@entries;
     }
-}
- </pre>
+}</pre>
 
 <p>これを使い、最新記事とページャを取得するコントローラ部分はこのようになった。</p>
 
-<pre> sub index {
+<pre class="code">sub index {
     my $self = shift;
     my $page = $self-&gt;req-&gt;param('page') || 1;
     my ($entries, $pager) = $self-&gt;app-&gt;api-&gt;get_entries(
@@ -157,8 +152,7 @@ builder {
     );
     $self-&gt;stash-&gt;{entries} = $entries;
     $self-&gt;stash-&gt;{pager} = $pager;
-}
- </pre>
+}</pre>
 
 <p>ちなみに、Mojoliciousのクラスジェネレータは貧弱なので、API群にはMouseを使っている。</p>
 
@@ -170,7 +164,7 @@ builder {
 
 <p>URLとコントローラをマッピングして適切に処理するためには、Mojoliciousでは一つのファイルにそれを記述することになる。「mojo generate app JVideos::Web」としてひな形を作ったら、「JVideos::Web」にそれを書く。現行のjVideosの「JVideos::Web」のコードは以下だ。</p>
 
-<pre> package JVideos::Web;
+<pre class="code">package JVideos::Web;
 use Mojo::Base 'Mojolicious';
 use JVideos::API;
 
@@ -188,8 +182,7 @@ sub startup {
     $r-&gt;route('/tag')-&gt;to('tag#index');
 }
 
-1;
- </pre>
+1;</pre>
 
 <p>シンプルである。</p>
 
@@ -197,16 +190,14 @@ sub startup {
 
 <p>いわゆるViewであるテンプレート部分ではMojo::Templateに従って書く。これはPerlのコードが結構そのまま書ける。このような具合である（テンプレートにオブジェクトをそのまま渡すべきかの議論は置いておく）。</p>
 
-<pre> % for my $entry ( @$entries ) {
+<pre class="code">% for my $entry ( @$entries ) {
 &lt;h3&gt;&lt;%= $entry-&gt;title %&gt;&lt;/h3&gt;
-% }
- </pre>
+% }</pre>
 
 <p>Mojo::Templateを調べていくと便利なヘルパーが見つかるがあまり使っていない。が、はまったものとしてURI Escapeをどうするかというのがあったのでやり方を紹介。これでできる。</p>
 
-<pre> &lt;a href="/actress/&lt;%= b($actress_name)-&gt;encode('UTF-8')-&gt;url_escape %&gt;"&gt;
-    &lt;b&gt;&lt;%= $actress_name %&gt;&lt;/b&gt;&lt;/a&gt;
- </pre>
+<pre class="code">&lt;a href="/actress/&lt;%= b($actress_name)-&gt;encode('UTF-8')-&gt;url_escape %&gt;"&gt;
+    &lt;b&gt;&lt;%= $actress_name %&gt;&lt;/b&gt;&lt;/a&gt;</pre>
 
 <hr>
 

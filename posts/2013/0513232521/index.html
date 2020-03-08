@@ -80,10 +80,9 @@
 
 <p>というもの。僕はDateTime派なので、以下のコードで現在のタイムスタンプの文字列をつくっています（<em>＊ある方から指摘を受けてコードを修正させていただきました！</em>）。</p>
 
-<pre> use DateTime;
+<pre class="code">use DateTime;
 my $timestamp = DateTime-&gt;now( time_zone =&gt; 'Asia/Tokyo' )-&gt;strftime('%F %T');
-print "$timestamp\n";
- </pre>
+print "$timestamp\n";</pre>
 
 <p>この文字列は後でAPIにリクエストを送る時に使います。</p>
 
@@ -91,7 +90,7 @@ print "$timestamp\n";
 
 <p>イマドキじゃない！？リクエストのパラメータは<strong>euc-jp</strong>でエスケープさせることが必要なのです。通常のutf-8でエスケープさせたパラメータ値を含むURLを構築するにはURIモジュールの「query_form」メソッドが重宝するのですが、今回の場合はURIモジュール使わない方がいい？ってことでハッシュでつくったパラメータのキーとバリューの組み合わせを、URLに落とし込むには以下のコードを記述しました。</p>
 
-<pre> use URI::Escape qw/uri_escape/;
+<pre class="code">use URI::Escape qw/uri_escape/;
 use Encode;
 use utf8;
 
@@ -106,14 +105,13 @@ for my $key ( keys %$params ) {
     push @$queries, "$key=$value";
 }
 $url .= '?' . join '&amp;', @$queries;
-print "$url\n";
- </pre>
+print "$url\n";</pre>
 
 <h3>返却されるXMLもeuc-jp</h3>
 
 <p>レスポンスとして返されるXMLもeuc-jpな作りになっております。とりあえず簡単にXML::SimpleでPerlのデータ構造へパースする場合この文字コードの関係で細工がいります。「$url」変数に正しいリクエストURLがあるとした場合のコード。</p>
 
-<pre> use LWP::UserAgent;
+<pre class="code">use LWP::UserAgent;
 use XML::Simple qw//;
 use YAML;
 
@@ -125,19 +123,17 @@ $content =~ s!euc-jp!utf-8!i;
 my $xs = XML::Simple-&gt;new();
 my $data = $xs-&gt;XMLin($content);
 
-print Dump $data;
- </pre>
+print Dump $data;</pre>
 
 <p>XMLの先頭にある、コイツ</p>
 
-<pre> &lt;?xml version="1.0" encoding="euc-jp"?&gt;
- </pre>
+<pre class="code">&lt;?xml version="1.0" encoding="euc-jp"?&gt;</pre>
 
 <p>のencodingの値として「euc-jp」になっているのでそのままだとXML::Simple、もしくはXML::Simpleで使用しているモジュールがXMLの文字列はutf-8なのに強制的に「euc-jp」で解釈してしまう。なので「<em>$content =~ s!euc-jp!utf-8!i</em>」として強引に置換をかましています。</p>
 
 <h3>完成したスクリプト</h3>
 
-<pre> use strict;
+<pre class="code">use strict;
 use warnings;
 use LWP::UserAgent;
 use URI::Escape qw/uri_escape/;
@@ -179,8 +175,7 @@ my $data = $xs-&gt;XMLin($content);
 
 for my $item ( @{ $data-&gt;{result}{items}{item} } ) {
     print encode_utf8( $item-&gt;{title} ) . "\n";
-}
- </pre>
+}</pre>
 
 <p>これを実行すると...</p>
 

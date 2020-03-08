@@ -98,8 +98,7 @@ my $url = $chart-&gt;get_url(
 print $url . "\n";
 
 #一度 get_url でパラメータを渡したら、ファイル名を指定するだけで書き出せる
-$chart-&gt;render_to_file("foo.png");
- </pre>
+$chart-&gt;render_to_file("foo.png");</pre>
 
 <p>
 特徴は、get_url 及び render_to_file の第2引数に、チャートにしたいデータを ラベル名 =&gt; 値 という形のハッシュリファレンスを渡せば、自動的に割合を出してくれて URL のパラメータにする点です。
@@ -109,8 +108,7 @@ $chart-&gt;render_to_file("foo.png");
 <p>
 WebService::Simple は LWP::UserAgent を継承しているので、今回のファイルに書き出すという機能が簡単に実装できました。実際 Chart.pm の中身はこんな感じでファイルに保存しています。
 </p>
-<pre class="brush: perl"> $self-&gt;SUPER::get( $request_param , ":content_file" =&gt; $filename );
- </pre>
+<pre class="brush: perl"> $self-&gt;SUPER::get( $request_param , ":content_file" =&gt; $filename );</pre>
 <p>
 CPAN はここ（ただし、0.01 はインターフェースが違う＆バグを持っているので 0.02 以上推奨）
 </p>

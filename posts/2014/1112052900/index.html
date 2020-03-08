@@ -200,7 +200,7 @@
 
 
 
-<pre> my $app = MyApp-&gt;new-&gt;to_psgi();
+<pre class="code">my $app = MyApp-&gt;new-&gt;to_psgi();
 my $test = Test::JSON::RPC::Autodoc-&gt;new(
     document_root =&gt; './document',
     app =&gt; $app,
@@ -219,8 +219,7 @@ my $data = $res-&gt;from_json();
 is_deeply $data-&gt;{result}, { language =&gt; 'Perl', country =&gt; 'Japan' };
 
 $test-&gt;write('sample.md');
-done_testing();
- </pre>
+done_testing();</pre>
 
 
 

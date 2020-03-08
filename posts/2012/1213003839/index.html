@@ -80,7 +80,7 @@
 <p>という条件で、fluentdに付属のサンプル設定ファイルをほんの少しいじる。
 tailして標準出力に出すだけだけど、いい感じです。</p>
 
-<pre> &lt;source&gt;
+<pre class="code">&lt;source&gt;
   type tail
   path /service/bokete_web/log/main/current
   format /^@[0-9a-z]+ (?&lt;host&gt;[^ ]*) [^ ]* (?&lt;user&gt;[^ ]*) \[(?&lt;time&gt;[^\]]*)\] "(?&lt;method&gt;\S+)(?: +(?&lt;path&gt;[^ ]*) +\S*)?" (?&lt;code&gt;[^ ]*) (?&lt;size&gt;[^ ]*)(?: "(?&lt;referer&gt;[^\"]*)" "(?&lt;agent&gt;[^\"]*)")?$/
@@ -89,8 +89,7 @@ tailして標準出力に出すだけだけど、いい感じです。</p>
 &lt;/source&gt;
 &lt;match starman.access&gt;
    type stdout
-&lt;/match&gt;
- </pre>
+&lt;/match&gt;</pre>
 
 <p>これをmongodbに入れてごにょる！</p>
 

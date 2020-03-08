@@ -93,7 +93,7 @@
 
 
 
-<pre> my $ua = Mojo::UserAgent-&gt;new;
+<pre class="code">my $ua = Mojo::UserAgent-&gt;new;
 my $tx = $ua-&gt;get('http://yapcasia.org/2014/talk/list');
 
 my $talks = [];
@@ -106,8 +106,7 @@ for my $n ( $tx-&gt;res-&gt;dom('div.talk')-&gt;each ) {
     };
     push @$talks, $talk;
 }
-...;
- </pre>
+...;</pre>
 
 
 

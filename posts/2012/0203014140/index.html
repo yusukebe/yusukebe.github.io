@@ -72,42 +72,38 @@
 
 <p>inuit.cssそれ自体は非常に簡素なもので、コアのcssオンリーだとgridレイアウトすら対応してない。ただHTML5の要素の記述もある。特徴としてデフォルトで使っても文字が非常に読みやすいことがあり。大きさ、フォント、マージン、色非常にバランスよく配置、設定されている。また、イメージをマージンつけて左側に回り込ませて配置するといったちょっとしたユーティリティな使い方ができる。img要素にclass="left"を付ければOK。</p>
 
-<pre> &lt;p&gt;
+<pre class="code">&lt;p&gt;
     &lt;img src="http://yusukebe.com/images/childfood.jpg" class="left" /&gt;
     テキスト.....
-&lt;/p&gt;
- </pre>
+&lt;/p&gt;</pre>
 
 <p>gridレイアウトに対応してないと言っても、ダウンロードしたファイルに同封されている「inuit.grid.css」というものを読み込みさえすればclass属性に指定するだけでレイアウト可能だ。12個のgridで構成されているので、以下のようなマークアップをする。</p>
 
-<pre> &lt;div class="grids"&gt;
+<pre class="code">&lt;div class="grids"&gt;
     &lt;div class="grid-4"&gt;
         &lt;h3&gt;サイドバー&lt;/h3&gt;
     &lt;/div&gt;
     &lt;div class="grid-8 end"&gt;
         &lt;h2&gt;コンテンツ&lt;/h2&gt;
     &lt;/div&gt;
-&lt;/div&gt;
- </pre>
+&lt;/div&gt;</pre>
 
 <p>「keyword.inuit.css」というものも同封されていて、ulでマークアップしたコンテンツがカンマ区切りの一行になる。使い道があんまり思い当たらないが一応紹介。</p>
 
-<pre> &lt;ul class="keywords"&gt;
+<pre class="code">&lt;ul class="keywords"&gt;
   &lt;li&gt;りんご&lt;/li&gt;
   &lt;li&gt;バナナ&lt;/li&gt;
   &lt;li&gt;梨&lt;/li&gt;
   &lt;li&gt;ぶどう&lt;/li&gt;
-&lt;/ul&gt;
- </pre>
+&lt;/ul&gt;</pre>
 
 <p>似たようにulを水平レイアウトにするなら、「nav」クラスを付けてみればナビゲーションができる。</p>
 
-<pre> &lt;ul class="nav" style="margin-left:0;"&gt;
+<pre class="code">&lt;ul class="nav" style="margin-left:0;"&gt;
   &lt;li&gt;&lt;a href="/"&gt;ホーム&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href="/"&gt;アバウト&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href="/"&gt;コンタクト&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
- </pre>
+&lt;/ul&gt;</pre>
 
 <p>全部を合わせるとこのようなスクリーンショットになる。</p>
 

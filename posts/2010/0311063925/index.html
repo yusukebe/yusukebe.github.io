@@ -102,8 +102,7 @@ if( $result ){
   print "valid";
 }else{
   print "error";
-}
- </pre>
+}</pre>
 <p>
 複雑なパターン。checkメソッドに配列で渡せば順番で評価。
 渡す値がハッシュリファレンスでかつ評価が成功した場合、その中のsuccessを返します。
@@ -120,8 +119,7 @@ my $result = $data-&gt;check(
         success =&gt; 'second_message',
     }
 );
-print $result; # second_message
- </pre>
+print $result; # second_message</pre>
 <p>
 最後に、FormValidator的に使う方法。
 </p>
@@ -140,8 +138,7 @@ my $results = $form-&gt;check(
 );
 if( $results-&gt;{id} &amp;&amp; $results-&gt;{name} ){
   print "valid";
-}
- </pre>
+}</pre>
 <p>
 今のところValidateに使えるルールが少ないので、これは増やしていくと共に、
 Web特有のそれ以外のケースにも対応したいです。

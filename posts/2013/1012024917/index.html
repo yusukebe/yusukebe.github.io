@@ -70,7 +70,7 @@
 
 <p>Web::MojoliciousはMojoliciousクラスを継承したアプリのベースクラスね。to_appメソッドでコードリファレンス返しているんで.psgiではこれを呼び出せばOK。ってかもう一度言いますがほとんどのケースは <strong>Plack::App::URLMap</strong> で間に合うかと思われます。</p>
 
-<pre> package Web;
+<pre class="code">package Web;
 use strict;
 use warnings;
 use Plack::Request;
@@ -97,8 +97,7 @@ sub to_app {
     }
 }
 
-1;
- </pre>
+1;</pre>
 
 <p>Plack::Requestのインスタンスを使ってディスパッチする前とかに2つのアプリ共通の処理が起こるケースあるかなーと思って考えてみた次第。三度言いますが <strong>Plack::App::URLMap</strong> でおおよそ解決出来るかと！</p>
 

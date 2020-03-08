@@ -81,7 +81,7 @@
 
 <p>するとController側はこんな風に書ける。</p>
 
-<pre> sub post {
+<pre class="code">sub post {
     my $self = shift;
     my $user = $self-&gt;stash-&gt;{user};
     return $self-&gt;render_not_found unless $user;
@@ -95,14 +95,13 @@
         return $self-&gt;render('/entry/create');
     }
     $self-&gt;redirect_to('/entry/' . $result-&gt;entry-&gt;id);
-}
- </pre>
+}</pre>
 
 <p>$self-&gt;model('Entry')ってのはMyApp::Model::Entryを呼び出しすショートカットなんだけど、createメソッドの返り値が例のResultオブジェクトになっている。</p>
 
 <p>Model側はもちろん他の処理も入るけど最小限これでイケる。</p>
 
-<pre> sub create {
+<pre class="code">sub create {
     my ($self, $args) = @_;
     my $result = $self-&gt;db-&gt;insert('entry', { 
         title =&gt; $args-&gt;{title},
@@ -110,12 +109,11 @@
         user_id =&gt; $args-&gt;{user_id}
     });
     return $result;
-}
- </pre>
+}</pre>
 
 <p>肝心なのは通常「use parent 'Teng'」するMyApp::DBモジュール。これをちょいと拡張する。</p>
 
-<pre> package MyApp::DB;
+<pre class="code">package MyApp::DB;
 use Mouse;
 use String::CamelCase qw//;
 use Module::Load qw//;
@@ -141,12 +139,11 @@ sub insert {
     return $result;
 };
 __PACKAGE__-&gt;meta-&gt;make_immutable();
-1;
- </pre>
+1;</pre>
 
 <p>MyApp::DB::Resultはこんなん。</p>
 
-<pre> package MyApp::DB::Result;
+<pre class="code">package MyApp::DB::Result;
 use Mouse;
 
 has error_messages =&gt; ( is =&gt; 'rw', isa =&gt; 'ArrayRef', default =&gt; sub { [] } );
@@ -154,12 +151,11 @@ has has_error =&gt; ( is =&gt; 'rw', isa =&gt; 'Bool', default =&gt; 0 );
 has entry =&gt; ( is =&gt; 'rw', isa =&gt; 'Object');
 
 __PACKAGE__-&gt;meta-&gt;make_immutable();
-1;
- </pre>
+1;</pre>
 
 <p>その他にFormValidator::Liteを呼び出すためのMyApp::Formと個別のルールが書かれたMyApp::Form::Entryなどが存在する。以下がMyApp::Formで親クラス。FormValidator::Liteに渡す際、パラメータ系の互換にするめにMojo::Parametersを暫定的に使ってます。</p>
 
-<pre> package MyApp::Form;
+<pre class="code">package MyApp::Form;
 use Mouse;
 use Mojo::Parameters;
 use FormValidator::Lite;
@@ -174,12 +170,11 @@ sub validator {
 }
 
 __PACKAGE__-&gt;meta-&gt;make_immutable();
-1;
- </pre>
+1;</pre>
 
 <p>子にあたるMyApp::Form::Entryにはルールが存在している。モジュールにべた書きしてます。</p>
 
-<pre> package MyApp::Form::Entry;
+<pre class="code">package MyApp::Form::Entry;
 use Mouse;
 extends 'MyApp::Form';
 use utf8;
@@ -201,8 +196,7 @@ sub check {
 }
 
 __PACKAGE__-&gt;meta-&gt;make_immutable();
-1;
- </pre>
+1;</pre>
 
 <p>ORMべったりでそもそもメソッド上書きしているけど、insertじゃない名前にしたりルールが存在しない場合は通常動作させるとか... も含めてこれはアリな気がするぞ... もしくはORMの層じゃなくてModelのとこで書くのもいいし。</p>
 

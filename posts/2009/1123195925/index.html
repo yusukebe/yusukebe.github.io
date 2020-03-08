@@ -82,66 +82,59 @@
 ab は以下のような簡単なコマンドを叩きました。
 </p>
 
-<pre> $ sudo ab -n 100 http://192.168.1.xxx:5000/
- </pre>
+<pre class="code">$ sudo ab -n 100 http://192.168.1.xxx:5000/</pre>
 
 <p>
 では、順を追ってチューニングされる手順を見ていきます。
 ちなみに、主に使用しているモジュールのバージョンはこの通りです。
 </p>
-<pre> Plack 0.9013
+<pre class="code">Plack 0.9013
 Template 2.20
-Text::MicroTemplate 0.10
- </pre>
+Text::MicroTemplate 0.10</pre>
 <p>
 まずはチューニング以前のものを計測してみます。
 </p>
-<pre> Requests per second:    56.72 [#/sec] (mean)
+<pre class="code">Requests per second:    56.72 [#/sec] (mean)
 Time per request:       17.631 [ms] (mean)
 Time per request:       17.631 [ms] (mean, across all concurrent requests)
-Transfer rate:          44.24 [Kbytes/sec] received
- </pre>
+Transfer rate:          44.24 [Kbytes/sec] received</pre>
 <p>
 最初のチューニングとして、テンプレートエンジンにTTを使用していたので、
 これをTTと比べて軽量と言われかつ記法も柔軟なText::MicroTemplate::Extendedに変えてみましょう。
 </p>
-<pre> Requests per second:    60.01 [#/sec] (mean)
+<pre class="code">Requests per second:    60.01 [#/sec] (mean)
 Time per request:       16.664 [ms] (mean)
 Time per request:       16.664 [ms] (mean, across all concurrent requests)
-Transfer rate:          45.01 [Kbytes/sec] received
- </pre>
+Transfer rate:          45.01 [Kbytes/sec] received</pre>
 <p>
 おお、そこまで激的では無いにしろ「105%」速くなってますね！
 次に内部で YAML モジュールを使っていたところを YAML::XS にしてみます。
 これは期待できそうですね！
 </p>
-<pre> Requests per second:    66.53 [#/sec] (mean)
+<pre class="code">Requests per second:    66.53 [#/sec] (mean)
 Time per request:       15.032 [ms] (mean)
 Time per request:       15.032 [ms] (mean, across all concurrent requests)
-Transfer rate:          49.89 [Kbytes/sec] received
- </pre>
+Transfer rate:          49.89 [Kbytes/sec] received</pre>
 <p>
 おお、いい感じですね！チューニング前と比べると「117%」速くなっています。
 でも、もっと速くしたい！と思ったところ
 「ディレクトリ等のパスの解決に使っている Path::Class モジュールが無駄じゃね？」
 と思いそれを取り除いて素の文字列でパスを扱ってみました。
 </p>
-<pre> Requests per second:    76.71 [#/sec] (mean)
+<pre class="code">Requests per second:    76.71 [#/sec] (mean)
 Time per request:       13.036 [ms] (mean)
 Time per request:       13.036 [ms] (mean, across all concurrent requests)
-Transfer rate:          59.83 [Kbytes/sec] received
- </pre>
+Transfer rate:          59.83 [Kbytes/sec] received</pre>
 <p>
 おおお、今まで一番速くなった！
 チューニング前と比較して「135%」高速化されています。
 で、最後のチューニングは、「これ Mouse 使うのやめればへえーんじゃね？」
 と思って素でクラス作ってみました。
 </p>
-<pre> Requests per second:    78.14 [#/sec] (mean)
+<pre class="code">Requests per second:    78.14 [#/sec] (mean)
 Time per request:       12.797 [ms] (mean)
 Time per request:       12.797 [ms] (mean, across all concurrent requests)
-Transfer rate:          60.95 [Kbytes/sec] received
- </pre>
+Transfer rate:          60.95 [Kbytes/sec] received</pre>
 <p>
 あれ？あんま変わってない。。。
 ってか実はXSの Mouse ( 最新版 ) 使ったのよねーーー！！！むしろ、Mouse++

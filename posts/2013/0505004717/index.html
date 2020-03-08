@@ -85,49 +85,44 @@
 
 <h3>Twitter</h3>
 
-<pre> &lt;a href="https://twitter.com/intent/tweet?
+<pre class="code">&lt;a href="https://twitter.com/intent/tweet?
 url={URLをURIエスケープしたもの}&amp;text={タイトルをURIエスケープしたもの}"&gt;
-Twitterでシェアする&lt;/a&gt;
- </pre>
+Twitterでシェアする&lt;/a&gt;</pre>
 
 <h3>Facebook</h3>
 
-<pre> &lt;a href="https://www.facebook.com/sharer/sharer.php?
+<pre class="code">&lt;a href="https://www.facebook.com/sharer/sharer.php?
 u={URLをURIエスケープしたもの}&amp;t={タイトルをURIエスケープしたもの}"&gt;
-Facebookでシェアする&lt;/a&gt;
- </pre>
+Facebookでシェアする&lt;/a&gt;</pre>
 
 <h3>LINE</h3>
 
 <p>URLとタイトルを含んだ「テキスト」をつくって...</p>
 
-<pre> &lt;a href="line://msg/text/{テキストをURIエスケープしたもの}"&gt;
-LINEでシェアする&lt;/a&gt;
- </pre>
+<pre class="code">&lt;a href="line://msg/text/{テキストをURIエスケープしたもの}"&gt;
+LINEでシェアする&lt;/a&gt;</pre>
 
 <h3>カカオトーク</h3>
 
 <p>こいつが結構やっかい。必要なパラメータがやたら多いで<a href="http://www.kakao.com/link/ja/api?tab=mobile">こちらの公式解説</a>で確認した方がいいでしょう。</p>
 
-<pre> &lt;a href="kakaolink://sendurl?
+<pre class="code">&lt;a href="kakaolink://sendurl?
 msg={タイトルをURIエスケープしたもの}&amp;url={URLをURIエスケープしたもの}
 &amp;appid={サイトのドメインをURIエスケープしたもの}
 &amp;appname={サイトの名前をURIエスケープしたもの}"&gt;
-カカオトークでシェアする&lt;/a&gt;
- </pre>
+カカオトークでシェアする&lt;/a&gt;</pre>
 
 <h3>Webアプリのテンプレート内での実装例</h3>
 
 <p>Webアプリのテンプレートでどうやるか？疑似コードっぽくかつテンプレート内にコード書いてるけどこんな具合。</p>
 
-<pre> % use URI::Escape qw/uri_escape_utf8/;
+<pre class="code">% use URI::Escape qw/uri_escape_utf8/;
 % my $url = "http://yusukebe.com/";
 % my $title = "ゆーすけべー日記";
 
 &lt;a href="https://twitter.com/intent/tweet?url=&lt;%= uri_escape_utf8($url) %&gt;&amp;text=&lt;%= uri_escape_utf($title) %&gt;"&gt;
   Twitterでシェアする
-&lt;/a&gt;
- </pre>
+&lt;/a&gt;</pre>
 
 <hr>
 

@@ -126,8 +126,7 @@ $irc-&gt;reg_cb(
 );
 $irc-&gt;connect( "chat.freenode.net", 6667, { nick =&gt; 'zenra_bot' } );
 $irc-&gt;send_srv( "JOIN", $channel );
-$c-&gt;recv;
- </pre>
+$c-&gt;recv;</pre>
 <p>
 このモジュールのいい点は先ほど言ったように「名詞」の前に「夜の」を付けて「nightize」させたいなんて時にも対応できる点です。newする時にこんな風に指定すればいいのです。
 </p>
@@ -137,8 +136,7 @@ $c-&gt;recv;
     text        =&gt; '夜の'
 );
 my $result = $zenra-&gt;zenrize('お腹が空いたのでスパゲッティが食べたい');
-print encode_utf8($result)    # 夜のお腹が空いたので夜のスパゲッティが食べたい
- </pre>
+print encode_utf8($result)    # 夜のお腹が空いたので夜のスパゲッティが食べたい</pre>
 <p>
 作ってみたものの、誰得な気がして、watchするのもsugyanとmakamakaさんくらいだろーなーとという感じですが、
 希望があればアップデートします。

@@ -159,8 +159,7 @@ Web 以外のコマンドラインインターフェースから Model を扱う
   - View
   - Controller
 API
-CLI
- </pre>
+CLI</pre>
 
 <p>
 例えば、投稿されたボケの最新20件を取得したかったら以下のように書けるわけです。
@@ -170,8 +169,7 @@ CLI
 my $entries = $api-&gt;get_recent( { rows =&gt; 20 } );
 while( my $entry = $entries-&gt;next ){
     print $entry-&gt;title . "\n";
-}
- </pre>
+}</pre>
 
 <p>
 これは CLI での利用ですが、ウェブ側の Controller でももちろん似たように使えます。

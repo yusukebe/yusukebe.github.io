@@ -86,8 +86,7 @@
         category =&gt; { isa =&gt; 'Maybe[Str]', default =&gt; undef },
         tags =&gt; { isa =&gt; 'ArrayRef', default =&gt; sub { [] } }
     )-&gt;with('Method');
-    my ($self, $args) = $rule-&gt;validate(@_);
- </pre>
+    my ($self, $args) = $rule-&gt;validate(@_);</pre>
 
 
 <p>実装レベルでコードの中に出てくる「データ」もしくは「機能」それぞれに対して厳密にチェックしておきたい場合に、LLだと外部のライブラリを使う手間が生じたり、それが完璧に行われないケースがあるのです。逆に言えばそれがLLのいいところですが、使いドコロによってはより「strictに」やりたいアプリケーションもあるかと思うのです。</p>
@@ -141,8 +140,7 @@
     }(e)
   }
   wg.Wait()
-}
- </pre>
+}</pre>
 
 
 <p>このように最初はスクリプト的にGoを使ってみて感触を掴んでみました。</p>
@@ -208,8 +206,7 @@ func main() {
 func resize(img image.Image, width int, height int) image.Image {
     dstImg := imaging.Resize(img, width, height, imaging.Lanczos)
     return dstImg.SubImage(dstImg.Rect)
-}
- </pre>
+}</pre>
 
 
 <p>このようにスニペットを充実させていく作業をすると</p>

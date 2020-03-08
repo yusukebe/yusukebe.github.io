@@ -84,7 +84,7 @@
 
 <p>ってことでhookを使って500番エラーをキャッチする再現出来るコードを書いてみた。Mojolicious::Lite です。</p>
 
-<pre> use Mojolicious::Lite;
+<pre class="code">use Mojolicious::Lite;
 
 app-&gt;hook(
     after_dispatch =&gt; sub {
@@ -104,8 +104,7 @@ get '/error' =&gt; sub {
     die;
 };
 
-app-&gt;start;
- </pre>
+app-&gt;start;</pre>
 
 <p>これで「/error」にアクセスすると「hooked!!」って出る〜！！</p>
 

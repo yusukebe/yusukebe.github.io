@@ -119,9 +119,7 @@ sub make_url {
         $url .= "&amp;$key=" . URI::Escape::uri_escape_utf8( $param-&gt;{$key} ) . "&amp;";
     }
     return $url;
-}
-
- </pre>
+}</pre>
 <p>
 上記した3つのステップがコード内に入っています。では次に、WebService::Simpleを使ったサンプルコードはこちらとなります。
 </p>
@@ -140,9 +138,7 @@ my $flickr = WebService::Simple-&gt;new( $base_url, { api_key =&gt; $api_key } )
 my $response =
   $flickr-&gt;get( { method =&gt; "flickr.photos.search", text =&gt; "猫" } );
 my $ref = $response-&gt;parse_xml( { forcearray =&gt; ["photo"], keyattr =&gt; [] } );
-print Dump $ref;
-
- </pre>
+print Dump $ref;</pre>
 <p>
 リクエストURLを作るのとXML::Simpleのインスタンスを作成してパースという処理が無くなったためコードがすっきりしました。また、パラメータをハッシュリファレンスで指定するので、いろいろな種類のリクエストを作るのが楽です。WebService::Simple のメソッドは以下の通りです。
 </p>
@@ -192,9 +188,7 @@ my $amazon = WebService::Simple-&gt;new(
 my $response = $amazon-&gt;get($param);
 my $ref =
   $response-&gt;parse_xml( { forcearray =&gt; [ "item", "Author" ], keyattr =&gt; [] } );
-print Dump $ref;
-
- </pre>
+print Dump $ref;</pre>
 <p>
 ようは、ウェブAPIを使う時に、リクエストURLをいちいち作るのめんどくせーよ、返ってきたXMLは（処理が遅くてもいいから扱いやすい）XML::Simpleで返してよ！という超個人的な要望を叶えるモジュールです。
 今後欲しい機能として、API のアプリケーションIDなどを YAML で設定ファイルとして持たせて、それを自動的に読んだりしたら楽チンだなと思っています。

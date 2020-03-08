@@ -141,9 +141,7 @@
       expression: $args-&gt;{feed}-&gt;id eq 'smartfeed:all'
     config:
       schema_class: Plagger::Schema::SQLite
-      connect_info: [ 'dbi:SQLite:/path/to/plagger.db', ]
-
- </pre>
+      connect_info: [ 'dbi:SQLite:/path/to/plagger.db', ]</pre>
 <p>
   次に、@nifty TimeLine へ APIを使ってポストする部分について解説。
   「これ☆ほしい」のエントリーからカウントが5以上のものをひっぱってきて、
@@ -257,8 +255,7 @@ sub update_article{
                     id =&gt; $entry-&gt;timeline_id,
                     # update properties...
 　     );
-}
- </pre>
+}</pre>
 <p>
 以上、とりあえず、
 「サイトスカウター＠これ☆ほしい」の評価＆コメントお願いしまつ。

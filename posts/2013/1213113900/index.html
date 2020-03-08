@@ -119,7 +119,7 @@
 
 
 
-<pre> app.factory('Tracks', function($http) {
+<pre class="code">app.factory('Tracks', function($http) {
   return {
     get : function(query, callback) {
       $http.jsonp('http://ws.audioscrobbler.com/2.0/', {
@@ -140,8 +140,7 @@
       return [];
     }
   };
-});
- </pre>
+});</pre>
 
 
 
@@ -151,10 +150,9 @@
 
 
 
-<pre> Tracks.get('Mr.Children', function(tracks){
+<pre class="code">Tracks.get('Mr.Children', function(tracks){
   $scope.tracks = tracks;
-});
- </pre>
+});</pre>
 
 
 

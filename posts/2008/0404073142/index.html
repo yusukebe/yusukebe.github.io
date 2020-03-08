@@ -117,9 +117,7 @@ $response = $lingr-&gt;get(
 my $status = $response-&gt;parse_xml-&gt;{status};
 
 # destroy session
-$lingr-&gt;get( { session =&gt; $session, }, { path =&gt; '/api/session/destroy' } );
-
- </pre>
+$lingr-&gt;get( { session =&gt; $session, }, { path =&gt; '/api/session/destroy' } );</pre>
 
 <p>
 自分が作ったものを使ってもらえること、また、CPAN のサイトに自分の名前が載るっていうのはとっても嬉しいことですね。至らぬ点あると思いますが、よろしくお願いします。

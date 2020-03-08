@@ -73,8 +73,7 @@
 miyagawaさんからご指摘いただきまして、cpanm本体のコマンドできます！
 すばらしす。
 </p>
-<pre class="brush: perl"> $ cpanm --installdeps .
- </pre>
+<pre class="brush: perl"> $ cpanm --installdeps .</pre>
 <p>
 cpanm -h するといろいろ使い方書いてあるので見てみたほうがよかったっすね。
 miyagawaさんあざっす。
@@ -95,13 +94,11 @@ cpanminusに渡してうはうはしたい、つまり make installdeps 相当�
 <pre class="brush: perl"> #!/usr/bin/perl
 use YAML::Tiny;
 print join "\n", grep { eval("require $_"); $_ if $@; }
-  keys %{ YAML::Tiny-&gt;read( $ARGV[0] || 'META.yml' )-&gt;[0]{requires} };
- </pre>
+  keys %{ YAML::Tiny-&gt;read( $ARGV[0] || 'META.yml' )-&gt;[0]{requires} };</pre>
 <p>
 これをcpan_not_installed.plとかで保存して、
 </p>
-<pre class="brush: perl"> $ cpan_not_installed.pl | sudo -H cpanm
- </pre>
+<pre class="brush: perl"> $ cpan_not_installed.pl | sudo -H cpanm</pre>
 <p>
 とかってやるととりあえずやりたいことはできてうはうはしてる。
 他に方法あれば教えてください＞＜

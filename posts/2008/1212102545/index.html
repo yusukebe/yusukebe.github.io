@@ -70,8 +70,7 @@
 wget とか使えばもっと短くできそうだけど、Perl だけで頑張ってみた。
 </p>
 <h4>コマンド</h4>
-<pre class="brush: perl"> $ perl -MLWP::Simple -MFile::Basename -e 'map{mirror($_,basename($_))} get($ARGV[0]) =~ m{&lt;a.*?href="(http://[^"]+\.jpg)"}gi;' http://metiss.blog92.fc2.com/blog-entry-142.html
- </pre>
+<pre class="brush: perl"> $ perl -MLWP::Simple -MFile::Basename -e 'map{mirror($_,basename($_))} get($ARGV[0]) =~ m{&lt;a.*?href="(http://[^"]+\.jpg)"}gi;' http://metiss.blog92.fc2.com/blog-entry-142.html</pre>
 
 <h4>結果</h4>
 <p>

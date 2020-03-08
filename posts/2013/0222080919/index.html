@@ -71,8 +71,7 @@
 
 <p>といっても <a href="http://search.cpan.org/~jberger/Mojolicious-3.86/lib/Mojolicious.pm#renderer">この辺</a> のドキュメントに書いてある。Mojolicious::Rendererオブジェクトへパスを追加すればいい。Liteじゃない方のMojoliciousアプリだったら、 Mojolicious.pmを継承しているモジュールの「startup」内とかで</p>
 
-<pre> unshift @{$self-&gt;app-&gt;renderer-&gt;paths}, File::Spec-&gt;catfile(MyApp-&gt;base_dir, 'templates/sp');
- </pre>
+<pre class="code">unshift @{$self-&gt;app-&gt;renderer-&gt;paths}, File::Spec-&gt;catfile(MyApp-&gt;base_dir, 'templates/sp');</pre>
 
 <p>とかすればよい。ちなみに MyApp-&gt;base_dir ってのはアプリのベースディレクトリを返すモジュール及び関数が定義されている前提です。</p>
 

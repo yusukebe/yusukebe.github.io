@@ -86,8 +86,7 @@ PHPのように膨大な標準の関数を使ってせいぜいWebアプリを�
 
 <pre class="brush: perl"> # cpan &gt; install LWP::Simple
 use LWP::Simple;
-my $content = get('http://yusukebe.com/');
- </pre>
+my $content = get('http://yusukebe.com/');</pre>
 
 <p>
 PHPの場合fopen一発でできるところ、Perlではモジュールのインストールからしなくてはいけません。
@@ -106,8 +105,7 @@ my $scraper = scraper {
     process "h2.entry-title", 'titles[]' =&gt; 'TEXT';
 };
 my $res = $scraper-&gt;scrape( URI-&gt;new('http://yusukebe.com/') );
-map { print $_ . "\n"} @{$res-&gt;{titles}};
- </pre>
+map { print $_ . "\n"} @{$res-&gt;{titles}};</pre>
 <pre class="brush: perl"> Twib in Yokohama.pm テクニカルトーク#5
 実例で学ぶPerlにおけるリファレンス
 Perl入門本を書こうとしている話
@@ -117,8 +115,7 @@ Twitterの友達が好きなアーティストがわかっちゃったりする�
 Twitterで話題のYouTube動画が一目でわかるTubetter - ツベッターを作ってみた
 CatalystアプリケーションをStarmanで運用しよう！
 3/5 Yokohama.pm #5 が開催されます
-オススメのIRCチャンネルを教えてください＠人力検索はてな
- </pre>
+オススメのIRCチャンネルを教えてください＠人力検索はてな</pre>
 <p>
 CSSセレクタやXPathで指定した部分だけを配列に入れてくれたりして便利ですね！
 こうした便利ーなモジュールがCPANには沢山あるので、
@@ -148,8 +145,7 @@ my $ref = { name =&gt; 'yusukebe', zokuseis =&gt; [qw(メガネ エロ)] };
 print "Data::Dumper::Dumper\n";
 print Dumper $ref;
 print "YAML::Dump\n";
-print Dump $ref;
- </pre>
+print Dump $ref;</pre>
 
 <pre class="brush: perl"> Data::Dumper::Dumper
 $VAR1 = { 
@@ -164,8 +160,7 @@ YAML::Dump
 name: yusukebe
 zokuseis:
   - メガネ
-  - エロ
- </pre>
+  - エロ</pre>
 <p>
 私はもう今となってはPHPはほとんど触りませんが、
 やはりWebの開発から小物スクリプトまでPerlに軍配が上がる、と思います。

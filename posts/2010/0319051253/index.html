@@ -86,8 +86,7 @@ MojaMoja - (PoC)yet another sinatra-ish framework built on CPAN modules
 まぁ何が面白いって、その名前と、
 アプリの最後に
 </p>
-<pre class="brush: perl"> zigorou;
- </pre>
+<pre class="brush: perl"> zigorou;</pre>
 <p>
 って書くところですね！
 zigorou;って書くと、plackup等で利用可能なアプリケーションハンドラを返してくれます。
@@ -100,14 +99,12 @@ get '/' =&gt; sub {
     return [ 200, [], ['Hello ZIGOROu'] ];
 };
 
-zigorou;
- </pre>
+zigorou;</pre>
 <p>
 と書いた zigorou.psgi を保存して、
 </p>
 
-<pre class="brush: perl"> plackup zigrou.psgi
- </pre>
+<pre class="brush: perl"> plackup zigrou.psgi</pre>
 
 <p>
 として <a href="http://localhost:5000/">http://localhost:5000/</a> とかにアクセスすれば「Hello ZIGOROu」が表示されます。
@@ -128,8 +125,7 @@ zigorou;
 __DATA__
 
 @@ hoge.mt
-hogehoge &lt;?= $name ?&gt;
- </pre>
+hogehoge &lt;?= $name ?&gt;</pre>
 
 <p>
 という.psgiを作って、今度は <a href="http://localhost:5000/hoge?name=ZIGOROu">http://localhost:5000/hoge?name=ZIGOROu</a>
@@ -183,8 +179,7 @@ __DATA__
 &lt;/object&gt;
 &lt;/form&gt;
 &lt;/body&gt;
-&lt;/html&gt;
- </pre>
+&lt;/html&gt;</pre>
 <p>
 このサクっと作れる感がいいですね。
 で、上記した通りPigletというPSGI web micro framework <b>kit</b>がでてくるのし、

@@ -118,10 +118,9 @@
 
 
 
-<pre> GET /photos/puppy.jpg HTTP/1.1
+<pre class="code">GET /photos/puppy.jpg HTTP/1.1
 Host: johnsmith.s3.amazonaws.com
-Date: Tue, 27 Mar 2007 19:36:42 +0000
- </pre>
+Date: Tue, 27 Mar 2007 19:36:42 +0000</pre>
 
 
 
@@ -131,7 +130,7 @@ Date: Tue, 27 Mar 2007 19:36:42 +0000
 
 
 
-<pre> use strict;
+<pre class="code">use strict;
 use warnings;
 use Test::More;
 use Digest::HMAC_SHA1;
@@ -149,8 +148,7 @@ my $signature = $hmac-&gt;b64digest . '=';
 ok $signature;
 is $signature, 'bWq2s1WEIj+Ydj0vQ697zp+IXMU=';
 
-done_testing();
- </pre>
+done_testing();</pre>
 
 
 

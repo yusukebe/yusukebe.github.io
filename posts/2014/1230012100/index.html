@@ -98,9 +98,8 @@
 
 
 
-<pre> SELECT * FROM rating
-WHERE rating.date &gt;= '2013-12-01 00:00:00' AND rating.date &lt; '2014-12-01 00:00:00'
- </pre>
+<pre class="code">SELECT * FROM rating
+WHERE rating.date &gt;= '2013-12-01 00:00:00' AND rating.date &lt; '2014-12-01 00:00:00'</pre>
 
 
 
@@ -110,11 +109,10 @@ WHERE rating.date &gt;= '2013-12-01 00:00:00' AND rating.date &lt; '2014-12-01 0
 
 
 
-<pre> SELECT boke.*,SUM(rating.rate) as rate_sum FROM boke,rating
+<pre class="code">SELECT boke.*,SUM(rating.rate) as rate_sum FROM boke,rating
 WHERE boke.id = rating.boke_id
 AND rating.date &gt;= '2013-12-01 00:00:00' AND rating.date &lt; '2014-12-01 00:00:00'
-GROUP BY boke.id ORDER BY rate_sum DESC
- </pre>
+GROUP BY boke.id ORDER BY rate_sum DESC</pre>
 
 
 

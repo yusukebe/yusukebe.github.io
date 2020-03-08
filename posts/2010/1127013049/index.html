@@ -124,8 +124,7 @@ for my $face (@faces) {
         filled =&gt; 0,
     ) or die $img-&gt;errstr;
 }
-$img-&gt;write( file =&gt; 'out.jpg' ) or die $img-&gt;errstr;
- </pre>
+$img-&gt;write( file =&gt; 'out.jpg' ) or die $img-&gt;errstr;</pre>
 
 <p>
 上記のコードを実行した例が以下の写真である。
@@ -188,9 +187,7 @@ for my $actress ( @$actress_list ){
     search("おっぱい $actress");
 }
 
-...;
-
- </pre>
+...;</pre>
 <p>
 このAcme::Porn::JPの現行バージョンでは4502人のAV女優名が掲載されている。
 Acme::Porn::JPは以下のgithubサイトから入手できる。
@@ -225,15 +222,11 @@ negative.datはNegative Imageの画像ファイルへのパスのリストであ
 </p>
 <pre class="brush: perl"> positive.dat
 [filename] [# of objects] [[x y width height] [... 2nd object] ...]
-images/01.jpg 1 140 100 45 45
-
- </pre>
+images/01.jpg 1 140 100 45 45</pre>
 
 <pre class="brush: perl"> negative.dat
 images/neg-01.jpg
-images/neg-02.jpg
-
- </pre>
+images/neg-02.jpg</pre>
 
 <h3>2.学習ツール作成</h3>
 <p>
@@ -267,15 +260,12 @@ Haartraining-Appの一般的なディレクトリ構成は以下の通りであ�
     |-- haartraining.js
     `-- index.html
 
-3 directories, 6 files
-
- </pre>
+3 directories, 6 files</pre>
 <p>
 Plackモジュールのplackupコマンドを使えば起動しているホストの5000番ポートなどで、
 アプリケーションが起動する。
 </p>
-<pre class="brush: perl"> $ plackup haartraining.psgi 
- </pre>
+<pre class="brush: perl"> $ plackup haartraining.psgi</pre>
 
 <h3>3.ひたすらおっぱいを囲む</h3>
 <p>

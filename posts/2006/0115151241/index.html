@@ -112,33 +112,33 @@ MovableTypeの新しいバージョンではデフォルトでindex.xmlとして
 
 ・クラスファイルを読み込む
 </p>
-<pre> import RssParser;
+<pre class="code">import RssParser;
 import Rss; </pre>
 
 ・RSSを読み込む
-<pre> var rp:RssParser = new RssParser("http://yoursite/index.xml"); </pre>
+<pre class="code">var rp:RssParser = new RssParser("http://yoursite/index.xml"); </pre>
 
 ・gate.phpを経由する場合はこんな感じ、Flashを公開するドメインと同ドメイン上にgate.phpを置くこと
-<pre> var rp:RssParser = new RssParser("http://yoursite/gate.php?target=http://yoursite/index.xml"); </pre>
+<pre class="code">var rp:RssParser = new RssParser("http://yoursite/gate.php?target=http://yoursite/index.xml"); </pre>
 
 ・RSSの読み込み終了を受けるハンドラを設定する
-<pre> rp.onParseEnd = function(){
+<pre class="code">rp.onParseEnd = function(){
 	gotoAndStop(2);//など
 } </pre>
 
 ・パースをする
-<pre> rp.parseRss();
+<pre class="code">rp.parseRss();
 //パースが終了したら上記ハンドラの中が実行される </pre>
 
 ・RSSを取得する
-<pre> var rss:Rss = rp.getRss(); </pre>
+<pre class="code">var rss:Rss = rp.getRss(); </pre>
 
 ・ブログのタイトルとリンクを取得し、トレースしてみる
-<pre> trace(rss.getTitle());
+<pre class="code">trace(rss.getTitle());
 trace(rss.getLink()); </pre>
 
 ・記事ごとのタイトルやdescriptionなどを取得したい場合は以下のようにアクセスする
-<pre> trace(rss.item[0].title);//一番最新の記事のタイトルをトレース
+<pre class="code">trace(rss.item[0].title);//一番最新の記事のタイトルをトレース
 trace(rss.item[0].description);//itemの添え字を0,1,2と増やしていくと新しい記事から古い記事へと参照できる
 trace(rss.item[0].date);//dateにアクセスするとFlashのDate型で日付を取得できる
 //記事のプロパティにはtitle link description dateがある </pre>

@@ -79,8 +79,7 @@
 <p>
 sinatraで実装されているので、Plack/PSGIでも実装できないかと思って作ってみました。
 </p>
-<pre> $ plackup -a fast-twitter-stream.psgi --port 8080 -s Coro
- </pre>
+<pre class="code">$ plackup -a fast-twitter-stream.psgi --port 8080 -s Coro</pre>
 <p>
 で起動します。ServerにはCoroを指定します。
 以下が fast-twitter-stream.psgi です。
@@ -163,9 +162,7 @@ s.load('/push');
 &lt;/html&gt;
 HTML
     return $html;
-}
-
- </pre>
+}</pre>
 
 <p>
 ブラウザから"<a href="http://localhost:8080/">http://localhost:8080/"</a>にアクセスすると、

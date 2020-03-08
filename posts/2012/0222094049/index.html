@@ -133,23 +133,20 @@ Mac OSXだと<a href="http://www.codingrobots.com/markdownnote/">MarkdownNote</a
 
 <p>インストールは「cpanm」というコマンドを入れて、ターミナルからこんな感じで行います。</p>
 
-<pre> $ git clone git://github.com/yusukebe/Yomico.git
+<pre class="code">$ git clone git://github.com/yusukebe/Yomico.git
 $ cd Yomico 
-$ cpanm .
- </pre>
+$ cpanm .</pre>
 
 <p>うまく入れば、「yomico」コマンドを使うことができるので、
 ファイルを指定したりディレクトリを指定したりして実行してください。</p>
 
-<pre> $ cd notes
-$ yomico README.mkdn
- </pre>
+<pre class="code">$ cd notes
+$ yomico README.mkdn</pre>
 
 <p>とか、カレント指定しつつポートも任意のものにする場合は</p>
 
-<pre> $ cd notes
-$ yomico . -p 5001
- </pre>
+<pre class="code">$ cd notes
+$ yomico . -p 5001</pre>
 
 <p>という具合です。デフォルトの場合は「<a href="http://localhost:5000">http://localhost:5000</a>」にお使いのブラウザでアクセスすると整形したMarkdownもしくはファイル一覧を見ることができます。</p>
 

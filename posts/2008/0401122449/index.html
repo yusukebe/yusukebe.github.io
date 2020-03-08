@@ -93,8 +93,7 @@ my $flickr = WebService::Simple-&gt;new(
 my $response =
   $flickr-&gt;get( { method =&gt; "flickr.test.echo", name =&gt; "value" } );
 my $ref = $response-&gt;parse_xml;
-print $ref-&gt;{name} . "\n";
- </pre>
+print $ref-&gt;{name} . "\n";</pre>
 
 <p>
 昨日のバージョンとの互換性を持たせようかと思ったけど、コードが汚くなるのでやめておいた。

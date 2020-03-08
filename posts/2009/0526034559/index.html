@@ -87,8 +87,7 @@ httpd のポートがたくさんできちゃうのが多少気持ち悪い感�
 一番最後に、運用も視野に入れた必要最小限の conf ファイルのサンプルを貼付けておきます。
 myapp_httpd.conf を使う場合、
 </p>
-<pre class="brush: perl"> $ sudo apache2ctl -f myapp_httpd.conf
- </pre>
+<pre class="brush: perl"> $ sudo apache2ctl -f myapp_httpd.conf</pre>
 <p>
 としてアプリ別に apache を起動しています。
 テストマシンで試験してる段階ではこれで問題はないようです。
@@ -137,8 +136,7 @@ PerlSwitches -I/home/www/myapp/extlib
  
 PerlRequire /home/www/myapp/startup.pl
 SetHandler perl-script
-PerlHandler MyApp
- </pre>
+PerlHandler MyApp</pre>
 
 <p>
 次に front の apache の設定。VirtualHost 前提で、静的コンテンツに関しては
@@ -155,8 +153,7 @@ Expires ヘッダを付加しています。
         &lt;FilesMatch "\.(jpg|gif|png|ico|css|js)$"&gt;
             ExpiresDefault "access plus 365 days"
         &lt;/FilesMatch&gt;
-&lt;/VirtualHost&gt;
- </pre>
+&lt;/VirtualHost&gt;</pre>
 
 <p>
 lighttpd と比べながら、実際に運用へ適応させようかと思っています。

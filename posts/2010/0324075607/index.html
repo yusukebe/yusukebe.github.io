@@ -99,13 +99,11 @@ star;
 __DATA__
 
 @@ index
-&lt;h1&gt;message : &lt;?= $message ?&gt;&lt;/h1&gt;
- </pre>
+&lt;h1&gt;message : &lt;?= $message ?&gt;&lt;/h1&gt;</pre>
 <p>
 これをmyapp.plとして保存して perl コマンドで実行すればデフォルト5000番ポートでサーバが立ち上がります。
 </p>
-<pre class="brush: perl"> $ perl myapp.pl
- </pre>
+<pre class="brush: perl"> $ perl myapp.pl</pre>
 <p>
 getメソッドでディパッチとそれに対するのコントローラの定義をします。
 「__DATA__」以下のデータセクションにText::MicroTemplateの書式でテンプレートを書きます。
@@ -137,8 +135,7 @@ __DATA__
 &lt;/div&gt;
 &lt;address&gt;This content is made by Hitagi&lt;/address&gt;
 &lt;/body&gt;
-&lt;/html&gt;
- </pre>
+&lt;/html&gt;</pre>
 
 <p>
 静的ファイルのサーブもstaticというディレクトリに置けばよいとデフォルトで利用可能で、
@@ -216,8 +213,7 @@ __DATA__
 @@ entry
 &lt;pre&gt;
 &lt;?= $body ?&gt;
-&lt;/pre&gt;
- </pre>
+&lt;/pre&gt;</pre>
 <p>
 こうすれば nopaste.pl と static/screen.css だけあればとりあえずは
 動くものができちゃいます。

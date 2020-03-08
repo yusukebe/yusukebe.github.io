@@ -70,16 +70,14 @@
 
 <p>awscliのPerlラッパーであるAWS::CLIWrapperを使うにはそもそも「awscli」をインストールしなくてはいけないので入れる。</p>
 
-<pre> % sudo eazy_install awscli
- </pre>
+<pre class="code">% sudo eazy_install awscli</pre>
 
 <p>これでawsコマンドが使えるようになるんだけど、補完が効いた方がいいので、設定する。zshの場合はちょっと工夫が必要で以下のようにする。どのファイルを扱うかはお好きなように。</p>
 
-<pre> % mkdir ~/.zsh &amp;&amp; cd ~/.zsh
+<pre class="code">% mkdir ~/.zsh &amp;&amp; cd ~/.zsh
 % wget "https://raw.github.com/aws/aws-cli/develop/bin/aws_zsh_completer.sh"
 % echo "source ~/.zsh/aws_zsh_completer.sh" &gt;&gt; ~/.zshrc
-% source ~/.zshrc
- </pre>
+% source ~/.zshrc</pre>
 
 <p>ターミナルで素早くコマンドを試したい時にはこのawsコマンドを使う。</p>
 
@@ -97,7 +95,7 @@
 
 <p>動作可能性の高いコードは以下の通り。具体的な設定をしたら動きました。</p>
 
-<pre> use AWS::CLIWrapper;
+<pre class="code">use AWS::CLIWrapper;
 use Cinnamon::DSL;
 use YAML;
 
@@ -139,8 +137,7 @@ task deploy =&gt; {
         }
         $host;
     },
-};
- </pre>
+};</pre>
 
 <h3>参考リンク</h3>
 

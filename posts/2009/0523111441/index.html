@@ -113,8 +113,7 @@ my $ref = $res-&gt;parse_response();
 
 for my $entry ( @{ $ref-&gt;{entry} } ) {
     print $entry-&gt;{link}-&gt;[0]-&gt;{href} . "\n";
-}
- </pre>
+}</pre>
 <p>
 まぁ、XML::Simple も慣れるまでに KeyAttr オプションを知らずにはまったりするのですが、
 この WebService::Simple、もっとシンプルにしたいですなぁ。

@@ -147,7 +147,7 @@
 
 
 
-<pre> package MyApp;
+<pre class="code">package MyApp;
 use Mouse;
 extends qw/Kirino/;
 
@@ -156,8 +156,7 @@ sub startup {
     $self-&gt;router-&gt;get('/echo', { controller =&gt; 'Root', action =&gt; 'echo' });
 }
 
-1;
- </pre>
+1;</pre>
 
 
 
@@ -172,7 +171,7 @@ sub startup {
 
 
 
-<pre> package MyApp::Controller::Root;
+<pre class="code">package MyApp::Controller::Root;
 use Mouse;
 extends qw/Kirino::Controller/;
 
@@ -182,8 +181,7 @@ sub echo {
     $self-&gt;render('echo.tx', { message =&gt; $message });
  }
 
-1;
- </pre>
+1;</pre>
 
 
 
@@ -204,8 +202,7 @@ sub echo {
       &lt;input type="submit" value="送信" /&gt;
     &lt;/form&gt;
   &lt;/p&gt;
-&lt;/div&gt;
- </pre>
+&lt;/div&gt;</pre>
 
 
 
@@ -235,7 +232,7 @@ sub echo {
 
 
 
-<pre> package Kirino;
+<pre class="code">package Kirino;
 use Mouse;
 use Kirino::Router;
 use Plack::Request;
@@ -280,8 +277,7 @@ sub return_404 {
     return [404, [], ['Not Found']];
 }
 
-__PACKAGE__-&gt;meta-&gt;make_immutable();
- </pre>
+__PACKAGE__-&gt;meta-&gt;make_immutable();</pre>
 
 
 
@@ -291,7 +287,7 @@ __PACKAGE__-&gt;meta-&gt;make_immutable();
 
 
 
-<pre> package Kirino::Router;
+<pre class="code">package Kirino::Router;
 use Mouse;
 extends qw/Router::Boom::Method/;
 
@@ -305,8 +301,7 @@ sub post {
     $self-&gt;add('POST', @_);
 }
 
-__PACKAGE__-&gt;meta-&gt;make_immutable();
- </pre>
+__PACKAGE__-&gt;meta-&gt;make_immutable();</pre>
 
 
 
@@ -327,7 +322,7 @@ __PACKAGE__-&gt;meta-&gt;make_immutable();
 
 
 
-<pre> package Kirino::Controller;
+<pre class="code">package Kirino::Controller;
 use Mouse;
 use Text::Xslate;
 use Path::Tiny;
@@ -363,8 +358,7 @@ sub render {
     ];
 }
 
-__PACKAGE__-&gt;meta-&gt;make_immutable();
- </pre>
+__PACKAGE__-&gt;meta-&gt;make_immutable();</pre>
 
 
 

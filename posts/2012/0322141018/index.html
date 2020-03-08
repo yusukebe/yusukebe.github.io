@@ -112,7 +112,7 @@
 <p>MarkdownをHTML化するために使ったスクリプトはこちら。Markdownファイルを引数に渡すと、
 HTML内の画像をtempファイルに置きつつsrc属性を変更、最終的に出来たHTMLを標準出力に吐いてくれる。</p>
 
-<pre> use strict;
+<pre class="code">use strict;
 use warnings;
 use Text::Markdown qw/markdown/;
 use Path::Class qw/file/;
@@ -151,18 +151,15 @@ __DATA__
 
 @@ footer.html
   &lt;/body&gt;
-&lt;/html&gt;
- </pre>
+&lt;/html&gt;</pre>
 
 <p>これを「convert.pl」などと保存して、以下のようにすればHTMLが生成される。</p>
 
-<pre> $ perl convert.pl oppai.mkdn &gt; oppai.html
- </pre>
+<pre class="code">$ perl convert.pl oppai.mkdn &gt; oppai.html</pre>
 
 <p>そしてすかさずKindleGenで変換。</p>
 
-<pre> $ ~/bin/kindlegen oppai.html
- </pre>
+<pre class="code">$ ~/bin/kindlegen oppai.html</pre>
 
 <p>するとカバーが無いと怒られつつも「oppai.mobi」が生成されるのでKindleに転送して見てみる。</p>
 

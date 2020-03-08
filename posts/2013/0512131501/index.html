@@ -68,7 +68,7 @@
 
 <p>放送終了してたアニメをバッファリング無しで快適に見たくなったので、スクリプトを書いた。あんま真似しないでください。</p>
 
-<pre> use LWP::UserAgent;
+<pre class="code">use LWP::UserAgent;
 use URI::Escape qw/uri_unescape/; 
 
 my $list_url = $ARGV[0] or die;
@@ -97,13 +97,11 @@ my $ua = LWP::UserAgent-&gt;new( show_progress =&gt; 1 );
         $mp4_url = uri_unescape($mp4_url);
         $ua-&gt;get($mp4_url, ':content_file' =&gt; "$title.mp4");
      }
-}
- </pre>
+}</pre>
 
 <p>こんな感じで実行する。</p>
 
-<pre> $ perl get_list.pl http://eyeonanime.com/sasami-san-ganbaranai/
- </pre>
+<pre class="code">$ perl get_list.pl http://eyeonanime.com/sasami-san-ganbaranai/</pre>
 
 <p>ってことで、全話DL完了するのを待ちつつ、パスタつくるお！</p>
 

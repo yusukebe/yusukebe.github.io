@@ -106,8 +106,7 @@ my $app = sub {
 builder {
     mount "/image" =&gt; Plack::App::File-&gt;new( root =&gt; "./image" );
     mount "/" =&gt; $app;
-}
- </pre>
+}</pre>
 
 
 		</div>

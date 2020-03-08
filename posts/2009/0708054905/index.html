@@ -86,8 +86,7 @@ mod_perl などを使ったアプリケーションの場合、
 サーバ内では mod_perl な apache 1台のみを動かすという方法が簡単でよいです。
 自分は、debian を使っているので、apt-get でインストールした apache2 を
 </p>
-<pre> # /etc/init.d/apache2 start
- </pre>
+<pre class="code"># /etc/init.d/apache2 start</pre>
 <p>
 と付属しているスクリプトだけで動かせるので、これも利点です。
 S3 でサーブする時に気になるのはコンテンツのヘッダの設定ですが、
@@ -104,8 +103,7 @@ use HTTP::Date;
 
 my $ten_years_sec = 10 * 365 * 24 * 60 * 60;
 my $string = time2str( time() + $ten_years_sec );
-print $string . "\n";
- </pre>
+print $string . "\n";</pre>
 <p>
 また、S3HUB ではもっと簡単に指定できて、
 「Expires ( Far Future ) 」という項目がすでにありますので、これを選べば OK です。

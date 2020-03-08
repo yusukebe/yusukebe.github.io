@@ -79,19 +79,18 @@
 
 <p>まず、OAuthの認証が必要なのですが、この Net::Google::Analytics だと以下のコードを使えば認証用のURLが出てきて必要なIDなどが手に入ります。これはイイ。ちなみに client_id と client_secret はGoogle API管理画面でアプリ登録をすると手に入ります。</p>
 
-<pre> use Net::Google::Analytics::OAuth2;
+<pre class="code">use Net::Google::Analytics::OAuth2;
 
 my $oauth = Net::Google::Analytics::OAuth2-&gt;new(
     client_id     =&gt; 'your_client_id',
     client_secret =&gt; 'your_client_secret',
 );
 
-$oauth-&gt;interactive;
- </pre>
+$oauth-&gt;interactive;</pre>
 
 <p>Refresh Acces Token というのが取得できるので、それを使いつつ、実践スクリプトを書きます。必要な認証部分はこういう感じ。</p>
 
-<pre> use Net::Google::Analytics;
+<pre class="code">use Net::Google::Analytics;
 use Net::Google::Analytics::OAuth2;
 
 my $analytics = Net::Google::Analytics-&gt;new;
@@ -100,12 +99,11 @@ my $oauth = Net::Google::Analytics::OAuth2-&gt;new(
     client_secret =&gt; 'your_client_secret',
 );
 my $token = $oauth-&gt;refresh_access_token('your_refresh_access_token');
-$analytics-&gt;token($token);
- </pre>
+$analytics-&gt;token($token);</pre>
 
 <p>次にいよいよ取得したいURLのパスを指定して、リクエストをかけます。$profile_id にはAnalytics用のサイトごとのプロフィールIDを入れてください。取得する期限は今年から今までって感じにしています。</p>
 
-<pre> $profile_id = 'your_profile_id';
+<pre class="code">$profile_id = 'your_profile_id';
 
 my $req = $analytics-&gt;new_request(
     ids         =&gt; "ga:$profile_id",
@@ -122,8 +120,7 @@ my $res = $analytics-&gt;retrieve($req);
 die("Error: " . $res-&gt;error_message) if !$res-&gt;is_success;
 
 my $pageview = $res-&gt;rows-&gt;[0]-&gt;get_pageviews;
-print "PV: ", $pageview . "\n";
- </pre>
+print "PV: ", $pageview . "\n";</pre>
 
 <p>dimensionsとかmetricsとかで何が指定出来るかはGoogleのオフィシャルドキュメントを参照してください。このケースでは「/about.html」というパスに完全マッチするページの「pageview」を取得し標準出力に印字しています。この部分をうまいことサブルーチン化して使い回したりすれば複数のURLのPVを一気に取得できると思います。</p>
 

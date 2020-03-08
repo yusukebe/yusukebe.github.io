@@ -81,8 +81,7 @@ miyagawaさんがTwitterのツイート内容をPerlスクリプトとして実�
 
 <p>Perlコードを書いたツイートのURLを（ちょっと編集して）-e の引数に渡すとそれが実行出来ちゃう。</p>
 
-<pre> perl -Mtwitter -e http://m.twitter.com/yusukebe/status/279638603611664384
- </pre>
+<pre class="code">perl -Mtwitter -e http://m.twitter.com/yusukebe/status/279638603611664384</pre>
 
 <p>でも、Twitterは140文字まで。どうしてもそれを超えるコードをなんとなくどこかに張ってから実行するという
 <strong>誰得</strong> なことをしたくなったのでFacebookで似たようなことが出来ないか考えてみた。</p>
@@ -106,7 +105,7 @@ Webアプリにしてしまえばいい。Facebookの投稿がそのままWebア
 
 <p>とりあえず以下のfacebook.pmを用意する。</p>
 
-<pre> package facebook;
+<pre class="code">package facebook;
 use Plack::Request;
 use Plack::Response;
 use Plack::Runner;
@@ -169,8 +168,7 @@ END {
     my $runner = Plack::Runner-&gt;new;
     $runner-&gt;parse_options(@ARGV);
     $runner-&gt;run($app);
-}
- </pre>
+}</pre>
 
 <p>gistにも上げておきました。</p>
 
@@ -181,9 +179,8 @@ END {
 
 <p>ああ、そういえば実行するにはFacebookアプリの登録が必要なんで、ソレをアレしたら</p>
 
-<pre> RUNFB_APP_ID
-RUNFB_APP_SECRET
- </pre>
+<pre class="code">RUNFB_APP_ID
+RUNFB_APP_SECRET</pre>
 
 <p>を環境変数に設定しておくとよいでしょう。</p>
 
@@ -195,15 +192,13 @@ RUNFB_APP_SECRET
 
 <p>内容はこういう簡単な出力するコード。</p>
 
-<pre> my $message = 'Good Morning!!';
-print "&lt;big&gt;$message&lt;/big&gt;";
- </pre>
+<pre class="code">my $message = 'Good Morning!!';
+print "&lt;big&gt;$message&lt;/big&gt;";</pre>
 
 <p>で、こいつのパーマリンクURLが「<a href="https://www.facebook.com/yusuke.wada/posts/10151373772205030">https://www.facebook.com/yusuke.wada/posts/10151373772205030</a>」なのを
 覚えておく。上記のfacebook.pmをある場所に置いたら、URLを少しいじって「-e」の引数にして実行してみましょう！</p>
 
-<pre> $ perl -Mfacebook -e https://m.facebook.com/yusuke.wada/posts/10151373772205030
- </pre>
+<pre class="code">$ perl -Mfacebook -e https://m.facebook.com/yusuke.wada/posts/10151373772205030</pre>
 
 <p>すると、Webアプリケーションが立ち上がるので、デフォルトでは「<a href="http://localhost:5000/">http://localhost:5000/</a>」にブラウザがからアクセス！認証画面に飛んで、最終的には...</p>
 

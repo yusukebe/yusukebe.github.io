@@ -73,7 +73,7 @@
 上記のサイトだとCookieにSIDを設定しろって書いてあるけれど、
 「Authorization」ヘッダーに適切な値を入れてアクセスしたらデータが取れた。</p>
 
-<pre> use strict;
+<pre class="code">use strict;
 use warnings;
 use LWP::UserAgent;
 use XML::Feed;
@@ -105,8 +105,7 @@ $content = $res-&gt;content;
 my $feed = XML::Feed-&gt;parse( \$content ) or die XML::Feed-&gt;errstr;
 for my $entry ( $feed-&gt;entries ) {
     print $entry-&gt;title . "\n";
-}
- </pre>
+}</pre>
 
 
 <p><br></p>

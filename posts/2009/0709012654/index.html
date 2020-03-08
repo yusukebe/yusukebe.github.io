@@ -123,20 +123,17 @@ sub crawl_rss {
     }else{
         return;
     }
-}
- </pre>
+}</pre>
 <p>
 うんでそれをふまえて、Plagger::Plugin::Notify::XMPP::AnyEvent という Plugin モジュールと、
 bot スクリプトを作りました。エラーハンドリングもあんましてない荒削りのものです。
 後述する config.yaml を書いて
 </p>
-<pre> $ ./plagger-xmppanyeventbot.pl -c config.yaml
- </pre>
+<pre class="code">$ ./plagger-xmppanyeventbot.pl -c config.yaml</pre>
 <p>
 と bot を立ち上げて、定期的に
 </p>
-<pre> $ plagger -c config.yaml
- </pre>
+<pre class="code">$ plagger -c config.yaml</pre>
 <p>
 を実行する構成になっています。config.yaml のサンプルは以下
 </p>
@@ -158,9 +155,7 @@ plugins:
       server_host: talk.google.com
       server_port: 5222
       to:
-        - yourfriends@gmail.com
-
- </pre>
+        - yourfriends@gmail.com</pre>
 <p>
 さて、これから実践で使おうと思いますので、
 何か不具合あれば直します＆おかしなところがあれば指摘してください。

@@ -110,8 +110,7 @@ WebService::Simple には JSON のパーサーもあるので検索結果を Dum
 );
 
 my $response =  $google-&gt;get( { q =&gt; "cat" , start=&gt; 0 } );
-print Dump $response-&gt;parse_response;
- </pre>
+print Dump $response-&gt;parse_response;</pre>
 <p>
 次に、検索クエリーを入れるとその結果が表示されるだけの簡単な Web ページを作ってみます。
 パースしたコンテンツをそのまま Template::Toolkit のテンプレートに渡すという方針です。
@@ -129,8 +128,7 @@ my $google = WebService::Simple-&gt;new(
     base_url        =&gt; "http://ajax.googleapis.com/ajax/services/search/web",
     response_parser =&gt; $parser, # パーサーオブジェクトを指定する
     params          =&gt; { v =&gt; "1.0", rsz =&gt; "large", hl =&gt; "ja" }
-);
- </pre>
+);</pre>
 <p>
 つまづいたのはこのくらい。完成版のPerl のコードと テンプレートは以下の通りです。
 </p>
@@ -173,9 +171,7 @@ $tt-&gt;process(
 );
 
 print $q-&gt;header( -type =&gt; "text/html", -charset =&gt; "utf-8" );
-print $html;
-
- </pre>
+print $html;</pre>
 <p>
 search.tt
 </p>
@@ -205,9 +201,7 @@ search.tt
   [% END -%]
 &lt;/div&gt;
 &lt;/body&gt;
-&lt;/html&gt;
-
- </pre>
+&lt;/html&gt;</pre>
 
 <p>
   ということで、Google AJAX Search API を WebService::Simple 使って利用してみました。

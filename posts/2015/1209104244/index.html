@@ -100,8 +100,7 @@ sub get_content {
     my $url = $args-&gt;{url};
     my $res = $self-&gt;ua-&gt;get($url);
     return $res-&gt;content;
-}
- </pre>
+}</pre>
 
 
 <p>Mouseの他にも元ネタだったり派生したものとしてMooseやMooもありますので、これらを使えばOOPは快適です。</p>
@@ -130,8 +129,7 @@ sub get_content {
     my $url = $args-&gt;{url};
     my $res = $self-&gt;ua-&gt;get($url);
     return $res-&gt;content;
-}
- </pre>
+}</pre>
 
 
 <ul>
@@ -147,8 +145,7 @@ sub get_content {
     die "dying message...";
 } catch {
     warn "Error: $_";
-};
- </pre>
+};</pre>
 
 
 <ul>
@@ -164,8 +161,7 @@ sub get_content {
 
 my $file = path('foo.txt');
 my $text = $file-&gt;slurp();
-print $text;
- </pre>
+print $text;</pre>
 
 
 <ul>
@@ -211,8 +207,7 @@ $router-&gt;add(
     { controller =&gt; 'Entry', method =&gt; 'show' }
 );
 my $dest = $router-&gt;match('/entry/100');
-# =&gt; {controller =&gt; 'Entry', method =&gt; 'show', entry_id =&gt; '100' }
- </pre>
+# =&gt; {controller =&gt; 'Entry', method =&gt; 'show', entry_id =&gt; '100' }</pre>
 
 
 <ul>
@@ -271,8 +266,7 @@ post '/' =&gt; {
     $c-&gt;render( text =&gt; 'Valid!' );
 };
 
-app-&gt;start;
- </pre>
+app-&gt;start;</pre>
 
 
 <ul>
@@ -311,8 +305,7 @@ app-&gt;start;
 );
 while(my $entry = $iter-&gt;next) {
     say $entry-&gt;title();
-}
- </pre>
+}</pre>
 
 
 <ul>

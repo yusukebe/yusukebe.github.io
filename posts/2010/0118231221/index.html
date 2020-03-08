@@ -120,8 +120,7 @@ unless ($src) {
 my $p = HTML::TokeParser-&gt;new( \$src );
 while ( my $token = $p-&gt;get_tag("img") ) {
     print $token-&gt;[1]{src} . "\n";
-}
- </pre>
+}</pre>
 
 <ul>
   <li>

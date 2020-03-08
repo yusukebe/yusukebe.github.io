@@ -145,7 +145,7 @@ Dropboxのファイルもしくはディレクトリの名前を受け取とり�
 Markdown形式にマッチすればHTMLに変換して綺麗に表示させる部分がこのアプリの肝です。
 そのControllerのコード部分はちょっと長いですが以下のようになりました。</p>
 
-<pre> package Dropdown::Dropbox;
+<pre class="code">package Dropdown::Dropbox;
 # Web Application FrameworkにはMojoliciousを使用した
 use Mojo::Base 'Mojolicious::Controller';
 use Text::Markdown qw/markdown/;
@@ -193,8 +193,7 @@ sub dropbox {
     }
     return $self-&gt;render('dropbox/list');
 }
-1;
- </pre>
+1;</pre>
 
 <p>ローカルで試してみて、問題ないのでパブリックな場所に置いて、サーバの設定。
 ちょっと本番環境とローカルの環境の差でつまづきましたが、無事修正は終わり、使えるようになりました。

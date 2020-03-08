@@ -77,7 +77,7 @@ Railsで使っている「_method」フィールドを活用すればそれな�
 
 <p>よって以下のMojolicious::Liteのコードがうまく動いた。</p>
 
-<pre> #!/usr/bin/env perl
+<pre class="code">#!/usr/bin/env perl
 use Mojolicious::Lite;
 
 app-&gt;hook(
@@ -110,8 +110,7 @@ __DATA__
 &lt;form action="/" method="post"&gt;
    &lt;input type="hidden" name="_method" value="DELETE" /&gt;
    &lt;input type="submit" value="DELETE" /&gt;
-&lt;/form&gt;
- </pre>
+&lt;/form&gt;</pre>
 
 <p>ふむ、なかなかよさげです。とあるプロジェクトのコードで試してみるとします。</p>
 

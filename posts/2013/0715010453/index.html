@@ -87,7 +87,7 @@
 
 <p>今書くならば「Net::Twitter::Lite」というモジュールを使ってこのようになります。</p>
 
-<pre> use Net::Twitter::Lite::WithAPIv1_1;
+<pre class="code">use Net::Twitter::Lite::WithAPIv1_1;
 use Config::Pit;
 use Encode;
 use utf8;
@@ -111,8 +111,7 @@ my $result = $nt-&gt;search(
 for my $tweet ( @{ $result-&gt;{statuses} } ) {
     print "$tweet-&gt;{text}\n";
     print "----------------------------------------\n";
-}
- </pre>
+}</pre>
 
 <p>検証用のスクリプトなら既存の便利なCPANモジュールに頼っちゃった方がいいっすね。</p>
 
@@ -136,7 +135,7 @@ for my $tweet ( @{ $result-&gt;{statuses} } ) {
 
 <p>このあたりのコードを以下のように修正するとTopsy APIでInstagram検索が叶えられます。</p>
 
-<pre> $(document).ready(function(){
+<pre class="code">$(document).ready(function(){
   var apikey = '';
   $('#form').submit(function(){
     var query = $(this).children('input[name="q"]').val();
@@ -160,8 +159,7 @@ for my $tweet ( @{ $result-&gt;{statuses} } ) {
     });
     return false;
   });
-});
- </pre>
+});</pre>
 
 <p><br></p>
 
@@ -172,7 +170,7 @@ for my $tweet ( @{ $result-&gt;{statuses} } ) {
 ってことでWeb API入門として触るのに「YouTube Data API」はどうかなーって思っています。
 例えば、YouTubeにある動画の中から「歌ってみた」を検索し、人気順でURLを列挙するPerlスクリプトはこんな感じです。</p>
 
-<pre> use LWP::UserAgent;
+<pre class="code">use LWP::UserAgent;
 use URI;
 use JSON qw/decode_json/;
 use Encode qw/encode_utf8/;
@@ -193,8 +191,7 @@ my $ref  = decode_json($json);
 
 for my $entry ( @{ $ref-&gt;{feed}{entry} } ) {
     print $entry-&gt;{link}[0]{href} . "\n";
-}
- </pre>
+}</pre>
 
 <p><br></p>
 

@@ -127,8 +127,7 @@ method fail($trouble) {
     print $trouble-&gt;to_string . " is cannot be resolved.\n";
 }
 
-1;
- </pre>
+1;</pre>
 
 
 <p><code>method</code>カッコイイ。ほんとは<code>next</code>プロパティでSupportロールを実装しているクラスの<a class="keyword" href="http://d.hatena.ne.jp/keyword/%A5%A4%A5%F3%A5%B9%A5%BF%A5%F3%A5%B9">インスタンス</a>、ってのを指定したかったけど（<a class="keyword" href="http://d.hatena.ne.jp/keyword/Moose">Moose</a>だとできる）、<code>Type::Standard</code>にはそういうのなさそうなので（<code>RoleName</code>っていうTypeならある）<code>Object</code>を指定してる。</p>
@@ -154,8 +153,7 @@ method resolve($trouble) {
     return $trouble-&gt;number == $self-&gt;number;
 }
 
-1;
- </pre>
+1;</pre>
 
 
 <p><code>method</code>カッコイイ（2度目）。</p>

@@ -94,10 +94,9 @@
 ダウンロードページへ飛ぶようになっています。
 </p>
 
-<pre> http://www.veoh.com/browse/videos/category/music/watch/ビデオのID
+<pre class="code">http://www.veoh.com/browse/videos/category/music/watch/ビデオのID
 to
-http://www.veohmp4.com/browse/videos/category/music/watch/ビデオのID
- </pre>
+http://www.veohmp4.com/browse/videos/category/music/watch/ビデオのID</pre>
 
 <p>
 ただ、残念なのは、Veoh って外部の動画共有サイトとも提携してそこの動画も見れるようになっているんだけど、
@@ -110,8 +109,7 @@ http://www.veohmp4.com/browse/videos/category/music/watch/ビデオのID
 <pre class="brush: perl"> use WWW::Veoh::Download;
 
 my $client = WWW::Veoh::Download-&gt;new( api_key =&gt; 'your_api_key' );
-$client-&gt;download( 'vXXXXXXXXXXXXXXX', 'veoh.mp4' );
- </pre>
+$client-&gt;download( 'vXXXXXXXXXXXXXXX', 'veoh.mp4' );</pre>
 <p>
 使いたい人はそちらもチェックしてみてください。
 </p>

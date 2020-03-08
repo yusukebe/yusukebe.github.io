@@ -68,14 +68,13 @@
 
 <p>Perlはご存知の通りTrue/Falseと言った真偽値を扱うBooleanな型は標準で備わっていない。例えば以下のテストは偽の値と解釈され全てFailする。</p>
 
-<pre> use Test::More;
+<pre class="code">use Test::More;
 
 ok(0); # Fail
 ok(undef); # Fail
 ok(''); # Fail
 
-done_testing;
- </pre>
+done_testing;</pre>
 
 <p>つまり</p>
 
@@ -96,10 +95,9 @@ done_testing;
 
 <p>以下、ふつーに defined でごにょればイケる！</p>
 
-<pre> unless(defined $value) {
+<pre class="code">unless(defined $value) {
     ...;
-}
- </pre>
+}</pre>
 
 <p>koba04さん、toku_bass さんあざっす。とりま自分のアプリで試してみます。</p>
 
@@ -118,13 +116,12 @@ done_testing;
 
 <p>うんで、実装はこんな感じ。</p>
 
-<pre> my $value = $cache-&gt;get('key');
+<pre class="code">my $value = $cache-&gt;get('key');
 unless($value) {
     $value = get_value();
     $cache-&gt;set('key', $value);
 }
-say $value;
- </pre>
+say $value;</pre>
 
 <p>で、問題になるのは上のコードで言う「get_value」サブルーティンが「空」など偽と判断される値を返す時。さすればせっかく値をsetしているのに再びgetしたタイミングにこのコードだと値が偽であることからunlessブロックに入り、再度「get_value」が呼ばれることになる。「get_value」を呼び出すためのコストがかかる場合は一度「空」が返却されたんだからそれを覚えておいてもらいたい。つまり</p>
 
@@ -132,16 +129,15 @@ say $value;
 
 <p>ってことになる。そこで使ってみたのが Ingy の <a href="http://search.cpan.org/dist/boolean/">boolean.pm</a> 。Perl標準のコンテキストとは別にTrue/False の真偽につかえる値を提供する。とりあえず「false」だけを使う。</p>
 
-<pre> use boolean;
+<pre class="code">use boolean;
 
 my $value = boolean::false;
 say ref $value; # boolean
-say $value == boolean::false ? 'false' : 'true'; # false
- </pre>
+say $value == boolean::false ? 'false' : 'true'; # false</pre>
 
 <p>falseで特別に偽を定義することが出来るので、キャッシュの件だと、falseを値としてsetしちゃって、後ほどgetする時に判断させれば「空であること」自体をキャッシュさせることが出来そう。こんな感じのコードになった。</p>
 
-<pre> use Cache::Memcached::Fast;
+<pre class="code">use Cache::Memcached::Fast;
 use feature qw/say/;
 use boolean;
 
@@ -167,20 +163,17 @@ if(ref $value eq 'boolean' &amp;&amp; $value == boolean::false) {
 sub make_value {
     say "Called: make_value method";
     return; # return null
-}
- </pre>
+}</pre>
 
 <p>一回目の実行結果。</p>
 
-<pre> Called: make_value method
+<pre class="code">Called: make_value method
 Set: value as 0
-Result: value is 0
- </pre>
+Result: value is 0</pre>
 
 <p>このコンテキストだと「0」になっているけど、boolean::falseがsetされているはず。もっかい実行してみる。</p>
 
-<pre> Result: value is false
- </pre>
+<pre class="code">Result: value is false</pre>
 
 <p>ちゃんとfalse = 空であると認識している。これでキャッシュの有効期限内だったら空が帰って来たよーという条件の元ごにょごにょ出来そう。boolean.pm の「boolean」とか「isTrue」「isFalse」のメソッドは使ってないけどとりあえずこれでよい気がするなー！</p>
 

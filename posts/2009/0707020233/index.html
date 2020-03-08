@@ -140,8 +140,7 @@ sub connection {
 }
 
 __PACKAGE__-&gt;meta-&gt;make_immutable();
-1;
- </pre>
+1;</pre>
 <br>
 <p>
 これで、そこそこ負荷が下がったが、どうもまだ senna の全文検索周りが
@@ -157,8 +156,7 @@ Linux 2.6以降では、カーネルのバッファキャッシュを経由せ�
 <p>
 ということで手元の環境でも動作したので、環境変数を設定するため
 </p>
-<pre> # export SEN_AIO_ENABLED=1
- </pre>
+<pre class="code"># export SEN_AIO_ENABLED=1</pre>
 <p>
 してから mysqld を起動させてみた。
 すると、上記した対策をあわせてかなーり mysql の負荷が減ったようだ。

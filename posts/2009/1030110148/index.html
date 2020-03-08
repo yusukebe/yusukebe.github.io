@@ -153,8 +153,7 @@ sub get_answer {
     $ref = $res-&gt;parse_response();
     my $q = shuffle( @{ $ref-&gt;{Result}-&gt;[0]-&gt;{Question} } );
     return { text =&gt; $q-&gt;{BestAnswer}, url =&gt; $q-&gt;{Url} };
-}
- </pre>
+}</pre>
 <ul>
   <li><a href="http://oshiete-twit.pulpsite.net/">教えてTwit!</a></li>
 </ul>

@@ -89,7 +89,7 @@
 
 <h4>ViewController.m</h4>
 
-<pre> - (IBAction)showActionSheet:(id)sender {
+<pre class="code">- (IBAction)showActionSheet:(id)sender {
     UIActionSheet *actionSheet = [[UIActionSheet alloc]init];
     [actionSheet setDelegate:self];
     [actionSheet setTitle:@"写真を選びます"];
@@ -129,8 +129,7 @@
 
 -(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
     [self dismissModalViewControllerAnimated:YES];
-}
- </pre>
+}</pre>
 
 <p>カメラ無しデバイスのことを考慮しているのがポイント。あと気づいたのは、デリゲートされるdidFinishPickingImageってのではUIImageがそのまま渡されるんですぐ利用できて便利っす。実機で動かしてみてActionSheetで選択→「ライブラリ表示またはカメラ起動」がやたら遅い気がするのは気のせいかなぁ。</p>
 

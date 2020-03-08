@@ -102,18 +102,15 @@ lib/YourAVHost/CLI/
 |   |-- XVideos.pm
 |   `-- YourFileHost.pm
 |-- Site.pm
-`-- Subscriber.pm
- </pre>
+`-- Subscriber.pm</pre>
 <p>YourAVHost::CLI::Siteでは各サイトに対応するSite/*のモジュール群を透過的に扱うので、 あるページが複数の動画サイトのURLを含んでいるかというマッチングも以下のように 簡単に行えます。</p>
 <pre class="brush: perl"> use LWP::Simple;
 my $site = YourAVHost::CLI::Site-&gt;new();
 my $content = get($url) or die;
-my $links = $site-&gt;match( $content );
- </pre>
+my $links = $site-&gt;match( $content );</pre>
 <p>$links には指定したページに含まれているエロ動画のURLリストが入ります。 また、動画サイトの情報、つまりサムネイルのURLやタイトルなどを取得するために、 ちょっとAPIが違いますが、</p>
 <pre class="brush: perl"> my $video = $site-&gt;get_video($links-&gt;[0]);
-warn $video-&gt;{thumbnail_url};
- </pre>
+warn $video-&gt;{thumbnail_url};</pre>
 <p>のようにしてます。 こんな感じで今のところ7サイトへの対応を楽に行っています。</p>
 <p>また、今回はマッチング広告として、 カリビアンコムとdugaというアフィリエイトサイトを利用しました。 作品の情報をCSVで提供してくれているので、 女優名と「オススメ動画」を見せるのが至って簡単です。 カリビアンのサムネイルを出力するのにいちいちダウンロードしてリサイズさせるのが めんどくさいのでAPI化しています。</p>
 <p>ということで、当初と比べて結構手がこんだシステムになってきているので、 よりいい感じにエロ巡回できるかもしれませんね。 この辺のノウハウが知りたければ、 もしかしてYAPCの前夜祭でJPA怪鳥が怒らない程度にソフトなタッチでより詳細に紹介するかもしれません！</p>

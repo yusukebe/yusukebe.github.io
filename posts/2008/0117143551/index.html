@@ -193,8 +193,7 @@ my $result = $dmm-&gt;search("柚木ティナ", { num =&gt; 3 });
 my @items = @{$result-&gt;{items}};
 foreach my $item (@items) {
     print Encode::encode( "utf-8", $item-&gt;title ) . "\n";
-}
- </pre>
+}</pre>
 <p>
 このモジュールと Wikipedia にあるAV女優一覧を使えばAPIで使用するデータを取得することができます。
 まとめると

@@ -95,8 +95,7 @@ PerlのWAFは何がいいの？
 <p>ご存知の通りMojoliciousは標準で入っているモジュールに依存しているだけで、
 残りは自前で実装しています。なので、</p>
 
-<pre> $ cpanm Mojolicious
- </pre>
+<pre class="code">$ cpanm Mojolicious</pre>
 
 <p>とすれば外部のモジュールをインストールしなくとも入るので非常にポータブル！
 以前Catalystを使っていて、Catalystが依存しているMooseのバージョンが問題になって、
@@ -111,8 +110,7 @@ PerlのWAFは何がいいの？
 一つのファイルでコントローラもビューも書けて簡単だぜ！というのがPRとして売りになってる気がします。
 Mojolicious::Liteのアプリを作るための雛形は、</p>
 
-<pre> $ mojo generate lite_app hoge.pl
- </pre>
+<pre class="code">$ mojo generate lite_app hoge.pl</pre>
 
 <p>とかして作ります。さてLiteで作ったアプリがどんどん大きくなっていくとしましょう。
 hoge.plと同じ階層に「templates」というディレクトリを作って「index.html.ep」などのテンプレートファイルを置けば、
@@ -120,12 +118,11 @@ hoge.pl内のデータセクションに書いていたビューを切り離す�
 ただ、コントローラとディスパッチャ等を分割したモジュールで管理したいという時には、
 Liteでは対応できません。そこでコマンドを打ち込みます。</p>
 
-<pre> $ mojo generate app Hoge
- </pre>
+<pre class="code">$ mojo generate app Hoge</pre>
 
 <p>すると以下の構造で「普通の」Mojoliciousアプリの雛形を作ってくれます。</p>
 
-<pre> ./
+<pre class="code">./
 ├── lib
 │   ├── Hoge
 │   │   └── Example.pm
@@ -141,8 +138,7 @@ Liteでは対応できません。そこでコマンドを打ち込みます。<
     ├── example
     │   └── welcome.html.ep
     └── layouts
-        └── default.html.ep
- </pre>
+        └── default.html.ep</pre>
 
 <p>「Mojolicious」でググると「Mojolicious::Lite」の話題ばかり出てくるのですが、
 僕はこちらの「普通の」Mojoliciousアプリを使うケースが多いですし、そこそこの大きさのアプリにも耐えられます。</p>
@@ -152,19 +148,17 @@ Liteでは対応できません。そこでコマンドを打ち込みます。<
 <p>Text::MicroTemplateの元になったというMojo::TemplateがPerlそのまま書けるので、一人でやる分には柔軟でよいです。
 気に入っているのはテンプレート内で使える「layout」という関数。「templates/layout/default.html.ep」がこのようにあったとして</p>
 
-<pre> &lt;html&gt;
+<pre class="code">&lt;html&gt;
   &lt;body&gt;
     &lt;%= content %&gt;
   &lt;/body&gt;
-&lt;/html&gt;
- </pre>
+&lt;/html&gt;</pre>
 
 <p>「templates/root/index.html.ep」でこのレイアウトを使うには冒頭にでもlayout関数を使います。</p>
 
-<pre> % layout 'default';
+<pre class="code">% layout 'default';
 
-&lt;h1&gt;Hello Hoge&lt;/h1&gt;
- </pre>
+&lt;h1&gt;Hello Hoge&lt;/h1&gt;</pre>
 
 <p>レイアウトを変えることもテンプレートファイル内で容易にできるのがいいのです。</p>
 
@@ -172,12 +166,11 @@ Liteでは対応できません。そこでコマンドを打ち込みます。<
 
 <p>コントローラではコンテキストオブジェクトを扱わずに「$self」だけでごにょれるのがいいですね。</p>
 
-<pre> sub index {
+<pre class="code">sub index {
     my $self = shift;
     $self-&gt;stash-&gt;{message} = 'Hage';
     $self-&gt;render('message');
-}
- </pre>
+}</pre>
 
 <h4>VCだけ</h4>
 
@@ -188,22 +181,20 @@ Liteでは対応できません。そこでコマンドを打ち込みます。<
 
 <p>さて、モデルの登録には遅延させるために上記の例だと「Hoge.pm」にこうやって記述します。</p>
 
-<pre> package Hoge;
+<pre class="code">package Hoge;
 use Mojo::Base 'Mojolicious';
 use Hoge::API;
 
 sub startup {
     my $self = shift;
     $self-&gt;attr( api =&gt; sub { Hoge::API-&gt;new() } );
-}
- </pre>
+}</pre>
 
 <p>至って簡単です。またディスパッチの記述も</p>
 
-<pre>     my $r = $self-&gt;routes;
+<pre class="code">my $r = $self-&gt;routes;
     $r-&gt;namespace('Hoge::Controller');
-    $r-&gt;get('/')-&gt;to( "root#index");
- </pre>
+    $r-&gt;get('/')-&gt;to( "root#index");</pre>
 
 <p>なんてできて楽でかつ柔軟ですね。</p>
 
@@ -251,25 +242,23 @@ Liteのアプリを「hoge.cgi」などの拡張子にすればそのままApach
 よくPlack::Middleware::SessionとPlack::Sessionを組み合わせたセッション管理を行うことが多いです。
 アプリ用の.psgiを書いて</p>
 
-<pre> my $psgi = Mojo::Server::PSGI-&gt;new( app_class =&gt; 'Hage' );
+<pre class="code">my $psgi = Mojo::Server::PSGI-&gt;new( app_class =&gt; 'Hage' );
 my $app = sub { $psgi-&gt;run(@_) };
 
 builder {
     enable 'Session', store =&gt; 'File';
     $app;
-};
- </pre>
+};</pre>
 
 <p>とします。べたにやるならコントローラの中で「use Plack::Session;」して</p>
 
-<pre> sub index {
+<pre class="code">sub index {
     my $self = shift;
     my $session = Plack::Session-&gt;new( $self-&gt;req-&gt;env );
     my $access_token = $session-&gt;get('access_token');
     my $access_secret = $session-&gt;get('access_secret');
     ...;
-}
- </pre>
+}</pre>
 
 <p>などとしてセッションの値を取得します。まぁ.psgiは毎回書いてそれを開発、本番用に使っているので、
 Plackのミドルウェアを使うってのはいいんですけどね。</p>
@@ -278,14 +267,12 @@ Plackのミドルウェアを使うってのはいいんですけどね。</p>
 
 <p>こういう細かいちょっとした変なところがあるのでたまにストレスが溜まります。</p>
 
-<pre> $self-&gt;redirect_to('/hage');
- </pre>
+<pre class="code">$self-&gt;redirect_to('/hage');</pre>
 
 <p>とすると302でリダレイクトしてくれるのですが、これがアプリ内の「/hage」の絶対パスじゃなくて相対パスなんで、
 本番環境だとおかしくなったりします。</p>
 
-<pre> $self-&gt;redirect_to( $self-&gt;req-&gt;url-&gt;base . '/hage' );
- </pre>
+<pre class="code">$self-&gt;redirect_to( $self-&gt;req-&gt;url-&gt;base . '/hage' );</pre>
 
 <p>とか長ったらしい記述をして回避しがちっす。
 他にも軽くはまるところがいくつかあった気がします。</p>

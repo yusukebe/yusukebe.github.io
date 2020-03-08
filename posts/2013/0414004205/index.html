@@ -68,8 +68,7 @@
 
 <p>Webアプリケーションが遅いとか感じる時って、僕の場合、I/Oがボトルネックなケースが多いのです。つまり、MySQLへクエリーを投げて返却を待つとか、memcachedにget/set等のメソッドを発行した時の待ち時間が長くかかってたり... とかです。そうすると計測して原因を突き止めたくなります。PerlのプロファイラはDevel::NYTProfとか色々ありますが、こうしたI/Oに関しての計測は「<a href="http://search.cpan.org/dist/Devel-KYTProf/">Devel::KYTProf</a>」が便利です。適当な場所にて</p>
 
-<pre> use Devel::KYTProf;
- </pre>
+<pre class="code">use Devel::KYTProf;</pre>
 
 <p>するだけで標準エラー出力に「空気読んで」ウマいこと色付きで、I/O周りのかかった時間とどこの箇所か？を表示してくれます。</p>
 
@@ -79,7 +78,7 @@
 
 <p>ネームスペースをどうするか？Mouse使っている！ってのは置いておいて以下のようなロガークラスを定義します。</p>
 
-<pre> package Nopaste::Logger;
+<pre class="code">package Nopaste::Logger;
 use Mouse;
 use Log::Dispatch;
 use Term::ANSIColor qw/colorstrip/;
@@ -112,8 +111,7 @@ sub log {
 
 __PACKAGE__-&gt;meta-&gt;make_immutable();
 
-1;
- </pre>
+1;</pre>
 
 <p>logクラスでは</p>
 
@@ -128,14 +126,13 @@ __PACKAGE__-&gt;meta-&gt;make_immutable();
 <p>してからLog::Dispatchを使ってファイルに追加保存していきます。
 これをWebアプリのコード内で使います。</p>
 
-<pre> use Devel::KYTProf;
+<pre class="code">use Devel::KYTProf;
 use Nopaste::Logger;
 
 ...;
 
 my $logger = Nopaste::Logger-&gt;new;
-Devel::KYTProf-&gt;logger($logger);
- </pre>
+Devel::KYTProf-&gt;logger($logger);</pre>
 
 <p>今回の設定だと、アプリを実行しているディレクトリから見て「./log/kytprof.log」というファイルにログが出力されます。ファイルを覗いてみるとこんな感じ！</p>
 

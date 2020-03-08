@@ -101,8 +101,7 @@ my $actress = Acme::JapaneseAvActress-&gt;new(
 );
 $actress-&gt;get;
 my $actlist = $actress-&gt;year("2007");
-print Dumper($actlist);
- </pre>
+print Dumper($actlist);</pre>
 <p>
 出力結果は
 </p>
@@ -137,8 +136,7 @@ print Dumper($actlist);
                    'initial' =&gt; 'あ',
                    'year' =&gt; '2007'
                  }, 'Acme::JapaneseAvActress::Actress' ),
-…
- </pre>
+…</pre>
 <p>
 こんな具合です。$actress-&gt;year("名前"); なんてやると、その名前がAV女優かどうかチェックできたりします。
 また、Cache::FileでWikipediaのExportページをキャッシュする機能もついています。

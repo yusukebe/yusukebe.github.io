@@ -121,9 +121,7 @@ while ( $iter-&gt;hasNext ) {
     $temp[1]  = $word-&gt;{reading};
 }
 
-print Dumper( \@actress );
-
- </pre>
+print Dumper( \@actress );</pre>
 <p>
 結果は
 </p>
@@ -147,9 +145,7 @@ $VAR1 = [
                    'initial' =&gt; 'お',
                    'year' =&gt; '2000'
                  }, 'Acme::JapaneseAvActress::Actress' )
-        ];
-
- </pre>
+        ];</pre>
 <p>
 とちゃんと返ってきます。
 ちょっと、ひらがなの場合だとテキスト解析の方が細かく区切りすぎちゃって、

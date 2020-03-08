@@ -147,7 +147,7 @@
 
 
 
-<pre> # presudo code
+<pre class="code"># presudo code
 get '/boke/recent' =&gt; sub {
     my $self = shift;
     my $result = $self-&gt;call_api({
@@ -156,8 +156,7 @@ get '/boke/recent' =&gt; sub {
     });
     $self-&gt;stash-&gt;{entries} = $result-&gt;{entries};
     $self-&gt;render();
-};
- </pre>
+};</pre>
 
 
 

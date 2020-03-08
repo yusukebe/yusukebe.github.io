@@ -108,8 +108,7 @@ perlcodesampleさんもこう言ってます。
 
 <pre class="brush: perl"> my @zokuseis = qw(萌え メガネ ギーク エロ 嫁あり);
 my @miyagawa = qw(萌え ギーク);
-my @yusukebe = qw(メガネ エロ);
- </pre>
+my @yusukebe = qw(メガネ エロ);</pre>
 <p>
 これをそれぞれの人が持っている属性と予め定義された「@zokuseis」の文字列と比較して、
 マッチすれば出力するというプログラムは、
@@ -128,8 +127,7 @@ for my $zokusei (@zokuseis) {
     if ( grep $zokusei eq $_, @yusukebe ) {
         print "yusukebe is $zokusei \n";
     }
-}
- </pre>
+}</pre>
 <p>
 2個ループがでてきて冗長ですね。
 ということでこの部分一つのサブルーチンにまとめてしまいましょう。
@@ -147,8 +145,7 @@ sub check_zokusei {
             print "$name is $zokusei \n";
         }
     }
-}
- </pre>
+}</pre>
 
 <p>
 ちょっとすっきりしました。
@@ -178,8 +175,7 @@ my $members = [
     { name =&gt; 'nekokak',  zokuseis =&gt; [qw(ギーク 嫁あり)] },
     { name =&gt; 'Yappo',    zokuseis =&gt; [qw(ギーク エロ)] },
     { name =&gt; 'acotie',   zokuseis =&gt; [qw(萌え エロ)] },
-];
- </pre>
+];</pre>
 
 <p>
 細かいことは置いといて、これでメンバーがどういう名前で、どのような属性を持っているかが、
@@ -208,8 +204,7 @@ sub check_zokusei_with_ref {
             print "$who-&gt;{name} is $zokusei \n";
         }
     }
-}
- </pre>
+}</pre>
 <p>
 最終的に出力は以下のようになりました。
 </p>
@@ -223,8 +218,7 @@ nekokak is 嫁あり
 Yappo is ギーク 
 Yappo is エロ 
 acotie is 萌え 
-acotie is エロ 
- </pre>
+acotie is エロ</pre>
 
 <p>
 ということで実例を用いて、素の配列だけで表現していたものを

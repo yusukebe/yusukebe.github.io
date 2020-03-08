@@ -71,7 +71,7 @@
 
 
 
-<pre> use Archive::Zip;
+<pre class="code">use Archive::Zip;
 use File::Spec;
 use Encode;
 
@@ -82,8 +82,7 @@ die 'read error' unless $zip-&gt;read($file) == &amp;Archive::Zip::AZ_OK;
 for my $member ( $zip-&gt;members ) {
     my $to = File::Spec-&gt;catfile(decode('shift_jis',$member-&gt;fileName()));
     $zip-&gt;extractMember( $member, $to );
-}
- </pre>
+}</pre>
 
 
 

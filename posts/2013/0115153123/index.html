@@ -90,7 +90,7 @@ iPadに入るなんてーいうローカルで楽しむためのWebアプリを�
 <p>まず、これはDailymotionのAPIドキュメント見てもあんま載ってなかったんだけど、
 動画の検索の仕方。URLのパスに検索語を含めるらしい。そしてこうすればJSONで値が返ってくる。</p>
 
-<pre> use LWP::Simple;
+<pre class="code">use LWP::Simple;
 use JSON;
 use URI;
 use URI::Escape;
@@ -102,8 +102,7 @@ $uri-&gt;path( '/json/relevance/search/' . uri_escape_utf8($query) );
 my $content = get($uri);
 my $result = decode_json($content);
 use YAML;
-print Dump $result;
- </pre>
+print Dump $result;</pre>
 
 <p>はい。僕はYAMLダンプ派です。</p>
 
@@ -112,7 +111,7 @@ print Dump $result;
 <p>お次にいよいよ、指定された映像のパーマリンクを元に、動画ファイルをダウンロードする
 スクリプト。mp4の高画質、普通画質の物が選べる（動画によっては高画質が無い模様）ので高画質を優先的にゲット。まだ動画ファイルをiPadで開いていないけど、多分フォーマット的にいけそう。</p>
 
-<pre> use LWP::Simple qw/get getstore $ua/;
+<pre class="code">use LWP::Simple qw/get getstore $ua/;
 use URI::Escape;
 use JSON;
 
@@ -127,14 +126,12 @@ my $ref = decode_json($json);
 my $param = $ref-&gt;{sequence}[0]{layerList}[0]{sequenceList}[2]{layerList}[2]{param};
 my $video_url = $param-&gt;{ldURL};
 $video_url = $param-&gt;{sdURL} unless $video_url;
-getstore($video_url, $vid . '.mp4');
- </pre>
+getstore($video_url, $vid . '.mp4');</pre>
 
 <p>ダウンロードの進捗を表示したかったので、LWP::Simpleで「$ua」をエキスポートして、
 show_progressに1を渡している。これを「dailymotion-dl.pl」として保存して、</p>
 
-<pre> $ perl dailymotion-dl.pl {動画のパーマリンクのURL}
- </pre>
+<pre class="code">$ perl dailymotion-dl.pl {動画のパーマリンクのURL}</pre>
 
 <p>とすれば自動的にダウンロード開始します。
 こちらのスクリプトに関してはアレなんで使用は自己責任でお願いします。</p>

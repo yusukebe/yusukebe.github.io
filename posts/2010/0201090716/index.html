@@ -84,9 +84,7 @@ $img-&gt;read( file =&gt; $filename ) or die $img-&gt;errstr;
 $img-&gt;filter( type =&gt; 'contrast', intensity =&gt; 1.3 ); # コントラスト調整
 $img-&gt;filter( type =&gt; "autolevels", lsat =&gt; 0.001, usat =&gt; 0.001 ); # レベル調整
 $img-&gt;filter( type =&gt; "conv", coef =&gt; [ -0.1, 1, -0.1 ] ); # シャープネス調整
-$img-&gt;write( file =&gt; 'out.jpg', jpegquality =&gt; 100 );
-
- </pre>
+$img-&gt;write( file =&gt; 'out.jpg', jpegquality =&gt; 100 );</pre>
 <p>
 何気ない学食の肉てんこもりカレー写真が
 </p>

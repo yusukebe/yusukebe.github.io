@@ -85,34 +85,30 @@
 
 <p>アプリIDとシークレットキーを指定してインスタンスを作成。postback パラメータってのはFacebookの認証画面に行った後に戻ってくるアプリケーションのパスを指定する。</p>
 
-<pre> use Facebook::Graph;
+<pre class="code">use Facebook::Graph;
 
 my $fb = Facebook::Graph-&gt;new(
     app_id =&gt; 'your_app_id',
     secret =&gt; 'your_secret',
     postback =&gt; 'http://localhost:3000/callback'
-);
- </pre>
+);</pre>
 
 <p>Facebook側で認証するためのURLを作成する。基本的に「/login」とかそういうパスにアクセスされたら、この「$uri」へリダレイクトさせる。</p>
 
-<pre> my $uri = $fb-&gt;authorize-&gt;extend_permissions(qw/user_events/)-&gt;uri_as_string;
- </pre>
+<pre class="code">my $uri = $fb-&gt;authorize-&gt;extend_permissions(qw/user_events/)-&gt;uri_as_string;</pre>
 
 <p>インスタンス作成時に postback で指定したパスへユーザーがリダイレクトされるので、その時にくっついていてくる code パラメータを食わせると access_token が取得可能になる。access_token の文字列などはセッションで覚えておくと吉。</p>
 
-<pre> $fb-&gt;request_access_token($self-&gt;req-&gt;param('code'));
-my $access_token = $fb-&gt;access_token;
- </pre>
+<pre class="code">$fb-&gt;request_access_token($self-&gt;req-&gt;param('code'));
+my $access_token = $fb-&gt;access_token;</pre>
 
 <p>次回以降Facebook APIへアクセスするにはセッションから access_token を取得し、access_token メソッドの引数に渡しておく。</p>
 
-<pre> $fb-&gt;access_token($access_token);
- </pre>
+<pre class="code">$fb-&gt;access_token($access_token);</pre>
 
 <p>これを踏まえて、Mojolicious::Liteでの実装はこんな感じになります。helperでFacebook::Graphのインスタンスを取得する「fb」メソッドをはやしていますが、ここはもう少し工夫できるかもですね。</p>
 
-<pre> #!/usr/bin/env perl
+<pre class="code">#!/usr/bin/env perl
 use Mojolicious::Lite;
 use Facebook::Graph;
 
@@ -168,14 +164,13 @@ __DATA__
    &lt;a href="/logout"&gt;Logout&lt;/a&gt;
 % }else{
   &lt;a href="/login"&gt;Login&lt;/a&gt;
-% }
- </pre>
+% }</pre>
 
 <h3>APIから情報を取得する</h3>
 
 <p>Facebook APIはイベントのIDさえ分かれば「/{event_id}/invited」というパスにアクセスしてそのイベントに招待されているユーザーのリストを得る事が出来ます。IDをWebのフォームから入力してもらい、ユーザーリストを出力してみます。</p>
 
-<pre> get '/list' =&gt; sub {
+<pre class="code">get '/list' =&gt; sub {
     my $self = shift;
     my $access_token = $self-&gt;session('access_token') or $self-&gt;redirect_to('/');
     my $fb = $self-&gt;fb;
@@ -192,8 +187,7 @@ __DATA__
         $after_id = $id;
     }
     $self-&gt;stash-&gt;{users} = $users;
-};
- </pre>
+};</pre>
 
 <p>ページネーションを考慮している上、その処理を正規表現で行ってるのでややこしい感じですが、
 これでユーザーのリストをテンプレートへ渡すことが出来ます。Facebook::Graph::Query で情報取得の条件を決めています。</p>
@@ -211,7 +205,7 @@ __DATA__
 
 <p>画像を生成するのにImagerというライブラリを使ってみます。</p>
 
-<pre> get '/card/:id' =&gt; sub {
+<pre class="code">get '/card/:id' =&gt; sub {
     my $self = shift;
     my $fb = $self-&gt;fb;
     my $user = $fb-&gt;fetch($self-&gt;stash-&gt;{id});
@@ -237,8 +231,7 @@ __DATA__
     my $data;
     $image-&gt;write( data =&gt; \$data, type =&gt; 'png' );
     $self-&gt;render_data( $data, format =&gt; 'png' );
-};
- </pre>
+};</pre>
 
 <p>出来た画像はこちら。</p>
 

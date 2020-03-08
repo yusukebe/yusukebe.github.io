@@ -98,7 +98,7 @@
 
 <h3>zip.pl</h3>
 
-<pre> #!/usr/bin/env perl
+<pre class="code">#!/usr/bin/env perl
 use Mojolicious::Lite;
 use HTML::FillInForm::Lite;
 use FormValidator::Lite;
@@ -168,13 +168,11 @@ __DATA__
 &lt;html&gt;
   &lt;head&gt;&lt;title&gt;&lt;%= title %&gt;&lt;/title&gt;&lt;/head&gt;
   &lt;body&gt;&lt;%= content %&gt;&lt;/body&gt;
-&lt;/html&gt;
- </pre>
+&lt;/html&gt;</pre>
 
 <p>Mojolicious::Liteのアプリなんで一つのファイルで済みます。まぁちょっとでもアプリが大きくなったらファイルを切り離しますがこのくらいのサンプルを示すには楽ですね。</p>
 
-<pre> $ ./zip.pl daemon
- </pre>
+<pre class="code">$ ./zip.pl daemon</pre>
 
 <p>とかで起動できますよ。POSTで受け取ったパラメータをFormValidator::Liteでチェックをして、エラーが無ければthankyou.html.epをレンダリング、そうでなければエラーメッセージを表示しつつindex.html.epをレンダリングしています。</p>
 

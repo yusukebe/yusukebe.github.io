@@ -70,27 +70,23 @@
 
 <p>配布したい小さなWebアプリがあって、出力のためのテンプレートファイルとかCSSとかどうやってモジュールに梱包したらよいだろうと思っていたんだけど、たぶんshareディレクトリを使うのがよさげ。<a href="http://search.cpan.org/dist/Module-Install/">Module::Install</a>の場合はModule::Install::Shareにやり方とかが書いてある。通常はshareディレクトリにファイルを用意してMakefile.PLに以下でOK。</p>
 
-<pre>  install_share 'share';
- </pre>
+<pre class="code">install_share 'share';</pre>
 
 <p>もしくはshareの部分を省略できる。</p>
 
-<pre> install_share;
- </pre>
+<pre class="code">install_share;</pre>
 
 <p>ちゃんとModule::Install::Shareのpodには、リードオンリーなコードとは関係ないファイルを同封したい時があるよね！例えば、XMLスキーマだったり、YAMLデータファイルだったり。だったらこれだよ！と書いてある。</p>
 
 <p>ちなみに</p>
 
-<pre> /Library/Perl/5.12/auto/share/dist/Module-Name/
- </pre>
+<pre class="code">/Library/Perl/5.12/auto/share/dist/Module-Name/</pre>
 
 <p>みたいなディレクトリに入る。ファイルを呼び出す時は、<a href="http://search.cpan.org/dist/File-ShareDir/">File::ShareDirモジュール</a>を使えばよい。俺の場合はこんな感じでできた。</p>
 
-<pre> use File::ShareDir qw/dist_file/;
+<pre class="code">use File::ShareDir qw/dist_file/;
 
-my $file = dist_file('Module::Name', 'filename.txt' );
- </pre>
+my $file = dist_file('Module::Name', 'filename.txt' );</pre>
 
 <p>そういえば、shareってディレクトリ、CPAN漁ってたら結構あったな＞＜
 とりあえず、やり方がわかってスッキリ！！</p>

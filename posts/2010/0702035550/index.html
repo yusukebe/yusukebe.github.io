@@ -81,8 +81,7 @@ CPANシェル、もしくは cpanminus 等を使って適当な場所にイン�
 依存モジュールが多いので時間がかかります。コーヒーを用意しましょう。
 </p>
 
-<pre class="brush: perl"> $ cpanm Catalyst
- </pre>
+<pre class="brush: perl"> $ cpanm Catalyst</pre>
 
 <br>
 <h4>2. ひな形を作る</h4>
@@ -91,8 +90,7 @@ CPANシェル、もしくは cpanminus 等を使って適当な場所にイン�
 今回はシンプルに「Uranai」という名前でアプリを作ります。
 </p>
 
-<pre class="brush: perl"> $ catalyst.pl Uranai
- </pre>
+<pre class="brush: perl"> $ catalyst.pl Uranai</pre>
 <br>
 
 <h4>3. テストサーバを起動する</h4>
@@ -102,8 +100,7 @@ Catalyst にはテスト用のサーバが付属しています。-r オプシ�
 </p>
 
 <pre class="brush: perl"> $ cd Uranai/
-$ ./script/uranai_server.pl -r -d
- </pre>
+$ ./script/uranai_server.pl -r -d</pre>
 <br>
 
 <h4>4. 確認する</h4>
@@ -122,8 +119,7 @@ $ ./script/uranai_server.pl -r -d
 さて、オリジナルのHTMLを表示したいものです。Viewと呼ばれる表示系のクラスを作ります。
 
 </p>
-<pre class="brush: perl"> $ ./script/uranai_create.pl view TT TT
- </pre>
+<pre class="brush: perl"> $ ./script/uranai_create.pl view TT TT</pre>
 <p>
 そして、lib/Uranai/Controller/Root.pm の index メソッドを以下のように書き換えると、
 自然とそのパスに応じてテンプレートファイルが呼び出されるようになります。
@@ -132,8 +128,7 @@ $ ./script/uranai_server.pl -r -d
 
 <pre class="brush: perl"> sub index :Path :Args(0) {
     my ( $self, $c ) = @_;
-}
- </pre>
+}</pre>
 <p>
 index.tt が無いので作ります。
 今回の占いアプリはフォームに名前を入れてもらうとそれをハッシュ関数というものに渡して、
@@ -148,8 +143,7 @@ index.tt が無いので作ります。
 &lt;form action="[% c.uri_for('/uranau') %]" method="get"&gt;
     &lt;input type="text" name="name" /&gt;
     &lt;input type="submit" value="占う" /&gt;
-&lt;/form&gt;
- </pre>
+&lt;/form&gt;</pre>
 
 <p>
 ついでに、結果表示のテンプレートも書いちゃいます。
@@ -162,8 +156,7 @@ index.tt が無いので作ります。
 
 &lt;h1&gt;Result&lt;/h1&gt;
 
-&lt;p&gt;[% c.req.param('name') | html %]さん、[% result | html %]&lt;/p&gt;
- </pre>
+&lt;p&gt;[% c.req.param('name') | html %]さん、[% result | html %]&lt;/p&gt;</pre>
 <br>
 
 <h4>6. モデルを作る</h4>
@@ -171,8 +164,7 @@ index.tt が無いので作ります。
 <p>
 次に実際に占いのロジックが走るモデルを作ります。
 </p>
-<pre class="brush: perl"> $ ./script/uranai_create.pl model Uranai
- </pre>
+<pre class="brush: perl"> $ ./script/uranai_create.pl model Uranai</pre>
 <p>
 以下がひな形で作られたものを改造したその占いクラスなのですが、
 use Moose; なんてしてるものですからわかりにくいかもですね。
@@ -219,9 +211,7 @@ sub get_number {
 
 __PACKAGE__-&gt;meta-&gt;make_immutable;
 
-1;
-
- </pre>
+1;</pre>
 <br>
 <p>
 ちなみにハッシュ関数とはある値を与えると決まってある違う値が戻るという関数です。
@@ -247,8 +237,7 @@ sub uranau :Local {
     }
     my $result = $c-&gt;model('Uranai')-&gt;uranau( $name );
     $c-&gt;stash-&gt;{result} = $result;
-}
- </pre>
+}</pre>
 <p>
 $c-&gt;req-&gt;param('name') でクエリパラメータを取得し、もし入ってなければ default というメソッドへ飛ばし、404を出しています。
 そして上記のモデル Uranai さんを呼び出すには $c-&gt;model('Uranai') として結果をもらってます。

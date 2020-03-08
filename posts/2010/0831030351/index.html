@@ -111,8 +111,7 @@ sub send_report {
     );
     try { sendmail($email) }
     catch { my $error = $_; warn $error-&gt;message };
-}
- </pre>
+}</pre>
 <p>
 このようなconfig.yamlを用意して
 </p>
@@ -121,11 +120,8 @@ from: xxxxxx@xxxxxx
 to: xxxxxx@xxxxxx
 url:
   - http://hoge.com/
-  - http://moge.com/
-
- </pre>
-<pre class="brush: perl"> $ ./monita.pl config.yaml
- </pre>
+  - http://moge.com/</pre>
+<pre class="brush: perl"> $ ./monita.pl config.yaml</pre>
 <p>
 と実行すればURLのリストにあるサイトで、200番以外のレスポンスを返却した時に、
 ステータス情報と共にメールが届きます。

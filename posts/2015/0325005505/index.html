@@ -71,9 +71,8 @@
 
 
 
-<pre> web: carton exec plackup -R templates,lib --no-default-middleware -p 5001 psgi/bokete_front_web.psgi
-compass: cd assets/pc &amp;&amp; compass watch sass/style.scss
- </pre>
+<pre class="code">web: carton exec plackup -R templates,lib --no-default-middleware -p 5001 psgi/bokete_front_web.psgi
+compass: cd assets/pc &amp;&amp; compass watch sass/style.scss</pre>
 
 
 
@@ -83,8 +82,7 @@ compass: cd assets/pc &amp;&amp; compass watch sass/style.scss
 
 
 
-<pre> $ proclet start -f procfile_for_pc
- </pre>
+<pre class="code">$ proclet start -f procfile_for_pc</pre>
 
 
 
@@ -99,7 +97,7 @@ compass: cd assets/pc &amp;&amp; compass watch sass/style.scss
 
 
 
-<pre> #! /usr/bin/env perl
+<pre class="code">#! /usr/bin/env perl
 use strict;
 use warnings;
 use Proclet::Declare;
@@ -143,8 +141,7 @@ develop
 
     $ ./develop -a [pc|sp|select|au] --port 5001
 
-=cut
- </pre>
+=cut</pre>
 
 
 

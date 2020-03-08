@@ -111,8 +111,7 @@ div.hide();
 $("#panel").prepend(div); //#panelの頭に挿入
 div.animate({
   "height": "toggle", "opacity": "toggle"
-}, 500 );
- </pre>
+}, 500 );</pre>
 
 <h4>3.画像を先読みさせる</h4>
 <p>
@@ -126,8 +125,7 @@ div.animate({
 
 <pre class="brush: perl"> //JSONを持ってきて、結果をループで回している時に
 //jQueryでimg要素を作って描画させておく
-$("&lt;img/&gt;").attr("src", this.Url);
- </pre>
+$("&lt;img/&gt;").attr("src", this.Url);</pre>
 
 <h4>4.リファラがないと表示できない系の画像はYahooにあるサムネイル画像を使う</h4>
 <p>
@@ -140,8 +138,7 @@ $("&lt;img/&gt;").attr("src", this.Url);
 <pre class="brush: perl"> var photoUrl = photo.Url;
 if( photo.Url.match(/\.fc2\.com|dtiblog\.com/) ){
   photoUrl = photo.Thumbnail.Url;
-}
- </pre>
+}</pre>
 <p>
 まずは簡単に正規表現で決めうちマッチさせたものはサムネイルでって感じにします。
 それでもこのパターンにひっかからずに描画できないものもありますよね。
@@ -154,8 +151,7 @@ attr('width')を使って写真の幅を取得し、それが0の時には描画
 img.attr('src',photoUrl);
 if(img.attr('width') &gt; 0 ){
   //描画処理
-}
- </pre>
+}</pre>
 
 <h4>5.まとめ</h4>
 <p>

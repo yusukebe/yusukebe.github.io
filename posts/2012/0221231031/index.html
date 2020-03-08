@@ -116,7 +116,7 @@ zipやtarをダウンロードして解凍すれば今すぐ使えるような�
 
 <p>index.htmlをエディタで編集してタイトルだけの表示にします。</p>
 
-<pre> &lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+<pre class="code">&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"&gt;
 &lt;html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja"&gt;
 &lt;head&gt;
@@ -139,8 +139,7 @@ zipやtarをダウンロードして解凍すれば今すぐ使えるような�
   &lt;/div&gt;
   &lt;!-- end .container --&gt;
 &lt;/body&gt;
-&lt;/html&gt;
- </pre>
+&lt;/html&gt;</pre>
 
 <p>ブラウザで表示を確認しつつ作業を進めます。</p>
 
@@ -152,17 +151,15 @@ zipやtarをダウンロードして解凍すれば今すぐ使えるような�
 また、自分で書くjsファイルは「js/instagram_search.js」とでも名前を付けるので、
 その読み込みも記述します。index.htmlのheadの最後の方でこう書きます。</p>
 
-<pre> &lt;script type="text/javascript"
+<pre class="code">&lt;script type="text/javascript"
     src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"&gt;&lt;/script&gt;
-&lt;script type="text/javascript" src="js/instagram_search.js"&gt;&lt;/script&gt;
- </pre>
+&lt;script type="text/javascript" src="js/instagram_search.js"&gt;&lt;/script&gt;</pre>
 
 <p>instagram_search.jsではjQueryが正しく動くか、その雛形を書くことで確認してみましょう。</p>
 
-<pre> $().ready(function(){
+<pre class="code">$().ready(function(){
     console.log('docoment is ready!');
-});
- </pre>
+});</pre>
 
 <h4>3. APIのドキュメントを読む(5分)</h4>
 
@@ -179,8 +176,7 @@ zipやtarをダウンロードして解凍すれば今すぐ使えるような�
 分かります。InstagramについてはAPIを特に利用する必要はなく、URLに含まれる写真のIDさえ分かれば、
 画像自身へのリンクを取得できます。</p>
 
-<pre> http://instagr.am/p/{id}/media/?size=t
- </pre>
+<pre class="code">http://instagr.am/p/{id}/media/?size=t</pre>
 
 <p>当たり前のことですが、こうした<strong>技術仕様</strong>を調査する行程もWebサービスを作るには必要です。</p>
 
@@ -191,15 +187,14 @@ zipやtarをダウンロードして解凍すれば今すぐ使えるような�
 
 <p>index.htmlに以下のようなフォームの記述をします。</p>
 
-<pre>   &lt;form id="form" action="#"&gt;
+<pre class="code">&lt;form id="form" action="#"&gt;
     &lt;input type="text" size="40" name="q"/&gt;
     &lt;input type="submit" value="検索" /&gt;
-  &lt;/form&gt;
- </pre>
+  &lt;/form&gt;</pre>
 
 <p>その上で、JS側では入力のイベントを受け取り、値を取得、それをもとにクエリーを生成して、Ajax通信を行います。</p>
 
-<pre> $().ready(function(){
+<pre class="code">$().ready(function(){
   $('#form').submit(function(){
     var query = $(this).children('input=["name"]').val();
     if(!query) return false;
@@ -222,8 +217,7 @@ zipやtarをダウンロードして解凍すれば今すぐ使えるような�
     });
     return false;
   });
-});
- </pre>
+});</pre>
 
 
 <p>うまくいけば、ブラウザのJavaScript Consoleに「【フォームに入力した値＋instagr.am】を含むツイート」
@@ -233,7 +227,7 @@ zipやtarをダウンロードして解凍すれば今すぐ使えるような�
 ページに描画していくことをしていけば完成しそうです。
 最低限の小細工を施すと出来たのは以下のJSコードです。</p>
 
-<pre> $().ready(function(){
+<pre class="code">$().ready(function(){
   $('#form').submit(function(){
     $('#main').children('a').fadeOut(function(){
       $('#main').html('');
@@ -275,13 +269,12 @@ zipやtarをダウンロードして解凍すれば今すぐ使えるような�
     });
     return false;
   });
-});
- </pre>
+});</pre>
 
 
 <p>最後にCSSファイル「css/style.css」をちょろっと調整します。</p>
 
-<pre> main a
+<pre class="code">main a
 {
   margin:0;
   padding:0;
@@ -291,8 +284,7 @@ zipやtarをダウンロードして解凍すれば今すぐ使えるような�
   width:120px;
   height:120px;
   float: left;
-}
- </pre>
+}</pre>
 
 
 <p>再びindex.htmlをブラウザで開き、フォームに適当な検索語を入れ確認してみます。
@@ -308,14 +300,13 @@ zipやtarをダウンロードして解凍すれば今すぐ使えるような�
 
 <p>まずgithubでPublicなレポジトリを作ります。その後だいたいこのようなコマンドでページ公開まで行えます。</p>
 
-<pre> $ git clone git@github.com:yusukebe/Instagram-Search.git
+<pre class="code">$ git clone git@github.com:yusukebe/Instagram-Search.git
 $ cd Instagram-Search
 $ git symbolic-ref HEAD refs/heads/gh-pages
 $ git clean -fdx
 $ cp -a ~/work/* ./
 $ git commit -a -m "initial commit"
-$ git push origin gh-pages
- </pre>
+$ git push origin gh-pages</pre>
 
 <p>できたのがこちらのページです。</p>
 

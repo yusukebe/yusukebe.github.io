@@ -110,10 +110,9 @@ Cの理解だけなのでいきなりWebサービスを作るのは難しいか�
 言語入門の際には「Hello World」を表示するだけのプログラムを書くのが定石と言われていますので、
 それをPerlで書いてみます。もしブラウザで表示させたい！とCGIなるものを作ってみるとこのようなコードになります。</p>
 
-<pre> #!/usr/bin/perl
+<pre class="code">#!/usr/bin/perl
 print "Content-type: text/html \n\n";
-print "Hello World";
- </pre>
+print "Hello World";</pre>
 
 <p>ここでいきなり躓きがちなのは「Content-Typeほにゃららってなんぞー」ってことです。
 しかも、このプログラムが正確に実行されるのかを確かめるにはCGIが動くサーバを用意しなくてはいけません。
@@ -123,8 +122,7 @@ print "Hello World";
 
 <p>ではCLIで「Hello World」はどうするか。このようなコードになります。</p>
 
-<pre> print "Hello World\n";
- </pre>
+<pre class="code">print "Hello World\n";</pre>
 
 <p>一行になりました！しかも単純明快です。多分Perlを知らない人でも意味はわかると思います。
 「printってのが表示させる命令なんだなぁ」と。ちなみに「\n」は改行を表します。</p>
@@ -132,8 +130,7 @@ print "Hello World";
 <p>実行も簡単です。Mac OSXを使っているならば、このプログラムを「hello.pl」などの名前にして保存し、
 以下のコマンドをターミナルというアプリから起動します。</p>
 
-<pre> $ perl hello.pl
- </pre>
+<pre class="code">$ perl hello.pl</pre>
 
 <p>おそらくこれで「Hello World」という文字が出力され、Perlを触ったことの無い人でしたら「Perl処女」を
 脱出したことになります。</p>

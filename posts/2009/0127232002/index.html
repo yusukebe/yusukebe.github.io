@@ -117,8 +117,7 @@ binmode $fh;
 my $doc = $parser-&gt;parse_fh($fh);
 open my $out, '&gt;', 'out.prproj';
 binmode $out;
-print $out $doc-&gt;toString();
- </pre>
+print $out $doc-&gt;toString();</pre>
 <p>
 すげー。あっさりいってびっくり。miyagawa++
 まさか映像編集のために Perl 使うなんておもわなんだｗ

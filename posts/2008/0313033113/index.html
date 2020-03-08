@@ -126,9 +126,7 @@ sub auth {
     die $response-&gt;status_line unless ( $response-&gt;is_success );
     $response-&gt;content =~ /Auth=(.*?)\n/;
     return $1;
-}
-
- </pre>
+}</pre>
 <p>
   返ってきた文字列からAuth=xxxxxxxxxxxxxxxxxxという部分を抜き出せばそれがauthentication_tokenとなります。
 </p>
@@ -161,9 +159,7 @@ my $video_detail = &lt;&lt; "XML";
 &lt;/entry&gt;
 XML
    return $video_detail;
-}
-
- </pre>
+}</pre>
 
 <p>
 それぞれのパラメータが無いとdieしてますが、これらが空だとアップロードした時にAPIから怒られちゃいますので、しっかり設定しましょう。これも軽くはまりました。
@@ -172,21 +168,18 @@ XML
 この様にビデオの情報とそのビデオ自体のファイルを手元に用意したら、POSTのリクエスト作成します。
 以下のURLがPOSTする先のURLです。
 </p>
-<pre class="brush: perl"> http://uploads.gdata.youtube.com/feeds/api/users//uploads
- </pre>
+<pre class="brush: perl"> http://uploads.gdata.youtube.com/feeds/api/users//uploads</pre>
 <p>
 リクエストのヘッダーに含める要素が結構あって、まず、Content-Type は multipart/related にしなければいけません。次に認証がらみで、上記の authentication_token と developer key を
 </p>
 
 <pre class="brush: perl"> Authorization: GoogleLogin token=&lt;authentication_token&gt;
-X-GData-Key: key=&lt;developer_key&gt;
- </pre>
+X-GData-Key: key=&lt;developer_key&gt;</pre>
 <p>
 という形式で含めます。ここが一番はまったところで、ドキュメントによると、Authorization のところが
 </p>
 
-<pre class="brush: perl"> Authorization: AuthSub token=&lt;authentication_token&gt;
- </pre>
+<pre class="brush: perl"> Authorization: AuthSub token=&lt;authentication_token&gt;</pre>
 <p>
 になっていて、最初はこちらで試していたのですが、はねられました。このAuthSubというのは今回の「Direct Uploading」では使えなくて、ウェブフォームから外部ユーザーによってアップロードする場合などに使うようです。
 </p>
@@ -214,9 +207,7 @@ upload サブルーチンのリクエスト生成までのコードはこんな�
         )
     );
     $request-&gt;add_part(
-        HTTP::Message-&gt;new( [ Content_type =&gt; $content_type ], $data ) );
-
- </pre>
+        HTTP::Message-&gt;new( [ Content_type =&gt; $content_type ], $data ) );</pre>
 <p>
 それで、いよいよリクエスト発行します。うまくいかなければエラーが返ってきますし、うまくいけばアップロードした動画のYouTubeでの情報がGData形式で返却されます。
 その部分が upload サブルーチンの残りの部分になります。取得したGDataはそのままprintしていますが、
@@ -226,8 +217,7 @@ upload サブルーチンのリクエスト生成までのコードはこんな�
 <pre class="brush: perl">     my $response = $ua-&gt;request($request);
     die $response-&gt;status_line unless ( $response-&gt;is_success );
     print $response-&gt;content;
-}
- </pre>
+}</pre>
 
 <p>
 以上でアップロードは完了です。YouTubeにログインしMyAccountのMyVideo（<a href="http://www.youtube.com/my_videos">http://www.youtube.com/my_videos</a>）にアクセスしたら変換中のさきほどあげた動画があれば成功というわけです。
@@ -339,9 +329,7 @@ my $video_detail = &lt;&lt; "XML";
 &lt;/entry&gt;
 XML
    return $video_detail;
-}
-
- </pre>
+}</pre>
 
 
 <p></p>

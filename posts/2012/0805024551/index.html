@@ -88,9 +88,8 @@
 
 <p>miyagawanizeでは以下のモジュールを使います。</p>
 
-<pre> use Imager;
-use Image::ObjectDetect;
- </pre>
+<pre class="code">use Imager;
+use Image::ObjectDetect;</pre>
 
 <p>ImagerはPerlらしく画像処理をするためのモジュール。
 Image::ObjectDetectはOpenCVの物体検出の部分をPerlから利用できるラッパーモジュールです。
@@ -98,7 +97,7 @@ Image::ObjectDetectはOpenCVの物体検出の部分をPerlから利用できる
 
 <p>Image::ObjectDetectでは顔の座標を配列で受け取ることが出来るので、そこに対し、Imagerの操作で画像をオーバーレイさせます。</p>
 
-<pre> for my $face (@faces) {
+<pre class="code">for my $face (@faces) {
     my $purple = $purple_source-&gt;scale(
         xpixels =&gt; $face-&gt;{width} / $aspect,
         ypixels =&gt; $face-&gt;{height} / $aspect,
@@ -108,8 +107,7 @@ Image::ObjectDetectはOpenCVの物体検出の部分をPerlから利用できる
         ty  =&gt; $face-&gt;{height} / $aspect + $face-&gt;{y},
         src =&gt; $purple,
     );
-}
- </pre>
+}</pre>
 
 <h4>リアルタイムにmiyagawanize</h4>
 
