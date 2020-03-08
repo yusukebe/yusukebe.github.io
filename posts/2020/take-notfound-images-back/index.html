@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>過去画像をInternet Archiveで取り戻せ - ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="過去画像をInternet Archiveで取り戻せ" />
+<meta property="og:description" content="年単位前から気になっていたことで、 この日記で掲載している画像の大半がみれないというものがあった。 というのも一時期、画像ファイルをすべてyusukebe.typepad.jpで配信していたんだけど、 今で" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yusukebe.com/posts/2020/take-notfound-images-back/" />
+<meta property="og:image" content="https://yusukebe.com/images/wayback-001.png" />
+<meta property="article:published_time" content="2020-03-08T09:27:21+09:00" />
+<meta property="article:modified_time" content="2020-03-08T09:27:21+09:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://yusukebe.com/images/wayback-001.png"/>
+
+<meta name="twitter:title" content="過去画像をInternet Archiveで取り戻せ"/>
+<meta name="twitter:description" content="年単位前から気になっていたことで、 この日記で掲載している画像の大半がみれないというものがあった。 というのも一時期、画像ファイルをすべてyusukebe.typepad.jpで配信していたんだけど、 今で"/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
+	
+	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://yusukebe.com/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper post">
+		<div class="header">
+	<h1 class="site-title"><a href="https://yusukebe.com/">ゆーすけべー日記</a></h1>
+	<div class="site-description"><h2></h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/yusukebe" title="Github"><i data-feather="github"></i></a><a href="https://twitter.com/yusukebe" title="Twitter"><i data-feather="twitter"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post-header">
+			<h1 class="title">過去画像をInternet Archiveで取り戻せ</h1>
+			<div class="meta">Posted at &mdash; Mar 8, 2020</div>
+		</div>
+
+		<div class="markdown post-body">
+			<p>年単位前から気になっていたことで、
+この日記で掲載している画像の大半がみれないというものがあった。
+というのも一時期、画像ファイルをすべて<code>yusukebe.typepad.jp</code>で配信していたんだけど、
+今では<code>typepad.jp</code>は息をしていないし、
+記憶が定かではないけど、
+Typepadで管理していたブログもろとも削除してしまったかもしれないのです。。。
+とにもかくにも、<strong>画像は全部404 Not Foundだし、元画像は手元にない！</strong></p>
+<p><img src="/images/wayback-001.png" alt="画像が見当たらない"></p>
+<p>で、どうしょうと考えた結果、
+<strong>Internet Archiveから頑張ってひっぱってくる</strong>作戦を思いついた。</p>
+<p>試しに、今ではNot Foundになってしまっているimgタグのsrc属性値である画像URLのひとつを
+Internet Archiveのフォームに打ち込んだら、
+ちゃんと残っているじゃないか！
+全部試さずとも、だいたい残っているっぽい。</p>
+<p>ってことで、作戦決行。</p>
+<h2 id="行方不明の画像達">行方不明の画像達</h2>
+<p>404でかつ、手元にない画像達は以下のURLフォーマットで以前は参照できた。</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">http://yusukebe.typepad.jp/.a/xxxxxxxxxxxxxxxxxxxxxxxx
+</code></pre></div><p>過去記事すべての中からこのフォーマットのものを抜き出すと、
+なんと1万件以上あった。重複を除くと、4,000件程度。
+ここまで大量なのはMovableTypeからTypepadに移行した際に
+だいぶむりくりやって、不要な外部画像までインポートしたせいだと思わえるが、
+もともとこの日記は画像が多く、とにかく画像が多い。</p>
+<p>これをいちいち手作業でやるには当然骨が折れまくる。
+以下の作業が必要となってくる。</p>
+<ol>
+<li>すべての旧画像URLを抽出、ユニークにする</li>
+<li>Internet Archiveに残ってる画像URLをそれぞれ取得する</li>
+<li>画像をダウンロードする</li>
+<li>画像をレポジトリ、GitHub Pagesにアップする</li>
+<li>記事中の旧画像URLを新しいものに書き換える</li>
+</ol>
+<h2 id="wayback-machine-apiを使う">Wayback Machine APIを使う</h2>
+<p>まず、<code>find</code>とか<code>grep</code>とか<code>sed</code>とかで頑張って旧画像URLのリストをとりあえず作成した。
+次にやるのは、このURLにマッチするInternet Archiveに保存されている画像URLを取得することだ。</p>
+<p>Internet Archiveには<a href="https://archive.org/help/wayback_api.php">Weback Machine API</a>というのがある。なみに、Internet Archiveとかが過去のドキュメントを保管し参照できるようにしてることをWebback Machineと呼ぶらしい。</p>
+<p>例えば、とある旧画像URLに対応するものがどのようにアーカイブされているかを知るには、</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">$ curl &#34;http://archive.org/wayback/available?url=https://yusukebe.typepad.jp/.a/6a0133f4781589970b015391e3959c970b-pi&#34;
+</code></pre></div><p>で、JSONが返ってくる。</p>
+<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span><span class="nt">&#34;url&#34;</span><span class="p">:</span> <span class="s2">&#34;https://yusukebe.typepad.jp/.a/6a0133f4781589970b015391e3959c970b-pi&#34;</span><span class="p">,</span> <span class="nt">&#34;archived_snapshots&#34;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&#34;closest&#34;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&#34;available&#34;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nt">&#34;url&#34;</span><span class="p">:</span> <span class="s2">&#34;http://web.archive.org/web/20120517020815/http://yusukebe.typepad.jp/.a/6a0133f4781589970b015391e3959c970b-pi&#34;</span><span class="p">,</span> <span class="nt">&#34;timestamp&#34;</span><span class="p">:</span> <span class="s2">&#34;20120517020815&#34;</span><span class="p">,</span> <span class="nt">&#34;status&#34;</span><span class="p">:</span> <span class="s2">&#34;200&#34;</span><span class="p">}</span><span class="p">}</span><span class="p">}</span>
+</code></pre></div><p>ここにある<code>archived_snapshots-&gt;closest-&gt;url</code>を参照すれば、画像ファイルの場所が分かる。
+なので、旧画像URLごとにこのAPIを叩いて、返ってきたURLをリストとして保存するようにする。以下のワンショットのPerlスクリプトでやっつけた。</p>
+<div class="highlight"><pre class="chroma"><code class="language-perl" data-lang="perl"><span class="k">use</span> <span class="nn">HTTP::Tinyish</span><span class="p">;</span>
+<span class="k">use</span> <span class="nn">URI</span><span class="p">;</span>
+<span class="k">use</span> <span class="nn">JSON</span><span class="p">;</span>
+<span class="k">use</span> <span class="nn">Path::Tiny</span><span class="p">;</span>
+
+<span class="k">my</span> <span class="nv">$</span><span class="nv">ua</span> <span class="o">=</span> <span class="n"></span><span class="nn">HTTP::Tinyish</span><span class="o">-</span><span class="o">&gt;</span><span class="k">new</span><span class="p">;</span>
+
+<span class="k">my</span> <span class="nv">$</span><span class="nv">list</span> <span class="o">=</span> <span class="n"></span><span class="n">path</span><span class="p">(</span><span class="s">&#39;list.txt&#39;</span><span class="p">)</span><span class="p">;</span>
+<span class="k">my</span> <span class="nv">$</span><span class="nv">result</span> <span class="o">=</span> <span class="n"></span><span class="n">path</span><span class="p">(</span><span class="s">&#39;result.txt&#39;</span><span class="p">)</span><span class="p">;</span>
+
+<span class="k">for</span> <span class="k">my</span> <span class="nv">$</span><span class="nv">line</span> <span class="p">(</span><span class="nv">$</span><span class="nv">list</span><span class="o">-</span><span class="o">&gt;</span><span class="n"></span><span class="n">lines</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n"></span><span class="n">wayback</span><span class="p">(</span><span class="nv">$</span><span class="nv">line</span><span class="p">)</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">sub</span> <span class="nf">wayback</span> <span class="p">{</span>
+    <span class="k">my</span> <span class="nv">$</span><span class="nv">target_url</span> <span class="o">=</span> <span class="nb">shift</span><span class="p">;</span>
+    <span class="k">my</span> <span class="nv">$</span><span class="nv">uri</span> <span class="o">=</span> <span class="n"></span><span class="nn">URI</span><span class="o">-</span><span class="o">&gt;</span><span class="k">new</span><span class="p">(</span><span class="s">&#39;http://archive.org/wayback/available&#39;</span><span class="p">)</span><span class="p">;</span>
+    <span class="nv">$</span><span class="nv">uri</span><span class="o">-</span><span class="o">&gt;</span><span class="n"></span><span class="n">query_form</span><span class="p">(</span> <span class="n"></span><span class="n">url</span> <span class="o">=</span><span class="o">&gt;</span> <span class="nv">$</span><span class="nv">target_url</span> <span class="p">)</span><span class="p">;</span>
+
+    <span class="k">my</span> <span class="nv">$</span><span class="nv">res</span> <span class="o">=</span> <span class="nv">$</span><span class="nv">ua</span><span class="o">-</span><span class="o">&gt;</span><span class="n"></span><span class="n">get</span><span class="p">(</span><span class="nv">$</span><span class="nv">uri</span><span class="p">)</span><span class="p">;</span>
+    <span class="k">return</span> <span class="k">unless</span> <span class="nv">$</span><span class="nv">res</span><span class="o">-</span><span class="o">&gt;</span><span class="p">{</span><span class="n"></span><span class="n">success</span><span class="p">}</span><span class="p">;</span>
+
+    <span class="k">my</span> <span class="nv">$</span><span class="nv">data</span> <span class="o">=</span> <span class="n"></span><span class="n">decode_json</span><span class="p">(</span><span class="nv">$</span><span class="nv">res</span><span class="o">-</span><span class="o">&gt;</span><span class="p">{</span><span class="n"></span><span class="n">content</span><span class="p">}</span><span class="p">)</span><span class="p">;</span>
+    <span class="k">my</span> <span class="nv">$</span><span class="nv">wayback_url</span> <span class="o">=</span> <span class="nv">$</span><span class="nv">data</span><span class="o">-</span><span class="o">&gt;</span><span class="p">{</span><span class="n"></span><span class="n">archived_snapshots</span><span class="p">}</span><span class="p">{</span><span class="n"></span><span class="n">closest</span><span class="p">}</span><span class="p">{</span><span class="n"></span><span class="n">url</span><span class="p">}</span> <span class="ow">or</span> <span class="k">return</span><span class="p">;</span>
+    <span class="nb">warn</span> <span class="s">&#34;Append URL: $wayback_url\n&#34;</span><span class="p">;</span>
+    <span class="nv">$</span><span class="nv">result</span><span class="o">-</span><span class="o">&gt;</span><span class="n"></span><span class="n">append</span><span class="p">(</span><span class="s">&#34;$wayback_url\n&#34;</span><span class="p">)</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><p>なにせ4,000件あるので、その間にコーヒーがたくさん飲める。</p>
+<h2 id="画像をダウンロードする">画像をダウンロードする</h2>
+<p>取得すべき画像のURLのリストができたら、ダウンロードする。
+これは<code>wget</code>使えば簡単だった。</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">$ wget -v -i result.txt
+</code></pre></div><h2 id="拡張子を与える">拡張子を与える</h2>
+<p>時間はかかったものの、ここまでは順調。
+ただ、問題があって、<code>typepad.jp</code>でホストしていたURLには拡張子が付いておらず、
+おのずとダウンロードしたファイル名にも拡張子はつかない。
+これだとGithub Pagesとかでホストする際に、MIME-Typeが適切につかない。</p>
+<p>頑張って、画像の中身をみて拡張子をつける。</p>
+<p>これもPerlで書いた。<code>Image::Info</code>っていうモジュールで画像タイプを判断している。
+ところで、<code>Path::Tiny</code>大好き。</p>
+<div class="highlight"><pre class="chroma"><code class="language-perl" data-lang="perl"><span class="k">use</span> <span class="nn">Path::Tiny</span><span class="p">;</span>
+<span class="k">use</span> <span class="nn">Image::Info</span> <span class="sx">qw/determine_file_format/</span><span class="p">;</span>
+
+<span class="k">my</span> <span class="nv">$</span><span class="nv">dir</span> <span class="o">=</span> <span class="n"></span><span class="n">path</span><span class="p">(</span><span class="s">&#39;./static/archives/.a/&#39;</span><span class="p">)</span><span class="p">;</span>
+
+<span class="k">for</span> <span class="k">my</span> <span class="nv">$</span><span class="nv">file</span> <span class="p">(</span><span class="nv">$</span><span class="nv">dir</span><span class="o">-</span><span class="o">&gt;</span><span class="n"></span><span class="n">children</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n"></span><span class="n">execute</span><span class="p">(</span><span class="nv">$</span><span class="nv">file</span><span class="p">)</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">sub</span> <span class="nf">execute</span> <span class="p">{</span>
+    <span class="k">my</span> <span class="nv">$</span><span class="nv">file</span> <span class="o">=</span> <span class="nb">shift</span><span class="p">;</span>
+    <span class="k">my</span> <span class="nv">$</span><span class="nv">path</span> <span class="o">=</span> <span class="n"></span><span class="n">path</span><span class="p">(</span><span class="nv">$</span><span class="nv">file</span><span class="p">)</span><span class="p">;</span>
+    <span class="k">my</span> <span class="nv">$</span><span class="nv">basename</span> <span class="o">=</span> <span class="nv">$</span><span class="nv">path</span><span class="o">-</span><span class="o">&gt;</span><span class="n"></span><span class="n">basename</span><span class="p">;</span>
+    <span class="k">my</span> <span class="nv">$</span><span class="nv">type</span> <span class="o">=</span> <span class="n"></span><span class="n">determine_file_format</span><span class="p">(</span><span class="nv">$</span><span class="nv">path</span><span class="o">-</span><span class="o">&gt;</span><span class="n"></span><span class="n">slurp</span><span class="p">)</span><span class="p">;</span>
+    <span class="k">my</span> <span class="nv">$</span><span class="nv">ext</span> <span class="o">=</span> <span class="s">&#39;jpg&#39;</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nv">$</span><span class="nv">type</span> <span class="o">&amp;&amp;</span> <span class="nv">$</span><span class="nv">type</span> <span class="ow">eq</span> <span class="s">&#39;GIF&#39;</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$</span><span class="nv">ext</span> <span class="o">=</span> <span class="s">&#39;gif&#39;</span><span class="p">;</span>
+    <span class="p">}</span><span class="k">elsif</span><span class="p">(</span><span class="nv">$</span><span class="nv">type</span> <span class="o">&amp;&amp;</span> <span class="nv">$</span><span class="nv">type</span> <span class="ow">eq</span> <span class="s">&#39;PNG&#39;</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$</span><span class="nv">ext</span> <span class="o">=</span> <span class="s">&#39;png&#39;</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nv">$</span><span class="nv">path</span><span class="o">-</span><span class="o">&gt;</span><span class="n"></span><span class="n">move</span><span class="p">(</span><span class="nb">sprintf</span><span class="p">(</span><span class="s">&#34;%s/%s.%s&#34;</span><span class="p">,</span> <span class="nv">$</span><span class="nv">dir</span><span class="o">-</span><span class="o">&gt;</span><span class="n"></span><span class="n">absolute</span><span class="p">,</span> <span class="nv">$</span><span class="nv">basename</span><span class="p">,</span> <span class="nv">$</span><span class="nv">ext</span><span class="p">)</span><span class="p">)</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><h2 id="urlを新しいのに変更する">URLを新しいのに変更する</h2>
+<p>大量の画像を<code>git add</code>してGitHubのレポに<code>push</code>。
+これでGitHub Pagesにも反映される。</p>
+<p>最後に、記事中の旧URLを新しいURLに書き換える作業。
+ダウンロード済みのファイル名から拡張子を取り除いた文字列とマッチしたURLの箇所をみつけて拡張子つきの新しいURLに書き換えないといけない。
+ちょい複雑なのでこれもPerlで書いた。
+総当り的で雑なのは目をつむる。</p>
+<div class="highlight"><pre class="chroma"><code class="language-perl" data-lang="perl"><span class="k">use</span> <span class="nn">File::Find::Rule</span><span class="p">;</span>
+<span class="k">use</span> <span class="nn">Path::Tiny</span><span class="p">;</span>
+<span class="k">use</span> <span class="nn">feature</span> <span class="sx">qw/say/</span><span class="p">;</span>
+
+<span class="k">my</span> <span class="nv">@</span><span class="nv">files</span> <span class="o">=</span> <span class="n"></span><span class="nn">File::Find::Rule</span><span class="o">-</span><span class="o">&gt;</span><span class="n"></span><span class="n">file</span><span class="p">(</span><span class="p">)</span>
+    <span class="o">-</span><span class="o">&gt;</span><span class="n"></span><span class="n">name</span><span class="p">(</span><span class="s">&#39;*.html&#39;</span><span class="p">)</span><span class="o">-</span><span class="o">&gt;</span><span class="n"></span><span class="n">in</span><span class="p">(</span><span class="s">&#39;./content/posts&#39;</span><span class="p">)</span><span class="p">;</span>
+<span class="k">my</span> <span class="nv">$</span><span class="nv">image_dir</span> <span class="o">=</span> <span class="n"></span><span class="n">path</span><span class="p">(</span><span class="s">&#34;./static/archives/.a&#34;</span><span class="p">)</span><span class="p">;</span>
+
+<span class="k">for</span> <span class="k">my</span> <span class="nv">$</span><span class="nv">file</span> <span class="p">(</span><span class="nv">@</span><span class="nv">files</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n"></span><span class="n">replace</span><span class="p">(</span><span class="nv">$</span><span class="nv">file</span><span class="p">)</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">sub</span> <span class="nf">replace</span> <span class="p">{</span>
+    <span class="k">my</span> <span class="nv">$</span><span class="nv">file</span> <span class="o">=</span> <span class="nb">shift</span><span class="p">;</span>
+    <span class="k">my</span> <span class="nv">$</span><span class="nv">path</span> <span class="o">=</span> <span class="n"></span><span class="n">path</span><span class="p">(</span><span class="nv">$</span><span class="nv">file</span><span class="p">)</span><span class="p">;</span>
+    <span class="k">my</span> <span class="nv">$</span><span class="nv">content</span> <span class="o">=</span> <span class="nv">$</span><span class="nv">path</span><span class="o">-</span><span class="o">&gt;</span><span class="n"></span><span class="n">slurp</span><span class="p">;</span>
+    <span class="k">for</span> <span class="k">my</span> <span class="nv">$</span><span class="nv">image</span> <span class="p">(</span><span class="nv">$</span><span class="nv">image_dir</span><span class="o">-</span><span class="o">&gt;</span><span class="n"></span><span class="n">children</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">my</span> <span class="nv">$</span><span class="nv">basename</span> <span class="o">=</span> <span class="nv">$</span><span class="nv">image</span><span class="o">-</span><span class="o">&gt;</span><span class="n"></span><span class="n">basename</span><span class="p">;</span>
+        <span class="k">my</span> <span class="p">(</span><span class="nv">$</span><span class="nv">name</span><span class="p">)</span> <span class="o">=</span> <span class="nv">$</span><span class="nv">basename</span> <span class="o">=~</span> <span class="sr">m/(.+?)\.(?:\w{3})$/</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nv">$</span><span class="nv">content</span> <span class="o">=~</span> <span class="sr">s/($name)&#34;/$basename/g</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n"></span><span class="n">say</span> <span class="s">&#34;Replace - $file: $name to $basename&#34;</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="nv">$</span><span class="nv">path</span><span class="o">-</span><span class="o">&gt;</span><span class="n"></span><span class="n">spew</span><span class="p">(</span><span class="nv">$</span><span class="nv">content</span><span class="p">)</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><h2 id="作戦成功">作戦成功</h2>
+<p>これで画像が、、、</p>
+<p><img src="/images/wayback-002.png" alt="画像がでた"></p>
+<p>でた！</p>
+<p>一部、Wayback Machineから取得できないものがあったりしたけど、
+3,400件の画像が復活した。わーい。
+Internet Archive様様でございます。</p>
+
+		</div>
+
+		<div class="post-tags">
+			
+				
+					<nav class="nav tags">
+							<ul class="flat">
+								
+								<li><a href="/tags/blog">Blog</a></li>
+								
+							</ul>
+					</nav>
+				
+			
+		</div>
+        <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v5.0&appId=233306523373884&autoLogAppEvents=1"></script>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+
+<div class="social-button-area">
+  <ul class="social-button">
+    <li>
+      <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
+    </li>
+    <li>
+      <span class="fb-share-button"  data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2020%2ftake-notfound-images-back%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
+    </li>
+    <li>
+      <a href="https://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label-counter" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>
+    </li>
+  </ul>
+</div>
+
+<div class="disqus-area">
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "yusukebe-com" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<ul class="pagination">
+  
+  <li class="page-item page-prev">
+    <a href="https://yusukebe.com/posts/2020/hhkb-professional2-type-s/" class="page-link" aria-label="Previous"><span aria-hidden="true">← HHKBがよくなくなるのでHHKBを買った</span></a>
+  </li>
+  
+  
+</ul>
+
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright yusukebe.com |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-492497-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>

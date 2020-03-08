@@ -3,27 +3,37 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://yusukebe.com/tags/blog/</loc>
+    <lastmod>2020-03-08T09:27:21+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yusukebe.com/posts/</loc>
+    <lastmod>2020-03-08T09:27:21+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yusukebe.com/tags/</loc>
+    <lastmod>2020-03-08T09:27:21+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yusukebe.com/</loc>
+    <lastmod>2020-03-08T09:27:21+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yusukebe.com/posts/2020/take-notfound-images-back/</loc>
+    <lastmod>2020-03-08T09:27:21+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://yusukebe.com/tags/gadget/</loc>
     <lastmod>2020-03-06T15:46:50+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://yusukebe.com/posts/2020/hhkb-professional2-type-s/</loc>
-    <lastmod>2020-03-06T15:46:50+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusukebe.com/posts/</loc>
-    <lastmod>2020-03-06T15:46:50+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusukebe.com/tags/</loc>
-    <lastmod>2020-03-06T15:46:50+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusukebe.com/</loc>
     <lastmod>2020-03-06T15:46:50+09:00</lastmod>
   </url>
   
@@ -125,11 +135,6 @@
   <url>
     <loc>https://yusukebe.com/posts/2020/write-perl6/</loc>
     <lastmod>2020-01-17T07:15:36+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusukebe.com/tags/blog/</loc>
-    <lastmod>2020-01-16T10:36:20+09:00</lastmod>
   </url>
   
   <url>
