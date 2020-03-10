@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <copyright>© Copyright yusukebe.com</copyright>
-    <lastBuildDate>Fri, 28 Feb 2020 09:57:20 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 11 Mar 2020 08:32:39 +0900</lastBuildDate>
     
 	<atom:link href="https://yusukebe.com/tags/book/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Go言語でつくるインタプリタがグランドフィナーレを迎えました</title>
+      <link>https://yusukebe.com/posts/2020/writing-an-interpreter-in-go/</link>
+      <pubDate>Wed, 11 Mar 2020 08:32:39 +0900</pubDate>
+      
+      <guid>https://yusukebe.com/posts/2020/writing-an-interpreter-in-go/</guid>
+      <description>いよいよ「Go言語でつくるインタプリタ」がグランドフィナーレを迎えた。 そして、これで終わりだ。やり遂げた。これまでは私が誘う小さなお祝いを軽くあしらってきたとしても、いよいよ愉快なパーティ帽を被ってよ</description>
+    </item>
     
     <item>
       <title>ストレングス・ファインダーをやった</title>

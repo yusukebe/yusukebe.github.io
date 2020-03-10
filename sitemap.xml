@@ -3,6 +3,36 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://yusukebe.com/tags/book/</loc>
+    <lastmod>2020-03-11T08:32:39+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yusukebe.com/tags/go/</loc>
+    <lastmod>2020-03-11T08:32:39+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yusukebe.com/posts/2020/writing-an-interpreter-in-go/</loc>
+    <lastmod>2020-03-11T08:32:39+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yusukebe.com/posts/</loc>
+    <lastmod>2020-03-11T08:32:39+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yusukebe.com/tags/</loc>
+    <lastmod>2020-03-11T08:32:39+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yusukebe.com/</loc>
+    <lastmod>2020-03-11T08:32:39+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://yusukebe.com/tags/amazon/</loc>
     <lastmod>2020-03-10T15:48:46+09:00</lastmod>
   </url>
@@ -14,21 +44,6 @@
   
   <url>
     <loc>https://yusukebe.com/posts/2020/amazon-shortcode/</loc>
-    <lastmod>2020-03-10T15:48:46+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusukebe.com/posts/</loc>
-    <lastmod>2020-03-10T15:48:46+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusukebe.com/tags/</loc>
-    <lastmod>2020-03-10T15:48:46+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusukebe.com/</loc>
     <lastmod>2020-03-10T15:48:46+09:00</lastmod>
   </url>
   
@@ -50,11 +65,6 @@
   <url>
     <loc>https://yusukebe.com/posts/2020/hhkb-professional2-type-s/</loc>
     <lastmod>2020-03-06T15:46:50+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusukebe.com/tags/book/</loc>
-    <lastmod>2020-02-28T09:57:20+09:00</lastmod>
   </url>
   
   <url>
