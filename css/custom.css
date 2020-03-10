@@ -5,16 +5,19 @@ body {
 .wrapper {
     max-width: 700px;
 }
+a, a:hover {
+    color:#B11717;
+}
 h1, h2, h3, h4, h5, h6 {
-    font-weight: bold;
-    color:#000;
+    font-weight: 600;
+    color:#333;
     line-height: 1.4;
 }
 h1 {
-    font-size:1.9rem;
+    font-size:1.8rem;
 }
 h2 {
-    font-size:1.5rem;
+    font-size:1.4rem;
 }
 h3 {
     font-size:1.2rem;
@@ -33,6 +36,9 @@ h1.site-title, h1.site-title a {
 .header nav ul.flat li {
     font-weight: bold;
 }
+.post-body h2, .post-body h3, .post-body h4, .post-body h5, .post-body h6 {
+    margin:2.5rem 0 0.8rem;
+}
 a.title {
     font-weight:bold;
 }
@@ -49,20 +55,19 @@ ul, ol {
 ul li, ol li {
     margin-left:0;
 }
-.post-body {
+.post-body, .posts {
     line-height: 1.67;
     letter-spacing : 0.01em;
     font-weight: normal;
     padding-bottom: 1rem;
-    border-bottom: 1px solid #f4f4f4;
     color: #555;
+}
+.post-body {
+    border-bottom: 1px solid #f4f4f4;
 }
 .post-body ul li ul, .post-body ol li ol {
     margin:0;
     border:none;
-}
-.post-body h2, .post-body h3, .post-body h4, .post-body h5, .post-body h6 {
-    margin:2rem 0 1rem;
 }
 img {
     margin:1.5rem 0;
@@ -79,18 +84,23 @@ pre {
     font-size: 0.9em;
 }
 .highlight pre {
-    background-color: #272822 !important;
+    background-color: #3A3B36 !important;
     margin:1.5rem 0;
 }
 pre.code {
-    margin-bottom: 0;
-    margin-top: 0;
+    margin:0;
     padding: 20px;
     background-color: #f6f8fa;
 }
-pre code {
+code {
     font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
+    font-size: 0.9rem;
+    margin: 0 1px;
+    color:#464646;
+}
+pre code {
     font-size: 12px;
+    color:#fff;
 }
 .post ul li {
     margin-bottom: 4px;
