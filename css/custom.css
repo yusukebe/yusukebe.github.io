@@ -1,5 +1,5 @@
 body {
-    color:#222;
+    color: #555;
     text-rendering: optimizelegibility;
 }
 .wrapper {
@@ -14,7 +14,7 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.4;
 }
 h1 {
-    font-size:1.8rem;
+    font-size:1.6rem;
 }
 h2 {
     font-size:1.4rem;
@@ -59,12 +59,14 @@ ul, ol {
 ul li, ol li {
     margin-left:0;
 }
+.post .post-header {
+    margin-bottom:40px;
+}
 .post-body, .posts {
     line-height: 1.67;
     letter-spacing : 0.01em;
     font-weight: normal;
     padding-bottom: 1rem;
-    color: #555;
 }
 .post-body {
     border-bottom: 1px solid #f4f4f4;
