@@ -102,7 +102,7 @@ Internet Archiveのフォームに打ち込んだら、
 <h2 id="wayback-machine-apiを使う">Wayback Machine APIを使う</h2>
 <p>まず、<code>find</code>とか<code>grep</code>とか<code>sed</code>とかで頑張って旧画像URLのリストをとりあえず作成した。
 次にやるのは、このURLにマッチするInternet Archiveに保存されている画像URLを取得することだ。</p>
-<p>Internet Archiveには<a href="https://archive.org/help/wayback_api.php">Weback Machine API</a>というのがある。なみに、Internet Archiveとかが過去のドキュメントを保管し参照できるようにしてることをWebback Machineと呼ぶらしい。</p>
+<p>Internet Archiveには<a href="https://archive.org/help/wayback_api.php">Weback Machine API</a>というのがある。なみに、Internet Archiveとかが過去のドキュメントを保管し参照できるようにしてることをWayback Machineと呼ぶらしい。</p>
 <p>例えば、とある旧画像URLに対応するものがどのようにアーカイブされているかを知るには、</p>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">$ curl &#34;http://archive.org/wayback/available?url=https://yusukebe.typepad.jp/.a/6a0133f4781589970b015391e3959c970b-pi&#34;
 </code></pre></div><p>で、JSONが返ってくる。</p>

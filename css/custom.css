@@ -1,5 +1,9 @@
 body {
     color:#222;
+    text-rendering: optimizelegibility;
+}
+.wrapper {
+    max-width: 700px;
 }
 h1, h2, h3, h4, h5, h6 {
     font-weight: bold;
@@ -51,7 +55,7 @@ ul li, ol li {
     font-weight: normal;
     padding-bottom: 1rem;
     border-bottom: 1px solid #f4f4f4;
-    color: #333;
+    color: #555;
 }
 .post-body ul li ul, .post-body ol li ol {
     margin:0;
@@ -83,6 +87,10 @@ pre.code {
     margin-top: 0;
     padding: 20px;
     background-color: #f6f8fa;
+}
+pre code {
+    font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
+    font-size: 12px;
 }
 .post ul li {
     margin-bottom: 4px;
