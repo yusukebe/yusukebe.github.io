@@ -212,7 +212,11 @@ URLをつぶやくと展開されるアレ。
 
 <h2 id="ブックマークレット">ブックマークレット</h2>
 <p>毎回、ASINとタイトルをコピペして〜みたいなことがだるいので、
-Amazon商品ページで実行すれば、値付きショートコードを表示してくれるブックマークレットを作った。</p>
+Amazon商品ページで実行すれば、値付きショートコードを表示してくれるブックマークレットを作った。
+以下を参考にさせていただきました。</p>
+<ul>
+<li><a href="https://yoshikiito.net/blog/archives/hugo-amazon-bookmarklet/">hugo-amazon-jp向けのショートコード等を出力するブックマークレット作った - ひびテク</a></li>
+</ul>
 
 <div class="highlight">
 <pre class="chroma"><code>javascript:(function(){var a=document.getElementById("productTitle").textContent,b=document.URL.match("(dp|product)/([0-9a-zA-Z]{10})")[2];window.alert('{{&lt; amazon asin="'+b+'" title="'+a.trim()+'" &gt;}}')})();</pre></code>
