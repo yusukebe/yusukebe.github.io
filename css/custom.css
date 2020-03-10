@@ -9,8 +9,8 @@ a, a:hover {
     color:#B11717;
 }
 h1, h2, h3, h4, h5, h6 {
+    color: #333;
     font-weight: 600;
-    color:#333;
     line-height: 1.4;
 }
 h1 {
@@ -26,8 +26,8 @@ h4 {
     font-size:1.1rem;
 }
 h1.site-title, h1.site-title a {
+    color: #333;
     font-weight: bolder;
-    color:#000;
     font-size:2.2rem;
 }
 .header h1, .header h2 {
