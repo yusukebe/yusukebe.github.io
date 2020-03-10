@@ -10,7 +10,7 @@ h1 {
     font-size:1.9rem;
 }
 h2 {
-    font-size:1.7rem;
+    font-size:1.5rem;
 }
 h3 {
     font-size:1.2rem;
@@ -51,6 +51,7 @@ ul li, ol li {
     font-weight: normal;
     padding-bottom: 1rem;
     border-bottom: 1px solid #f4f4f4;
+    color: #333;
 }
 .post-body ul li ul, .post-body ol li ol {
     margin:0;
@@ -89,17 +90,6 @@ pre.code {
 twitter-widget {
     margin:1rem 0 2rem !important;
 }
-.amazon-widget {
-    margin:2rem 0;
-}
-.amazon-widget-img img{
-    border:1px solid #eaeaea;
-    padding:3px;
-    margin:0;
-}
-.amazon-widget-title{
-    font-weight: bold;
-}
 .social-button-area {
     margin:1rem 0 1rem 0;
     text-align: left;
@@ -127,4 +117,54 @@ ul.pagination {
     margin:2rem 0 0.8em;
     border-top: 1px solid #eaeaea;
     padding: 10px;
+}
+
+.amazon-widget {
+    margin: 2rem 0;
+    max-width: 480px;
+    position: relative;
+}
+.amazon-widget a {
+    position: absolute;
+    top:0;
+    left:0;
+    height: 100%;
+    width: 100%;
+}
+.amazon-widget-img {
+    border: 1px solid #E1E8ED;
+    border-radius: 15px 15px 0 0;
+    text-align: center;
+ }
+.amazon-widget-img img {
+    border: none;
+    margin: 0 auto;
+    max-height: 200px;
+    padding: 16px;
+}
+.amazon-widget-info {
+    border-right: 1px solid #E1E8ED;
+    border-bottom: 1px solid #E1E8ED;
+    border-left: 1px solid #E1E8ED;
+    padding:5px 10px 10px 10px;
+    border-radius:0 0 15px 15px;
+}
+.amazon-widget:hover .amazon-widget-info {
+    background-color: #E1E8ED;
+}
+.amazon-widget-title {
+    font-weight: bold;
+    display:block;
+}
+.amazon-widget-via {
+    color: #aaa;
+}
+.amazon-widget-via img {
+    border: none;
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    padding: 0;
+    display: inline;
+    vertical-align: text-bottom;
 }
