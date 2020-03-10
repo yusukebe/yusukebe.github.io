@@ -39,6 +39,10 @@ h1.site-title, h1.site-title a {
 .post-body h2, .post-body h3, .post-body h4, .post-body h5, .post-body h6 {
     margin:2.5rem 0 0.8rem;
 }
+.post-body h2 {
+    border-bottom:1px solid #f4f4f4;
+    padding-bottom:5px;
+}
 a.title {
     font-weight:bold;
 }
