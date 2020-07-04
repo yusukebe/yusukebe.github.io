@@ -18,14 +18,7 @@
       <pubDate>Wed, 22 Jan 2020 06:12:39 +0900</pubDate>
       
       <guid>https://yusukebe.com/posts/2020/raku-typecheck/</guid>
-      <description>YAPC::Kyoto のタイムテーブルが発表された。 Raku(Perl6)初心者のNativeCallを使った全文検索ライブラリー作成日記 を聞きたいな〜と思ったら、 裏がマコピーの かんたん静的型付けPerlへの道のり だった。 マコピーのトークも気になる〜〜〜ってなって、とあるところでこうつぶやいた。
- Rakuで型付けできるじゃんとか思いつつ「Perlをパースして型を抜き出す」これ面白そう、とかなる
- でも、Raku（Perl 6）の型付けについてイマイチ理解が足りない。 さらに、Type Check=型チェックについて、どういう場合に、 どこで、どんなエラーを吐くかが分かってなかったのでインターネットアイドルさんの 力を借りつつ調べてみた。
-追記 以下の点について、教えてもらってスッキリした。
- Typingと型チェックは別の概念  静的型付けや漸進的型付けであるのと、どういう風に型チェックするかどうかは別で考える   Rakuは静的型付けで記述でき、後述するように型チェックの機能が備わっている  ただし、エラーを吐くのがコンパイル時 or 実行時かは実装に関わる my Int $i := &#39;foo&#39;でコンパイルエラーが出ないのは、単にまだ実装しきれてない or なんらかの深い理由があってのことだろう    RakuはGradual Typingな言語 まずRakuの型付けの性質について。 Rakuは、Javaのような静的型付けの側面も持ちつつ、動的型付けの利点がある Gradual Typing=漸進的型付けを持つ（だと思う）。漸進的型付けについては以下の記事がすごく面白いです。
- What is Gradual Typing: 漸進的型付けとは何か - Qiita  RakuはGradual Typingだぜ！って言ってる人は他にもいる。
- Perl 6 gradual typing FTW! Perl 6 Types: Made for Humans | Zoffix Znet blogs.perl.org Calling subs and typing in Perl 6 | Opensource.com  型チェックの例 Perl 5は動的型付けな言語（ライブラリを使って漸進的型付けっぽくすることもできる）なので、 sub funcで定義したサブルーチンの引数にIntを期待したいけど、 それを表現することはできなくて、以下のコードはそのままfooと印字する。
-use v5.10; sub func { my $i = shift; say $i; } func(&amp;#39;foo&amp;#39;); まぁ当たり前なんだけど、これをRakuでやろうとするとシグネチャーを付けてこうなる。</description>
+      <description>YAPC::Kyoto のタイムテーブルが発表された。 Raku(Perl6)初心者のNativeCallを使った全文検索ライブラリー作成日記 を聞きたいな〜と思ったら、 裏がマコピーの かんたん静的型付けPerlへの道のり だった</description>
     </item>
     
     <item>
@@ -34,13 +27,7 @@ use v5.10; sub func { my $i = shift; say $i; } func(&amp;#39;foo&amp;#39;); ま�
       <pubDate>Sun, 19 Jan 2020 06:42:55 +0900</pubDate>
       
       <guid>https://yusukebe.com/posts/2020/raku-slurpy/</guid>
-      <description>引っかかったのでメモ。
-Rakuでは関数やメソッドを引数を厳密に宣言させることができる、というかある程度しなきゃいけない。 例えば、それを利用して型や条件によってある一つの関数名でマルチディスパッチさせることができる。
- 引数がStr型であるか 引数がInt型であり、かつ10未満か 引数がInt型であり、かつ10以上か  といったことを表現するコードは以下になる。
-proto sub func($a) { say &amp;#39;--------------------&amp;#39;; say $a; {*}; } multi sub func(Str $s) { say &amp;#39;func(Str $s) が呼ばれた&amp;#39;; } multi sub func(Int $i where $i &amp;lt; 10) { say &amp;#39;func(Int $i where $i &amp;lt; 10)が呼ばれた&amp;#39;; } multi sub func(Int $i where $i &amp;gt;= 10) { say &amp;#39;func(Int $i where $i &amp;gt;= 10)が呼ばれた&amp;#39;; } func(&amp;#39;hoge&amp;#39;); func(1); func(50); ちなみにproto subでそれぞれの関数を実行する前の処理を書いている。 実行結果は以下である。
--------------------- hoge func(Str $s) が呼ばれた -------------------- 1 func(Int $i where $i &amp;lt; 10)が呼ばれた -------------------- 50 func(Int $i where $i &amp;gt;= 10)が呼ばれた 本題は引数をリストで受け取る時の方法。 この慣習はSlurpyと呼ばれている。 Sigilを「シジル」と言うように、これを日本語で表現してみたいけど、 「スラーピー」でいいのか、そもそも発音の仕方を知らないので、 とあえずSlurpyとしておく（誰か教えて&amp;hellip;）。
-Perl 5で配列の引数を受け取る場合は以下のように書く。
-use v5.20; sub func { my @args = @_; say join &amp;#39; -&amp;gt; &amp;#39;, @args; } func(1,2,3); でRakuでも同じのりで書くとどうなるか。</description>
+      <description>引っかかったのでメモ。 Rakuでは関数やメソッドを引数を厳密に宣言させることができる、というかある程度しなきゃいけない。 例えば、それを利用して型や条件によってある一つの関数名でマルチディスパッチさせる</description>
     </item>
     
     <item>
@@ -49,17 +36,7 @@ use v5.20; sub func { my @args = @_; say join &amp;#39; -&amp;gt; &amp;#39;, @ar
       <pubDate>Sat, 18 Jan 2020 15:12:26 +0900</pubDate>
       
       <guid>https://yusukebe.com/posts/2020/raku-dmm/</guid>
-      <description>今度はRaku(Perl6)でDMM Webサービスを叩いてメロディー・雛・マークスを出す。
- PHPでDMM Webサービスを叩いてメロディー・雛・マークスを出す - ゆーすけべー日記 Node.jsでメロディー・雛・マークスを出す - ゆーすけべー日記  HTTP::UserAgentを使うとPerl 5におけるLWP::UserAgentとほぼ同じインターフェースなので、 あっさりと書けた。JSONのデコードにはJSON::Tinyを使った。
-ただ引っかかったところが2点。コマンドライン引数を取得する際、 Perl 5だと
-my $name = $ARGV[0]; で取ってたのが、Rakuだと
-my $name = @*ARGS[0]; となる。もう一つは、JSONをdecodeして$dataに入れた 値の中から女優のリストを取ってくるのに、Perl 5だと @{$data-&amp;gt;{result}{actress}} とハッシュの中身をたどって デリファレンスしていたが、今回の場合
-my $stars = $data-&amp;gt;{&amp;#39;result&amp;#39;}{&amp;#39;actress&amp;#39;}; for $stars.list -&amp;gt; $star { } と書いた。$starsはスカラの変数でそこにArray型が入っているので、 listメソッドでイテレーブルにしている。
-Array、Scalar、さらにListについては以下のドキュメントを参考にする。
- class Scalar - Perl 6 Documentation class List - Perl 6 Documentaion  とはいえ
-my $stars = $data-&amp;gt;{&amp;#39;result&amp;#39;}{&amp;#39;actress&amp;#39;}; for @$stars -&amp;gt; $star { } でもいける。
-さて、以下コード。
-use HTTP::UserAgent; use URI; use JSON::Tiny; constant $api_id = &amp;#39;YOUR_API_ID&amp;#39;; constant $affiliate_id = &amp;#39;YOUR_AFFILIATE_ID&amp;#39;; # @*ARGSで引数取得、Perl5では$ARGV[0]だった my $name = @*ARGS[0] || &amp;#39;雛&amp;#39;; my $uri = URI.new(&amp;#39;https://api.dmm.com/affiliate/v3/ActressSearch&amp;#39;); # クエリを組み立てるハッシュ my %params = api_id =&amp;gt; $api_id, affiliate_id =&amp;gt; $affiliate_id, keyword =&amp;gt; $name, hits =&amp;gt; 50; # query-formメソッドに食わせる $uri.</description>
+      <description>今度はRaku(Perl6)でDMM Webサービスを叩いてメロディー・雛・マークスを出す。 PHPでDMM Webサービスを叩いてメロディー・雛・マークスを出す - ゆーすけべー日記 Node.jsでメロディー</description>
     </item>
     
   </channel>

@@ -2,7 +2,9 @@
 <html>
 <head>
 	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>WebService-Simple-0.09 の使い方 - ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>WebService-Simple-0.09 の使い方 - ゆーすけべー日記</title>
+    <meta name="description" content="   シンプルに Web API を叩ける  WebService::Simple の現在の最新版はヴァージョン 0.09 です。  ヴァージョン 0.03 からスーパーハカーによる修正が入ったこともあり、機能が（Simpleという名前を崩" /><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta property="og:title" content="WebService-Simple-0.09 の使い方" />
 <meta property="og:description" content="   シンプルに Web API を叩ける  WebService::Simple の現在の最新版はヴァージョン 0.09 です。  ヴァージョン 0.03 からスーパーハカーによる修正が入ったこともあり、機能が（Simpleという名前を崩" />
 <meta property="og:type" content="article" />
@@ -20,6 +22,7 @@
 	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
 	
 	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+    <script src="//cdn.embedly.com/widgets/platform.js" charset="UTF-8"></script>
 	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 	<script src="https://yusukebe.com/js/main.js"></script>
 	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
@@ -63,7 +66,7 @@
 			<div class="meta">Posted at &mdash; Apr 25, 2008</div>
 		</div>
 
-		<div class="markdown">
+		<div class="markdown post-body">
 			
 
 <p>
@@ -88,8 +91,7 @@ get メソッド の パラメータ にそのパスを記載するんですが�
 
 my $response = $lingr-&gt;get( 'api/session/create', {} );
 
-my $session = $response-&gt;parse_response-&gt;{session};
- </pre>
+my $session = $response-&gt;parse_response-&gt;{session};</pre>
 <p>
 また、上記サンプルに記載されているように、get などで取得した WebService::Simple::Response オブジェクトをパースするには、parse_xml メソッドを今まで呼んででいましたが、parse_response メソッドを使うことを推奨しています（エイリアスを作っているので parse_xml でも動きます）。
 </p>
@@ -109,8 +111,7 @@ my $flickr = WebService::Simple-&gt;new(
 
 my $response =
   $flickr-&gt;get( { method =&gt; "flickr.photos.search", text =&gt; "cat" } );
-print Dumper $response-&gt;parse_response;
- </pre>
+print Dumper $response-&gt;parse_response;</pre>
 <p>
 response のキャッシュも以前と同じ書き方でできます。
 </p>
@@ -126,9 +127,7 @@ my $flickr = WebService::Simple-&gt;new(
     base_url =&gt; "http://api.flickr.com/services/rest/",
     cache    =&gt; $cache,
     param    =&gt; { api_key =&gt; "your_api_key", }
-);
-
- </pre>
+);</pre>
 <p>
 次にこの WebService::Simple を継承したサブクラスを作って、もうちょっと楽に API を触れるという方法を紹介します。
 例えば、Flickr API の flickr.test.echo 及び flickr.photos.search を呼び出す WebService::Simple::Flickr をこんな感じで作ります。
@@ -148,8 +147,7 @@ sub test_echo {
 sub photos_search {
     my ($self,$str) = @_;
     return $self-&gt;get( { method =&gt; "flickr.photos.search", text =&gt; $str } );
-}
- </pre>
+}</pre>
 <p>
 そしたら外部から、よりスッキリとしたコードで API をたたくことができます。
 </p>
@@ -161,9 +159,7 @@ my $flickr =
   WebService::Simple::Flickr-&gt;new( param =&gt; { api_key =&gt; "your_api_key", } );
 
 my $ref = $flickr-&gt;photos_search("富士山")-&gt;parse_response;
-print Dumper $ref;
-
- </pre>
+print Dumper $ref;</pre>
 <p>
 この API ごとにサブクラス化するという方法なんですが、Yappo さんが作った WebService::Simple::Cabinet
 を使う方法と、「ある API に特化したモジュールもしくはメソッドを作る」という点で似ています。WebService::Simple::Cabinet は YAML 形式などで API の定義をしますが、この場合は Perl モジュールを作っています。API を使うシチュエーションによってどちらか選ぶというのもいいと思います。
@@ -193,9 +189,7 @@ sub parse_response
     $self-&gt;libxml-&gt;parse_string( $_[0]-&gt;content );
 }
 
-1;
-
- </pre>
+1;</pre>
 <p>
 それで利用するスクリプトからは、WebService::Simple のコンストラクタの引数 response_parser の値で使いたいパーサのモジュールを指定します。
 </p>
@@ -203,9 +197,7 @@ sub parse_response
     base_url        =&gt; "http://api.flickr.com/services/rest/",
     response_parser =&gt; 'XML::LibXML',
     params          =&gt; { api_key =&gt; "your_api_key" }
-);
-
- </pre>
+);</pre>
 <p>
 これで面白いのは、とりわけ XML で結果が返ってくる API 以外にも対応するところです。
 例えば、JSON もしくは JSONP 形式で返却される API を扱うこともできます。
@@ -224,9 +216,7 @@ my $flickr = WebService::Simple-&gt;new(
 
 my $response =
   $flickr-&gt;get( { method =&gt; "flickr.photos.search", text =&gt; "cat" } );
-print Dumper $response-&gt;parse_response;
-
- </pre>
+print Dumper $response-&gt;parse_response;</pre>
 <p>
 あとは POST にも対応したので、使いたい場合は
 post メソッドを get と同じ引数形式で呼び出せばおｋだと思います。
@@ -268,7 +258,7 @@ CPAN に最新版があがっているので、もしよろしければご利用
       <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
     </li>
     <li>
-      <span class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2008%2f0425082850%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
+      <span class="fb-share-button"  data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2008%2f0425082850%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
     </li>
     <li>
       <a href="https://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label-counter" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>

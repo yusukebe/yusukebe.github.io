@@ -18,9 +18,7 @@
       <pubDate>Sat, 12 Oct 2013 11:49:00 +0900</pubDate>
       
       <guid>https://yusukebe.com/posts/2013/1012024917/</guid>
-      <description>Plack::App::URLMap 使えば出来るんですが... リクエストをPlack::Requestとしてゴニョってレスポンスが配列リファレンスなコードリファレンスを返す「 素Plack 」なアプリと Mojolicious アプリをパスによって振り分けて同居させるもうひとつの方法の例。
-Web::MojoliciousはMojoliciousクラスを継承したアプリのベースクラスね。to_appメソッドでコードリファレンス返しているんで.psgiではこれを呼び出せばOK。ってかもう一度言いますがほとんどのケースは Plack::App::URLMap で間に合うかと思われます。
- package Web; use strict; use warnings; use Plack::Request; use Web::Mojolicious; use Mojo::Server::PSGI; sub new { my ($class, %opt) = @_; my $self = bless {}, $class; my $mojo_app = Mojo::Server::PSGI-&amp;gt;new( app =&amp;gt; Web::Mojolicious-&amp;gt;new ); $self-&amp;gt;{mojo_app} = $mojo_app; return $self; } sub to_app { my $self = shift; return sub { my $env = shift; my $req = Plack::Request-&amp;gt;new($env); if( $req-&amp;gt;path_info =~ m!^/mojo! ) { return $self-&amp;gt;{mojo_app}-&amp;gt;run($req-&amp;gt;env); } return [200, [ &#39;Content-Type&#39; =&amp;gt; &#39;text/plain&#39; ], [&#39;This is not Mojolicious app.&#39;]] } } 1;  Plack::Requestのインスタンスを使ってディスパッチする前とかに2つのアプリ共通の処理が起こるケースあるかなーと思って考えてみた次第。三度言いますが Plack::App::URLMap でおおよそ解決出来るかと！</description>
+      <description>Plack::App::URLMap 使えば出来るんですが... リクエストをPlack::Requestとしてゴニョってレスポンスが配列リファレンスなコードリファレンスを返す「 素Plack 」なアプリと Mojolicious アプリをパスによって振り分けて同居</description>
     </item>
     
     <item>
@@ -29,12 +27,7 @@ Web::MojoliciousはMojoliciousクラスを継承したアプリのベースク�
       <pubDate>Thu, 25 Jul 2013 18:16:00 +0900</pubDate>
       
       <guid>https://yusukebe.com/posts/2013/0725091627/</guid>
-      <description>各種Model群についてObject::Containerを応用しつつ管理するとカジュアルにシングルトンになって効率いいかも！って思って、手元の小さなWebアプリで実装してみた。実験的にやってるんで、これおかしいって点あるかもなんでその場合はお手柔らかにツッコんでくだされ。
-だいたい僕はこんな感じでWebアプリのファイル、クラス構成をとっています。
- ./ └── MyApp ├── Model │ └── Entry.pm ├── Model.pm ├── Web │ └── Controller │ └── Root.pm └── Web.pm  うんで、Controllerからはtokuhiromからよく「Catalystっぽいよねー」って言われているけど頑なに$self-&amp;gt;model(&#39;Entry&#39;)のようなインターフェースでModelへアクセスしています。
- package MyApp::Web::Controller::Root; use Mojo::Base &#39;Mojolicious::Controller&#39;; sub index { my $self = shift; my $entries = $self-&amp;gt;model(&#39;Entry&#39;)-&amp;gt;get_recent_entries(); $self-&amp;gt;stash-&amp;gt;{entries} = $entries; $self-&amp;gt;render(); } 1;  呼ばれるはずのMyApp::Model::Entryには呼び出されるはずのメソッドが定義されています。
- package MyApp::Model::Entry; use Mouse; sub get_recent_entries { ...; return $entries; } 1;  ここまでは個人的にいいとして、Modelをどのようにロードさせるかって話です。Object::Containerを使った今回の例ではまず、MyApp::Loader::Modelをつくりました。
- package MyApp::Loader::Model; use Mouse; use Module::Load qw//; has &#39;instances&#39; =&amp;gt; ( is =&amp;gt; &#39;rw&#39;, isa =&amp;gt; &#39;HashRef[Object]&#39;, default =&amp;gt; sub { +{} } ); sub load { my ($self, $name) = @_; my $instances = $self-&amp;gt;instances; return $instances-&amp;gt;{$name} if $instances-&amp;gt;{$name}; my $class = &#34;</description>
+      <description>各種Model群についてObject::Containerを応用しつつ管理するとカジュアルにシングルトンになって効率いいかも！って思って、手元の小さなWebアプリで実装してみた。実験的にやってるんで、</description>
     </item>
     
     <item>
@@ -43,16 +36,7 @@ Web::MojoliciousはMojoliciousクラスを継承したアプリのベースク�
       <pubDate>Thu, 18 Jul 2013 23:56:00 +0900</pubDate>
       
       <guid>https://yusukebe.com/posts/2013/0718145632/</guid>
-      <description>たまたま、こんな感じのツイートを見かけたので...
-Mojoliciousで404、500等のWAFで用意されている標準画面を出さないようにする方法を知りたいのですがどなたか教えて頂く事はできますでしょうか
- 僕の返答
-templates/not_found.html.ep とかにテンプレート置いておくとそれがrenderされるようになりますよー
- っていうのが常套手段なんだけど...
-ありがとうございます！テンプレートをやっぱり設置しないといけないのですね、静的ページにリダイレクトするか、汎用例外処理みたいなのがあれば良かったんですが、CGIだと仕方ないですね...。
- 再び返答
-あー、hook 使えばできそうっすよー＞リダイレクト。でも個人的には404ページ出した方がいい気がします
- ってことでhookを使って500番エラーをキャッチする再現出来るコードを書いてみた。Mojolicious::Lite です。
- use Mojolicious::Lite; app-&amp;gt;hook( after_dispatch =&amp;gt; sub { my $c = shift; if ( $c-&amp;gt;res-&amp;gt;code =~ /500/ ) { $c-&amp;gt;render( text =&amp;gt; &#39;hooked!!&#39; ); } } ); get &#39;/&#39; =&amp;gt; sub { my $self = shift; $self-&amp;gt;render( text =&amp;gt; &#39;index&#39; ); }; get &#39;/error&#39; =&amp;gt; sub { die; }; app-&amp;gt;start;  これで「/error」にアクセスすると「hooked!!」って出る〜！！</description>
+      <description>たまたま、こんな感じのツイートを見かけたので... Mojoliciousで404、500等のWAFで用意されている標準画面を出さないようにする方法を知りたいのですがどなたか教えて頂く事はできますでしょ</description>
     </item>
     
     <item>
@@ -61,12 +45,7 @@ templates/not_found.html.ep とかにテンプレート置いておくとそれ�
       <pubDate>Tue, 09 Jul 2013 21:12:00 +0900</pubDate>
       
       <guid>https://yusukebe.com/posts/2013/0709121252/</guid>
-      <description>ここ最近の僕の開発で指標になっているのは「システムとしてのクオリティを上げるか」であり、それって当然のごとく行われているかもしれなくて、いわゆる Quality Assurance = QA なんて言葉があったり、某社では Test Engineer の方がいたりするわけです。ただ、あまりにも僕としては「ずさんな」ところが多々あると考えています。「よしAを変更した → デプロイ → Bがエラー出てる」なんてことがないように「機能が望むように動作しているか」をテストコードで担保しようと努めている次第です。例えば、先日サービス内で使用している Flickr API の一部メソッドが正常に機能しない（ どんなに一般的な語彙で探しても検索結果が空で返ってくる ）なんてことがありましたが、テストコードのおかげで問題の切り分け、つまり、これは本当に Web API が壊れているのだ！ということがテストスクリプトを走らせるだけで分かって「あ〜 テスト書いててよかったですね」と改めて思いました（ Flickr API はその後、開発者同士のメーリングリストに投げかけたところ、同じ症状で悩んでいる人、さらには中の人も現れ、直してくれました ）。
-前置きが長くなりましたが、こうしたテストも含め開発周辺の便利なリソースやツールで最近使っているものを紹介してみます。ちなみに使用言語はPerl、Web Application Framework に Mojolicious を使った、公称月間1億PV以上のWebサービス / モバイルアプリのバックエンド例で、僕一人が開発を担当しています。
-GitHub Private Repository Git レポジトリに GitHub の Private Repository を利用。そもそも開発、運用にまつわるリソースはなるべく出来るものに関してはアウトソースする方針にしています。アウトソースと言っても人を使うのではなく便利なサービスに委譲する形です。そのためにどのサービスを使うかは慎重に身構えつつ、時にはノリで選ぶ感じです。GitHub は無料で使う分には Public Repository しか持てないので、月額$12の Small プランの契約をして10個の Private Repository が持てる状態になっています。Git の Repository と クールな UI を構築したりマネージするコストを考えるとアリじゃないか！と考えています。
-Carton v0.9.15 Perl における Ruby の Bundler に相当するのが Carton です。「v1.0.0 が出るまで API の変更の可能性がある！」... けれど、現行 CPAN に上がっている v0.9.15 を使っています。モジュールのバージョンまで面倒を見て依存性を解決して環境をつくることが可能です。例えば分かりやすい例を挙げると Mojolicious が最近メジャーバージョンアップして 3.xx 系から 4.xx 系にアップグレードしたのですが、どーしても 3.xx 系を使いたいよねぇ〜 なんて時は cpanfile でバージョン指定しちゃうことが出来ます。
- requires &#39;Mojolicious&#39;, &#39;== 3.97&#39;;  この cpanfile を用意して
- $ carton install  するといい具合に 3.</description>
+      <description>ここ最近の僕の開発で指標になっているのは「システムとしてのクオリティを上げるか」であり、それって当然のごとく行われているかもしれなくて、いわゆる Quality Assurance = QA なんて言葉があったり、某社では Test Engineer の方がいたりす</description>
     </item>
     
     <item>
@@ -75,16 +54,7 @@ Carton v0.9.15 Perl における Ruby の Bundler に相当するのが Carton �
       <pubDate>Mon, 24 Jun 2013 08:42:00 +0900</pubDate>
       
       <guid>https://yusukebe.com/posts/2013/0623234219/</guid>
-      <description>依然としてPerlのWeb Application Framework=WAFは Mojolicious推し です。ボケてほどの大きなトラフィックを集めるようになったサービスでも使っている実績がありますし、自分で使っていてたまにバージョンアップの互換性で問題が出るくらいで、すっごく困った事が無いので重宝しております。今回は備忘録的な意味も兼ねて、Mojoliciousをある程度使用した時に便利なTips 8個を個人的にまとめてみます。え、何？「Mojoliciousっていったいどういうものなの？」「Mojoliciousって名前を聞いた事があるけれど使った事がないんだけど...」そんな方は9月に開催されるYAPC::Asia 2013で僕が入門チュートリアルな発表をやろうと企んでいるので、そちらへ足を運んでください！ちなみにトークはまだacceptされたわけではないので、以下のページのソーシャルボタンで応援してもらえるといいかもしれません！
- Mojoliciousでつくる！Webアプリ入門 - YAPC::Asia Tokyo 2013  さて、これでマーケティングな記事であることが暴露されたのですが8個のTipsを紹介します。
- 
-前提 mojoコマンドを以下のように叩いたプロジェクトをベースに解説します。
-$ mojo generate app MyApp::Web
-つまり Mojolicious::Lite のアプリでは無いです。
-1. plackup で起動する .psgi ファイルをつくって plackup もしくは本番環境ならば starman / starlet で Mojolicious アプリを動かしています。Plack::Middleware::* が使えたりして便利です。こんな感じで .psgi を書けばOK！
- use strict; use FindBin; use lib &#34;$FindBin::Bin/lib&#34;; use Mojo::Server::PSGI; use Plack::Builder; use MyApp::Web; my $psgi = Mojo::Server::PSGI-&amp;gt;new( app =&amp;gt; MyApp::Web-&amp;gt;new ); builder { enable &#34;Runtime&#34;; $psgi-&amp;gt;to_psgi_app; };  2. ログを出力する Controller の中でこうすればログが出力されます。ちなみに開発環境でデフォルトだと「log/development.log」に流れます。
- $self-&amp;gt;app-&amp;gt;log-&amp;gt;warn(&#39;Hello, this is warning text.&#39;);  ほらこんな感じ。
- [Mon Jun 24 07:32:24 2013] [debug] GET &#34;/&#34;. [Mon Jun 24 07:32:24 2013] [debug] Routing to controller &#34;</description>
+      <description>依然としてPerlのWeb Application Framework=WAFは Mojolicious推し です。ボケてほどの大きなトラフィックを集めるようになったサービスでも使っている実績がありますし、自分で使っていてたまに</description>
     </item>
     
     <item>
@@ -93,12 +63,7 @@ $ mojo generate app MyApp::Web
       <pubDate>Fri, 22 Feb 2013 17:09:00 +0900</pubDate>
       
       <guid>https://yusukebe.com/posts/2013/0222080919/</guid>
-      <description>一つの「lib」ディレクトリ内で複数のMojoliciousアプリを動かしてるんだけど、 するとMojoliciousが使うデフォルトのテンプレート置き場「templates」ディレクトリだけじゃ管理しきれなくなってきます。そこでアプリごとにテンプレートを置く場所を変えちゃえってのが今回の趣旨。
-といっても この辺 のドキュメントに書いてある。Mojolicious::Rendererオブジェクトへパスを追加すればいい。Liteじゃない方のMojoliciousアプリだったら、 Mojolicious.pmを継承しているモジュールの「startup」内とかで
- unshift @{$self-&amp;gt;app-&amp;gt;renderer-&amp;gt;paths}, File::Spec-&amp;gt;catfile(MyApp-&amp;gt;base_dir, &#39;templates/sp&#39;);  とかすればよい。ちなみに MyApp-&amp;gt;base_dir ってのはアプリのベースディレクトリを返すモジュール及び関数が定義されている前提です。
-こうすることで例えば、想像しやすいように絶対パスで書くと
-/home/yusuke/www/myapp/templates/sp/not_found.html.ep
- がコントローラ内の「$self-&amp;gt;render_not_found」で呼ばれたりします。ふぅこれである程度のことがMojoliciousで対応できる！と言う感じです。</description>
+      <description>一つの「lib」ディレクトリ内で複数のMojoliciousアプリを動かしてるんだけど、 するとMojoliciousが使うデフォルトのテンプレート置き場「templates」ディレクトリだけじゃ管理し</description>
     </item>
     
     <item>
@@ -107,18 +72,7 @@ $ mojo generate app MyApp::Web
       <pubDate>Wed, 27 Jun 2012 18:12:00 +0900</pubDate>
       
       <guid>https://yusukebe.com/posts/2012/0627091253/</guid>
-      <description>僕はWebアプリの開発言語にPerlを使っていますが、Perlで書くためのWeb Application Frameworkとして、 Mojoliciousを最近では利用しています。
-Web Application Framework（WAF）とは、 Webアプリケーションの開発を効率的に行うためのライブラリ群（つまりフレームワーク）で、これがなければ少しでも大きめのアプリになると大変な思いをします。以下Mojoliciousについてとりあえずの、参考リンクです。 ちなみに昨日かな？Mojoliciousはバージョン3.0が出ました。
- PerlのWAFはMojolicious推しな件とそのノウハウ - ゆーすけべー日記 Mojolicious - Perl real-time web framework Mojolicious 3.0 released: Perl real-time web framework - Sebastian Riedel about Perl and the Web  
-基本的には上記の記事で書いてる通り僕は「WAFはMojolicious推し」なのですが、イマイチ浸透していない感があるので、 ちょっと実用的なチュートリアルを載せてみます。Mojoliciousの他にもCPANモジュールをいくつか使っています。 作るアプリは「Nopaste」アプリと言って、タイトルとコメントを入力するとユニークなURLでページを生成して表示させるという代物です。よく、プログラミングのコードの一部などをコメント欄に入力して、出来たページを他の人に見せるなどという使われ方をされますね。
-
-では、駆け足になるかもしれませんが、行ってみましょうー！
- 
-インストール＆ひな形を生成する MojoliciousはCPANモジュールなので、cpanmコマンドなどからインストールできます。
- $ cpanm Mojolicious  もしくはシステム全体にインストールするならば、
- $ cpanm --sudo Mojolicious  としてください。正常にインストールされれば、「mojo」コマンドが使えるようになりますので、プロジェクトのひな形を作ります。本当に小さいアプリならば、Mojolicious::LiteというRubyで言うSinatraチックな記述の仕方が出来ますが、今回は通常の「アプリ」としてひな形を生成します。
- $ mojo generate app Nopaste::Web  ここで、ネームスペースをNopaste「::Web」としているのは、個人的な趣向で、Webのライブラリを置く領域とその他DBなどをしっかりと分けたいからです。作られる「nopaste_web」ディレクトリに潜ると以下のファイルがあると思います。これらがWebアプリを作るためのひな形となります。
- ./ ├── lib │ └── Nopaste │ ├── Web │ │ └── Example.pm │ └── Web.pm ├── log ├── public │ └── index.html ├── script │ └── nopaste_web ├── t │ └── basic.</description>
+      <description>僕はWebアプリの開発言語にPerlを使っていますが、Perlで書くためのWeb Application Frameworkとして、 Mojoliciousを最近では利用しています。 Web Application Framework（WAF）とは、 Web</description>
     </item>
     
     <item>
@@ -127,10 +81,7 @@ Web Application Framework（WAF）とは、 Webアプリケーションの開発
       <pubDate>Thu, 24 May 2012 05:59:00 +0900</pubDate>
       
       <guid>https://yusukebe.com/posts/2012/0523205941/</guid>
-      <description>GET、POST、PUT、DELETEの4つのメソッドを使い切ってリソースをコントロールしようというRESTfulな概念には賛同だけれども、 ブラウザがGET、POSTのみのサポートだよねぇ〜っていう状況はよくあります。 Ruby on Railsではそこまで深く調べてないけど、POSTメソッドのパラメータ「_method」に「DELETE」か「PUT」という値を入れることでもう二つのメソッドをサポートさせているように見せている？ようだ。
-Perlで僕がいつも使っているWAF、MojoliciousではサーバサイドのルータでPUT、DELETEに対応しているので、 Railsで使っている「_method」フィールドを活用すればそれなりにRESTfulでありコントローラの記述も スッキリするんじゃないかと思う。 つまりディスパッチ前にうまいことフックさせて_methodの値でメソッドを書き換える。
-よって以下のMojolicious::Liteのコードがうまく動いた。
- #!/usr/bin/env perl use Mojolicious::Lite; app-&amp;gt;hook( before_dispatch =&amp;gt; sub { my $c = shift; if($c-&amp;gt;req-&amp;gt;method eq &#39;POST&#39; &amp;amp;&amp;amp; $c-&amp;gt;req-&amp;gt;param(&#39;_method&#39;)) { my $methods = [qw/GET POST PUT DELETE/]; if ( grep { $_ eq $c-&amp;gt;req-&amp;gt;param(&#39;_method&#39;) } @$methods ) { $c-&amp;gt;req-&amp;gt;method( $c-&amp;gt;req-&amp;gt;param(&#39;_method&#39;) ); } } } ); get &#39;/&#39; =&amp;gt; sub { my $self = shift; $self-&amp;gt;render(&#39;index&#39;); }; del &#39;/&#39; =&amp;gt; sub { my $self = shift; $self-&amp;gt;render_text(&#39;DELETE resource!&#39;); }; app-&amp;gt;start; __DATA__ @@ index.html.ep &amp;lt;form action=&#34;https://yusukebe.com/&#34; method=&#34;post&#34;&amp;gt; &amp;lt;input type=&#34;hidden&#34; name=&#34;_method&#34; value=&#34;DELETE&#34; /&amp;gt; &amp;lt;input type=&#34;submit&#34; value=&#34;DELETE&#34; /&amp;gt; &amp;lt;/form&amp;gt;  ふむ、なかなかよさげです。とあるプロジェクトのコードで試してみるとします。</description>
+      <description>GET、POST、PUT、DELETEの4つのメソッドを使い切ってリソースをコントロールしようというRESTfulな概念には賛同だけれども、 ブラウザがGET、POSTのみのサポートだよねぇ〜っていう状</description>
     </item>
     
     <item>
@@ -139,17 +90,7 @@ Perlで僕がいつも使っているWAF、Mojoliciousではサーバサイド�
       <pubDate>Tue, 06 Mar 2012 06:15:00 +0900</pubDate>
       
       <guid>https://yusukebe.com/posts/2012/0305211542/</guid>
-      <description>一般的なWeb Application Framework（WAF）ではMVCという設計及び実装における概念が取り入れられています。 MVCに従ってつくるのが全てではありませんが、 WAFを使うと共に、一度はMVCを用いたWebアプリの開発経験はしておいた方がよいと思います。 MVCはモデル（Model）、ビュー（View）、コントローラ（Controller）の3つの単語を組み合わせた言葉で、 この3つで概念が成り立っています。 クライアントがWebに対してリクエストをした時に、これら3つがそれぞれ連動して結果を返します。 一般的には以下のような処理経路をたどります。
- クライアントがWebサイトにリクエスト コントローラがリクエストの処理を行い、モデルとビューを動かす 必要に応じてモデルを呼び出す 結果のデータをビューに渡す ビューがHTML化などをしたものをクライアントに表示する  MVCという概念を学ぶにはこうした一連の流れを網羅する小さなサンプルをつくるのが一番取っ付きやすい気がします。 そこで今回は「全裸で学ぶMVC事始め」と題し、 zenrizeというテキスト処理を行うだけのWebサービスをつくってみたいと思います。
-zenrize zenrizeという聞き慣れない言葉が出てきましたが、これは単に僕がつくった言葉です。 zenrizeは「全裸bot」というsugyanがつくった 非常にくだらないTwitterボットの内部で行われている処理を指します。 全裸botではテキストの適切な位置に「全裸で」というフレーズを付け加えることにより、 Twitterのつぶやきを丸裸にします。 例えば、
-これから歯磨きをするよ
- という文章はおそらく以下のようにzenrize処理されます。
-これから全裸で歯磨きをするよ
- 全裸botでは作者sugyanによる試行錯誤が行われているのですが、 今回はzenrizeを単純に「文章内の動詞の前に【全裸で】を必ずつける」と定義してみます。
-Yahoo! 形態素解析APIを使う 日本語の文章内の品詞を特定するには形態素解析と呼ばれる処理をします。 お手軽に実装するには、Yahoo! APIで提供されている形態素解析APIを利用したいところです。
-一からWeb APIにリクエストをし結果をパースするプログラムを書かずに今回は、 CPANモジュールから「WebService::YahooJapan::WebMA」を使ってみたいと思います。
-簡単なスクリプトでzenrizeがされるかを試してみましょう。
- use strict; use warnings; use WebService::YahooJapan::WebMA; use utf8; $WebService::YahooJapan::WebMA::APIBase = &#39;http://jlp.yahooapis.jp/MAService/V1/parse&#39;; my $api = WebService::YahooJapan::WebMA-&amp;gt;new( appid =&amp;gt; &#39;yourappid&#39;, ); my $result = $api-&amp;gt;parse( sentence =&amp;gt; &#39;起きたのでご飯を食べます&#39; ) or die $api-&amp;gt;error; my $ma_result = $result-&amp;gt;{ma_result}; my $text = &#39;&#39;; for my $word ( @{ $ma_result-&amp;gt;{word_list} } ) { if ( $word-&amp;gt;{pos} eq &#39;動詞&#39; ) { $text .= &#34;</description>
+      <description>一般的なWeb Application Framework（WAF）ではMVCという設計及び実装における概念が取り入れられています。 MVCに従ってつくるのが全てではありませんが、 WAFを使うと共に、一度はMVCを用いたWeb</description>
     </item>
     
     <item>
@@ -158,16 +99,7 @@ Yahoo! 形態素解析APIを使う 日本語の文章内の品詞を特定する
       <pubDate>Sat, 25 Feb 2012 08:10:00 +0900</pubDate>
       
       <guid>https://yusukebe.com/posts/2012/0224231052/</guid>
-      <description>Perlerな皆さん！WAFは何を使っていますかー！？ 昨日行われたという「Perl Beginners #1」のレポートを漁っていると @hsksyuskさんのエントリにこう書かれていましたので僕もつい乗っかってみたくなりました。
- PerlのWAFは何がいいの？  @ytnobodyさんはKossy推し。 僕はAmon2推し。   ぼ、ぼ、ぼ、僕はMojolicious推し！！！
-ということでなぜ僕が今、Mojolicious推しなのかを探るためにその「いい点」と思っていること列挙してみました。 それと同時に悪い点も見えてきて、かつバッドノウハウもあるなーって感じなのでまとめてみます。
- 
-Mojoliciousのいい点 依存モジュールが無くポータブル ご存知の通りMojoliciousは標準で入っているモジュールに依存しているだけで、 残りは自前で実装しています。なので、
- $ cpanm Mojolicious  とすれば外部のモジュールをインストールしなくとも入るので非常にポータブル！ 以前Catalystを使っていて、Catalystが依存しているMooseのバージョンが問題になって、 アプリが動かなくなったりCatalyst自身のアップデートができないことがありましたが、 そういうことは起こらないですね。 最低限のアプリならMojolicious自体だけのバージョンだけを気にしていればよいです （とはいえモデル層で他のモジュールに依存しがちですが！）。
-そこそこでかいアプリも書ける MojoliciousというとSinatraライクな「Mojolicious::Lite」が有名で、 一つのファイルでコントローラもビューも書けて簡単だぜ！というのがPRとして売りになってる気がします。 Mojolicious::Liteのアプリを作るための雛形は、
- $ mojo generate lite_app hoge.pl  とかして作ります。さてLiteで作ったアプリがどんどん大きくなっていくとしましょう。 hoge.plと同じ階層に「templates」というディレクトリを作って「index.html.ep」などのテンプレートファイルを置けば、 hoge.pl内のデータセクションに書いていたビューを切り離すことができます。 ただ、コントローラとディスパッチャ等を分割したモジュールで管理したいという時には、 Liteでは対応できません。そこでコマンドを打ち込みます。
- $ mojo generate app Hoge  すると以下の構造で「普通の」Mojoliciousアプリの雛形を作ってくれます。
- ./ ├── lib │ ├── Hoge │ │ └── Example.pm │ └── Hoge.pm ├── log ├── public │ └── index.html ├── script │ └── hoge ├── t │ └── basic.t └── templates ├── example │ └── welcome.html.ep └── layouts └── default.html.ep  「Mojolicious」でググると「Mojolicious::Lite」の話題ばかり出てくるのですが、 僕はこちらの「普通の」Mojoliciousアプリを使うケースが多いですし、そこそこの大きさのアプリにも耐えられます。</description>
+      <description>Perlerな皆さん！WAFは何を使っていますかー！？ 昨日行われたという「Perl Beginners #1」のレポートを漁っていると @hsksyuskさんのエントリにこう書かれていましたので僕もつい乗っかってみたくなり</description>
     </item>
     
     <item>
@@ -176,14 +108,7 @@ Mojoliciousのいい点 依存モジュールが無くポータブル ご存知�
       <pubDate>Tue, 31 Jan 2012 15:54:00 +0900</pubDate>
       
       <guid>https://yusukebe.com/posts/2012/0131065441/</guid>
-      <description>Webアプリでユーザーからの入力がある部分を作る際、ユーザーフレンドリーでかつ実装も簡単な方法を模索するのにkazeburoさんのブログ記事をよく参考にしていました。
-CGIとは〜〜だというのはたくさん答えがあるだろうけど、自分的には「ユーザからの入力をチェックして画面にだす」ものだというのがしっくりくる。当たり前のことを書いているようだがMVCモデルでいうコントローラーの作成がCGIだと。 シンプルなWebアプリなCGIを書いてみる : blog.nomadscafe.jp
- kazeburoさんはほんとにCGIで実装してたけど、フレームワークを使ったり、ライブラリを使ったりしたら、つまり、今風に、実用的に書いてみるとどうなるのかやってみています。kazeburoさんのとちょっとだけ仕様が違うがなんとなくこんなかなーという具合。あ、もちろん僕のことなんでPerlを使ってます。が、コードは非常に簡単です。
-ちなみにサンプルの仕様はこんな具合。
- ユーザーからの入力フォームを表示、郵便番号7桁（ハイフンは入らない）を入れてもらう 郵便番号が7桁の数字かどうか、空ではないかをチェック エラーならばエラーを表示、フォームには先ほど入力した値が残っている状態 妥当なら入力された値を表示、特に保存などはしない  さての今回の実装の特徴は以下です。
- Mojoliciousというフレームワークを使っている。今回はとりわけMojolicious::Liteというsinatra風の書き方をしています 妥当性チェックにFormValidator::Liteを使っている（kazeburoさんはあえてライブラリを使ってないと思われます）。以下のソースコードではエラーメッセージをコード内に記述しているけど、外だしもできます HTML::FillInForm::Liteを使っている（HTML::FillInFormより速いらしい！）。このFillInFormの機能により、エラーが起こった時にフォームに値が残ったりってのが簡単にできる  なんか、Mojolicious::LiteとかFormValidator::LiteとかHTML::FillInForm::Liteとか最近はLiteが流行りですね！
-で、いよいよコードです。
-zip.pl  #!/usr/bin/env perl use Mojolicious::Lite; use HTML::FillInForm::Lite; use FormValidator::Lite; use utf8; get &#39;/&#39; =&amp;gt; sub { my $self = shift; $self-&amp;gt;stash-&amp;gt;{error_messages} = undef; $self-&amp;gt;render(&#39;index&#39;); }; post &#39;/&#39; =&amp;gt; sub { my $self = shift; my $validator = FormValidator::Lite-&amp;gt;new( $self-&amp;gt;req ); $validator-&amp;gt;set_message( &#39;zip.not_null&#39; =&amp;gt; &#39;郵便番号が空です&#39;, &#39;zip.length&#39; =&amp;gt; &#39;郵便番号が正しくありません&#39;, &#39;zip.uint&#39; =&amp;gt; &#39;郵便番号が正しくありません&#39;, ); my $res = $validator-&amp;gt;check( zip =&amp;gt; [ &#39;NOT_NULL&#39;, &#39;UINT&#39;, [qw/LENGTH 7/] ], ); my @error_messages; if($validator-&amp;gt;has_error) { for my $message ( $validator-&amp;gt;get_error_messages ) { push @error_messages, $message; } $self-&amp;gt;stash-&amp;gt;{error_messages} = \@error_messages; my $html = $self-&amp;gt;render_partial(&#39;index&#39;)-&amp;gt;to_string; $self-&amp;gt;render_text( HTML::FillInForm::Lite-&amp;gt;fill(\$html, $self-&amp;gt;req-&amp;gt;params), format =&amp;gt; &#39;html&#39; ); }else{ $self-&amp;gt;stash-&amp;gt;{zip} = $self-&amp;gt;req-&amp;gt;param(&#39;zip&#39;); $self-&amp;gt;render(&#39;thankyou&#39;); } }; app-&amp;gt;start; __DATA__ @@ index.</description>
+      <description>Webアプリでユーザーからの入力がある部分を作る際、ユーザーフレンドリーでかつ実装も簡単な方法を模索するのにkazeburoさんのブログ記事をよく参考にしていました。 CGIとは〜〜だというのはたくさん</description>
     </item>
     
     <item>
@@ -192,18 +117,7 @@ zip.pl  #!/usr/bin/env perl use Mojolicious::Lite; use HTML::FillInForm::Lite; u
       <pubDate>Sun, 15 Jan 2012 09:58:00 +0900</pubDate>
       
       <guid>https://yusukebe.com/posts/2012/0115005835/</guid>
-      <description>先日公開した「jVideos」という（エロ）サイト。
- XVIDEOSをiPhoneで快適に見られる「jVideos」を作ってみた - ゆーすけべー日記  jVideos - iPhoneで日本人好みのXVIDEOS （18禁）  Webアプリとしての技術的な観点で言えば、クローラーが収集したデータをただデータベースから取ってきて表示するだけの簡単なものになっている。基本的なところではJavaScriptも使ってない。そこで、「単純な上、構造がわかりやすい」いい題材と思ってこのjVideosを用いてWebアプリケーションの基本的な技術を解説したい。
-1. Perlを使っています まず、Webアプリケーションを含むバックエンドでは全てPerlを使っている。まぁ何故Perlかと今更聞かれると一番手になじむ言語だったということなんだけど、クローラーやWebのための要素は全てPerlで揃っているので問題はない。というかむしろテキスト処理が得意なPerlはテキストをベースとしたWebを扱うのに優れていると思っている。
-実はアプリケーションサーバもPerl製のStarmanという物を使っている。次に出てくるWebアプリケーションフレームワーク（WAF）で構築されたアプリをStarmanで動かしフロントエンドにはnginxを置いている。なんかこういうイメージ。
- クライアントブラウザ =&amp;gt; nginx =&amp;gt; Starman  2. WAFにはMojolicious Webアプリケーションフレームワーク（WAF）という言葉はよく聞くと思うが、これはWebアプリを作るためのひな形とそのクラス、スクリプト群である。安全で効率的に開発を進めたければ既存のよくメンテナンスされたWAFを使うのがよろしい。最近では、MojoliciousというWAFをよく利用させてもらっている。依存性が極端に少なく、いわゆるフルスタックな作りなんだが、基本機能に焦点を当てれば使えるので気に入っている。Mojoliciousを入れたら、mojoコマンドが使えるので、
- $ mojo generate app JVideos::Web  等としてアプリケーションのひな形を作る。「プロジェクト名::Web」と::Webを付けているのはディレクトリ構造を綺麗にしたいためである。
-3. PSGIファイル Mojoliciousにも起動スクリプトが付いていて簡易サーバが立ち上がるんだけど、plackup使いたいのと、PSGIで制御したいのと、結局PSGIファイルを作るのでまずjvideos_web.psgiみたいなファイルを作っちゃっている。リバースプロキシに対応させるなら以下のようなもので、Middlewareなど足したいものがあればお好きにどうぞ。
- use Mojo::Server::PSGI; use File::Spec; use File::Basename; use lib File::Spec-&amp;gt;catdir(dirname(__FILE__), &#39;lib&#39;); use Plack::Builder; my $psgi = Mojo::Server::PSGI-&amp;gt;new( app_class =&amp;gt; &#39;JVideos::Web&#39; ); my $app = sub { $psgi-&amp;gt;run(@_) }; builder { enable_if { $_[0]-&amp;gt;{REMOTE_ADDR} eq &#39;127.0.0.1&#39; } &#34;Plack::Middleware::ReverseProxy&#34;; $app; };  これで普通に「plackup jvideos_web.psgi」すれば動くだが、確かStarmanの場合だと、
- $ starman -MFindBin jvideos_web.psgi  としなくてはいけないので注意。
-4. APIモジュールを使う Mojoliciousは一般的なMVCになっているのだけれども、Mの部分の指針がない（と思う）ので独自で試行錯誤しながらやっている。なんとなく「API」と呼ばれる層を作ってデータを統合的に扱わせている。例えば「JVideos::API」や「JVideos::Web::API」のようなモジュール（クラス）を経由させてコントローラから操作するわけだ。このAPIはフレームワークに依存しないためにテストできる点やコマンドラインインターフェースから扱うことが容易だ。
-例えば、複数の記事を取得するためのAPIのメソッドは以下のようになる。
- sub get_entries { my ( $self, $cond , $attr ) = @_; $attr-&amp;gt;{pager_logic} ||= &#39;MySQLFoundRows&#39;; $attr-&amp;gt;{page} ||= 1; $attr-&amp;gt;{limit} ||= 5; my ( $iter, $pager ) = $self-&amp;gt;db-&amp;gt;search_with_pager(&#39;entry&#39;, $cond, $attr); my @entries; while ( my $entry = $iter-&amp;gt;next ) { push @entries, $entry; } if( wantarray ) { return (\@entries, $pager); }else{ \@entries; } }  これを使い、最新記事とページャを取得するコントローラ部分はこのようになった。</description>
+      <description>先日公開した「jVideos」という（エロ）サイト。 XVIDEOSをiPhoneで快適に見られる「jVideos」を作ってみた - ゆーすけべー日記 jVideos - iPhoneで日本人好みのXVIDEOS （18禁） W</description>
     </item>
     
   </channel>

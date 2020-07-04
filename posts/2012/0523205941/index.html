@@ -2,7 +2,9 @@
 <html>
 <head>
 	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>MojoliciousでRails風のRESTディスパッチ - ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>MojoliciousでRails風のRESTディスパッチ - ゆーすけべー日記</title>
+    <meta name="description" content=" GET、POST、PUT、DELETEの4つのメソッドを使い切ってリソースをコントロールしようというRESTfulな概念には賛同だけれども、ブラウザがGET、POSTのみのサポートだよねぇ〜っていう状況はよくあります。Ruby on Ra" /><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta property="og:title" content="MojoliciousでRails風のRESTディスパッチ" />
 <meta property="og:description" content=" GET、POST、PUT、DELETEの4つのメソッドを使い切ってリソースをコントロールしようというRESTfulな概念には賛同だけれども、ブラウザがGET、POSTのみのサポートだよねぇ〜っていう状況はよくあります。Ruby on Ra" />
 <meta property="og:type" content="article" />
@@ -20,6 +22,7 @@
 	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
 	
 	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+    <script src="//cdn.embedly.com/widgets/platform.js" charset="UTF-8"></script>
 	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 	<script src="https://yusukebe.com/js/main.js"></script>
 	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
@@ -63,7 +66,7 @@
 			<div class="meta">Posted at &mdash; May 24, 2012</div>
 		</div>
 
-		<div class="markdown">
+		<div class="markdown post-body">
 			
 
 <p>GET、POST、PUT、DELETEの4つのメソッドを使い切ってリソースをコントロールしようというRESTfulな概念には賛同だけれども、
@@ -77,7 +80,7 @@ Railsで使っている「_method」フィールドを活用すればそれな�
 
 <p>よって以下のMojolicious::Liteのコードがうまく動いた。</p>
 
-<pre> #!/usr/bin/env perl
+<pre class="code">#!/usr/bin/env perl
 use Mojolicious::Lite;
 
 app-&gt;hook(
@@ -110,8 +113,7 @@ __DATA__
 &lt;form action="/" method="post"&gt;
    &lt;input type="hidden" name="_method" value="DELETE" /&gt;
    &lt;input type="submit" value="DELETE" /&gt;
-&lt;/form&gt;
- </pre>
+&lt;/form&gt;</pre>
 
 <p>ふむ、なかなかよさげです。とあるプロジェクトのコードで試してみるとします。</p>
 
@@ -144,7 +146,7 @@ __DATA__
       <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
     </li>
     <li>
-      <span class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2012%2f0523205941%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
+      <span class="fb-share-button"  data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2012%2f0523205941%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
     </li>
     <li>
       <a href="https://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label-counter" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>

@@ -2,19 +2,11 @@
 <html>
 <head>
 	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Raku(Perl6)を書く - ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Raku(Perl6)を書く - ゆーすけべー日記</title>
+    <meta name="description" content="YAPC::Kyotoのトークリストを見て、突然Rakuを書いてみたくなったのでいまさらながら書いてみた。 RakuとはPerl 6のこと。去年の10月にPerl 6からRakuへと改名された。 なぜ「いまさ" /><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta property="og:title" content="Raku(Perl6)を書く" />
-<meta property="og:description" content="YAPC::Kyotoのトークリストを見て、突然Rakuを書いてみたくなったのでいまさらながら書いてみた。
-RakuとはPerl 6のこと。去年の10月にPerl 6からRakuへと改名された。 なぜ「いまさら」なのかというとPerl 6は20年くらい前に設計が始まり、 15年くらい前に動作可能な実装ができてたいからだ。 特に海外のPerlカンファレンスでは盛んにPerl 6の話がされていて、 2013年に行ったYAPC::NAでも 「Perl 6でWebフレームワーク作ったぜ！（遅いけどな）」みたいなトークがあった。 そして2015年のクリスマスにラリー・ウォールのもとリリースされた。 だから特別、目新しいものではない（とりわけ言語仕様）。 ただ、最近になってより実用性が高まってきたようだ。
-ちなみにPerl 6はPerl 5とは互換性がなく全く別の言語と考えてよい。
-以前Perl 6の話やそれで書かれたコードを見て 「ああ静的型付けができるんだな」とか「今までPerlになかったclassが使えるんだな」 とか感じることはあっても、いまいちピンと来ていなかった。 で、理解するには書くの一番早いということで、Rakuでいくつかのプログラムを書いてみた。
-今回書いたのは言わずとしたらFizzBuzzといくつかのデザインパターンである。 デザインパターンは以下のQiitaの記事が分かりやすかったので、 そこに掲載されているJavaのコードをPerl 6らしく書きかえるという作業を行った。
- GoFのデザインパターンまとめ - Qiita  さて実際書いたコードと共にRakuについて分かったことをまとめてみた。
-環境づくり コードを書く前にまずは環境づくり。 rakudo-starを入れるとPerl 6におけるcpan/cpanmコマンドのzefも使えるようになる。 Macの場合rakudo-starはhomebrewで簡単にインストールできた。
-$ brew install rakudo-star これでperl6コマンドが使える。
-次にemacsにperl6-modeを入れた。Perl 5を書く時に使ってるcperl-modeだと 当然ながらPerl 6のコードを書く時に不便だった。 perl6-modeはMELPAからM-x package-install RET perl-6-modeすれば入る。
-FizzBuzz 最初はFizzBuzzを書いてみる。色々な書き方があるが、Rakuっぽくかつ分かりやすいってことで以下のようなコードになった。 ちなみにこのブログで使ってるシンタックスハイライトは今のところPerl 6に対応していないので、 Perl 5のものを使っている。見づらいと思うが勘弁を。
-for 1..100 -&gt; $i { say to-fizz-buzz($i) } sub to-fizz-buzz (Int $n --&gt; Str){ my Str $s = &#39;&#39;; given $n { when $n % 3 == 0 { $s ~= &#39;Fizz&#39;; proceed } when $n % 5 == 0 { $s ~= &#39;Buzz&#39;; proceed } when !" />
+<meta property="og:description" content="YAPC::Kyotoのトークリストを見て、突然Rakuを書いてみたくなったのでいまさらながら書いてみた。 RakuとはPerl 6のこと。去年の10月にPerl 6からRakuへと改名された。 なぜ「いまさ" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://yusukebe.com/posts/2020/write-perl6/" />
 <meta property="og:image" content="https://live.staticflickr.com/65535/49396928872_09b2d32afa_c_d.jpg" />
@@ -24,22 +16,13 @@ for 1..100 -&gt; $i { say to-fizz-buzz($i) } sub to-fizz-buzz (Int $n --&gt; Str
 <meta name="twitter:image" content="https://live.staticflickr.com/65535/49396928872_09b2d32afa_c_d.jpg"/>
 
 <meta name="twitter:title" content="Raku(Perl6)を書く"/>
-<meta name="twitter:description" content="YAPC::Kyotoのトークリストを見て、突然Rakuを書いてみたくなったのでいまさらながら書いてみた。
-RakuとはPerl 6のこと。去年の10月にPerl 6からRakuへと改名された。 なぜ「いまさら」なのかというとPerl 6は20年くらい前に設計が始まり、 15年くらい前に動作可能な実装ができてたいからだ。 特に海外のPerlカンファレンスでは盛んにPerl 6の話がされていて、 2013年に行ったYAPC::NAでも 「Perl 6でWebフレームワーク作ったぜ！（遅いけどな）」みたいなトークがあった。 そして2015年のクリスマスにラリー・ウォールのもとリリースされた。 だから特別、目新しいものではない（とりわけ言語仕様）。 ただ、最近になってより実用性が高まってきたようだ。
-ちなみにPerl 6はPerl 5とは互換性がなく全く別の言語と考えてよい。
-以前Perl 6の話やそれで書かれたコードを見て 「ああ静的型付けができるんだな」とか「今までPerlになかったclassが使えるんだな」 とか感じることはあっても、いまいちピンと来ていなかった。 で、理解するには書くの一番早いということで、Rakuでいくつかのプログラムを書いてみた。
-今回書いたのは言わずとしたらFizzBuzzといくつかのデザインパターンである。 デザインパターンは以下のQiitaの記事が分かりやすかったので、 そこに掲載されているJavaのコードをPerl 6らしく書きかえるという作業を行った。
- GoFのデザインパターンまとめ - Qiita  さて実際書いたコードと共にRakuについて分かったことをまとめてみた。
-環境づくり コードを書く前にまずは環境づくり。 rakudo-starを入れるとPerl 6におけるcpan/cpanmコマンドのzefも使えるようになる。 Macの場合rakudo-starはhomebrewで簡単にインストールできた。
-$ brew install rakudo-star これでperl6コマンドが使える。
-次にemacsにperl6-modeを入れた。Perl 5を書く時に使ってるcperl-modeだと 当然ながらPerl 6のコードを書く時に不便だった。 perl6-modeはMELPAからM-x package-install RET perl-6-modeすれば入る。
-FizzBuzz 最初はFizzBuzzを書いてみる。色々な書き方があるが、Rakuっぽくかつ分かりやすいってことで以下のようなコードになった。 ちなみにこのブログで使ってるシンタックスハイライトは今のところPerl 6に対応していないので、 Perl 5のものを使っている。見づらいと思うが勘弁を。
-for 1..100 -&gt; $i { say to-fizz-buzz($i) } sub to-fizz-buzz (Int $n --&gt; Str){ my Str $s = &#39;&#39;; given $n { when $n % 3 == 0 { $s ~= &#39;Fizz&#39;; proceed } when $n % 5 == 0 { $s ~= &#39;Buzz&#39;; proceed } when !"/>
+<meta name="twitter:description" content="YAPC::Kyotoのトークリストを見て、突然Rakuを書いてみたくなったのでいまさらながら書いてみた。 RakuとはPerl 6のこと。去年の10月にPerl 6からRakuへと改名された。 なぜ「いまさ"/>
 <link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
 	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
 	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
 	
 	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+    <script src="//cdn.embedly.com/widgets/platform.js" charset="UTF-8"></script>
 	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 	<script src="https://yusukebe.com/js/main.js"></script>
 	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
@@ -83,7 +66,7 @@ for 1..100 -&gt; $i { say to-fizz-buzz($i) } sub to-fizz-buzz (Int $n --&gt; Str
 			<div class="meta">Posted at &mdash; Jan 17, 2020</div>
 		</div>
 
-		<div class="markdown">
+		<div class="markdown post-body">
 			<p><a href="https://yapcjapan.org/2020kyoto/">YAPC::Kyoto</a>のトークリストを見て、突然<strong>Raku</strong>を書いてみたくなったので<strong>いまさら</strong>ながら書いてみた。</p>
 <p>RakuとはPerl 6のこと。去年の10月にPerl 6からRakuへと改名された。
 なぜ「いまさら」なのかというとPerl 6は20年くらい前に設計が始まり、
@@ -120,18 +103,18 @@ Macの場合<code>rakudo-star</code>はhomebrewで簡単にインストールで
 <p>最初はFizzBuzzを書いてみる。色々な書き方があるが、Rakuっぽくかつ分かりやすいってことで以下のようなコードになった。
 ちなみにこのブログで使ってるシンタックスハイライトは今のところPerl 6に対応していないので、
 Perl 5のものを使っている。見づらいと思うが勘弁を。</p>
-<div class="highlight"><pre class="chroma"><code class="language-perl" data-lang="perl"><span class="k">for</span> <span class="mi">1</span><span class="o">..</span><span class="mi">100</span> <span class="o">-</span><span class="o">&gt;</span> <span class="nv">$</span><span class="nv">i</span> <span class="p">{</span>
-    <span class="n"></span><span class="n">say</span> <span class="n"></span><span class="n">to</span><span class="o">-</span><span class="n"></span><span class="n">fizz</span><span class="o">-</span><span class="n"></span><span class="n">buzz</span><span class="p">(</span><span class="nv">$</span><span class="nv">i</span><span class="p">)</span>
+<div class="highlight"><pre class="chroma"><code class="language-perl" data-lang="perl"><span class="k">for</span> <span class="mi">1</span><span class="o">..</span><span class="mi">100</span> <span class="o">-&gt;</span> <span class="nv">$i</span> <span class="p">{</span>
+    <span class="n">say</span> <span class="n">to</span><span class="o">-</span><span class="n">fizz</span><span class="o">-</span><span class="n">buzz</span><span class="p">(</span><span class="nv">$i</span><span class="p">)</span>
 <span class="p">}</span>
 
 <span class="k">sub</span> <span class="nf">to</span><span class="p">-fizz-buzz (Int $n --&gt; Str){</span>
-    <span class="k">my</span> <span class="n"></span><span class="n">Str</span> <span class="nv">$</span><span class="nv">s</span> <span class="o">=</span> <span class="s">&#39;&#39;</span><span class="p">;</span>
-    <span class="n"></span><span class="n">given</span> <span class="nv">$</span><span class="nv">n</span> <span class="p">{</span>
-        <span class="n"></span><span class="n">when</span> <span class="nv">$</span><span class="nv">n</span> <span class="nv">%</span> <span class="nv">3</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">{</span> <span class="nv">$</span><span class="nv">s</span> <span class="o">~=</span> <span class="s">&#39;Fizz&#39;</span><span class="p">;</span> <span class="n"></span><span class="n">proceed</span> <span class="p">}</span>
-        <span class="n"></span><span class="n">when</span> <span class="nv">$</span><span class="nv">n</span> <span class="nv">%</span> <span class="nv">5</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">{</span> <span class="nv">$</span><span class="nv">s</span> <span class="o">~=</span> <span class="s">&#39;Buzz&#39;</span><span class="p">;</span> <span class="n"></span><span class="n">proceed</span> <span class="p">}</span>
-        <span class="n"></span><span class="n">when</span> <span class="o">!</span><span class="nv">$</span><span class="nv">s</span><span class="o">.</span><span class="n"></span><span class="n">Bool</span> <span class="p">{</span> <span class="nv">$</span><span class="nv">s</span> <span class="o">=</span> <span class="o">~</span><span class="nv">$</span><span class="nv">n</span> <span class="p">}</span>
+    <span class="k">my</span> <span class="n">Str</span> <span class="nv">$s</span> <span class="o">=</span> <span class="s">&#39;&#39;</span><span class="p">;</span>
+    <span class="n">given</span> <span class="nv">$n</span> <span class="p">{</span>
+        <span class="n">when</span> <span class="nv">$n</span> <span class="nv">%</span> <span class="nv">3</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">{</span> <span class="nv">$s</span> <span class="o">~=</span> <span class="s">&#39;Fizz&#39;</span><span class="p">;</span> <span class="n">proceed</span> <span class="p">}</span>
+        <span class="n">when</span> <span class="nv">$n</span> <span class="nv">%</span> <span class="nv">5</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">{</span> <span class="nv">$s</span> <span class="o">~=</span> <span class="s">&#39;Buzz&#39;</span><span class="p">;</span> <span class="n">proceed</span> <span class="p">}</span>
+        <span class="n">when</span> <span class="o">!</span><span class="nv">$s</span><span class="o">.</span><span class="n">Bool</span> <span class="p">{</span> <span class="nv">$s</span> <span class="o">=</span> <span class="o">~</span><span class="nv">$n</span> <span class="p">}</span>
     <span class="p">}</span>
-    <span class="k">return</span> <span class="nv">$</span><span class="nv">s</span>
+    <span class="k">return</span> <span class="nv">$s</span>
 <span class="p">}</span>
 </code></pre></div><p>これをRakuのスクリプトファイルを示す「.p6」拡張子を付けて、
 <code>fizz-buzz.p6</code>という名前で保存する。</p>
@@ -141,22 +124,22 @@ Perl 5のものを使っている。見づらいと思うが勘弁を。</p>
 これは最初、気持ちが悪かったが慣れた。</p>
 <p>では、Rakuらしいところを見て行く。</p>
 <p>1から100までを列挙するというのを<code>for</code>を使って書いている。</p>
-<div class="highlight"><pre class="chroma"><code class="language-perl" data-lang="perl"><span class="k">for</span> <span class="mi">1</span><span class="o">..</span><span class="mi">100</span> <span class="o">-</span><span class="o">&gt;</span> <span class="nv">$</span><span class="nv">i</span> <span class="p">{</span>
-   <span class="n"></span><span class="n">say</span> <span class="nv">$</span><span class="nv">i</span><span class="p">;</span>
+<div class="highlight"><pre class="chroma"><code class="language-perl" data-lang="perl"><span class="k">for</span> <span class="mi">1</span><span class="o">..</span><span class="mi">100</span> <span class="o">-&gt;</span> <span class="nv">$i</span> <span class="p">{</span>
+   <span class="n">say</span> <span class="nv">$i</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div><p>1から100までの配列を回し、それぞれの値を<code>$i</code>に代入している。
 この辺からして、Perl 5の書き方とは違う。</p>
 <p>サブルーチンの定義はこんな感じだ。</p>
-<div class="highlight"><pre class="chroma"><code class="language-perl" data-lang="perl"><span class="k">sub</span> <span class="nf">to</span><span class="p">-fizz-buzz (Int $n --&gt; Str){</span><span class="p">}</span>
+<div class="highlight"><pre class="chroma"><code class="language-perl" data-lang="perl"><span class="k">sub</span> <span class="nf">to</span><span class="p">-fizz-buzz (Int $n --&gt; Str){}</span>
 </code></pre></div><p>Perl 6では動的な型付けと静的な型付けにどちらも対応している。
 サブルーチン及びメソッドでは引数の型と戻り値の型を指定することもできる。</p>
 <p>この例では<code>Int</code>型の引数を受け取り、<code>Str</code>型を返すことを宣言している。</p>
 <p>与えられた数値に対して、<code>Fizz</code>なのか<code>Buzz</code>なのか<code>FizzBuzz</code>なのかそれとも
 そのままなのかを判定するところは<code>given when</code>で書いた。</p>
-<div class="highlight"><pre class="chroma"><code class="language-perl" data-lang="perl"><span class="n"></span><span class="n">given</span> <span class="nv">$</span><span class="nv">n</span> <span class="p">{</span>
-    <span class="n"></span><span class="n">when</span> <span class="nv">$</span><span class="nv">n</span> <span class="nv">%</span> <span class="nv">3</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">{</span> <span class="nv">$</span><span class="nv">s</span> <span class="o">~=</span> <span class="s">&#39;Fizz&#39;</span><span class="p">;</span> <span class="n"></span><span class="n">proceed</span> <span class="p">}</span>
-    <span class="n"></span><span class="n">when</span> <span class="nv">$</span><span class="nv">n</span> <span class="nv">%</span> <span class="nv">5</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">{</span> <span class="nv">$</span><span class="nv">s</span> <span class="o">~=</span> <span class="s">&#39;Buzz&#39;</span><span class="p">;</span> <span class="n"></span><span class="n">proceed</span> <span class="p">}</span>
-    <span class="n"></span><span class="n">when</span> <span class="o">!</span><span class="nv">$</span><span class="nv">s</span><span class="o">.</span><span class="n"></span><span class="n">Bool</span> <span class="p">{</span> <span class="nv">$</span><span class="nv">s</span> <span class="o">=</span> <span class="o">~</span><span class="nv">$</span><span class="nv">n</span> <span class="p">}</span>
+<div class="highlight"><pre class="chroma"><code class="language-perl" data-lang="perl"><span class="n">given</span> <span class="nv">$n</span> <span class="p">{</span>
+    <span class="n">when</span> <span class="nv">$n</span> <span class="nv">%</span> <span class="nv">3</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">{</span> <span class="nv">$s</span> <span class="o">~=</span> <span class="s">&#39;Fizz&#39;</span><span class="p">;</span> <span class="n">proceed</span> <span class="p">}</span>
+    <span class="n">when</span> <span class="nv">$n</span> <span class="nv">%</span> <span class="nv">5</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">{</span> <span class="nv">$s</span> <span class="o">~=</span> <span class="s">&#39;Buzz&#39;</span><span class="p">;</span> <span class="n">proceed</span> <span class="p">}</span>
+    <span class="n">when</span> <span class="o">!</span><span class="nv">$s</span><span class="o">.</span><span class="n">Bool</span> <span class="p">{</span> <span class="nv">$s</span> <span class="o">=</span> <span class="o">~</span><span class="nv">$n</span> <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div><p>この時<code>proceed</code>と書いてるのは条件にマッチしたあとも次の<code>when</code>を評価したいから。
 最後の<code>$s.Bool</code>は<code>Str</code>型の<code>$s</code>に値が入っているかどうかを判断するために使っている。
@@ -174,60 +157,60 @@ Perl 5のものを使っている。見づらいと思うが勘弁を。</p>
 <li><a href="https://qiita.com/i-tanaka730/items/dbeb82ac44c031fe8df9">デザインパターン ～Template Method～ - Qiita</a></li>
 </ul>
 <p>これもいくつか書き方があると思うが、Javaでいう抽象クラスをロールで表現してみた。</p>
-<div class="highlight"><pre class="chroma"><code class="language-perl" data-lang="perl"><span class="n"></span><span class="n">role</span> <span class="n"></span><span class="n">Monser</span> <span class="p">{</span>
-    <span class="n"></span><span class="n">has</span> <span class="n"></span><span class="n">Str</span> <span class="nv">$</span><span class="err">.</span><span class="nv">name</span><span class="p">;</span>
+<div class="highlight"><pre class="chroma"><code class="language-perl" data-lang="perl"><span class="n">role</span> <span class="n">Monser</span> <span class="p">{</span>
+    <span class="n">has</span> <span class="n">Str</span> <span class="nv">$</span><span class="err">.</span><span class="nv">name</span><span class="p">;</span>
     <span class="c1"># Stubs</span>
-    <span class="n"></span><span class="n">method</span> <span class="n"></span><span class="n">get</span><span class="o">-</span><span class="n"></span><span class="n">attack</span><span class="p">(</span> <span class="o">-</span><span class="o">-</span><span class="o">&gt;</span> <span class="n"></span><span class="n">Int</span> <span class="p">)</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
-    <span class="n"></span><span class="n">method</span> <span class="n"></span><span class="n">get</span><span class="o">-</span><span class="n"></span><span class="n">defence</span><span class="p">(</span> <span class="o">-</span><span class="o">-</span><span class="o">&gt;</span> <span class="n"></span><span class="n">Int</span> <span class="p">)</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
-    <span class="n"></span><span class="n">method</span> <span class="n"></span><span class="n">show</span><span class="o">-</span><span class="n"></span><span class="n">info</span> <span class="p">{</span>
-        <span class="n"></span><span class="n">say</span> <span class="s">&#39;名前: &#39;</span> <span class="o">~</span> <span class="n"></span><span class="n">self</span><span class="o">.</span><span class="n"></span><span class="n">name</span><span class="p">;</span>
-        <span class="n"></span><span class="n">say</span> <span class="s">&#39;攻撃力: &#39;</span> <span class="o">~</span> <span class="n"></span><span class="n">self</span><span class="o">.</span><span class="n"></span><span class="n">get</span><span class="o">-</span><span class="n"></span><span class="n">attack</span><span class="p">;</span>
-        <span class="n"></span><span class="n">say</span> <span class="s">&#39;守備力: &#39;</span> <span class="o">~</span> <span class="n"></span><span class="n">self</span><span class="o">.</span><span class="n"></span><span class="n">get</span><span class="o">-</span><span class="n"></span><span class="n">defence</span><span class="p">;</span>
+    <span class="n">method</span> <span class="n">get</span><span class="o">-</span><span class="n">attack</span><span class="p">(</span> <span class="o">--&gt;</span> <span class="n">Int</span> <span class="p">)</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
+    <span class="n">method</span> <span class="n">get</span><span class="o">-</span><span class="n">defence</span><span class="p">(</span> <span class="o">--&gt;</span> <span class="n">Int</span> <span class="p">)</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
+    <span class="n">method</span> <span class="n">show</span><span class="o">-</span><span class="n">info</span> <span class="p">{</span>
+        <span class="n">say</span> <span class="s">&#39;名前: &#39;</span> <span class="o">~</span> <span class="n">self</span><span class="o">.</span><span class="n">name</span><span class="p">;</span>
+        <span class="n">say</span> <span class="s">&#39;攻撃力: &#39;</span> <span class="o">~</span> <span class="n">self</span><span class="o">.</span><span class="n">get</span><span class="o">-</span><span class="n">attack</span><span class="p">;</span>
+        <span class="n">say</span> <span class="s">&#39;守備力: &#39;</span> <span class="o">~</span> <span class="n">self</span><span class="o">.</span><span class="n">get</span><span class="o">-</span><span class="n">defence</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="p">}</span>
 
-<span class="n"></span><span class="n">class</span> <span class="n"></span><span class="n">Slime</span> <span class="n"></span><span class="n">does</span> <span class="n"></span><span class="n">Monser</span> <span class="p">{</span>
-    <span class="n"></span><span class="n">method</span> <span class="n"></span><span class="n">get</span><span class="o">-</span><span class="n"></span><span class="n">attack</span><span class="p">(</span> <span class="o">-</span><span class="o">-</span><span class="o">&gt;</span> <span class="n"></span><span class="n">Int</span> <span class="p">)</span>  <span class="p">{</span>
+<span class="n">class</span> <span class="n">Slime</span> <span class="n">does</span> <span class="n">Monser</span> <span class="p">{</span>
+    <span class="n">method</span> <span class="n">get</span><span class="o">-</span><span class="n">attack</span><span class="p">(</span> <span class="o">--&gt;</span> <span class="n">Int</span> <span class="p">)</span>  <span class="p">{</span>
         <span class="k">return</span> <span class="mi">15</span><span class="p">;</span>
     <span class="p">}</span>
-    <span class="n"></span><span class="n">method</span> <span class="n"></span><span class="n">get</span><span class="o">-</span><span class="n"></span><span class="n">defence</span><span class="p">(</span> <span class="o">-</span><span class="o">-</span><span class="o">&gt;</span> <span class="n"></span><span class="n">Int</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="n">method</span> <span class="n">get</span><span class="o">-</span><span class="n">defence</span><span class="p">(</span> <span class="o">--&gt;</span> <span class="n">Int</span> <span class="p">)</span> <span class="p">{</span>
         <span class="k">return</span> <span class="mi">10</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="p">}</span>
 
-<span class="n"></span><span class="n">class</span> <span class="n"></span><span class="n">Dragon</span> <span class="n"></span><span class="n">does</span> <span class="n"></span><span class="n">Monser</span> <span class="p">{</span>
-    <span class="n"></span><span class="n">method</span> <span class="n"></span><span class="n">get</span><span class="o">-</span><span class="n"></span><span class="n">attack</span><span class="p">(</span> <span class="o">-</span><span class="o">-</span><span class="o">&gt;</span> <span class="n"></span><span class="n">Int</span> <span class="p">)</span>  <span class="p">{</span>
+<span class="n">class</span> <span class="n">Dragon</span> <span class="n">does</span> <span class="n">Monser</span> <span class="p">{</span>
+    <span class="n">method</span> <span class="n">get</span><span class="o">-</span><span class="n">attack</span><span class="p">(</span> <span class="o">--&gt;</span> <span class="n">Int</span> <span class="p">)</span>  <span class="p">{</span>
         <span class="k">return</span> <span class="mi">60</span><span class="p">;</span>
     <span class="p">}</span>
-    <span class="n"></span><span class="n">method</span> <span class="n"></span><span class="n">get</span><span class="o">-</span><span class="n"></span><span class="n">defence</span><span class="p">(</span> <span class="o">-</span><span class="o">-</span><span class="o">&gt;</span> <span class="n"></span><span class="n">Int</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="n">method</span> <span class="n">get</span><span class="o">-</span><span class="n">defence</span><span class="p">(</span> <span class="o">--&gt;</span> <span class="n">Int</span> <span class="p">)</span> <span class="p">{</span>
         <span class="k">return</span> <span class="mi">45</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="p">}</span>
 
-<span class="k">my</span> <span class="nv">$</span><span class="nv">slime</span> <span class="o">=</span> <span class="n"></span><span class="n">Slime</span><span class="o">.</span><span class="k">new</span><span class="p">(</span> <span class="n"></span><span class="n">name</span> <span class="o">=</span><span class="o">&gt;</span> <span class="s">&#39;スライムくん&#39;</span> <span class="p">)</span><span class="p">;</span>
-<span class="k">my</span> <span class="nv">$</span><span class="nv">dragon</span> <span class="o">=</span> <span class="n"></span><span class="n">Dragon</span><span class="o">.</span><span class="k">new</span><span class="p">(</span> <span class="n"></span><span class="n">name</span> <span class="o">=</span><span class="o">&gt;</span> <span class="s">&#39;ドラゴンさん&#39;</span> <span class="p">)</span><span class="p">;</span>
+<span class="k">my</span> <span class="nv">$slime</span> <span class="o">=</span> <span class="n">Slime</span><span class="o">.</span><span class="k">new</span><span class="p">(</span> <span class="n">name</span> <span class="o">=&gt;</span> <span class="s">&#39;スライムくん&#39;</span> <span class="p">);</span>
+<span class="k">my</span> <span class="nv">$dragon</span> <span class="o">=</span> <span class="n">Dragon</span><span class="o">.</span><span class="k">new</span><span class="p">(</span> <span class="n">name</span> <span class="o">=&gt;</span> <span class="s">&#39;ドラゴンさん&#39;</span> <span class="p">);</span>
 
-<span class="nv">$</span><span class="nv">slime</span><span class="o">.</span><span class="n"></span><span class="n">show</span><span class="o">-</span><span class="n"></span><span class="n">info</span><span class="p">;</span>
-<span class="nv">$</span><span class="nv">dragon</span><span class="o">.</span><span class="n"></span><span class="n">show</span><span class="o">-</span><span class="n"></span><span class="n">info</span><span class="p">;</span>
+<span class="nv">$slime</span><span class="o">.</span><span class="n">show</span><span class="o">-</span><span class="n">info</span><span class="p">;</span>
+<span class="nv">$dragon</span><span class="o">.</span><span class="n">show</span><span class="o">-</span><span class="n">info</span><span class="p">;</span>
 </code></pre></div><p>ロールの話にいくまえにクラスの作り方。
 <code>class</code>キーワードでクラス、<code>role</code>キーワードでロールをそれぞれ定義できるのだが、プロパティの宣言、利用方法が結構面白い。</p>
-<div class="highlight"><pre class="chroma"><code class="language-perl" data-lang="perl"><span class="n"></span><span class="n">class</span> <span class="n"></span><span class="n">A</span> <span class="p">{</span>
-    <span class="n"></span><span class="n">has</span> <span class="n"></span><span class="n">Str</span> <span class="nv">$</span><span class="err">.</span><span class="nv">name</span><span class="p">;</span> <span class="c1">#アクセッサを自動でつくる</span>
-    <span class="n"></span><span class="n">has</span> <span class="n"></span><span class="n">Int</span> <span class="nv">$</span><span class="err">!</span><span class="nv">age</span><span class="p">;</span> <span class="c1">#プライベート</span>
+<div class="highlight"><pre class="chroma"><code class="language-perl" data-lang="perl"><span class="n">class</span> <span class="n">A</span> <span class="p">{</span>
+    <span class="n">has</span> <span class="n">Str</span> <span class="nv">$</span><span class="err">.</span><span class="nv">name</span><span class="p">;</span> <span class="c1">#アクセッサを自動でつくる</span>
+    <span class="n">has</span> <span class="n">Int</span> <span class="nv">$</span><span class="err">!</span><span class="nv">age</span><span class="p">;</span> <span class="c1">#プライベート</span>
 <span class="p">}</span>
 </code></pre></div><p>となっているがアクセッサをつくるとは、どういうことかというと<code>$.name</code>で宣言すると、</p>
-<div class="highlight"><pre class="chroma"><code class="language-perl" data-lang="perl"><span class="k">my</span> <span class="nv">$</span><span class="nv">a</span> <span class="o">=</span> <span class="n"></span><span class="n">A</span><span class="o">.</span><span class="k">new</span><span class="p">;</span>
-<span class="n"></span><span class="n">say</span> <span class="nv">$</span><span class="nv">a</span><span class="o">.</span><span class="n"></span><span class="n">name</span><span class="p">;</span>
+<div class="highlight"><pre class="chroma"><code class="language-perl" data-lang="perl"><span class="k">my</span> <span class="nv">$a</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="k">new</span><span class="p">;</span>
+<span class="n">say</span> <span class="nv">$a</span><span class="o">.</span><span class="n">name</span><span class="p">;</span>
 </code></pre></div><p>とインスタンスでも使えるし、クラス内でも<code>self</code>を参照して</p>
-<div class="highlight"><pre class="chroma"><code class="language-perl" data-lang="perl"><span class="n"></span><span class="n">method</span> <span class="n"></span><span class="n">say</span><span class="o">-</span><span class="n"></span><span class="n">name</span> <span class="p">{</span>
-    <span class="n"></span><span class="n">say</span> <span class="n"></span><span class="n">self</span><span class="o">.</span><span class="n"></span><span class="n">name</span><span class="p">;</span>
+<div class="highlight"><pre class="chroma"><code class="language-perl" data-lang="perl"><span class="n">method</span> <span class="n">say</span><span class="o">-</span><span class="n">name</span> <span class="p">{</span>
+    <span class="n">say</span> <span class="n">self</span><span class="o">.</span><span class="n">name</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div><p>と呼び出すことができる。</p>
 <p>さてロールの話。Monsterロールを実装するSlimeとDragonには
 <code>get-attack</code>と<code>get-defence</code>メソッドがなくちゃいけないっていうのが書ける。</p>
-<div class="highlight"><pre class="chroma"><code class="language-perl" data-lang="perl"><span class="n"></span><span class="n">role</span> <span class="n"></span><span class="n">Monser</span> <span class="p">{</span>
-    <span class="n"></span><span class="n">method</span> <span class="n"></span><span class="n">get</span><span class="o">-</span><span class="n"></span><span class="n">attack</span><span class="p">(</span> <span class="o">-</span><span class="o">-</span><span class="o">&gt;</span> <span class="n"></span><span class="n">Int</span> <span class="p">)</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
-    <span class="n"></span><span class="n">method</span> <span class="n"></span><span class="n">get</span><span class="o">-</span><span class="n"></span><span class="n">defence</span><span class="p">(</span> <span class="o">-</span><span class="o">-</span><span class="o">&gt;</span> <span class="n"></span><span class="n">Int</span> <span class="p">)</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
+<div class="highlight"><pre class="chroma"><code class="language-perl" data-lang="perl"><span class="n">role</span> <span class="n">Monser</span> <span class="p">{</span>
+    <span class="n">method</span> <span class="n">get</span><span class="o">-</span><span class="n">attack</span><span class="p">(</span> <span class="o">--&gt;</span> <span class="n">Int</span> <span class="p">)</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
+    <span class="n">method</span> <span class="n">get</span><span class="o">-</span><span class="n">defence</span><span class="p">(</span> <span class="o">--&gt;</span> <span class="n">Int</span> <span class="p">)</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
     <span class="o">...</span><span class="p">;</span>
 </code></pre></div><p><code>get-attack</code>と<code>get-defence</code>を<code>stubbed method</code>にすることで、
 SlimeクラスとDragonクラスにオーバーライドすることを強要できる。
@@ -236,17 +219,17 @@ SlimeクラスとDragonクラスにオーバーライドすることを強要で
 Perl 5の時は<code>Moose::Role</code>の<code>requires</code>でやってたが、Rakuではネイティブでこう書ける。</p>
 <h3 id="iteratorパターン">Iteratorパターン</h3>
 <p>次にIteratorパターン。これは<code>Array</code>オブジェクトに備わっている<code>iterator</code>を使った。</p>
-<div class="highlight"><pre class="chroma"><code class="language-perl" data-lang="perl"><span class="k">my</span> <span class="nv">$</span><span class="nv">students</span> <span class="o">=</span> <span class="n"></span><span class="n">Array</span><span class="o">.</span><span class="k">new</span><span class="p">;</span>
-<span class="nv">$</span><span class="nv">students</span><span class="o">.</span><span class="n"></span><span class="n">append</span><span class="p">(</span><span class="s">&#39;Tanaka&#39;</span><span class="p">)</span><span class="p">;</span>
-<span class="nv">$</span><span class="nv">students</span><span class="o">.</span><span class="n"></span><span class="n">append</span><span class="p">(</span><span class="s">&#39;Yamada&#39;</span><span class="p">)</span><span class="p">;</span>
-<span class="nv">$</span><span class="nv">students</span><span class="o">.</span><span class="n"></span><span class="n">append</span><span class="p">(</span><span class="s">&#39;Suzuki&#39;</span><span class="p">)</span><span class="p">;</span>
-<span class="nv">$</span><span class="nv">students</span><span class="o">.</span><span class="n"></span><span class="n">append</span><span class="p">(</span><span class="s">&#39;Sato&#39;</span><span class="p">)</span><span class="p">;</span>
+<div class="highlight"><pre class="chroma"><code class="language-perl" data-lang="perl"><span class="k">my</span> <span class="nv">$students</span> <span class="o">=</span> <span class="n">Array</span><span class="o">.</span><span class="k">new</span><span class="p">;</span>
+<span class="nv">$students</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">&#39;Tanaka&#39;</span><span class="p">);</span>
+<span class="nv">$students</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">&#39;Yamada&#39;</span><span class="p">);</span>
+<span class="nv">$students</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">&#39;Suzuki&#39;</span><span class="p">);</span>
+<span class="nv">$students</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">&#39;Sato&#39;</span><span class="p">);</span>
 
-<span class="k">my</span> <span class="nv">$</span><span class="nv">iterator</span> <span class="o">=</span> <span class="nv">$</span><span class="nv">students</span><span class="o">.</span><span class="n"></span><span class="n">iterator</span><span class="p">;</span>
-<span class="n"></span><span class="n">loop</span> <span class="p">{</span>
-    <span class="k">my</span> <span class="nv">$</span><span class="nv">student</span> <span class="p">:</span><span class="o">=</span> <span class="nv">$</span><span class="nv">iterator</span><span class="o">.</span><span class="n"></span><span class="n">pull</span><span class="o">-</span><span class="n"></span><span class="n">one</span><span class="p">;</span>
-    <span class="k">last</span> <span class="k">if</span> <span class="nv">$</span><span class="nv">student</span> <span class="o">=</span><span class="p">:</span><span class="o">=</span> <span class="n"></span><span class="n">IterationEnd</span><span class="p">;</span>
-    <span class="n"></span><span class="n">say</span> <span class="nv">$</span><span class="nv">student</span><span class="p">;</span>
+<span class="k">my</span> <span class="nv">$iterator</span> <span class="o">=</span> <span class="nv">$students</span><span class="o">.</span><span class="n">iterator</span><span class="p">;</span>
+<span class="n">loop</span> <span class="p">{</span>
+    <span class="k">my</span> <span class="nv">$student</span> <span class="p">:</span><span class="o">=</span> <span class="nv">$iterator</span><span class="o">.</span><span class="n">pull</span><span class="o">-</span><span class="n">one</span><span class="p">;</span>
+    <span class="k">last</span> <span class="k">if</span> <span class="nv">$student</span> <span class="o">=</span><span class="p">:</span><span class="o">=</span> <span class="n">IterationEnd</span><span class="p">;</span>
+    <span class="n">say</span> <span class="nv">$student</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div><p><code>$iterator.pull-one</code>でイテレーションの対象の一つを取ってきて、その型が<code>IterationEnd</code>だったらループを抜ける。
 <code>$iterator</code>っていのはRakuにもともと備わっている<code>Iterator</code>ロールを実装したものなんだけど、
@@ -256,23 +239,23 @@ Perl 5の時は<code>Moose::Role</code>の<code>requires</code>でやってた�
 </ul>
 <h3 id="singletonパターン">Singletonパターン</h3>
 <p>最後にSingletoneパターン。</p>
-<div class="highlight"><pre class="chroma"><code class="language-perl" data-lang="perl"><span class="n"></span><span class="n">class</span> <span class="n"></span><span class="n">Singleton</span> <span class="p">{</span>
-    <span class="k">my</span> <span class="n"></span><span class="n">Singleton</span> <span class="nv">$</span><span class="nv">instance</span> <span class="o">=</span> <span class="n"></span><span class="n">Singleton</span><span class="o">.</span><span class="k">new</span><span class="p">;</span>
-    <span class="n"></span><span class="n">submethod</span> <span class="n"></span><span class="n">BUILD</span> <span class="p">{</span>
-        <span class="n"></span><span class="n">say</span> <span class="s">&#34;インスタンスを生成します。&#34;</span><span class="p">;</span>
+<div class="highlight"><pre class="chroma"><code class="language-perl" data-lang="perl"><span class="n">class</span> <span class="n">Singleton</span> <span class="p">{</span>
+    <span class="k">my</span> <span class="n">Singleton</span> <span class="nv">$instance</span> <span class="o">=</span> <span class="n">Singleton</span><span class="o">.</span><span class="k">new</span><span class="p">;</span>
+    <span class="n">submethod</span> <span class="n">BUILD</span> <span class="p">{</span>
+        <span class="n">say</span> <span class="s">&#34;インスタンスを生成します。&#34;</span><span class="p">;</span>
     <span class="p">}</span>
-    <span class="n"></span><span class="n">method</span> <span class="n"></span><span class="n">get</span><span class="o">-</span><span class="n"></span><span class="n">instance</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="nv">$</span><span class="nv">instance</span><span class="p">;</span>
+    <span class="n">method</span> <span class="n">get</span><span class="o">-</span><span class="n">instance</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$instance</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="p">}</span>
 
-<span class="k">my</span> <span class="nv">$</span><span class="nv">obj1</span> <span class="o">=</span> <span class="n"></span><span class="n">Singleton</span><span class="o">.</span><span class="n"></span><span class="n">get</span><span class="o">-</span><span class="n"></span><span class="n">instance</span><span class="p">;</span>
-<span class="k">my</span> <span class="nv">$</span><span class="nv">obj2</span> <span class="o">=</span> <span class="n"></span><span class="n">Singleton</span><span class="o">.</span><span class="n"></span><span class="n">get</span><span class="o">-</span><span class="n"></span><span class="n">instance</span><span class="p">;</span>
+<span class="k">my</span> <span class="nv">$obj1</span> <span class="o">=</span> <span class="n">Singleton</span><span class="o">.</span><span class="n">get</span><span class="o">-</span><span class="n">instance</span><span class="p">;</span>
+<span class="k">my</span> <span class="nv">$obj2</span> <span class="o">=</span> <span class="n">Singleton</span><span class="o">.</span><span class="n">get</span><span class="o">-</span><span class="n">instance</span><span class="p">;</span>
 
-<span class="k">if</span> <span class="nv">$</span><span class="nv">obj1</span> <span class="o">===</span> <span class="nv">$</span><span class="nv">obj2</span> <span class="p">{</span>
-    <span class="n"></span><span class="n">say</span> <span class="s">&#39;$obj1と$obj2は同じインスタンスです。&#39;</span><span class="p">;</span>
+<span class="k">if</span> <span class="nv">$obj1</span> <span class="o">===</span> <span class="nv">$obj2</span> <span class="p">{</span>
+    <span class="n">say</span> <span class="s">&#39;$obj1と$obj2は同じインスタンスです。&#39;</span><span class="p">;</span>
 <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-    <span class="n"></span><span class="n">say</span> <span class="s">&#39;$obj1と$obj2は同じインスタンスではありません。&#39;</span><span class="p">;</span>
+    <span class="n">say</span> <span class="s">&#39;$obj1と$obj2は同じインスタンスではありません。&#39;</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div><p>出力結果は期待した通り、こうなる。</p>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">$ perl6 singleton.p6
@@ -375,7 +358,7 @@ $obj1と$obj2は同じインスタンスです。
       <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
     </li>
     <li>
-      <span class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2020%2fwrite-perl6%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
+      <span class="fb-share-button"  data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2020%2fwrite-perl6%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
     </li>
     <li>
       <a href="https://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label-counter" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>

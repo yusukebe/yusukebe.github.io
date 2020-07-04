@@ -2,7 +2,9 @@
 <html>
 <head>
 	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>複数の Catalyst アプリ を複数の apache でサーブさせる .conf - ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>複数の Catalyst アプリ を複数の apache でサーブさせる .conf - ゆーすけべー日記</title>
+    <meta name="description" content=" 実践投入前の自分のメモもかねてのエントリー。以前、複数の Catalyst（等） アプリの運用について「lighttpd いい」と書きましたが、やっぱり apache＋mod_perl の運用もありかなと思いました。apache＋mod_" /><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta property="og:title" content="複数の Catalyst アプリ を複数の apache でサーブさせる .conf" />
 <meta property="og:description" content=" 実践投入前の自分のメモもかねてのエントリー。以前、複数の Catalyst（等） アプリの運用について「lighttpd いい」と書きましたが、やっぱり apache＋mod_perl の運用もありかなと思いました。apache＋mod_" />
 <meta property="og:type" content="article" />
@@ -20,6 +22,7 @@
 	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
 	
 	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+    <script src="//cdn.embedly.com/widgets/platform.js" charset="UTF-8"></script>
 	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 	<script src="https://yusukebe.com/js/main.js"></script>
 	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
@@ -63,7 +66,7 @@
 			<div class="meta">Posted at &mdash; May 26, 2009</div>
 		</div>
 
-		<div class="markdown">
+		<div class="markdown post-body">
 			
 
 <p>
@@ -87,8 +90,7 @@ httpd のポートがたくさんできちゃうのが多少気持ち悪い感�
 一番最後に、運用も視野に入れた必要最小限の conf ファイルのサンプルを貼付けておきます。
 myapp_httpd.conf を使う場合、
 </p>
-<pre class="brush: perl"> $ sudo apache2ctl -f myapp_httpd.conf
- </pre>
+<pre class="brush: perl"> $ sudo apache2ctl -f myapp_httpd.conf</pre>
 <p>
 としてアプリ別に apache を起動しています。
 テストマシンで試験してる段階ではこれで問題はないようです。
@@ -137,8 +139,7 @@ PerlSwitches -I/home/www/myapp/extlib
  
 PerlRequire /home/www/myapp/startup.pl
 SetHandler perl-script
-PerlHandler MyApp
- </pre>
+PerlHandler MyApp</pre>
 
 <p>
 次に front の apache の設定。VirtualHost 前提で、静的コンテンツに関しては
@@ -155,8 +156,7 @@ Expires ヘッダを付加しています。
         &lt;FilesMatch "\.(jpg|gif|png|ico|css|js)$"&gt;
             ExpiresDefault "access plus 365 days"
         &lt;/FilesMatch&gt;
-&lt;/VirtualHost&gt;
- </pre>
+&lt;/VirtualHost&gt;</pre>
 
 <p>
 lighttpd と比べながら、実際に運用へ適応させようかと思っています。
@@ -190,7 +190,7 @@ lighttpd と比べながら、実際に運用へ適応させようかと思っ�
       <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
     </li>
     <li>
-      <span class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2009%2f0526034559%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
+      <span class="fb-share-button"  data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2009%2f0526034559%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
     </li>
     <li>
       <a href="https://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label-counter" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>

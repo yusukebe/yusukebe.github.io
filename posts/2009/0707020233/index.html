@@ -2,7 +2,9 @@
 <html>
 <head>
 	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Senna、MySQL 周りの「sugokuii beta」対処法的チューニング - ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Senna、MySQL 周りの「sugokuii beta」対処法的チューニング - ゆーすけべー日記</title>
+    <meta name="description" content=" 昨日公開した「sugokuii beta」。ある程度のトラフィックは予想していたものの、深夜0時を超えた当たりから急に負荷が高くなった。この深夜0時前後は魔の時間帯と俺は認識していて、他に俺が運営しているムフフなサイトも23時頃からほんと" /><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta property="og:title" content="Senna、MySQL 周りの「sugokuii beta」対処法的チューニング" />
 <meta property="og:description" content=" 昨日公開した「sugokuii beta」。ある程度のトラフィックは予想していたものの、深夜0時を超えた当たりから急に負荷が高くなった。この深夜0時前後は魔の時間帯と俺は認識していて、他に俺が運営しているムフフなサイトも23時頃からほんと" />
 <meta property="og:type" content="article" />
@@ -20,6 +22,7 @@
 	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
 	
 	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+    <script src="//cdn.embedly.com/widgets/platform.js" charset="UTF-8"></script>
 	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 	<script src="https://yusukebe.com/js/main.js"></script>
 	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
@@ -63,7 +66,7 @@
 			<div class="meta">Posted at &mdash; Jul 7, 2009</div>
 		</div>
 
-		<div class="markdown">
+		<div class="markdown post-body">
 			
 
 <p>
@@ -140,8 +143,7 @@ sub connection {
 }
 
 __PACKAGE__-&gt;meta-&gt;make_immutable();
-1;
- </pre>
+1;</pre>
 <br>
 <p>
 これで、そこそこ負荷が下がったが、どうもまだ senna の全文検索周りが
@@ -157,8 +159,7 @@ Linux 2.6以降では、カーネルのバッファキャッシュを経由せ�
 <p>
 ということで手元の環境でも動作したので、環境変数を設定するため
 </p>
-<pre> # export SEN_AIO_ENABLED=1
- </pre>
+<pre class="code"># export SEN_AIO_ENABLED=1</pre>
 <p>
 してから mysqld を起動させてみた。
 すると、上記した対策をあわせてかなーり mysql の負荷が減ったようだ。
@@ -191,7 +192,7 @@ Linux 2.6以降では、カーネルのバッファキャッシュを経由せ�
 時間がピークを過ぎたとはいえ、そこそこ負荷が減っているのがわかると思います。
 </p>
 <p>
-<img alt="munin" class="at-xid-6a0133f4781589970b015391e39266970b" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015391e39266970b-pi">
+<img alt="munin" class="at-xid-6a0133f4781589970b015391e39266970b" src="https://yusukebe.com/archives/a/6a0133f4781589970b015391e39266970b-pi.gif">
 </p>
 <p>
 以上、今回学んだことを含みまとめてみました。
@@ -200,7 +201,7 @@ Linux 2.6以降では、カーネルのバッファキャッシュを経由せ�
 この「<strong>キャパシティプランニング</strong>」という本が非常に刺激的なのでオススメです。
 </p>
 <div>
-<div style="float:left"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4873113997/kamawada-22/"><img alt="キャパシティプランニング ― リソースを最大限に活かすサイト分析・予測・配置" class="at-xid-6a0133f4781589970b015391e39278970b" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015391e39278970b-pi" style="border:none;"></a></div>
+<div style="float:left"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4873113997/kamawada-22/"><img alt="キャパシティプランニング ― リソースを最大限に活かすサイト分析・予測・配置" class="at-xid-6a0133f4781589970b015391e39278970b" src="https://yusukebe.com/archives/a/6a0133f4781589970b015391e39278970b-pi.jpg" style="border:none;"></a></div>
 <div style="float:left;margin-left:15px;">
 <div style="font-size:12pt"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4873113997/kamawada-22/">キャパシティプランニング ― リソースを最大限に活かすサイト分析・予測・配置</a></div>
 <div style="font-size:7pt;font-family:verdana;">posted with <a href="http://yusukebe.com/b/amazon/search/">yusukebe.com::AmazonSearch</a> on 2009.7.7</div>
@@ -210,8 +211,8 @@ Linux 2.6以降では、カーネルのバッファキャッシュを経由せ�
 <li>ペーパーバック / オライリージャパン </li>
 <li>Amazon 売り上げランキング: 37076</li>
 </ul>
-<ul style="list-style-type:none;padding:0;"><li>Amazon おすすめ度の平均: <img alt="4.0" class="at-xid-6a0133f4781589970b014e8bd727e1970d" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b014e8bd727e1970d-pi" style="margin:0;"><ul style="list-style-type:none;padding-left:0;"><li>
-<img alt="4" class="at-xid-6a0133f4781589970b014e8bd727e1970d" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b014e8bd727e1970d-pi" style="margin:0;"> ログをとるソフトの使い方と見方を書いています</li></ul>
+<ul style="list-style-type:none;padding:0;"><li>Amazon おすすめ度の平均: <img alt="4.0" class="at-xid-6a0133f4781589970b014e8bd727e1970d" src="https://yusukebe.com/archives/a/6a0133f4781589970b014e8bd727e1970d-pi.gif" style="margin:0;"><ul style="list-style-type:none;padding-left:0;"><li>
+<img alt="4" class="at-xid-6a0133f4781589970b014e8bd727e1970d" src="https://yusukebe.com/archives/a/6a0133f4781589970b014e8bd727e1970d-pi.gif" style="margin:0;"> ログをとるソフトの使い方と見方を書いています</li></ul>
 </li></ul>
 <a href="http://www.amazon.co.jp/%E3%82%AD%E3%83%A3%E3%83%91%E3%82%B7%E3%83%86%E3%82%A3%E3%83%97%E3%83%A9%E3%83%B3%E3%83%8B%E3%83%B3%E3%82%B0-%E2%80%95-%E3%83%AA%E3%82%BD%E3%83%BC%E3%82%B9%E3%82%92%E6%9C%80%E5%A4%A7%E9%99%90%E3%81%AB%E6%B4%BB%E3%81%8B%E3%81%99%E3%82%B5%E3%82%A4%E3%83%88%E5%88%86%E6%9E%90%E3%83%BB%E4%BA%88%E6%B8%AC%E3%83%BB%E9%85%8D%E7%BD%AE-John-Allspaw/dp/4873113997%3FSubscriptionId%3D13C5PCPS36EMN8C22682%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D4873113997">Amazon.co.jpで詳細を見る</a>
 </div>
@@ -250,7 +251,7 @@ Linux 2.6以降では、カーネルのバッファキャッシュを経由せ�
       <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
     </li>
     <li>
-      <span class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2009%2f0707020233%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
+      <span class="fb-share-button"  data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2009%2f0707020233%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
     </li>
     <li>
       <a href="https://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label-counter" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>

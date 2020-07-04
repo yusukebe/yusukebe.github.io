@@ -2,7 +2,9 @@
 <html>
 <head>
 	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>CustomFeed::YouTube_dev APIを使ってビデオ情報を取得させる - ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>CustomFeed::YouTube_dev APIを使ってビデオ情報を取得させる - ゆーすけべー日記</title>
+    <meta name="description" content="   YouTubeの特定のタグが付いたビデオページを投稿時間順にRSSで取得したい。  YouTubeのサイトでもタグによるRSSフィードを以下のようなURLでも取得できるらしい(参考:[戯] YouTube でタグによる RSS フィー" /><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta property="og:title" content="CustomFeed::YouTube_dev APIを使ってビデオ情報を取得させる" />
 <meta property="og:description" content="   YouTubeの特定のタグが付いたビデオページを投稿時間順にRSSで取得したい。  YouTubeのサイトでもタグによるRSSフィードを以下のようなURLでも取得できるらしい(参考:[戯] YouTube でタグによる RSS フィー" />
 <meta property="og:type" content="article" />
@@ -20,6 +22,7 @@
 	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
 	
 	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+    <script src="//cdn.embedly.com/widgets/platform.js" charset="UTF-8"></script>
 	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 	<script src="https://yusukebe.com/js/main.js"></script>
 	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
@@ -63,14 +66,14 @@
 			<div class="meta">Posted at &mdash; Jul 29, 2006</div>
 		</div>
 
-		<div class="markdown">
+		<div class="markdown post-body">
 			
 
 <p>
   YouTubeの特定のタグが付いたビデオページを投稿時間順にRSSで取得したい。
   YouTubeのサイトでもタグによるRSSフィードを以下のようなURLでも取得できるらしい(参考:<a href="http://cl.pocari.org/2006-05-28-1.html">[戯] YouTube でタグによる RSS フィードを取得するには</a>)。
 </p>
-<pre> http://www.youtube.com/rss/tag/タグ.rss </pre>
+<pre class="code">http://www.youtube.com/rss/tag/タグ.rss </pre>
 <p>
   でも、これあんまりいけてなくて投稿時間順にソートすることができないんだよね。
   ということで「<strong><a href="http://subtech.g.hatena.ne.jp/keyword/%e3%81%9d%e3%82%8cPla">それPla(ry</a></strong>」精神、Plaggerでやってみる。Pluginを探すと<a href="http://mizzy.org/program/youtube_and_plagger02.html">mizzyさんが作った</a><a href="http://plagger.org/trac/browser/trunk/plagger/lib/Plagger/Plugin/CustomFeed/YouTube.pm">CustomFeed::YouTube</a>というぴったりのPluginがあるじゃないですか。video_date_uploadedでソートもできる。これはいけるぞ！と思ってRSSを作ってみたが問題がひとつある。RSSで言うとdc:date、pubDateといった<strong>更新時間が取得できない</strong>のだ。個人的にRSSの魅力はこの更新時間が取得できて、ソートできる点だと感じているので、このままでは使えないなとう感触。そこで、mizzyさんのCustomFeed::YouTubeをハックして俺の希望通りのフィードを吐くようにしてみる。
@@ -82,7 +85,7 @@
   なので、CustomFeed::YouTubeで取得できるビデオのIDを利用して、そのままそのIDを引数にYouTube APIの <a href="http://www.youtube.com/dev_api_ref?m=youtube.videos.get_details">youtube.videos.get_details</a>というメソッドを呼び出してビデオ情報を取得する。
   以下がそのサブルーチン。
 </p>
-<pre> sub get_details{
+<pre class="code">sub get_details{
   my($dev_id,$video_id) = @_;
   my $youtube_url = "http://www.youtube.com/api2_rest?method=youtube.videos.get_details&amp;dev_id=$dev_id&amp;video_id=$video_id";
 
@@ -96,7 +99,7 @@
   ビデオ情報を取得したらそのままフィードのアイテムに追加。
   ビデオの投稿時間upload_timeがUNIX時間で返ってくるので
 </p>
-<pre> Plagger::Date-&gt;from_epoch($video_details-&gt;{upload_time}); </pre>
+<pre class="code">Plagger::Date-&gt;from_epoch($video_details-&gt;{upload_time}); </pre>
 <p>
   としてRSSの日付形式に変換してやる。
 </p>
@@ -135,7 +138,7 @@
       <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
     </li>
     <li>
-      <span class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2006%2f0729084555%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
+      <span class="fb-share-button"  data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2006%2f0729084555%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
     </li>
     <li>
       <a href="https://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label-counter" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>

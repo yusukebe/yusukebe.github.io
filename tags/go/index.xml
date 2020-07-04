@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Go on ゆーすけべー日記</title>
+    <link>https://yusukebe.com/tags/go/</link>
+    <description>Recent content in Go on ゆーすけべー日記</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <copyright>© Copyright yusukebe.com</copyright>
+    <lastBuildDate>Wed, 11 Mar 2020 08:32:39 +0900</lastBuildDate>
+    
+	<atom:link href="https://yusukebe.com/tags/go/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Go言語でつくるインタプリタがグランドフィナーレを迎えました</title>
+      <link>https://yusukebe.com/posts/2020/writing-an-interpreter-in-go/</link>
+      <pubDate>Wed, 11 Mar 2020 08:32:39 +0900</pubDate>
+      
+      <guid>https://yusukebe.com/posts/2020/writing-an-interpreter-in-go/</guid>
+      <description>いよいよ「Go言語でつくるインタプリタ」がグランドフィナーレを迎えた。 そして、これで終わりだ。やり遂げた。これまでは私が誘う小さなお祝いを軽くあしらってきたとしても、いよいよ愉快なパーティ帽を被ってよ</description>
+    </item>
+    
+  </channel>
+</rss>

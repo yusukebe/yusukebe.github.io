@@ -2,7 +2,9 @@
 <html>
 <head>
 	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>月額980円のさくらVPSを個人用に使い倒す - ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>月額980円のさくらVPSを個人用に使い倒す - ゆーすけべー日記</title>
+    <meta name="description" content=" Webサービスの運営用にVPSと呼ばれるバーチャル・プライベート・サーバを借りることは昨今よくあることだと思います。VPSのサーバを借りればroot権限を持てることになるので、自由度が高いサーバ環境を構築することができます。また、スペック" /><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta property="og:title" content="月額980円のさくらVPSを個人用に使い倒す" />
 <meta property="og:description" content=" Webサービスの運営用にVPSと呼ばれるバーチャル・プライベート・サーバを借りることは昨今よくあることだと思います。VPSのサーバを借りればroot権限を持てることになるので、自由度が高いサーバ環境を構築することができます。また、スペック" />
 <meta property="og:type" content="article" />
@@ -20,6 +22,7 @@
 	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
 	
 	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+    <script src="//cdn.embedly.com/widgets/platform.js" charset="UTF-8"></script>
 	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 	<script src="https://yusukebe.com/js/main.js"></script>
 	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
@@ -63,7 +66,7 @@
 			<div class="meta">Posted at &mdash; Mar 1, 2012</div>
 		</div>
 
-		<div class="markdown">
+		<div class="markdown post-body">
 			
 
 <p>Webサービスの運営用にVPSと呼ばれるバーチャル・プライベート・サーバを借りることは昨今よくあることだと思います。
@@ -99,34 +102,29 @@ githubなどでは無料で公開レポジトリが持てますが、プライ�
 新たなレポジトリを追加したりする際に「管理用のレポジトリ」を取ってきてpushするだけで済むのが非常によいですね。
 例えばレポジトリ「Hoge」を追加するとします。管理レポジトリを取ってきて</p>
 
-<pre> $ git clone git@yourdomain:gitolite-admin.git
-$ cd gitolite-admin
- </pre>
+<pre class="code">$ git clone git@yourdomain:gitolite-admin.git
+$ cd gitolite-admin</pre>
 
 <p>「conf/gitolite.conf」に以下を追加します。</p>
 
-<pre> repo    Hoge
-        RW+     =   @all
- </pre>
+<pre class="code">repo    Hoge
+        RW+     =   @all</pre>
 
 <p>そしてcommitしてpush。</p>
 
-<pre> $ git commit -a -m 'add Hoge repo.'
-$ git push
- </pre>
+<pre class="code">$ git commit -a -m 'add Hoge repo.'
+$ git push</pre>
 
 <p>自動的に「Hoge」レポジトリを作ってくれます。</p>
 
-<pre> remote: creating Hoge...
-remote: Initialized empty Git repository in /home/git/repositories/Hoge.git/
- </pre>
+<pre class="code">remote: creating Hoge...
+remote: Initialized empty Git repository in /home/git/repositories/Hoge.git/</pre>
 
 <p>そのままgit cloneすれば空のレポジトリを取ってこれますね。</p>
 
-<pre> $ git clone git@yourdomain:Hoge.git
+<pre class="code">$ git clone git@yourdomain:Hoge.git
 Cloning into Hoge...
-warning: You appear to have cloned an empty repository.
- </pre>
+warning: You appear to have cloned an empty repository.</pre>
 
 <p>他にもgitosisなどの管理ツールはありますが、色々ためしてこのgitoliteに落ち着きました。</p>
 
@@ -142,12 +140,11 @@ warning: You appear to have cloned an empty repository.
 僕は980円VPSにApacheを入れていないので特殊な方法で立ち上げてます。
 PerlモジュールであるPlackを入れて、</p>
 
-<pre> $ cpanm Plack
- </pre>
+<pre class="code">$ cpanm Plack</pre>
 
 <p>以下のような.psgiというファイルを書きます。</p>
 
-<pre> use Plack::App::WrapCGI;
+<pre class="code">use Plack::App::WrapCGI;
 use Plack::Builder;
 
 my $app =  Plack::App::WrapCGI-&gt;new( script =&gt; '/home/git/gitweb/gitweb.cgi' )-&gt;to_app;
@@ -156,13 +153,11 @@ builder {
       path =&gt; qr{^/static/},
       root =&gt; '/home/git/gitweb/';
     $app;
-};
- </pre>
+};</pre>
 
 <p>そしてplackupで起動すれば「<a href="http://yourdomain:3000/">http://yourdomain:3000/</a>」などのアドレスで閲覧することができます。</p>
 
-<pre> $ plackup gitweb.psgi
- </pre>
+<pre class="code">$ plackup gitweb.psgi</pre>
 
 <p>工夫してBasic認証などを書ければ誰にも閲覧されない「俺だけの」レポジトリビューアーが完成です。</p>
 
@@ -178,7 +173,7 @@ BlogはMovableTypeで動いていて、投稿時にHTMLなどの静的ファイ�
 gitweb.cgiの時も使ったPlackで動かしましょう。
 以下のようなMTディレクトリと同じ階層に置く.psgiを利用しています。</p>
 
-<pre> use File::Basename;
+<pre class="code">use File::Basename;
 use Plack::Builder;
 use Plack::App::CGIBin;
 my $base_dir = dirname(__FILE__);
@@ -188,8 +183,7 @@ builder {
       root =&gt; $base_dir;
       mount "/" =&gt;
           Plack::App::CGIBin-&gt;new( root =&gt; $base_dir, exec_cb =&gt; sub { 1 } )-&gt;to_app;
-};
- </pre>
+};</pre>
 
 <p>これもplackupコマンドで立ち上げて、
 「<a href="http://yourdomain:3000/">http://yourdomain:3000/</a>」などにアクセスすれば管理画面を見ることができるはずです。</p>
@@ -242,7 +236,7 @@ builder {
       <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
     </li>
     <li>
-      <span class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2012%2f0301004443%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
+      <span class="fb-share-button"  data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2012%2f0301004443%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
     </li>
     <li>
       <a href="https://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label-counter" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>

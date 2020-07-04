@@ -2,7 +2,9 @@
 <html>
 <head>
 	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>cpanmにMETA.ymlに書かれた依存モジュールを渡したい - ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>cpanmにMETA.ymlに書かれた依存モジュールを渡したい - ゆーすけべー日記</title>
+    <meta name="description" content=" いきなり追記  miyagawaさんからご指摘いただきまして、cpanm本体のコマンドできます！すばらしす。  $ cpanm --installdeps .  cpanm -h するといろいろ使い方書いてあるので見てみたほうがよかったっ" /><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta property="og:title" content="cpanmにMETA.ymlに書かれた依存モジュールを渡したい" />
 <meta property="og:description" content=" いきなり追記  miyagawaさんからご指摘いただきまして、cpanm本体のコマンドできます！すばらしす。  $ cpanm --installdeps .  cpanm -h するといろいろ使い方書いてあるので見てみたほうがよかったっ" />
 <meta property="og:type" content="article" />
@@ -20,6 +22,7 @@
 	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
 	
 	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+    <script src="//cdn.embedly.com/widgets/platform.js" charset="UTF-8"></script>
 	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 	<script src="https://yusukebe.com/js/main.js"></script>
 	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
@@ -63,7 +66,7 @@
 			<div class="meta">Posted at &mdash; Mar 31, 2010</div>
 		</div>
 
-		<div class="markdown">
+		<div class="markdown post-body">
 			
 
 <p>
@@ -73,8 +76,7 @@
 miyagawaさんからご指摘いただきまして、cpanm本体のコマンドできます！
 すばらしす。
 </p>
-<pre class="brush: perl"> $ cpanm --installdeps .
- </pre>
+<pre class="brush: perl"> $ cpanm --installdeps .</pre>
 <p>
 cpanm -h するといろいろ使い方書いてあるので見てみたほうがよかったっすね。
 miyagawaさんあざっす。
@@ -95,13 +97,11 @@ cpanminusに渡してうはうはしたい、つまり make installdeps 相当�
 <pre class="brush: perl"> #!/usr/bin/perl
 use YAML::Tiny;
 print join "\n", grep { eval("require $_"); $_ if $@; }
-  keys %{ YAML::Tiny-&gt;read( $ARGV[0] || 'META.yml' )-&gt;[0]{requires} };
- </pre>
+  keys %{ YAML::Tiny-&gt;read( $ARGV[0] || 'META.yml' )-&gt;[0]{requires} };</pre>
 <p>
 これをcpan_not_installed.plとかで保存して、
 </p>
-<pre class="brush: perl"> $ cpan_not_installed.pl | sudo -H cpanm
- </pre>
+<pre class="brush: perl"> $ cpan_not_installed.pl | sudo -H cpanm</pre>
 <p>
 とかってやるととりあえずやりたいことはできてうはうはしてる。
 他に方法あれば教えてください＞＜
@@ -134,7 +134,7 @@ print join "\n", grep { eval("require $_"); $_ if $@; }
       <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
     </li>
     <li>
-      <span class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2010%2f0330204151%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
+      <span class="fb-share-button"  data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2010%2f0330204151%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
     </li>
     <li>
       <a href="https://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label-counter" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>

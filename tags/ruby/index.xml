@@ -18,11 +18,7 @@
       <pubDate>Sun, 20 May 2012 16:43:00 +0900</pubDate>
       
       <guid>https://yusukebe.com/posts/2012/0520074309/</guid>
-      <description>某プロジェクトでRuby on Rails使うっていぅんで 「アジャイルWebアプリケーション開発」本なんて買ってチュートリアルとかやってます。 ただ、Ruby自体なにも分からないので、Rails覚えてもどれだけできるかがよく分からなす。 ってことでRubyを勉強する！と先ほど書いてみた4つのスクリプトをご紹介。間違ってたらツッコミよろしくおくんなまし。 とはいえ簡単なやつだよ！でも新しいおっぱいダウンロードスクリプトもあるよ！
-open-uri.rb まずは、Perlで言うLWP的なもの、つまりHTTPクライアントでこの日記のHTMLを取得してみるよー。 あら、簡単だねっ。
- require &#34;open-uri&#34; html = open(&#34;http://yusukebe.com/&#34;).read; p html  twitter-search.rb お次に「お得意の」APIを叩く系をやってみる。Twitter Search APIが簡単なので、 そこから「ruby」という発言を取ってきて表示させます。 Perlで言うURIモジュールの「query_form」メソッドが欲しかったので、Addressable::URIを使いましたぉ。
- require &#34;addressable/uri&#34; require &#34;open-uri&#34; require &#34;json&#34; uri = Addressable::URI.parse(&#39;http://search.twitter.com/search.json&#39;) uri.query_values = { :q =&amp;gt; &#34;ruby&#34;, :lang =&amp;gt; &#34;ja&#34; } json = open(uri).read ref = JSON.parse(json) ref[&#34;results&#34;].each do |tweet| puts &#34;@&#34; + tweet[&#34;from_user&#34;] + &#34; : &#34; + tweet[&#34;text&#34;] end  sinatra-oauth.rb 今度はWebアプリもつくっちゃおう！sinatra使ってFoursquareのOAuth v2なログインを試してみるよ。 sinatraのsessionを有効にするために「enable :sessions」しなくてはいけないところにハマったけど、 OAuthとかは、APIのドキュメントをしっかり読めばすぐ出来たよ。
- require &#34;sinatra&#34; require &#34;addressable/uri&#34; require &#34;pit&#34; require &#34;open-uri&#34; require &#34;json&#34; enable :sessions, :logging config = Pit.get(&#39;foursquare.com&#39;) get &#39;/&#39; do @name = nil if session[:access_token] uri = Addressable::URI.</description>
+      <description>某プロジェクトでRuby on Rails使うっていぅんで 「アジャイルWebアプリケーション開発」本なんて買ってチュートリアルとかやってます。 ただ、Ruby自体なにも分からないので、Rails覚えてもどれだ</description>
     </item>
     
   </channel>

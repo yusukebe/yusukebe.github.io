@@ -2,7 +2,9 @@
 <html>
 <head>
 	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>CSS Frameworkを持つ - ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>CSS Frameworkを持つ - ゆーすけべー日記</title>
+    <meta name="description" content=" 例えば、Webサービスのフロントエンドのコードを書き始める時にまず何をするでしょうか？デザインスケッチや画像を元にHTMLとCSSを記述していくことになると思います。少なくとも僕はそうですね。理論的にはHTMLだけでもWebサービスを作る" /><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta property="og:title" content="CSS Frameworkを持つ" />
 <meta property="og:description" content=" 例えば、Webサービスのフロントエンドのコードを書き始める時にまず何をするでしょうか？デザインスケッチや画像を元にHTMLとCSSを記述していくことになると思います。少なくとも僕はそうですね。理論的にはHTMLだけでもWebサービスを作る" />
 <meta property="og:type" content="article" />
@@ -20,6 +22,7 @@
 	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
 	
 	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+    <script src="//cdn.embedly.com/widgets/platform.js" charset="UTF-8"></script>
 	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 	<script src="https://yusukebe.com/js/main.js"></script>
 	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
@@ -63,7 +66,7 @@
 			<div class="meta">Posted at &mdash; Mar 5, 2012</div>
 		</div>
 
-		<div class="markdown">
+		<div class="markdown post-body">
 			
 
 <p>例えば、Webサービスのフロントエンドのコードを書き始める時にまず何をするでしょうか？
@@ -115,19 +118,17 @@ Bluetripの.cssファイルを見ると最初の冒頭でリセットと呼ば�
 行間の調整などが一気に行われています。
 ヘッダー要素、マージンとパディングに限れば以下のようなCSSになります。</p>
 
-<pre> h1,h2,h3,h4,h5,h6{margin:0;padding:0;}
- </pre>
+<pre class="code">h1,h2,h3,h4,h5,h6{margin:0;padding:0;}</pre>
 
 <p>そしてその後、要素ごとに適切なスタイルを、この場合だとマージンやパディングを設定しています。
 以下はヘッダー要素の記述です。</p>
 
-<pre> h1 { margin: 1em 0 .5em;  }
+<pre class="code">h1 { margin: 1em 0 .5em;  }
 h2 { margin: 1.07em 0 .535em; }
 h3 { margin: 1.14em 0 .57em; }
 h4 { margin: 1.23em 0 .615em; }
 h5 { margin: 1.33em 0 .67em; }
-h6 { margin: 1.6em 0 .8em; }
- </pre>
+h6 { margin: 1.6em 0 .8em; }</pre>
 
 <p>配布されているCSS Frameworkはおそらく作者のポリシーも含んだマージンや行間、
 配色などの設定がなされていると思われます。そのまま使ってもよいですし、
@@ -142,9 +143,8 @@ Webで共通的に使える日本語のフォントが非常に少ないため�
 英字に限っては効果的です。
 Bluetripはhtml要素全体と太字に対して以下のようなタイポグラフィーを設定しています。</p>
 
-<pre> html { font-size: 62.5%; font-family: "Liberation Sans", Helvetica, Arial, sans-serif; }
-strong, th, thead td, h1, h2, h3, h4, h5, h6 { font-weight: bold; }
- </pre>
+<pre class="code">html { font-size: 62.5%; font-family: "Liberation Sans", Helvetica, Arial, sans-serif; }
+strong, th, thead td, h1, h2, h3, h4, h5, h6 { font-weight: bold; }</pre>
 
 <p>また、Bluetripの面白いところは「.fancy」クラスを付けた要素に対しては「かわいらしいフォント」を表示する機能があります。</p>
 
@@ -152,8 +152,7 @@ strong, th, thead td, h1, h2, h3, h4, h5, h6 { font-weight: bold; }
 
 <p>CSSの実装はこのような具合でした。</p>
 
-<pre> .fancy { color: #666; font-family: "Warnock Pro", "Goudy Old Style","Palatino","Book Antiqua", Georgia, serif; font-style: italic; font-weight: normal; }
- </pre>
+<pre class="code">.fancy { color: #666; font-family: "Warnock Pro", "Goudy Old Style","Palatino","Book Antiqua", Georgia, serif; font-style: italic; font-weight: normal; }</pre>
 
 <h4>グリッドレイアウト</h4>
 
@@ -164,13 +163,12 @@ Bluetripは、ページ大枠の幅は950pxなのですが、それを最適に2
 例えば、左側に8個のグリッドのサイドメニュー、右側に16個のグリッドのメインコンテンツというレイアウトにしたければ、
 以下のようなHTMLを記述します。</p>
 
-<pre> &lt;div class="span-8"&gt;
+<pre class="code">&lt;div class="span-8"&gt;
     サイドメニュー
 &lt;/div&gt;
 &lt;div class="span-16 last"&gt;
     メインコンテンツ
-&lt;/div&gt;
- </pre>
+&lt;/div&gt;</pre>
 
 <p>タブーと言われているようなtableレイアウトを使わずにこうしたグリッドレイアウトを記述するには、
 ちょっとした苦労とノウハウが必要なのですが既存のCSS Frameworkを使ったり、真似したりすると楽ですね。</p>
@@ -180,8 +178,7 @@ Bluetripは、ページ大枠の幅は950pxなのですが、それを最適に2
 <p>Bluetripでは、クラスを指定することでアンカー要素をボタンっぽく見せるための機能があったりします。
 UIを構成するパーツのスタイリングですね。</p>
 
-<pre> &lt;a class="button"&gt;OK&lt;/a&gt;
- </pre>
+<pre class="code">&lt;a class="button"&gt;OK&lt;/a&gt;</pre>
 
 <p>とするだけで、見栄えの効くパーツに変換してくれます。</p>
 
@@ -192,8 +189,7 @@ UIを構成するパーツのスタイリングですね。</p>
 <p>印刷用CSSが付いてくるCSS FrameworkもありBluetripもその一つです。
 このようにHTMLのhead要素内で.cssを指定します。</p>
 
-<pre>  &lt;link rel="stylesheet" href="css/print.css" type="text/css" media="print" /&gt;
- </pre>
+<pre class="code">&lt;link rel="stylesheet" href="css/print.css" type="text/css" media="print" /&gt;</pre>
 
 <p>あまり意識をすることが無い印刷用CSSですが、サイトの種類によっては印刷する人が結構いるかもしれないので、
 侮れないと思いました。</p>
@@ -205,15 +201,14 @@ UIを構成するパーツのスタイリングですね。</p>
 
 <p><img src="http://farm8.staticflickr.com/7049/6807659154_6ed2c7769d.jpg" alt="ダウンロード、解凍後"></p>
 
-<pre> ./
+<pre class="code">./
 ├── css
 │   ├── ie.css
 │   ├── print.css
 │   ├── screen.css
 │   └── style.css
 ├── images
-└── index.html
- </pre>
+└── index.html</pre>
 
 <p>フォルダ内のindex.htmlにHTMLを書いて、style.cssには自分でカスタムしたいCSSを記載します。
 フォルダのレイアウトを作ったり.cssへのパスを調べてhead内に書く作業が減るだけですが、
@@ -280,7 +275,7 @@ CSS Frameworkを持つことはこうした要素を効率化していく効果�
       <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
     </li>
     <li>
-      <span class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2012%2f0304225231%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
+      <span class="fb-share-button"  data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2012%2f0304225231%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
     </li>
     <li>
       <a href="https://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label-counter" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>

@@ -2,7 +2,9 @@
 <html>
 <head>
 	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Flash用RssParser,Rssクラス及びgate.php Version1.1 - ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Flash用RssParser,Rssクラス及びgate.php Version1.1 - ゆーすけべー日記</title>
+    <meta name="description" content=" 長年培ってきたテクの集大成！とまではいかない軽いものですが、ここに公開いたします。もし、使っていただける方がいたら使ってください。明日はこれを使った面白いFlashアプリを紹介しますのでお楽しみに。  ■本体         RssPar" /><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta property="og:title" content="Flash用RssParser,Rssクラス及びgate.php Version1.1" />
 <meta property="og:description" content=" 長年培ってきたテクの集大成！とまではいかない軽いものですが、ここに公開いたします。もし、使っていただける方がいたら使ってください。明日はこれを使った面白いFlashアプリを紹介しますのでお楽しみに。  ■本体         RssPar" />
 <meta property="og:type" content="article" />
@@ -20,6 +22,7 @@
 	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
 	
 	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+    <script src="//cdn.embedly.com/widgets/platform.js" charset="UTF-8"></script>
 	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 	<script src="https://yusukebe.com/js/main.js"></script>
 	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
@@ -63,7 +66,7 @@
 			<div class="meta">Posted at &mdash; Jan 16, 2006</div>
 		</div>
 
-		<div class="markdown">
+		<div class="markdown post-body">
 			
 
 <p>
@@ -112,33 +115,33 @@ MovableTypeの新しいバージョンではデフォルトでindex.xmlとして
 
 ・クラスファイルを読み込む
 </p>
-<pre> import RssParser;
+<pre class="code">import RssParser;
 import Rss; </pre>
 
 ・RSSを読み込む
-<pre> var rp:RssParser = new RssParser("http://yoursite/index.xml"); </pre>
+<pre class="code">var rp:RssParser = new RssParser("http://yoursite/index.xml"); </pre>
 
 ・gate.phpを経由する場合はこんな感じ、Flashを公開するドメインと同ドメイン上にgate.phpを置くこと
-<pre> var rp:RssParser = new RssParser("http://yoursite/gate.php?target=http://yoursite/index.xml"); </pre>
+<pre class="code">var rp:RssParser = new RssParser("http://yoursite/gate.php?target=http://yoursite/index.xml"); </pre>
 
 ・RSSの読み込み終了を受けるハンドラを設定する
-<pre> rp.onParseEnd = function(){
+<pre class="code">rp.onParseEnd = function(){
 	gotoAndStop(2);//など
 } </pre>
 
 ・パースをする
-<pre> rp.parseRss();
+<pre class="code">rp.parseRss();
 //パースが終了したら上記ハンドラの中が実行される </pre>
 
 ・RSSを取得する
-<pre> var rss:Rss = rp.getRss(); </pre>
+<pre class="code">var rss:Rss = rp.getRss(); </pre>
 
 ・ブログのタイトルとリンクを取得し、トレースしてみる
-<pre> trace(rss.getTitle());
+<pre class="code">trace(rss.getTitle());
 trace(rss.getLink()); </pre>
 
 ・記事ごとのタイトルやdescriptionなどを取得したい場合は以下のようにアクセスする
-<pre> trace(rss.item[0].title);//一番最新の記事のタイトルをトレース
+<pre class="code">trace(rss.item[0].title);//一番最新の記事のタイトルをトレース
 trace(rss.item[0].description);//itemの添え字を0,1,2と増やしていくと新しい記事から古い記事へと参照できる
 trace(rss.item[0].date);//dateにアクセスするとFlashのDate型で日付を取得できる
 //記事のプロパティにはtitle link description dateがある </pre>
@@ -162,7 +165,7 @@ trace(rss.item[0].date);//dateにアクセスするとFlashのDate型で日付�
       <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
     </li>
     <li>
-      <span class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2006%2f0115151241%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
+      <span class="fb-share-button"  data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2006%2f0115151241%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
     </li>
     <li>
       <a href="https://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label-counter" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>

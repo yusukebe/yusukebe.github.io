@@ -2,7 +2,9 @@
 <html>
 <head>
 	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>PocketIOのイカ娘語echoサンプル - ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>PocketIOのイカ娘語echoサンプル - ゆーすけべー日記</title>
+    <meta name="description" content=" SocketIOのサーバ側Perl実装のPocketIO。Hachioji.pmが中心となって開発しているYairc（仮）でも使われているんで、気になって触ってます。  実用的に使うにはPlackのMiddlewareとかAppを活用して" /><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta property="og:title" content="PocketIOのイカ娘語echoサンプル" />
 <meta property="og:description" content=" SocketIOのサーバ側Perl実装のPocketIO。Hachioji.pmが中心となって開発しているYairc（仮）でも使われているんで、気になって触ってます。  実用的に使うにはPlackのMiddlewareとかAppを活用して" />
 <meta property="og:type" content="article" />
@@ -20,6 +22,7 @@
 	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
 	
 	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+    <script src="//cdn.embedly.com/widgets/platform.js" charset="UTF-8"></script>
 	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 	<script src="https://yusukebe.com/js/main.js"></script>
 	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
@@ -63,7 +66,7 @@
 			<div class="meta">Posted at &mdash; May 23, 2012</div>
 		</div>
 
-		<div class="markdown">
+		<div class="markdown post-body">
 			
 
 <p>SocketIOのサーバ側Perl実装の<a href="http://search.cpan.org/dist/PocketIO/">PocketIO</a>。
@@ -75,7 +78,7 @@ Hachioji.pmが中心となって開発している<a href="https://github.com/uz
 
 <p>app.psgiはこんな感じっす。</p>
 
-<pre> use Mojo::Server::PSGI;
+<pre class="code">use Mojo::Server::PSGI;
 use File::Spec;
 use File::Basename;
 use lib File::Spec-&gt;catdir(dirname(__FILE__), 'lib');
@@ -88,12 +91,11 @@ my $app = sub { $psgi-&gt;run(@_) };
 builder {
     mount '/socket.io' =&gt; PocketIO-&gt;new( class =&gt; 'App::Handler', method =&gt; 'run' );
     mount '/' =&gt; $app;
-};
- </pre>
+};</pre>
 
 <p>lib/App/Web.pmには普通にMojoliciousのルーティング等を書いて...</p>
 
-<pre> package App::Web;
+<pre class="code">package App::Web;
 use Mojo::Base 'Mojolicious';
 
 sub startup {
@@ -102,12 +104,11 @@ sub startup {
     $r-&gt;route('/')-&gt;to('root#index');
 }
 
-1;
- </pre>
+1;</pre>
 
 <p>lib/App/Handler.pmには飛んできたテキストをイカ娘語変換して返すようにして...</p>
 
-<pre> package App::Handler;
+<pre class="code">package App::Handler;
 use Acme::Ikamusume;
 use strict;
 use warnings;
@@ -132,23 +133,21 @@ sub run {
     };
  }
 
-1;
- </pre>
+1;</pre>
 
 <p>publicディレクトリにjs等を配置する...</p>
 
-<pre> $ tree ./public/
+<pre class="code">$ tree ./public/
 ./public/
 └── js
     ├── WebSocketMain.swf
     ├── WebSocketMainInsecure.swf
     ├── app.js
-    └── socket.io.js
- </pre>
+    └── socket.io.js</pre>
 
 <p>templates/root/index.html.ep にこうやって記述...</p>
 
-<pre> &lt;html&gt;
+<pre class="code">&lt;html&gt;
 &lt;head&gt;
 &lt;script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"&gt;&lt;/script&gt;
 &lt;script src="/js/socket.io.js"&gt;&lt;/script&gt;
@@ -163,12 +162,11 @@ sub run {
   &lt;/p&gt;
   &lt;p id="output"&gt;&lt;/p&gt;
 &lt;/body&gt;
-&lt;/html&gt;
- </pre>
+&lt;/html&gt;</pre>
 
 <p>public/js/app.jsはこんな感じ...</p>
 
-<pre> $(function(){
+<pre class="code">$(function(){
     var socket = io.connect();
     socket.on('message', function (data) {
         $('#output').text(data);
@@ -178,13 +176,11 @@ sub run {
         socket.send(message);
         return false;
     });
-});
- </pre>
+});</pre>
 
 <p>Twiggyでapp.psgiを立ち上げてみる...</p>
 
-<pre> $ twiggy app.psgi 
- </pre>
+<pre class="code">$ twiggy app.psgi</pre>
 
 <p>ブラウザからテキストを入力してみると...</p>
 
@@ -219,7 +215,7 @@ sub run {
       <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
     </li>
     <li>
-      <span class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2012%2f0523094100%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
+      <span class="fb-share-button"  data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2012%2f0523094100%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
     </li>
     <li>
       <a href="https://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label-counter" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>

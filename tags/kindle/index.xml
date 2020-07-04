@@ -18,20 +18,7 @@
       <pubDate>Fri, 15 Mar 2013 10:48:00 +0900</pubDate>
       
       <guid>https://yusukebe.com/posts/2013/0315014846/</guid>
-      <description>プログラミング言語「Perl」の入門書「Perlについて語ろう」をKindle向け電子書籍として出版し販売を開始しました。
-
- Perlについて語ろうposted with amazlet at 13.03.15  和田裕介 (2013-03-13)
- Amazon.co.jpで詳細を見る    
-本書は週刊で発行しているメルマガ「 ゆーすけべーラジオ」内の連載を原稿とし、加筆修正したものとなります。文字数はトータルで11万文字ちょい。紙媒体にして100ページ前後というボリュームで、480円という値付けにしてみました。Perl処女脱出から、基本的なデータ構造の解説、様々なCPANモジュールの紹介、Webアプリケーションフレームワークの使い方などを「サクっと」した文章とコードでまとめました。Perl初心者の方を対象に、読み終わった頃にはWebアプリ開発ができている！ところまで持っていくことを目標にした入門書です。以下目次になります。
- 
- はじめに Perlとは？ 初めてのPerl 関数とスカラー、配列 Perlにおけるデータ表現 データを操作する CPANモジュールを使ってみよう おっぱいスクリプトを読み解く その1 おっぱいスクリプトを読み解く その2 おっぱいスクリプトを読み解く その3 Twitter Search API を使ってみよう まだまだあるぞ、CPANモジュール まだまだあるぞ、CPANモジュール その2 Webアプリを動かす環境 Mojolicious入門その1 Mojolicious入門その2 Mojolicious入門その3 O/R Mapper でデータベース操作 O/R Mapper でデータベース操作 その2 O/R Mapper でデータベース操作 その3 自作モジュールをつくる 入力値の妥当性をチェックする 一歩進んだPerlの環境つくり Instagram検索をPerlでつくる 運用環境にデプロイする ファイル操作のための便利なモジュール 実践「セッションについて」 イマドキのメール送信 終わりに   
-Kindle Paperwhite に最適化していますので、Kindle端末では快適に読めるでしょう。その代わりiOSなどのKindleアプリだと少々プログラミングコードの部分が文字が大きく見えてしまったり、目次が対応してないなど使いにくい点ございます。その点、ご了承いただいて、アップデートを待っていただければと思います。端末での見た目はこのような具合です。
-Kindle Paperwhite 
-iPad mini 
- 
-今回の出版に当たっての経緯を簡単に紹介。以前からメルマガで連載していたPerl入門記事をまとめてKindle本化したいなーとちょこちょこ手元で電子書籍化してたりしたんですが、おととい、naoyaさんがChef Solo本をKindleで出したのを見て影響され、本腰を入れたという具合です。Kindleダイレクトパブリッシング＝KDPの仕組みを知るためにも、まず出してみようという意気込みだったのですが、案の定諸々と意図しないことが起こったり、また、上記した通りiOSのアプリでは表示がKindle端末と違ったりとバッドノウハウ的なことがありますね。原稿の電子書籍化の行程も含めて後ほど記事にしたいと思います。
-さて、最後にもう一押し本書のアピールをさせていただきますと、メルマガの連載が元という性質上、一つ一つの「固まり」がそれぞれで完結している形になっていて、始めからちょっとずつ読んでコードを書いていくと自然とPerlに近づけるようになっています。学習の際に「キリ」がつけやすいって感じです。また、モジュールやWebアプリの紹介においては僕が楽しい！と思えるようなコード例を記載しているので、共感してもらえれば学習効率は高いでしょう。
-えー、そんなわけでワンコインで読めちゃう「Perlについて語ろう」をぜひともよろしくお願いいたします！</description>
+      <description>プログラミング言語「Perl」の入門書「Perlについて語ろう」をKindle向け電子書籍として出版し販売を開始しました。 Perlについて語ろうposted with amazlet at 13.03.15 和田裕介 (2013-03-13) Amazon.co.jpで</description>
     </item>
     
     <item>
@@ -40,15 +27,7 @@ iPad mini
       <pubDate>Tue, 27 Mar 2012 07:21:00 +0900</pubDate>
       
       <guid>https://yusukebe.com/posts/2012/0322141018/</guid>
-      <description>いつの間にか手元にある「Kindle Touch」。ぐふふ。
- 
-ページめくりがもっさりしているのが気になるけど、軽くて手頃なサイズ感がいい。 今なら円高なんで安く買えるし。 ただ、Kindle Storeで購入する書籍も含めて英語だとなんとなく実感がわかないので、 日本語の文章を読んでみたかった。 というか、自分が最近書いている文章のプレビュー用として使いたかった。
-Markdownで文章を書いているのでMarkdownを変換してKindleに転送して読めばよい。 実は後から知ったんだけどKindleってePubにまだ対応してないのね... ということで色々調べてみると以下の方法がすごくお手軽。
- Markdownを簡単な構造のHTMLに変換する KindleGenを使って.mobi形式に変換する Kindleを繋げてフォルダにぶっこむ  KindleGenっていうのはAmazonがオフィシャルに配布しているePubやHTMLを結構かしこくKindleで読める形式＝.mobiに変換してくれるコマンドラインソフト。
- Kindle Publishing Programs  これにMarkdownからおこしたHTMLをかませればいいということになる。 適当なHTMLを指定しKindleGenを実行するいろいろと警告や情報を出してくれるのでHTMLを作る参考になります。
-気をつけるのは以下の点でした。
- html、bodyタグ等はしっかりつける head内のmeta要素でcharset=utf8とかしないと日本語が文字化ける 画像はローカルにないといけない デフォルトだと特有のCSSが適応されるので簡単なCSSを書く .cssファイルを外部から読み込んでも考慮される  MarkdownをHTML化するために使ったスクリプトはこちら。Markdownファイルを引数に渡すと、 HTML内の画像をtempファイルに置きつつsrc属性を変更、最終的に出来たHTMLを標準出力に吐いてくれる。
- use strict; use warnings; use Text::Markdown qw/markdown/; use Path::Class qw/file/; use Data::Section::Simple qw/get_data_section/; use HTML::TokeParser; use File::Temp qw/tempfile/; use LWP::Simple qw/getstore/; my $filename = $ARGV[0] or die &#34;filename argument required!&#34;; my $file = file($filename); my $content = $file-&amp;gt;slurp; my $html = markdown($content); my $parser = HTML::TokeParser-&amp;gt;new( \$html ); while ( my $token = $parser-&amp;gt;get_tag(&#39;img&#39;) ) { my $src = $token-&amp;gt;[1]{src}; my ($suffix) = $src =~ /.</description>
+      <description>いつの間にか手元にある「Kindle Touch」。ぐふふ。 ページめくりがもっさりしているのが気になるけど、軽くて手頃なサイズ感がいい。 今なら円高なんで安く買えるし。 ただ、Kindle Storeで購入す</description>
     </item>
     
   </channel>

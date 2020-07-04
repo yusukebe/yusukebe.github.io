@@ -2,7 +2,9 @@
 <html>
 <head>
 	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Rubyやってみる！（新おっぱいスクリプトもあるぉ） - ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Rubyやってみる！（新おっぱいスクリプトもあるぉ） - ゆーすけべー日記</title>
+    <meta name="description" content=" 某プロジェクトでRuby on Rails使うっていぅんで「アジャイルWebアプリケーション開発」本なんて買ってチュートリアルとかやってます。ただ、Ruby自体なにも分からないので、Rails覚えてもどれだけできるかがよく分からなす。って" /><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta property="og:title" content="Rubyやってみる！（新おっぱいスクリプトもあるぉ）" />
 <meta property="og:description" content=" 某プロジェクトでRuby on Rails使うっていぅんで「アジャイルWebアプリケーション開発」本なんて買ってチュートリアルとかやってます。ただ、Ruby自体なにも分からないので、Rails覚えてもどれだけできるかがよく分からなす。って" />
 <meta property="og:type" content="article" />
@@ -20,6 +22,7 @@
 	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
 	
 	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+    <script src="//cdn.embedly.com/widgets/platform.js" charset="UTF-8"></script>
 	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 	<script src="https://yusukebe.com/js/main.js"></script>
 	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
@@ -63,7 +66,7 @@
 			<div class="meta">Posted at &mdash; May 20, 2012</div>
 		</div>
 
-		<div class="markdown">
+		<div class="markdown post-body">
 			
 
 <p>某プロジェクトでRuby on Rails使うっていぅんで
@@ -77,11 +80,10 @@
 <p>まずは、Perlで言うLWP的なもの、つまりHTTPクライアントでこの日記のHTMLを取得してみるよー。
 あら、簡単だねっ。</p>
 
-<pre> require "open-uri"
+<pre class="code">require "open-uri"
 
 html = open("http://yusukebe.com/").read;
-p html
- </pre>
+p html</pre>
 
 <h3>twitter-search.rb</h3>
 
@@ -89,7 +91,7 @@ p html
 そこから「ruby」という発言を取ってきて表示させます。
 Perlで言うURIモジュールの「query_form」メソッドが欲しかったので、Addressable::URIを使いましたぉ。</p>
 
-<pre> require "addressable/uri"
+<pre class="code">require "addressable/uri"
 require "open-uri"
 require "json"
 
@@ -99,8 +101,7 @@ json = open(uri).read
 ref = JSON.parse(json)
 ref["results"].each do |tweet|
   puts "@" + tweet["from_user"] + " : " + tweet["text"]
-end
- </pre>
+end</pre>
 
 <h3>sinatra-oauth.rb</h3>
 
@@ -108,7 +109,7 @@ end
 sinatraのsessionを有効にするために「enable :sessions」しなくてはいけないところにハマったけど、
 OAuthとかは、APIのドキュメントをしっかり読めばすぐ出来たよ。</p>
 
-<pre> require "sinatra"
+<pre class="code">require "sinatra"
 require "addressable/uri"
 require "pit"
 require "open-uri"
@@ -171,8 +172,7 @@ Hi, &lt;%= @name %&gt; &lt;br /&gt;
 &lt;a href="/logout"&gt;Logout&lt;/a&gt;
 &lt;% else %&gt;
 &lt;a href="/login"&gt;Login&lt;/a&gt;
-&lt;% end %&gt;
- </pre>
+&lt;% end %&gt;</pre>
 
 <h3>yahoo-oppai.rb</h3>
 
@@ -184,7 +184,7 @@ Tumblrからの画像に絞って検索をかけてるよー。こうするこ�
 
 <p><a href="http://twitter.com/sugamasao">sugamasao</a>さんからツッコミいただきまして、インクリメント的な書き方は count += 1 でおkらしいです！ count = count + 1 とださく書いていたのを修正しておきました。</p>
 
-<pre> # -*- coding: utf-8 -*-
+<pre class="code"># -*- coding: utf-8 -*-
 require "pit"
 require "addressable/uri"
 require "open-uri"
@@ -222,8 +222,7 @@ loop do
     count += 1
   end
   page += 1
-end
- </pre>
+end</pre>
 
 <p>実行すると... 1000枚ほどのおっぱい画像が集まったー！</p>
 
@@ -270,7 +269,7 @@ end
       <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
     </li>
     <li>
-      <span class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2012%2f0520074309%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
+      <span class="fb-share-button"  data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2012%2f0520074309%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
     </li>
     <li>
       <a href="https://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label-counter" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>

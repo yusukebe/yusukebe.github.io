@@ -2,7 +2,9 @@
 <html>
 <head>
 	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>ブログ等に「このページを(Twitterで)つぶやく」ボタンを設定する Twib API - ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>ブログ等に「このページを(Twitterで)つぶやく」ボタンを設定する Twib API - ゆーすけべー日記</title>
+    <meta name="description" content=" Twib API のドキュメントを更新したので、こちらでも解説します。ブログ等のWebページに「このページを(Twitterで)つぶやく」ボタンの簡単な設定が、Twib APIを通してできるようになっています。   http://twib" /><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta property="og:title" content="ブログ等に「このページを(Twitterで)つぶやく」ボタンを設定する Twib API" />
 <meta property="og:description" content=" Twib API のドキュメントを更新したので、こちらでも解説します。ブログ等のWebページに「このページを(Twitterで)つぶやく」ボタンの簡単な設定が、Twib APIを通してできるようになっています。   http://twib" />
 <meta property="og:type" content="article" />
@@ -20,6 +22,7 @@
 	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
 	
 	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+    <script src="//cdn.embedly.com/widgets/platform.js" charset="UTF-8"></script>
 	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 	<script src="https://yusukebe.com/js/main.js"></script>
 	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
@@ -63,7 +66,7 @@
 			<div class="meta">Posted at &mdash; Oct 26, 2009</div>
 		</div>
 
-		<div class="markdown">
+		<div class="markdown post-body">
 			
 
 <p>
@@ -84,14 +87,12 @@ Twib APIを通してできるようになっています。
 <pre class="brush: perl"> &lt;a href="http://twib.jp/share?url=(URLエンコードされた)ページのURL"
 target="_blank" rel="nofollow"&gt;
 &lt;img src="http://twib.jp/static/images/t.gif" alt="このエントリをつぶやく" /&gt;
-&lt;/a&gt;
- </pre>
+&lt;/a&gt;</pre>
 <p>
 MovableTypeの場合「tweet数を表示API」と合わせるとこんなテンプレートになりますね。
 </p>
 <pre class="brush: perl"> &lt;a href="http://twib.jp/share?url= encode_url="1" $&gt;" target="_blank" rel="nofollow"&gt;&lt;img src="http://twib.jp/static/images/t.gif" alt="このエントリをtweet" /&gt;&lt;/a&gt;
-&lt;a href="http://twib.jp/url/"&gt; src="http://image.twib.jp/counter/" alt="このエントリーのtweets" /&gt;&lt;/a&gt;
- </pre>
+&lt;a href="http://twib.jp/url/"&gt; src="http://image.twib.jp/counter/" alt="このエントリーのtweets" /&gt;&lt;/a&gt;</pre>
 <p>
 てなわけで、よろしく！
 </p>
@@ -115,7 +116,7 @@ MovableTypeの場合「tweet数を表示API」と合わせるとこんなテン�
       <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
     </li>
     <li>
-      <span class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2009%2f1026013816%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
+      <span class="fb-share-button"  data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2009%2f1026013816%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
     </li>
     <li>
       <a href="https://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label-counter" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>

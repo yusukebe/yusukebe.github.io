@@ -2,7 +2,9 @@
 <html>
 <head>
 	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Mojolicious 8-Tips - ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Mojolicious 8-Tips - ゆーすけべー日記</title>
+    <meta name="description" content=" 依然としてPerlのWeb Application Framework=WAFは Mojolicious推し です。ボケてほどの大きなトラフィックを集めるようになったサービスでも使っている実績がありますし、自分で使っていてたまにバージョン" /><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta property="og:title" content="Mojolicious 8-Tips" />
 <meta property="og:description" content=" 依然としてPerlのWeb Application Framework=WAFは Mojolicious推し です。ボケてほどの大きなトラフィックを集めるようになったサービスでも使っている実績がありますし、自分で使っていてたまにバージョン" />
 <meta property="og:type" content="article" />
@@ -20,6 +22,7 @@
 	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
 	
 	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+    <script src="//cdn.embedly.com/widgets/platform.js" charset="UTF-8"></script>
 	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 	<script src="https://yusukebe.com/js/main.js"></script>
 	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
@@ -63,7 +66,7 @@
 			<div class="meta">Posted at &mdash; Jun 24, 2013</div>
 		</div>
 
-		<div class="markdown">
+		<div class="markdown post-body">
 			
 
 <p> 依然としてPerlのWeb Application Framework=WAFは <a href="http://yusukebe.com/archives/20120225/081052.html">Mojolicious推し</a> です。ボケてほどの大きなトラフィックを集めるようになったサービスでも使っている実績がありますし、自分で使っていてたまにバージョンアップの互換性で問題が出るくらいで、すっごく困った事が無いので重宝しております。今回は備忘録的な意味も兼ねて、Mojoliciousをある程度使用した時に便利なTips 8個を個人的にまとめてみます。え、何？「Mojoliciousっていったいどういうものなの？」「Mojoliciousって名前を聞いた事があるけれど使った事がないんだけど...」そんな方は9月に開催されるYAPC::Asia 2013で僕が入門チュートリアルな発表をやろうと企んでいるので、そちらへ足を運んでください！ちなみにトークはまだacceptされたわけではないので、以下のページのソーシャルボタンで応援してもらえるといいかもしれません！</p>
@@ -91,7 +94,7 @@
 
 <p>.psgi ファイルをつくって plackup もしくは本番環境ならば starman / starlet で Mojolicious アプリを動かしています。Plack::Middleware::* が使えたりして便利です。こんな感じで .psgi を書けばOK！</p>
 
-<pre> use strict;
+<pre class="code">use strict;
 use FindBin;
 use lib "$FindBin::Bin/lib";
 use Mojo::Server::PSGI;
@@ -103,24 +106,21 @@ my $psgi = Mojo::Server::PSGI-&gt;new( app =&gt; MyApp::Web-&gt;new );
 builder {
     enable "Runtime";
     $psgi-&gt;to_psgi_app;
-};
- </pre>
+};</pre>
 
 <h3>2. ログを出力する</h3>
 
 <p>Controller の中でこうすればログが出力されます。ちなみに開発環境でデフォルトだと「log/development.log」に流れます。</p>
 
-<pre> $self-&gt;app-&gt;log-&gt;warn('Hello, this is warning text.');
- </pre>
+<pre class="code">$self-&gt;app-&gt;log-&gt;warn('Hello, this is warning text.');</pre>
 
 <p>ほらこんな感じ。</p>
 
-<pre> [Mon Jun 24 07:32:24 2013] [debug] GET "/".
+<pre class="code">[Mon Jun 24 07:32:24 2013] [debug] GET "/".
 [Mon Jun 24 07:32:24 2013] [debug] Routing to controller "MyApp::Web::Example" and action "welcome".
 [Mon Jun 24 07:32:24 2013] [warn] Hello, this is warning text.
 [Mon Jun 24 07:32:24 2013] [debug] Rendering template "example/welcome.html.ep".
-[Mon Jun 24 07:32:24 2013] [debug] Rendering template "layouts/default.html.ep".
- </pre>
+[Mon Jun 24 07:32:24 2013] [debug] Rendering template "layouts/default.html.ep".</pre>
 
 <p>Mojo::Log のPODを見れば分かる通りログレベルには以下があります。</p>
 
@@ -137,20 +137,18 @@ builder {
 
 <p>よく使うルーティンを helper メソッドとして生やしておくと何かと役に立ちます。例えば、数字をカンマ付きで表示したい時があります。「10000」という数字だったら「10,000 」になって欲しいですね。今回のプロジェクトの場合ならば「MyApp::Web」のstartupメソッド内で以下のように実装することで「comma」helperメソッドが出来上がります。</p>
 
-<pre> $self-&gt;helper(
+<pre class="code">$self-&gt;helper(
     comma =&gt; sub {
         my $text = $_[1];
         $text = reverse $text;
         $text =~ s/(\d\d\d)(?=\d)(?!\d\.)/$1,/g;
         return scalar reverse $text;
     }
-);
- </pre>
+);</pre>
 
 <p>これはテンプレート内でも使えるので、</p>
 
-<pre> &lt;%= comma(10000) %&gt;
- </pre>
+<pre class="code">&lt;%= comma(10000) %&gt;</pre>
 
 <p>と記述すれば、レンダリング後「10,000」と表示されます。</p>
 
@@ -158,13 +156,12 @@ builder {
 
 <p>Mojoliciousのルータ記述は「DELETE」「PUT」メソッドにも対応しています。つまり</p>
 
-<pre> $r-&gt;get('/entry/:post_id')-&gt;to('entry#show');
-$r-&gt;delete('/entry/:post_id')-&gt;to('entry#delete');
- </pre>
+<pre class="code">$r-&gt;get('/entry/:post_id')-&gt;to('entry#show');
+$r-&gt;delete('/entry/:post_id')-&gt;to('entry#delete');</pre>
 
 <p>なんて書けるのです。ただ、ご存知の通りブラウザがDELETE/PUTに対応していないケースがほとんど。そこでPUTメソッドのリクエストでかつ「_method」パラメータに指定するメソッド名が入っていた場合にDELETEメソッドなどを使うっていう仕様にしてみると以下のようにhookのbefore_dispatch内でルータのdeleteメソッドが使えるようになります。</p>
 
-<pre> $self-&gt;hook(
+<pre class="code">$self-&gt;hook(
     before_dispatch =&gt; sub {
         my $c = shift;
         my $_method = $c-&gt;req-&gt;param('_method');
@@ -175,22 +172,20 @@ $r-&gt;delete('/entry/:post_id')-&gt;to('entry#delete');
             }
         }
     }
-);
- </pre>
+);</pre>
 
 <h3>5. テンプレートディレクトリパスを追加する</h3>
 
 <p>プロジェクト直下の「templates」ディレクトリがテンプレートを置く場所としてデフォルトなのですが、追加することが出来ます。</p>
 
-<pre> unshift @{$self-&gt;app-&gt;renderer-&gt;paths},
-     File::Spec-&gt;catfile(Bokete-&gt;base_dir, 'templates/others');
- </pre>
+<pre class="code">unshift @{$self-&gt;app-&gt;renderer-&gt;paths},
+     File::Spec-&gt;catfile(Bokete-&gt;base_dir, 'templates/others');</pre>
 
 <h3>6. モデルへのアクセス</h3>
 
 <p>Model は特にMojo::Baseなどは使わずMouseを使って「MyApp::Model::*」な名前空間に置いてあります。さてそれをControllerなどから呼び出す場合なんだけど、これまたhelperを活用しています。と、その前にモデルローダーをつくります。こんな感じ。</p>
 
-<pre> package MyApp::Model;
+<pre class="code">package MyApp::Model;
 use Mouse;
 use Plack::Util;
 
@@ -214,24 +209,21 @@ sub load {
     return $instance;
 }
 
-1;
- </pre>
+1;</pre>
 
 <p>そしてMyApp::Webのstartupメソッド内にhelperを定義します。</p>
 
-<pre> use MyApp::Model;
+<pre class="code">use MyApp::Model;
 $self-&gt;helper(
     model =&gt; sub {
         my ($self, $name) = @_;
         MyApp::Model-&gt;new-&gt;load($name);
     }
-);
- </pre>
+);</pre>
 
 <p>これでControllerから</p>
 
-<pre> my $entries = $self-&gt;model('Entry')-&gt;get_entries();
- </pre>
+<pre class="code">my $entries = $self-&gt;model('Entry')-&gt;get_entries();</pre>
 
 <p>と呼べるし、モデルインスタンスはキャッシュされます。</p>
 
@@ -239,26 +231,23 @@ $self-&gt;helper(
 
 <p>あまり変更の無いサイドバー部分などをレンダリングしたHTMLごとmemcachedなどにキャッシュさせておいてそれを都度利用すると速いです。</p>
 
-<pre> my $html = $self-&gt;render( template =&gt; 'template_name', partial =&gt; 1 );
- </pre>
+<pre class="code">my $html = $self-&gt;render( template =&gt; 'template_name', partial =&gt; 1 );</pre>
 
 <p>Controllerの render メソッドに partial=&gt;1 を渡すとHTMLがそのまま取れます。</p>
 
-<pre> if(my $html = $self-&gt;cache-&gt;get('right_container_html')) {
+<pre class="code">if(my $html = $self-&gt;cache-&gt;get('right_container_html')) {
     $self-&gt;stash-&gt;{right_container_html} = $html;
-}
- </pre>
+}</pre>
 
 <p>もしキャッシュにhtmlがあったらstash経由で渡してテンプレートで描画します。</p>
 
-<pre> &lt;%== $self-&gt;stash-&gt;{right_container_html} %&gt; 
- </pre>
+<pre class="code">&lt;%== $self-&gt;stash-&gt;{right_container_html} %&gt;</pre>
 
 <h3>8. Basic認証をアプリ内で実装する</h3>
 
 <p>Basic認証を実現するにはnginxなどのフロントに置いたサーバで処理するか、Plack::Middleware::Auth::Basicを利用する手がありますが、Mojoliciousアプリ内で動的にユーザー名、パスワードを指定したかったりする時がありました。そこでhelperに以下を記述。</p>
 
-<pre> $self-&gt;helper(
+<pre class="code">$self-&gt;helper(
     basic_auth =&gt; sub {
         my ($c, $u, $p) = @_;
         my $realm = 'restricted area.';
@@ -276,16 +265,14 @@ $self-&gt;helper(
         }
         return $unauthorized;
     }
-);
- </pre>
+);</pre>
 
 <p>Controllerではこのようにします。</p>
 
-<pre> my $username = 'username';
+<pre class="code">my $username = 'username';
 my $password = 'password';
 my $ref = $self-&gt;basic_auth($username, $password);
-return &amp;$ref() if ref $ref eq 'CODE';
- </pre>
+return &amp;$ref() if ref $ref eq 'CODE';</pre>
 
 <p>これでBasic認証をMojoliciousアプリ内で実現出来ます。</p>
 
@@ -331,7 +318,7 @@ return &amp;$ref() if ref $ref eq 'CODE';
       <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
     </li>
     <li>
-      <span class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2013%2f0623234219%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
+      <span class="fb-share-button"  data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2013%2f0623234219%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
     </li>
     <li>
       <a href="https://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label-counter" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>

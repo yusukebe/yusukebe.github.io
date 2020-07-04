@@ -2,16 +2,11 @@
 <html>
 <head>
 	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>RakuのType CheckとGradual Typingについて - ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>RakuのType CheckとGradual Typingについて - ゆーすけべー日記</title>
+    <meta name="description" content="YAPC::Kyoto のタイムテーブルが発表された。 Raku(Perl6)初心者のNativeCallを使った全文検索ライブラリー作成日記 を聞きたいな〜と思ったら、 裏がマコピーの かんたん静的型付けPerlへの道のり だった" /><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta property="og:title" content="RakuのType CheckとGradual Typingについて" />
-<meta property="og:description" content="YAPC::Kyoto のタイムテーブルが発表された。 Raku(Perl6)初心者のNativeCallを使った全文検索ライブラリー作成日記 を聞きたいな〜と思ったら、 裏がマコピーの かんたん静的型付けPerlへの道のり だった。 マコピーのトークも気になる〜〜〜ってなって、とあるところでこうつぶやいた。
- Rakuで型付けできるじゃんとか思いつつ「Perlをパースして型を抜き出す」これ面白そう、とかなる
- でも、Raku（Perl 6）の型付けについてイマイチ理解が足りない。 さらに、Type Check=型チェックについて、どういう場合に、 どこで、どんなエラーを吐くかが分かってなかったのでインターネットアイドルさんの 力を借りつつ調べてみた。
-追記 以下の点について、教えてもらってスッキリした。
- Typingと型チェックは別の概念  静的型付けや漸進的型付けであるのと、どういう風に型チェックするかどうかは別で考える   Rakuは静的型付けで記述でき、後述するように型チェックの機能が備わっている  ただし、エラーを吐くのがコンパイル時 or 実行時かは実装に関わる my Int $i := &#39;foo&#39;でコンパイルエラーが出ないのは、単にまだ実装しきれてない or なんらかの深い理由があってのことだろう    RakuはGradual Typingな言語 まずRakuの型付けの性質について。 Rakuは、Javaのような静的型付けの側面も持ちつつ、動的型付けの利点がある Gradual Typing=漸進的型付けを持つ（だと思う）。漸進的型付けについては以下の記事がすごく面白いです。
- What is Gradual Typing: 漸進的型付けとは何か - Qiita  RakuはGradual Typingだぜ！って言ってる人は他にもいる。
- Perl 6 gradual typing FTW! Perl 6 Types: Made for Humans | Zoffix Znet blogs.perl.org Calling subs and typing in Perl 6 | Opensource.com  型チェックの例 Perl 5は動的型付けな言語（ライブラリを使って漸進的型付けっぽくすることもできる）なので、 sub funcで定義したサブルーチンの引数にIntを期待したいけど、 それを表現することはできなくて、以下のコードはそのままfooと印字する。
-use v5.10; sub func { my $i = shift; say $i; } func(&#39;foo&#39;); まぁ当たり前なんだけど、これをRakuでやろうとするとシグネチャーを付けてこうなる。" />
+<meta property="og:description" content="YAPC::Kyoto のタイムテーブルが発表された。 Raku(Perl6)初心者のNativeCallを使った全文検索ライブラリー作成日記 を聞きたいな〜と思ったら、 裏がマコピーの かんたん静的型付けPerlへの道のり だった" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://yusukebe.com/posts/2020/raku-typecheck/" />
 <meta property="og:image" content="https://live.staticflickr.com/65535/49421230586_07f3e9315d_c_d.jpg" />
@@ -21,19 +16,13 @@ use v5.10; sub func { my $i = shift; say $i; } func(&#39;foo&#39;); まぁ当た
 <meta name="twitter:image" content="https://live.staticflickr.com/65535/49421230586_07f3e9315d_c_d.jpg"/>
 
 <meta name="twitter:title" content="RakuのType CheckとGradual Typingについて"/>
-<meta name="twitter:description" content="YAPC::Kyoto のタイムテーブルが発表された。 Raku(Perl6)初心者のNativeCallを使った全文検索ライブラリー作成日記 を聞きたいな〜と思ったら、 裏がマコピーの かんたん静的型付けPerlへの道のり だった。 マコピーのトークも気になる〜〜〜ってなって、とあるところでこうつぶやいた。
- Rakuで型付けできるじゃんとか思いつつ「Perlをパースして型を抜き出す」これ面白そう、とかなる
- でも、Raku（Perl 6）の型付けについてイマイチ理解が足りない。 さらに、Type Check=型チェックについて、どういう場合に、 どこで、どんなエラーを吐くかが分かってなかったのでインターネットアイドルさんの 力を借りつつ調べてみた。
-追記 以下の点について、教えてもらってスッキリした。
- Typingと型チェックは別の概念  静的型付けや漸進的型付けであるのと、どういう風に型チェックするかどうかは別で考える   Rakuは静的型付けで記述でき、後述するように型チェックの機能が備わっている  ただし、エラーを吐くのがコンパイル時 or 実行時かは実装に関わる my Int $i := &#39;foo&#39;でコンパイルエラーが出ないのは、単にまだ実装しきれてない or なんらかの深い理由があってのことだろう    RakuはGradual Typingな言語 まずRakuの型付けの性質について。 Rakuは、Javaのような静的型付けの側面も持ちつつ、動的型付けの利点がある Gradual Typing=漸進的型付けを持つ（だと思う）。漸進的型付けについては以下の記事がすごく面白いです。
- What is Gradual Typing: 漸進的型付けとは何か - Qiita  RakuはGradual Typingだぜ！って言ってる人は他にもいる。
- Perl 6 gradual typing FTW! Perl 6 Types: Made for Humans | Zoffix Znet blogs.perl.org Calling subs and typing in Perl 6 | Opensource.com  型チェックの例 Perl 5は動的型付けな言語（ライブラリを使って漸進的型付けっぽくすることもできる）なので、 sub funcで定義したサブルーチンの引数にIntを期待したいけど、 それを表現することはできなくて、以下のコードはそのままfooと印字する。
-use v5.10; sub func { my $i = shift; say $i; } func(&#39;foo&#39;); まぁ当たり前なんだけど、これをRakuでやろうとするとシグネチャーを付けてこうなる。"/>
+<meta name="twitter:description" content="YAPC::Kyoto のタイムテーブルが発表された。 Raku(Perl6)初心者のNativeCallを使った全文検索ライブラリー作成日記 を聞きたいな〜と思ったら、 裏がマコピーの かんたん静的型付けPerlへの道のり だった"/>
 <link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
 	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
 	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
 	
 	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+    <script src="//cdn.embedly.com/widgets/platform.js" charset="UTF-8"></script>
 	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 	<script src="https://yusukebe.com/js/main.js"></script>
 	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
@@ -77,7 +66,7 @@ use v5.10; sub func { my $i = shift; say $i; } func(&#39;foo&#39;); まぁ当た
 			<div class="meta">Posted at &mdash; Jan 22, 2020</div>
 		</div>
 
-		<div class="markdown">
+		<div class="markdown post-body">
 			<p><a href="https://yapcjapan.org/2020kyoto/">YAPC::Kyoto</a>
 のタイムテーブルが発表された。
 <a href="https://yapcjapan.org/2020kyoto/timetable.html#/detail/27">Raku(Perl6)初心者のNativeCallを使った全文検索ライブラリー作成日記</a>
@@ -128,17 +117,17 @@ Gradual Typing=漸進的型付けを持つ（だと思う）。漸進的型付�
 <div class="highlight"><pre class="chroma"><code class="language-perl" data-lang="perl"><span class="k">use</span> <span class="nn">v5</span><span class="mf">.10</span><span class="p">;</span>
 
 <span class="k">sub</span> <span class="nf">func</span> <span class="p">{</span>
-    <span class="k">my</span> <span class="nv">$</span><span class="nv">i</span> <span class="o">=</span> <span class="nb">shift</span><span class="p">;</span>
-    <span class="n"></span><span class="n">say</span> <span class="nv">$</span><span class="nv">i</span><span class="p">;</span>
+    <span class="k">my</span> <span class="nv">$i</span> <span class="o">=</span> <span class="nb">shift</span><span class="p">;</span>
+    <span class="n">say</span> <span class="nv">$i</span><span class="p">;</span>
 <span class="p">}</span>
-<span class="n"></span><span class="n">func</span><span class="p">(</span><span class="s">&#39;foo&#39;</span><span class="p">)</span><span class="p">;</span>
+<span class="n">func</span><span class="p">(</span><span class="s">&#39;foo&#39;</span><span class="p">);</span>
 </code></pre></div><p>まぁ当たり前なんだけど、これをRakuでやろうとするとシグネチャーを付けてこうなる。</p>
 <div class="highlight"><pre class="chroma"><code class="language-perl" data-lang="perl"><span class="k">use</span> <span class="nn">v6</span><span class="p">;</span>
 
 <span class="k">sub</span> <span class="nf">func</span><span class="p">( Int $i ) {</span>
-    <span class="n"></span><span class="n">say</span> <span class="nv">$</span><span class="nv">i</span><span class="p">;</span>
+    <span class="n">say</span> <span class="nv">$i</span><span class="p">;</span>
 <span class="p">}</span>
-<span class="n"></span><span class="n">func</span><span class="p">(</span><span class="s">&#39;foo&#39;</span><span class="p">)</span><span class="p">;</span>
+<span class="n">func</span><span class="p">(</span><span class="s">&#39;foo&#39;</span><span class="p">);</span>
 </code></pre></div><p>実行しようとするとコンパイルエラーになる。</p>
 <p><img src="https://live.staticflickr.com/65535/49421230586_07f3e9315d_c_d.jpg" alt="Raku Type Check Error"></p>
 <p>エラーメッセージが色付けされてていい感じ！</p>
@@ -158,51 +147,51 @@ Gradual Typing=漸進的型付けを持つ（だと思う）。漸進的型付�
 <p>で、どういう場合に型チェックでどんなエラーが出るのかをいくか試してみた。
 これらは</p>
 <div class="highlight"><pre class="chroma"><code class="language-perl" data-lang="perl"><span class="c1"># 実行時エラーが出るコード</span>
-<span class="n"></span><span class="n">CATCH</span> <span class="p">{</span> <span class="n"></span><span class="n">default</span> <span class="p">{</span> <span class="n"></span><span class="n">put</span> <span class="o">.</span><span class="o">^</span><span class="n"></span><span class="n">name</span><span class="p">,</span> <span class="s">&#39;: &#39;</span><span class="p">,</span> <span class="o">.</span><span class="n"></span><span class="n">Str</span> <span class="p">}</span> <span class="p">}</span><span class="p">;</span>
+<span class="n">CATCH</span> <span class="p">{</span> <span class="n">default</span> <span class="p">{</span> <span class="n">put</span> <span class="o">.^</span><span class="n">name</span><span class="p">,</span> <span class="s">&#39;: &#39;</span><span class="p">,</span> <span class="o">.</span><span class="n">Str</span> <span class="p">}</span> <span class="p">};</span>
 </code></pre></div><p>とすれば、例外の名前とメッセージをみることができる。</p>
 <h3 id="xtypecheckassignment">X::TypeCheck::Assignment</h3>
 <p>型宣言した変数に異なる型の値を代入しようとした時に発生する。</p>
-<div class="highlight"><pre class="chroma"><code class="language-perl" data-lang="perl"><span class="k">my</span> <span class="n"></span><span class="n">Int</span> <span class="nv">$</span><span class="nv">i</span> <span class="o">=</span> <span class="s">&#34;foo&#34;</span><span class="p">;</span>
-<span class="n"></span><span class="n">CATCH</span> <span class="p">{</span> <span class="n"></span><span class="n">default</span> <span class="p">{</span> <span class="n"></span><span class="n">put</span> <span class="o">.</span><span class="o">^</span><span class="n"></span><span class="n">name</span><span class="p">,</span> <span class="s">&#39;: &#39;</span><span class="p">,</span> <span class="o">.</span><span class="n"></span><span class="n">Str</span> <span class="p">}</span> <span class="p">}</span><span class="p">;</span>
+<div class="highlight"><pre class="chroma"><code class="language-perl" data-lang="perl"><span class="k">my</span> <span class="n">Int</span> <span class="nv">$i</span> <span class="o">=</span> <span class="s">&#34;foo&#34;</span><span class="p">;</span>
+<span class="n">CATCH</span> <span class="p">{</span> <span class="n">default</span> <span class="p">{</span> <span class="n">put</span> <span class="o">.^</span><span class="n">name</span><span class="p">,</span> <span class="s">&#39;: &#39;</span><span class="p">,</span> <span class="o">.</span><span class="n">Str</span> <span class="p">}</span> <span class="p">};</span>
 <span class="c1"># X::TypeCheck::Assignment: Type check failed in assignment to $i; expected Int but got Str (&#34;foo&#34;)</span>
 </code></pre></div><h3 id="xtypecheckreturn">X::TypeCheck::Return</h3>
 <p>サブルーチンの返り値が期待する型ではない時に発生する。</p>
 <div class="highlight"><pre class="chroma"><code class="language-perl" data-lang="perl"><span class="k">sub</span> <span class="nf">func</span><span class="p">( --&gt; Int ) {</span>
     <span class="k">return</span> <span class="s">&#39;foo&#39;</span><span class="p">;</span>
 <span class="p">}</span>
-<span class="n"></span><span class="n">func</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
-<span class="n"></span><span class="n">CATCH</span> <span class="p">{</span> <span class="n"></span><span class="n">default</span> <span class="p">{</span> <span class="n"></span><span class="n">put</span> <span class="o">.</span><span class="o">^</span><span class="n"></span><span class="n">name</span><span class="p">,</span> <span class="s">&#39;: &#39;</span><span class="p">,</span> <span class="o">.</span><span class="n"></span><span class="n">Str</span> <span class="p">}</span> <span class="p">}</span><span class="p">;</span>
+<span class="n">func</span><span class="p">();</span>
+<span class="n">CATCH</span> <span class="p">{</span> <span class="n">default</span> <span class="p">{</span> <span class="n">put</span> <span class="o">.^</span><span class="n">name</span><span class="p">,</span> <span class="s">&#39;: &#39;</span><span class="p">,</span> <span class="o">.</span><span class="n">Str</span> <span class="p">}</span> <span class="p">};</span>
 <span class="c1"># X::TypeCheck::Return: Type check failed for return value; expected Int but got Str (&#34;foo&#34;)</span>
 </code></pre></div><h3 id="xtypecheckbinding">X::TypeCheck::Binding</h3>
 <p>指定した型以外の値をバインドしようとした時に発生する。</p>
-<div class="highlight"><pre class="chroma"><code class="language-perl" data-lang="perl"><span class="k">my</span> <span class="n"></span><span class="n">Int</span> <span class="nv">$</span><span class="nv">i</span> <span class="p">:</span><span class="o">=</span> <span class="s">&#34;foo&#34;</span><span class="p">;</span>
-<span class="n"></span><span class="n">CATCH</span> <span class="p">{</span> <span class="n"></span><span class="n">default</span> <span class="p">{</span> <span class="n"></span><span class="n">put</span> <span class="o">.</span><span class="o">^</span><span class="n"></span><span class="n">name</span><span class="p">,</span> <span class="s">&#39;: &#39;</span><span class="p">,</span> <span class="o">.</span><span class="n"></span><span class="n">Str</span> <span class="p">}</span> <span class="p">}</span><span class="p">;</span>
+<div class="highlight"><pre class="chroma"><code class="language-perl" data-lang="perl"><span class="k">my</span> <span class="n">Int</span> <span class="nv">$i</span> <span class="p">:</span><span class="o">=</span> <span class="s">&#34;foo&#34;</span><span class="p">;</span>
+<span class="n">CATCH</span> <span class="p">{</span> <span class="n">default</span> <span class="p">{</span> <span class="n">put</span> <span class="o">.^</span><span class="n">name</span><span class="p">,</span> <span class="s">&#39;: &#39;</span><span class="p">,</span> <span class="o">.</span><span class="n">Str</span> <span class="p">}</span> <span class="p">};</span>
 <span class="c1"># X::TypeCheck::Binding: Type check failed in binding; expected Int but got Str (&#34;foo&#34;)</span>
 </code></pre></div><h3 id="xtypecheckbindingparameter">X::TypeCheck::Binding::Parameter</h3>
 <p>クラス内メソッドの引数が期待する型と異なる場合に発生する。</p>
-<div class="highlight"><pre class="chroma"><code class="language-perl" data-lang="perl"><span class="n"></span><span class="n">class</span> <span class="n"></span><span class="n">A</span> <span class="p">{</span>
-    <span class="n"></span><span class="n">method</span> <span class="n"></span><span class="n">func</span><span class="p">(</span> <span class="n"></span><span class="n">Int</span> <span class="nv">$</span><span class="nv">i</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n"></span><span class="n">say</span> <span class="nv">$</span><span class="nv">i</span><span class="p">;</span>
+<div class="highlight"><pre class="chroma"><code class="language-perl" data-lang="perl"><span class="n">class</span> <span class="n">A</span> <span class="p">{</span>
+    <span class="n">method</span> <span class="n">func</span><span class="p">(</span> <span class="n">Int</span> <span class="nv">$i</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">say</span> <span class="nv">$i</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="p">}</span>
-<span class="n"></span><span class="n">A</span><span class="o">.</span><span class="k">new</span><span class="o">.</span><span class="n"></span><span class="n">func</span><span class="p">(</span><span class="s">&#39;foo&#39;</span><span class="p">)</span><span class="p">;</span>
-<span class="n"></span><span class="n">CATCH</span> <span class="p">{</span> <span class="n"></span><span class="n">default</span> <span class="p">{</span> <span class="n"></span><span class="n">put</span> <span class="o">.</span><span class="o">^</span><span class="n"></span><span class="n">name</span><span class="p">,</span> <span class="s">&#39;: &#39;</span><span class="p">,</span> <span class="o">.</span><span class="n"></span><span class="n">Str</span> <span class="p">}</span> <span class="p">}</span><span class="p">;</span>
+<span class="n">A</span><span class="o">.</span><span class="k">new</span><span class="o">.</span><span class="n">func</span><span class="p">(</span><span class="s">&#39;foo&#39;</span><span class="p">);</span>
+<span class="n">CATCH</span> <span class="p">{</span> <span class="n">default</span> <span class="p">{</span> <span class="n">put</span> <span class="o">.^</span><span class="n">name</span><span class="p">,</span> <span class="s">&#39;: &#39;</span><span class="p">,</span> <span class="o">.</span><span class="n">Str</span> <span class="p">}</span> <span class="p">};</span>
 <span class="c1"># X::TypeCheck::Binding::Parameter: Type check failed in binding to parameter &#39;$i&#39;; expected Int but got Str (&#34;foo&#34;)</span>
 </code></pre></div><h3 id="xtypecheckassignment-1">X::TypeCheck::Assignment</h3>
 <p>クラス内のプロパティの値が期待する型と異なる場合に発生する。</p>
-<div class="highlight"><pre class="chroma"><code class="language-perl" data-lang="perl"><span class="n"></span><span class="n">class</span> <span class="n"></span><span class="n">A</span> <span class="p">{</span>
-    <span class="n"></span><span class="n">has</span> <span class="n"></span><span class="n">Int</span> <span class="nv">$</span><span class="err">.</span><span class="nv">i</span><span class="p">;</span>
+<div class="highlight"><pre class="chroma"><code class="language-perl" data-lang="perl"><span class="n">class</span> <span class="n">A</span> <span class="p">{</span>
+    <span class="n">has</span> <span class="n">Int</span> <span class="nv">$</span><span class="err">.</span><span class="nv">i</span><span class="p">;</span>
 <span class="p">}</span>
-<span class="n"></span><span class="n">A</span><span class="o">.</span><span class="k">new</span><span class="p">(</span> <span class="n"></span><span class="n">i</span> <span class="o">=</span><span class="o">&gt;</span> <span class="s">&#39;foo&#39;</span> <span class="p">)</span><span class="p">;</span>
-<span class="n"></span><span class="n">CATCH</span> <span class="p">{</span> <span class="n"></span><span class="n">default</span> <span class="p">{</span> <span class="n"></span><span class="n">put</span> <span class="o">.</span><span class="o">^</span><span class="n"></span><span class="n">name</span><span class="p">,</span> <span class="s">&#39;: &#39;</span><span class="p">,</span> <span class="o">.</span><span class="n"></span><span class="n">Str</span> <span class="p">}</span> <span class="p">}</span><span class="p">;</span>
+<span class="n">A</span><span class="o">.</span><span class="k">new</span><span class="p">(</span> <span class="n">i</span> <span class="o">=&gt;</span> <span class="s">&#39;foo&#39;</span> <span class="p">);</span>
+<span class="n">CATCH</span> <span class="p">{</span> <span class="n">default</span> <span class="p">{</span> <span class="n">put</span> <span class="o">.^</span><span class="n">name</span><span class="p">,</span> <span class="s">&#39;: &#39;</span><span class="p">,</span> <span class="o">.</span><span class="n">Str</span> <span class="p">}</span> <span class="p">};</span>
 <span class="c1"># X::TypeCheck::Assignment: Type check failed in assignment to $!i; expected Int but got Str (&#34;foo&#34;)</span>
 </code></pre></div><h3 id="xtypecheckargument">X::TypeCheck::Argument</h3>
 <p>サブルーチンの引数が期待する型と異なる場合に発生する。</p>
 <div class="highlight"><pre class="chroma"><code class="language-perl" data-lang="perl"><span class="k">sub</span> <span class="nf">func</span><span class="p">( Int $i ) {</span>
-     <span class="n"></span><span class="n">say</span> <span class="nv">$</span><span class="nv">i</span><span class="p">;</span>
+     <span class="n">say</span> <span class="nv">$i</span><span class="p">;</span>
 <span class="p">}</span>
-<span class="n"></span><span class="n">func</span><span class="p">(</span><span class="s">&#39;foo&#39;</span><span class="p">)</span><span class="p">;</span>
-<span class="n"></span><span class="n">CATCH</span> <span class="p">{</span> <span class="n"></span><span class="n">default</span> <span class="p">{</span> <span class="n"></span><span class="n">put</span> <span class="o">.</span><span class="o">^</span><span class="n"></span><span class="n">name</span><span class="p">,</span> <span class="s">&#39;: &#39;</span><span class="p">,</span> <span class="o">.</span><span class="n"></span><span class="n">Str</span> <span class="p">}</span> <span class="p">}</span><span class="p">;</span>
+<span class="n">func</span><span class="p">(</span><span class="s">&#39;foo&#39;</span><span class="p">);</span>
+<span class="n">CATCH</span> <span class="p">{</span> <span class="n">default</span> <span class="p">{</span> <span class="n">put</span> <span class="o">.^</span><span class="n">name</span><span class="p">,</span> <span class="s">&#39;: &#39;</span><span class="p">,</span> <span class="o">.</span><span class="n">Str</span> <span class="p">}</span> <span class="p">};</span>
 </code></pre></div><p><strong>で</strong>、これだけコンパイルエラーになる。</p>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">===SORRY!=== Error while compiling type.p6
 Calling func(Str) will never work with declared signature (Int $i)
@@ -211,22 +200,22 @@ at type.p6:19
 </code></pre></div><h2 id="ちなみにロール周りのエラー">ちなみに、ロール周りのエラー</h2>
 <p>ロール周りでわりとコンパイル時にエラーを吐いてくれて、イケてる。</p>
 <p>例えば、複数のロールを実装した場合にメソッドが被ってしまった時は以下の通り。</p>
-<div class="highlight"><pre class="chroma"><code class="language-perl" data-lang="perl"><span class="n"></span><span class="n">role</span> <span class="n"></span><span class="n">A</span> <span class="p">{</span>
-    <span class="n"></span><span class="n">method</span> <span class="n"></span><span class="n">func</span><span class="p">(</span><span class="p">)</span> <span class="p">{</span><span class="p">}</span>
+<div class="highlight"><pre class="chroma"><code class="language-perl" data-lang="perl"><span class="n">role</span> <span class="n">A</span> <span class="p">{</span>
+    <span class="n">method</span> <span class="n">func</span><span class="p">()</span> <span class="p">{}</span>
 <span class="p">}</span>
 
-<span class="n"></span><span class="n">role</span> <span class="n"></span><span class="n">B</span> <span class="p">{</span>
-    <span class="n"></span><span class="n">method</span> <span class="n"></span><span class="n">func</span><span class="p">(</span><span class="p">)</span> <span class="p">{</span><span class="p">}</span>
+<span class="n">role</span> <span class="n">B</span> <span class="p">{</span>
+    <span class="n">method</span> <span class="n">func</span><span class="p">()</span> <span class="p">{}</span>
 <span class="p">}</span>
 
-<span class="n"></span><span class="n">class</span> <span class="n"></span><span class="n">C</span> <span class="n"></span><span class="n">does</span> <span class="n"></span><span class="n">A</span> <span class="n"></span><span class="n">does</span> <span class="n"></span><span class="n">B</span> <span class="p">{</span><span class="p">}</span>
+<span class="n">class</span> <span class="n">C</span> <span class="n">does</span> <span class="n">A</span> <span class="n">does</span> <span class="n">B</span> <span class="p">{}</span>
 </code></pre></div><p><img src="https://live.staticflickr.com/65535/49421546071_eb5365f5eb_c_d.jpg" alt="Roleエラー"></p>
 <p><code>stub</code>で定義したメソッドを実装しない場合。</p>
-<div class="highlight"><pre class="chroma"><code class="language-perl" data-lang="perl"><span class="n"></span><span class="n">role</span> <span class="n"></span><span class="n">A</span> <span class="p">{</span>
-    <span class="n"></span><span class="n">method</span> <span class="n"></span><span class="n">func</span><span class="p">(</span><span class="p">)</span> <span class="p">{</span> <span class="o">!</span><span class="o">!</span><span class="o">!</span> <span class="p">}</span>
+<div class="highlight"><pre class="chroma"><code class="language-perl" data-lang="perl"><span class="n">role</span> <span class="n">A</span> <span class="p">{</span>
+    <span class="n">method</span> <span class="n">func</span><span class="p">()</span> <span class="p">{</span> <span class="o">!!!</span> <span class="p">}</span>
 <span class="p">}</span>
 
-<span class="n"></span><span class="n">class</span> <span class="n"></span><span class="n">C</span> <span class="n"></span><span class="n">does</span> <span class="n"></span><span class="n">A</span> <span class="p">{</span><span class="p">}</span>
+<span class="n">class</span> <span class="n">C</span> <span class="n">does</span> <span class="n">A</span> <span class="p">{}</span>
 </code></pre></div><p><img src="https://live.staticflickr.com/65535/49421546036_9a0a31f5a4_c_d.jpg" alt="Roleエラー"></p>
 <h2 id="まとめる">まとめる</h2>
 <p>以上、漸進的型付けなRakuではコンパイル時もしくは実行時に型チェックが走り、
@@ -278,7 +267,7 @@ Perl 5でどのように実現するのかが気になるところだが、
       <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
     </li>
     <li>
-      <span class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2020%2fraku-typecheck%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
+      <span class="fb-share-button"  data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2020%2fraku-typecheck%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
     </li>
     <li>
       <a href="https://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label-counter" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>
@@ -315,6 +304,10 @@ Perl 5でどのように実現するのかが気になるところだが、
     <a href="https://yusukebe.com/posts/2020/do-you-know-pornhub/" class="page-link" aria-label="Previous"><span aria-hidden="true">← 君はPornhubを知っているか</span></a>
   </li>
   
+  
+  <li class="page-item page-next">
+    <a href="https://yusukebe.com/posts/2020/python-dmm/" class="page-link" aria-label="Next"><span aria-hidden="true">Pythonでメロディー・雛・マークスを出す →</span></a>
+  </li>
   
 </ul>
 

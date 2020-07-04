@@ -2,7 +2,9 @@
 <html>
 <head>
 	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>データ表現についてわかった瞬間 - ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>データ表現についてわかった瞬間 - ゆーすけべー日記</title>
+    <meta name="description" content=" データの表現と操作  Webサービス等に必要な言語取得についてです。プログラミング言語を勉強しようという時にデータの表現方法を把握した瞬間に、「パッ」とその言語に対する理解が明るくなった気がします。  プログラミングは、抽象的に言えば、目" /><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta property="og:title" content="データ表現についてわかった瞬間" />
 <meta property="og:description" content=" データの表現と操作  Webサービス等に必要な言語取得についてです。プログラミング言語を勉強しようという時にデータの表現方法を把握した瞬間に、「パッ」とその言語に対する理解が明るくなった気がします。  プログラミングは、抽象的に言えば、目" />
 <meta property="og:type" content="article" />
@@ -20,6 +22,7 @@
 	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
 	
 	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+    <script src="//cdn.embedly.com/widgets/platform.js" charset="UTF-8"></script>
 	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 	<script src="https://yusukebe.com/js/main.js"></script>
 	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
@@ -63,7 +66,7 @@
 			<div class="meta">Posted at &mdash; Feb 23, 2012</div>
 		</div>
 
-		<div class="markdown">
+		<div class="markdown post-body">
 			
 
 <h4>データの表現と操作</h4>
@@ -86,19 +89,17 @@
 <p>実例を見た方が早いと思います。
 この足し算プログラムをエラー処理とかすっ飛ばして分かりやすいPerlのコードにするとこのようになります。</p>
 
-<pre> use strict; #おまじない
+<pre class="code">use strict; #おまじない
 use warnings; #おまじない
 
 my $number1 = $ARGV[0]; #第1引数を変数に入れる
 my $number2 = $ARGV[1]; #第2引数を変数に入れる
 my $result  = $number1 + $number2;  #結果に入れる
-print "Result: $result\n";
- </pre>
+print "Result: $result\n";</pre>
 
 <p>「sum.pl」などのファイル名で保存して、ターミナルから以下のように実行します。</p>
 
-<pre> $ sum.pl 4 3
- </pre>
+<pre class="code">$ sum.pl 4 3</pre>
 
 <p>「 <em>Result: 7</em> 」という文字列がターミナルに出力されたはずです。
 ここで出てきた「 <em>$number1</em>」「 <em>$number2</em> 」「 <em>$result</em> 」というのが、
@@ -113,8 +114,7 @@ Perlにおいてスカラーと呼ばれるデータを表す変数になりま�
 
 <p>僕の好きな食べ物を適当に列挙するとしましょう。配列を使って以下のように表現できます。</p>
 
-<pre> my @foods = ( 'ラーメン', '寿司', 'カレー', 'スパゲッティ', 'ステーキ' );
- </pre>
+<pre class="code">my @foods = ( 'ラーメン', '寿司', 'カレー', 'スパゲッティ', 'ステーキ' );</pre>
 
 <p>@foodsってのには頭から</p>
 
@@ -130,10 +130,9 @@ Perlにおいてスカラーと呼ばれるデータを表す変数になりま�
 <p>が入っています。先頭のラーメンを取得したければ「 <em>$foods[0]</em> 」と表現すればよいでしょう。
 中に入っている5つの文字列を順番に処理したければこのような「配列の操作」方法があります。</p>
 
-<pre> for my $food (@food) {
+<pre class="code">for my $food (@food) {
     print "I like $food\n";
-}
- </pre>
+}</pre>
 
 <p>他にも配列にまつわる操作はいくつかあるので基本を押さえておいた方がよいでしょう。</p>
 
@@ -150,8 +149,7 @@ Perlにおいてスカラーと呼ばれるデータを表す変数になりま�
 また身長というキーに対しては「172cm」というバリューを持っているという具合です。
 これをPerlで表現するとこうなります。</p>
 
-<pre> my %ore = ( name =&gt; '和田裕介', tall =&gt; 172 );
- </pre>
+<pre class="code">my %ore = ( name =&gt; '和田裕介', tall =&gt; 172 );</pre>
 
 <p>「name」キーの値にアクセスするためには「 <em>$ore{name}</em> 」とします。
 配列と同様ハッシュを操作するための関数もありますので、そちらもチェックです。</p>
@@ -170,12 +168,11 @@ Perlにおいてスカラーと呼ばれるデータを表す変数になりま�
 ただ、Perlの場合には注意点があって、配列やハッシュを組み合わせたデータを表現するには、
 リファレンスというのをうまく使わないと表現しきれないのです。</p>
 
-<pre> my @people = (
+<pre class="code">my @people = (
     { name =&gt; 'Kさん', tall =&gt; 160 },
     { name =&gt; 'Yさん', tall =&gt; 182 },
     { name =&gt; 'Tさん', tall =&gt; 148 }
-);
- </pre>
+);</pre>
 
 <p>細かい解説は省きますが「 <em>@people</em> 」配列内の「<em>{ name =&gt; 'Kさん', tall =&gt; '160' }</em>」というのが、
 一つのハッシュの無名リファレンスを表しています。
@@ -188,32 +185,29 @@ Perlにおいてスカラーと呼ばれるデータを表す変数になりま�
 例えば、上記の人が3人出てくる例をもう一度使いましょう。
 それぞれが複数の好きな食べ物を持っているということを表したかったらこのようにします。</p>
 
-<pre> my @people = (
+<pre class="code">my @people = (
     { name =&gt; 'Kさん', foods =&gt; [ 'カレー', 'ラーメン' ] },
     { name  =&gt; 'Yさん', foods =&gt; [ 'ハンバーガー', '牛丼', 'チキン' ] },
     { name =&gt; 'Tさん', foods =&gt; [ 'サラダ' ] }
-);
- </pre>
+);</pre>
 
 <p>通常の配列は「 <em>()</em> 」で表現していたものを今回は「 <em>[]</em> 」を使って配列の無名リファレンスとしました。
 ちなみに、この「 <em>@people</em> 」配列からみんなの好きな食べ物を一覧で出力するには以下のような操作をします。</p>
 
-<pre> for my $person (@people) {
+<pre class="code">for my $person (@people) {
     for my $food ( @{ $person-&gt;{foods} } ) {
         print "$person-&gt;{name} likes $food!!\n";
     }
-}
- </pre>
+}</pre>
 
 <p>実行結果が結構面白いです。</p>
 
-<pre> Kさん likes カレー!!
+<pre class="code">Kさん likes カレー!!
 Kさん likes ラーメン!!
 Yさん likes ハンバーガー!!
 Yさん likes 牛丼!!
 Yさん likes チキン!!
-Tさん likes サラダ!!
- </pre>
+Tさん likes サラダ!!</pre>
 
 <h4>スカラー、配列、ハッシュで表現する</h4>
 
@@ -254,7 +248,7 @@ Tさん likes サラダ!!
       <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
     </li>
     <li>
-      <span class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2012%2f0223030620%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
+      <span class="fb-share-button"  data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2012%2f0223030620%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
     </li>
     <li>
       <a href="https://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label-counter" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>

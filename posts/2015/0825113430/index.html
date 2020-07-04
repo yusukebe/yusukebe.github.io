@@ -2,7 +2,9 @@
 <html>
 <head>
 	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>そのURLが表示される時 - ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>そのURLが表示される時 - ゆーすけべー日記</title>
+    <meta name="description" content=" Facebookで「URL」付きの投稿をポストした際に以下のような「URLが参照するコンテンツのサマリーを考慮した表示」になるのはご存知だろう。    こうした「URLの表示」はFacebookのみならず様々なプラットフォームで行われつつ" /><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta property="og:title" content="そのURLが表示される時" />
 <meta property="og:description" content=" Facebookで「URL」付きの投稿をポストした際に以下のような「URLが参照するコンテンツのサマリーを考慮した表示」になるのはご存知だろう。    こうした「URLの表示」はFacebookのみならず様々なプラットフォームで行われつつ" />
 <meta property="og:type" content="article" />
@@ -20,6 +22,7 @@
 	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
 	
 	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+    <script src="//cdn.embedly.com/widgets/platform.js" charset="UTF-8"></script>
 	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 	<script src="https://yusukebe.com/js/main.js"></script>
 	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
@@ -63,7 +66,7 @@
 			<div class="meta">Posted at &mdash; Aug 25, 2015</div>
 		</div>
 
-		<div class="markdown">
+		<div class="markdown post-body">
 			
 
 <p>Facebookで「URL」付きの投稿をポストした際に以下のような「<strong>URLが参照するコンテンツのサマリーを考慮した表示</strong>」になるのはご存知だろう。</p>
@@ -93,8 +96,7 @@
 &lt;meta property="og:title" content="あれ？俺のポカリはどこだ？" /&gt;
 &lt;meta property="og:url" content="http://bokete.jp/boke/34651020" /&gt;
 &lt;meta property="og:image" content="http://d2dcan0armyq93.cloudfront.net/photo/odai/600/2c6530d95dc299170b59e35f0bbf6a22_600.jpg" /&gt;
-&lt;meta property="og:description" content="写真で一言 ボケて（bokete）" /&gt;
- </pre>
+&lt;meta property="og:description" content="写真で一言 ボケて（bokete）" /&gt;</pre>
 
 
 <p>これをシェアするとFacebookのタイムラインでは以下のように表示される。</p>
@@ -130,8 +132,7 @@ Google Analytics上では格段に「増えている」ことが分かる。</p>
 &lt;meta name="twitter:url" content="http://bokete.jp/boke/34651020" /&gt;
 &lt;meta name="twitter:image" content="http://d2dcan0armyq93.cloudfront.net/photo/odai/600/2c6530d95dc299170b59e35f0bbf6a22_600.jpg" /&gt;
 &lt;meta name="twitter:image:width" content="600" /&gt;
-&lt;meta name="twitter:image:height" content="598" /&gt;
- </pre>
+&lt;meta name="twitter:image:height" content="598" /&gt;</pre>
 
 
 <p><code>name</code>属性の値が<code>twitter:card</code>である要素の<code>content</code>を<code>photo</code>にすることで写真をメインとしたコンテンツのURLですよ〜 と定義している。
@@ -187,8 +188,7 @@ Google Analytics上では格段に「増えている」ことが分かる。</p>
   &lt;a itemprop="item" href="http://bokete.jp/boke/34505325"&gt;
     &lt;span itemprop="name"&gt;新アトラクション″室伏″の終わり方が心配でたまんない&lt;/span&gt;&lt;/a&gt;
   &lt;meta itemprop="position" content="4" /&gt;
-&lt;/li&gt;
- </pre>
+&lt;/li&gt;</pre>
 
 
 <p>ボケてのサイトは日付の掲載を「XX時間前」とか「XX日前」というような現在からの差分のテキストでのみ行って来た。
@@ -196,8 +196,7 @@ Google Analytics上では格段に「増えている」ことが分かる。</p>
 それに加え、構造化データのSchema.orgに従いitemタイプを <code>http://schema.org/Article</code> として投稿された日付をメタ表記。
 この2つで日にちの表示が叶ったわけだが、どちらが影響しているのかちょいと不明。</p>
 
-<pre class="code lang-html" data-lang="html" data-unlink> &lt;meta itemprop="datePublished" content="2015-08-10T02:25:18+09:00"/&gt;
- </pre>
+<pre class="code lang-html" data-lang="html" data-unlink> &lt;meta itemprop="datePublished" content="2015-08-10T02:25:18+09:00"/&gt;</pre>
 
 
 <p>以下はモバイルSafariを使ってのiPhone上での表示。ちゃんと「スマホ対応」って文字も出てる。</p>
@@ -264,7 +263,7 @@ Gunosyへの配信コンテンツ一覧の更新タイミングが1日に1回0�
       <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
     </li>
     <li>
-      <span class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2015%2f0825113430%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
+      <span class="fb-share-button"  data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2015%2f0825113430%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
     </li>
     <li>
       <a href="https://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label-counter" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>

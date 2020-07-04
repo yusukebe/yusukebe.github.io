@@ -2,7 +2,9 @@
 <html>
 <head>
 	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>filezilla、日本語表示できるscp - ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>filezilla、日本語表示できるscp - ゆーすけべー日記</title>
+    <meta name="description" content="     先日VaraTermというSSHクライアントを紹介したが、今回はSSHを用いたファイル転送SCPのクライアントソフトの紹介。      scpクライアントと言うとwinscpが有名で、SFCでも割と推奨されている感じ。ま、普通に使" /><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta property="og:title" content="filezilla、日本語表示できるscp" />
 <meta property="og:description" content="     先日VaraTermというSSHクライアントを紹介したが、今回はSSHを用いたファイル転送SCPのクライアントソフトの紹介。      scpクライアントと言うとwinscpが有名で、SFCでも割と推奨されている感じ。ま、普通に使" />
 <meta property="og:type" content="article" />
@@ -20,6 +22,7 @@
 	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
 	
 	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+    <script src="//cdn.embedly.com/widgets/platform.js" charset="UTF-8"></script>
 	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 	<script src="https://yusukebe.com/js/main.js"></script>
 	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
@@ -63,19 +66,19 @@
 			<div class="meta">Posted at &mdash; Mar 12, 2004</div>
 		</div>
 
-		<div class="markdown">
+		<div class="markdown post-body">
 			
 
 <p></p>
 <p>   <a href="http://yusukebe.com/archives/001953.html">先日VaraTermというSSHクライアントを紹介した</a>が、今回はSSHを用いたファイル転送<strong>SCP</strong>のクライアントソフトの紹介。 </p>
 <p>   scpクライアントと言うと<a href="http://winscp.sourceforge.net/">winscp</a>が有名で、SFCでも割と<a href="http://itc.sfc.keio.ac.jp/ssh/winftp.html">推奨されている感じ</a>。ま、普通に使っている分には申し分ないのだが、ひとつだけちょいと難点がある。それは俺にとってとりわけ難点なのだが、日本語のファイル名が文字化けるのである。 </p>
-<p>   winscpだと日本語のファイル名(サーバー側はEUC)が文字化ける<br>   <img alt="mojibake.gif" border="0" class="at-xid-6a0133f4781589970b015391e3748c970b" height="188" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015391e3748c970b-pi" width="279"> </p>
+<p>   winscpだと日本語のファイル名(サーバー側はEUC)が文字化ける<br>   <img alt="mojibake.gif" border="0" class="at-xid-6a0133f4781589970b015391e3748c970b" height="188" src="https://yusukebe.com/archives/a/6a0133f4781589970b015391e3748c970b-pi.gif" width="279"> </p>
 <p>   だったら日本語使うなよ、と言われるかもしれないが、以前収集した大量の<strong>あんなもの</strong>や<strong>こんなもの</strong>が日本語ファイル名で、とあるサーバーに置いてあるのでどうしょものないのです。この文字化け問題、こういうスタンスで待ち構えていた。「世界は広い。誰か神が現れてこの問題を解決してくれるだろう。俺はそれまで、この問題には触れないですごすぞ。」 </p>
 <p>   と、過ごすことしばらくたちました。すると、<strong>やっぱり現れましたよ神が</strong>。しかも<strong>Filezilla</strong>といういかにも俺好みの名前のソフトを使って。 </p>
 <p>   神の証拠-&gt;<a href="http://www.padc.mmpc.is.tsukuba.ac.jp/~k1/wiki/wiki.cgi?page=FileZilla+Kanji+code+convert+version">FileZilla   Kanji code convert version</a> </p>
-<p>   FileZilla起動画面<br>   <a href="http://kamawada.com/~yusuke/yusukebe/archives/files/040311/filezilla01.gif"><img alt="filezilla01.gif" border="0" class="at-xid-6a0133f4781589970b015391e374c1970b" height="263" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015391e374c1970b-pi" width="400"></a> </p>
-<p>   日本語のファイルも文字化けない(といいつつもぼかしが入っているのは表示したらまずぃかなというファイルなので) <br>   <img alt="filezilla02.gif" border="0" class="at-xid-6a0133f4781589970b015391e374f7970b" height="259" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015391e374f7970b-pi" width="524"> </p>
-<p>   無事自分のPCに日本語の名前のファイルを転送完了（これじゃ何やってんだかわかんねーな）<br>   <img alt="filezilla03.gif" border="0" class="at-xid-6a0133f4781589970b015391e37515970b" height="53" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015391e37515970b-pi" width="509">  </p>
+<p>   FileZilla起動画面<br>   <a href="http://kamawada.com/~yusuke/yusukebe/archives/files/040311/filezilla01.gif"><img alt="filezilla01.gif" border="0" class="at-xid-6a0133f4781589970b015391e374c1970b" height="263" src="https://yusukebe.com/archives/a/6a0133f4781589970b015391e374c1970b-pi.gif" width="400"></a> </p>
+<p>   日本語のファイルも文字化けない(といいつつもぼかしが入っているのは表示したらまずぃかなというファイルなので) <br>   <img alt="filezilla02.gif" border="0" class="at-xid-6a0133f4781589970b015391e374f7970b" height="259" src="https://yusukebe.com/archives/a/6a0133f4781589970b015391e374f7970b-pi.gif" width="524"> </p>
+<p>   無事自分のPCに日本語の名前のファイルを転送完了（これじゃ何やってんだかわかんねーな）<br>   <img alt="filezilla03.gif" border="0" class="at-xid-6a0133f4781589970b015391e37515970b" height="53" src="https://yusukebe.com/archives/a/6a0133f4781589970b015391e37515970b-pi.gif" width="509">  </p>
 <p>ちょっと前までTeraterm＋TTSSHとwinscpといえば必需品だったのが、VaraTermとFileZillaにとってかわりましたな。</p>
 
 
@@ -97,7 +100,7 @@
       <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
     </li>
     <li>
-      <span class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2004%2f0311173135%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
+      <span class="fb-share-button"  data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2004%2f0311173135%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
     </li>
     <li>
       <a href="https://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label-counter" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>

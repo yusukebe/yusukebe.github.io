@@ -2,7 +2,9 @@
 <html>
 <head>
 	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>CatalystアプリケーションをStarmanで運用しよう！ - ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>CatalystアプリケーションをStarmanで運用しよう！ - ゆーすけべー日記</title>
+    <meta name="description" content=" Starmanというmiyagawaさんが目下開発中のPerl製Webサーバがあります。PSGIをサポートして高速であることが特徴です。おとといにバージョン0.1000がCPANにアップロードされたばかりという新しいものですが、とあるエロ" /><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta property="og:title" content="CatalystアプリケーションをStarmanで運用しよう！" />
 <meta property="og:description" content=" Starmanというmiyagawaさんが目下開発中のPerl製Webサーバがあります。PSGIをサポートして高速であることが特徴です。おとといにバージョン0.1000がCPANにアップロードされたばかりという新しいものですが、とあるエロ" />
 <meta property="og:type" content="article" />
@@ -20,6 +22,7 @@
 	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
 	
 	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+    <script src="//cdn.embedly.com/widgets/platform.js" charset="UTF-8"></script>
 	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 	<script src="https://yusukebe.com/js/main.js"></script>
 	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
@@ -63,7 +66,7 @@
 			<div class="meta">Posted at &mdash; Feb 17, 2010</div>
 		</div>
 
-		<div class="markdown">
+		<div class="markdown post-body">
 			
 
 <p>
@@ -106,8 +109,7 @@ ab でベンチマークをとると、細かい部分を抜きにして、以�
 </p>
 
 <pre class="brush: perl"> Apache + mod_perl - Requests per second:    3.18 [#/sec] (mean)
-Starman           - Requests per second:    4.43 [#/sec] (mean)
- </pre>
+Starman           - Requests per second:    4.43 [#/sec] (mean)</pre>
 
 <p>
 Starmanの方が約140% fasterです。
@@ -123,8 +125,7 @@ StarmanはPSGIをサポートするので、最初にCatalystをPSGI互換にし
 Helperスクリプトで
 </p>
 
-<pre class="brush: perl"> $ script/myapp_create.pl PSGI
- </pre>
+<pre class="brush: perl"> $ script/myapp_create.pl PSGI</pre>
 
 <p>
 とするだけで、plackupで起動可能な.psgiができます。
@@ -133,8 +134,7 @@ Helperスクリプトで
 plackupコマンドでももちろん起動できますし、Starmanを入れると
 </p>
 
-<pre class="brush: perl"> $ starman myapp.psgi
- </pre>
+<pre class="brush: perl"> $ starman myapp.psgi</pre>
 
 <p>
 とすれば、starmanでCatalystアプリが起動します。
@@ -158,8 +158,7 @@ builder {
     enable_if { $_[0]-&gt;{REMOTE_ADDR} eq '192.168.1.xxx' }
         "Plack::Middleware::ReverseProxy";
             $app;
-};
- </pre>
+};</pre>
 
 <p>
 最後にstarmanコマンドを使ってお好きなポート、お好きなworkerの数でサーバを起動します。
@@ -170,8 +169,7 @@ daemontoolsでプロセスを管理することにしました。
 <pre class="brush: perl"> exec 2&gt;&amp;1
 cd /home/yusuke/www/pulpsite/xxx || exit 1
 exec /usr/bin/setuidgid www-data /usr/local/bin/starman \
---workers 20 --port 8080 ./xxx.psgi
- </pre>
+--workers 20 --port 8080 ./xxx.psgi</pre>
 
 <p>
 こんな感じの run スクリプトを書いて、それが入ったディレクトリを /services へシンボリックリンク張れば、
@@ -190,7 +188,7 @@ PS.<br>
 </p>
 
 <div>
-<div style="float:left"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4774141593/kamawada-22/"><img alt="WEB+DB PRESS Vol.55" class="at-xid-6a0133f4781589970b014e8bd75152970d" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b014e8bd75152970d-pi" style="border:none;"></a></div>
+<div style="float:left"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4774141593/kamawada-22/"><img alt="WEB+DB PRESS Vol.55" class="at-xid-6a0133f4781589970b014e8bd75152970d" src="https://yusukebe.com/archives/a/6a0133f4781589970b014e8bd75152970d-pi.jpg" style="border:none;"></a></div>
 <div style="float:left;margin-left:15px;">
 <div style="font-size:12pt"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4774141593/kamawada-22/">WEB+DB PRESS Vol.55</a></div>
 <div style="font-size:7pt;font-family:verdana;">posted with <a href="http://yusukebe.com/b/amazon/search/">yusukebe.com::AmazonSearch</a> on 2010.2.17</div>
@@ -233,7 +231,7 @@ PS.<br>
       <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
     </li>
     <li>
-      <span class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2010%2f0217042334%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
+      <span class="fb-share-button"  data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2010%2f0217042334%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
     </li>
     <li>
       <a href="https://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label-counter" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>

@@ -2,7 +2,9 @@
 <html>
 <head>
 	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>「これ☆ほしい」BugFix &amp;amp; タイムライン機能追加 &amp;amp; 評価とコメントお願いします - ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>「これ☆ほしい」BugFix &amp;amp; タイムライン機能追加 &amp;amp; 評価とコメントお願いします - ゆーすけべー日記</title>
+    <meta name="description" content="   ウェブで話題の「みんなの物欲」がひとめでわかるサイト『これ☆ほしい』(リリース)。  エントリー情報が更新されないというバグ(？)を修正しました。  それに伴い、DBを初期化してしまったので、過去のエントリーのPermalinkがずれ" /><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta property="og:title" content="「これ☆ほしい」BugFix &amp;amp; タイムライン機能追加 &amp;amp; 評価とコメントお願いします" />
 <meta property="og:description" content="   ウェブで話題の「みんなの物欲」がひとめでわかるサイト『これ☆ほしい』(リリース)。  エントリー情報が更新されないというバグ(？)を修正しました。  それに伴い、DBを初期化してしまったので、過去のエントリーのPermalinkがずれ" />
 <meta property="og:type" content="article" />
@@ -20,6 +22,7 @@
 	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
 	
 	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+    <script src="//cdn.embedly.com/widgets/platform.js" charset="UTF-8"></script>
 	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 	<script src="https://yusukebe.com/js/main.js"></script>
 	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
@@ -63,7 +66,7 @@
 			<div class="meta">Posted at &mdash; Sep 16, 2007</div>
 		</div>
 
-		<div class="markdown">
+		<div class="markdown post-body">
 			
 
 <p>
@@ -85,7 +88,7 @@
 </p>
 <p>
   <a href="http://pulpsite.net/wewantit/timeline/">
-    <img alt="これ☆ほしい" class="at-xid-6a0133f4781589970b015435b6ec4e970c" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015435b6ec4e970c-pi">
+    <img alt="これ☆ほしい" class="at-xid-6a0133f4781589970b015435b6ec4e970c" src="https://yusukebe.com/archives/a/6a0133f4781589970b015435b6ec4e970c-pi.gif">
   </a>
 </p>
 <ul>
@@ -111,7 +114,7 @@
 </p>
 <p>
   <a href="http://pulpsite.net/wewantit/">
-    <img alt="これ☆ほしい" class="at-xid-6a0133f4781589970b015435b6ec5a970c" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015435b6ec5a970c-pi">
+    <img alt="これ☆ほしい" class="at-xid-6a0133f4781589970b015435b6ec5a970c" src="https://yusukebe.com/archives/a/6a0133f4781589970b015435b6ec5a970c-pi.gif">
   </a>
 </p>
 <h4>補足 : コードの話</h4>
@@ -141,9 +144,7 @@
       expression: $args-&gt;{feed}-&gt;id eq 'smartfeed:all'
     config:
       schema_class: Plagger::Schema::SQLite
-      connect_info: [ 'dbi:SQLite:/path/to/plagger.db', ]
-
- </pre>
+      connect_info: [ 'dbi:SQLite:/path/to/plagger.db', ]</pre>
 <p>
   次に、@nifty TimeLine へ APIを使ってポストする部分について解説。
   「これ☆ほしい」のエントリーからカウントが5以上のものをひっぱってきて、
@@ -257,8 +258,7 @@ sub update_article{
                     id =&gt; $entry-&gt;timeline_id,
                     # update properties...
 　     );
-}
- </pre>
+}</pre>
 <p>
 以上、とりあえず、
 「サイトスカウター＠これ☆ほしい」の評価＆コメントお願いしまつ。
@@ -269,10 +269,10 @@ sub update_article{
   </li>
   <li>
     <a href="http://b.hatena.ne.jp/append?http%3A%2F%2Fpulpsite.net%2Fwewantit%2F">
-      <img alt="このエントリーをブックマークに追加" class="at-xid-6a0133f4781589970b015435b6ec68970c" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015435b6ec68970c-pi">
+      <img alt="このエントリーをブックマークに追加" class="at-xid-6a0133f4781589970b015435b6ec68970c" src="https://yusukebe.com/archives/a/6a0133f4781589970b015435b6ec68970c-pi.gif">
     </a>
     <a href="http://b.hatena.ne.jp/entry/http://pulpsite.net/wewantit/">
-      <img alt="このエントリーを含むはてなブックマーク" class="at-xid-6a0133f4781589970b015435b6ec76970c" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015435b6ec76970c-pi">
+      <img alt="このエントリーを含むはてなブックマーク" class="at-xid-6a0133f4781589970b015435b6ec76970c" src="https://yusukebe.com/archives/a/6a0133f4781589970b015435b6ec76970c-pi.gif">
     </a>
   </li>
 </ul>
@@ -304,7 +304,7 @@ sub update_article{
       <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
     </li>
     <li>
-      <span class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2007%2f0916070637%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
+      <span class="fb-share-button"  data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2007%2f0916070637%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
     </li>
     <li>
       <a href="https://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label-counter" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>

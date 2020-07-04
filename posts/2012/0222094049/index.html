@@ -2,7 +2,9 @@
 <html>
 <head>
 	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Yomico。Markdownを快適に閲覧するために - ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Yomico。Markdownを快適に閲覧するために - ゆーすけべー日記</title>
+    <meta name="description" content=" 構造化された文章をプレーンテキストで書くためにMarkdown形式を使っているというお話を以前しました。   Markdownで文章を書こう！ - ゆーすけべー日記   上記の記事でも触れているのですが、Yomico（よみこ）というPer" /><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta property="og:title" content="Yomico。Markdownを快適に閲覧するために" />
 <meta property="og:description" content=" 構造化された文章をプレーンテキストで書くためにMarkdown形式を使っているというお話を以前しました。   Markdownで文章を書こう！ - ゆーすけべー日記   上記の記事でも触れているのですが、Yomico（よみこ）というPer" />
 <meta property="og:type" content="article" />
@@ -20,6 +22,7 @@
 	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
 	
 	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+    <script src="//cdn.embedly.com/widgets/platform.js" charset="UTF-8"></script>
 	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 	<script src="https://yusukebe.com/js/main.js"></script>
 	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
@@ -63,7 +66,7 @@
 			<div class="meta">Posted at &mdash; Feb 22, 2012</div>
 		</div>
 
-		<div class="markdown">
+		<div class="markdown post-body">
 			
 
 <p>構造化された文章をプレーンテキストで書くためにMarkdown形式を使っているというお話を以前しました。</p>
@@ -133,23 +136,20 @@ Mac OSXだと<a href="http://www.codingrobots.com/markdownnote/">MarkdownNote</a
 
 <p>インストールは「cpanm」というコマンドを入れて、ターミナルからこんな感じで行います。</p>
 
-<pre> $ git clone git://github.com/yusukebe/Yomico.git
+<pre class="code">$ git clone git://github.com/yusukebe/Yomico.git
 $ cd Yomico 
-$ cpanm .
- </pre>
+$ cpanm .</pre>
 
 <p>うまく入れば、「yomico」コマンドを使うことができるので、
 ファイルを指定したりディレクトリを指定したりして実行してください。</p>
 
-<pre> $ cd notes
-$ yomico README.mkdn
- </pre>
+<pre class="code">$ cd notes
+$ yomico README.mkdn</pre>
 
 <p>とか、カレント指定しつつポートも任意のものにする場合は</p>
 
-<pre> $ cd notes
-$ yomico . -p 5001
- </pre>
+<pre class="code">$ cd notes
+$ yomico . -p 5001</pre>
 
 <p>という具合です。デフォルトの場合は「<a href="http://localhost:5000">http://localhost:5000</a>」にお使いのブラウザでアクセスすると整形したMarkdownもしくはファイル一覧を見ることができます。</p>
 
@@ -196,7 +196,7 @@ $ yomico . -p 5001
       <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
     </li>
     <li>
-      <span class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2012%2f0222094049%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
+      <span class="fb-share-button"  data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2012%2f0222094049%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
     </li>
     <li>
       <a href="https://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label-counter" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>

@@ -2,7 +2,9 @@
 <html>
 <head>
 	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>MojoliciousとCPANモジュールで作る「Nopaste」チュートリアル - ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>MojoliciousとCPANモジュールで作る「Nopaste」チュートリアル - ゆーすけべー日記</title>
+    <meta name="description" content=" 僕はWebアプリの開発言語にPerlを使っていますが、Perlで書くためのWeb Application Frameworkとして、Mojoliciousを最近では利用しています。  Web Application Framework（W" /><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta property="og:title" content="MojoliciousとCPANモジュールで作る「Nopaste」チュートリアル" />
 <meta property="og:description" content=" 僕はWebアプリの開発言語にPerlを使っていますが、Perlで書くためのWeb Application Frameworkとして、Mojoliciousを最近では利用しています。  Web Application Framework（W" />
 <meta property="og:type" content="article" />
@@ -20,6 +22,7 @@
 	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
 	
 	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+    <script src="//cdn.embedly.com/widgets/platform.js" charset="UTF-8"></script>
 	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 	<script src="https://yusukebe.com/js/main.js"></script>
 	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
@@ -63,7 +66,7 @@
 			<div class="meta">Posted at &mdash; Jun 27, 2012</div>
 		</div>
 
-		<div class="markdown">
+		<div class="markdown post-body">
 			
 
 <p>僕はWebアプリの開発言語にPerlを使っていますが、Perlで書くためのWeb Application Frameworkとして、
@@ -98,22 +101,19 @@ Webアプリケーションの開発を効率的に行うためのライブラ�
 
 <p>MojoliciousはCPANモジュールなので、cpanmコマンドなどからインストールできます。</p>
 
-<pre> $ cpanm Mojolicious
- </pre>
+<pre class="code">$ cpanm Mojolicious</pre>
 
 <p>もしくはシステム全体にインストールするならば、</p>
 
-<pre> $ cpanm --sudo Mojolicious
- </pre>
+<pre class="code">$ cpanm --sudo Mojolicious</pre>
 
 <p>としてください。正常にインストールされれば、「mojo」コマンドが使えるようになりますので、プロジェクトのひな形を作ります。本当に小さいアプリならば、Mojolicious::LiteというRubyで言うSinatraチックな記述の仕方が出来ますが、今回は通常の「アプリ」としてひな形を生成します。</p>
 
-<pre> $ mojo generate app Nopaste::Web
- </pre>
+<pre class="code">$ mojo generate app Nopaste::Web</pre>
 
 <p>ここで、ネームスペースをNopaste「::Web」としているのは、個人的な趣向で、Webのライブラリを置く領域とその他DBなどをしっかりと分けたいからです。作られる「nopaste_web」ディレクトリに潜ると以下のファイルがあると思います。これらがWebアプリを作るためのひな形となります。</p>
 
-<pre> ./
+<pre class="code">./
 ├── lib
 │   └── Nopaste
 │       ├── Web
@@ -130,21 +130,18 @@ Webアプリケーションの開発を効率的に行うためのライブラ�
     ├── example
     │   └── welcome.html.ep
     └── layouts
-        └── default.html.ep
- </pre>
+        └── default.html.ep</pre>
 
 <h3>アプリを立ち上げる</h3>
 
 <p>ひな形の状態でテストとしてアプリを立ち上げてみましょう。Mojoliciousには「morbo」というサーバコマンドが付属しているのでそれを使います。</p>
 
-<pre> $ morbo script/nopaste_web
- </pre>
+<pre class="code">$ morbo script/nopaste_web</pre>
 
 <p>すると、デフォルトだと起動したホストの「3000」番ポートでアプリが立ち上がります。お使いのブラウザで「<a href="http://localhost:3000/">http://localhost:3000/</a>」にアクセスしてみると、「Welcome to the Mojolicious real-time web framework!」と書かれたWelcomeページが見えると思います。
 ちなみに「plackup」でもアプリを立ち上げることが出来ます。</p>
 
-<pre> $ plackup -p 3000 script/nopaste_web
- </pre>
+<pre class="code">$ plackup -p 3000 script/nopaste_web</pre>
 
 <h3>トップページを作る</h3>
 
@@ -152,7 +149,7 @@ Webアプリケーションの開発を効率的に行うためのライブラ�
 「lib/Nopaste/Web.pm」を編集します。このファイルはアプリのセットアップをする部分ですが、その中のルーティングと呼ばれる部分を記述するのです。アクセスされるURLとそれに対応するコントローラの対応付けをします。
 いらない部分を消して以下のようにします。</p>
 
-<pre> package Nopaste::Web;
+<pre class="code">package Nopaste::Web;
 use Mojo::Base 'Mojolicious';
 
 sub startup {
@@ -161,14 +158,13 @@ sub startup {
      $r-&gt;get('/')-&gt;to('root#index');
 }
 
-1;
- </pre>
+1;</pre>
 
 <p>「$r-&gt;get('/')-&gt;to('root#index')」の部分が「/」というパス、つまりトップページにGETでアクセスされた時に、「Nopaste::Web::Root」というコントローラの「index」メソッドを呼び出すという意味になります。</p>
 
 <p>次にNopaste::Web::Rootコントローラを作りましょう。とはいっても、現段階ではindexメソッドがHTMLを描画するだけなので、こんな感じになります。「lib/Nopaste/Web/Root.pm」というファイルです。</p>
 
-<pre> package Nopaste::Web::Root;
+<pre class="code">package Nopaste::Web::Root;
 use Mojo::Base 'Mojolicious::Controller';
 
 sub index {
@@ -176,20 +172,18 @@ sub index {
     $self-&gt;render();
 }
 
-1;
- </pre>
+1;</pre>
 
 <p>さて肝心のHTML、正確にはHTMLを出力するためのテンプレートファイルをどこに、どう書くかですが、
 「templates/root/index.html.ep」をいじります。そう、Mojoliciousのテンプレートファイルの拡張子は「.html.ep」なのです。</p>
 
-<pre> % layout 'default';
+<pre class="code">% layout 'default';
 
 &lt;form action="/" method="post"&gt;
   Title &lt;input type="text" name="title" size="40" /&gt;
   Source &lt;textarea name="body" rows="15" cols="40"&gt;&lt;/textarea&gt;
   &lt;input type="submit" value="paste" /&gt;
-&lt;/form&gt;
- </pre>
+&lt;/form&gt;</pre>
 
 <p>HTMLでは見慣れない「% layout 'default';」という記述がありますね。Mojoliciousのテンプレートでは「%」などを駆使して、変数を展開したり、Perlコードを書いたり、レイアウトに使用するテンプレートを選択したりします。ここでのlayoutコマンドは「templates/layouts/default.html.ep 」というテンプレートをレイアウトに使うという意味です。
 余裕があったらレイアウトファイルをいじってみてください。</p>
@@ -198,17 +192,16 @@ sub index {
 
 <p>「lib/Nopaste/Web.pm」を再びいじり、トップページからのPOSTを受け付けるようにしましょう。</p>
 
-<pre>     my $r    = $self-&gt;routes;
+<pre class="code">my $r    = $self-&gt;routes;
     $r-&gt;get('/')-&gt;to('root#index');
-    $r-&gt;post('/')-&gt;to('root#post'); # ここを追加する
- </pre>
+    $r-&gt;post('/')-&gt;to('root#post'); # ここを追加する</pre>
 
 <p>次にRootコントローラに追加します。先ほど作った「lib/Nopaste/Web/Root.pm」というファイルですね。
 何を追加するかと言うと、入力値のチェック（＝ヴァリデーション）をするロジックです。例えばタイトルが空だったり、コメントが空だったりしたら、エラーを表示させます。「ベタ」で書いてもいいのですが、今回は拡張性も考えてFormValidator::Liteというモジュールを使ってみましょう（これから紹介する足りないモジュールについてはcpanmなどを利用してインストールしてください）。</p>
 
 <p>また、エラーメッセージを表示する時に、入力された値が消えないようにHTML::FilInForm::Liteというモジュールを使って工夫をします。ちょっと読み解くのに時間がかかるかもしれませんがRootコントローラは以下のメソッドを追加します。</p>
 
-<pre> package Nopaste::Web::Root;
+<pre class="code">package Nopaste::Web::Root;
 use Mojo::Base 'Mojolicious::Controller';
 use FormValidator::Lite; # 追加
 use HTML::FillInForm::Lite; #追加
@@ -244,12 +237,11 @@ sub post {
     # 続きは後ほど
 }
 
-1;
- </pre>
+1;</pre>
 
 <p>先ほど作った「templates/root/index.html.ep」テンプレートをエラーの時にも利用しています。エラーメッセージを表示させるためにも、以下のように編集します。</p>
 
-<pre> % layout 'default';
+<pre class="code">% layout 'default';
 
 % if ($self-&gt;stash-&gt;{error_messages}) {
 &lt;ul id="caution"&gt;
@@ -259,8 +251,7 @@ sub post {
 &lt;/ul&gt;
 % }
 
-&lt;!-- 以下は先ほどの通り --&gt;
- </pre>
+&lt;!-- 以下は先ほどの通り --&gt;</pre>
 
 <p>テンプレートの機能「%」と「&lt;%= 変数 %&gt;」を利用してエラーメッセージを描画しています。
 この状態では、ヴァリデーションがうまく行かない場合、つまりタイトルとコメントが空の時、指定したエラーメッセージが表示されます。</p>
@@ -275,26 +266,24 @@ sub post {
 今回は詳しい記述はしませんが、十分枯れているDBIx::Skinnyを使います。
 と、その前にSQLのテーブル定義です。MySQLを一応想定しています。</p>
 
-<pre> CREATE TABLE entry (
+<pre class="code">CREATE TABLE entry (
     `id` VARCHAR(36) NOT NULL,
     `title` VARCHAR(255) NOT NULL,
     `body` TEXT NOT NULL,
     `created_on` DATETIME NOT NULL,
     PRIMARY KEY (`id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
- </pre>
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;</pre>
 
 <p>仮として、「nopaste」という名前のデータベースを作って上記のSQLを実行したとしておきます。
 次にDBIx::Skinnyのところ。「lib/Nopaste/DB.pm」を作ります。</p>
 
-<pre> package Nopaste::DB;
+<pre class="code">package Nopaste::DB;
 use DBIx::Skinny;
-1;
- </pre>
+1;</pre>
 
 <p>これだけ。ただ、「lib/Nopaste/DB/Schema.pm」というファイルも作らなくてはいけません。</p>
 
-<pre>  package Nopaste::DB::Schema;
+<pre class="code">package Nopaste::DB::Schema;
  use DBIx::Skinny::Schema;
  use DateTime;
  use DateTime::Format::Strptime;
@@ -327,33 +316,30 @@ install_table entry =&gt; schema {
 
  install_utf8_columns qw/title body/;
 
-1;
- </pre>
+1;</pre>
 
 <p>ふぅ。今度はこのデータベースを操作するクラスのインスタンスをMojoliciousのコントローラから利用できるようにします。と、その前に... データベースの設定を読み込ますための設定ファイルを書きましょう。これはMojoliciousの機能で後ほど読み込むことが出来ます。アプリケーションのディレクトリの直下に「nopaste.conf」というファイルを作り、各自の設定にあわせて記述します。</p>
 
-<pre> +{
+<pre class="code">+{
     db =&gt; {
         dsn =&gt; 'dbi:mysql:nopaste',
         username =&gt; 'root',
         password =&gt; undef,
     }
-};
- </pre>
+};</pre>
 
 <p>そして、「lib/Nopaste/Web.pm」に以下を追加です。</p>
 
-<pre> sub startup {
+<pre class="code">sub startup {
     my $self = shift;
     my $config = $self-&gt;plugin('Config', { file =&gt; 'nopaste.conf' }); # 追加
     $self-&gt;attr( db =&gt; sub { Nopaste::DB-&gt;new( $config-&gt;{db} ) } ); # 追加
-    ...;
- </pre>
+    ...;</pre>
 
 <p>これで、Rootコントローラからデータベースを操作できる（コントローラでデータベースを操作するかどうか議論がありますが、今回はより簡便化するためにコントローラでDB操作をしています）！
 タイトルとコメント欄の値をユニークなIDと共に「insert」しましょう。「lib/Nopaste/Web/Root.pm」のpostメソッドに以下を追加します。</p>
 
-<pre> package Nopaste::Web::Root;
+<pre class="code">package Nopaste::Web::Root;
 use Mojo::Base 'Mojolicious::Controller';
 ...;
 use Data::GUID::URLSafe; # 追加
@@ -370,8 +356,7 @@ sub post {
     });
 
     $self-&gt;redirect_to('/paste/' . $entry-&gt;id );
-}
- </pre>
+}</pre>
 
 <p>お分かりの通りDBIx::Skinnyを継承して作った「Nopaste::DB」のインスタンスはコントローラから「$self-&gt;app-&gt;db」でアクセス出来るのですね。postメソッドの最後には、生成されたページへリダレイクトさせています。</p>
 
@@ -382,17 +367,16 @@ sub post {
 
 <p>まずは「lib/Nopaste/Web.pm」。最後に一行追加します。</p>
 
-<pre>     ...;
+<pre class="code">...;
     $r-&gt;route('/paste/:id')-&gt;to('root#entry');
 }
 
-1;
- </pre>
+1;</pre>
 
 <p>次に「lib/Nopaste/Web/Root.pm」に「entry」メソッドのコードを書きます。
 無駄にシャレてコメント欄（bodyフィールドの値）をText::VimColor使ってシンタックスハイライトさせてます。</p>
 
-<pre> package Nopaste::Web::Root;
+<pre class="code">package Nopaste::Web::Root;
 use Mojo::Base 'Mojolicious::Controller';
 ...;
 use Text::VimColor; #追加
@@ -414,19 +398,17 @@ sub entry {
     $self-&gt;stash-&gt;{entry} = $entry;
 }
 
-1;
- </pre>
+1;</pre>
 
 <p>次に「templates/root/entry.html.ep」を作ります。</p>
 
-<pre>  % layout 'default';
+<pre class="code">% layout 'default';
  % title $entry-&gt;title;
 
 &lt;div id="entry"&gt;
 &lt;h2&gt;&lt;%= $entry-&gt;title %&gt;&lt;/h2&gt;
 &lt;pre&gt;&lt;%== $code %&gt;&lt;/pre&gt;
-&lt;/div&gt;
- </pre>
+&lt;/div&gt;</pre>
 
 <p>これで、一通り完成です。トップページに行き、タイトルとコメントを埋めて投稿して見てください。
 ページが生成され入力した値が見れるはずです。
@@ -480,7 +462,7 @@ sub entry {
       <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
     </li>
     <li>
-      <span class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2012%2f0627091253%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
+      <span class="fb-share-button"  data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2012%2f0627091253%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
     </li>
     <li>
       <a href="https://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label-counter" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>

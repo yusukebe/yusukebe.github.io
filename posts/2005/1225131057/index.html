@@ -2,7 +2,9 @@
 <html>
 <head>
 	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>debian&#43;apache2でmod_perlを有効にするには - ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>debian&#43;apache2でmod_perlを有効にするには - ゆーすけべー日記</title>
+    <meta name="description" content=" たぶん、これでいけると思う。  1.mod_perlをapt-getでインストール#apt-get install libapache2-mod-perl22.モジュールを有効化/etc/apache2/mods-available/pe" /><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta property="og:title" content="debian&#43;apache2でmod_perlを有効にするには" />
 <meta property="og:description" content=" たぶん、これでいけると思う。  1.mod_perlをapt-getでインストール#apt-get install libapache2-mod-perl22.モジュールを有効化/etc/apache2/mods-available/pe" />
 <meta property="og:type" content="article" />
@@ -20,6 +22,7 @@
 	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
 	
 	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+    <script src="//cdn.embedly.com/widgets/platform.js" charset="UTF-8"></script>
 	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 	<script src="https://yusukebe.com/js/main.js"></script>
 	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
@@ -63,11 +66,11 @@
 			<div class="meta">Posted at &mdash; Dec 25, 2005</div>
 		</div>
 
-		<div class="markdown">
+		<div class="markdown post-body">
 			
 
 <p>たぶん、これでいけると思う。</p>
-<pre> 1.mod_perlをapt-getでインストール
+<pre class="code">1.mod_perlをapt-getでインストール
 #apt-get install libapache2-mod-perl2
 
 2.モジュールを有効化
@@ -75,8 +78,7 @@
 PerlModule ModPerl::Registry
 を追加
 
-3.apacheを再起動
- </pre>
+3.apacheを再起動</pre>
 <p>参考にしたサイト：
 </p>
 <ul>
@@ -126,7 +128,7 @@ apache1+mod_perl1の環境でMTを動かしてみたんだけど、キャッシ�
       <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
     </li>
     <li>
-      <span class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2005%2f1225131057%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
+      <span class="fb-share-button"  data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2005%2f1225131057%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
     </li>
     <li>
       <a href="https://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label-counter" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>

@@ -2,19 +2,11 @@
 <html>
 <head>
 	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Rakuでメロディー・雛・マークスを出す - ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Rakuでメロディー・雛・マークスを出す - ゆーすけべー日記</title>
+    <meta name="description" content="今度はRaku(Perl6)でDMM Webサービスを叩いてメロディー・雛・マークスを出す。 PHPでDMM Webサービスを叩いてメロディー・雛・マークスを出す - ゆーすけべー日記 Node.jsでメロディー" /><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta property="og:title" content="Rakuでメロディー・雛・マークスを出す" />
-<meta property="og:description" content="今度はRaku(Perl6)でDMM Webサービスを叩いてメロディー・雛・マークスを出す。
- PHPでDMM Webサービスを叩いてメロディー・雛・マークスを出す - ゆーすけべー日記 Node.jsでメロディー・雛・マークスを出す - ゆーすけべー日記  HTTP::UserAgentを使うとPerl 5におけるLWP::UserAgentとほぼ同じインターフェースなので、 あっさりと書けた。JSONのデコードにはJSON::Tinyを使った。
-ただ引っかかったところが2点。コマンドライン引数を取得する際、 Perl 5だと
-my $name = $ARGV[0]; で取ってたのが、Rakuだと
-my $name = @*ARGS[0]; となる。もう一つは、JSONをdecodeして$dataに入れた 値の中から女優のリストを取ってくるのに、Perl 5だと @{$data-&gt;{result}{actress}} とハッシュの中身をたどって デリファレンスしていたが、今回の場合
-my $stars = $data-&gt;{&#39;result&#39;}{&#39;actress&#39;}; for $stars.list -&gt; $star { } と書いた。$starsはスカラの変数でそこにArray型が入っているので、 listメソッドでイテレーブルにしている。
-Array、Scalar、さらにListについては以下のドキュメントを参考にする。
- class Scalar - Perl 6 Documentation class List - Perl 6 Documentaion  とはいえ
-my $stars = $data-&gt;{&#39;result&#39;}{&#39;actress&#39;}; for @$stars -&gt; $star { } でもいける。
-さて、以下コード。
-use HTTP::UserAgent; use URI; use JSON::Tiny; constant $api_id = &#39;YOUR_API_ID&#39;; constant $affiliate_id = &#39;YOUR_AFFILIATE_ID&#39;; # @*ARGSで引数取得、Perl5では$ARGV[0]だった my $name = @*ARGS[0] || &#39;雛&#39;; my $uri = URI.new(&#39;https://api.dmm.com/affiliate/v3/ActressSearch&#39;); # クエリを組み立てるハッシュ my %params = api_id =&gt; $api_id, affiliate_id =&gt; $affiliate_id, keyword =&gt; $name, hits =&gt; 50; # query-formメソッドに食わせる $uri." />
+<meta property="og:description" content="今度はRaku(Perl6)でDMM Webサービスを叩いてメロディー・雛・マークスを出す。 PHPでDMM Webサービスを叩いてメロディー・雛・マークスを出す - ゆーすけべー日記 Node.jsでメロディー" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://yusukebe.com/posts/2020/raku-dmm/" />
 <meta property="og:image" content="https://live.staticflickr.com/65535/49401830023_ca04d12565_c_d.jpg" />
@@ -24,22 +16,13 @@ use HTTP::UserAgent; use URI; use JSON::Tiny; constant $api_id = &#39;YOUR_API_I
 <meta name="twitter:image" content="https://live.staticflickr.com/65535/49401830023_ca04d12565_c_d.jpg"/>
 
 <meta name="twitter:title" content="Rakuでメロディー・雛・マークスを出す"/>
-<meta name="twitter:description" content="今度はRaku(Perl6)でDMM Webサービスを叩いてメロディー・雛・マークスを出す。
- PHPでDMM Webサービスを叩いてメロディー・雛・マークスを出す - ゆーすけべー日記 Node.jsでメロディー・雛・マークスを出す - ゆーすけべー日記  HTTP::UserAgentを使うとPerl 5におけるLWP::UserAgentとほぼ同じインターフェースなので、 あっさりと書けた。JSONのデコードにはJSON::Tinyを使った。
-ただ引っかかったところが2点。コマンドライン引数を取得する際、 Perl 5だと
-my $name = $ARGV[0]; で取ってたのが、Rakuだと
-my $name = @*ARGS[0]; となる。もう一つは、JSONをdecodeして$dataに入れた 値の中から女優のリストを取ってくるのに、Perl 5だと @{$data-&gt;{result}{actress}} とハッシュの中身をたどって デリファレンスしていたが、今回の場合
-my $stars = $data-&gt;{&#39;result&#39;}{&#39;actress&#39;}; for $stars.list -&gt; $star { } と書いた。$starsはスカラの変数でそこにArray型が入っているので、 listメソッドでイテレーブルにしている。
-Array、Scalar、さらにListについては以下のドキュメントを参考にする。
- class Scalar - Perl 6 Documentation class List - Perl 6 Documentaion  とはいえ
-my $stars = $data-&gt;{&#39;result&#39;}{&#39;actress&#39;}; for @$stars -&gt; $star { } でもいける。
-さて、以下コード。
-use HTTP::UserAgent; use URI; use JSON::Tiny; constant $api_id = &#39;YOUR_API_ID&#39;; constant $affiliate_id = &#39;YOUR_AFFILIATE_ID&#39;; # @*ARGSで引数取得、Perl5では$ARGV[0]だった my $name = @*ARGS[0] || &#39;雛&#39;; my $uri = URI.new(&#39;https://api.dmm.com/affiliate/v3/ActressSearch&#39;); # クエリを組み立てるハッシュ my %params = api_id =&gt; $api_id, affiliate_id =&gt; $affiliate_id, keyword =&gt; $name, hits =&gt; 50; # query-formメソッドに食わせる $uri."/>
+<meta name="twitter:description" content="今度はRaku(Perl6)でDMM Webサービスを叩いてメロディー・雛・マークスを出す。 PHPでDMM Webサービスを叩いてメロディー・雛・マークスを出す - ゆーすけべー日記 Node.jsでメロディー"/>
 <link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/normalize.css" />
 	<link rel="stylesheet" type="text/css" media="screen" href="https://yusukebe.com/css/main.css" />
 	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
 	
 	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+    <script src="//cdn.embedly.com/widgets/platform.js" charset="UTF-8"></script>
 	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 	<script src="https://yusukebe.com/js/main.js"></script>
 	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
@@ -83,7 +66,7 @@ use HTTP::UserAgent; use URI; use JSON::Tiny; constant $api_id = &#39;YOUR_API_I
 			<div class="meta">Posted at &mdash; Jan 18, 2020</div>
 		</div>
 
-		<div class="markdown">
+		<div class="markdown post-body">
 			<p>今度はRaku(Perl6)でDMM Webサービスを叩いてメロディー・雛・マークスを出す。</p>
 <ul>
 <li><a href="https://yusukebe.com/posts/2019/1226173405/">PHPでDMM Webサービスを叩いてメロディー・雛・マークスを出す - ゆーすけべー日記</a></li>
@@ -93,15 +76,15 @@ use HTTP::UserAgent; use URI; use JSON::Tiny; constant $api_id = &#39;YOUR_API_I
 あっさりと書けた。JSONのデコードには<code>JSON::Tiny</code>を使った。</p>
 <p>ただ引っかかったところが2点。コマンドライン引数を取得する際、
 Perl 5だと</p>
-<div class="highlight"><pre class="chroma"><code class="language-perl" data-lang="perl"><span class="k">my</span> <span class="nv">$</span><span class="nv">name</span> <span class="o">=</span> <span class="nv">$</span><span class="nv">ARGV</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="p">;</span>
+<div class="highlight"><pre class="chroma"><code class="language-perl" data-lang="perl"><span class="k">my</span> <span class="nv">$name</span> <span class="o">=</span> <span class="nv">$ARGV</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
 </code></pre></div><p>で取ってたのが、Rakuだと</p>
-<div class="highlight"><pre class="chroma"><code class="language-perl" data-lang="perl"><span class="k">my</span> <span class="nv">$</span><span class="nv">name</span> <span class="o">=</span> <span class="nv">@</span><span class="err">*</span><span class="nv">ARGS</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="p">;</span>
+<div class="highlight"><pre class="chroma"><code class="language-perl" data-lang="perl"><span class="k">my</span> <span class="nv">$name</span> <span class="o">=</span> <span class="nv">@</span><span class="err">*</span><span class="nv">ARGS</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
 </code></pre></div><p>となる。もう一つは、JSONをdecodeして<code>$data</code>に入れた
 値の中から女優のリストを取ってくるのに、Perl 5だと
 <code>@{$data-&gt;{result}{actress}}</code> とハッシュの中身をたどって
 デリファレンスしていたが、今回の場合</p>
-<div class="highlight"><pre class="chroma"><code class="language-perl" data-lang="perl"><span class="k">my</span> <span class="nv">$</span><span class="nv">stars</span> <span class="o">=</span> <span class="nv">$</span><span class="nv">data</span><span class="o">-</span><span class="o">&gt;</span><span class="p">{</span><span class="s">&#39;result&#39;</span><span class="p">}</span><span class="p">{</span><span class="s">&#39;actress&#39;</span><span class="p">}</span><span class="p">;</span>
-<span class="k">for</span> <span class="nv">$</span><span class="nv">stars</span><span class="o">.</span><span class="n"></span><span class="nn">list</span> <span class="o">-</span><span class="o">&gt;</span> <span class="nv">$</span><span class="nv">star</span> <span class="p">{</span>
+<div class="highlight"><pre class="chroma"><code class="language-perl" data-lang="perl"><span class="k">my</span> <span class="nv">$stars</span> <span class="o">=</span> <span class="nv">$data</span><span class="o">-&gt;</span><span class="p">{</span><span class="s">&#39;result&#39;</span><span class="p">}{</span><span class="s">&#39;actress&#39;</span><span class="p">};</span>
+<span class="k">for</span> <span class="nv">$stars</span><span class="o">.</span><span class="nn">list</span> <span class="o">-&gt;</span> <span class="nv">$star</span> <span class="p">{</span>
 <span class="p">}</span>
 </code></pre></div><p>と書いた。<code>$stars</code>はスカラの変数でそこに<code>Array</code>型が入っているので、
 <code>list</code>メソッドでイテレーブルにしている。</p>
@@ -111,8 +94,8 @@ Perl 5だと</p>
 <li><a href="https://docs.perl6.org/type/List">class List - Perl 6 Documentaion</a></li>
 </ul>
 <p>とはいえ</p>
-<div class="highlight"><pre class="chroma"><code class="language-perl" data-lang="perl"><span class="k">my</span> <span class="nv">$</span><span class="nv">stars</span> <span class="o">=</span> <span class="nv">$</span><span class="nv">data</span><span class="o">-</span><span class="o">&gt;</span><span class="p">{</span><span class="s">&#39;result&#39;</span><span class="p">}</span><span class="p">{</span><span class="s">&#39;actress&#39;</span><span class="p">}</span><span class="p">;</span>
-<span class="k">for</span> <span class="nv">@$</span><span class="nv">stars</span> <span class="o">-</span><span class="o">&gt;</span> <span class="nv">$</span><span class="nv">star</span> <span class="p">{</span>
+<div class="highlight"><pre class="chroma"><code class="language-perl" data-lang="perl"><span class="k">my</span> <span class="nv">$stars</span> <span class="o">=</span> <span class="nv">$data</span><span class="o">-&gt;</span><span class="p">{</span><span class="s">&#39;result&#39;</span><span class="p">}{</span><span class="s">&#39;actress&#39;</span><span class="p">};</span>
+<span class="k">for</span> <span class="nv">@$stars</span> <span class="o">-&gt;</span> <span class="nv">$star</span> <span class="p">{</span>
 <span class="p">}</span>
 </code></pre></div><p>でもいける。</p>
 <p>さて、以下コード。</p>
@@ -120,44 +103,44 @@ Perl 5だと</p>
 <span class="k">use</span> <span class="nn">URI</span><span class="p">;</span>
 <span class="k">use</span> <span class="nn">JSON::Tiny</span><span class="p">;</span>
 
-<span class="n"></span><span class="n">constant</span> <span class="nv">$</span><span class="nv">api_id</span> <span class="o">=</span> <span class="s">&#39;YOUR_API_ID&#39;</span><span class="p">;</span>
-<span class="n"></span><span class="n">constant</span> <span class="nv">$</span><span class="nv">affiliate_id</span> <span class="o">=</span> <span class="s">&#39;YOUR_AFFILIATE_ID&#39;</span><span class="p">;</span>
+<span class="n">constant</span> <span class="nv">$api_id</span> <span class="o">=</span> <span class="s">&#39;YOUR_API_ID&#39;</span><span class="p">;</span>
+<span class="n">constant</span> <span class="nv">$affiliate_id</span> <span class="o">=</span> <span class="s">&#39;YOUR_AFFILIATE_ID&#39;</span><span class="p">;</span>
 
 <span class="c1"># @*ARGSで引数取得、Perl5では$ARGV[0]だった</span>
-<span class="k">my</span> <span class="nv">$</span><span class="nv">name</span> <span class="o">=</span> <span class="nv">@</span><span class="err">*</span><span class="nv">ARGS</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">||</span> <span class="s">&#39;雛&#39;</span><span class="p">;</span>
+<span class="k">my</span> <span class="nv">$name</span> <span class="o">=</span> <span class="nv">@</span><span class="err">*</span><span class="nv">ARGS</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">||</span> <span class="s">&#39;雛&#39;</span><span class="p">;</span>
 
-<span class="k">my</span> <span class="nv">$</span><span class="nv">uri</span> <span class="o">=</span> <span class="n"></span><span class="n">URI</span><span class="o">.</span><span class="k">new</span><span class="p">(</span><span class="s">&#39;https://api.dmm.com/affiliate/v3/ActressSearch&#39;</span><span class="p">)</span><span class="p">;</span>
+<span class="k">my</span> <span class="nv">$uri</span> <span class="o">=</span> <span class="n">URI</span><span class="o">.</span><span class="k">new</span><span class="p">(</span><span class="s">&#39;https://api.dmm.com/affiliate/v3/ActressSearch&#39;</span><span class="p">);</span>
 
 <span class="c1"># クエリを組み立てるハッシュ</span>
-<span class="k">my</span> <span class="nv">%</span><span class="nv">params</span> <span class="o">=</span>
-    <span class="n"></span><span class="n">api_id</span> <span class="o">=</span><span class="o">&gt;</span> <span class="nv">$</span><span class="nv">api_id</span><span class="p">,</span>
-    <span class="n"></span><span class="n">affiliate_id</span> <span class="o">=</span><span class="o">&gt;</span> <span class="nv">$</span><span class="nv">affiliate_id</span><span class="p">,</span>
-    <span class="n"></span><span class="n">keyword</span> <span class="o">=</span><span class="o">&gt;</span> <span class="nv">$</span><span class="nv">name</span><span class="p">,</span>
-    <span class="n"></span><span class="n">hits</span> <span class="o">=</span><span class="o">&gt;</span> <span class="mi">50</span><span class="p">;</span>
+<span class="k">my</span> <span class="nv">%params</span> <span class="o">=</span>
+    <span class="n">api_id</span> <span class="o">=&gt;</span> <span class="nv">$api_id</span><span class="p">,</span>
+    <span class="n">affiliate_id</span> <span class="o">=&gt;</span> <span class="nv">$affiliate_id</span><span class="p">,</span>
+    <span class="n">keyword</span> <span class="o">=&gt;</span> <span class="nv">$name</span><span class="p">,</span>
+    <span class="n">hits</span> <span class="o">=&gt;</span> <span class="mi">50</span><span class="p">;</span>
 
 <span class="c1"># query-formメソッドに食わせる</span>
-<span class="nv">$</span><span class="nv">uri</span><span class="o">.</span><span class="n"></span><span class="n">query</span><span class="o">.</span><span class="n"></span><span class="n">query</span><span class="o">-</span><span class="n"></span><span class="n">form</span><span class="p">(</span><span class="nv">%</span><span class="nv">params</span><span class="p">)</span><span class="p">;</span>
+<span class="nv">$uri</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">query</span><span class="o">-</span><span class="n">form</span><span class="p">(</span><span class="nv">%params</span><span class="p">);</span>
 
 <span class="c1"># say $uri;</span>
 <span class="c1"># =&gt; https://api.dmm.com/affiliate/v3/ActressSearch?api_id=YOUR_API_ID&amp;hits=50&amp;keyword=&amp;affiliate_id=YOUR_AFFILIATE_ID</span>
 
-<span class="k">my</span> <span class="nv">$</span><span class="nv">ua</span> <span class="o">=</span> <span class="n"></span><span class="nn">HTTP::</span><span class="n"></span><span class="n">UserAgent</span><span class="o">.</span><span class="k">new</span><span class="p">;</span>
-<span class="k">my</span> <span class="nv">$</span><span class="nv">res</span> <span class="o">=</span> <span class="nv">$</span><span class="nv">ua</span><span class="o">.</span><span class="n"></span><span class="n">get</span><span class="p">(</span><span class="nv">$</span><span class="nv">uri</span><span class="p">)</span><span class="p">;</span>
+<span class="k">my</span> <span class="nv">$ua</span> <span class="o">=</span> <span class="nn">HTTP::</span><span class="n">UserAgent</span><span class="o">.</span><span class="k">new</span><span class="p">;</span>
+<span class="k">my</span> <span class="nv">$res</span> <span class="o">=</span> <span class="nv">$ua</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nv">$uri</span><span class="p">);</span>
 
 <span class="c1"># status codeが200番台でなければdie</span>
-<span class="k">if</span> <span class="o">!</span><span class="nv">$</span><span class="nv">res</span><span class="o">.</span><span class="n"></span><span class="n">is</span><span class="o">-</span><span class="n"></span><span class="n">success</span> <span class="p">{</span>
-    <span class="nb">die</span> <span class="nv">$</span><span class="nv">res</span><span class="p">;</span>
+<span class="k">if</span> <span class="o">!</span><span class="nv">$res</span><span class="o">.</span><span class="n">is</span><span class="o">-</span><span class="n">success</span> <span class="p">{</span>
+    <span class="nb">die</span> <span class="nv">$res</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="c1"># JSON::Tinyからエキスポートされたfrom-jsonメソッドでdecode</span>
-<span class="k">my</span> <span class="nv">$</span><span class="nv">data</span> <span class="o">=</span> <span class="n"></span><span class="n">from</span><span class="o">-</span><span class="n"></span><span class="n">json</span><span class="p">(</span><span class="nv">$</span><span class="nv">res</span><span class="o">.</span><span class="n"></span><span class="n">decoded</span><span class="o">-</span><span class="n"></span><span class="n">content</span><span class="p">)</span><span class="p">;</span>
+<span class="k">my</span> <span class="nv">$data</span> <span class="o">=</span> <span class="n">from</span><span class="o">-</span><span class="n">json</span><span class="p">(</span><span class="nv">$res</span><span class="o">.</span><span class="n">decoded</span><span class="o">-</span><span class="n">content</span><span class="p">);</span>
 
 <span class="c1"># ハッシュから女優一覧を取り出す</span>
-<span class="k">my</span> <span class="nv">$</span><span class="nv">stars</span> <span class="o">=</span>  <span class="nv">$</span><span class="nv">data</span><span class="p">{</span><span class="s">&#39;result&#39;</span><span class="p">}</span><span class="p">{</span><span class="s">&#39;actress&#39;</span><span class="p">}</span><span class="p">;</span>
+<span class="k">my</span> <span class="nv">$stars</span> <span class="o">=</span>  <span class="nv">$data</span><span class="p">{</span><span class="s">&#39;result&#39;</span><span class="p">}{</span><span class="s">&#39;actress&#39;</span><span class="p">};</span>
 
 <span class="c1"># .listしてイテレーション</span>
-<span class="k">for</span> <span class="nv">$</span><span class="nv">stars</span><span class="o">.</span><span class="n"></span><span class="nn">list</span> <span class="o">-</span><span class="o">&gt;</span> <span class="nv">$</span><span class="nv">star</span> <span class="p">{</span>
-    <span class="n"></span><span class="n">say</span> <span class="nv">$</span><span class="nv">star</span><span class="p">{</span><span class="s">&#39;name&#39;</span><span class="p">}</span><span class="p">;</span>
+<span class="k">for</span> <span class="nv">$stars</span><span class="o">.</span><span class="nn">list</span> <span class="o">-&gt;</span> <span class="nv">$star</span> <span class="p">{</span>
+    <span class="n">say</span> <span class="nv">$star</span><span class="p">{</span><span class="s">&#39;name&#39;</span><span class="p">};</span>
 <span class="p">}</span>
 </code></pre></div><p>Raku楽しい。</p>
 
@@ -189,7 +172,7 @@ Perl 5だと</p>
       <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
     </li>
     <li>
-      <span class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2020%2fraku-dmm%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
+      <span class="fb-share-button"  data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2020%2fraku-dmm%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
     </li>
     <li>
       <a href="https://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label-counter" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>

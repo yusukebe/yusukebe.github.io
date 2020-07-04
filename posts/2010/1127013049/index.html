@@ -2,7 +2,9 @@
 <html>
 <head>
 	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Oppai-Detect3 - ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Oppai-Detect3 - ゆーすけべー日記</title>
+    <meta name="description" content=" Oppai-Detectとは？  画像のおっぱい部分を自動認識させる挑戦である。  目的  筆者はおっぱいが好きだ。そこでおっぱい画像をたくさん集めたい。例えばその際に収集の精度を高めたいと思う。そこで、おっぱい部分を自動で検出したらそれ" /><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta property="og:title" content="Oppai-Detect3" />
 <meta property="og:description" content=" Oppai-Detectとは？  画像のおっぱい部分を自動認識させる挑戦である。  目的  筆者はおっぱいが好きだ。そこでおっぱい画像をたくさん集めたい。例えばその際に収集の精度を高めたいと思う。そこで、おっぱい部分を自動で検出したらそれ" />
 <meta property="og:type" content="article" />
@@ -20,6 +22,7 @@
 	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
 	
 	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+    <script src="//cdn.embedly.com/widgets/platform.js" charset="UTF-8"></script>
 	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 	<script src="https://yusukebe.com/js/main.js"></script>
 	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
@@ -63,7 +66,7 @@
 			<div class="meta">Posted at &mdash; Nov 27, 2010</div>
 		</div>
 
-		<div class="markdown">
+		<div class="markdown post-body">
 			
 
 <h3>Oppai-Detectとは？</h3>
@@ -124,15 +127,14 @@ for my $face (@faces) {
         filled =&gt; 0,
     ) or die $img-&gt;errstr;
 }
-$img-&gt;write( file =&gt; 'out.jpg' ) or die $img-&gt;errstr;
- </pre>
+$img-&gt;write( file =&gt; 'out.jpg' ) or die $img-&gt;errstr;</pre>
 
 <p>
 上記のコードを実行した例が以下の写真である。
 顔の部分が自動検出され赤い枠で囲まれているのがわかる。
 </p>
 <p>
-<img alt="oppai-detect" class="at-xid-6a0133f4781589970b015391e395d4970b" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015391e395d4970b-pi">
+<img alt="oppai-detect" class="at-xid-6a0133f4781589970b015391e395d4970b" src="https://yusukebe.com/archives/a/6a0133f4781589970b015391e395d4970b-pi.jpg">
 </p>
 
 <h3>今回のチャレンジ</h3>
@@ -188,9 +190,7 @@ for my $actress ( @$actress_list ){
     search("おっぱい $actress");
 }
 
-...;
-
- </pre>
+...;</pre>
 <p>
 このAcme::Porn::JPの現行バージョンでは4502人のAV女優名が掲載されている。
 Acme::Porn::JPは以下のgithubサイトから入手できる。
@@ -204,7 +204,7 @@ http://github.com/yusukebe/Acme-Porn-JP
 その結果29,065枚の画像を入手することができた。
 </p>
 <p>
-<img alt="oppai-detect" class="at-xid-6a0133f4781589970b015391e395e5970b" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015391e395e5970b-pi">
+<img alt="oppai-detect" class="at-xid-6a0133f4781589970b015391e395e5970b" src="https://yusukebe.com/archives/a/6a0133f4781589970b015391e395e5970b-pi.jpg">
 </p>
 
 <h3>Haartrainingツールによる学習</h3>
@@ -225,15 +225,11 @@ negative.datはNegative Imageの画像ファイルへのパスのリストであ
 </p>
 <pre class="brush: perl"> positive.dat
 [filename] [# of objects] [[x y width height] [... 2nd object] ...]
-images/01.jpg 1 140 100 45 45
-
- </pre>
+images/01.jpg 1 140 100 45 45</pre>
 
 <pre class="brush: perl"> negative.dat
 images/neg-01.jpg
-images/neg-02.jpg
-
- </pre>
+images/neg-02.jpg</pre>
 
 <h3>2.学習ツール作成</h3>
 <p>
@@ -267,15 +263,12 @@ Haartraining-Appの一般的なディレクトリ構成は以下の通りであ�
     |-- haartraining.js
     `-- index.html
 
-3 directories, 6 files
-
- </pre>
+3 directories, 6 files</pre>
 <p>
 Plackモジュールのplackupコマンドを使えば起動しているホストの5000番ポートなどで、
 アプリケーションが起動する。
 </p>
-<pre class="brush: perl"> $ plackup haartraining.psgi 
- </pre>
+<pre class="brush: perl"> $ plackup haartraining.psgi</pre>
 
 <h3>3.ひたすらおっぱいを囲む</h3>
 <p>
@@ -283,7 +276,7 @@ Plackモジュールのplackupコマンドを使えば起動しているホス�
 下の画像はイメージである。
 </p>
 <p>
-<img alt="oppai-detect" class="at-xid-6a0133f4781589970b015391e395f8970b" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015391e395f8970b-pi">
+<img alt="oppai-detect" class="at-xid-6a0133f4781589970b015391e395f8970b" src="https://yusukebe.com/archives/a/6a0133f4781589970b015391e395f8970b-pi.jpg">
 </p>
 
 <h3>opencv_haartrainingによる学習</h3>
@@ -302,7 +295,7 @@ Mac mini / OSX 10.5 （2.26 GHz Intel COre 2 Duo）の環境で、
 それを使用して出力された画像の一つが以下である。
 </p>
 <p>
-<img alt="oppai-detect" class="at-xid-6a0133f4781589970b015391e3960d970b" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015391e3960d970b-pi">
+<img alt="oppai-detect" class="at-xid-6a0133f4781589970b015391e3960d970b" src="https://yusukebe.com/archives/a/6a0133f4781589970b015391e3960d970b-pi.jpg">
 </p>
 <p>
 上のように正面を向いたおっぱいで、画像の大きさが的確ならば比較的認識されやすいことがわかった。
@@ -355,7 +348,7 @@ Mac mini / OSX 10.5 （2.26 GHz Intel COre 2 Duo）の環境で、
       <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
     </li>
     <li>
-      <span class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2010%2f1127013049%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
+      <span class="fb-share-button"  data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2010%2f1127013049%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
     </li>
     <li>
       <a href="https://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label-counter" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>

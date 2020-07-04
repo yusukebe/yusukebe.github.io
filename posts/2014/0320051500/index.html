@@ -2,7 +2,9 @@
 <html>
 <head>
 	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Perlによる速習プランもしくは「Webアプリエンジニア養成読本」番外編 - ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Perlによる速習プランもしくは「Webアプリエンジニア養成読本」番外編 - ゆーすけべー日記</title>
+    <meta name="description" content=" 先日共著で出版し、本日出版記念のイベントが行われる「Webアプリエンジニア養成読本」。基礎知識から運用まで一気通貫でWebアプリ周辺の教本を目指してアレンジしました。      Webアプリエンジニア養成読本[しくみ、開発、環境構築・運用" /><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta property="og:title" content="Perlによる速習プランもしくは「Webアプリエンジニア養成読本」番外編" />
 <meta property="og:description" content=" 先日共著で出版し、本日出版記念のイベントが行われる「Webアプリエンジニア養成読本」。基礎知識から運用まで一気通貫でWebアプリ周辺の教本を目指してアレンジしました。      Webアプリエンジニア養成読本[しくみ、開発、環境構築・運用" />
 <meta property="og:type" content="article" />
@@ -20,6 +22,7 @@
 	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
 	
 	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+    <script src="//cdn.embedly.com/widgets/platform.js" charset="UTF-8"></script>
 	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 	<script src="https://yusukebe.com/js/main.js"></script>
 	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
@@ -63,7 +66,7 @@
 			<div class="meta">Posted at &mdash; Mar 20, 2014</div>
 		</div>
 
-		<div class="markdown">
+		<div class="markdown post-body">
 			
 
 <p>先日共著で出版し、本日出版記念のイベントが行われる「Webアプリエンジニア養成読本」。基礎知識から運用まで<strong>一気通貫で</strong>Webアプリ周辺の教本を目指してアレンジしました。</p>
@@ -151,14 +154,13 @@
 
 
 
-<pre> CREATE TABLE bookmark (
+<pre class="code">CREATE TABLE bookmark (
     id INT UNSIGNED AUTO_INCREMENT,
     url TEXT NOT NULL,
     created_at DATETIME NOT NULL,
     updated_at DATETIME NOT NULL,
     PRIMARY KEY (`id`)
-) DEFAULT CHARACTER SET 'utf8' engine=InnoDB;
- </pre>
+) DEFAULT CHARACTER SET 'utf8' engine=InnoDB;</pre>
 
 
 
@@ -194,8 +196,7 @@
 
 
 
-<pre> $ mojo generatge app Shiori::Web
- </pre>
+<pre class="code">$ mojo generatge app Shiori::Web</pre>
 
 
 
@@ -205,7 +206,7 @@
 
 
 
-<pre> .
+<pre class="code">.
 ├── etc # SQLのスキーマファイルなど入れる
 ├── lib
 │   └── Shiori
@@ -218,8 +219,7 @@
 ├── t # テストコード
 └── templates
     ├── layouts # テンプレートの大枠
-    └── root # 個別テンプレート
- </pre>
+    └── root # 個別テンプレート</pre>
 
 
 
@@ -234,7 +234,7 @@
 
 
 
-<pre> use strict;
+<pre class="code">use strict;
 use warnings;
 use FindBin;
 use lib "$FindBin::Bin/lib";
@@ -248,8 +248,7 @@ my $app = $psgi-&gt;to_psgi_app;
 builder {
     # ここでPlack::Middleware::*を使う記述をする
     $app;
-};
- </pre>
+};</pre>
 
 
 
@@ -259,8 +258,7 @@ builder {
 
 
 
-<pre> $ plackup -R templates,lib -p 5000 shiori_web.psgi
- </pre>
+<pre class="code">$ plackup -R templates,lib -p 5000 shiori_web.psgi</pre>
 
 
 
@@ -275,7 +273,7 @@ builder {
 
 
 
-<pre> package Shiori;
+<pre class="code">package Shiori;
 use strict;
 use warnings;
 use Config::PL;
@@ -295,8 +293,7 @@ sub config {
     return $config;
 }
 
-1;
- </pre>
+1;</pre>
 
 
 
@@ -306,7 +303,7 @@ sub config {
 
 
 
-<pre> use strict;
+<pre class="code">use strict;
 use Test::More;
 
 BEGIN {
@@ -320,8 +317,7 @@ subtest 'load_config' =&gt; sub {
     isa_ok $config, 'HASH';
 };
 
-done_testing();
- </pre>
+done_testing();</pre>
 
 
 
@@ -331,8 +327,7 @@ done_testing();
 
 
 
-<pre> $ prove -l t/config.t
- </pre>
+<pre class="code">$ prove -l t/config.t</pre>
 
 
 
@@ -347,11 +342,10 @@ done_testing();
 
 
 
-<pre> package Shiori::DB;
+<pre class="code">package Shiori::DB;
 use parent 'Teng';
 __PACKAGE__-&gt;load_plugin('Pager'); # 後ほどページャーをつくるのでPluginをロード
-1;
- </pre>
+1;</pre>
 
 
 
@@ -361,7 +355,7 @@ __PACKAGE__-&gt;load_plugin('Pager'); # 後ほどページャーをつくるの�
 
 
 
-<pre> package Shiori::DB::Schema;
+<pre class="code">package Shiori::DB::Schema;
 use Teng::Schema::Declare;
 use DateTime::Format::MySQL;
 
@@ -379,8 +373,7 @@ table {
     };
 };
 
-1;
- </pre>
+1;</pre>
 
 
 
@@ -390,10 +383,9 @@ table {
 
 
 
-<pre> my $db = Shiori::DB-&gt;new( connect_info =&gt; [ 'dbi:mysql:shiori:localhost', 'root', undef ] );
+<pre class="code">my $db = Shiori::DB-&gt;new( connect_info =&gt; [ 'dbi:mysql:shiori:localhost', 'root', undef ] );
 my $bookmark = $db-&gt;single('bookmark', { id =&gt; 1 });
-print $bookmark-&gt;url;
- </pre>
+print $bookmark-&gt;url;</pre>
 
 
 
@@ -426,7 +418,7 @@ print $bookmark-&gt;url;
 
 
 
-<pre> package Shiori::Model::Bookmark;
+<pre class="code">package Shiori::Model::Bookmark;
 use Mouse;
 use Shiori;
 use Shiori::DB;
@@ -494,8 +486,7 @@ sub now {
     DateTime-&gt;now( time_zone =&gt; 'Asia/Tokyo' );
 }
 
-__PACKAGE__-&gt;meta-&gt;make_immutable();
- </pre>
+__PACKAGE__-&gt;meta-&gt;make_immutable();</pre>
 
 
 
@@ -505,7 +496,7 @@ __PACKAGE__-&gt;meta-&gt;make_immutable();
 
 
 
-<pre> use strict;
+<pre class="code">use strict;
 use Test::More;
 use FindBin;
 use lib "$FindBin::Bin/lib";
@@ -552,8 +543,7 @@ SQL
     isa_ok $pager, 'Data::Page::NoTotalEntries';
 };
 
-done_testing();
- </pre>
+done_testing();</pre>
 
 
 
@@ -568,7 +558,7 @@ done_testing();
 
 
 
-<pre> package Shiori::Web;
+<pre class="code">package Shiori::Web;
 use Mojo::Base 'Mojolicious';
 use Shiori::Model::Bookmark;
 
@@ -589,8 +579,7 @@ sub startup {
     $r-&gt;post('/create')-&gt;to('root#create');
 }
 
-1;
- </pre>
+1;</pre>
 
 
 
@@ -600,15 +589,14 @@ sub startup {
 
 
 
-<pre> sub index {
+<pre class="code">sub index {
     my $self = shift;
     my $page = $self-&gt;param('page') || 1;
     my ($entries, $pager) = $self-&gt;model-&gt;entries({ page =&gt; $page, limit =&gt; 10 });
     $self-&gt;stash-&gt;{entries} = $entries;
     $self-&gt;stash-&gt;{pager} = $pager;
     $self-&gt;render();
-}
- </pre>
+}</pre>
 
 
 
@@ -618,7 +606,7 @@ sub startup {
 
 
 
-<pre> % title 'Top';
+<pre class="code">% title 'Top';
 % layout 'default';
 
 &lt;h1&gt;URL LIST&lt;/h1&gt;
@@ -653,8 +641,7 @@ sub startup {
 % if (my $next_page = $pager-&gt;next_page) {
   &lt;li&gt;&lt;a href="/?page=&lt;%= $next_page %&gt;"&gt;&amp;raquo;&lt;/a&gt;&lt;/li&gt;
 % }
-&lt;/ul&gt;
- </pre>
+&lt;/ul&gt;</pre>
 
 
 
@@ -664,12 +651,11 @@ sub startup {
 
 
 
-<pre> sub post {
+<pre class="code">sub post {
     my $self = shift;
     $self-&gt;stash-&gt;{messages} = undef;
     $self-&gt;render();
-}
- </pre>
+}</pre>
 
 
 
@@ -679,7 +665,7 @@ sub startup {
 
 
 
-<pre> % title 'POST URL';
+<pre class="code">% title 'POST URL';
 % layout 'default';
 
  &lt;h1&gt;POST URL&lt;/h1&gt;
@@ -701,8 +687,7 @@ sub startup {
     
   &lt;/div&gt;
   &lt;button type="submit" class="btn btn-default"&gt;Submit&lt;/button&gt;
-&lt;/form&gt;
- </pre>
+&lt;/form&gt;</pre>
 
 
 
@@ -712,7 +697,7 @@ sub startup {
 
 
 
-<pre> sub create {
+<pre class="code">sub create {
     my $self = shift;
     my $validation = $self-&gt;validation();
     if( $validation-&gt;csrf_protect-&gt;has_error() ){
@@ -724,8 +709,7 @@ sub startup {
         return $self-&gt;render('root/new');
     }
     $self-&gt;redirect_to('/');
-}
- </pre>
+}</pre>
 
 
 
@@ -740,7 +724,7 @@ sub startup {
 
 
 
-<pre> &lt;!DOCTYPE html&gt;
+<pre class="code">&lt;!DOCTYPE html&gt;
 &lt;html&gt;
   &lt;head&gt;
     &lt;title&gt;Shiori - &lt;%= title %&gt;&lt;/title&gt;
@@ -756,8 +740,7 @@ sub startup {
     &lt;div class="container"&gt;
     &lt;/div&gt;
   &lt;/body&gt;
-&lt;/html&gt;
- </pre>
+&lt;/html&gt;</pre>
 
 
 
@@ -842,7 +825,7 @@ sub startup {
       <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
     </li>
     <li>
-      <span class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2014%2f0320051500%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
+      <span class="fb-share-button"  data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2014%2f0320051500%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
     </li>
     <li>
       <a href="https://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label-counter" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>

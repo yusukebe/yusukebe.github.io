@@ -2,7 +2,9 @@
 <html>
 <head>
 	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Perl vs PHP - ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Perl vs PHP - ゆーすけべー日記</title>
+    <meta name="description" content=" Perl と PHP の比較をしてみましょう。私はPHPから入った口ですが、今は、どちらがよいかというと、個人的な意見としてはやはりPerlです。  それは、PerlにはWebアプリ以外にも使える沢山のモジュールがCPANに用意されており" /><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta property="og:title" content="Perl vs PHP" />
 <meta property="og:description" content=" Perl と PHP の比較をしてみましょう。私はPHPから入った口ですが、今は、どちらがよいかというと、個人的な意見としてはやはりPerlです。  それは、PerlにはWebアプリ以外にも使える沢山のモジュールがCPANに用意されており" />
 <meta property="og:type" content="article" />
@@ -20,6 +22,7 @@
 	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
 	
 	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+    <script src="//cdn.embedly.com/widgets/platform.js" charset="UTF-8"></script>
 	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 	<script src="https://yusukebe.com/js/main.js"></script>
 	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
@@ -63,7 +66,7 @@
 			<div class="meta">Posted at &mdash; Mar 7, 2010</div>
 		</div>
 
-		<div class="markdown">
+		<div class="markdown post-body">
 			
 
 <p>
@@ -86,8 +89,7 @@ PHPのように膨大な標準の関数を使ってせいぜいWebアプリを�
 
 <pre class="brush: perl"> # cpan &gt; install LWP::Simple
 use LWP::Simple;
-my $content = get('http://yusukebe.com/');
- </pre>
+my $content = get('http://yusukebe.com/');</pre>
 
 <p>
 PHPの場合fopen一発でできるところ、Perlではモジュールのインストールからしなくてはいけません。
@@ -106,8 +108,7 @@ my $scraper = scraper {
     process "h2.entry-title", 'titles[]' =&gt; 'TEXT';
 };
 my $res = $scraper-&gt;scrape( URI-&gt;new('http://yusukebe.com/') );
-map { print $_ . "\n"} @{$res-&gt;{titles}};
- </pre>
+map { print $_ . "\n"} @{$res-&gt;{titles}};</pre>
 <pre class="brush: perl"> Twib in Yokohama.pm テクニカルトーク#5
 実例で学ぶPerlにおけるリファレンス
 Perl入門本を書こうとしている話
@@ -117,8 +118,7 @@ Twitterの友達が好きなアーティストがわかっちゃったりする�
 Twitterで話題のYouTube動画が一目でわかるTubetter - ツベッターを作ってみた
 CatalystアプリケーションをStarmanで運用しよう！
 3/5 Yokohama.pm #5 が開催されます
-オススメのIRCチャンネルを教えてください＠人力検索はてな
- </pre>
+オススメのIRCチャンネルを教えてください＠人力検索はてな</pre>
 <p>
 CSSセレクタやXPathで指定した部分だけを配列に入れてくれたりして便利ですね！
 こうした便利ーなモジュールがCPANには沢山あるので、
@@ -148,8 +148,7 @@ my $ref = { name =&gt; 'yusukebe', zokuseis =&gt; [qw(メガネ エロ)] };
 print "Data::Dumper::Dumper\n";
 print Dumper $ref;
 print "YAML::Dump\n";
-print Dump $ref;
- </pre>
+print Dump $ref;</pre>
 
 <pre class="brush: perl"> Data::Dumper::Dumper
 $VAR1 = { 
@@ -164,8 +163,7 @@ YAML::Dump
 name: yusukebe
 zokuseis:
   - メガネ
-  - エロ
- </pre>
+  - エロ</pre>
 <p>
 私はもう今となってはPHPはほとんど触りませんが、
 やはりWebの開発から小物スクリプトまでPerlに軍配が上がる、と思います。
@@ -219,7 +217,7 @@ Perl書籍を書こうとしているからです^^;
       <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
     </li>
     <li>
-      <span class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2010%2f0307003912%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
+      <span class="fb-share-button"  data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2010%2f0307003912%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
     </li>
     <li>
       <a href="https://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label-counter" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>

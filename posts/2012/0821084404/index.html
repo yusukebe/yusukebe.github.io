@@ -2,7 +2,9 @@
 <html>
 <head>
 	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>「ボケて」のスケールアップとスケールアウト - ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>「ボケて」のスケールアップとスケールアウト - ゆーすけべー日記</title>
+    <meta name="description" content=" オモロキで鎌団子さんと二人で開発している写真で一言ボケるWebサービス「ボケて」。バックエンドの改修作業、それに伴うバグ等の修正を施し、やっと落ち着いて来たので、そのことについて書いておこうと思います。  ボケてとは？  改修作業の詳細に" /><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta property="og:title" content="「ボケて」のスケールアップとスケールアウト" />
 <meta property="og:description" content=" オモロキで鎌団子さんと二人で開発している写真で一言ボケるWebサービス「ボケて」。バックエンドの改修作業、それに伴うバグ等の修正を施し、やっと落ち着いて来たので、そのことについて書いておこうと思います。  ボケてとは？  改修作業の詳細に" />
 <meta property="og:type" content="article" />
@@ -20,6 +22,7 @@
 	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
 	
 	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+    <script src="//cdn.embedly.com/widgets/platform.js" charset="UTF-8"></script>
 	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 	<script src="https://yusukebe.com/js/main.js"></script>
 	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
@@ -63,7 +66,7 @@
 			<div class="meta">Posted at &mdash; Aug 21, 2012</div>
 		</div>
 
-		<div class="markdown">
+		<div class="markdown post-body">
 			
 
 <p>オモロキで鎌団子さんと二人で開発している写真で一言ボケるWebサービス「ボケて」。
@@ -128,15 +131,13 @@ Mojoliciousばかり。WAFにCatalystほど重厚なものはいらないと思�
 
 <p>また、Mojoliciousをうまいこと使って、Controllerから内部APIやModelを呼び出すときには、</p>
 
-<pre> my ($bokes, $pager) = $self-&gt;model('Boke')-&gt;get_recent_entries();
- </pre>
+<pre class="code">my ($bokes, $pager) = $self-&gt;model('Boke')-&gt;get_recent_entries();</pre>
 
 <p>と直感的な記述で行えるようにしました。Validationの処理もFormの定義をしておけば、こんな感じでできます。</p>
 
-<pre> if($self-&gt;form('Boke')-&gt;has_error) {
+<pre class="code">if($self-&gt;form('Boke')-&gt;has_error) {
     return $self-&gt;render_fill('/boke/post');
-}
- </pre>
+}</pre>
 
 <h3>キャッシュ戦略</h3>
 
@@ -145,15 +146,14 @@ Mojoliciousばかり。WAFにCatalystほど重厚なものはいらないと思�
 
 <p>で、参照系は生のDBIを使って参照させてるのですが、簡単なラッパーをつくってその生DBIを使いやすくしてます。O/R Mapperは結果をオブジェクトを返しますが、そのラッパーはハッシュレフで返してくれます。以下の例だと「$self-&gt;dbx」がそれなんですが、「search」メソッドはこのように使います。</p>
 
-<pre> $bokes = $self-&gt;dbx-&gt;search(
+<pre class="code">$bokes = $self-&gt;dbx-&gt;search(
     'boke', [ $cond ], [ { -desc =&gt; 'id' } ],
     {
         limit  =&gt; $limit,
         offset =&gt; $offset,
         expire =&gt; 60 * 60,
     }
-);
- </pre>
+);</pre>
 
 <p>条件にあう、最新のボケ一覧を取得していますが、「expire」という引数を与えると自動的にクエリーからキーを生成してそのキーに結果をキャッシュするという仕組みになっています。強制的にキーを組み立てて、そのキーに当てはまるキャッシュを強制的に削除するメソッドも用意しているので、場合によってキャッシュのコントロールができるわけです。</p>
 
@@ -202,7 +202,7 @@ Mojoliciousばかり。WAFにCatalystほど重厚なものはいらないと思�
       <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
     </li>
     <li>
-      <span class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2012%2f0821084404%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
+      <span class="fb-share-button"  data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2012%2f0821084404%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
     </li>
     <li>
       <a href="https://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label-counter" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>

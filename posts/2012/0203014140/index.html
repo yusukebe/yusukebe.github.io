@@ -2,7 +2,9 @@
 <html>
 <head>
 	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>シンプルなもう一つのCSS Framework「inuit.css」 - ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>シンプルなもう一つのCSS Framework「inuit.css」 - ゆーすけべー日記</title>
+    <meta name="description" content=" ワディットのHPを改修する際に使ったんだけど、最近気に入ってるCSS Frameworkが「inuit.css」。CSS Frameworkは便利なんだけどどうしても使っていると「それっぽさ」が出ちゃうので（特にTwitter Boots" /><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta property="og:title" content="シンプルなもう一つのCSS Framework「inuit.css」" />
 <meta property="og:description" content=" ワディットのHPを改修する際に使ったんだけど、最近気に入ってるCSS Frameworkが「inuit.css」。CSS Frameworkは便利なんだけどどうしても使っていると「それっぽさ」が出ちゃうので（特にTwitter Boots" />
 <meta property="og:type" content="article" />
@@ -20,6 +22,7 @@
 	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
 	
 	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+    <script src="//cdn.embedly.com/widgets/platform.js" charset="UTF-8"></script>
 	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 	<script src="https://yusukebe.com/js/main.js"></script>
 	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
@@ -63,7 +66,7 @@
 			<div class="meta">Posted at &mdash; Feb 3, 2012</div>
 		</div>
 
-		<div class="markdown">
+		<div class="markdown post-body">
 			
 
 <p><a href="http://wadit.jp/">ワディットのHP</a>を改修する際に使ったんだけど、最近気に入ってるCSS Frameworkが「<a href="http://csswizardry.com/inuitcss/">inuit.css</a>」。CSS Frameworkは便利なんだけどどうしても使っていると「それっぽさ」が出ちゃうので（特にTwitter Bootstrapなんかｗ）こまめにみんなが使ってないようなものを探している。</p>
@@ -72,42 +75,38 @@
 
 <p>inuit.cssそれ自体は非常に簡素なもので、コアのcssオンリーだとgridレイアウトすら対応してない。ただHTML5の要素の記述もある。特徴としてデフォルトで使っても文字が非常に読みやすいことがあり。大きさ、フォント、マージン、色非常にバランスよく配置、設定されている。また、イメージをマージンつけて左側に回り込ませて配置するといったちょっとしたユーティリティな使い方ができる。img要素にclass="left"を付ければOK。</p>
 
-<pre> &lt;p&gt;
+<pre class="code">&lt;p&gt;
     &lt;img src="http://yusukebe.com/images/childfood.jpg" class="left" /&gt;
     テキスト.....
-&lt;/p&gt;
- </pre>
+&lt;/p&gt;</pre>
 
 <p>gridレイアウトに対応してないと言っても、ダウンロードしたファイルに同封されている「inuit.grid.css」というものを読み込みさえすればclass属性に指定するだけでレイアウト可能だ。12個のgridで構成されているので、以下のようなマークアップをする。</p>
 
-<pre> &lt;div class="grids"&gt;
+<pre class="code">&lt;div class="grids"&gt;
     &lt;div class="grid-4"&gt;
         &lt;h3&gt;サイドバー&lt;/h3&gt;
     &lt;/div&gt;
     &lt;div class="grid-8 end"&gt;
         &lt;h2&gt;コンテンツ&lt;/h2&gt;
     &lt;/div&gt;
-&lt;/div&gt;
- </pre>
+&lt;/div&gt;</pre>
 
 <p>「keyword.inuit.css」というものも同封されていて、ulでマークアップしたコンテンツがカンマ区切りの一行になる。使い道があんまり思い当たらないが一応紹介。</p>
 
-<pre> &lt;ul class="keywords"&gt;
+<pre class="code">&lt;ul class="keywords"&gt;
   &lt;li&gt;りんご&lt;/li&gt;
   &lt;li&gt;バナナ&lt;/li&gt;
   &lt;li&gt;梨&lt;/li&gt;
   &lt;li&gt;ぶどう&lt;/li&gt;
-&lt;/ul&gt;
- </pre>
+&lt;/ul&gt;</pre>
 
 <p>似たようにulを水平レイアウトにするなら、「nav」クラスを付けてみればナビゲーションができる。</p>
 
-<pre> &lt;ul class="nav" style="margin-left:0;"&gt;
+<pre class="code">&lt;ul class="nav" style="margin-left:0;"&gt;
   &lt;li&gt;&lt;a href="/"&gt;ホーム&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href="/"&gt;アバウト&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href="/"&gt;コンタクト&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
- </pre>
+&lt;/ul&gt;</pre>
 
 <p>全部を合わせるとこのようなスクリーンショットになる。</p>
 
@@ -170,7 +169,7 @@
       <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
     </li>
     <li>
-      <span class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2012%2f0203014140%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
+      <span class="fb-share-button"  data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2012%2f0203014140%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
     </li>
     <li>
       <a href="https://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label-counter" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>

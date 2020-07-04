@@ -2,7 +2,9 @@
 <html>
 <head>
 	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Flickr からキーワードにマッチした写真を一括ダウンロードする Perl スクリプト「flickr_fetcher.pl」 - ゆーすけべー日記</title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Flickr からキーワードにマッチした写真を一括ダウンロードする Perl スクリプト「flickr_fetcher.pl」 - ゆーすけべー日記</title>
+    <meta name="description" content="   昨日の夜、むしょうに「磯山さやか」の画像をたくさん見たくなって、  Flickr からキーワードにマッチした写真を一括でダウンロードする Perl のスクリプトを作ってみた。     flickr_fetcher.pl       使" /><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta property="og:title" content="Flickr からキーワードにマッチした写真を一括ダウンロードする Perl スクリプト「flickr_fetcher.pl」" />
 <meta property="og:description" content="   昨日の夜、むしょうに「磯山さやか」の画像をたくさん見たくなって、  Flickr からキーワードにマッチした写真を一括でダウンロードする Perl のスクリプトを作ってみた。     flickr_fetcher.pl       使" />
 <meta property="og:type" content="article" />
@@ -20,6 +22,7 @@
 	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/custom.css" />
 	
 	<link rel="stylesheet" type="text/css" href="https://yusukebe.com/css/syntax.css" />
+    <script src="//cdn.embedly.com/widgets/platform.js" charset="UTF-8"></script>
 	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 	<script src="https://yusukebe.com/js/main.js"></script>
 	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
@@ -63,7 +66,7 @@
 			<div class="meta">Posted at &mdash; Jan 3, 2009</div>
 		</div>
 
-		<div class="markdown">
+		<div class="markdown post-body">
 			
 
 <p>
@@ -78,25 +81,22 @@
 <p>
   使い方はこんな感じ。
 </p>
-<pre> $ ./flickr_fetcher.pl --keyword 磯山さやか --dir sayaka --api_key yourflickrapikey
- </pre>
+<pre class="code">$ ./flickr_fetcher.pl --keyword 磯山さやか --dir sayaka --api_key yourflickrapikey</pre>
 <p>
 すると、sayaka というディレクトリが無かったら自動的に作ってくれて、
 Flickr 内でマッチした 総写真枚数 が表示されます。
 </p>
-<pre> $ ./flickr_fetcher.pl --keyword 磯山さやか --dir sayaka --api_key yourflickrapikey
+<pre class="code">$ ./flickr_fetcher.pl --keyword 磯山さやか --dir sayaka --api_key yourflickrapikey
 search keyword : 磯山さやか
-total count : 760
- </pre>
+total count : 760</pre>
 <p>
 760枚もあるんですね。そして、勝手にダウンロード開始。
 </p>
-<pre> try to fetch : 200 OK : http://farm4.static.flickr.com/3285/3112920048_531a88761b_b.jpg
+<pre class="code">try to fetch : 200 OK : http://farm4.static.flickr.com/3285/3112920048_531a88761b_b.jpg
 try to fetch : 200 OK : http://farm4.static.flickr.com/3213/3084174182_463f9bd410_b.jpg
 try to fetch : 200 OK : http://farm4.static.flickr.com/3187/3067816386_f242e15580_o.jpg
 try to fetch : 200 OK : http://farm4.static.flickr.com/3280/3042192731_3ca24c0a5b_o.jpg
-try to fetch : 200 OK : http://farm4.static.flickr.com/3009/3042961088_cc993ba07d_b.jpg
- </pre>
+try to fetch : 200 OK : http://farm4.static.flickr.com/3009/3042961088_cc993ba07d_b.jpg</pre>
 <p>
 Flickr の写真っていろいろサイズがあるけど、一番大きなサイズのものをダウンロードしています。
 しばらく待つとダウンロードが終わって、sayaka ディレクトリには760枚の画像が。
@@ -105,14 +105,13 @@ Flickr の写真っていろいろサイズがあるけど、一番大きなサ�
 環境変数に「FLICKR_API_KEY」が設定されていれば指定しなくて OK です。
 </p>
 <p>
-  <img alt="磯山さやか" class="at-xid-6a0133f4781589970b014e8bd74e48970d" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b014e8bd74e48970d-pi">
+  <img alt="磯山さやか" class="at-xid-6a0133f4781589970b014e8bd74e48970d" src="https://yusukebe.com/archives/a/6a0133f4781589970b014e8bd74e48970d-pi">
 </p>
 <p>
 もちろんエロっちいーこと以外にも使えます。
 ダウンロードする写真のライセンスを指定できるので、例えば、CC の by アトリビュートの写真が欲しかったら以下のように license パラメータに 4 をセットします。
 </p>
-<pre> $ ./flickr_fetcher.pl --keyword sky --dir sky --license 4 --api_key yourflickrapikey
- </pre>
+<pre class="code">$ ./flickr_fetcher.pl --keyword sky --dir sky --license 4 --api_key yourflickrapikey</pre>
 <p>
 ある程度自由に使いたい写真を見つけたい時に便利かもね。
 </p>
@@ -284,9 +283,7 @@ Yusuke Wada E&lt;lt&gt;yusuke (at) kamawada.comE&lt;gt&gt;
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.
 
-=cut
-
- </pre>
+=cut</pre>
 
 <p>
   Enjoy!
@@ -296,7 +293,7 @@ it under the same terms as Perl itself.
 
 
 <p></p>
-<div style="float:left"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4873110963/kamawada-22/"><img alt="プログラミングPerl〈VOLUME1〉" class="at-xid-6a0133f4781589970b014e8bd74e54970d" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b014e8bd74e54970d-pi" style="border:none;"></a></div>
+<div style="float:left"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4873110963/kamawada-22/"><img alt="プログラミングPerl〈VOLUME1〉" class="at-xid-6a0133f4781589970b014e8bd74e54970d" src="https://yusukebe.com/archives/a/6a0133f4781589970b014e8bd74e54970d-pi.jpg" style="border:none;"></a></div>
 <div style="float:left;margin-left:15px;">
 <div style="font-size:12pt"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4873110963/kamawada-22/">プログラミングPerl〈VOLUME1〉</a></div>
 <div style="font-size:7pt;font-family:verdana;">posted with <a href="http://yusukebe.com/b/amazon/search/">yusukebe.com::AmazonSearch</a> on 2009.1.3</div>
@@ -306,17 +303,17 @@ it under the same terms as Perl itself.
 <li>単行本 / オライリー・ジャパン </li>
 <li>Amazon 売り上げランキング: 98834</li>
 </ul>
-<ul style="list-style-type:none;padding:0;"><li>Amazon おすすめ度の平均: <img alt="5.0" class="at-xid-6a0133f4781589970b015435b6d28e970c" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015435b6d28e970c-pi" style="margin:0;"><ul style="list-style-type:none;padding-left:0;">
+<ul style="list-style-type:none;padding:0;"><li>Amazon おすすめ度の平均: <img alt="5.0" class="at-xid-6a0133f4781589970b015435b6d28e970c" src="https://yusukebe.com/archives/a/6a0133f4781589970b015435b6d28e970c-pi.gif" style="margin:0;"><ul style="list-style-type:none;padding-left:0;">
 <li>
-<img alt="5" class="at-xid-6a0133f4781589970b015435b6d28e970c" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015435b6d28e970c-pi" style="margin:0;"> いまだに１０行以上のプログラムが書けません。</li>
+<img alt="5" class="at-xid-6a0133f4781589970b015435b6d28e970c" src="https://yusukebe.com/archives/a/6a0133f4781589970b015435b6d28e970c-pi.gif" style="margin:0;"> いまだに１０行以上のプログラムが書けません。</li>
 <li>
-<img alt="4" class="at-xid-6a0133f4781589970b014e8bd727e1970d" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b014e8bd727e1970d-pi" style="margin:0;"> 値段は高いけど・・・</li>
+<img alt="4" class="at-xid-6a0133f4781589970b014e8bd727e1970d" src="https://yusukebe.com/archives/a/6a0133f4781589970b014e8bd727e1970d-pi.gif" style="margin:0;"> 値段は高いけど・・・</li>
 <li>
-<img alt="5" class="at-xid-6a0133f4781589970b015435b6d28e970c" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015435b6d28e970c-pi" style="margin:0;"> CGIを自在にこなす第一歩の書</li>
+<img alt="5" class="at-xid-6a0133f4781589970b015435b6d28e970c" src="https://yusukebe.com/archives/a/6a0133f4781589970b015435b6d28e970c-pi.gif" style="margin:0;"> CGIを自在にこなす第一歩の書</li>
 <li>
-<img alt="5" class="at-xid-6a0133f4781589970b015435b6d28e970c" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015435b6d28e970c-pi" style="margin:0;"> Perl文法の仕組みを詳細に知りたい人の本</li>
+<img alt="5" class="at-xid-6a0133f4781589970b015435b6d28e970c" src="https://yusukebe.com/archives/a/6a0133f4781589970b015435b6d28e970c-pi.gif" style="margin:0;"> Perl文法の仕組みを詳細に知りたい人の本</li>
 <li>
-<img alt="5" class="at-xid-6a0133f4781589970b015435b6d28e970c" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015435b6d28e970c-pi" style="margin:0;"> ラクダが踊る</li>
+<img alt="5" class="at-xid-6a0133f4781589970b015435b6d28e970c" src="https://yusukebe.com/archives/a/6a0133f4781589970b015435b6d28e970c-pi.gif" style="margin:0;"> ラクダが踊る</li>
 </ul>
 </li></ul>
 <a href="http://www.amazon.co.jp/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0Perl%E3%80%88VOLUME1%E3%80%89-%E3%83%A9%E3%83%AA%E3%83%BC-%E3%82%A6%E3%82%A9%E3%83%BC%E3%83%AB/dp/4873110963%3FSubscriptionId%3D13C5PCPS36EMN8C22682%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D4873110963">Amazon.co.jpで詳細を見る</a>
@@ -325,7 +322,7 @@ it under the same terms as Perl itself.
 <div style="clear:left;"></div>
 
 <p></p>
-<div style="float:left"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4847041364/kamawada-22/"><img alt="磯山さやか写真集『郡上に行ってきました。』(DVD付)" class="at-xid-6a0133f4781589970b014e8bd74e6f970d" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b014e8bd74e6f970d-pi" style="border:none;"></a></div>
+<div style="float:left"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4847041364/kamawada-22/"><img alt="磯山さやか写真集『郡上に行ってきました。』(DVD付)" class="at-xid-6a0133f4781589970b014e8bd74e6f970d" src="https://yusukebe.com/archives/a/6a0133f4781589970b014e8bd74e6f970d-pi" style="border:none;"></a></div>
 <div style="float:left;margin-left:15px;">
 <div style="font-size:12pt"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4847041364/kamawada-22/">磯山さやか写真集『郡上に行ってきました。』(DVD付)</a></div>
 <div style="font-size:7pt;font-family:verdana;">posted with <a href="http://yusukebe.com/b/amazon/search/">yusukebe.com::AmazonSearch</a> on 2009.1.3</div>
@@ -335,17 +332,17 @@ it under the same terms as Perl itself.
 <li>大型本 / ワニブックス </li>
 <li>Amazon 売り上げランキング: 2500</li>
 </ul>
-<ul style="list-style-type:none;padding:0;"><li>Amazon おすすめ度の平均: <img alt="4.0" class="at-xid-6a0133f4781589970b014e8bd727e1970d" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b014e8bd727e1970d-pi" style="margin:0;"><ul style="list-style-type:none;padding-left:0;">
+<ul style="list-style-type:none;padding:0;"><li>Amazon おすすめ度の平均: <img alt="4.0" class="at-xid-6a0133f4781589970b014e8bd727e1970d" src="https://yusukebe.com/archives/a/6a0133f4781589970b014e8bd727e1970d-pi.gif" style="margin:0;"><ul style="list-style-type:none;padding-left:0;">
 <li>
-<img alt="5" class="at-xid-6a0133f4781589970b015435b6d28e970c" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015435b6d28e970c-pi" style="margin:0;"> 好きだけどなぁ…。</li>
+<img alt="5" class="at-xid-6a0133f4781589970b015435b6d28e970c" src="https://yusukebe.com/archives/a/6a0133f4781589970b015435b6d28e970c-pi.gif" style="margin:0;"> 好きだけどなぁ…。</li>
 <li>
-<img alt="3" class="at-xid-6a0133f4781589970b015391e3783b970b" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015391e3783b970b-pi" style="margin:0;"> 表紙だけを見よう</li>
+<img alt="3" class="at-xid-6a0133f4781589970b015391e3783b970b" src="https://yusukebe.com/archives/a/6a0133f4781589970b015391e3783b970b-pi.gif" style="margin:0;"> 表紙だけを見よう</li>
 <li>
-<img alt="2" class="at-xid-6a0133f4781589970b015391e38ae3970b" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015391e38ae3970b-pi" style="margin:0;"> う?ん、どうでしょ</li>
+<img alt="2" class="at-xid-6a0133f4781589970b015391e38ae3970b" src="https://yusukebe.com/archives/a/6a0133f4781589970b015391e38ae3970b-pi.gif" style="margin:0;"> う?ん、どうでしょ</li>
 <li>
-<img alt="5" class="at-xid-6a0133f4781589970b015435b6d28e970c" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b015435b6d28e970c-pi" style="margin:0;"> お帰り！</li>
+<img alt="5" class="at-xid-6a0133f4781589970b015435b6d28e970c" src="https://yusukebe.com/archives/a/6a0133f4781589970b015435b6d28e970c-pi.gif" style="margin:0;"> お帰り！</li>
 <li>
-<img alt="4" class="at-xid-6a0133f4781589970b014e8bd727e1970d" src="http://yusukebe.typepad.jp/.a/6a0133f4781589970b014e8bd727e1970d-pi" style="margin:0;"> 可愛い！！　けど・・・</li>
+<img alt="4" class="at-xid-6a0133f4781589970b014e8bd727e1970d" src="https://yusukebe.com/archives/a/6a0133f4781589970b014e8bd727e1970d-pi.gif" style="margin:0;"> 可愛い！！　けど・・・</li>
 </ul>
 </li></ul>
 <a href="http://www.amazon.co.jp/%E7%A3%AF%E5%B1%B1%E3%81%95%E3%82%84%E3%81%8B%E5%86%99%E7%9C%9F%E9%9B%86%E3%80%8E%E9%83%A1%E4%B8%8A%E3%81%AB%E8%A1%8C%E3%81%A3%E3%81%A6%E3%81%8D%E3%81%BE%E3%81%97%E3%81%9F%E3%80%82%E3%80%8F-DVD%E4%BB%98-%E9%A3%AF%E5%A1%9A-%E6%98%8C%E5%A4%AA/dp/4847041364%3FSubscriptionId%3D13C5PCPS36EMN8C22682%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D4847041364">Amazon.co.jpで詳細を見る</a>
@@ -380,7 +377,7 @@ it under the same terms as Perl itself.
       <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
     </li>
     <li>
-      <span class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2009%2f0103052744%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
+      <span class="fb-share-button"  data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyusukebe.com%2fposts%2f2009%2f0103052744%2f;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></span>
     </li>
     <li>
       <a href="https://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label-counter" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>
