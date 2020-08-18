@@ -3,18 +3,28 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://yusukebe.com/tags/blog/</loc>
+    <lastmod>2020-08-18T10:34:47+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://yusukebe.com/posts/</loc>
-    <lastmod>2020-07-05T06:59:04+09:00</lastmod>
+    <lastmod>2020-08-18T10:34:47+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://yusukebe.com/tags/</loc>
-    <lastmod>2020-07-05T06:59:04+09:00</lastmod>
+    <lastmod>2020-08-18T10:34:47+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yusukebe.com/posts/2020/words-before-twitter/</loc>
+    <lastmod>2020-08-18T10:34:47+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://yusukebe.com/</loc>
-    <lastmod>2020-07-05T06:59:04+09:00</lastmod>
+    <lastmod>2020-08-18T10:34:47+09:00</lastmod>
   </url>
   
   <url>
@@ -49,11 +59,6 @@
   
   <url>
     <loc>https://yusukebe.com/tags/amazon/</loc>
-    <lastmod>2020-03-10T15:48:46+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusukebe.com/tags/blog/</loc>
     <lastmod>2020-03-10T15:48:46+09:00</lastmod>
   </url>
   
