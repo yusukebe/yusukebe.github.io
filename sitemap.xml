@@ -3,27 +3,37 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://yusukebe.com/posts/</loc>
+    <lastmod>2020-09-03T14:30:42+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yusukebe.com/tags/seo/</loc>
+    <lastmod>2020-09-03T14:30:42+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yusukebe.com/posts/2020/beginning-seo/</loc>
+    <lastmod>2020-09-03T14:30:42+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yusukebe.com/tags/</loc>
+    <lastmod>2020-09-03T14:30:42+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yusukebe.com/</loc>
+    <lastmod>2020-09-03T14:30:42+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://yusukebe.com/tags/facebook/</loc>
     <lastmod>2020-08-19T08:44:22+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://yusukebe.com/posts/2020/facebook-deep-dive-1/</loc>
-    <lastmod>2020-08-19T08:44:22+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusukebe.com/posts/</loc>
-    <lastmod>2020-08-19T08:44:22+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusukebe.com/tags/</loc>
-    <lastmod>2020-08-19T08:44:22+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusukebe.com/</loc>
     <lastmod>2020-08-19T08:44:22+09:00</lastmod>
   </url>
   
