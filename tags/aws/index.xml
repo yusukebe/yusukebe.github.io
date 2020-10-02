@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <copyright>© Copyright yusukebe.com</copyright>
-    <lastBuildDate>Wed, 02 Dec 2015 11:50:00 +0900</lastBuildDate>
-    
-	<atom:link href="https://yusukebe.com/tags/aws/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 02 Dec 2015 11:50:00 +0900</lastBuildDate><atom:link href="https://yusukebe.com/tags/aws/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Amazon Auroraを東京リージョン提供翌日から使い始めて</title>
       <link>https://yusukebe.com/posts/2015/1202115041/</link>

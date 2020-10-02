@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <copyright>© Copyright yusukebe.com</copyright>
-    <lastBuildDate>Tue, 24 Jan 2012 18:09:00 +0900</lastBuildDate>
-    
-	<atom:link href="https://yusukebe.com/tags/nginx/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 24 Jan 2012 18:09:00 +0900</lastBuildDate><atom:link href="https://yusukebe.com/tags/nginx/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>nginxでリダレイクトの設定をしてデッドリンクを無くす</title>
       <link>https://yusukebe.com/posts/2012/0124090904/</link>

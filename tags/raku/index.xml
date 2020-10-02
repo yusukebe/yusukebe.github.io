@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <copyright>© Copyright yusukebe.com</copyright>
-    <lastBuildDate>Wed, 22 Jan 2020 06:12:39 +0900</lastBuildDate>
-    
-	<atom:link href="https://yusukebe.com/tags/raku/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 22 Jan 2020 06:12:39 +0900</lastBuildDate><atom:link href="https://yusukebe.com/tags/raku/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>RakuのType CheckとGradual Typingについて</title>
       <link>https://yusukebe.com/posts/2020/raku-typecheck/</link>

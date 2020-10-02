@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <copyright>© Copyright yusukebe.com</copyright>
-    <lastBuildDate>Thu, 03 Sep 2020 14:30:42 +0900</lastBuildDate>
-    
-	<atom:link href="https://yusukebe.com/tags/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 03 Sep 2020 14:30:42 +0900</lastBuildDate><atom:link href="https://yusukebe.com/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>SEO</title>
       <link>https://yusukebe.com/tags/seo/</link>
