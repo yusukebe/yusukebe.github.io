@@ -694,24 +694,6 @@
     </item>
     
     <item>
-      <title>とあるエロサイトの改修その2</title>
-      <link>https://yusukebe.com/posts/2014/0602090512/</link>
-      <pubDate>Mon, 02 Jun 2014 09:05:00 +0900</pubDate>
-      
-      <guid>https://yusukebe.com/posts/2014/0602090512/</guid>
-      <description>前回の「とある18禁のエロサイト」の改修話の続き。 前回までのあらすじ 通常ではカテゴライズされにくい国内外の「ほぼアダルト専用」動画共有サイトを、AV女優別やタグ別に自動的に分類するサイトがあり、それを</description>
-    </item>
-    
-    <item>
-      <title>とあるエロサイトの改修</title>
-      <link>https://yusukebe.com/posts/2014/0406000110/</link>
-      <pubDate>Sun, 06 Apr 2014 00:01:00 +0900</pubDate>
-      
-      <guid>https://yusukebe.com/posts/2014/0406000110/</guid>
-      <description>エロサイトをつくったことで著名な僕ですが、その中でも動かし続けている「とある18禁のエロサイト」があります。国内外の「ほぼアダルト専用」動画共有サイトの更新を反映し、AV女優やタグ別に自動的に分類され</description>
-    </item>
-    
-    <item>
       <title>Perlによる速習プランもしくは「Webアプリエンジニア養成読本」番外編</title>
       <link>https://yusukebe.com/posts/2014/0320051500/</link>
       <pubDate>Thu, 20 Mar 2014 05:15:00 +0900</pubDate>
@@ -1159,15 +1141,6 @@
       
       <guid>https://yusukebe.com/posts/2013/0520020744/</guid>
       <description>Amazon Web Services＝AWSの話。実運用で使うかどうかは検討中なんだけど、とあるELBにぶら下がっているEC2インスタンスを自動的に取得して、それに対してデプロイ等を行うってのをPerlでやってみた。</description>
-    </item>
-    
-    <item>
-      <title>DMMのWeb APIに今更気づいたので...</title>
-      <link>https://yusukebe.com/posts/2013/0513232521/</link>
-      <pubDate>Tue, 14 May 2013 08:25:00 +0900</pubDate>
-      
-      <guid>https://yusukebe.com/posts/2013/0513232521/</guid>
-      <description>ムフフなビデオも網羅的に扱うDVDや動画の提供サービス「DMM」のWeb APIがいつの間にか公開していたらしく、なにぶんノーマークだったもので昨日の夜知ってビックリした。というかDMMは一生API出さ</description>
     </item>
     
     <item>
@@ -2107,15 +2080,6 @@
     </item>
     
     <item>
-      <title>XVIDEOSをiPhoneで快適に見られる「jVideos」を作ってみた</title>
-      <link>https://yusukebe.com/posts/2012/0114115524/</link>
-      <pubDate>Sat, 14 Jan 2012 20:55:00 +0900</pubDate>
-      
-      <guid>https://yusukebe.com/posts/2012/0114115524/</guid>
-      <description>YourFileHostやTube8と言った海外のエロ動画&#34;ほぼ&#34;専門共有サイトの一つに「XVIDEOS」というものがあります。ここ最近日本人出演の動画が他のサイトに比べて多数アップロードされていると</description>
-    </item>
-    
-    <item>
       <title>「ListTube」リリースと初iPhoneアプリの感想とか</title>
       <link>https://yusukebe.com/posts/2011/1214035949/</link>
       <pubDate>Wed, 14 Dec 2011 12:59:00 +0900</pubDate>
@@ -2512,15 +2476,6 @@
     </item>
     
     <item>
-      <title>YourAVHostが最強のPC無料エロサイトになった件</title>
-      <link>https://yusukebe.com/posts/2010/0903034422/</link>
-      <pubDate>Fri, 03 Sep 2010 12:44:00 +0900</pubDate>
-      
-      <guid>https://yusukebe.com/posts/2010/0903034422/</guid>
-      <description>エロサイトとしては驚異的な、 はてなブックマーク数のべ(ドメイン移行したので「のべ」になってます)1,000以上を集めている YourAVHost。 YourFileHostのエロ動画を女優名別に探せるとい</description>
-    </item>
-    
-    <item>
       <title>PerlスクリプトでWebサイト死活管理</title>
       <link>https://yusukebe.com/posts/2010/0831030351/</link>
       <pubDate>Tue, 31 Aug 2010 12:03:00 +0900</pubDate>
@@ -2590,24 +2545,6 @@
       
       <guid>https://yusukebe.com/posts/2010/0811163658/</guid>
       <description>TwitterのTLを眺めていると@ny○ntanという人が痔の話題ばかりしているので、 「時代は痔か！」と思って痔について調べてみました。 どうもレンシンという薬が効くようですね。 こちらのページのレビュ</description>
-    </item>
-    
-    <item>
-      <title>iPhoneエロサイトの決定版！？「AVPhone」</title>
-      <link>https://yusukebe.com/posts/2010/0809222827/</link>
-      <pubDate>Tue, 10 Aug 2010 07:28:00 +0900</pubDate>
-      
-      <guid>https://yusukebe.com/posts/2010/0809222827/</guid>
-      <description>今までiPhone/iPad用のエロサイトをいくつか作ってきましたが、 決定版！？という具合のいい作品ができたので紹介します。 名前は「AVPhone」。 「YourAVHost for iPhone/iPad」と</description>
-    </item>
-    
-    <item>
-      <title>YourAVHostの次へ「PornStar*」始動</title>
-      <link>https://yusukebe.com/posts/2010/0806100224/</link>
-      <pubDate>Fri, 06 Aug 2010 19:02:00 +0900</pubDate>
-      
-      <guid>https://yusukebe.com/posts/2010/0806100224/</guid>
-      <description>YourAVHostはYourFileHostの動画を、AV女優の辞書とエロ動画紹介ブログ(エログ)とのマッチングにより タグ別で表示させるサービスでそれなりに人気を博し、博している。 しかし、以下のグラ</description>
     </item>
     
     <item>
@@ -2719,15 +2656,6 @@
     </item>
     
     <item>
-      <title>無差別エロファイル収集</title>
-      <link>https://yusukebe.com/posts/2010/0624131100/</link>
-      <pubDate>Thu, 24 Jun 2010 22:11:00 +0900</pubDate>
-      
-      <guid>https://yusukebe.com/posts/2010/0624131100/</guid>
-      <description>某YourAVHostはAV女優の名前というのでフィリタリングしていますが、 今回は何もフィルタリングしないものを作ってみました。 18禁です。 無差別エロファイル収集的ななにか。 ふぁいるふぃーど - Your</description>
-    </item>
-    
-    <item>
       <title>Webページからキーワード抽出するお気軽Perlスクリプト</title>
       <link>https://yusukebe.com/posts/2010/0624063324/</link>
       <pubDate>Thu, 24 Jun 2010 15:33:00 +0900</pubDate>
@@ -2743,15 +2671,6 @@
       
       <guid>https://yusukebe.com/posts/2010/0622213538/</guid>
       <description>Twitterってせっかくユーザーたくさんいるので、 mixiみたいなグループがあったら今まで知らなかったいろんな人知れたりするんじゃないか！ って思って作ってみました。 Twitterユーザーでコミュニテ</description>
-    </item>
-    
-    <item>
-      <title>iPhone/iPadでエロ動画が見れる「YourAVHost for iPhone/iPad」がすごい！</title>
-      <link>https://yusukebe.com/posts/2010/0620044905/</link>
-      <pubDate>Sun, 20 Jun 2010 13:49:00 +0900</pubDate>
-      
-      <guid>https://yusukebe.com/posts/2010/0620044905/</guid>
-      <description>最近一部で話題のurasukebeさんが作ったサービスみたいです。 iPhoneやiPadでエロ動画がみえちゃう「YourAVHost for iPhone/iPad」。 早速iPhoneで使ってみました。 トップ</description>
     </item>
     
     <item>
@@ -3151,15 +3070,6 @@
     </item>
     
     <item>
-      <title>YourFileHostの動画をiPhone/携帯向け3gpに変換できるサイトを作ってみた</title>
-      <link>https://yusukebe.com/posts/2010/0204072355/</link>
-      <pubDate>Thu, 04 Feb 2010 16:23:00 +0900</pubDate>
-      
-      <guid>https://yusukebe.com/posts/2010/0204072355/</guid>
-      <description>iPhoneでYourFileHostが見れたらなんていいんだろ〜な〜 という声が聴こえてきたとかこないとか。 そこで、YourFileHostの動画を強引にもiPhone/携帯で見れる3gp形式に変換で</description>
-    </item>
-    
-    <item>
       <title>Perl で食べ物をおいしく見せる</title>
       <link>https://yusukebe.com/posts/2010/0201090716/</link>
       <pubDate>Mon, 01 Feb 2010 18:07:00 +0900</pubDate>
@@ -3268,15 +3178,6 @@
     </item>
     
     <item>
-      <title>分速でエロ動画を貼付ける「分速YourFileHost」を作ってみた</title>
-      <link>https://yusukebe.com/posts/2009/1216042414/</link>
-      <pubDate>Wed, 16 Dec 2009 13:24:00 +0900</pubDate>
-      
-      <guid>https://yusukebe.com/posts/2009/1216042414/</guid>
-      <description>分速、つまり1分間に一度に近いペースでYourFileHostのエロ動画を貼付けて、 その場で再生可能なサイト「分速YourFileHost」を作ってみました。 説明はそんなものでいいかと思うくらいシンプ</description>
-    </item>
-    
-    <item>
       <title>全国のTwitterでつぶやかれた曲が見れてその場で聴ける「nowp.ly」を公開します</title>
       <link>https://yusukebe.com/posts/2009/1211004449/</link>
       <pubDate>Fri, 11 Dec 2009 09:44:00 +0900</pubDate>
@@ -3320,15 +3221,6 @@
       
       <guid>https://yusukebe.com/posts/2009/1124092629/</guid>
       <description>tokuhirom が一応主催ってことで今年も「JPerl Advent Calendar」が行われるみたいです！ なんと今回は Hacker Track と Casual Track の2本だてです。 「Advent Calendar」っていうのを最初に知ったのは、 「Catalyst</description>
-    </item>
-    
-    <item>
-      <title>「Noe」ってWAFを137%くらい速くした</title>
-      <link>https://yusukebe.com/posts/2009/1123195925/</link>
-      <pubDate>Tue, 24 Nov 2009 04:59:00 +0900</pubDate>
-      
-      <guid>https://yusukebe.com/posts/2009/1123195925/</guid>
-      <description>僕が運営しているサイトの中で一番アクセスのあるエロサイトがありまして( not YourAVHost! )、 内部的には主に、gearman の worker をキックしたり、履歴を表示するだけの簡単なお仕事をしているサービスです。 公開当初は Catalyst をフ</description>
     </item>
     
     <item>
@@ -3692,15 +3584,6 @@
     </item>
     
     <item>
-      <title>マイデスクトップその2「開発用サーバ、ls ~」編</title>
-      <link>https://yusukebe.com/posts/2009/0826091556/</link>
-      <pubDate>Wed, 26 Aug 2009 18:15:00 +0900</pubDate>
-      
-      <guid>https://yusukebe.com/posts/2009/0826091556/</guid>
-      <description>本来なら机の次は、メインのクライアントマシン Mac mini や ディスプレイを扱おうと思ったんですが、 TAKESAKO さん曰く「ls ~」を晒すのが流行っているらしい ので、 「マイ ls ~ 」を晒しつつ、開発用として使っているサーバの紹介</description>
-    </item>
-    
-    <item>
       <title>ギター買った</title>
       <link>https://yusukebe.com/posts/2009/0825231055/</link>
       <pubDate>Wed, 26 Aug 2009 08:10:00 +0900</pubDate>
@@ -3890,30 +3773,12 @@
     </item>
     
     <item>
-      <title>Senna 使って、夜の動画検索サイト「sugokuii beta」を作ってみた</title>
-      <link>https://yusukebe.com/posts/2009/0706030849/</link>
-      <pubDate>Mon, 06 Jul 2009 12:08:00 +0900</pubDate>
-      
-      <guid>https://yusukebe.com/posts/2009/0706030849/</guid>
-      <description>ムフフな夜の動画（今のところ YourFileHost のみ対応）をキーワードで検索できるサイト 「sugokuii beta」というものを作ってみました。以前作った YourAVHost とどこが違うのか と思われるかもしれませんが、YourAVHos</description>
-    </item>
-    
-    <item>
       <title>夜の小道具「YourFilePlayer」 に便利な「関連動画表示」「flv再生」機能を追加した</title>
       <link>https://yusukebe.com/posts/2009/0623105600/</link>
       <pubDate>Tue, 23 Jun 2009 19:56:00 +0900</pubDate>
       
       <guid>https://yusukebe.com/posts/2009/0623105600/</guid>
       <description>この前作った YourFilePlayer、 奇麗な画質で YourFileHost の動画が再生できて いいんだけど、自分で使ってみて（性的な意味でもw）不満なところがあった。 wmv を配信しているサーバーが重たい時に待たなくては行けな</description>
-    </item>
-    
-    <item>
-      <title>YourFileHost のソース元 WMV ファイル再生プレイヤーサイト作った</title>
-      <link>https://yusukebe.com/posts/2009/0618084007/</link>
-      <pubDate>Thu, 18 Jun 2009 17:40:00 +0900</pubDate>
-      
-      <guid>https://yusukebe.com/posts/2009/0618084007/</guid>
-      <description>できた。3分の1日くらいかかった。 YourFilePlayer - YourFileHost の WMV 動画再生プレーヤー 通常の YourFileHost ページでは荒い映像が流れると思うが、ここに URL をぶちこめば、元ソースの高画質な動画が見れる Silverlight必要 対応するのは元動</description>
     </item>
     
     <item>
@@ -3959,15 +3824,6 @@
       
       <guid>https://yusukebe.com/posts/2009/0527025754/</guid>
       <description>ネタフルさんに、去年作った「YouTubeMP4」をいまさら紹介してもらって、びっくりしている今日この頃。 [N] YouTubeのURLに「mp4」をつけるだけでMP4形式でダウンロードできる「YouTub</description>
-    </item>
-    
-    <item>
-      <title>Web ページから YourFileHost へのリンクを抽出して一覧できる GetYourLinks を作ってみた</title>
-      <link>https://yusukebe.com/posts/2009/0526103545/</link>
-      <pubDate>Tue, 26 May 2009 19:35:00 +0900</pubDate>
-      
-      <guid>https://yusukebe.com/posts/2009/0526103545/</guid>
-      <description>久しぶりのエロいサービス。 とある Mac のソフトで、あるページのURLを入れると YourFileHost へのリンクを抽出してくれて、 動画の情報が一覧で見れるってのがあるみたい（yourFileLinkと言うソフト）。 それがどうも</description>
     </item>
     
     <item>
@@ -4067,15 +3923,6 @@
       
       <guid>https://yusukebe.com/posts/2009/0120043705/</guid>
       <description>鎌団子が Perl を始めた。「初めてのPerl」を夜な夜な読んでから寝ているらしい。 昨日は久しぶりにオモロキオフィスに行って鎌団子と会ったので、 「じゃあ、お勉強もいいけど実際に Perl のコードを書こう」ということに</description>
-    </item>
-    
-    <item>
-      <title>YourAVHost の Tube8 版「TubeERO - iPhone・携帯でも見れるよ」を作ってみた</title>
-      <link>https://yusukebe.com/posts/2009/0119004313/</link>
-      <pubDate>Mon, 19 Jan 2009 09:43:00 +0900</pubDate>
-      
-      <guid>https://yusukebe.com/posts/2009/0119004313/</guid>
-      <description>YourFileHost の次は「Tube8」が来るらしい。 ということで、YourAVHost の Tube8 版である「TubeERO」ってのを作ってみた。 YourAVHost と違う大きな特徴は、iPhone 及び 携帯 でも閲覧できて、 動画も見ることができる</description>
     </item>
     
     <item>
@@ -4205,15 +4052,6 @@
     </item>
     
     <item>
-      <title>就活もしたことないのに転職誌「エンジニアtype」にインタビューが掲載されました</title>
-      <link>https://yusukebe.com/posts/2008/1028010513/</link>
-      <pubDate>Tue, 28 Oct 2008 10:05:00 +0900</pubDate>
-      
-      <guid>https://yusukebe.com/posts/2008/1028010513/</guid>
-      <description>就職、転職はもちろんのごとく、就職活動も全くしたことない自分ですが、 今日発売のエンジニア向け転職雑誌「エンジニアtype」にインタビュー記事が掲載されました。 MVE＝「Most Valuable Engineer」とい</description>
-    </item>
-    
-    <item>
       <title>親父が WEB&#43;DB PRESS vol.47 にて記事を書きました</title>
       <link>https://yusukebe.com/posts/2008/1022031124/</link>
       <pubDate>Wed, 22 Oct 2008 12:11:00 +0900</pubDate>
@@ -4247,15 +4085,6 @@
       
       <guid>https://yusukebe.com/posts/2008/0916021802/</guid>
       <description>鎌団子が代表を勤め、俺も参画している「株式会社オモロキ」の第1弾自社サービス、 「ボケて」ベータ版を先ほど、公開しました。 この「ボケて」、お笑い系です。 Flickrの写真( by attribution ) や ユーザがアップロードし</description>
-    </item>
-    
-    <item>
-      <title>ワディット2周年にあたって feat. ESPer2008講演 「いつのまにか社長になっていた」</title>
-      <link>https://yusukebe.com/posts/2008/0914032102/</link>
-      <pubDate>Sun, 14 Sep 2008 12:21:00 +0900</pubDate>
-      
-      <guid>https://yusukebe.com/posts/2008/0914032102/</guid>
-      <description>俺が代表取締役・社長を務める株式会社ワディットが明日9月15日で2周年を迎えようとしています。 昨日は「未踏」関係者の集会イベント「ESPer2008」に参加し、その2周年をダイジェストで振り返りつつも</description>
     </item>
     
     <item>
@@ -4430,15 +4259,6 @@
     </item>
     
     <item>
-      <title>YourFileHost のエロ動画にコメントをつけれるイクイク動画を作ってみた</title>
-      <link>https://yusukebe.com/posts/2008/0509073511/</link>
-      <pubDate>Fri, 09 May 2008 16:35:00 +0900</pubDate>
-      
-      <guid>https://yusukebe.com/posts/2008/0509073511/</guid>
-      <description>YourFileHost のエロ動画に、ニコニコ風のコメントがつけれる イクイク動画 というサイトを作って、昨晩プロト版を公開しました。もうすでにいろいろとフィードバックをもらっていますが、そのまとめは後日にして、サービスの説明</description>
-    </item>
-    
-    <item>
       <title>ゆかをぺろぺろしていたら、本当にユカタンが来た件</title>
       <link>https://yusukebe.com/posts/2008/0504014008/</link>
       <pubDate>Sun, 04 May 2008 10:40:00 +0900</pubDate>
@@ -4556,30 +4376,12 @@
     </item>
     
     <item>
-      <title>ウェブ関係で（略）恥ずかしい日本人100のブログを列挙祭り</title>
-      <link>https://yusukebe.com/posts/2008/0414012602/</link>
-      <pubDate>Mon, 14 Apr 2008 10:26:00 +0900</pubDate>
-      
-      <guid>https://yusukebe.com/posts/2008/0414012602/</guid>
-      <description>「ウェブ関係で仕事をしていて知らないと恥ずかしい日本人100」なる題名のエントリーがはてブのトップにあったので見てみたら、「ゆーすけべー」の文字を発見して嬉しかった。 ゆーすけべー - youravhost</description>
-    </item>
-    
-    <item>
       <title>簡単に「YouTubeから高画質な動画をゲットしてiPodへ直送する」</title>
       <link>https://yusukebe.com/posts/2008/0411045731/</link>
       <pubDate>Fri, 11 Apr 2008 13:57:00 +0900</pubDate>
       
       <guid>https://yusukebe.com/posts/2008/0411045731/</guid>
       <description>高橋敦の「Macでいいじゃん！」第11回：YouTubeから高画質な動画をゲットしてiPodへ直送する - ITmedia +D PC USER 若干古い記事へのレスであれですが、それ ListPod か YouTubeMP4 で簡単にできるよ。 *注意: 動画によっては YouTube か</description>
-    </item>
-    
-    <item>
-      <title>大人の事情によりYourAVHost移転しました</title>
-      <link>https://yusukebe.com/posts/2008/0411040645/</link>
-      <pubDate>Fri, 11 Apr 2008 13:06:00 +0900</pubDate>
-      
-      <guid>https://yusukebe.com/posts/2008/0411040645/</guid>
-      <description>えー、大人の事情により大人が自重してYourAVHost（注意:18禁）が以下のアドレスに移行しました。 http://youravhost.net/ ブックマークの変更、はてなブックマークなどのSBM、リンクの変更等、よろしければお願いします＆</description>
     </item>
     
     <item>
@@ -4754,15 +4556,6 @@
     </item>
     
     <item>
-      <title>ネトラン2008年4月号に YourAVHost が2ヶ月連続で掲載</title>
-      <link>https://yusukebe.com/posts/2008/0316010909/</link>
-      <pubDate>Sun, 16 Mar 2008 10:09:00 +0900</pubDate>
-      
-      <guid>https://yusukebe.com/posts/2008/0316010909/</guid>
-      <description>先日発売のネトラン2008年4月号の「脱・教えて君Q&amp;amp;A1000」という特集の「動画ぶっこぬき編」で YourAVHost(18禁) が掲載されました。 「エロ動画ってみんなどうやって探しているの？</description>
-    </item>
-    
-    <item>
       <title>YouTubeのmpeg4ファイルへのリンクを簡単にみつけられるサービスを半日で作った</title>
       <link>https://yusukebe.com/posts/2008/0314122653/</link>
       <pubDate>Fri, 14 Mar 2008 21:26:00 +0900</pubDate>
@@ -4778,15 +4571,6 @@
       
       <guid>https://yusukebe.com/posts/2008/0313033113/</guid>
       <description>昨日の夕方頃、YouTube API のドキュメントを見たら、急に内容が追加されていてびっくらこいたわけですが、 YouTube の API に新しく、動画をアップロードする機能やプレイヤーをJavaScriptから制御できる機能が</description>
-    </item>
-    
-    <item>
-      <title>「アイディアは無数に何度も現れる」今日の名言</title>
-      <link>https://yusukebe.com/posts/2008/0312013053/</link>
-      <pubDate>Wed, 12 Mar 2008 10:30:00 +0900</pubDate>
-      
-      <guid>https://yusukebe.com/posts/2008/0312013053/</guid>
-      <description>毎日少しずつ様々な分野の本を読んでいます。 そんな本や、人との出会いから自分が聞いて、心にずさっとささった言葉＝俺のとっての名言があれば取り上げていこうかと思います。 今日はワインバーグ氏によるウィットに</description>
     </item>
     
     <item>
@@ -4925,24 +4709,6 @@
     </item>
     
     <item>
-      <title>YourAVHost にジャンルタグ機能を追加</title>
-      <link>https://yusukebe.com/posts/2008/0211010106/</link>
-      <pubDate>Mon, 11 Feb 2008 10:01:00 +0900</pubDate>
-      
-      <guid>https://yusukebe.com/posts/2008/0211010106/</guid>
-      <description>とあるオジサンと YourAVHost についてチャットしていたら AV 女優名をあまりしらないオジサン（自分）にとっては、 ジャンルとかシチュエーション別に動画が見つかったら嬉しいでござる。 と言ったとか言わないとか。とはいえ、女</description>
-    </item>
-    
-    <item>
-      <title>「応急処置 - 即日固定IP発行のISPと契約し移行しました」自宅サーバ管理者の憂鬱</title>
-      <link>https://yusukebe.com/posts/2008/0209235751/</link>
-      <pubDate>Sun, 10 Feb 2008 08:57:00 +0900</pubDate>
-      
-      <guid>https://yusukebe.com/posts/2008/0209235751/</guid>
-      <description>契約していた ISP（プロバイダ）から帯域規制をかけられたので、 法人向けの ISP への移行作業を進めている今日この頃です。 ところが、申し込みの書類を送付したのが6日、開通するのが10営業日を目安にということで</description>
-    </item>
-    
-    <item>
       <title>「知」のソフトウェア - 立花隆</title>
       <link>https://yusukebe.com/posts/2008/0209011142/</link>
       <pubDate>Sat, 09 Feb 2008 10:11:00 +0900</pubDate>
@@ -4952,30 +4718,12 @@
     </item>
     
     <item>
-      <title>ネトラン2008年3月号に YourAVHost が掲載</title>
-      <link>https://yusukebe.com/posts/2008/0209003634/</link>
-      <pubDate>Sat, 09 Feb 2008 09:36:00 +0900</pubDate>
-      
-      <guid>https://yusukebe.com/posts/2008/0209003634/</guid>
-      <description>昨日発売のネトラン2008年3月号の「Web2.0時代の常習者(ジャンキー)活用100」という特集で YourAVHost(18禁) が掲載されました。 先月号(参照: ゆーすけべー日記: CDTubeがネトラ</description>
-    </item>
-    
-    <item>
       <title>ActionScript 3.0 Cookbook</title>
       <link>https://yusukebe.com/posts/2008/0207002005/</link>
       <pubDate>Thu, 07 Feb 2008 09:20:00 +0900</pubDate>
       
       <guid>https://yusukebe.com/posts/2008/0207002005/</guid>
       <description>Flash のプログラミング言語 ActionScript（AS） の新しいバージョン 3.0 を勉強している。 学生の時に バージョン 1 から 2 までのコードは書いたことがあるが、 この 3.0 は 2.0 からの仕様変更が激しいため当初かなり戸</description>
-    </item>
-    
-    <item>
-      <title>「連絡 - ISP から帯域制限をかけられつがりにくくなってます」自宅サーバ管理者の憂鬱</title>
-      <link>https://yusukebe.com/posts/2008/0205012147/</link>
-      <pubDate>Tue, 05 Feb 2008 10:21:00 +0900</pubDate>
-      
-      <guid>https://yusukebe.com/posts/2008/0205012147/</guid>
-      <description>連絡です。 もう既にお気づきかと思いますが、この日記を含めてうちの自宅サーバでホスティングしているサイトが2月3日くらいから「つながりにくく」なっております。いろいろご迷惑をおかけしてごめんなさい。 おそ</description>
     </item>
     
     <item>
@@ -5015,15 +4763,6 @@
     </item>
     
     <item>
-      <title>「エロサイトにおけるコンテンツマッチ型広告APIの自作」の資料</title>
-      <link>https://yusukebe.com/posts/2008/0121113124/</link>
-      <pubDate>Mon, 21 Jan 2008 20:31:00 +0900</pubDate>
-      
-      <guid>https://yusukebe.com/posts/2008/0121113124/</guid>
-      <description>よい子の皆さん、真似しないでください。 露出狂友の会、野望新年会 で発表した資料をこちらに置いておきます。 エロサイトにおけるコンテンツマッチ型広告APIの自作 *注意: YourAVHostの広告システムにつ</description>
-    </item>
-    
-    <item>
       <title>野望新年会（日本野望の会 2008年 新年会）、「わからない」という求心力</title>
       <link>https://yusukebe.com/posts/2008/0121105726/</link>
       <pubDate>Mon, 21 Jan 2008 19:57:00 +0900</pubDate>
@@ -5057,15 +4796,6 @@
       
       <guid>https://yusukebe.com/posts/2008/0118023133/</guid>
       <description>サイモンシン の書いた本は以前から読みたいと思っていたが、本書「フェルマーの最終定理」が丁度よく文庫本で発売され、丁度よく親父が最高に面白いと感想を残し読み終わったようなので、手にとってみた。 文庫本にし</description>
-    </item>
-    
-    <item>
-      <title>YourAVHost その後</title>
-      <link>https://yusukebe.com/posts/2008/0117143551/</link>
-      <pubDate>Thu, 17 Jan 2008 23:35:00 +0900</pubDate>
-      
-      <guid>https://yusukebe.com/posts/2008/0117143551/</guid>
-      <description>去年の12月26日未明にリリースし、年末の下半身に衝撃をもたらしたらしいという YourAVHost 。 現在はてなブックマークしたユーザー数はエロサイトとして驚異的な「738Users」。 1月6日には動ナビという日本最大の</description>
     </item>
     
     <item>
@@ -5186,15 +4916,6 @@
     </item>
     
     <item>
-      <title>YourAVHostにあるお気に入りのAV女優の動画をPlaggerで一括ダウンロードしてiPodで見るエロハック</title>
-      <link>https://yusukebe.com/posts/2007/1230155942/</link>
-      <pubDate>Mon, 31 Dec 2007 12:59:00 +0900</pubDate>
-      
-      <guid>https://yusukebe.com/posts/2007/1230155942/</guid>
-      <description>昨日おとといと恒例の年末ネタ旅行のロケに鎌団子と行って来た。 まぁ内容は年明けに予告編映像をアップするのでそれを見てもらうとして、 その道中ひらめいたことを年末ハック、いや年末エロハックとしてやってみたと</description>
-    </item>
-    
-    <item>
       <title>株式会社オモロキの取締役兼CTOに就任いたしました</title>
       <link>https://yusukebe.com/posts/2007/1228075505/</link>
       <pubDate>Fri, 28 Dec 2007 16:55:00 +0900</pubDate>
@@ -5210,15 +4931,6 @@
       
       <guid>https://yusukebe.com/posts/2007/1228000959/</guid>
       <description>自分が好きで何度もこの日記でも紹介している読書に関する本のうちのひとつ、 最近書店でよく見かける「レバレッジ・リーディング」を読了した。 レバレッジ・リーディング 本を読むことを投資として捉え本書に書かれて</description>
-    </item>
-    
-    <item>
-      <title>yourfilehostをAV女優名で探せるエロサイトを作ってみた</title>
-      <link>https://yusukebe.com/posts/2007/1227001445/</link>
-      <pubDate>Thu, 27 Dec 2007 09:14:00 +0900</pubDate>
-      
-      <guid>https://yusukebe.com/posts/2007/1227001445/</guid>
-      <description>YourFileHostの動画をAV女優名別に、検索したり、新着動画をみたりすることができるエロサイト「YourAVHost」を作ってみました。これまでは優良であり有料なアダルトサイトを紹介するサービ</description>
     </item>
     
     <item>

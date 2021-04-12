@@ -7,16 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <copyright>© Copyright yusukebe.com - Yusuke Wada</copyright>
-    <lastBuildDate>Tue, 14 May 2013 08:25:00 +0900</lastBuildDate><atom:link href="https://yusukebe.com/tags/dmm/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>DMMのWeb APIに今更気づいたので...</title>
-      <link>https://yusukebe.com/posts/2013/0513232521/</link>
-      <pubDate>Tue, 14 May 2013 08:25:00 +0900</pubDate>
-      
-      <guid>https://yusukebe.com/posts/2013/0513232521/</guid>
-      <description>ムフフなビデオも網羅的に扱うDVDや動画の提供サービス「DMM」のWeb APIがいつの間にか公開していたらしく、なにぶんノーマークだったもので昨日の夜知ってビックリした。というかDMMは一生API出さ</description>
-    </item>
-    
+    <lastBuildDate>Mon, 19 Mar 2012 04:58:00 +0900</lastBuildDate><atom:link href="https://yusukebe.com/tags/dmm/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>DMMのAVがDMM Booksでダウンロードできる件</title>
       <link>https://yusukebe.com/posts/2012/0318195820/</link>

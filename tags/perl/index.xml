@@ -189,15 +189,6 @@
     </item>
     
     <item>
-      <title>DMMのWeb APIに今更気づいたので...</title>
-      <link>https://yusukebe.com/posts/2013/0513232521/</link>
-      <pubDate>Tue, 14 May 2013 08:25:00 +0900</pubDate>
-      
-      <guid>https://yusukebe.com/posts/2013/0513232521/</guid>
-      <description>ムフフなビデオも網羅的に扱うDVDや動画の提供サービス「DMM」のWeb APIがいつの間にか公開していたらしく、なにぶんノーマークだったもので昨日の夜知ってビックリした。というかDMMは一生API出さ</description>
-    </item>
-    
-    <item>
       <title>ささみさん＠がんばらないを見るために</title>
       <link>https://yusukebe.com/posts/2013/0512131501/</link>
       <pubDate>Sun, 12 May 2013 22:15:00 +0900</pubDate>
@@ -936,15 +927,6 @@
     </item>
     
     <item>
-      <title>「Noe」ってWAFを137%くらい速くした</title>
-      <link>https://yusukebe.com/posts/2009/1123195925/</link>
-      <pubDate>Tue, 24 Nov 2009 04:59:00 +0900</pubDate>
-      
-      <guid>https://yusukebe.com/posts/2009/1123195925/</guid>
-      <description>僕が運営しているサイトの中で一番アクセスのあるエロサイトがありまして( not YourAVHost! )、 内部的には主に、gearman の worker をキックしたり、履歴を表示するだけの簡単なお仕事をしているサービスです。 公開当初は Catalyst をフ</description>
-    </item>
-    
-    <item>
       <title>「Perl Casual Talks#1」が開催されました</title>
       <link>https://yusukebe.com/posts/2009/1122205316/</link>
       <pubDate>Mon, 23 Nov 2009 05:53:00 +0900</pubDate>
@@ -1242,15 +1224,6 @@
     </item>
     
     <item>
-      <title>YourAVHost の Tube8 版「TubeERO - iPhone・携帯でも見れるよ」を作ってみた</title>
-      <link>https://yusukebe.com/posts/2009/0119004313/</link>
-      <pubDate>Mon, 19 Jan 2009 09:43:00 +0900</pubDate>
-      
-      <guid>https://yusukebe.com/posts/2009/0119004313/</guid>
-      <description>YourFileHost の次は「Tube8」が来るらしい。 ということで、YourAVHost の Tube8 版である「TubeERO」ってのを作ってみた。 YourAVHost と違う大きな特徴は、iPhone 及び 携帯 でも閲覧できて、 動画も見ることができる</description>
-    </item>
-    
-    <item>
       <title>Flickr からキーワードにマッチした写真を一括ダウンロードする Perl スクリプト「flickr_fetcher.pl」</title>
       <link>https://yusukebe.com/posts/2009/0103052744/</link>
       <pubDate>Sat, 03 Jan 2009 14:27:00 +0900</pubDate>
@@ -1332,15 +1305,6 @@
     </item>
     
     <item>
-      <title>YourFileHost のエロ動画にコメントをつけれるイクイク動画を作ってみた</title>
-      <link>https://yusukebe.com/posts/2008/0509073511/</link>
-      <pubDate>Fri, 09 May 2008 16:35:00 +0900</pubDate>
-      
-      <guid>https://yusukebe.com/posts/2008/0509073511/</guid>
-      <description>YourFileHost のエロ動画に、ニコニコ風のコメントがつけれる イクイク動画 というサイトを作って、昨晩プロト版を公開しました。もうすでにいろいろとフィードバックをもらっていますが、そのまとめは後日にして、サービスの説明</description>
-    </item>
-    
-    <item>
       <title>Google Charts API を Perl から簡単に操作できるようにしたモジュール『WebService::Simple::Google::Chart』</title>
       <link>https://yusukebe.com/posts/2008/0428053217/</link>
       <pubDate>Mon, 28 Apr 2008 14:32:00 +0900</pubDate>
@@ -1401,15 +1365,6 @@
       
       <guid>https://yusukebe.com/posts/2008/0414065749/</guid>
       <description>YappoLogs: ウェブエンジニアをしていて知らないと恥ずかしい日本人プログラマ300 自分はエンジニアとしても未熟だし、恥軸がずれているので、残念ながらこのリストには入れません。 なので、自分ができる限りのことをやって</description>
-    </item>
-    
-    <item>
-      <title>ウェブ関係で（略）恥ずかしい日本人100のブログを列挙祭り</title>
-      <link>https://yusukebe.com/posts/2008/0414012602/</link>
-      <pubDate>Mon, 14 Apr 2008 10:26:00 +0900</pubDate>
-      
-      <guid>https://yusukebe.com/posts/2008/0414012602/</guid>
-      <description>「ウェブ関係で仕事をしていて知らないと恥ずかしい日本人100」なる題名のエントリーがはてブのトップにあったので見てみたら、「ゆーすけべー」の文字を発見して嬉しかった。 ゆーすけべー - youravhost</description>
     </item>
     
     <item>
@@ -1503,57 +1458,12 @@
     </item>
     
     <item>
-      <title>YourAVHost にジャンルタグ機能を追加</title>
-      <link>https://yusukebe.com/posts/2008/0211010106/</link>
-      <pubDate>Mon, 11 Feb 2008 10:01:00 +0900</pubDate>
-      
-      <guid>https://yusukebe.com/posts/2008/0211010106/</guid>
-      <description>とあるオジサンと YourAVHost についてチャットしていたら AV 女優名をあまりしらないオジサン（自分）にとっては、 ジャンルとかシチュエーション別に動画が見つかったら嬉しいでござる。 と言ったとか言わないとか。とはいえ、女</description>
-    </item>
-    
-    <item>
-      <title>「エロサイトにおけるコンテンツマッチ型広告APIの自作」の資料</title>
-      <link>https://yusukebe.com/posts/2008/0121113124/</link>
-      <pubDate>Mon, 21 Jan 2008 20:31:00 +0900</pubDate>
-      
-      <guid>https://yusukebe.com/posts/2008/0121113124/</guid>
-      <description>よい子の皆さん、真似しないでください。 露出狂友の会、野望新年会 で発表した資料をこちらに置いておきます。 エロサイトにおけるコンテンツマッチ型広告APIの自作 *注意: YourAVHostの広告システムにつ</description>
-    </item>
-    
-    <item>
-      <title>YourAVHost その後</title>
-      <link>https://yusukebe.com/posts/2008/0117143551/</link>
-      <pubDate>Thu, 17 Jan 2008 23:35:00 +0900</pubDate>
-      
-      <guid>https://yusukebe.com/posts/2008/0117143551/</guid>
-      <description>去年の12月26日未明にリリースし、年末の下半身に衝撃をもたらしたらしいという YourAVHost 。 現在はてなブックマークしたユーザー数はエロサイトとして驚異的な「738Users」。 1月6日には動ナビという日本最大の</description>
-    </item>
-    
-    <item>
       <title>Flickr には某氏厳選47人のグラビアアイドルにおいて画像が8407枚あり、そのうち2670枚は小倉優子</title>
       <link>https://yusukebe.com/posts/2008/0113091331/</link>
       <pubDate>Sun, 13 Jan 2008 18:13:00 +0900</pubDate>
       
       <guid>https://yusukebe.com/posts/2008/0113091331/</guid>
       <description>id:gamella こと大学の同期のお友達「ともちゃん」がErogeekチックなことをしていたのを発見。 今、ちょっと作成を考えているWebサービスがあって、その練習のためにFlickrから画像を取得するスクリプトを書き</description>
-    </item>
-    
-    <item>
-      <title>YourAVHostにあるお気に入りのAV女優の動画をPlaggerで一括ダウンロードしてiPodで見るエロハック</title>
-      <link>https://yusukebe.com/posts/2007/1230155942/</link>
-      <pubDate>Mon, 31 Dec 2007 12:59:00 +0900</pubDate>
-      
-      <guid>https://yusukebe.com/posts/2007/1230155942/</guid>
-      <description>昨日おとといと恒例の年末ネタ旅行のロケに鎌団子と行って来た。 まぁ内容は年明けに予告編映像をアップするのでそれを見てもらうとして、 その道中ひらめいたことを年末ハック、いや年末エロハックとしてやってみたと</description>
-    </item>
-    
-    <item>
-      <title>yourfilehostをAV女優名で探せるエロサイトを作ってみた</title>
-      <link>https://yusukebe.com/posts/2007/1227001445/</link>
-      <pubDate>Thu, 27 Dec 2007 09:14:00 +0900</pubDate>
-      
-      <guid>https://yusukebe.com/posts/2007/1227001445/</guid>
-      <description>YourFileHostの動画をAV女優名別に、検索したり、新着動画をみたりすることができるエロサイト「YourAVHost」を作ってみました。これまでは優良であり有料なアダルトサイトを紹介するサービ</description>
     </item>
     
     <item>
