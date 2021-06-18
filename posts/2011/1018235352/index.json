@@ -1,0 +1,40 @@
+{
+    "data" :  {
+    "title": "YAPC::Asia 2011ととある高校生との出会い",
+    "date": "2011-10-19 08:53:00 +0900 JST",
+    "dir": "posts/2011/",
+    "slug": "1018235352",
+    "categories": ["tech"],
+    "tags": ["Perl","YAPC"]
+}
+
+---
+
+
+
+<p>今年もPerlの祭典「YAPC::Asia 2011」に行ってきました＆発表してきました。来場者数やスタッフ、トークの数などで過去最大と言ってもいいYAPCとなったようです。たしかに女性スタッフや参加者の数は例年より多かったですね！</p>
+
+<p><a href="http://yusukebe.com/archives/2011/10/19/IMG_1570.JPG"><img alt="YAPC::Asia 2011" src="http://yusukebe.com/archives/assets_c/2011/10/IMG_1570-thumb-400x298-3.jpg" width="400" height="298" class="mt-image-none" style=""></a></p>
+
+<p>YAPCの最大の楽しみは、たくさんのセッションからプロフェッショナルなトークが聴けるということ<strong>よりも</strong>個人的にはそうしたネタをつまみにしつつ、たくさんのPerl Monger達と出会えることになると思っています。まぁ「Perl 出会い系」です。そこで、印象に残ったケースを紹介。</p>
+
+<p>今年の2月に北海道のPerlコミュニティ「Hokkaido.pm」が主催する「Hokkaido.pm #4」にゲストとして参加させていただいた際に一人の高校生の方と出会いました。<a href="http://twitter.com/akiym">akiym君</a>です。「Perlを志す高校生にちょっくらライブコーディングでも見せてやるかいっ」と懇親会の会場でMacbook開いて簡単なコードを見せたら、「あら、意外にもわかってる様子。。。ってかコイツできるな！！」という印象。別れ際に「なんで、Perlやってるの？」って尋ねてみると、意味深な笑顔。「コイツ、なにかあるな！！」とすっごく気になる感じのakiym君だったのです。</p>
+
+<p>そんな彼がHokkaido.pmの支援を受け、Perl Mongerが集うYAPC::Asiaに今年初参加！さらには20分間のトークをするじゃーないですか！しかも題名は「なぜ、高校生がPerlを使うのか？」という俺が彼に質問した答えがそこにありそう！と、一番楽しみにして見に行きました。</p>
+
+<p>Perlを触る前に小学生の時にHTMLを書き、ホームページを開設してたけど先生に怒られて... というような話から始まり、掲示板を作りたいからKE○TなCGIを参考にPerlを始めるも、通称「らくだ本」と言われるプログラミングPerlが分厚すぎて挫折したとか興味深い話が進んでいきます。そしていよいよ、彼が「こういうことにPerlを使えば楽しいのか！」と思うキッカケを知ることができます。と思ったら、なんか某<strong>ゆーすけべー日記</strong>という文字がwww 曰く「ゆーすけべー日記というブログのXXXという記事を見させてもらい」www</p>
+
+<p>えーといろいろな事情で、どの記事を見たかを明記するのはいたしませんが、どうやら<strong>俺が現在16歳の彼に夢を与えた</strong>らしいwww 発表が終わり、質疑応答では彼が挫折したプログラミングPerlの訳者の近藤嘉雪さん本人が手を挙げて質問したり面白かったなー。</p>
+
+<p>ということで、akiym君にもいっかい会えたのも嬉しかったし、同じようなケースで「ゆーすけべーさんの影響でYAPC来ちゃいました（うふっ」みたいな人が結構いたので、ブログを書くとかイベント開催するとか発表するとか、そもそもPerl書きまくるとか重要だなーって思いました。</p>
+
+<p>ちなみに、俺の発表の「画像Hacks」の資料はSlideShareにアップしてあるので、以下に貼り付けて置きます。</p>
+
+<div style="width:425px" id="__ss_9704013"> <strong style="display:block;margin:12px 0 4px"><a href="http://www.slideshare.net/yusukebe/hacks-9704013" title="画像Hacks" target="_blank">画像Hacks</a></strong> <iframe src="http://www.slideshare.net/slideshow/embed_code/9704013?rel=0" width="425" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe> <div style="padding:5px 0 12px"> View more <a href="http://www.slideshare.net/" target="_blank">presentations</a> from <a href="http://www.slideshare.net/yusukebe" target="_blank">Yusuke Wada</a> </div> </div>
+
+
+<p>以上、今年も楽しかったYAPC::Asiaでしたー。</p>
+
+
+ 
+}

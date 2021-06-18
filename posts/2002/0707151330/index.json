@@ -1,0 +1,18 @@
+{
+    "data" :  {
+    "title": "miniMesse",
+    "date": "2002-07-08 12:13:00 +0900 JST",
+    "dir": "posts/2002/",
+    "slug": "0707151330",
+    "categories": ["tech"],
+    "tags": []
+}
+
+---
+
+
+<p>FlashのXMLSocketを利用したメッセンジャーα版、Ver0.3。まだまだこれから。
+<a href="http://www.ok.sfc.keio.ac.jp/~yusuke/asp/miniMesse/miniMesse03.html" target="_new">http://www.ok.sfc.keio.ac.jp/~yusuke/asp/miniMesse/miniMesse03.html</a></p>
+
+ 
+}

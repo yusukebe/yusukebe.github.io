@@ -1,0 +1,25 @@
+{
+    "data" :  {
+    "title": "端末がすんげえ浮き出て見える",
+    "date": "2006-01-30 19:24:00 +0900 JST",
+    "dir": "posts/2006/",
+    "slug": "0130102424",
+    "categories": ["tech"],
+    "tags": []
+}
+
+---
+
+
+
+<p>
+  putty端末で.bashrcを編集しようとしたらすんげえ浮き出て見えるんですけど。
+  軽く気持ち悪くなる。
+</p>
+<p>
+  <img alt="putty浮き出る" class="at-xid-6a0133f4781589970b015391e38104970b" src="https://yusukebe.com/archives/a/6a0133f4781589970b015391e38104970b-pi.gif">
+</p>
+
+
+ 
+}

@@ -1,0 +1,27 @@
+{
+    "data" :  {
+    "title": "ChoidashiV! ver01 リリース",
+    "date": "2003-07-31 12:06:00 +0900 JST",
+    "dir": "posts/2003/",
+    "slug": "0730150621",
+    "categories": ["tech"],
+    "tags": []
+}
+
+---
+
+
+<p>ボクダナで開発中のVACUUN!の「ちょいだし」リリース版<br>
+ChoidashiV!のver01をリリースします。<br>
+<a href="http://rg.ok.sfc.keio.ac.jp/vacuun/" target="_new">http://rg.ok.sfc.keio.ac.jp/vacuun/</a><br>
+こちらです。<br>
+これは、mp3ファイルを聞いてmmlを生成しアップ、公開<br>
+する機能を持ったものです。<br>
+明日の最終発表ではこのmmlの情報とFOAFを利用して、つながっていく<br>
+というデモを見せたいので、その実験として<br>
+みなさんに使っていただきたいのです。<br>
+作業につまったらこのChoidashiV!で音楽を聴いて息抜きを。<br>
+よろしくおねがいします。</p>
+
+ 
+}

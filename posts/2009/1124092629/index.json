@@ -1,0 +1,46 @@
+{
+    "data" :  {
+    "title": "今年も開催！ JPerl Advent Calendar 2009",
+    "date": "2009-11-24 18:26:00 +0900 JST",
+    "dir": "posts/2009/",
+    "slug": "1124092629",
+    "categories": ["tech"],
+    "tags": ["Perl"]
+}
+
+---
+
+
+
+<p>
+tokuhirom が一応主催ってことで今年も「<strong>JPerl Advent Calendar</strong>」が行われるみたいです！
+なんと今回は Hacker Track と Casual Track の2本だてです。
+</p>
+<p>
+「Advent Calendar」っていうのを最初に知ったのは、
+「<a href="http://www.catalystframework.org/calendar">Catalyst Advent Calendar</a>」を見た時だったんですが、これどういうものかと言うと12月の1日からクリスマスの25日に向けて
+毎日一つづ Tips が掲載されるウェブサイトという代物。
+去年の「<a href="http://perl-users.jp/articles/advent-calendar/2008/">JPerl Advent Calendar 2008</a>」は毎日バトンタッチで筆者が変わっていくという形式で、
+僕もエロサイトから画像を収集するワンライナーなんてのを紹介したりしました。
+この「Advent」という単語、なんとなく年末のイベントにかかる形容詞かと思っていたのですが、気になって
+ちゃんと調べてみました。すると「キリストの降臨」という意味があるんですね。
+なるほど、合点がいった！
+</p>
+<p>
+「Casual Track」の方は他の人の作ったモジュールの紹介、Tipsを書くということので、
+是非 Casual Perler の方は参加してみてください！
+自分のお気に入りのモジュールについて「こんなモジュールあるよ」「こんな使い方あるよ」「こうするとエロ画像集められるよ」
+とかいかがでしょうか。
+記事を書く人の受付はATNDで行っています。
+ちなみに参加資格を読んでみると「かんかん」「寿司」の文字が見えるのでモチベーションも上がりますね！
+ということで今から楽しみです。
+</p>
+<ul>
+  <li><a href="http://d.hatena.ne.jp/tokuhirom/20081216/1229387324">技術的アドベントカレンダーの有用性について - TokuLog 改めB日記</a></li>
+  <li><a href="http://atnd.org/events/2275">JPerl Advent Calendar 2009 - Hacker Track : ATND</a></li>
+  <li><a href="http://atnd.org/events/2276">JPerl Advent Calendar 2009 - Casual Track : ATND</a></li>
+</ul>
+
+
+ 
+}

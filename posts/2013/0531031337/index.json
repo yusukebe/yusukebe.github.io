@@ -1,0 +1,30 @@
+{
+    "data" :  {
+    "title": "YouTubeの再生リストをMetro UIで検索視聴出来る「Melodie」が出来た",
+    "date": "2013-05-31 12:13:00 +0900 JST",
+    "dir": "posts/2013/",
+    "slug": "0531031337",
+    "categories": ["tech"],
+    "tags": ["Work","Technologies"]
+}
+
+---
+
+
+
+<p>明日から9日間USへ旅に出るのでその準備をしてたら、いつの間にか全く関係ないJavaScriptを書いていて結果的にこんなのが出来た... YouTubeの再生リストを検索して選ぶと連続再生で動画を見れるWebページ「 <strong>Melodie</strong> 」です。機能的にはYouTubeオフィシャルサイトで全く同じことが出来ちゃうんでまさに「車輪の再発明」なんだけど、 <a href="http://talkslab.github.io/metro-bootstrap/">metro-bootstrap</a> って言うWindows 8で取り入れられているMetro UIを実現するCSS/JSフレームワークを使ってみたりしたら、印象とか使い勝手が結構違って面白い。</p>
+
+<p><a href="http://yusukebe.github.io/Melodie/"><img alt="スクリーンショット 2013-05-31 12.03.41.png" src="http://yusukebe.com/archives/assets_c/2013/05/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202013-05-31%2012.03.41-thumb-600x363-373.png" width="600" height="363" class="mt-image-none" style=""></a></p>
+
+<p><a href="http://kimi.la/">君のラジオ</a>と同じようにWeb上のYouTube Playerとして使えるかと思います。動的な部分はJSオンリーで動かしているのでgithub pagesに置きました。気になる人は使って見てください！以下がページへのリンクになってます。</p>
+
+<ul>
+<li><a href="http://yusukebe.github.io/Melodie/">Melodie</a></li>
+</ul>
+
+
+<p>ちなみにmetro-bootstrapはTwitterのBootsrapをラップしてて「あーこういう使い方はありだなー」って気づきましたよ。</p>
+
+
+ 
+}

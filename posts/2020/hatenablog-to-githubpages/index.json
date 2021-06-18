@@ -1,0 +1,101 @@
+{
+    "data" :  {
+    "title": "はてなブログからGitHub Pages+Hugoへ移行した",
+    "date": "2020-01-16 10:36:20 +0900 JST",
+    "dir": "posts/2020/",
+    "slug": "hatenablog-to-githubpages",
+    "categories": [],
+    "tags": ["Blog"]
+}
+
+---
+
+
+はてなブログで運用してたブログ「ゆーすけべー日記」をGitHub Pagesへ移行した。ドメインも昔使ってた`yusukebe.com`にした。
+静的ファイルのジェネレーターとしてHugoを使ってる。
+
+<!--more-->
+
+{{<rawhtml>}}
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">結局、Hugoいじってる <a href="https://t.co/NAKS6k3W1M">https://t.co/NAKS6k3W1M</a></p>&mdash; Yusuke Wada (@yusukebe) <a href="https://twitter.com/yusukebe/status/1217449522579701760?ref_src=twsrc%5Etfw">January 15, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+{{</rawhtml >}}
+
+今まで使ってた、はてなブログに大きな不満があったわけじゃなかったが、気分一新しようとしていた。ちなみに上記のツイートにあるようにMediumとnoteを試してみたが、今回のユースケースには合わなかった。
+というのもコードを貼り付けたいという重要な要件に対して、
+
+* **Medium**
+  * Markdownに対応している
+  * なので{{<rawhtml>}}```{{</rawhtml>}}と書きはじめてコードを貼り付けることができる
+  * ただWYSIWYGすぎて書いた瞬間からHTMLに変換されるのが使いにくかった
+  * シンタックスハイライトされない
+* **note**
+  * Markdownで書けない
+  * よって、メニューから「コードを挿入」しなくてはいけない
+  * シンタックスハイライトは一応ある
+
+そもそもこの2つの「文章をクールに書こう」みたいなコンセプトは自分には合わない。
+
+で、結局はてなブログかと思いきやHugoを触ってみて面白かったので、
+こいつをHTMLジェネレーターにしてGitHub Pagesでホスティングさせることにした。
+
+さて、はてなブログにある過去の記事の扱いをどうしようかと思ったが、どうせなら全て移行しようってことで頑張った。
+はてなブログのエキスポート機能で書き出したMovableType形式でかつ一枚のテキストファイルをHugoで読み込ませるために
+以下のツールを使わせてもらった。自前でスクリプトを作ろとしていたので助かった。
+
+* [mosuke5/hatena-blog-parser](https://github.com/mosuke5/hatena-blog-parser)
+
+えいやっでインポートしてみると過去記事が2,000件以上あった。
+
+![SS](https://live.staticflickr.com/65535/49391688593_b1c6274117_w_d.jpg)
+
+それ以外に、
+
+* Permalinkを決める
+  * `/post/2020/title.md` みたいにする
+* Aboutページを作る 
+* 独自ドメインの設定
+* GitHub Pagesを有効にしつつ、公開用とHugo用のレポジトリ作成
+* テーマの適応
+  * `ezhil`というのを使っている => [vividvilla/ezhil： Clean and minimal personal blog theme for Hugo](https://github.com/vividvilla/ezhil)
+* テンプレートいじる
+* TwitterとかFacebookとかのソーシャルボタンの導入
+* カスタムCSS書いて見た目を頑張る
+  * いざ使ってみると、気になるところがたくさんあるので後ほど調整する
+* シンタックスハイライトを`monokai`にする
+* 記事を新しく作る際のデフォルトテンプレートの調整
+* Twitter Card / OGP の設定
+* Google Analyticsの導入
+* 画像をどうやってアップして貼り付けるか悩んだが、Flickrにホストしてもらう作戦にした
+
+と、まだまだあった気がするが、頑張った。
+
+最後に今までお世話になったはてなブログからこの`yusukebe.com`へ飛ばすために、以下のJavaScriptをはてなブログへ埋め込んだ。
+個別記事は新しいURLに書き換えて、その他は全てトップページへ遷移させる。
+
+```javascript
+var site = "https://yusukebe.com";
+var url = ''
+var path = location.pathname;
+if(path.match('^\/entry')) {
+    var r = /^\/entry\/(\d+)\/(\d+)\/(\d+)\/(\d+)/.exec(path);
+    var p = '/posts/' + r[1] + '/' + r[2] + r[3] + r[4];
+    url = site + p;
+}else{
+    url = site;
+}
+var link = document.getElementsByTagName("link")[0];
+link.href = url;
+location.href = url;
+```
+
+以上、移行は完了！
+
+**自分でいじってる感**があって楽しい。
+2001年、HNS=ハイパー日記システムで書き始めたこの日記は、
+その後、MovableType、TypePad、はてなブログと変遷してきた。
+今回のGitHub Pages+Hugoの体制でどこまで続けられるだろうか。
+
+おしまい。
+
+ 
+}

@@ -1,0 +1,22 @@
+{
+    "data" :  {
+    "title": "コメントスパム対策にBayesian filterいれました",
+    "date": "2004-03-29 12:21:00 +0900 JST",
+    "dir": "posts/2004/",
+    "slug": "0328152150",
+    "categories": ["tech"],
+    "tags": []
+}
+
+---
+
+
+
+<p></p>
+<p>   ここ一ヶ月くらいの間コメントスパムが大量にやってきたので重い腰を上げて対策しました。<a href="http://james.seng.cc/archives/000152.html">Bayesian   filter for MT</a>を導入です。</p>
+<p>   <a href="http://www.dashiblog.com/blog/archives/000127.html">Dashi BlogのコメントSpam&amp;Ping-Spam防御モジュール稼動</a> を参考にしました。</p>
+<p>   そういえば宮川さんが<a href="http://blog.bulknews.net/mt/archives/000836.html#000836">ベイジアンなRSS   Aggregator</a>というのを作っていましたな。</p>
+
+
+ 
+}

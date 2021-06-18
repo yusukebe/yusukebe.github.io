@@ -1,0 +1,136 @@
+{
+    "data" :  {
+    "title": "PocketIOのイカ娘語echoサンプル",
+    "date": "2012-05-23 18:41:00 +0900 JST",
+    "dir": "posts/2012/",
+    "slug": "0523094100",
+    "categories": ["tech"],
+    "tags": ["Perl"]
+}
+
+---
+
+
+
+<p>SocketIOのサーバ側Perl実装の<a href="http://search.cpan.org/dist/PocketIO/">PocketIO</a>。
+Hachioji.pmが中心となって開発している<a href="https://github.com/uzulla/yairc">Yairc（仮）</a>でも使われているんで、
+気になって触ってます。</p>
+
+<p>実用的に使うにはPlackのMiddlewareとかAppを活用して他のWeb Application Frameworkのアプリと同居させるといいのかなぁーと
+なんとなく妄想してみる。そこで、Plack::App::URLMapのmountメソッドでPocketIOのHandlerとMojoliciousアプリのパスを分けて、簡単なイカ娘語変換のechoサンプルをつくってみる！といってもMojoliciousアプリの部分ってほとんど無いけど！</p>
+
+<p>app.psgiはこんな感じっす。</p>
+
+<pre class="code">use Mojo::Server::PSGI;
+use File::Spec;
+use File::Basename;
+use lib File::Spec-&gt;catdir(dirname(__FILE__), 'lib');
+use Plack::Builder;
+use PocketIO;
+
+my $psgi = Mojo::Server::PSGI-&gt;new( app_class =&gt; 'App::Web' );
+my $app = sub { $psgi-&gt;run(@_) };
+
+builder {
+    mount '/socket.io' =&gt; PocketIO-&gt;new( class =&gt; 'App::Handler', method =&gt; 'run' );
+    mount '/' =&gt; $app;
+};</pre>
+
+<p>lib/App/Web.pmには普通にMojoliciousのルーティング等を書いて...</p>
+
+<pre class="code">package App::Web;
+use Mojo::Base 'Mojolicious';
+
+sub startup {
+    my $self = shift;
+    my $r    = $self-&gt;routes;
+    $r-&gt;route('/')-&gt;to('root#index');
+}
+
+1;</pre>
+
+<p>lib/App/Handler.pmには飛んできたテキストをイカ娘語変換して返すようにして...</p>
+
+<pre class="code">package App::Handler;
+use Acme::Ikamusume;
+use strict;
+use warnings;
+
+sub new {
+    my $class = shift;
+    return bless {}, $class;
+}
+
+sub run {
+    my $self = shift;
+    return sub {
+        my $socket = shift;
+        $socket-&gt;on(
+            message =&gt; sub {
+                my $socket = shift;
+                my ($message) = @_;
+                $message = Acme::Ikamusume-&gt;geso($message);
+                $socket-&gt;send($message);
+            }
+        );
+    };
+ }
+
+1;</pre>
+
+<p>publicディレクトリにjs等を配置する...</p>
+
+<pre class="code">$ tree ./public/
+./public/
+└── js
+    ├── WebSocketMain.swf
+    ├── WebSocketMainInsecure.swf
+    ├── app.js
+    └── socket.io.js</pre>
+
+<p>templates/root/index.html.ep にこうやって記述...</p>
+
+<pre class="code">&lt;html&gt;
+&lt;head&gt;
+&lt;script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"&gt;&lt;/script&gt;
+&lt;script src="/js/socket.io.js"&gt;&lt;/script&gt;
+&lt;script src="/js/app.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;p&gt;
+    &lt;form&gt;
+      &lt;input type="text" /&gt;
+      &lt;input type="submit" value="Send" /&gt;
+    &lt;/form&gt;
+  &lt;/p&gt;
+  &lt;p id="output"&gt;&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+
+<p>public/js/app.jsはこんな感じ...</p>
+
+<pre class="code">$(function(){
+    var socket = io.connect();
+    socket.on('message', function (data) {
+        $('#output').text(data);
+    });
+    $('form').submit(function(){
+        var message = $('input[type="text"]').val();
+        socket.send(message);
+        return false;
+    });
+});</pre>
+
+<p>Twiggyでapp.psgiを立ち上げてみる...</p>
+
+<pre class="code">$ twiggy app.psgi</pre>
+
+<p>ブラウザからテキストを入力してみると...</p>
+
+<p><img alt="スクリーンショット 2012-05-23 18.40.38.png" src="http://yusukebe.com/archives/2012/05/23/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202012-05-23%2018.40.38.png" width="613" height="394" class="mt-image-none" style=""></p>
+
+<p><strong>うまくいったじゃなイカ</strong>！！</p>
+
+
+ 
+}

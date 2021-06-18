@@ -1,0 +1,18 @@
+{
+    "data" :  {
+    "title": "Google News Search から RSS を生成する Perl スクリプト",
+    "date": "2003-07-15 12:06:00 +0900 JST",
+    "dir": "posts/2003/",
+    "slug": "0714150604",
+    "categories": ["tech"],
+    "tags": []
+}
+
+---
+
+
+<p>LSUB <a href="http://www.csua.berkeley.edu/toshi/abacus/archives/000172.html">http://www.csua.berkeley.edu/toshi/abacus/archives/000172.html</a> Google News Search から RSS を生成する Perl スクリプト<br>
+こういう単純なスクリプトでも工夫で面白いことできそう。Flashで拾ったり。</p>
+
+ 
+}

@@ -1,0 +1,153 @@
+{
+    "data" :  {
+    "title": "ゆーすけべー日記イメージ検索できた、MovableTypeの記事からイメージ検索するPerl CGI",
+    "date": "2006-05-07 23:15:00 +0900 JST",
+    "dir": "posts/2006/",
+    "slug": "0507141540",
+    "categories": ["tech"],
+    "tags": ["Perl"]
+}
+
+---
+
+
+
+<p>
+  ゆーすけべー日記のイメージ検索を作ってみた
+  (前まであったのはYahoo!のウェブサービス使ってたけどMovableTypeの記事から検索した方が反映が早いし面白いので新しく作った)。
+  トップページの右上<strong>イメージ検索</strong>というところから検索できます。
+  URLは<a href="http://yusukebe.com/s/image.cgi">http://yusukebe.com/s/image.cgi</a>
+</p>
+<p>
+  「鎌団子」で検索した<a href="http://yusukebe.com/s/image.cgi?query=%E9%8E%8C%E5%9B%A3%E5%AD%90">結果</a><br>
+  <img alt="イメージ検索" class="at-xid-6a0133f4781589970b015391e38337970b" src="https://yusukebe.com/archives/a/6a0133f4781589970b015391e38337970b-pi.jpg">
+</p>
+<p>
+  このように人の名前で検索したりすると面白い。
+  2000件近いブログのエントリーから検索かけてるので重たいですが、勘弁を
+  (あんまりアクセスするとサーバーが止まる可能性が…、でもとりあえず問題でるまで稼動させる)。
+</p>
+<p>
+  これ、単にクエリーにマッチする記事を見つけてきて、そこのimgタグの画像を表示して、
+  リンク先にはその記事へのパーマリンクを指定しているというもの。
+  画像の上にマウスを乗せるとその記事のタイトルが表示されるというのは<a href="http://www.remus.dti.ne.jp/~a-satomi/bunsyorou/ArekorePopup.html">あれこれポップアップ</a>を使わせていただきました。
+</p>
+<p>
+  PerlでMovableTypeのオブジェクトいじるという形で実装。以下ソースコード。
+  各自の環境にあわせて変数設定して、image.cgiとでも名前付ければ動くはず。
+  もっと賢いやりかたあったら教えてください。
+</p>
+<pre class="code">#!/usr/bin/perl -w
+#MovableType Image Search
+#2006/5/7
+#by Yusuke Wada
+#http://yusukebe.com
+
+#mt lib ディレクトリの場所を指定
+use lib qw(/home/hoge/public_html/weblog/lib);
+
+use strict;
+use CGI;
+use CGI::Carp qw(fatalsToBrowser);
+
+use MT;
+use MT::Blog;
+use MT::ConfigMgr;
+use MT::I18N;
+use MT::Util qw(encode_html);
+
+#settings
+#mt-sconfig.cgiへのパスを指定
+my $configpath = "/home/hoge/public_html/weblog/mt-config.cgi";
+my $blogid = 1;
+
+#param
+my $q = new CGI;
+my $query = &amp;encode_html($q-&gt;param('query')); #検索クエリー
+
+# if keyword is null
+#HTMLは適当に書き換えて
+if (!$query){
+print &lt;&lt; "HERE";
+Content-Type: text/html
+
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Image Search&lt;/title&gt;
+&lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8" /&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;Image Search&lt;/h1&gt;
+&lt;form method=get action=./image.cgi&gt;
+&lt;input type=text name=query&gt;
+&lt;input type=submit value=imagesearch &gt;
+&lt;hr&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+HERE
+exit;
+}
+
+#param
+my $mt = MT-&gt;new(Config =&gt; $configpath) or die ("failed getting MT objects");
+my $charset = MT::ConfigMgr-&gt;instance-&gt;PublishCharset;#charset
+
+#queryやtextを大文字小文字どちらかに統一したいがとりあえず保留
+
+my @entries = MT::Entry-&gt;load( {blog_id=&gt; $blogid,status=&gt;MT::Entry::RELEASE()},{
+  sort=&gt;'created_on',direction=&gt;'descend'});
+
+#検索結果の出力、あれこれポップアップを使わせていただきました
+#http://www.remus.dti.ne.jp/~a-satomi/bunsyorou/ArekorePopup.html
+print &lt;&lt; "HERE";
+Content-type: text/html
+
+&lt;html&gt;
+ &lt;head&gt;
+ &lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8"&gt;
+ &lt;link href="ArekorePopup/ArekorePopup.css" rel="stylesheet" type="text/css"&gt;
+ &lt;script src="ArekorePopup/ArekorePopup.js" type="text/javascript"&gt;&lt;/script&gt;
+ &lt;title&gt;$query - Image Search&lt;/title&gt;
+ &lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;Image Search&lt;/h1&gt;
+Search result for &lt;b&gt;$query&lt;/b&gt;
+&lt;form method=get action=./image.cgi&gt;
+&lt;input type=text name=query&gt;
+&lt;input type=submit value=imagesearch &gt;
+&lt;hr&gt;
+HERE
+
+foreach my $entry(@entries){
+  my $text_all = $entry-&gt;title . $entry-&gt;text . $entry-&gt;text_more;#検索対象を作成
+  my $text = $entry-&gt;text . $entry-&gt;text_more;#画像検索対象を作成
+  my $permalink = $entry-&gt;permalink;
+  my $title = $entry-&gt;title;
+  
+  if($text_all =~ /$query/ ){
+    my @imgs;#エントリー毎のimg配列
+    $_ = $text;
+
+    #画像をゲット、欲しいのはURLとALTくらいか、とりあえずURLだけで
+    push(@imgs,/(&lt;img.*?&gt;)/ig);
+    for my $img(@imgs){
+      $img =~ /src=¥"*(.*?)¥"/;#""でsrcが囲まれているが前提になっている
+      my $src = $1;
+      print "&lt;a href=¥"$permalink¥" title=¥"$title¥"&gt;";
+      print "&lt;img src=¥"$src¥" alt=¥"$query¥" /&gt;";
+      print "&lt;/a&gt;¥n";
+    }
+  }
+}
+
+print &lt;&lt; "HERE";
+&lt;hr&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+HERE
+
+1;</pre>
+
+
+ 
+}

@@ -1,0 +1,145 @@
+{
+    "data" :  {
+    "title": "シンプルなWebアプリを今、自分なりに書いてみる",
+    "date": "2012-01-31 15:54:00 +0900 JST",
+    "dir": "posts/2012/",
+    "slug": "0131065441",
+    "categories": ["tech"],
+    "tags": ["Perl","Mojolicious"]
+}
+
+---
+
+
+
+<p>Webアプリでユーザーからの入力がある部分を作る際、ユーザーフレンドリーでかつ実装も簡単な方法を模索するのにkazeburoさんのブログ記事をよく参考にしていました。</p>
+
+<blockquote><p>CGIとは〜〜だというのはたくさん答えがあるだろうけど、自分的には「ユーザからの入力をチェックして画面にだす」ものだというのがしっくりくる。当たり前のことを書いているようだがMVCモデルでいうコントローラーの作成がCGIだと。
+<a href="http://blog.nomadscafe.jp/archives/000425.html">シンプルなWebアプリなCGIを書いてみる : blog.nomadscafe.jp</a></p></blockquote>
+
+<p>kazeburoさんはほんとにCGIで実装してたけど、フレームワークを使ったり、ライブラリを使ったりしたら、つまり、今風に、実用的に書いてみるとどうなるのかやってみています。kazeburoさんのとちょっとだけ仕様が違うがなんとなくこんなかなーという具合。あ、もちろん僕のことなんでPerlを使ってます。が、コードは非常に簡単です。</p>
+
+<p>ちなみにサンプルの仕様はこんな具合。</p>
+
+<ol>
+<li>ユーザーからの入力フォームを表示、郵便番号7桁（ハイフンは入らない）を入れてもらう</li>
+<li>郵便番号が7桁の数字かどうか、空ではないかをチェック</li>
+<li>エラーならばエラーを表示、フォームには先ほど入力した値が残っている状態</li>
+<li>妥当なら入力された値を表示、特に保存などはしない</li>
+</ol>
+
+
+<p>さての今回の実装の特徴は以下です。</p>
+
+<ul>
+<li>Mojoliciousというフレームワークを使っている。今回はとりわけMojolicious::Liteというsinatra風の書き方をしています</li>
+<li>妥当性チェックにFormValidator::Liteを使っている（kazeburoさんはあえてライブラリを使ってないと思われます）。以下のソースコードではエラーメッセージをコード内に記述しているけど、外だしもできます</li>
+<li>HTML::FillInForm::Liteを使っている（HTML::FillInFormより速いらしい！）。このFillInFormの機能により、エラーが起こった時にフォームに値が残ったりってのが簡単にできる</li>
+</ul>
+
+
+<p>なんか、Mojolicious::<strong>Lite</strong>とかFormValidator::<strong>Lite</strong>とかHTML::FillInForm::<strong>Lite</strong>とか最近はLiteが流行りですね！</p>
+
+<p>で、いよいよコードです。</p>
+
+<h3>zip.pl</h3>
+
+<pre class="code">#!/usr/bin/env perl
+use Mojolicious::Lite;
+use HTML::FillInForm::Lite;
+use FormValidator::Lite;
+use utf8;
+
+get '/' =&gt; sub {
+    my $self = shift;
+    $self-&gt;stash-&gt;{error_messages} = undef;
+    $self-&gt;render('index');
+};
+
+post '/' =&gt; sub {
+    my $self = shift;
+    my $validator = FormValidator::Lite-&gt;new( $self-&gt;req );
+    $validator-&gt;set_message(
+        'zip.not_null' =&gt; '郵便番号が空です',
+        'zip.length' =&gt; '郵便番号が正しくありません',
+        'zip.uint' =&gt; '郵便番号が正しくありません',
+    );
+    my $res = $validator-&gt;check(
+        zip =&gt; [ 'NOT_NULL', 'UINT', [qw/LENGTH 7/] ],
+    );
+    my @error_messages;
+    if($validator-&gt;has_error) {
+        for my $message ( $validator-&gt;get_error_messages ) {
+            push @error_messages, $message;
+        }
+        $self-&gt;stash-&gt;{error_messages} = \@error_messages;
+        my $html = $self-&gt;render_partial('index')-&gt;to_string;
+        $self-&gt;render_text(
+            HTML::FillInForm::Lite-&gt;fill(\$html, $self-&gt;req-&gt;params),
+            format =&gt; 'html'
+        );
+     }else{
+        $self-&gt;stash-&gt;{zip} = $self-&gt;req-&gt;param('zip');
+        $self-&gt;render('thankyou');
+    }
+ };
+
+app-&gt;start;
+__DATA__
+
+@@ index.html.ep
+% layout 'default';
+&lt;p&gt;
+  郵便番号を7桁の数字で入力してください。
+&lt;/p&gt;
+% if ($error_messages) {
+% for my $message (@$error_messages) {
+&lt;p&gt;&lt;b style="color:red;"&gt;&lt;%= $message %&gt;&lt;/b&gt;&lt;/p&gt;
+% }
+% }
+&lt;form action="/" method="post"&gt;
+  &lt;input type="text" name="zip" maxlength="7" size="7"/&gt;
+  &lt;input type="submit" value="送信" /&gt;
+&lt;/form&gt;
+
+@@ thankyou.html.ep
+&lt;p&gt;
+ 正常に入力されました。郵便番号は「&lt;%= $zip %&gt;」です。
+ ありがとうございます。
+&lt;/p&gt;
+&lt;p&gt;&lt;a href="/"&gt;戻る&lt;/a&gt;&lt;/p&gt;
+
+@@ layouts/default.html.ep
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;&lt;title&gt;&lt;%= title %&gt;&lt;/title&gt;&lt;/head&gt;
+  &lt;body&gt;&lt;%= content %&gt;&lt;/body&gt;
+&lt;/html&gt;</pre>
+
+<p>Mojolicious::Liteのアプリなんで一つのファイルで済みます。まぁちょっとでもアプリが大きくなったらファイルを切り離しますがこのくらいのサンプルを示すには楽ですね。</p>
+
+<pre class="code">$ ./zip.pl daemon</pre>
+
+<p>とかで起動できますよ。POSTで受け取ったパラメータをFormValidator::Liteでチェックをして、エラーが無ければthankyou.html.epをレンダリング、そうでなければエラーメッセージを表示しつつindex.html.epをレンダリングしています。</p>
+
+<p>kazeburoさんの言う通り、ユーザーの情報を入力してもらう＝待ち構えるような機能ってWebアプリの大きな役割なのでシンプルなアプリから考察すると面白いかもしれませんね。ツッコミあればください＞＜</p>
+
+<h3>CPANモジュール、ライブラリについて知りたい時は</h3>
+
+<div class="amazlet-box" style="margin-bottom:0px;">
+<div class="amazlet-image" style="float:left;margin:0px 12px 1px 0px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/486267108X/kamawada-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/51R67-AW4BL._SL160_.jpg" alt="Perl CPANモジュールガイド" style="border: none;"></a></div>
+<div class="amazlet-info" style="line-height:120%; margin-bottom: 10px">
+<div class="amazlet-name" style="margin-bottom:10px;line-height:120%">
+<a href="http://www.amazon.co.jp/exec/obidos/ASIN/486267108X/kamawada-22/ref=nosim/" name="amazletlink" target="_blank">Perl CPANモジュールガイド</a><div class="amazlet-powered-date" style="font-size:80%;margin-top:5px;line-height:120%">posted with <a href="http://www.amazlet.com/browse/ASIN/486267108X/kamawada-22/ref=nosim/" title="Perl CPANモジュールガイド" target="_blank">amazlet</a> at 12.01.31</div>
+</div>
+<div class="amazlet-detail">冨田尚樹 <br>ワークスコーポレーション <br>売り上げランキング: 26261<br>
+</div>
+<div class="amazlet-sub-info" style="float: left;"><div class="amazlet-link" style="margin-top: 5px"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/486267108X/kamawada-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jp で詳細を見る</a></div></div>
+</div>
+<div class="amazlet-footer" style="clear: left"></div>
+</div>
+
+
+
+ 
+}

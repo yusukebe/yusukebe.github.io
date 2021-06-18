@@ -1,0 +1,68 @@
+{
+    "data" :  {
+    "title": "Webページからキーワード抽出するお気軽Perlスクリプト",
+    "date": "2010-06-24 15:33:00 +0900 JST",
+    "dir": "posts/2010/",
+    "slug": "0624063324",
+    "categories": ["tech"],
+    "tags": ["Perl"]
+}
+
+---
+
+
+
+<p>
+HTML::ContentExtractorとYahoo! APIのキーフレーズ抽出を使うと結構お手軽に
+Webページからそこそこの精度でキーワードを取り出せる。
+以下スクリプト例。
+</p>
+<pre class="brush: perl"> use WebService::Simple;
+use HTML::ContentExtractor;
+use LWP::UserAgent;
+use Encode;
+
+my $url = $ARGV[0] || 'http://yusukebe.com/archives/10/05/12/150832.html';
+my $extractor = HTML::ContentExtractor-&gt;new();
+my $ua = LWP::UserAgent-&gt;new();
+my $res = $ua-&gt;get($url);
+my $html = $res-&gt;decoded_content();
+$extractor-&gt;extract( $url, $html );
+my $text = $extractor-&gt;as_text();
+$text = substr $text, 0, 500;
+
+my $service = WebService::Simple-&gt;new(
+    base_url =&gt; 'http://jlp.yahooapis.jp/KeyphraseService/V1/extract',
+    response_parser =&gt; 'JSON',
+);
+$res = $service-&gt;get(
+    {
+        appid =&gt; 'xxxx',
+        sentence =&gt; $text,
+        output =&gt; 'json'
+    }
+);
+
+my $ref = $res-&gt;parse_response();
+for my $key ( keys %$ref ) {
+    print encode_utf8("$key\n") if $ref-&gt;{$key} &gt; 50;
+}</pre>
+<p>
+<a href="http://yusukebe.com/archives/10/05/12/150832.html">靴下パンツ、ユニクロで買うか？無印で買うか？ - ゆーすけべー日記</a>からキーワードを抽出すると以下のようになった。
+</p>
+<pre class="brush: perl"> $ perl keyword.pl
+yusukebe
+無印
+ボタン
+ちんこ飛び出る状態
+ユニクロ
+Erogeek
+パンツ
+前あき型ボクサータイプ</pre>
+<p>
+いいんじゃないでしょうか！
+</p>
+
+
+ 
+}

@@ -1,0 +1,136 @@
+{
+    "data" :  {
+    "title": "はじめまして Thinkpad X61s、お久しぶり wadapad",
+    "date": "2007-11-01 15:28:00 +0900 JST",
+    "dir": "posts/2007/",
+    "slug": "1101062827",
+    "categories": ["tech"],
+    "tags": []
+}
+
+---
+
+
+
+<p>
+  家に帰ったら Thinkpad が届いてた。
+</p>
+<p>
+  <img alt="Thinkpad X60s" class="at-xid-6a0133f4781589970b015435b6ecad970c" src="https://yusukebe.com/archives/a/6a0133f4781589970b015435b6ecad970c-pi">
+</p>
+<p>
+  うちの会社ではノートパソコン「Thinkpad X60」を1台所有していて、
+  アルバイトで雇っている親父と共有していたんだけど、
+  最近になって俺がそれを持って出かける機会が増えて、いわゆる「ブッキング」が発生するようになってきた。
+  じゃあこの際、俺用のノーパソを買おうという流れで、手に入れたのがこの <strong>Thinkpad X61s</strong> になる。
+  MacBookにしようか悩んだんけど、
+  物理的に重たいからと最近みんな使いすぎで「なんか嫌だ」なる理由でやめにして、
+  Windows モバイルから消去法で選んでいくと結局 Thinkpad に。
+  IBM から Lenovo になってクオリティが下がったという評判を耳にするが、Thinkpad は Thinkpad である。
+  学生時代に長く濃く付き合ってきた X22 がとてもよかったので、今回も期待を込める。
+  X61s の「s」がつくことによって、通常の X61 シリーズより 130g 軽いってのもいいね。
+  本体価格13万くらいで安かったし。
+</p>
+<p>
+  俺が使う Thinkpad には <strong>wadapad</strong> という愛称をつけてカスタマイズすることにしている。
+  そのためにはまず、メモリを増やす。
+  Hynix の1Gメモリを2枚にして、合計2Gにした。元々ついてたのもHynix製みたい。
+</p>
+<p>
+  <font size="2">(左)底の蓋をはずしてメモリを取り付け、(右)認識</font><br>
+  <img alt="Thinkpad X60s" class="at-xid-6a0133f4781589970b015435b6ecb9970c" src="https://yusukebe.com/archives/a/6a0133f4781589970b015435b6ecb9970c-pi.jpg">
+  <img alt="Thinkpad X60s" class="at-xid-6a0133f4781589970b015435b6ecc7970c" src="https://yusukebe.com/archives/a/6a0133f4781589970b015435b6ecc7970c-pi.jpg">
+</p>
+<p>
+  次に、キーボードを置換して、英語配列キーボードにする。
+  どうも調べてみると Thinkpad のキーボードって作っているメーカーが3社くらい存在していて、
+  即手に入れられるものはChicony製とMNB製から選べるらしい。
+  通販やってる <a href="http://noteparts.shop-pro.jp/">ノートパーツ オンラインショップ</a>
+  というところにX22のキータッチが好みだという旨を伝えてその差を伺ってみた。
+</p>
+<blockquote>
+  <p>
+    X60 X61用英語キーボードは、NMB製とCHICONY製の2種類がございます。
+  </p>
+  <p>
+    好みにもよりますが、一般にはNMB製の方が質感、キータッチなどの点で
+    上質とされています。また、CHICONY製はキーボード自体の重量が重い点
+    も好まれない理由になっています。
+  </p>
+  <p>
+    日本語キーボードもNMB製(39T7290)、CHICONY製(42T3095)の2種類が搭載
+    されています。どちらがお使いの機種に搭載されているかは、キーボード
+    取り外し後に裏側のラベルの品番を確認することで可能です。
+  </p>
+  <p>
+    ThinkPad X22 - X24 キーボードは英語、日本語とも製造会社はALPS１社
+    でした。当時のALPS製キーボードは日本製でしたので、やはりThinkPad
+    現行機種に搭載されている中国製のNMB製、CHICONY製と比べると上質な
+    キータッチだったように記憶しています。（同キーボードを搭載していた
+    X24を個人的に使用していた感想です）
+  </p>
+  <p>
+    X60/X61用の英語キーボードのうち、質感的にX22搭載キーボードに近い
+    のはNMB製になります。
+  </p>
+  <p>
+    どうぞご検討の程、宜しくお願いいたします。
+  </p>
+</blockquote>
+<p>
+  と丁重にご返答していただいたので、NMB製の英語キーボード(39T7290)を購入し、
+IBMのサイト「<a href="http://www-06.ibm.com/jp/domino04/pc/support/Sylphd03.nsf/jtechinfo/MIGR-62802">キーボード取り外し/取り付け手順</a>」を見ながら、元ついていた日本語のそれと交換。
+Thinkpad はこのようなパーツメンテナンスに関するドキュメントが豊富なのがよい。
+</p>
+<p>
+  <font size="2">(左)キーボード取り外し、(右)英語配列</font><br>
+  <img alt="Thinkpad X60s" class="at-xid-6a0133f4781589970b015435b6ecd7970c" src="https://yusukebe.com/archives/a/6a0133f4781589970b015435b6ecd7970c-pi.jpg">
+  <img alt="Thinkpad X60s" class="at-xid-6a0133f4781589970b015435b6ece4970c" src="https://yusukebe.com/archives/a/6a0133f4781589970b015435b6ece4970c-pi">
+</p>
+<p>
+  このようにして、wadapad 完成！
+  VMWare 入れてその中に debian 入れれば開発環境できるぜ。
+</p>
+<p>
+  <img alt="Thinkpad X60s" class="at-xid-6a0133f4781589970b015435b6ed08970c" src="https://yusukebe.com/archives/a/6a0133f4781589970b015435b6ed08970c-pi.jpg">
+</p>
+<p>
+  はじめまして、Thinkpad X61s、X22 以来お久しぶりです wadapad 。
+  これからも、どうぞこれからもよろしく。
+  以下、Amazonで買える Thinkpad X61s 、アサマシ。
+</p>
+
+<p></p>
+<div style="float:left"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B000TDML78/kamawada-22/"><img alt="レノボ・ジャパン ThinkPad X61s(L7300/1024/80/V-B/12TFT)T 7668A11" class="at-xid-6a0133f4781589970b015435b6ed19970c" src="https://yusukebe.com/archives/a/6a0133f4781589970b015435b6ed19970c-pi.jpg" style="border:none;"></a></div>
+<div style="float:left;margin-left:15px;">
+<div style="font-size:12pt"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B000TDML78/kamawada-22/">レノボ・ジャパン ThinkPad X61s(L7300/1024/80/V-B/12TFT)T 7668A11</a></div>
+<div style="font-size:7pt;font-family:verdana;">posted with <a href="http://yusukebe.com/b/amazon/search/">yusukebe.com::AmazonSearch</a> on 2007.11.1</div>
+<div style="font-size:10pt;">
+<ul style="list-style-type:none;padding:0;">
+<li>Personal Computers / Lenovo (2007/07/10)</li>
+<li>Amazon 売り上げランキング: </li>
+</ul>
+<a href="http://www.amazon.co.jp/gp/product/B000TDML78%3ftag=kamawada-22%26link_code=xm2%26camp=2025%26dev-t=D3QNAE4JDR26A2">Amazon.co.jpで詳細を見る</a>
+</div>
+</div>
+<div style="clear:left;"></div>
+
+
+<p></p>
+<div style="float:left"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B000TDMKZG/kamawada-22/"><img alt="レノボ・ジャパン ThinkPad X61s(L7300/512/80/XP/12TFT)T 76687BJ" class="at-xid-6a0133f4781589970b015435b6ed19970c" src="https://yusukebe.com/archives/a/6a0133f4781589970b015435b6ed19970c-pi.jpg" style="border:none;"></a></div>
+<div style="float:left;margin-left:15px;">
+<div style="font-size:12pt"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B000TDMKZG/kamawada-22/">レノボ・ジャパン ThinkPad X61s(L7300/512/80/XP/12TFT)T 76687BJ</a></div>
+<div style="font-size:7pt;font-family:verdana;">posted with <a href="http://yusukebe.com/b/amazon/search/">yusukebe.com::AmazonSearch</a> on 2007.11.1</div>
+<div style="font-size:10pt;">
+<ul style="list-style-type:none;padding:0;">
+<li>Personal Computers / Lenovo (2007/07/10)</li>
+<li>Amazon 売り上げランキング: </li>
+</ul>
+<a href="http://www.amazon.co.jp/gp/product/B000TDMKZG%3ftag=kamawada-22%26link_code=xm2%26camp=2025%26dev-t=D3QNAE4JDR26A2">Amazon.co.jpで詳細を見る</a>
+</div>
+</div>
+<div style="clear:left;"></div>
+
+
+ 
+}

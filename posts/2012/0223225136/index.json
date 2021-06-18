@@ -1,0 +1,110 @@
+{
+    "data" :  {
+    "title": "創造のプロセスでプロジェクトを回そう！",
+    "date": "2012-02-24 07:51:00 +0900 JST",
+    "dir": "posts/2012/",
+    "slug": "0223225136",
+    "categories": ["tech"],
+    "tags": ["Column"]
+}
+
+---
+
+
+
+<p>大学時代に学んだ大切なことのひとつに「<strong>創造のプロセス</strong>」があります。
+ソフトウェアを開発をしたりプロジェクトを起こしたりする際に参考になる考え方・方法です。
+<a href="http://www.mag2.com/m/0001426750.html">メルマガ</a>でもこの辺りをかなり重点的に扱っているのですが、
+多くの方にも知ってもらいたいことなので参考文献を元に簡潔にまとめたいと思います。</p>
+
+<p>この創造のプロセスを明確に謳っている書籍があります。
+それが東大MOTなどで有名な宮田秀明氏の「<strong>仕事のやり方間違えてます</strong>」です。</p>
+
+<div class="amazlet-box" style="margin-bottom:0px;">
+<div class="amazlet-image" style="float:left;margin:0px 12px 1px 0px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4396612117/kamawada-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/511HS5VWBTL._SL160_.jpg" alt="仕事のやり方間違えてます―成功を手にする「理系思考」10の法則" style="border: none;"></a></div>
+<div class="amazlet-info" style="line-height:120%; margin-bottom: 10px">
+<div class="amazlet-name" style="margin-bottom:10px;line-height:120%">
+<a href="http://www.amazon.co.jp/exec/obidos/ASIN/4396612117/kamawada-22/ref=nosim/" name="amazletlink" target="_blank">仕事のやり方間違えてます―成功を手にする「理系思考」10の法則</a><div class="amazlet-powered-date" style="font-size:80%;margin-top:5px;line-height:120%">posted with <a href="http://www.amazlet.com/browse/ASIN/4396612117/kamawada-22/ref=nosim/" title="仕事のやり方間違えてます―成功を手にする「理系思考」10の法則" target="_blank">amazlet</a> at 12.02.24</div>
+</div>
+<div class="amazlet-detail">宮田 秀明 <br>祥伝社 <br>売り上げランキング: 39966<br>
+</div>
+<div class="amazlet-sub-info" style="float: left;"><div class="amazlet-link" style="margin-top: 5px"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4396612117/kamawada-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jp で詳細を見る</a></div></div>
+</div>
+<div class="amazlet-footer" style="clear: left"></div>
+</div>
+
+
+<p><br></p>
+
+<p>宮田氏はまず、ルーティンに対しての「<strong>プロジェクト</strong>」的な仕事や活動を増やして
+新しい価値を作り続けようと訴えます。
+次に、プロジェクトにおいて重要なのが<strong>ビジョン</strong>とだと説きそれは大きくて単純明快な方がいいと言います。
+ビジョンを作る際に注意したいのは、例えば「お金を儲けたい」というのは単なる希望なので、
+顧客や利用者のことを考えると良いようです。
+本書に掲載されている例からいくつかピックアップしましょう。</p>
+
+<ul>
+<li>東京・大阪間を三時間で結ぶ鉄道を実現しよう</li>
+<li>どこでも音楽を聴くことができる、身につけられるテープレコーダーを作ろう</li>
+<li>消費者に喜ばれるおいしいビールを開発しよう</li>
+</ul>
+
+
+<p>短く、分かりやすいですね。
+そしてビジョンを実現するための手順が「<strong>創造のプロセス</strong>」というわけなのです。</p>
+
+<p>プロセスと言うからには箇条書きで表すことができます。このようなものです。</p>
+
+<ol>
+<li>ビジョン</li>
+<li>コンセプト</li>
+<li>モデル</li>
+<li>デザイン・ソリューション</li>
+<li>意思決定テスト</li>
+<li>実行</li>
+<li>ビジョンへ戻る</li>
+</ol>
+
+
+<p>箇条書きではありますが、「7」番目が先頭のビジョンに戻ることになっている点がポイントです。
+プロセスは循環します。</p>
+
+<p><img src="http://yusukebe.com/archives/assets_c/2012/02/IMG_1799-thumb-550x410-126.jpg" alt="本書より引用"></p>
+
+<p>「モデル」というのが分かりにくいかもしれませんが、本書では以下のように解説しています。</p>
+
+<blockquote><p>コンセプトを実現するための基本構造や仕組みを選んだり、作り出したりすること</p></blockquote>
+
+<p>また「デザイン」については、単なる見た目の話ではなくこのような定義です。</p>
+
+<blockquote><p>モデルに従って具体化すること。機能を考えながら、
+必要な要素（部品）を集め、構造や仕組み、組織を組み立てる。</p></blockquote>
+
+<p>この創造のプロセスを頭の中に入れておくとソフトウェアの開発から勉強会の開催、日々の生活まで、
+いろいろと応用が利いて非常に良いです。
+本書でも言及されていますが、
+陥りがちなのが上記のプロセスのうち一部しか沿わずにプロジェクトを進めてしまう点です。
+例えば「4」ソリューションからはじめてしまい「6」実行で止まるなんてことはよくあります。
+すると単なる競合への追従になったり、自己満足で終わってしまう結果になると考えられます。
+プロセスを大きく、かつ短く回して循環させることで、大きな価値を生み出します。</p>
+
+<p>僕は大学・大学院時代に研究室でこの創造のプロセスを応用したものづくりとして、
+いくつかソフトウェアやプロダクトを作りました。
+失敗したこともありますが、あるプロジェクトでは海外の大きな学会に通り、
+かなりの数の展示に呼ばれ、賞を受賞するに至りました。
+この「創造のプロセスを回したちょっとした成功体験」は今の開発スタイルに大きな影響を与えてくれています。</p>
+
+<p>最後に「創造のプロセス」っていうのは名前がいいですね。
+かっこいいですし、何か実現できそうなわくわくする感じがします。</p>
+
+<p>以上、僕がずっと意識し続けている「創造のプロセス」について簡単に解説しました。</p>
+
+<hr>
+
+<p><br></p>
+
+<p>次回、メルマガ「<a href="http://www.mag2.com/m/0001426750.html">ゆーすけべーラジオ</a>」は28日(火)発行です。</p>
+
+
+ 
+}

@@ -1,0 +1,126 @@
+{
+    "data" :  {
+    "title": "ActionScript 3.0 Cookbook",
+    "date": "2008-02-07 09:20:00 +0900 JST",
+    "dir": "posts/2008/",
+    "slug": "0207002005",
+    "categories": ["tech"],
+    "tags": []
+}
+
+---
+
+
+
+<p>
+Flash のプログラミング言語 ActionScript（AS） の新しいバージョン 3.0 を勉強している。
+学生の時に バージョン 1 から 2 までのコードは書いたことがあるが、
+この 3.0 は 2.0 からの仕様変更が激しいため当初かなり戸惑う、というか拒否反応すら出てしまった。
+以前のバージョンだと制約が緩い分、ある程度ノリで書いたコードでも一応動くという感じだったが、
+3.0 からは型宣言やメソッドの引数・返り値の宣言を忘れるとすぐにエラーを吐かれたり、カスタムクラスの作り方が Java ライクになっている。ようはコードを書くにあたっての制約がきつくなった。
+ちょっとそこが気に入らない点があるものの、Flash の持つジレンマであるデザインとコードの分離が今回の 3.0 ではうまくいっていてこれをマスターすればすっきりとした実装ができるだろうなという期待がある。
+また、画像などに対するフィルターなど機能面でも追加された点が表現力により幅を持たせることとなるだろう。
+</p>
+<p>
+これほど変わった ActionScript 、やはり文献を読まないとわからんということで、今のところ以下の3冊を読んだ。
+</p>
+<ul>
+  <li>WEB+DB PRESS vol.41</li>
+  <li>ActionScript 3.0 入門ノート</li>
+  <li>ActionScript 3.0 Cookbook</li>
+</ul>
+<p>
+  「<strong>WEB+DB PRESS vol.41</strong>」は Webアプリ開発者向けの雑誌で購読しているのだが、たまたま AS3 の特集をやっていてそれを知るいいきっかけになった。
+  「<strong>ActionScript 3.0 入門ノート</strong>」は日本語の本で AS3 について書かれてるの今のところベストな入門書かもしれない。
+イベントリスナーを使ったバージョン2 からの移行などが丁寧に解説されていて、AS3 の大まかな仕様を知るにはとてもいい。ただ、全てのクラス機能についての解説が網羅されているわけではない。
+  そこで、洋書であるが「<strong>ActionScript 3.0 Cookbook</strong>」を購入し、ざーっと2時間くらいで読んでみた。
+</p>
+<p>
+  <img alt="ActionScript 3.0 Cookbook" class="at-xid-6a0133f4781589970b014e8bd74b11970d" src="https://yusukebe.com/archives/a/6a0133f4781589970b014e8bd74b11970d-pi.jpg">
+</p>
+<p>
+Flash CS3 のヘルプにはクラス定義、使い方、コードの例などが割りと丁寧に載っているので、クラスの使いかたがわからなかったらそれを参照するのが早いし網羅されている。
+ところが、「こういう機能を実装したいんだけど、どのクラスを使って、どのメソッドを使えばいいのかな？」という目的別、いわゆる「逆引き」的にドキュメントを探したい時がある。
+それを満たしくれるのが本書「ActionScript 3.0 Cookbook」。
+英語であるが、それが苦手な俺でもサクサクと読めるのでいい感じ。読んでて個人的に面白いなと思ったコード例は例えば、
+</p>
+<ul>
+  <li>カスタムクラスのメソッドに getter、setter を追加してプロパティライクなアクセスが可能</li>
+  <li>NumberFormat クラスを使った数値のフォーマット</li>
+  <li>ユニークな数値を取得するために NumberUtilities.getUnique() メソッドが用意されている</li>
+  <li>シンプルなボタンを Flash の IDE 無し、コードだけで記述する例</li>
+  <li>星型を書く Pen.drawStar() メソッド</li>
+  <li>雲、影、水などを表現するための BitmapDataクラス のメソッドとサンプル</li>
+</ul>
+<p>
+などなど。
+全編を流し読みしておくと、Flash で何ができるのかが理解できてコンテンツを作るときの発想力が高まるだろう。
+ただ、あくまで掲載されているのは小さな機能のサンプルであって、実際にコンテンツを作る時にどのようなベストプラクティスがあるのかというのはやはり自分でコードを書くか他のリソース、ソースコードを参照するしかないだろう。AS3 はまだオンラインで読めるような記事が少なくいので、今そこで苦労をしている。
+よって、本書のようなリファレンス的文献よりも学習できる教科書のような AS3 の本も現在進行中でこれはゆっくりと読んでいるのが、そちらについては後日紹介。
+久しぶりに Flash を触ってその表現力にワクワクしてきた。何かこの Flash を利用してサービスを作りたい。
+</p>
+
+<p></p>
+<div style="float:left"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/477413256X/kamawada-22/"><img alt="WEB+DB PRESS Vol.41" src="http://ecx.images-amazon.com/images/I/315OMtu9gBL.jpg" style="border:none;"></a></div>
+<div style="float:left;margin-left:15px;">
+<div style="font-size:12pt"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/477413256X/kamawada-22/">WEB+DB PRESS Vol.41</a></div>
+<div style="font-size:7pt;font-family:verdana;">posted with <a href="http://yusukebe.com/b/amazon/search/">yusukebe.com::AmazonSearch</a> on 2008.2.7</div>
+<div style="font-size:10pt;">
+<ul style="list-style-type:none;padding:0;">
+<li>WEB+DB PRESS編集部  </li>
+<li>大型本 / 技術評論社 (2007/10/24)</li>
+<li>Amazon 売り上げランキング: 4858</li>
+</ul>
+<a href="http://www.amazon.co.jp/gp/product/477413256X%3ftag=kamawada-22%26link_code=xm2%26camp=2025%26dev-t=D3QNAE4JDR26A2">Amazon.co.jpで詳細を見る</a>
+</div>
+</div>
+<div style="clear:left;"></div>
+
+<p></p>
+<div style="float:left"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4881665901/kamawada-22/"><img alt="Adobe Flash CS3 詳細! ActionScript 3.0 入門ノート (DVD付)" src="http://ecx.images-amazon.com/images/I/21eoKqaBF-L.jpg" style="border:none;"></a></div>
+<div style="float:left;margin-left:15px;">
+<div style="font-size:12pt"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4881665901/kamawada-22/">Adobe Flash CS3 詳細! ActionScript 3.0 入門ノート (DVD付)</a></div>
+<div style="font-size:7pt;font-family:verdana;">posted with <a href="http://yusukebe.com/b/amazon/search/">yusukebe.com::AmazonSearch</a> on 2008.2.7</div>
+<div style="font-size:10pt;">
+<ul style="list-style-type:none;padding:0;">
+<li>大重美幸  </li>
+<li>単行本（ソフトカバー） / ソーテック社 (2007/08/13)</li>
+<li>Amazon 売り上げランキング: 1254</li>
+</ul>
+<ul style="list-style-type:none;padding:0;"><li>Amazon おすすめ度の平均: <img alt="3.5" class="at-xid-6a0133f4781589970b015435b6ebc7970c" src="https://yusukebe.com/archives/a/6a0133f4781589970b015435b6ebc7970c-pi.gif" style="margin:0;"><ul style="list-style-type:none;padding-left:0;">
+<li>
+<img alt="4" class="at-xid-6a0133f4781589970b014e8bd727e1970d" src="https://yusukebe.com/archives/a/6a0133f4781589970b014e8bd727e1970d-pi.gif" style="margin:0;"> 他の本の翻訳が待てないのならアリかも。</li>
+<li>
+<img alt="1" class="at-xid-6a0133f4781589970b015391e38b00970b" src="https://yusukebe.com/archives/a/6a0133f4781589970b015391e38b00970b-pi.gif" style="margin:0;"> 読みにくい</li>
+<li>
+<img alt="4" class="at-xid-6a0133f4781589970b014e8bd727e1970d" src="https://yusukebe.com/archives/a/6a0133f4781589970b014e8bd727e1970d-pi.gif" style="margin:0;"> 現時点ではバイブル</li>
+</ul>
+</li></ul>
+<a href="http://www.amazon.co.jp/gp/product/4881665901%3ftag=kamawada-22%26link_code=xm2%26camp=2025%26dev-t=D3QNAE4JDR26A2">Amazon.co.jpで詳細を見る</a>
+</div>
+</div>
+<div style="clear:left;"></div>
+
+
+<p></p>
+<div style="float:left"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/0596526954/kamawada-22/"><img alt="Actionscript 3.0 Cookbook" src="http://ecx.images-amazon.com/images/I/21AWJD17GWL.jpg" style="border:none;"></a></div>
+<div style="float:left;margin-left:15px;">
+<div style="font-size:12pt"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/0596526954/kamawada-22/">Actionscript 3.0 Cookbook</a></div>
+<div style="font-size:7pt;font-family:verdana;">posted with <a href="http://yusukebe.com/b/amazon/search/">yusukebe.com::AmazonSearch</a> on 2008.2.7</div>
+<div style="font-size:10pt;">
+<ul style="list-style-type:none;padding:0;">
+<li>Joey Lott Darron Schall Keith Peters  </li>
+<li>ペーパーバック / Oreilly &amp; Associates Inc (2006/10)</li>
+<li>Amazon 売り上げランキング: 237</li>
+</ul>
+<ul style="list-style-type:none;padding:0;"><li>Amazon おすすめ度の平均: <img alt="4.0" class="at-xid-6a0133f4781589970b014e8bd727e1970d" src="https://yusukebe.com/archives/a/6a0133f4781589970b014e8bd727e1970d-pi.gif" style="margin:0;"><ul style="list-style-type:none;padding-left:0;"><li>
+<img alt="4" class="at-xid-6a0133f4781589970b014e8bd727e1970d" src="https://yusukebe.com/archives/a/6a0133f4781589970b014e8bd727e1970d-pi.gif" style="margin:0;"> O'REILLY の定番本</li></ul>
+</li></ul>
+<a href="http://www.amazon.co.jp/gp/product/0596526954%3ftag=kamawada-22%26link_code=xm2%26camp=2025%26dev-t=D3QNAE4JDR26A2">Amazon.co.jpで詳細を見る</a>
+</div>
+</div>
+<div style="clear:left;"></div>
+
+
+ 
+}

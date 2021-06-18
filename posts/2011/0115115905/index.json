@@ -1,0 +1,69 @@
+{
+    "data" :  {
+    "title": "iPhoneでエロ画像が快適に見える「imeero」を作ってみた",
+    "date": "2011-01-15 20:59:00 +0900 JST",
+    "dir": "posts/2011/",
+    "slug": "0115115905",
+    "categories": ["tech"],
+    "tags": []
+}
+
+---
+
+
+
+<p>
+エッチな画像、いいですね^^;
+最近では、2chエロスレッドまとめサイトなどに高画質でいろいろな意味で綺麗な写真が、
+うまいこと並べられています。
+僕はそれを最近お気に入りのiPhoneで快適に見たいと思いました。
+それぞれのブログはiPhoneに最適化されているのですが、
+いかんせんあくまで「ページの中の一つの画像」という雰囲気がしちゃうので、
+集中して個別の画像を見ることができないなーと感じています。
+そこで、iPhoneからエロまとめサイトの画像を一個一個快適に見ることができるサービスを作ってみました。
+名前は「<strong><a href="http://imeero.com/">imeero</a></strong>（イメエロ）」と言います（18禁）。
+</p>
+<p>
+<a href="http://imeero.com/">
+<img alt="imeero" class="at-xid-6a0133f4781589970b015391e3963d970b" src="https://yusukebe.com/archives/a/6a0133f4781589970b015391e3963d970b-pi.jpg">
+</a>
+</p>
+<p>
+使い方は簡単。
+見たい画像集のタイトルをタップすると一番目の画像がでてきます。
+指をタッチしてスライドさせると次の画像に移ります。
+てな具合でそれぞれの画像を楽しんでください。
+</p>
+<p>
+さて簡単な実装の話。今回の目玉はやはりUIです。
+当初は独自のJavaScriptで、
+「iPhone JavaScript タップ」などでGoogle検索した結果を踏まえてUIのインタラクションを実現してました。
+ただ、<a href="http://jquerymobile.com/">jQuery Mobile</a>に目をつけてから、
+そのAPIでだいぶできることがわかったので、
+インタラクションのほとんどはjQuery MobileのAPIを通してイベントを取得しています。
+</p>
+<p>
+例えばjQuery Mobileを使えば、画像を遷移させるためのイベント、
+つまり「一度指を画面にタッチしてから、そのままドラッグをする」という動作は、
+「swipe」というTouch Eventで簡単に取得できます。
+</p>
+<p>
+また、jQuery Mobileを介すことにより、おそらくiPadやAndroidといったスマートフォンにもある程度、
+対応させることができたのかと思います。
+</p>
+<p>
+その他、バックエンドのどの画像をエロい画像と見なすかなどのテクニックなどや、
+画像配信のコツなどありますが、それは要望があればまたの機会でお話させていただきたいです。
+</p>
+<p>
+ということで、imeeroをよろしく！
+</p>
+<ul>
+  <li>
+<span class="hatena-bookmark-title"><a href="http://imeero.com/">imeero - iPhoneエロ画像</a></span> <span class="hatena-bookmark-users"><a href="http://b.hatena.ne.jp/entry/imeero.com/"><img alt="imeero - iPhoneエロ画像" class="at-xid-6a0133f4781589970b015391e39648970b" src="https://yusukebe.com/archives/a/6a0133f4781589970b015391e39648970b-pi.gif" title="imeero - iPhoneエロ画像"></a></span>
+</li>
+</ul>
+
+
+ 
+}

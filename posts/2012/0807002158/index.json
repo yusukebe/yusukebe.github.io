@@ -1,0 +1,104 @@
+{
+    "data" :  {
+    "title": "YAPC::Asia 2012 で小規模開発とか「ボケて」について話します！",
+    "date": "2012-08-07 09:21:00 +0900 JST",
+    "dir": "posts/2012/",
+    "slug": "0807002158",
+    "categories": ["tech"],
+    "tags": ["Perl","YAPC"]
+}
+
+---
+
+
+
+<p>世界最大級のPerlの祭典「YAPC::Asia 2012」。</p>
+
+<p><a href="http://yusukebe.com/archives/2012/08/07/yapc_logo.png"><img alt="yapc_logo.png" src="http://yusukebe.com/archives/assets_c/2012/08/yapc_logo-thumb-550x241-241.png" width="550" height="241" class="mt-image-none" style=""></a></p>
+
+<div xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/" about="http://yapcasia.org/2012/news/yapcasia-2012-logo.html">
+<span property="dct:title">YAPC::Asia Tokyo 2012</span> (<a rel="cc:attributionURL" property="cc:attributionName" href="http://yapcasia.org/2012/">Japan Perl Association</a>) / <a rel="license" href="http://creativecommons.org/licenses/by-nc/2.1/jp/">CC BY-NC 2.1</a>
+</div>
+
+
+<p><br></p>
+
+<hr>
+
+<p><br></p>
+
+<p>トークも出来てチケット代が無料になる！というモチベーションで発表のサブミットをしていましたが、
+昨日、僕のネタが採択されたようです。</p>
+
+<blockquote><p><a href="http://yapcasia.org/2012/talk/show/dbe56d5c-ac3a-11e1-8ef2-22926aeab6a4">「新しい」を生み出すためのWebアプリ開発とその周辺</a></p></blockquote>
+
+<p>わーい。日程的には2日目（9月29日土曜日）のしょっぱな、10時30分から40分間です。
+裏番組にkazeburoさんや「らくだ本」の訳者の近藤さんがいるので、色々と負けないようにしたいです。</p>
+
+<p>さて肝心のトークの内容は新たにスタートアップとしてWebアプリケーションを作ろうという方向けの
+内容にしたいと思います。技術的な話も当然出てきますが、Webディレクターっぽいポジションの人も
+楽しめる内容を目指します。また、2部構成っぽくしようかと思っていて、冒頭に理論や考え方、
+次に「<a href="http://bokete.jp">ボケて（bokete.jp）</a>」という僕がシステムを担当しているサイトをスケールさせた事例を紹介したいと思います。</p>
+
+<p>箇条書きに内容を列挙するとこんな具合です。</p>
+
+<hr>
+
+<p><br></p>
+
+<h3>スモールスタートのための開発とその周辺</h3>
+
+<ul>
+<li>対象は小規模から1000万PV/月くらいのアプリケーション</li>
+<li>企画から実装、PRまでスタートアップのWebサービス開発について</li>
+<li>設計やFrameworkの選定、環境の話なども</li>
+<li>Mojolicious+DBIx::Skinny+Mouseでの開発方法</li>
+<li>本当に検証したい点だけを考慮してモックを作る</li>
+<li>スケールする時には... ＞ボケての例 </li>
+</ul>
+
+
+<h3>事例 ボケて「デルタ版」そのスケールについて</h3>
+
+<h4>前提</h4>
+
+<ul>
+<li>株式会社オモロキで「鎌団子」さんと二人での開発/運営</li>
+<li>少ないサーバリソースでもさばけていた</li>
+<li>4年ほど前から続けている</li>
+<li>5月13日にいわゆる「スラド効果」発生</li>
+<li>だが、一時的なものではなく、アクセスのピークは下がらず</li>
+</ul>
+
+
+<h4>デルタ版</h4>
+
+<ul>
+<li>スケールアップ/スケールアウト</li>
+<li>フレームワークの変更、それに伴うソースコードの書き換え</li>
+<li>全面的にキャッシュを利用した高速化</li>
+<li>レプリケーション構成の導入</li>
+<li>SSLの導入</li>
+<li>ソーシャルボタンの設置</li>
+<li>対象の写真とボケを一つにまとめた画像生成機能</li>
+<li>広告の掲載</li>
+<li>非公開APIの作成 </li>
+</ul>
+
+
+<hr>
+
+<p><br></p>
+
+<p>なんかてんこ盛り感ありますが、うまいこと調整します。
+トークを見たい人は是非YAPC::Asia 2日目（9月29日）の朝、会場へお越し下さい！</p>
+
+<ul>
+<li><a href="http://yapcasia.org/2012/news/yapcasia-tickets-on-sale.html">YAPC::Asia 2012 チケットについて</a></li>
+<li><a href="http://yapcasia.org/2012/talk/schedule?date=2012-09-29">9月29日のトークスケジュール</a></li>
+</ul>
+
+
+
+ 
+}

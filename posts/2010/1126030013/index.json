@@ -1,0 +1,88 @@
+{
+    "data" :  {
+    "title": "今年もJPerl Advent Calendarの季節がやってまいりました！",
+    "date": "2010-11-26 12:00:00 +0900 JST",
+    "dir": "posts/2010/",
+    "slug": "1126030013",
+    "categories": ["tech"],
+    "tags": ["Perl"]
+}
+
+---
+
+
+
+<p>
+成功すれば寿司を奢ってもらってさらに缶ジュースまでもらえる
+というステルスマーケティングされてるんで、
+煽り気味で行きます。
+</p>
+<p>
+Perlやっている人は書こー！
+今年もJPerl Advent Calendarが12月1日から始まります。
+現在、English Track を含む3トラックが準備されています。
+</p>
+<ul>
+<li><a href="http://atnd.org/events/10335">JPerl Advent Calendar 2010 - Casual Track : ATND</a></li>
+<li><a href="http://atnd.org/events/10336">JPerl Advent Calendar 2010 - Hacker Track : ATND</a></li>
+<li><a href="http://atnd.org/events/10337">JPerl Advent Calendar 2010 - English Track : ATND</a></li>
+</ul>
+<p>
+Advent Calendarというのは今回のケースでは、
+ATND上で25人の参加者を募り、12月1日から25日までの25日間、参加者1人がそれぞれある1日を担当し、
+その日が来たらPerlに関する記事を書くというオンラインのイベントです。
+</p>
+<p>
+その有効性についてはtokuhiromが以前書いた通りです。
+</p>
+<p>
+<a href="http://d.hatena.ne.jp/tokuhirom/20081216/1229387324">技術的アドベントカレンダーの有用性について - TokuLog 改メ tokuhirom's blog</a>
+</p>
+<p>
+Perlを普段使っているという人にオススメはCasual Track。
+自分の好きなモジュールとか、最近よく利用するモジュールについて書くといいでしょう。
+Hacker Trackでは「俺のモジュールを見ろ」ということで、
+自分が作ったモジュールについて解説するトラックです。
+English Trackはその名の通り、英語で世界へ向けて発信するトラック。
+</p>
+<p>
+僕はとりあえずCasual Trackにエントリーをしたところで、
+趣味で今年いじった、
+PodやMarkdownをレンダーするモジュールについてか、Facebook::Graphについて書こうかと思っています。
+ちょっとした応用例でもいいと思います。
+</p>
+<p>
+このAdvent Calendarのいい点は、
+「みんなで作っている」という感覚です。
+自分で書くという点に関してはいろいろな人に伝えられる、
+いい意味でツッコミをウケられるという利点がありますし、
+また他の人のモジュール応用事例や解説を見るのも楽しいです。
+そして、
+それに加えて、最後の方とか25日までリレーを繋ぐという緊張感と連帯感がでて興奮するのです！
+</p>
+<p>
+ちなみに、25日まで無事完結したらかんかんという身体の大きな人がお寿司を奢ってくる！！
+</p>
+<p>
+ネタが無いなーという人は自分が普段書いているスクリプトの「use Hogehoge」しているHogehogeについて、
+ほんのちょっとしたことでもCasual Trackとかで書いてみたらいかがでしょうか！
+たぶんネタとかぶりとかそんな気にならないはず！
+</p>
+<p>
+参考までに去年のAdvent Calendarはこちらです。
+</p>
+<p>
+<a href="http://perl-users.jp/articles/advent-calendar/2009/">JPerl Advent Calendar 2009</a>
+</p>
+<p>
+ということで Advent Calendar 書こうぜ！
+</p>
+<ul>
+<li><a href="http://atnd.org/events/10335">JPerl Advent Calendar 2010 - Casual Track : ATND</a></li>
+<li><a href="http://atnd.org/events/10336">JPerl Advent Calendar 2010 - Hacker Track : ATND</a></li>
+<li><a href="http://atnd.org/events/10337">JPerl Advent Calendar 2010 - English Track : ATND</a></li>
+</ul>
+
+
+ 
+}

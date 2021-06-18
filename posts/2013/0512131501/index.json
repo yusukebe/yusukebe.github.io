@@ -1,0 +1,56 @@
+{
+    "data" :  {
+    "title": "ささみさん＠がんばらないを見るために",
+    "date": "2013-05-12 22:15:00 +0900 JST",
+    "dir": "posts/2013/",
+    "slug": "0512131501",
+    "categories": ["tech"],
+    "tags": ["Perl"]
+}
+
+---
+
+
+
+<p>放送終了してたアニメをバッファリング無しで快適に見たくなったので、スクリプトを書いた。あんま真似しないでください。</p>
+
+<pre class="code">use LWP::UserAgent;
+use URI::Escape qw/uri_unescape/; 
+
+my $list_url = $ARGV[0] or die;
+my $url_list;
+my $ua = LWP::UserAgent-&gt;new( show_progress =&gt; 1 );
+
+{
+    my $res = $ua-&gt;get($list_url);
+    die $res-&gt;status_line if $res-&gt;is_error;
+    @$url_list = $res-&gt;decoded_content
+       =~ m!class="page_item".+?href="(.+?)"!smg;
+   @$url_list = reverse @$url_list;
+}
+
+{
+    for my $content_url (@$url_list) {
+        my ($title) = $content_url =~ m!([^/]+?)/$!;
+        my $res = $ua-&gt;get($content_url);
+        die $res-&gt;status_line if $res-&gt;is_error;
+        my ($embed_url) = $res-&gt;decoded_content
+             =~ m!(http://auengine\.com/embed\.php\?file=[a-zA-Z]+.+?)"!;
+        $res = $ua-&gt;get($embed_url);
+        die $res-&gt;status_line if $res-&gt;is_error;
+        my ($mp4_url) = $res-&gt;decoded_content
+             =~ m!(http://s[0-9]+\.auengine\.com%2Fvideos%2F.+?)'!sm;
+        $mp4_url = uri_unescape($mp4_url);
+        $ua-&gt;get($mp4_url, ':content_file' =&gt; "$title.mp4");
+     }
+}</pre>
+
+<p>こんな感じで実行する。</p>
+
+<pre class="code">$ perl get_list.pl http://eyeonanime.com/sasami-san-ganbaranai/</pre>
+
+<p>ってことで、全話DL完了するのを待ちつつ、パスタつくるお！</p>
+
+
+ 
+}

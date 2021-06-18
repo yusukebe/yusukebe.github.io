@@ -1,0 +1,153 @@
+{
+    "data" :  {
+    "title": "ORMにValidation機構を持たせる",
+    "date": "2013-07-24 11:20:00 +0900 JST",
+    "dir": "posts/2013/",
+    "slug": "0724022022",
+    "categories": ["tech"],
+    "tags": ["Perl"]
+}
+
+---
+
+
+
+<p>ユーザーからのPOST等された入力値の妥当性をチェックする <strong>Validation</strong> をどこでやるか問題が個人的にありまして〜、DBを使わないケースならばいわゆるFomrValidator::*を使ってControllerでやればいいのですが、Modelを経由するようなアプリだとControllerだけじゃ不安よねぇ〜、Modelだけ使う時もあるし、Model単体のテストで再現出来ないよね〜なんて思ってます。で、実際の実装をControllerではFormValidator::Lite、Modelの一部にData::Validatorを使っているのですが、なんかコレも効率悪い感じしてたんで、ちょいと実験的に理想の一つを実装してみました。</p>
+
+<p>こんな条件です。</p>
+
+<ul>
+<li>エラーメッセージを簡単に設定したいのでValidationモジュールにはFormValidator::Liteを使う</li>
+<li>色々錯誤していたらORMの段階でValidationしてResultオブジェクトを返すってのがいいのではないか</li>
+<li>Resultオブジェクトではhas_error/error_messagesメソッドをはやしてControllerで扱いやすくする</li>
+<li>Validationが通ればentryメソッドで生成されたORMのオブジェクトを取得出来る</li>
+<li>WAFはMojolicious、ORMにはTengを使う前提で書いてみる</li>
+</ul>
+
+
+<p>するとController側はこんな風に書ける。</p>
+
+<pre class="code">sub post {
+    my $self = shift;
+    my $user = $self-&gt;stash-&gt;{user};
+    return $self-&gt;render_not_found unless $user;
+    my $result = $self-&gt;model('Entry')-&gt;create({
+        user_id =&gt; $user-&gt;id,
+        title =&gt; $self-&gt;req-&gt;param('title') || '',
+        body =&gt; $self-&gt;req-&gt;param('body') || '',
+    });
+    if($result-&gt;has_error){
+        $self-&gt;stash-&gt;{error_messages} = $result-&gt;error_messages;
+        return $self-&gt;render('/entry/create');
+    }
+    $self-&gt;redirect_to('/entry/' . $result-&gt;entry-&gt;id);
+}</pre>
+
+<p>$self-&gt;model('Entry')ってのはMyApp::Model::Entryを呼び出しすショートカットなんだけど、createメソッドの返り値が例のResultオブジェクトになっている。</p>
+
+<p>Model側はもちろん他の処理も入るけど最小限これでイケる。</p>
+
+<pre class="code">sub create {
+    my ($self, $args) = @_;
+    my $result = $self-&gt;db-&gt;insert('entry', { 
+        title =&gt; $args-&gt;{title},
+        body =&gt; $args-&gt;{body},
+        user_id =&gt; $args-&gt;{user_id}
+    });
+    return $result;
+}</pre>
+
+<p>肝心なのは通常「use parent 'Teng'」するMyApp::DBモジュール。これをちょいと拡張する。</p>
+
+<pre class="code">package MyApp::DB;
+use Mouse;
+use String::CamelCase qw//;
+use Module::Load qw//;
+use MyApp::DB::Result;
+
+extends 'Teng';
+
+sub insert {
+    my ($self, $table_name, $args, $prefix) = @_;
+    my $class = "MyApp::Form::" . String::CamelCase::camelize($table_name);
+    Module::Load::load($class);
+    my $form = $class-&gt;new;
+    my $validator = $form-&gt;check($args);
+    if($validator-&gt;has_error) {
+        my $result = MyApp::DB::Result-&gt;new(
+            has_error =&gt; 1,
+            error_messages =&gt; [$validator-&gt;get_error_messages()]
+        );
+        return $result;
+    }
+    my $entry = $self-&gt;SUPER::insert( $table_name, $args, $prefix );
+    my $result = MyApp::DB::Result-&gt;new( entry =&gt; $entry );
+    return $result;
+};
+__PACKAGE__-&gt;meta-&gt;make_immutable();
+1;</pre>
+
+<p>MyApp::DB::Resultはこんなん。</p>
+
+<pre class="code">package MyApp::DB::Result;
+use Mouse;
+
+has error_messages =&gt; ( is =&gt; 'rw', isa =&gt; 'ArrayRef', default =&gt; sub { [] } );
+has has_error =&gt; ( is =&gt; 'rw', isa =&gt; 'Bool', default =&gt; 0 );
+has entry =&gt; ( is =&gt; 'rw', isa =&gt; 'Object');
+
+__PACKAGE__-&gt;meta-&gt;make_immutable();
+1;</pre>
+
+<p>その他にFormValidator::Liteを呼び出すためのMyApp::Formと個別のルールが書かれたMyApp::Form::Entryなどが存在する。以下がMyApp::Formで親クラス。FormValidator::Liteに渡す際、パラメータ系の互換にするめにMojo::Parametersを暫定的に使ってます。</p>
+
+<pre class="code">package MyApp::Form;
+use Mouse;
+use Mojo::Parameters;
+use FormValidator::Lite;
+FormValidator::Lite-&gt;load_constraints(qw/Japanese/);
+
+sub validator {
+    my ($self, $args) = @_;
+    my $params = Mojo::Parameters-&gt;new(%$args);
+    my $validator = FormValidator::Lite-&gt;new($params);
+    $validator-&gt;load_function_message('ja');
+    return $validator;
+}
+
+__PACKAGE__-&gt;meta-&gt;make_immutable();
+1;</pre>
+
+<p>子にあたるMyApp::Form::Entryにはルールが存在している。モジュールにべた書きしてます。</p>
+
+<pre class="code">package MyApp::Form::Entry;
+use Mouse;
+extends 'MyApp::Form';
+use utf8;
+
+sub check {
+    my ($self, $args) = @_;
+    my $v = $self-&gt;validator($args);
+    $v-&gt;set_param_message(
+        title =&gt; 'タイトル',
+        body =&gt; '本文',
+        user_id =&gt; 'ユーザーID'
+    );
+    my $res = $v-&gt;check(
+        title =&gt; ['NOT_NULL', [qw/LENGTH 1 100/]],
+        body =&gt; [qw/NOT_NULL/],
+        user_id =&gt; [qw/INT/]
+    );
+    return $v;
+}
+
+__PACKAGE__-&gt;meta-&gt;make_immutable();
+1;</pre>
+
+<p>ORMべったりでそもそもメソッド上書きしているけど、insertじゃない名前にしたりルールが存在しない場合は通常動作させるとか... も含めてこれはアリな気がするぞ... もしくはORMの層じゃなくてModelのとこで書くのもいいし。</p>
+
+<p>他にモデルやDB層でいい感じのValidationを実装している方がいたら教えて欲しいです！</p>
+
+
+ 
+}

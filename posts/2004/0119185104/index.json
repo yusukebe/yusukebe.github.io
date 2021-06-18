@@ -1,0 +1,24 @@
+{
+    "data" :  {
+    "title": "オンテナヘッドライン復活",
+    "date": "2004-01-20 03:51:00 +0900 JST",
+    "dir": "posts/2004/",
+    "slug": "0119185104",
+    "categories": ["tech"],
+    "tags": []
+}
+
+---
+
+
+
+<p><a href="http://web.sfc.keio.ac.jp/~yusukebe/diary/index.cgi?200311b&amp;to=200311141#200311141">以前紹介したオンテナヘッドライン</a>が<a href="http://www.ok.sfc.keio.ac.jp/~yusuke/ontenna/">オンテナ</a>のサーバー移行などでとまっていたがやっとこさ復活させた。ダウンロード可能です。</p>
+
+<p>→<a href="http://kamawada.com/~yusuke/yusukebe/archives/files/040119/ontennaReader.zip">ontennaReader.zip</a></p>
+
+<p>解凍して中に入ってるreadme.txtを参考に設置してください。<br>
+</p>
+
+
+ 
+}

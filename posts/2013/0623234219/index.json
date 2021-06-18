@@ -1,0 +1,237 @@
+{
+    "data" :  {
+    "title": "Mojolicious 8-Tips",
+    "date": "2013-06-24 08:42:00 +0900 JST",
+    "dir": "posts/2013/",
+    "slug": "0623234219",
+    "categories": ["tech"],
+    "tags": ["Perl","Mojolicious"]
+}
+
+---
+
+
+
+<p> 依然としてPerlのWeb Application Framework=WAFは <a href="http://yusukebe.com/archives/20120225/081052.html">Mojolicious推し</a> です。ボケてほどの大きなトラフィックを集めるようになったサービスでも使っている実績がありますし、自分で使っていてたまにバージョンアップの互換性で問題が出るくらいで、すっごく困った事が無いので重宝しております。今回は備忘録的な意味も兼ねて、Mojoliciousをある程度使用した時に便利なTips 8個を個人的にまとめてみます。え、何？「Mojoliciousっていったいどういうものなの？」「Mojoliciousって名前を聞いた事があるけれど使った事がないんだけど...」そんな方は9月に開催されるYAPC::Asia 2013で僕が入門チュートリアルな発表をやろうと企んでいるので、そちらへ足を運んでください！ちなみにトークはまだacceptされたわけではないので、以下のページのソーシャルボタンで応援してもらえるといいかもしれません！</p>
+
+<ul>
+<li><a href="http://yapcasia.org/2013/talk/show/03bedf92-c6d0-11e2-80df-039a6aeab6a4">Mojoliciousでつくる！Webアプリ入門 - YAPC::Asia Tokyo 2013</a></li>
+</ul>
+
+
+<p>さて、これでマーケティングな記事であることが暴露されたのですが8個のTipsを紹介します。</p>
+
+<hr>
+
+<p><br></p>
+
+<h3>前提</h3>
+
+<p>mojoコマンドを以下のように叩いたプロジェクトをベースに解説します。</p>
+
+<p>$ mojo generate app MyApp::Web</p>
+
+<p>つまり Mojolicious::Lite のアプリでは無いです。</p>
+
+<h3>1. plackup で起動する</h3>
+
+<p>.psgi ファイルをつくって plackup もしくは本番環境ならば starman / starlet で Mojolicious アプリを動かしています。Plack::Middleware::* が使えたりして便利です。こんな感じで .psgi を書けばOK！</p>
+
+<pre class="code">use strict;
+use FindBin;
+use lib "$FindBin::Bin/lib";
+use Mojo::Server::PSGI;
+use Plack::Builder;
+use MyApp::Web;
+
+my $psgi = Mojo::Server::PSGI-&gt;new( app =&gt; MyApp::Web-&gt;new );
+
+builder {
+    enable "Runtime";
+    $psgi-&gt;to_psgi_app;
+};</pre>
+
+<h3>2. ログを出力する</h3>
+
+<p>Controller の中でこうすればログが出力されます。ちなみに開発環境でデフォルトだと「log/development.log」に流れます。</p>
+
+<pre class="code">$self-&gt;app-&gt;log-&gt;warn('Hello, this is warning text.');</pre>
+
+<p>ほらこんな感じ。</p>
+
+<pre class="code">[Mon Jun 24 07:32:24 2013] [debug] GET "/".
+[Mon Jun 24 07:32:24 2013] [debug] Routing to controller "MyApp::Web::Example" and action "welcome".
+[Mon Jun 24 07:32:24 2013] [warn] Hello, this is warning text.
+[Mon Jun 24 07:32:24 2013] [debug] Rendering template "example/welcome.html.ep".
+[Mon Jun 24 07:32:24 2013] [debug] Rendering template "layouts/default.html.ep".</pre>
+
+<p>Mojo::Log のPODを見れば分かる通りログレベルには以下があります。</p>
+
+<ul>
+<li>debug</li>
+<li>info</li>
+<li>warn</li>
+<li>error</li>
+<li>fatal</li>
+</ul>
+
+
+<h3>3. helper を活用する</h3>
+
+<p>よく使うルーティンを helper メソッドとして生やしておくと何かと役に立ちます。例えば、数字をカンマ付きで表示したい時があります。「10000」という数字だったら「10,000 」になって欲しいですね。今回のプロジェクトの場合ならば「MyApp::Web」のstartupメソッド内で以下のように実装することで「comma」helperメソッドが出来上がります。</p>
+
+<pre class="code">$self-&gt;helper(
+    comma =&gt; sub {
+        my $text = $_[1];
+        $text = reverse $text;
+        $text =~ s/(\d\d\d)(?=\d)(?!\d\.)/$1,/g;
+        return scalar reverse $text;
+    }
+);</pre>
+
+<p>これはテンプレート内でも使えるので、</p>
+
+<pre class="code">&lt;%= comma(10000) %&gt;</pre>
+
+<p>と記述すれば、レンダリング後「10,000」と表示されます。</p>
+
+<h3>4. DELETE/PUTメソッドに対応させる</h3>
+
+<p>Mojoliciousのルータ記述は「DELETE」「PUT」メソッドにも対応しています。つまり</p>
+
+<pre class="code">$r-&gt;get('/entry/:post_id')-&gt;to('entry#show');
+$r-&gt;delete('/entry/:post_id')-&gt;to('entry#delete');</pre>
+
+<p>なんて書けるのです。ただ、ご存知の通りブラウザがDELETE/PUTに対応していないケースがほとんど。そこでPUTメソッドのリクエストでかつ「_method」パラメータに指定するメソッド名が入っていた場合にDELETEメソッドなどを使うっていう仕様にしてみると以下のようにhookのbefore_dispatch内でルータのdeleteメソッドが使えるようになります。</p>
+
+<pre class="code">$self-&gt;hook(
+    before_dispatch =&gt; sub {
+        my $c = shift;
+        my $_method = $c-&gt;req-&gt;param('_method');
+        if($c-&gt;req-&gt;method eq 'POST' &amp;&amp; $_method) {
+            my $methods = [qw/GET POST PUT DELETE/];
+            if ( grep { $_ eq uc $_method } @$methods ) {
+                $c-&gt;req-&gt;method( $_method );
+            }
+        }
+    }
+);</pre>
+
+<h3>5. テンプレートディレクトリパスを追加する</h3>
+
+<p>プロジェクト直下の「templates」ディレクトリがテンプレートを置く場所としてデフォルトなのですが、追加することが出来ます。</p>
+
+<pre class="code">unshift @{$self-&gt;app-&gt;renderer-&gt;paths},
+     File::Spec-&gt;catfile(Bokete-&gt;base_dir, 'templates/others');</pre>
+
+<h3>6. モデルへのアクセス</h3>
+
+<p>Model は特にMojo::Baseなどは使わずMouseを使って「MyApp::Model::*」な名前空間に置いてあります。さてそれをControllerなどから呼び出す場合なんだけど、これまたhelperを活用しています。と、その前にモデルローダーをつくります。こんな感じ。</p>
+
+<pre class="code">package MyApp::Model;
+use Mouse;
+use Plack::Util;
+
+has 'instances' =&gt; (
+    traits  =&gt; ['Hash'],
+    is      =&gt; 'rw',
+    isa     =&gt; 'HashRef',
+    default =&gt; sub { +{} },
+    handles =&gt; {
+        set_instance =&gt; 'set'
+    }
+);
+
+sub load {
+    my ( $self, $name ) = @_;
+    my $instance = $self-&gt;instances-&gt;{$name};
+    return $instance if $instance;
+    my $class = Plack::Util::load_class( $name, 'MyApp::Model' );
+    $instance = $class-&gt;new;
+    $self-&gt;set_instance( $name, $instance );
+    return $instance;
+}
+
+1;</pre>
+
+<p>そしてMyApp::Webのstartupメソッド内にhelperを定義します。</p>
+
+<pre class="code">use MyApp::Model;
+$self-&gt;helper(
+    model =&gt; sub {
+        my ($self, $name) = @_;
+        MyApp::Model-&gt;new-&gt;load($name);
+    }
+);</pre>
+
+<p>これでControllerから</p>
+
+<pre class="code">my $entries = $self-&gt;model('Entry')-&gt;get_entries();</pre>
+
+<p>と呼べるし、モデルインスタンスはキャッシュされます。</p>
+
+<h3>7. HTMLをキャッシュさせる</h3>
+
+<p>あまり変更の無いサイドバー部分などをレンダリングしたHTMLごとmemcachedなどにキャッシュさせておいてそれを都度利用すると速いです。</p>
+
+<pre class="code">my $html = $self-&gt;render( template =&gt; 'template_name', partial =&gt; 1 );</pre>
+
+<p>Controllerの render メソッドに partial=&gt;1 を渡すとHTMLがそのまま取れます。</p>
+
+<pre class="code">if(my $html = $self-&gt;cache-&gt;get('right_container_html')) {
+    $self-&gt;stash-&gt;{right_container_html} = $html;
+}</pre>
+
+<p>もしキャッシュにhtmlがあったらstash経由で渡してテンプレートで描画します。</p>
+
+<pre class="code">&lt;%== $self-&gt;stash-&gt;{right_container_html} %&gt;</pre>
+
+<h3>8. Basic認証をアプリ内で実装する</h3>
+
+<p>Basic認証を実現するにはnginxなどのフロントに置いたサーバで処理するか、Plack::Middleware::Auth::Basicを利用する手がありますが、Mojoliciousアプリ内で動的にユーザー名、パスワードを指定したかったりする時がありました。そこでhelperに以下を記述。</p>
+
+<pre class="code">$self-&gt;helper(
+    basic_auth =&gt; sub {
+        my ($c, $u, $p) = @_;
+        my $realm = 'restricted area.';
+        my $unauthorized = sub {
+            $c-&gt;res-&gt;headers-&gt;www_authenticate("Basic realm=$realm");
+            $c-&gt;res-&gt;code(401);
+            $c-&gt;res-&gt;body('Authorization required');
+            return $c-&gt;rendered;
+        };
+        if ( my $auth = $c-&gt;req-&gt;url-&gt;to_abs-&gt;userinfo ) {
+            my ( $user, $pass ) = split /:/, $auth, 2;
+            $pass = '' unless defined $pass;
+            $c-&gt;req-&gt;env-&gt;{REMOTE_USER} = $user if $u eq $user &amp;&amp; $p eq $pass;
+            return;
+        }
+        return $unauthorized;
+    }
+);</pre>
+
+<p>Controllerではこのようにします。</p>
+
+<pre class="code">my $username = 'username';
+my $password = 'password';
+my $ref = $self-&gt;basic_auth($username, $password);
+return &amp;$ref() if ref $ref eq 'CODE';</pre>
+
+<p>これでBasic認証をMojoliciousアプリ内で実現出来ます。</p>
+
+<hr>
+
+<p><br></p>
+
+<h3>まとめ</h3>
+
+<p>Mojoliciousは最低限の必要十分な機能を備えているのでこのような工夫しどころがあり面白いですね。コアモジュールのみに依存しているというポータビリティも評価すべき点で、Web Application作成の入門としてはちょうどいいWAFなので、YAPC::Asia 2013のトークが採択されたならば分かりやすく効果的なチュートリアルを用意したいと思います！ってことでトークへの応援よろしく〜</p>
+
+<ul>
+<li><a href="http://yapcasia.org/2013/talk/show/03bedf92-c6d0-11e2-80df-039a6aeab6a4">Mojoliciousでつくる！Webアプリ入門 - YAPC::Asia Tokyo 2013</a></li>
+</ul>
+
+
+
+ 
+}

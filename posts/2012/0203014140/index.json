@@ -1,0 +1,88 @@
+{
+    "data" :  {
+    "title": "シンプルなもう一つのCSS Framework「inuit.css」",
+    "date": "2012-02-03 10:41:00 +0900 JST",
+    "dir": "posts/2012/",
+    "slug": "0203014140",
+    "categories": ["tech"],
+    "tags": ["Technologies","css"]
+}
+
+---
+
+
+
+<p><a href="http://wadit.jp/">ワディットのHP</a>を改修する際に使ったんだけど、最近気に入ってるCSS Frameworkが「<a href="http://csswizardry.com/inuitcss/">inuit.css</a>」。CSS Frameworkは便利なんだけどどうしても使っていると「それっぽさ」が出ちゃうので（特にTwitter Bootstrapなんかｗ）こまめにみんなが使ってないようなものを探している。</p>
+
+<p><img alt="スクリーンショット 2012-02-03 10.40.15.png" src="http://yusukebe.com/archives/2012/02/03/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202012-02-03%2010.40.15.png" width="405" height="160" class="mt-image-none" style=""></p>
+
+<p>inuit.cssそれ自体は非常に簡素なもので、コアのcssオンリーだとgridレイアウトすら対応してない。ただHTML5の要素の記述もある。特徴としてデフォルトで使っても文字が非常に読みやすいことがあり。大きさ、フォント、マージン、色非常にバランスよく配置、設定されている。また、イメージをマージンつけて左側に回り込ませて配置するといったちょっとしたユーティリティな使い方ができる。img要素にclass="left"を付ければOK。</p>
+
+<pre class="code">&lt;p&gt;
+    &lt;img src="http://yusukebe.com/images/childfood.jpg" class="left" /&gt;
+    テキスト.....
+&lt;/p&gt;</pre>
+
+<p>gridレイアウトに対応してないと言っても、ダウンロードしたファイルに同封されている「inuit.grid.css」というものを読み込みさえすればclass属性に指定するだけでレイアウト可能だ。12個のgridで構成されているので、以下のようなマークアップをする。</p>
+
+<pre class="code">&lt;div class="grids"&gt;
+    &lt;div class="grid-4"&gt;
+        &lt;h3&gt;サイドバー&lt;/h3&gt;
+    &lt;/div&gt;
+    &lt;div class="grid-8 end"&gt;
+        &lt;h2&gt;コンテンツ&lt;/h2&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</pre>
+
+<p>「keyword.inuit.css」というものも同封されていて、ulでマークアップしたコンテンツがカンマ区切りの一行になる。使い道があんまり思い当たらないが一応紹介。</p>
+
+<pre class="code">&lt;ul class="keywords"&gt;
+  &lt;li&gt;りんご&lt;/li&gt;
+  &lt;li&gt;バナナ&lt;/li&gt;
+  &lt;li&gt;梨&lt;/li&gt;
+  &lt;li&gt;ぶどう&lt;/li&gt;
+&lt;/ul&gt;</pre>
+
+<p>似たようにulを水平レイアウトにするなら、「nav」クラスを付けてみればナビゲーションができる。</p>
+
+<pre class="code">&lt;ul class="nav" style="margin-left:0;"&gt;
+  &lt;li&gt;&lt;a href="/"&gt;ホーム&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="/"&gt;アバウト&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="/"&gt;コンタクト&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</pre>
+
+<p>全部を合わせるとこのようなスクリーンショットになる。</p>
+
+<p><a href="http://yusukebe.com/archives/2012/02/03/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202012-02-03%2010.41.04.png"><img alt="スクリーンショット 2012-02-03 10.41.04.png" src="http://yusukebe.com/archives/assets_c/2012/02/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202012-02-03%2010.41.04-thumb-500x348-52.png" width="500" height="348" class="mt-image-none" style=""></a></p>
+
+<p>と、まぁ、お分かりの通り、inuit.cssはコアは非常にシンプルでかつHTML5に対応し、追加したい機能をplugin、inuit.cssではigloosと呼ばれるもので拡張する形になる。全てを試してないが公式HP上では以下のigloosを取得できる。</p>
+
+<ul>
+<li>bredcrumb.inuit.css</li>
+<li>ie6.inuit.css</li>
+<li>dropdown.inuit.css</li>
+<li>12-col.inuit.css</li>
+<li>annotate.inuit.css</li>
+<li>keywords.inuit.css</li>
+<li>centered-nav.inuit.css</li>
+</ul>
+
+
+<p>このinuit.css。シンプルさゆえ、名前の通り「クールな」CSS Frameworkだと思います。</p>
+
+<p><br><br></p>
+
+<hr>
+
+<p><br><br></p>
+
+<p>メルマガはじめました。技術的な話題も盛り込みたいと思います。</p>
+
+<ul>
+<li>メルマガ「<a href="http://www.mag2.com/m/0001426750.html">ゆーすけべーラジオ</a>」</li>
+</ul>
+
+
+
+ 
+}

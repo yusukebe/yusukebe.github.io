@@ -1,0 +1,34 @@
+{
+    "data" :  {
+    "title": "オンテナヘッドライン",
+    "date": "2003-11-13 23:08:00 +0900 JST",
+    "dir": "posts/2003/",
+    "slug": "1113140854",
+    "categories": ["tech"],
+    "tags": []
+}
+
+---
+
+
+
+<p><a href="http://web.sfc.keio.ac.jp/~yusukebe/ontenna/" target="_new">オンテナ</a><br>
+の最新記事のタイトルなどを表示するFlashを作りました。この日記の左側に表示させています。ヘッドライン風味です。これ、みなさんもブログとか日記にはっつけられます。<br>
+<a href="http://web.sfc.keio.ac.jp/~yusukebe/diary/pic/ontennaReader.swf" target="_new">ontennaReader.swf</a><br>
+←これを右クリックしてダウンロード、ブログをおいているディレクトリにおいて、以下のHTMLを追加したりすると表示できるはずです。パスとかの調整が必要だったらしてみてください。<br>
+</p>
+<pre class="code">codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0"  
+WIDTH="150" HEIGHT="80" id="ontennaReader" ALIGN=""&gt; 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  WIDTH="150" HEIGHT="80" NAME="ontennaReader" ALIGN="" 
+ TYPE="application/x-shockwave-flash" PLUGINSPAGE=""&gt;http://www.macromedia.com/go/getflashplayer"&gt;</pre>
+
+
+ 
+}

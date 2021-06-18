@@ -1,0 +1,57 @@
+{
+    "data" :  {
+    "title": "Amazon S3にExpiresヘッダ付きでファイルをアップロードする",
+    "date": "2011-01-08 14:46:00 +0900 JST",
+    "dir": "posts/2011/",
+    "slug": "0108054612",
+    "categories": ["tech"],
+    "tags": ["Perl"]
+}
+
+---
+
+
+
+<p>
+Amazon::S3を使ってみた。
+Expiresヘッダとして現在の時刻から10年後を指定しています。
+</p>
+
+<pre class="brush: perl"> #!/usr/bin/perl
+use strict;
+use warnings;
+use Amazon::S3;
+use HTTP::Date qw(time2str);
+use YAML;
+
+my $aws_access_key_id     = "";
+my $aws_secret_access_key = "";
+
+my $s3 = Amazon::S3-&gt;new(
+    {   
+        aws_access_key_id     =&gt; $aws_access_key_id,
+        aws_secret_access_key =&gt; $aws_secret_access_key,
+        retry                 =&gt; 1
+    }
+);
+
+my $bucket   = $s3-&gt;bucket('your_bucket_name');
+my $key      = 'test/image_from_perl.jpg';
+my $filename = './test_image.jpg';
+$bucket-&gt;add_key_filename(
+    $key,
+    $filename,
+    {   
+        content_type =&gt; 'image/jpeg',
+        expires      =&gt; time2str( time + ( 365 * 24 * 60 * 60 ) * 10 ),
+        acl_short    =&gt; 'public-read',
+    }
+);
+
+# print key's configure
+my $conf = $bucket-&gt;head_key($key);
+print Dump $conf;</pre>
+
+
+ 
+}

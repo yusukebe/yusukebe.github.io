@@ -1,0 +1,42 @@
+{
+    "data" :  {
+    "title": "Release &quot;nowp.ly - #Nowplaying on Twitter&quot; !",
+    "date": "2009-12-11 09:22:00 +0900 JST",
+    "dir": "posts/2009/",
+    "slug": "1211002245",
+    "categories": ["tech"],
+    "tags": []
+}
+
+---
+
+
+
+<p>
+I've just opened a web site named "<strong>nowp.ly</strong>".
+</p>
+<p>
+<a href="http://nowp.ly/">nowp.ly - #Nowplaying on Twitter</a><br>
+<a href="http://nowp.ly/">
+<img alt="nowply" class="at-xid-6a0133f4781589970b014e8bd751bc970d" src="https://yusukebe.com/archives/a/6a0133f4781589970b014e8bd751bc970d-pi.jpg">
+</a>
+</p>
+<p>
+nowp.ly is a simple interface for watching Tweets including a "#nowplaying" hash tag.
+You can see music tracks mentioned on Twitter as real time
+and listen the songs you choose with YouTube player.
+Very simple interface but hot tracks on Twitter are found.
+</p>
+<p>
+nowp.ly is powered by Last.fm, Twitter, and YouTube API.
+</p>
+<p>
+Enjoy your music with tweets!
+</p>
+<ul>
+  <li><a href="http://nowp.ly/">nowp.ly - #Nowplaying on Twitter</a></li>
+</ul>
+
+
+ 
+}

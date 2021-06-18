@@ -1,0 +1,52 @@
+{
+    "data" :  {
+    "title": "外部発表ラッシュ！",
+    "date": "2004-03-02 02:46:00 +0900 JST",
+    "dir": "posts/2004/",
+    "slug": "0301174614",
+    "categories": ["tech"],
+    "tags": []
+}
+
+---
+
+
+
+<p>年度末だからか外部発表のラッシュ。大きなところだとこの３つ。<br>
+・<a href="http://ne.cs.uec.ac.jp/%7Emadoka/east-houkokukai.html">未踏ユース成果報告会</a>（2/28）<br>
+・<a href="http://exhibition2004.sfc.keio.ac.jp/">卒業制作展</a>（2/28 29）<br>
+・<a href="http://hands.ei.tuat.ac.jp/Interaction2004/">インタラクション2004</a>（3/4）<br>
+そのうちの２つを消化。残るはインタラクション2004のみ。以下少ない写真を使ってのレポート。</p>
+
+<p>卒業制作展の前日準備。卒展の出展内容は「<a href="http://web.sfc.keio.ac.jp/~yusukebe/sotsusei/">ボクダナ/tomob</a>」。親父の車「セレナ」に本棚、G4、シネマディスプレイなど大量の出展品を詰め込む。<br>
+写真は本棚とともに押し込まれて喜ぶ菅ちゃん。あくまでも”M”だ。<br>
+<a href="http://kamawada.com/~yusuke/yusukebe/archives/files/040301/DSC07309.JPG"><img alt="DSC07309.JPG" border="0" class="at-xid-6a0133f4781589970b015391e37477970b" height="210" src="https://yusukebe.com/archives/a/6a0133f4781589970b015391e37477970b-pi.jpg" width="280"></a></p>
+
+<p><a href="http://orf.sfc.keio.ac.jp/">ORF</a>の時の展示と同じなので「さくっ」と準備完了。初日は未踏ユース成果報告会でいけないのでそのまま放置プレー。<br>
+<a href="http://kamawada.com/~yusuke/yusukebe/archives/files/040301/DSC07311.JPG"><img alt="DSC07311.JPG" border="0" class="at-xid-6a0133f4781589970b015391e37483970b" height="210" src="https://yusukebe.com/archives/a/6a0133f4781589970b015391e37483970b-pi.jpg" width="280"></a></p>
+
+<p>さて卒展の準備が終わったら、いよいよ未踏ユース東日本成果報告会。<br>
+<a href="http://rg.ok.sfc.keio.ac.jp/vacuun/">VACUUN!</a>の実装をなんとかまとめ、遅刻しつつも<a href="http://www.uec.ac.jp/">電通大</a>へ。他のプロジェクトに軽くびびりつつも発表だー。</p>
+
+<p>左は発表する俺とヨシム。右は<a href="http://www.nue.org/nue/index.html">ぬえ</a>こと竹内PM。<br>
+<a href="http://kamawada.com/~yusuke/yusukebe/archives/files/040301/DSC07325.JPG"><img alt="DSC07325.JPG" border="0" class="at-xid-6a0133f4781589970b015391e374b2970b" height="210" src="https://yusukebe.com/archives/a/6a0133f4781589970b015391e374b2970b-pi" width="280"></a><a href="http://kamawada.com/~yusuke/yusukebe/archives/files/040301/DSC07326.JPG"><img alt="DSC07326.JPG" border="0" class="at-xid-6a0133f4781589970b015391e374cb970b" height="210" src="https://yusukebe.com/archives/a/6a0133f4781589970b015391e374cb970b-pi.jpg width="280"></a></p>
+
+<p>竹内PMからは<a href="http://web.sfc.keio.ac.jp/~t01491ys/weblog/archives/000354.html">こんなコメント</a>をいただきました。</p>
+
+<p>ここで僕の個人的な”ぶっちゃけた”感想をかなりだらっと言わせていただくと、発表をする前は自分達のソフトの完成度が高くないと思っていたので俺らやべーんじゃないかなーって思っていた。けど実際に発表をしてみると自信が出てきた。発表後にも、とある音楽関係の会社の人と絡んでお話したときもそうだが、自分が1年ほどかけて割りと本気でやってきたプロジェクトなので大抵のことは考えていたりする。たとえば「メッセンジャーと連動すれば面白いと思うんですけど？」みたいな提案にも「僕達も以前その件については話ていて・・・」と昔チームのみんなで話したアイデアを披露できる。うんで発表中、発表後に感じたことは自分達のアイデアの面白さと可能性。改めて身をもって確認したって感じ。開発期間が終わってからこんなにモチベーションがまた一気にあがるのも皮肉なものだが。でその件と絡めて今回強く感じたのは、ある程度オープンな感じ（別にオープンソースという意味ではなく開かれたという意味）で実装しつつコツコツと積み上げていくことが大事だなと。うまくやればモチベーションは維持できるよね。<a href="http://private.ceek.jp/archives/000213.html">Ceekz LogsではVACUUN!の完成度が高い</a>といっていただけていますが、まだまだ僕（達）のやりたいことは広がるしもっと多くの人に使ってもらいたいので、段階的にモノを着実に作っていくってことのコツをつかみつつ、精進していきたいですな。</p>
+
+<p>さて何はともあれ報告会を持って一応この未踏ユースのプロジェクトは終了！というわけで<a href="http://yusukebe.com/archives/001334.html">採決決定時</a>からの夢だった特上寿司を4人で食べにいこう！といったが、女子2人が肉がいい！というので調布の焼肉屋で「上」と付くものばかりを食べる。ご飯も「大盛り」を頼まず、「普通」を「おかわりする」という微妙な贅沢プレイ。<br>
+<a href="http://kamawada.com/~yusuke/yusukebe/archives/files/040301/DSC07327.JPG"><img alt="DSC07327.JPG" border="0" class="at-xid-6a0133f4781589970b015391e374ff970b" height="210" src="https://yusukebe.com/archives/a/6a0133f4781589970b015391e374ff970b-pi" width="280"></a><a href="http://kamawada.com/~yusuke/yusukebe/archives/files/040301/DSC07329.JPG"><img alt="DSC07329.JPG" border="0" class="at-xid-6a0133f4781589970b015391e37519970b" height="210" src="https://yusukebe.com/archives/a/6a0133f4781589970b015391e37519970b-pi.jpg width="280"></a></p>
+
+<p>さて打ちあがったその次の日、卒展2日目＠横浜赤レンガ倉庫。かなり遅くに到着。そしたら<a href="http://web.sfc.keio.ac.jp/~yusukebe/sotsusei/bokudana/hondana/">「ボクブック」</a>が壊されていた。だがそれ以上に、俊輔はタブレットPCを壊されたらしいね。<br>
+<a href="http://kamawada.com/~yusuke/yusukebe/archives/files/040301/DSC07331.JPG"><img alt="DSC07331.JPG" border="0" class="at-xid-6a0133f4781589970b015391e37525970b" height="210" src="https://yusukebe.com/archives/a/6a0133f4781589970b015391e37525970b-pi.jpg" width="280"></a></p>
+
+<p>終わったらまっつん、俊輔、俺と<a href="http://www.ok.sfc.keio.ac.jp/">奥出研</a>で出展した人たちで赤レンガをバックに記念写真。<br>
+<a href="http://kamawada.com/~yusuke/yusukebe/archives/files/040301/DSC07332.JPG"><img alt="DSC07332.JPG" border="0" class="at-xid-6a0133f4781589970b015391e37545970b" height="210" src="https://yusukebe.com/archives/a/6a0133f4781589970b015391e37545970b-pi.jpg" width="280"></a></p>
+
+<p><br>
+さぁ（とりあえず）残るはインタラクション2004だ。</p>
+
+
+ 
+}

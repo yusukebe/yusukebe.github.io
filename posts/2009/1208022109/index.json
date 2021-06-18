@@ -1,0 +1,43 @@
+{
+    "data" :  {
+    "title": "Plack::Requestを使ったプチアプリについて記事を書きました",
+    "date": "2009-12-08 11:21:00 +0900 JST",
+    "dir": "posts/2009/",
+    "slug": "1208022109",
+    "categories": ["tech"],
+    "tags": ["Perl"]
+}
+
+---
+
+
+
+<p>
+さて絶賛連載中の「JPerl Advent Calendar 2009」ですが、
+昨日のCasual Trackに「Plack::Requestとか使って小さなWebアプリを作ろう！」という題名で
+記事を書かせていただきました。
+</p>
+<p>
+アプリのコンセプトについてはRemedie、細かい機能については本体のYouTube、と結構できることがかぶり気味の
+「Chekera」なる小さいアプリを作りながら、XML::Feed、Template-Toolkit、そしてPlackまわりモジュールの基本的な使い方を解説しています。
+</p>
+<p>
+まぁーいわゆる車輪の再開発/再発明な感じですが、それについて
+lestrratさんがCasual Perl Talks#1の時にこうおっしゃっていました。
+</p>
+<blockquote>
+<p>
+「車輪の再開発は楽しい＆勉強になる（ただし、仕事でやってはいけない）」
+</p>
+</blockquote>
+<p>
+てなわけで、個人的にはいい勉強の教材になるんじゃないかと思っています。
+詳しいことは本編にてご確認ください。
+</p>
+<ul>
+<li><a href="http://perl-users.jp/articles/advent-calendar/2009/casual/07.html">Plack::Requestとか使って小さなWebアプリを作ろう！ - JPerl Advent Calendar 2009</a></li>
+</ul>
+
+
+ 
+}

@@ -1,0 +1,334 @@
+{
+    "data" :  {
+    "title": "Raku(Perl6)を書く",
+    "date": "2020-01-17 07:15:36 +0900 JST",
+    "dir": "posts/2020/",
+    "slug": "write-perl6",
+    "categories": [],
+    "tags": ["Perl"]
+}
+
+---
+
+
+[YAPC::Kyoto](https://yapcjapan.org/2020kyoto/)のトークリストを見て、突然**Raku**を書いてみたくなったので**いまさら**ながら書いてみた。
+
+RakuとはPerl 6のこと。去年の10月にPerl 6からRakuへと改名された。
+なぜ「いまさら」なのかというとPerl 6は20年くらい前に設計が始まり、
+15年くらい前に動作可能な実装ができてたいからだ。
+特に海外のPerlカンファレンスでは盛んにPerl 6の話がされていて、
+[2013年に行ったYAPC::NA](https://yusukebe.com/posts/2013/0609222915/)でも
+「Perl 6でWebフレームワーク作ったぜ！（遅いけどな）」みたいなトークがあった。
+そして2015年のクリスマスにラリー・ウォールのもとリリースされた。
+だから特別、目新しいものではない（とりわけ言語仕様）。
+ただ、最近になってより実用性が高まってきたようだ。
+
+ちなみにPerl 6はPerl 5とは互換性がなく全く別の言語と考えてよい。
+
+以前Perl 6の話やそれで書かれたコードを見て
+「ああ静的型付けができるんだな」とか「今までPerlになかった`class`が使えるんだな」
+とか感じることはあっても、いまいちピンと来ていなかった。
+で、理解するには書くの一番早いということで、Rakuでいくつかのプログラムを書いてみた。
+
+今回書いたのは言わずとしたらFizzBuzzといくつかのデザインパターンである。
+デザインパターンは以下のQiitaの記事が分かりやすかったので、
+そこに掲載されているJavaのコードをPerl 6らしく書きかえるという作業を行った。
+
+* [GoFのデザインパターンまとめ - Qiita](https://qiita.com/i-tanaka730/items/c63c6c22abd1477e0ba0)
+
+さて実際書いたコードと共にRakuについて分かったことをまとめてみた。
+
+### 環境づくり
+
+コードを書く前にまずは環境づくり。
+`rakudo-star`を入れるとPerl 6における`cpan`/`cpanm`コマンドの`zef`も使えるようになる。
+Macの場合`rakudo-star`はhomebrewで簡単にインストールできた。
+
+```
+$ brew install rakudo-star
+```
+これで`perl6`コマンドが使える。
+
+次にemacsに`perl6-mode`を入れた。Perl 5を書く時に使ってる`cperl-mode`だと
+当然ながらPerl 6のコードを書く時に不便だった。
+`perl6-mode`はMELPAから`M-x package-install RET perl-6-mode`すれば入る。
+
+![perl6-mode](https://live.staticflickr.com/65535/49396928872_09b2d32afa_c_d.jpg)
+
+### FizzBuzz
+
+最初はFizzBuzzを書いてみる。色々な書き方があるが、Rakuっぽくかつ分かりやすいってことで以下のようなコードになった。
+ちなみにこのブログで使ってるシンタックスハイライトは今のところPerl 6に対応していないので、
+Perl 5のものを使っている。見づらいと思うが勘弁を。
+
+```perl
+for 1..100 -> $i {
+    say to-fizz-buzz($i)
+}
+
+sub to-fizz-buzz (Int $n --> Str){
+    my Str $s = '';
+    given $n {
+        when $n % 3 == 0 { $s ~= 'Fizz'; proceed }
+        when $n % 5 == 0 { $s ~= 'Buzz'; proceed }
+        when !$s.Bool { $s = ~$n }
+    }
+    return $s
+}
+```
+
+これをRakuのスクリプトファイルを示す「.p6」拡張子を付けて、
+`fizz-buzz.p6`という名前で保存する。
+
+ここまで来てお気づきかもしれないが、Rakuでは変数名やサブルーチン名、
+ファイル名などに関してスネークケース（`fuzz_buzz`）ではなくて、
+ケバブケース（`fuzz-buzz`）を用いることが多いようだ。
+これは最初、気持ちが悪かったが慣れた。
+
+では、Rakuらしいところを見て行く。
+
+1から100までを列挙するというのを`for`を使って書いている。
+
+```perl
+for 1..100 -> $i {
+   say $i;
+}
+```
+
+1から100までの配列を回し、それぞれの値を`$i`に代入している。
+この辺からして、Perl 5の書き方とは違う。
+
+サブルーチンの定義はこんな感じだ。
+
+```perl
+sub to-fizz-buzz (Int $n --> Str){}
+```
+
+Perl 6では動的な型付けと静的な型付けにどちらも対応している。
+サブルーチン及びメソッドでは引数の型と戻り値の型を指定することもできる。
+
+この例では`Int`型の引数を受け取り、`Str`型を返すことを宣言している。
+
+与えられた数値に対して、`Fizz`なのか`Buzz`なのか`FizzBuzz`なのかそれとも
+そのままなのかを判定するところは`given when`で書いた。
+
+```perl
+given $n {
+    when $n % 3 == 0 { $s ~= 'Fizz'; proceed }
+    when $n % 5 == 0 { $s ~= 'Buzz'; proceed }
+    when !$s.Bool { $s = ~$n }
+}
+```
+
+この時`proceed`と書いてるのは条件にマッチしたあとも次の`when`を評価したいから。
+最後の`$s.Bool`は`Str`型の`$s`に値が入っているかどうかを判断するために使っている。
+この条件に当てはまれば、`Int`型の`$n`を`Str`型に変換して代入している。
+
+RakuでFizzBuzzを書くことに関しては八雲アナグラさんという沖縄の人が、
+`subset`と`multi`を使って書いてて面白い。
+ここで言う`to-fizz-buzz`サブルーチンに渡ってくる型を判断して、
+別々の処理を書くなんてこともできる。
+
+* [たのしいPerl6 その1 - Acme::AnaTofuZ->new;](https://anatofuz.hatenablog.com/entry/2018/12/04/215126)
+
+### Template Methodパターン
+
+デザインパターンの中のTemplate Methodパターンを書いてみる。Javaの実装及び、プログラムの仕様は以下。
+
+* [デザインパターン ～Template Method～ - Qiita](https://qiita.com/i-tanaka730/items/dbeb82ac44c031fe8df9)
+
+これもいくつか書き方があると思うが、Javaでいう抽象クラスをロールで表現してみた。
+
+```perl
+role Monser {
+    has Str $.name;
+    # Stubs
+    method get-attack( --> Int ) { ... }
+    method get-defence( --> Int ) { ... }
+    method show-info {
+        say '名前: ' ~ self.name;
+        say '攻撃力: ' ~ self.get-attack;
+        say '守備力: ' ~ self.get-defence;
+    }
+}
+
+class Slime does Monser {
+    method get-attack( --> Int )  {
+        return 15;
+    }
+    method get-defence( --> Int ) {
+        return 10;
+    }
+}
+
+class Dragon does Monser {
+    method get-attack( --> Int )  {
+        return 60;
+    }
+    method get-defence( --> Int ) {
+        return 45;
+    }
+}
+
+my $slime = Slime.new( name => 'スライムくん' );
+my $dragon = Dragon.new( name => 'ドラゴンさん' );
+
+$slime.show-info;
+$dragon.show-info;
+```
+
+ロールの話にいくまえにクラスの作り方。
+`class`キーワードでクラス、`role`キーワードでロールをそれぞれ定義できるのだが、プロパティの宣言、利用方法が結構面白い。
+
+```perl
+class A {
+    has Str $.name; #アクセッサを自動でつくる
+    has Int $!age; #プライベート
+}
+```
+
+となっているがアクセッサをつくるとは、どういうことかというと`$.name`で宣言すると、
+
+```perl
+my $a = A.new;
+say $a.name;
+```
+
+とインスタンスでも使えるし、クラス内でも`self`を参照して
+
+```perl
+method say-name {
+    say self.name;
+}
+```
+
+と呼び出すことができる。
+
+さてロールの話。Monsterロールを実装するSlimeとDragonには
+`get-attack`と`get-defence`メソッドがなくちゃいけないっていうのが書ける。
+
+```perl
+role Monser {
+    method get-attack( --> Int ) { ... }
+    method get-defence( --> Int ) { ... }
+    ...;
+```
+
+`get-attack`と`get-defence`を`stubbed method`にすることで、
+SlimeクラスとDragonクラスにオーバーライドすることを強要できる。
+もし実装されてなければ、コンパイル時にエラーがでる。
+
+これは、つまりJavaでいう`Interface`っぽいもの。
+Perl 5の時は`Moose::Role`の`requires`でやってたが、Rakuではネイティブでこう書ける。
+
+### Iteratorパターン
+
+次にIteratorパターン。これは`Array`オブジェクトに備わっている`iterator`を使った。
+
+```perl
+my $students = Array.new;
+$students.append('Tanaka');
+$students.append('Yamada');
+$students.append('Suzuki');
+$students.append('Sato');
+
+my $iterator = $students.iterator;
+loop {
+    my $student := $iterator.pull-one;
+    last if $student =:= IterationEnd;
+    say $student;
+}
+```
+
+`$iterator.pull-one`でイテレーションの対象の一つを取ってきて、その型が`IterationEnd`だったらループを抜ける。
+`$iterator`っていのはRakuにもともと備わっている`Iterator`ロールを実装したものなんだけど、
+こうしたAPIについては公式の「Perl 6 Documentation」で仕様や使い方を知ることができる。
+
+* [role Iterator](https://docs.perl6.org/type/Iterator)
+
+
+### Singletonパターン
+
+最後にSingletoneパターン。
+
+```perl
+class Singleton {
+    my Singleton $instance = Singleton.new;
+    submethod BUILD {
+        say "インスタンスを生成します。";
+    }
+    method get-instance {
+        return $instance;
+    }
+}
+
+my $obj1 = Singleton.get-instance;
+my $obj2 = Singleton.get-instance;
+
+if $obj1 === $obj2 {
+    say '$obj1と$obj2は同じインスタンスです。';
+} else {
+    say '$obj1と$obj2は同じインスタンスではありません。';
+}
+```
+
+出力結果は期待した通り、こうなる。
+
+```
+$ perl6 singleton.p6
+インスタンスを生成します。
+$obj1と$obj2は同じインスタンスです。
+```
+
+`has`の代わりに`my`で変数を宣言するとクラス属性になるので、それを利用してインスタンスを保持している。
+`BUILD`は他の言語でいうコンストラクタにあたるので、
+一度だけインスタンスが生成される時に呼ばれる。
+
+### 他にも
+
+* Compositeパターン
+* Prototypeパターン
+
+を書いてみた。さらに追加で書くかもしれない。以下のレポジトリにあります。
+
+* [yusukebe/p6-design-patterns: Design Patterns in Raku](https://github.com/yusukebe/p6-design-patterns)
+
+### Rakuを書いてみて
+
+書いてみてといっても数時間程度だけど、感じたことを列挙。
+
+* 実行環境つくるのがhomebrewで楽だった
+  * Perl 5でOOPだ！といってMoose/Mouse/Mooを使ったプログラムを実行するにはモジュール入れなきゃいけないので、一から環境つくる人はそれに比べてRakuの方が早いと言える
+* コード初見だと見た目がキモくてわりと何やってるか分からない
+  * 慣れればむしろ快適
+* コンパイル時に型チェックでエラー出してくれるのはPerl 5からしたら新鮮
+* 型、よい
+* Perl 5で頑張ってたのがスムーズに書けて嬉しい
+* とはいえ型宣言などをしなくても動くので、その辺は`TMTOWTDI`
+  * 簡単なスクリプトだったらPerl 5の乗りで書けばいい
+* エラーメッセージが微妙に分かりにくいかもしれない
+* 一度だけなぞの挙動があった
+* 実行速度とかはまだよく分からない
+* 新しい言語を勉強するのにデザインパターンを書くのはいいかもしれない
+* 日本語のドキュメントは少ない
+
+ということでRakuを書いてみたという話でした。
+
+RakuにもCPANにあたるRaku Modulesというのがあるので、今度はそれを利用してみたい。
+ゆくゆくはRakuのモジュールオーサーになるぞー！
+
+### 今回お世話になった参考文献
+
+* [Raku 入門](https://raku.guide/ja/)
+  * めっちゃまとまってる
+* [Perl 6 Advent Calendar 2016 - Qiita](https://qiita.com/advent-calendar/2016/perl6)
+  * 実際に使った人が日本語で書いてくれてるのでありがたい
+* [OOP in Perl6](https://tex2e.github.io/blog/perl6/OOP-in-perl6)
+  * 日本語でRakuのOOPについて知りたい時にいいかもしれない
+* [第39回 Perl 6の歩き方―15年越しでリリースされた新バージョン（1）：Perl Hackers Hub｜gihyo.jp … 技術評論社](http://gihyo.jp/dev/serial/01/perl-hackers-hub/003901)
+  * 歴史に始まり実装例を用いたコンセプトがまとまっている
+* [Raku Language Documentation](https://docs.perl6.org/language.html)
+  * 公式のドキュメント。困った時はここ！
+
+ 
+}

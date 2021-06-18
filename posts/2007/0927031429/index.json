@@ -1,0 +1,104 @@
+{
+    "data" :  {
+    "title": "「Apple AirMac Express」が届いたよ、「AirTunes」がいい",
+    "date": "2007-09-27 12:14:00 +0900 JST",
+    "dir": "posts/2007/",
+    "slug": "0927031429",
+    "categories": ["tech"],
+    "tags": []
+}
+
+---
+
+
+
+<p>
+  先日購入したガジェット達が続々と手元に届いております（
+  参考 : <a href="http://yusukebe.com/archives/07/09/07/144759.html">ゆーすけべー日記: ノリで「iPod Touch」と「新型PSP」と「DS Lite」を注文した</a>）。
+  「萌え」て買っておきながら、実はいろいろと忙しくていじりきれていない感たっぷりで、
+  箱に入ったまま放置プレーとかしてた。
+  でも、最近になっていろいろと使い出して面白いので、続々とレポートしていくよ。
+  今回は「<strong>Apple AirMac Express</strong>」編。
+</p>
+<p>
+  <font size="2">届いた AirMac Express</font><br>
+  <img alt="AirMac Express" class="at-xid-6a0133f4781589970b015435b6edcd970c" src="https://yusukebe.com/archives/a/6a0133f4781589970b015435b6edcd970c-pi.jpg">
+  <img alt="AirMac Express" class="at-xid-6a0133f4781589970b015435b6eddc970c" src="https://yusukebe.com/archives/a/6a0133f4781589970b015435b6eddc970c-pi.jpg">
+</p>
+<p>
+  注文した「ニンテンドーDS Lite」「PSP」「iPod Touch」を楽しむために、
+  目をつけた「Apple AirMac Express」。そう、こんだけネットヘビーユーザーな我が家には、
+  無線LANのアクセスポイントが無いのである（だから、LANケーブルひきまわしまくりんぐな状態）。
+  この商品、使ってみたら無線LANアクセスポイントとしての価値以上に、
+  「<strong>AirTunes</strong>」機能が素晴らしかった。
+</p>
+<p>
+  <font size="2">Ethernetのケーブルとオーディオを接続した状態</font><br>
+  <img alt="AirMac Express" class="at-xid-6a0133f4781589970b015435b6ede9970c" src="https://yusukebe.com/archives/a/6a0133f4781589970b015435b6ede9970c-pi.jpg">
+</p>
+<p>
+  「Apple AirMac Express」にはオーディオのラインアウト端子があって、
+  そこにアンプをつなげられる。
+  手元のiTunesを起動すれば、
+  音声の出力先として、その「Apple AirMac Expressのベースステーション」を選択できる。
+  すると、いつもならば、クライアントマシンのスピーカーから音が出ていたのが、
+  つないだアンプから出るようになる。
+  アンプに大きなスピーカーを接続しておけば、大音量でiTunes内の曲を、手軽に聞ける。
+  これ、個人的に超画期的。
+</p>
+<p>
+  <font size="2">出力先にベースステーションが選択できる</font><br>
+  <img alt="AirMac Express" class="at-xid-6a0133f4781589970b015435b6edfc970c" src="https://yusukebe.com/archives/a/6a0133f4781589970b015435b6edfc970c-pi.gif">
+</p>
+<p>
+  以前までも小細工をして、同じような機能を実現させてはいた。
+  どうするかっていうと、作業に空きのあるPowerBookをいつも立ち上がらせておき、
+  そのオーディオアウトをアンプとつないでおく。
+  PowerBookではVNCサーバーが常駐していて、
+  クライアントマシンからVNCクライアントで操作するという具合だ。
+  ちなみに、再生する音楽ファイルは、全てファイルサーバーに格納されており、
+  「Firefly」という昔はmt-daapと呼ばれていた「iTunes共有」を可能にするデーモンを立ち上げていて、
+  それをiTunesの共有として読み込んでいる。
+</p>
+<p>
+  <font size="2">以前の構成図</font><br>
+  <img alt="AirMac Express" class="at-xid-6a0133f4781589970b015435b6ee06970c" src="https://yusukebe.com/archives/a/6a0133f4781589970b015435b6ee06970c-pi.gif">
+</p>
+<p>
+  今回、「Apple AirMac Express」を導入することによって、
+  PowerBookを経由しなくて済むようになり、VNCでiTunesを操作していたのが、
+  クライアント側のiTunesをいじればよいことになったので操作性がアップした。
+</p>
+<p>
+  <font size="2">AirMac Express 導入後の構成図</font><br>
+  <img alt="AirMac Express" class="at-xid-6a0133f4781589970b015435b6ee14970c" src="https://yusukebe.com/archives/a/6a0133f4781589970b015435b6ee14970c-pi.gif">
+</p>
+<p>
+  うん、こりゃ最高のオーディオ環境＠自室だ。
+  でも、ひとつ気がかりなのは、PowerBookのiTunesからだと出力先のベースステーションが見れないんだけど…
+  OSXが10.3だからいけないのかな〜
+  いまさらTiger買おうかな、ってかLeopardまだー？
+  とにかく、「Apple AirMac Express」、思った以上に便利な代物でした。
+</p>
+<p>
+  ところで、一番期待しているiPod Touchがまだこないんだけど…
+  まいっか。次は「DS Lite」のレポートかな。
+</p>
+<p></p>
+<div style="float:left"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B0002GSAO0/kamawada-22/"><img alt="Apple AirMac Express ベースステーション [M9470J/A]" src="http://ec1.images-amazon.com/images/I/11QK52GKBWL.jpg" style="border:none;"></a></div>
+<div style="float:left;margin-left:15px;">
+<div style="font-size:12pt"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B0002GSAO0/kamawada-22/">Apple AirMac Express ベースステーション [M9470J/A]</a></div>
+<div style="font-size:7pt;font-family:verdana;">posted with <a href="http://yusukebe.com/b/amazon/search/">yusukebe.com::AmazonSearch</a> on 2007.9.27</div>
+<div style="font-size:10pt;">
+<ul style="list-style-type:none;padding:0;">
+<li>エレクトロニクス / アップルコンピュータ (2004/07/28)</li>
+<li>Amazon 売り上げランキング: 763</li>
+</ul>
+<a href="http://www.amazon.co.jp/gp/product/B0002GSAO0%3ftag=kamawada-22%26link_code=xm2%26camp=2025%26dev-t=D3QNAE4JDR26A2">Amazon.co.jpで詳細を見る</a>
+</div>
+</div>
+<div style="clear:left;"></div>
+
+
+ 
+}

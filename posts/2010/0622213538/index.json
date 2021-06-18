@@ -1,0 +1,50 @@
+{
+    "data" :  {
+    "title": "Twitterユーザーでコミュニティが作れるTagBito",
+    "date": "2010-06-23 06:35:00 +0900 JST",
+    "dir": "posts/2010/",
+    "slug": "0622213538",
+    "categories": ["tech"],
+    "tags": []
+}
+
+---
+
+
+
+<p>
+Twitterってせっかくユーザーたくさんいるので、
+mixiみたいなグループがあったら今まで知らなかったいろんな人知れたりするんじゃないか！
+って思って作ってみました。
+Twitterユーザーでコミュニティが作れる<a href="http://tagbito.net/">TagBito（タグ人）</a>です。
+</p>
+<p>
+<a href="http://tagbito.net/">
+<img alt="tagbito" class="at-xid-6a0133f4781589970b015391e3947d970b" src="https://yusukebe.com/archives/a/6a0133f4781589970b015391e3947d970b-pi.jpg">
+</a>
+</p>
+<blockquote>
+<p>
+TagBito(タグ人)はTwitterでグループを作れて、気に入ったグループがあったらjoinすることができるサービスです。グループのハッシュタグを設定でき、そのタグ付きのツイートをすればそのグループのページに表示されます。まだベータ段階ですが、同じ趣味やグループのTwitter仲間を探したりできるかもね！
+</p>
+</blockquote>
+<p>
+テスト段階でDB吹っ飛んだり(すいません＞＜)して、まだグループとユーザーが少ないですが、
+使ってみてください＞＜
+例えば、81年生まれ前後な人達は
+</p>
+<ul>
+<li>
+<a href="http://tagbito.net/group/1981s">TagBito - 1981年生まれ！</a>
+</li>
+</ul>
+<p>
+に参加するといいかも！また、自分でグループも作れるので生まれ別とか、住んでる場所とか興味とかでどんどん作ってみてください。
+</p>
+<ul>
+  <li><a href="http://tagbito.net/">TagBito - Twitterでコミュニティ!!</a></li>
+</ul>
+
+
+ 
+}

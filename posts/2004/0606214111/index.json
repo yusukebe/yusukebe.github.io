@@ -1,0 +1,29 @@
+{
+    "data" :  {
+    "title": "AmazonのURL",
+    "date": "2004-06-07 06:41:00 +0900 JST",
+    "dir": "posts/2004/",
+    "slug": "0606214111",
+    "categories": ["tech"],
+    "tags": []
+}
+
+---
+
+
+<p>本を紹介する時のAmazonのURLの張り方。
+AmazonのURLは
+ブラウジングしているときのURLをそのまま貼り付けると
+長くなるので
+<a href="http://www.amazon.co.jp/exec/obidos/ASIN/ISBN">http://www.amazon.co.jp/exec/obidos/ASIN/ISBN</a>のナンバー
+という感じでメールとかに貼り付けるとすっきりします。
+
+CPUの創り方の例
+俺が今見ているウェブのURLをそのまま貼り付けると
+<a href="http://www.amazon.co.jp/exec/obidos/ASIN/4839909865/qid=1086556852/">http://www.amazon.co.jp/exec/obidos/ASIN/4839909865/qid=1086556852/</a>
+sr=1-1/ref=sr_1_10_1/249-4332362-1270767
+すっきりさせると
+<a href="http://www.amazon.co.jp/exec/obidos/ASIN/4839909865/">http://www.amazon.co.jp/exec/obidos/ASIN/4839909865/</a></p>
+
+ 
+}

@@ -1,0 +1,102 @@
+{
+    "data" :  {
+    "title": "Objective-C/iOSで写真を選ぶアレ",
+    "date": "2012-01-28 11:11:00 +0900 JST",
+    "dir": "posts/2012/",
+    "slug": "0128021126",
+    "categories": ["tech"],
+    "tags": ["iOS","Objective-C"]
+}
+
+---
+
+
+
+<p>最近始めたiOSプログラミングのコードのことも備忘録として、はたまたツッコミを乞うためとして書いていきたいと思います。</p>
+
+<p>特にソーシャル系iPhoneアプリでよく使う写真を選ぶアレのコードです。何かボタンを押すと下からウニョンと出てきてカメラかライブラリかの選択肢を選ぶやつ。あれ、ActionSheetと呼ぶらしいです。</p>
+
+<p><a href="http://yusukebe.com/archives/2012/01/28/IMG_1696.PNG"><img alt="IMG_1696.PNG" src="http://yusukebe.com/archives/assets_c/2012/01/IMG_1696-thumb-200x300-38.png" width="200" height="300" class="mt-image-none" style=""></a></p>
+
+<p>てなわけで、細かく分けて以下を実装してみました。</p>
+
+<ol>
+<li>ActionSheetというかUIActionSheetを表示</li>
+<li>ライブラリ、カメラそれぞれのケースを実装。といってもUIImagePickerControllerにお任せ</li>
+<li>選択した写真をUIImageViewに表示</li>
+</ol>
+
+
+<p>こういうUIがあったとして。</p>
+
+<p><a href="http://yusukebe.com/archives/2012/01/28/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202012-01-28%2011.10.22.png"><img alt="スクリーンショット 2012-01-28 11.10.22.png" src="http://yusukebe.com/archives/assets_c/2012/01/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202012-01-28%2011.10.22-thumb-500x461-40.png" width="500" height="461" class="mt-image-none" style=""></a></p>
+
+<p>implementation部分のコードはこんな感じになりました。正直ARCまだよくわかってナス。</p>
+
+<h4>ViewController.m</h4>
+
+<pre class="code">- (IBAction)showActionSheet:(id)sender {
+    UIActionSheet *actionSheet = [[UIActionSheet alloc]init];
+    [actionSheet setDelegate:self];
+    [actionSheet setTitle:@"写真を選びます"];
+    [actionSheet addButtonWithTitle:@"ライブラリから選択"];
+    if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        [actionSheet addButtonWithTitle:@"カメラで撮影"];
+        [actionSheet setCancelButtonIndex:2];
+    }else{
+        [actionSheet setCancelButtonIndex:1];
+    }
+    [actionSheet addButtonWithTitle:@"キャンセル"];
+    [actionSheet showFromToolbar:toolbar];
+}
+
+-(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    UIImagePickerController *imagePicker = [[UIImagePickerController alloc]init];
+    [imagePicker setDelegate:self];
+    switch (buttonIndex) {
+        case 0:
+            [imagePicker setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+            [self presentModalViewController:imagePicker animated:YES];
+            break;
+        case 1:
+            [imagePicker setSourceType:UIImagePickerControllerSourceTypeCamera];
+            [self presentModalViewController:imagePicker animated:YES];
+            break;
+        default:
+            break;
+    }
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker 
+        didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editingInfo {
+    [imageView setImage:image];
+    [self dismissModalViewControllerAnimated:YES];
+}
+
+-(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+    [self dismissModalViewControllerAnimated:YES];
+}</pre>
+
+<p>カメラ無しデバイスのことを考慮しているのがポイント。あと気づいたのは、デリゲートされるdidFinishPickingImageってのではUIImageがそのまま渡されるんですぐ利用できて便利っす。実機で動かしてみてActionSheetで選択→「ライブラリ表示またはカメラ起動」がやたら遅い気がするのは気のせいかなぁ。</p>
+
+<p>というわけで参考になるかわかりませんが「写真を選ぶアレ」のコードでした。間違ったところがあればツッコミください。</p>
+
+<h4>最近、参考にしてる本</h4>
+
+<div class="amazlet-box" style="margin-bottom:0px;">
+<div class="amazlet-image" style="float:left;margin:0px 12px 1px 0px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4864010498/kamawada-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/41PcpEmXy4L._SL160_.jpg" alt="ｉＯＳプログラミング 第2版" style="border: none;"></a></div>
+<div class="amazlet-info" style="line-height:120%; margin-bottom: 10px">
+<div class="amazlet-name" style="margin-bottom:10px;line-height:120%">
+<a href="http://www.amazon.co.jp/exec/obidos/ASIN/4864010498/kamawada-22/ref=nosim/" name="amazletlink" target="_blank">ｉＯＳプログラミング 第2版</a><div class="amazlet-powered-date" style="font-size:80%;margin-top:5px;line-height:120%">posted with <a href="http://www.amazlet.com/browse/ASIN/4864010498/kamawada-22/ref=nosim/" title="ｉＯＳプログラミング 第2版" target="_blank">amazlet</a> at 12.01.28</div>
+</div>
+<div class="amazlet-detail">アーロン･ヒレガス ジョー・コンウェイ Aaron Hillegass Joe Conway <br>ピアソン桐原 <br>売り上げランキング: 11341<br>
+</div>
+<div class="amazlet-sub-info" style="float: left;"><div class="amazlet-link" style="margin-top: 5px"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4864010498/kamawada-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jp で詳細を見る</a></div></div>
+</div>
+<div class="amazlet-footer" style="clear: left"></div>
+</div>
+
+
+
+ 
+}

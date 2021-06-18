@@ -1,0 +1,24 @@
+{
+    "data" :  {
+    "title": "divとspanの違い",
+    "date": "2004-06-09 02:15:00 +0900 JST",
+    "dir": "posts/2004/",
+    "slug": "0608171522",
+    "categories": ["tech"],
+    "tags": []
+}
+
+---
+
+
+
+<p>   <a href="http://kengo.preston-net.com/">Going My Way</a>でも<a href="http://kengo.preston-net.com/archives/000197.shtml">spanとdivの違いは？</a>というエントリーがありますが、ちょっと驚きだったので。   &lt;div class="title"&gt;と&lt;span class="title"&gt;の違いが以下。 </p>
+<p></p>
+<div class="title">これはdivで書いてます。 </div>
+<p></p>
+<p>   <span class="title">これはspanで書いてます。</span> </p>
+<p>   <sup>ちなみにスタイルシートの指定で.titleにbackground-color:#000066;というプロパティを与えている。</sup></p>
+
+
+ 
+}

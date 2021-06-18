@@ -1,0 +1,377 @@
+{
+    "data" :  {
+    "title": "Perl から YouTube の新API を使って動画をアップロードする",
+    "date": "2008-03-13 12:31:00 +0900 JST",
+    "dir": "posts/2008/",
+    "slug": "0313033113",
+    "categories": ["tech"],
+    "tags": ["Perl"]
+}
+
+---
+
+
+
+<p>
+  昨日の夕方頃、YouTube API のドキュメントを見たら、急に内容が追加されていてびっくらこいたわけですが、
+YouTube の API に新しく、動画をアップロードする機能やプレイヤーをJavaScriptから制御できる機能が追加されました。というわけで、早速 Perl を使ってローカルにある動画をYouTubeにアップロードするスクリプトを書いてみました。いろいろと癖があるので、適当に解説をします。
+</p>
+<p>
+  今回試したのは「Direct Uploading」という方法で、ローカルにあるスクリプトから直接動画ファイルを読み込んでポストするものです。他にもウェブフォームからユーザーにファイルを選んでもらってアップロードするやりかたもあるようです。この新API、とても充実しています（その代わりなのか昨日はやたらGDataのフィードが重たかったよ！）。
+</p>
+<p>
+  アップロードする流れは以下の順番になります。
+</p>
+<ol>
+  <li>Developer Key を取得</li>
+  <li>YouTube アカウントでの認証</li>
+  <li>authentication_token の取得</li>
+  <li>アップロードするビデオ情報の設定</li>
+  <li>リクエストの作成</li>
+  <li>アップロード</li>
+  <li>結果の得取</li>
+</ol>
+
+<p>
+YouTube にある動画を検索して結果を取得するだけなら、GDataのフィードを読めばいいので、関係ないのですが、今回の場合は Developer Key が必要になってきます。
+以下のページから登録ができます。
+</p>
+<ul>
+  <li><a href="http://code.google.com/apis/youtube/dashboard/developerSignup">
+    http://code.google.com/apis/youtube/dashboard/developerSignup
+  </a></li>
+</ul>
+<p>
+次にYouTubeアカウントの認証について説明します。
+動画をアップロードするとなると、その人のYouTubeのアカウント名義でアップロードするわけであり、そのアカウント情報を用いて認証をしなければなりません。いつもYouTubeで利用しているユーザー名とパスワードを認証URLにPOSTで渡して、authentication_token とやらを取得します。
+この authentication_token がアップロードをするリクエストに必要になってきます。
+認証だけならリクエストURLに対してPOSTメソッドを発行するだけです。
+最後にアップロードするサンプルスクリプトを掲載しますが、そのサンプルから認証をするサブルーチンを紹介すると以下のようになります。HTTP::Request::Common を使ってPOSTのリクエストを生成しています。
+Emailパラメータにはユーザーアカウントを入れます。Emailとありますが、YouTubeに登録しているメールアドレスではありません。
+アカウント名です。これが、最初にはまったポイントです。source パラメータはなんか適当に入れてればよさげ。
+</p>
+
+<pre class="brush: perl"> 
+use LWP::UserAgent;
+use HTTP::Request::Common;
+
+my $ua = LWP::UserAgent-&gt;new;
+
+sub auth {
+    my $request = POST(
+        "https://www.google.com/youtube/accounts/ClientLogin",
+        Content_Type =&gt; 'application/x-www-form-urlencoded',
+        Content      =&gt; [
+            Email   =&gt; $username,
+            Passwd  =&gt; $password,
+            service =&gt; "youtube",
+            source  =&gt; "uploads",
+        ],
+    );
+    my $response = $ua-&gt;request($request);
+    die $response-&gt;status_line unless ( $response-&gt;is_success );
+    $response-&gt;content =~ /Auth=(.*?)\n/;
+    return $1;
+}</pre>
+<p>
+  返ってきた文字列からAuth=xxxxxxxxxxxxxxxxxxという部分を抜き出せばそれがauthentication_tokenとなります。
+</p>
+<p>
+次にアップロードするビデオの設定をします。基本的にGDataということで、ビデオの情報をAtomのentry形式で記述します。Atomとはいえ、その記述形式がYahoo!のMedia RSSを使っているので、モジュールは使わないで、テキストで書いてみました。もっとスマートなやり方があると思いますが、とりあえずわかりやすいので。
+これもサブルーチンにしています。
+</p>
+
+<pre class="brush: perl"> sub video_detail {
+    my $param = shift;
+    foreach my $key ( keys %$param ){
+        utf8::encode($param-&gt;{$key}) if utf8::is_utf8($param-&gt;{$key});
+    }
+    my $title = $param-&gt;{title} || die "title is required";
+    my $description = $param-&gt;{description} || die "description is required";
+    my $category = $param-&gt;{category} || "People";
+    my $keywords = $param-&gt;{keywords} || die "keywords is required";
+
+my $video_detail = &lt;&lt; "XML";
+&lt;?xml version="1.0"?&gt;
+&lt;entry xmlns="http://www.w3.org/2005/Atom"
+ xmlns:media="http://search.yahoo.com/mrss/"
+ xmlns:yt=""&gt;http://gdata.youtube.com/schemas/2007"&gt;
+    &lt;media:group&gt;
+    &lt;media:title type="plain"&gt;$title&lt;/media:title&gt;
+    &lt;media:description type="plain"&gt;$description&lt;/media:description&gt;
+    &lt;media:category scheme="$category"&gt;http://gdata.youtube.com/schemas/2007/categories.cat"&gt;$category
+    &lt;media:keywords&gt;$keywords&lt;/media:keywords&gt;
+  &lt;/media:group&gt;
+&lt;/entry&gt;
+XML
+   return $video_detail;
+}</pre>
+
+<p>
+それぞれのパラメータが無いとdieしてますが、これらが空だとアップロードした時にAPIから怒られちゃいますので、しっかり設定しましょう。これも軽くはまりました。
+</p>
+<p>
+この様にビデオの情報とそのビデオ自体のファイルを手元に用意したら、POSTのリクエスト作成します。
+以下のURLがPOSTする先のURLです。
+</p>
+<pre class="brush: perl"> http://uploads.gdata.youtube.com/feeds/api/users//uploads</pre>
+<p>
+リクエストのヘッダーに含める要素が結構あって、まず、Content-Type は multipart/related にしなければいけません。次に認証がらみで、上記の authentication_token と developer key を
+</p>
+
+<pre class="brush: perl"> Authorization: GoogleLogin token=&lt;authentication_token&gt;
+X-GData-Key: key=&lt;developer_key&gt;</pre>
+<p>
+という形式で含めます。ここが一番はまったところで、ドキュメントによると、Authorization のところが
+</p>
+
+<pre class="brush: perl"> Authorization: AuthSub token=&lt;authentication_token&gt;</pre>
+<p>
+になっていて、最初はこちらで試していたのですが、はねられました。このAuthSubというのは今回の「Direct Uploading」では使えなくて、ウェブフォームから外部ユーザーによってアップロードする場合などに使うようです。
+</p>
+<p>
+  ヘッダーの次は、リクエストの中にいれるコンテンツを入れます。用意しておいたビデオ情報の Atom 及び 実際の動画ファイルであるバイナリ形式のデータです。それぞれ、Content-Typeを「application/atom+xml」、動画の場合はそれにあった、例えば「video/mpeg」などにします。
+upload サブルーチンのリクエスト生成までのコードはこんな感じです。
+</p>
+
+<pre class="brush: perl"> sub upload {
+    my $token = shift;
+    my $url =
+      "http://uploads.gdata.youtube.com/feeds/api/users/$username/uploads";
+    my $request = HTTP::Request-&gt;new( POST =&gt; $url );
+
+    $request-&gt;header(
+        "Authorization" =&gt; "GoogleLogin auth=$token",
+        "X-GData-Key"   =&gt; "key=$developer_key",
+        Slug            =&gt; $filename,
+        Content_Type    =&gt; 'multipart/related',
+    );
+    $request-&gt;add_part(
+        HTTP::Message-&gt;new(
+            [ Content_type =&gt; 'application/atom+xml' ],
+            $video_detail
+        )
+    );
+    $request-&gt;add_part(
+        HTTP::Message-&gt;new( [ Content_type =&gt; $content_type ], $data ) );</pre>
+<p>
+それで、いよいよリクエスト発行します。うまくいかなければエラーが返ってきますし、うまくいけばアップロードした動画のYouTubeでの情報がGData形式で返却されます。
+その部分が upload サブルーチンの残りの部分になります。取得したGDataはそのままprintしていますが、
+利用する場合はパースなどをしましょう。
+</p>
+
+<pre class="brush: perl">     my $response = $ua-&gt;request($request);
+    die $response-&gt;status_line unless ( $response-&gt;is_success );
+    print $response-&gt;content;
+}</pre>
+
+<p>
+以上でアップロードは完了です。YouTubeにログインしMyAccountのMyVideo（<a href="http://www.youtube.com/my_videos">http://www.youtube.com/my_videos</a>）にアクセスしたら変換中のさきほどあげた動画があれば成功というわけです。
+</p>
+<p>
+  <img alt="youtube" class="at-xid-6a0133f4781589970b015391e38e47970b" src="https://yusukebe.com/archives/a/6a0133f4781589970b015391e38e47970b-pi.jpg">
+</p>
+<p>
+アカウントのことも含め情報を全てコードに記述しているので、モジュール化したいところではありますが、
+とりあえずうまくいったということでめでたしめでたし。
+これを使っていろんなことができそうですね！
+以下、アップロードするサンプルの全コードになります。
+</p>
+<pre class="brush: perl"> #!/usr/bin/perl
+
+use strict;
+use warnings;
+use LWP::UserAgent;
+use HTTP::Request;
+use HTTP::Request::Common;
+use IO::All;
+use utf8;
+
+# account settings
+my $username = "your_account";
+my $password = "your_password";
+my $developer_key = "your_developer_key";
+
+# video settings
+my $filename = "movie01.mpg";
+my $content_type = "video/mpeg";
+my $video_detail = video_detail(
+    {
+        title       =&gt; "test",
+        description =&gt; "description",
+        keywords    =&gt; "tag1,tag2",
+    }
+);
+
+my $ua    = LWP::UserAgent-&gt;new( keep_alive =&gt; 1 );
+my $data  = io($filename)-&gt;binary-&gt;all;
+my $token = auth();
+upload($token);
+
+sub upload {
+    my $token = shift;
+    my $url =
+      "http://uploads.gdata.youtube.com/feeds/api/users/$username/uploads";
+    my $request = HTTP::Request-&gt;new( POST =&gt; $url );
+
+    $request-&gt;header(
+        "Authorization" =&gt; "GoogleLogin auth=$token",
+        "X-GData-Key"   =&gt; "key=$developer_key",
+        Slug            =&gt; $filename,
+        Content_Type    =&gt; 'multipart/related',
+    );
+    $request-&gt;add_part(
+        HTTP::Message-&gt;new(
+            [ Content_type =&gt; 'application/atom+xml' ],
+            $video_detail
+        )
+    );
+    $request-&gt;add_part(
+        HTTP::Message-&gt;new( [ Content_type =&gt; $content_type ], $data ) );
+
+    my $response = $ua-&gt;request($request);
+    die $response-&gt;status_line unless ( $response-&gt;is_success );
+    print $response-&gt;content;
+}
+
+sub auth {
+    my $request = POST(
+        "https://www.google.com/youtube/accounts/ClientLogin",
+        Content_Type =&gt; 'application/x-www-form-urlencoded',
+        Content      =&gt; [
+            Email   =&gt; $username,
+            Passwd  =&gt; $password,
+            service =&gt; "youtube",
+            source  =&gt; "uploads",
+        ],
+    );
+    my $response = $ua-&gt;request($request);
+    die $response-&gt;status_line unless ( $response-&gt;is_success );
+    $response-&gt;content =~ /Auth=(.*?)\n/;
+    return $1;
+}
+
+sub video_detail {
+    my $param = shift;
+    foreach my $key ( keys %$param ){
+    utf8::encode($param-&gt;{$key}) if utf8::is_utf8($param-&gt;{$key});
+    }
+    my $title = $param-&gt;{title} || die "title is required";
+    my $description = $param-&gt;{description} || die "description is required";
+    my $category = $param-&gt;{category} || "People";
+    my $keywords = $param-&gt;{keywords} || die "keywords is required";
+
+my $video_detail = &lt;&lt; "XML";
+&lt;?xml version="1.0"?&gt;
+&lt;entry xmlns="http://www.w3.org/2005/Atom"
+ xmlns:media="http://search.yahoo.com/mrss/"
+ xmlns:yt=""&gt;http://gdata.youtube.com/schemas/2007"&gt;
+    &lt;media:group&gt;
+    &lt;media:title type="plain"&gt;$title&lt;/media:title&gt;
+    &lt;media:description type="plain"&gt;$description&lt;/media:description&gt;
+    &lt;media:category scheme="$category"&gt;http://gdata.youtube.com/schemas/2007/categories.cat"&gt;$category
+    &lt;media:keywords&gt;$keywords&lt;/media:keywords&gt;
+  &lt;/media:group&gt;
+&lt;/entry&gt;
+XML
+   return $video_detail;
+}</pre>
+
+
+<p></p>
+<div style="float:left"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4873111269/kamawada-22/"><img alt="初めてのPerl" src="http://ecx.images-amazon.com/images/I/217T9C8ZPGL.jpg" style="border:none;"></a></div>
+<div style="float:left;margin-left:15px;">
+<div style="font-size:12pt"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4873111269/kamawada-22/">初めてのPerl</a></div>
+<div style="font-size:7pt;font-family:verdana;">posted with <a href="http://yusukebe.com/b/amazon/search/">yusukebe.com::AmazonSearch</a> on 2008.3.13</div>
+<div style="font-size:10pt;">
+<ul style="list-style-type:none;padding:0;">
+<li>ランダル・L. シュワルツ トム フェニックス Randal L. Schwartz Tom Phoenix 近藤 嘉雪  </li>
+<li>単行本 / オライリージャパン (2003/05)</li>
+<li>Amazon 売り上げランキング: 12132</li>
+</ul>
+<ul style="list-style-type:none;padding:0;"><li>Amazon おすすめ度の平均: <img alt="4.5" class="at-xid-6a0133f4781589970b015435b6d28c970c" src="https://yusukebe.com/archives/a/6a0133f4781589970b015435b6d28c970c-pi.gif" style="margin:0;"><ul style="list-style-type:none;padding-left:0;">
+<li>
+<img alt="5" class="at-xid-6a0133f4781589970b015435b6d28e970c" src="https://yusukebe.com/archives/a/6a0133f4781589970b015435b6d28e970c-pi.gif" style="margin:0;"> 定番書</li>
+<li>
+<img alt="5" class="at-xid-6a0133f4781589970b015435b6d28e970c" src="https://yusukebe.com/archives/a/6a0133f4781589970b015435b6d28e970c-pi.gif" style="margin:0;"> 初心者も持っておきたい一冊</li>
+<li>
+<img alt="5" class="at-xid-6a0133f4781589970b015435b6d28e970c" src="https://yusukebe.com/archives/a/6a0133f4781589970b015435b6d28e970c-pi.gif" style="margin:0;"> CGI言語としてのPerl</li>
+</ul>
+</li></ul>
+<a href="http://www.amazon.co.jp/gp/product/4873111269%3ftag=kamawada-22%26link_code=xm2%26camp=2025%26dev-t=D3QNAE4JDR26A2">Amazon.co.jpで詳細を見る</a>
+</div>
+</div>
+<div style="clear:left;"></div>
+
+<p></p>
+<div style="float:left"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4873110963/kamawada-22/"><img alt="プログラミングPerl〈VOLUME1〉" src="http://ecx.images-amazon.com/images/I/21AKP9AG9TL.jpg" style="border:none;"></a></div>
+<div style="float:left;margin-left:15px;">
+<div style="font-size:12pt"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4873110963/kamawada-22/">プログラミングPerl〈VOLUME1〉</a></div>
+<div style="font-size:7pt;font-family:verdana;">posted with <a href="http://yusukebe.com/b/amazon/search/">yusukebe.com::AmazonSearch</a> on 2008.3.13</div>
+<div style="font-size:10pt;">
+<ul style="list-style-type:none;padding:0;">
+<li>ラリー ウォール ジョン オーワント トム クリスチャンセン Larry Wall Jon Orwant Tom Christiansen 近藤 嘉雪  </li>
+<li>単行本 / オライリー・ジャパン (2002/09)</li>
+<li>Amazon 売り上げランキング: 6070</li>
+</ul>
+<ul style="list-style-type:none;padding:0;"><li>Amazon おすすめ度の平均: <img alt="4.5" class="at-xid-6a0133f4781589970b015435b6d28c970c" src="https://yusukebe.com/archives/a/6a0133f4781589970b015435b6d28c970c-pi.gif" style="margin:0;"><ul style="list-style-type:none;padding-left:0;">
+<li>
+<img alt="4" class="at-xid-6a0133f4781589970b014e8bd727e1970d" src="https://yusukebe.com/archives/a/6a0133f4781589970b014e8bd727e1970d-pi.gif" style="margin:0;"> 値段は高いけど・・・</li>
+<li>
+<img alt="5" class="at-xid-6a0133f4781589970b015435b6d28e970c" src="https://yusukebe.com/archives/a/6a0133f4781589970b015435b6d28e970c-pi.gif" style="margin:0;"> CGIを自在にこなす第一歩の書</li>
+<li>
+<img alt="5" class="at-xid-6a0133f4781589970b015435b6d28e970c" src="https://yusukebe.com/archives/a/6a0133f4781589970b015435b6d28e970c-pi.gif" style="margin:0;"> Perl文法の仕組みを詳細に知りたい人の本</li>
+</ul>
+</li></ul>
+<a href="http://www.amazon.co.jp/gp/product/4873110963%3ftag=kamawada-22%26link_code=xm2%26camp=2025%26dev-t=D3QNAE4JDR26A2">Amazon.co.jpで詳細を見る</a>
+</div>
+</div>
+<div style="clear:left;"></div>
+
+<p></p>
+<div style="float:left"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4844322893/kamawada-22/"><img alt="まるごとPerl! Vol.1" src="http://ecx.images-amazon.com/images/I/31122XTWW7L.jpg" style="border:none;"></a></div>
+<div style="float:left;margin-left:15px;">
+<div style="font-size:12pt"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4844322893/kamawada-22/">まるごとPerl! Vol.1</a></div>
+<div style="font-size:7pt;font-family:verdana;">posted with <a href="http://yusukebe.com/b/amazon/search/">yusukebe.com::AmazonSearch</a> on 2008.3.13</div>
+<div style="font-size:10pt;">
+<ul style="list-style-type:none;padding:0;">
+<li>小飼 弾 宮川 達彦 伊藤 直也 川合 孝典 水野 貴明  </li>
+<li>大型本 / インプレスコミュニケーションズ (2006/08/24)</li>
+<li>Amazon 売り上げランキング: 89091</li>
+</ul>
+<ul style="list-style-type:none;padding:0;"><li>Amazon おすすめ度の平均: <img alt="5.0" class="at-xid-6a0133f4781589970b015435b6d28e970c" src="https://yusukebe.com/archives/a/6a0133f4781589970b015435b6d28e970c-pi.gif" style="margin:0;"><ul style="list-style-type:none;padding-left:0;"><li>
+<img alt="5" class="at-xid-6a0133f4781589970b015435b6d28e970c" src="https://yusukebe.com/archives/a/6a0133f4781589970b015435b6d28e970c-pi.gif" style="margin:0;"> 技術書・解説書というよりはマイルストーン</li></ul>
+</li></ul>
+<a href="http://www.amazon.co.jp/gp/product/4844322893%3ftag=kamawada-22%26link_code=xm2%26camp=2025%26dev-t=D3QNAE4JDR26A2">Amazon.co.jpで詳細を見る</a>
+</div>
+</div>
+<div style="clear:left;"></div>
+
+<p></p>
+<div style="float:left"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4774124966/kamawada-22/"><img alt="最新WebサービスAPIエクスプロ-ラ ~Amazon、はてな、Google、Yahoo! 4大Webサービス完全攻略" src="http://ecx.images-amazon.com/images/I/31DVDQ7CCJL.jpg" style="border:none;"></a></div>
+<div style="float:left;margin-left:15px;">
+<div style="font-size:12pt"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4774124966/kamawada-22/">最新WebサービスAPIエクスプロ-ラ ~Amazon、はてな、Google、Yahoo! 4大Webサービス完全攻略</a></div>
+<div style="font-size:7pt;font-family:verdana;">posted with <a href="http://yusukebe.com/b/amazon/search/">yusukebe.com::AmazonSearch</a> on 2008.3.13</div>
+<div style="font-size:10pt;">
+<ul style="list-style-type:none;padding:0;">
+<li>Software Design 編集部  </li>
+<li>大型本 / 技術評論社 (2005/09/23)</li>
+<li>Amazon 売り上げランキング: 44588</li>
+</ul>
+<ul style="list-style-type:none;padding:0;"><li>Amazon おすすめ度の平均: <img alt="4.0" class="at-xid-6a0133f4781589970b014e8bd727e1970d" src="https://yusukebe.com/archives/a/6a0133f4781589970b014e8bd727e1970d-pi.gif" style="margin:0;"><ul style="list-style-type:none;padding-left:0;">
+<li>
+<img alt="4" class="at-xid-6a0133f4781589970b014e8bd727e1970d" src="https://yusukebe.com/archives/a/6a0133f4781589970b014e8bd727e1970d-pi.gif" style="margin:0;"> Webサービスについてまとまっててサンプルプログラムも豊富</li>
+<li>
+<img alt="4" class="at-xid-6a0133f4781589970b014e8bd727e1970d" src="https://yusukebe.com/archives/a/6a0133f4781589970b014e8bd727e1970d-pi.gif" style="margin:0;"> 情報は流通してこそ価値がある？</li>
+<li>
+<img alt="3" class="at-xid-6a0133f4781589970b015391e3783b970b" src="https://yusukebe.com/archives/a/6a0133f4781589970b015391e3783b970b-pi.gif" style="margin:0;"> 完全攻略ではない</li>
+</ul>
+</li></ul>
+<a href="http://www.amazon.co.jp/gp/product/4774124966%3ftag=kamawada-22%26link_code=xm2%26camp=2025%26dev-t=D3QNAE4JDR26A2">Amazon.co.jpで詳細を見る</a>
+</div>
+</div>
+<div style="clear:left;"></div>
+
+
+ 
+}

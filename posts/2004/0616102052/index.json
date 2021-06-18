@@ -1,0 +1,20 @@
+{
+    "data" :  {
+    "title": "日本標準時",
+    "date": "2004-06-16 19:20:00 +0900 JST",
+    "dir": "posts/2004/",
+    "slug": "0616102052",
+    "categories": ["tech"],
+    "tags": []
+}
+
+---
+
+
+
+<p>   <a href="http://www2.nict.go.jp/cgi-bin/JST.pl">日本標準時＠Nict</a></p>
+<p>   TAOがなくなって<a href="http://www.nict.go.jp/overview/index-J.html">NICT</a>になった。上のサイトで日本の標準時がわかる。自分のPCと日本標準時との差がわかる。なんかうける。</p>
+
+
+ 
+}

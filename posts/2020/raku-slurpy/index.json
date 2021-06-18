@@ -1,0 +1,200 @@
+{
+    "data" :  {
+    "title": "RakuのSlurpyについて",
+    "date": "2020-01-19 06:42:55 +0900 JST",
+    "dir": "posts/2020/",
+    "slug": "raku-slurpy",
+    "categories": [],
+    "tags": ["Raku","Perl"]
+}
+
+---
+
+
+引っかかったのでメモ。
+
+Rakuでは関数やメソッドを引数を厳密に宣言させることができる、というかある程度しなきゃいけない。
+例えば、それを利用して型や条件によってある一つの関数名でマルチディスパッチさせることができる。
+
+* 引数が`Str`型であるか
+* 引数が`Int`型であり、かつ10未満か
+* 引数が`Int`型であり、かつ10以上か
+
+といったことを表現するコードは以下になる。
+
+```perl
+proto sub func($a) {
+    say '--------------------';
+    say $a;
+    {*};
+}
+
+multi sub func(Str $s) {
+    say 'func(Str $s) が呼ばれた';
+}
+
+multi sub func(Int $i where $i < 10) {
+    say 'func(Int $i where $i < 10)が呼ばれた';
+}
+
+multi sub func(Int $i where $i >= 10) {
+    say 'func(Int $i where $i >= 10)が呼ばれた';
+}
+
+func('hoge');
+
+func(1);
+
+func(50);
+```
+
+ちなみに`proto sub`でそれぞれの関数を実行する前の処理を書いている。
+実行結果は以下である。
+
+```
+--------------------
+hoge
+func(Str $s) が呼ばれた
+--------------------
+1
+func(Int $i where $i < 10)が呼ばれた
+--------------------
+50
+func(Int $i where $i >= 10)が呼ばれた
+```
+
+本題は引数をリストで受け取る時の方法。
+この慣習は`Slurpy`と呼ばれている。
+`Sigil`を「シジル」と言うように、これを日本語で表現してみたいけど、
+「スラーピー」でいいのか、そもそも発音の仕方を知らないので、
+とあえず`Slurpy`としておく（誰か教えて...）。
+
+Perl 5で配列の引数を受け取る場合は以下のように書く。
+
+```perl
+use v5.20;
+
+sub func {
+    my @args = @_;
+    say join ' -> ', @args;
+}
+
+func(1,2,3);
+```
+
+でRakuでも同じのりで書くとどうなるか。
+
+```perl
+use v6;
+
+sub func(@args) {
+    say join ' -> ', @args;
+}
+
+func(1,2,3);
+```
+
+これを実行しようとするとこんなふうに怒られる。
+
+```
+===SORRY!=== Error while compiling args.p6
+Calling func(Int, Int, Int) will never work with declared signature (@args)
+at args.p6:7
+------> <BOL>⏏func(1,2,3);
+```
+
+で、`Slurpy`の登場。`@args`の受け取りを`*@args`または`+@args`と記述する。
+
+```perl
+sub func(*@args) {
+    say @args.join(' -> ');
+}
+```
+
+これはうまいことコンパイル、実行される。
+
+じゃあ配列の中身の型をチェックしたい時はどうするか？
+`sub func(Int *@args)`とは書けないので、
+以下のように`where`で中身をチェックすればよい。
+
+```perl
+sub func(*@args where { $_.all ~~ Int}) {
+    say @args.join(' -> ');
+}
+```
+
+ちょっと冗長な気がするが、公式のドキュメントにこのやり方が書いてあった。
+
+* [Constraining slurpy arguments](https://docs.perl6.org/type/Signature#Constraining_slurpy_arguments)
+
+これを利用してマルチディスパッチさせるとこんなコードになる。
+
+```perl
+proto sub func(*@args) {
+    say '--------------------';
+    say @args.join(' -> ');
+    {*};
+}
+
+multi sub func(*@args) {
+     say 'func(*@args) が呼ばれた';
+}
+
+multi sub func(*@args where { $_.all ~~ Int}) {
+    say 'func(*@args where { $_.all ~~ Int}) が呼ばれた';
+}
+
+multi sub func(*@args where { $_.all ~~ Str}) {
+    say 'func(*@args where { $_.all ~~ Str}) が呼ばれた';
+}
+
+func('hoge', 'moge', 'hage');
+
+func(1,2,3);
+
+func(1,'hoge','moge');
+```
+
+結果。
+
+```
+--------------------
+hoge -> moge -> hage
+func(*@args where { $_.all ~~ Str}) が呼ばれた
+--------------------
+1 -> 2 -> 3
+func(*@args where { $_.all ~~ Int}) が呼ばれた
+--------------------
+1 -> hoge -> moge
+func(*@args) が呼ばれた
+```
+
+`where`の条件にマッチした関数が、なければ`func(*@args)`が呼ばれる。
+
+なるほど！
+
+ところでPerl 5の`caller`みたいなのがはRakuにあるのだろうか...？
+
+**追記**
+
+`callframe`で取れる。skajiさんに教えてもらった。
+
+```perl
+use v6;
+
+sub func {
+    say callframe(0).code.name; #func
+}
+func();
+```
+
+---
+
+ツッコミあれば、ついさっきDisqusを入れたのでそこでもなんでもいいのでください！以下参考になるページ。
+
+* [Perl5 -> Perl 6: slurpy things – Luca Ferrari – Open Source advocate, human being](https://fluca1978.github.io/2017/12/13/Perl6Slurpy.html)
+* [Slurpy conventions](https://docs.perl6.org/language/functions#Slurpy_conventions)
+* [Perl 6 の関数は sub だけじゃない - Qiita](https://qiita.com/uasi/items/1321325bc983c5ed971a)
+
+ 
+}

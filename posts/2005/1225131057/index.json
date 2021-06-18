@@ -1,0 +1,49 @@
+{
+    "data" :  {
+    "title": "debian+apache2でmod_perlを有効にするには",
+    "date": "2005-12-25 22:10:00 +0900 JST",
+    "dir": "posts/2005/",
+    "slug": "1225131057",
+    "categories": ["tech"],
+    "tags": ["Perl"]
+}
+
+---
+
+
+
+<p>たぶん、これでいけると思う。</p>
+<pre class="code">1.mod_perlをapt-getでインストール
+#apt-get install libapache2-mod-perl2
+
+2.モジュールを有効化
+/etc/apache2/mods-available/perl.confに
+PerlModule ModPerl::Registry
+を追加
+
+3.apacheを再起動</pre>
+<p>参考にしたサイト：
+</p>
+<ul>
+<li><a href="http://naoya.dyndns.org/~naoya/mt/archives/000393.html">MovableType を mod_perl (Apache::Registry) 環境下で動かす方法 : NDO::Weblog</a></li>
+<li><a href="http://www.sixapart.jp/movabletype/developers/naoya/archives/2004/09/movable_type_mo.html">Techknow Movable Type: Movable Type を mod_perl で高速化する - Apache::Registry 編</a></li>
+<li><a href="http://kurobox.ath.cx/?MovableType%2F%B9%E2%C2%AE%B2%BD%A1%A6%B7%DA%CE%CC%B2%BD">MovableType/高速化・軽量化 - Debianハックしちゃうぞ</a></li>
+<li><a href="http://www.aqunet.info/blog/archives/000043.html">AquBlog: DebianでApache2 － モジュールの設定ファイル</a></li>
+</ul>
+
+<p>
+追記(その1)<br>
+mod_perlは動いてるっぽいんだけど、Movabletypeに適用しようとするとエラる。よくわからん。<br>
+追記(その2)<br>
+apache2+mod_perl2の環境でMovabletypeはうまく動かないみたい。よくよく調べたりいじったりしてるとmod_perlで動かしたcgiはsuexecがきかないことが発覚。だめじゃん。<br>
+追記(その3)<br>
+apache1+mod_perl1の環境でMTを動かしてみたんだけど、キャッシュが裏目に出たのかMTの管理画面とか再構築するフォームとかをたたくと途中で何も表示されなくなる。Apacheのコネクション時間を設定すればいいのかな？誰か教えてけろー
+追記(その4)<br>
+上記の問題、httpd.confのMaxRequestPerChildの値を大きくしたら直った。値が低かったから.cgiで複数プロセスを発生させるようなやつは途中で死んだんだ。
+追記(その5)<br>
+上記、そんなことはなかった。
+</p>
+
+
+ 
+}

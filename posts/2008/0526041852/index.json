@@ -1,0 +1,92 @@
+{
+    "data" :  {
+    "title": "Perl-users.jp と perl-mongers.org 発足！",
+    "date": "2008-05-26 13:18:00 +0900 JST",
+    "dir": "posts/2008/",
+    "slug": "0526041852",
+    "categories": ["tech"],
+    "tags": ["Perl"]
+}
+
+---
+
+
+
+<p>
+どんなプログラミング言語でもそうだと思いますが、Perlでは 「使う人」と「作る人」の2種類の人がいると思います。
+「使う人」は他の人が作った CPAN モジュールなど使いこなすというレベル。
+また、「作る人」は自らを含めた他の人が使ってもらえるような モジュール を作るという方々です。
+自分はやっと、この「使う人」としてコーディングできるようになった気がします
+（もちろんまだまだ使いこなせてない点あります）。
+そして最近 CPAN Author に登録されたので、「作る人」の方にいけたらいいなと思っています。
+</p>
+<p>
+で、「作る人」はとりあえず置いておいて、Perl を「使う人」にまず最初になろうというきっかけが、
+いわゆる「モダンでない」Perl/CGI のイメージや、他の言語の台頭によって、なかなか少なくなってきているのかもしれません。YAPC::Asia 2008 ラストのセッション、Michael Schwern さんの「Perl is unDead」というタイトルのトークでもそのようなことに言及されていました。Schwern さんは、Perl を使ったキラーアプリを作ろう、CPANモジュールの依存性の問題を解決しようなどと提案し、さらに
+</p>
+<blockquote>
+  <p>
+    「もっと Perl 初心者が集まりやすい nice な Perl の情報を集めたサイトを作れ！」
+  </p>
+  <p>
+    <a href="http://perl-users.jp/">Perl-users.jp - 日本のPerlユーザのためのハブサイト</a> より引用
+  </p>
+</blockquote>
+<p>
+と言いました。自分の場合は書籍 Blog Hacks や Plagger がきっかけになり、「リビドードリブン」でだんだんと Perl を「使う人」になっていった感じです。
+ただこれはほんと特殊な例なので、いざ Perl をはじめようとしても Schwern さんが提唱したとおり、なかなか（モダンなPerlの）情報源にありつかないという現状がやはりあると思います。
+実際、日本では Perl に関する記事はBlog等でかなり流れていますが、その内容の多くは「作る人」サイドの情報だったりして、「使う人」にとっては難しい印象なのかもしれません。
+というわけで、以前からそのあたりのニーズは感じていたのですが、Schwern のトークを聞いてそれは確固たるものになりました。
+</p>
+<p>
+と YAPC が終わって軽くうずうずしていたところに、Schwern さんの言った 「Perl 初心者が集まりやすい」サイトが2つ立ち上がりました。あまりにも高速にサイトを作って公開した Yappoさん、vkgtaroさん＆woremacxさん、まじGJです。
+</p>
+<p>
+  <img alt="perl site" class="at-xid-6a0133f4781589970b014e8bd74dc0970d" src="https://yusukebe.com/archives/a/6a0133f4781589970b014e8bd74dc0970d-pi.jpg">
+  <img alt="perl site" class="at-xid-6a0133f4781589970b014e8bd74df0970d" src="https://yusukebe.com/archives/a/6a0133f4781589970b014e8bd74df0970d-pi.jpg">
+</p>
+<p>
+ひとつ目のサイトはもう公開されてから結構時間が経っちゃいましたが、「<a href="http://perl-users.jp/">Perl-users.jp - 日本のPerlユーザのためのハブサイト</a>」です。CodeRepos でサイトのデータを管理しているので、コミッタであれば誰でもコンテンツを追加できたりするのが面白いです。コンテンツはまだ揃ってませんが、「<a href="http://perl-users.jp/modern_introduction_perl/">モダンなPerl入門</a>」は期待したいところです。
+</p>
+<p>
+もう一つは、昨日くらいから一般に公開されるようになった「<a href="http://perl-mongers.org/">perl-mongers.org</a>」です。
+CMSとしてMTOSを使用し、OpenID でログインすれば誰でも記事がかけるという、Perl-users.jp と同じくオープンなところがいいですね。Perler な人達が初心者向けの情報や Tips をブログ形式で載せています。
+俺も、先ほどせんえつながら、この日記からネタをピックアップし若干解説を加えて、「<a href="http://perl-mongers.org/2008/05/youtube_mpeg4_with_perl.html">YouTube の mpeg4 を Perl からゲットするよ - perl-mongers.org</a>」という「ちょい悪」なエントリーを書いてみたところです。
+</p>
+<p>
+Perl に興味のある方、Perl やりたいなと思っている方は是非、アクセス＆フィード購読してみてください。
+そして、Perl の最大の魅力の一つであるコミュニティに飛び込んでみるのも楽しいと思います。
+</p>
+
+<p></p>
+<div style="float:left"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4873111749/kamawada-22/"><img alt="Blog Hacks ―プロが教えるテクニック&amp;ツール100選" class="at-xid-6a0133f4781589970b014e8bd74e0a970d" src="https://yusukebe.com/archives/a/6a0133f4781589970b014e8bd74e0a970d-pi.jpg" style="border:none;"></a></div>
+<div style="float:left;margin-left:15px;">
+<div style="font-size:12pt"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4873111749/kamawada-22/">Blog Hacks ―プロが教えるテクニック&amp;ツール100選</a></div>
+<div style="font-size:7pt;font-family:verdana;">posted with <a href="http://yusukebe.com/b/amazon/search/">yusukebe.com::AmazonSearch</a> on 2008.5.26</div>
+<div style="font-size:10pt;">
+<ul style="list-style-type:none;padding:0;">
+<li>宮川 達彦 伊藤 直也  </li>
+<li>単行本 / オライリー・ジャパン </li>
+<li>Amazon 売り上げランキング: 156126</li>
+</ul>
+<ul style="list-style-type:none;padding:0;"><li>Amazon おすすめ度の平均: <img alt="4.5" class="at-xid-6a0133f4781589970b015435b6d28c970c" src="https://yusukebe.com/archives/a/6a0133f4781589970b015435b6d28c970c-pi.gif" style="margin:0;"><ul style="list-style-type:none;padding-left:0;">
+<li>
+<img alt="5" class="at-xid-6a0133f4781589970b015435b6d28e970c" src="https://yusukebe.com/archives/a/6a0133f4781589970b015435b6d28e970c-pi.gif" style="margin:0;"> 100に絞るところがよいかも</li>
+<li>
+<img alt="5" class="at-xid-6a0133f4781589970b015435b6d28e970c" src="https://yusukebe.com/archives/a/6a0133f4781589970b015435b6d28e970c-pi.gif" style="margin:0;"> 大好きな一冊！！</li>
+<li>
+<img alt="5" class="at-xid-6a0133f4781589970b015435b6d28e970c" src="https://yusukebe.com/archives/a/6a0133f4781589970b015435b6d28e970c-pi.gif" style="margin:0;"> 日本発のHACKS</li>
+<li>
+<img alt="4" class="at-xid-6a0133f4781589970b014e8bd727e1970d" src="https://yusukebe.com/archives/a/6a0133f4781589970b014e8bd727e1970d-pi.gif" style="margin:0;"> 日本発のオライリー本を評価したい</li>
+<li>
+<img alt="5" class="at-xid-6a0133f4781589970b015435b6d28e970c" src="https://yusukebe.com/archives/a/6a0133f4781589970b015435b6d28e970c-pi.gif" style="margin:0;"> Blogいじりをする方必読</li>
+</ul>
+</li></ul>
+<a href="http://www.amazon.co.jp/gp/redirect.html%3FASIN=4873111749%26tag=ws%26lcode=xm2%26cID=2025%26ccmID=165953%26location=/o/ASIN/4873111749%253FSubscriptionId=13C5PCPS36EMN8C22682">Amazon.co.jpで詳細を見る</a>
+</div>
+</div>
+<div style="clear:left;"></div>
+
+
+ 
+}

@@ -1,0 +1,44 @@
+{
+    "data" :  {
+    "title": "Mishima.pm #1に行きます",
+    "date": "2014-06-26 01:41:00 +0900 JST",
+    "dir": "posts/2014/",
+    "slug": "0626014108",
+    "categories": ["tech"],
+    "tags": []
+}
+
+---
+
+
+
+<p>来る7月12日の午後に開催される <strong>Mishima.pm</strong> の「#1」に参加します。今回は主催の <a href="https://twitter.com/dokechin">dokechin</a> さんからのご指名で、<a href="http://japan.perlassociation.org/">JPA（一般社団法人 Japan Perl Association）</a>の「<a href="http://japan.perlassociation.org/services/send-a-monger">地域PM向け 講師派遣支援プログラム</a>」で参加させてもらいます。以下が今回のイベントの募集ページ。</p>
+
+
+
+
+<ul>
+<li><a href="http://atnd.org/events/50401">Mishima.pm #1 : ATND</a></li>
+</ul>
+
+
+<p>現状の参加者リスト見ると、東京の人が大半を占めてる感がありますので、三島近辺の人に参加してもらってお話したいと思う次第です。ちなみに Mishima.pm のHPを見ると</p>
+
+
+
+
+<blockquote>
+  <p>静岡県はのぞみが停車しません。PerlMongerの集まり(pm) はYokohama.pmとNagoya.pmがあるけれど、静岡県には無いなあ。というわけでMishima.pmを立ち上げてみようかな。</p>
+  
+  <p><a href="http://mishima-pm.blog.jp/archives/1085073.html">http://mishima-pm.blog.jp/archives/1085073.html</a></p>
+</blockquote>
+
+
+
+
+<p>という事の発端らしい！さて僕はトーク枠1時間頂いているのですが、ただいまテーマ未定。最近はYAPC関係の作業が多いのでその話をしつつ、ボケての開発を中心として最近の流れをオーバービューしようかなとも思います。もし話してもらいたい内容があれば <a href="https://twitter.com/yusukebe">@yusukebe</a> までリプライプリーズ！</p>
+
+
+
+ 
+}

@@ -1,0 +1,165 @@
+{
+    "data" :  {
+    "title": "iPhone「アプリの設計パターン」についてまとめてみる",
+    "date": "2012-02-15 14:31:00 +0900 JST",
+    "dir": "posts/2012/",
+    "slug": "0215053118",
+    "categories": ["tech"],
+    "tags": ["iOS"]
+}
+
+---
+
+
+
+<p>iPhoneアプリの良いアイデアが出たので、これから作り始めようというところである。
+さて、iPhoneアプリ開発童貞ってわけではないが、今までただ闇雲に作っていた感があるので、
+実際にXcodeを起動してコードを書き始める前の設計をどうしていこうかと考えている。
+ソフトウェアの作成はじめてではもちろん無いのでだいたい勝手は分かるものの、
+<strong>iPhone特有の設計</strong>思考が必要な気がして、文献を漁っている。 
+ところが、世に出回っているiPhoneアプリ本にはUIKitをいじくるだけの解説ばかりではないか！
+で、つまるところ設計について有益だと思えたのは以下3つの文献だった。</p>
+
+<ul>
+<li>「iOSアプリケーションプログラミングガイド」<a href="https://developer.apple.com/jp/devcenter/ios/library/japanese.html">Appleのサイト</a>からダウンロードできる</li>
+<li>「<a href="http://www.amazon.co.jp/exec/obidos/ASIN/4873115027/kamawada-22/ref=nosim/">iPhoneアプリ設計の極意 - 思わずタップしたくなるアプリのデザイン</a>」のfladdictさんの章</li>
+<li>「<a href="http://www.amazon.co.jp/exec/obidos/ASIN/4861007348/kamawada-22/ref=nosim/">iOS開発におけるパターンによるオートマティズム</a>」の第2章</li>
+</ul>
+
+
+<p>今回は個人的にしっくりきて具体的な設計について書いてある「<strong>iOS開発におけるパターンによるオートマティズム</strong>」
+より「<strong>アプリの設計パターン</strong>」を僕なりにまとめたいと思う。</p>
+
+<div class="amazlet-box" style="margin-bottom:0px;">
+<div class="amazlet-image" style="float:left;margin:0px 12px 1px 0px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4861007348/kamawada-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/5103tEtQ63L._SL160_.jpg" alt="iOS開発におけるパターンによるオートマティズム" style="border: none;"></a></div>
+<div class="amazlet-info" style="line-height:120%; margin-bottom: 10px">
+<div class="amazlet-name" style="margin-bottom:10px;line-height:120%">
+<a href="http://www.amazon.co.jp/exec/obidos/ASIN/4861007348/kamawada-22/ref=nosim/" name="amazletlink" target="_blank">iOS開発におけるパターンによるオートマティズム</a><div class="amazlet-powered-date" style="font-size:80%;margin-top:5px;line-height:120%">posted with <a href="http://www.amazlet.com/browse/ASIN/4861007348/kamawada-22/ref=nosim/" title="iOS開発におけるパターンによるオートマティズム" target="_blank">amazlet</a> at 12.02.15</div>
+</div>
+<div class="amazlet-detail">木下 誠 <br>ビー・エヌ・エヌ新社 <br>売り上げランキング: 25881<br>
+</div>
+<div class="amazlet-sub-info" style="float: left;"><div class="amazlet-link" style="margin-top: 5px"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4861007348/kamawada-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jp で詳細を見る</a></div></div>
+</div>
+<div class="amazlet-footer" style="clear: left"></div>
+</div>
+
+
+<p><br></p>
+
+<p>ちなみにこの本で言う「パターン」とはデザインパターンのことを指すのでは<strong>なくて</strong>、
+何ども使えるパターンというようなより汎用的な意味合いである。</p>
+
+<hr>
+
+<p><br></p>
+
+<h3>3つのフェーズ</h3>
+
+<p>まず、設計には3つのフェーズがあるという。それは以下である。</p>
+
+<ol>
+<li>機能設計</li>
+<li>ユーザーインターフェース設計</li>
+<li>クラス設計</li>
+</ol>
+
+
+<p>もちろんこれは必ずしも順番に行う必要はなく、行きつ戻りつしながらやるとよい。
+僕も現に今その状態である。</p>
+
+<p>
+<img src="http://yusukebe.com/archives/2012/02/15/pattern.jpg">
+</p>
+
+
+<p><br></p>
+
+<h3>機能設計</h3>
+
+<p>アプリに求める機能を洗い出す。いかに具体的にするかが重要だと作者は説く。
+RSSリーダーのケースが例にあるのだけれど、その最も基本的な機能</p>
+
+<blockquote><p>「RSSの記事をダウンロードして読む」</p></blockquote>
+
+<p>をおのおのより細かく小分けにして機能を記述していく。「RSSの記事っていったい何のことを指すのか？」
+と自問してくといいかもしれない。</p>
+
+<p>これは個人的な意見だが、いわゆる<strong>ユースケース</strong>ってやつじゃないかと。
+つまりユーザーから見たシステムの機能。これを図にして列挙していく。
+そして個別の機能についてユーザーがそれを使うシナリオ、<strong>ユースケース記述</strong>を書いていくことで具体化していく。
+ユースケース、ユースケース記述により実は気づいていなかったシステムへの要求などが出てくると思う。 
+大した情報が漏れるわけではないので、今作っているアプリのユースケース図を掲載しておきます。</p>
+
+<p>
+<a href="http://yusukebe.com/archives/2012/02/15/usecase.jpg"><img alt="usecase.jpg" src="http://yusukebe.com/archives/assets_c/2012/02/usecase-thumb-300x401-119.jpg" width="300" height="401" class="mt-image-none" style=""></a>
+</p>
+
+
+<p><br></p>
+
+<h3>ユーザーインターフェース設計</h3>
+
+<p>これは結構一般化してきていると思うけど、ペーパープロトタイプと呼ばれる、スケッチなどのを用いて行う。
+どこかで見たんだけど、海外のとある優秀なUIデザイナーが、
+iPhoneサイズの木枠を作ってそれをペンでなぞることでiPhoneの画面を紙の上でささっと作ってしまう。
+こういった工夫はいい。</p>
+
+<p>本書では、UIについて「<strong>真似ること</strong>」が大事と述べている。
+確かに僕も様々アプリを使いながら、UIの参考にしている部分は多い。</p>
+
+<p><strong>UIKit</strong>と呼ばれるiPhone独自のインターフェースに対する理解は必須だろう。
+「ナビゲーションバーやタブってものがあって、それを使うのが一般的だし、ユーザーも慣れているよ」
+ということを認識しておくとよい。
+また、個々の画面のペーパープロトタイピングも必要だが、本書では画面ごとの遷移も紹介してあった。</p>
+
+<p>以下は、iPhone全体ではないが、タブバーの配置についてさきほどスケッチしたものだ。</p>
+
+<p>
+<a href="http://yusukebe.com/archives/2012/02/15/ui.jpg"><img alt="ui.jpg" src="http://yusukebe.com/archives/assets_c/2012/02/ui-thumb-300x401-117.jpg" width="300" height="401" class="mt-image-none" style=""></a>
+
+</p>
+
+
+<p><br></p>
+
+<h3>クラス設計</h3>
+
+<p>基本的にはMVCモデルに従って書くのがiPhoneアプリ開発の流儀である。本書でもその件は明言している。
+ただ、それぞれの<strong>依存関係</strong>をしっかり把握しないと駄目だとも言っている。以下の箇条書きは引用である。</p>
+
+<ul>
+<li>モデルは、他のレイヤから独立している。</li>
+<li>ビューはモデルに依存しており、コントローラから独立している。</li>
+<li>コントローラは、モデルとビューに依存している。</li>
+</ul>
+
+
+<p>それぞれのクラス設計だが、モデルから行うのがよいとのこと。また、
+コントローラはもちろんだが画面一つにつき一クラスを対応づける。最後に、
+ビューのクラスっていうと何を設計するか分かりにくかったのだけれど、UITableCellのサブクラスを本書では取り上げていた。</p>
+
+<p><br></p>
+
+<h3>まとめ</h3>
+
+<p>設計が過剰になってもいけないと思う主義ではあるが、
+少なからず必要なものである。今回は「iOS開発におけるパターンによるオートマティズム」を取り上げた。
+面白いiPhoneアプリ設計文献がもっと世に出るといいのになぁ。</p>
+
+<hr>
+
+<p><br></p>
+
+<h3>宣伝</h3>
+
+<p>メルマガやっています。開発のために必要な発想方法について今連載しているので、よかったら、
+ご覧ください。</p>
+
+<ul>
+<li><a href="http://www.mag2.com/m/0001426750.html" title="ゆーすけべーラジオ">ゆーすけべーラジオ</a></li>
+</ul>
+
+
+
+ 
+}

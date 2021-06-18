@@ -1,0 +1,83 @@
+{
+    "data" :  {
+    "title": "「SEの教科書 〜 成功するSEの考え方、仕事の進め方」深沢隆司",
+    "date": "2007-09-24 11:34:00 +0900 JST",
+    "dir": "posts/2007/",
+    "slug": "0924023408",
+    "categories": ["tech"],
+    "tags": []
+}
+
+---
+
+
+
+<p>
+  会社に所属していない身である自分にとって、
+  「SEとは何ぞや」という疑問を打ち消すためにも手に取った本書。
+  実際その解を得られたとは言いがたいが、
+  著者「<strong>深沢隆司</strong>」さんのプロジェクト進行に対する熱い思いが伝わってきた。
+</p>
+<p>
+  <a href="http://www.amazon.co.jp/exec/obidos/ASIN/4774126527/kamawada-22/">SEの教科書</a><br>
+    <img alt="SEの教科書" class="at-xid-6a0133f4781589970b015391e38a2d970b" src="https://yusukebe.com/archives/a/6a0133f4781589970b015391e38a2d970b-pi.jpg">
+</p>
+<p>
+  「教科書」という題名から、もう少し技術的な話が入ってくるかと思ったが、
+  実際のところ全くそうではなく、
+  業務システム開発のプロジェクトに対する心構えを学べる書である。
+  著者の深沢隆司さんは現在プロジェクトマネジメントに従事し、
+  本書で述べられているような、独自の手法を取り入れてプロジェクトを成功へ導いているようだ。
+  とりわけ、その中で俺の印象に残ったのは、
+  「<b>プロジェクトのトップが技術に対して理解を持とう、
+    SEやプログラマードリブンでプロジェクトを動かそう</b>」という観点。
+</p>
+<blockquote>
+<p>
+どんなに管理職やマネージャーがいたところで、プログラマーがいなければ、
+業務システム開発という仕事を成し遂げることはできません。
+最終的にはプログラマーがプログラミングしなければ、システムは作れないのです。
+したがって、筆者は
+「プログラマーが必要な情報を効率的に得られないような仕事の進め方では、
+業務システム開発の成功はできない」という方針に基づき…
+</p>
+<p>
+  P213より引用
+</p>
+</blockquote>
+<p>
+  俺は、上記した通り会社に属してない上、業務システム開発もしていない。
+  しかし、深沢さんの熱意は伝わってきて、とても賛同できた。
+  SEとは何かはまだよくつかめないが(つかむ必要もないかも)、
+  本書を読むことはなかなかいい機会であった。
+  一応、IT系の仕事(？)に携わっているいる以上、
+  いろいろな側面をみていきたいと思う次第である。
+</p>
+<p></p>
+<div style="float:left"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4774126527/kamawada-22/"><img alt="SE の教科書 ~成功するSEの考え方、仕事の進め方 (技評SE新書001)" src="http://ec1.images-amazon.com/images/I/210K8ZGTMJL.jpg" style="border:none;"></a></div>
+<div style="float:left;margin-left:15px;">
+<div style="font-size:12pt"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4774126527/kamawada-22/">SE の教科書 ~成功するSEの考え方、仕事の進め方 (技評SE新書001)</a></div>
+<div style="font-size:7pt;font-family:verdana;">posted with <a href="http://yusukebe.com/b/amazon/search/">yusukebe.com::AmazonSearch</a> on 2007.9.24</div>
+<div style="font-size:10pt;">
+<ul style="list-style-type:none;padding:0;">
+<li>深沢 隆司  </li>
+<li>新書 / 技術評論社 (2006/01/19)</li>
+<li>Amazon 売り上げランキング: 25684</li>
+</ul>
+<ul style="list-style-type:none;padding:0;"><li>Amazon おすすめ度の平均: <img alt="4.5" class="at-xid-6a0133f4781589970b015435b6d28c970c" src="https://yusukebe.com/archives/a/6a0133f4781589970b015435b6d28c970c-pi.gif" style="margin:0;"><ul style="list-style-type:none;padding-left:0;">
+<li>
+<img alt="5" class="at-xid-6a0133f4781589970b015435b6d28e970c" src="https://yusukebe.com/archives/a/6a0133f4781589970b015435b6d28e970c-pi.gif" style="margin:0;"> 多くの人が読むべき一冊</li>
+<li>
+<img alt="3" class="at-xid-6a0133f4781589970b015391e3783b970b" src="https://yusukebe.com/archives/a/6a0133f4781589970b015391e3783b970b-pi.gif" style="margin:0;"> 普遍的</li>
+<li>
+<img alt="5" class="at-xid-6a0133f4781589970b015435b6d28e970c" src="https://yusukebe.com/archives/a/6a0133f4781589970b015435b6d28e970c-pi.gif" style="margin:0;"> SEじゃないけど</li>
+</ul>
+</li></ul>
+<a href="http://www.amazon.co.jp/gp/product/4774126527%3ftag=kamawada-22%26link_code=xm2%26camp=2025%26dev-t=D3QNAE4JDR26A2">Amazon.co.jpで詳細を見る</a>
+</div>
+</div>
+<div style="clear:left;"></div>
+
+
+ 
+}

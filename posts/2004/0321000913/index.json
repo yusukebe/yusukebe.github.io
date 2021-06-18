@@ -1,0 +1,43 @@
+{
+    "data" :  {
+    "title": "TUIpaper後半のまとめ、緊急勉強会 本日これからとある緊急勉強会が開催される。内容は例によって輪読で、僕の担当はEmerging Frameworks for Tangible",
+    "date": "2004-03-21 09:09:00 +0900 JST",
+    "dir": "posts/2004/",
+    "slug": "0321000913",
+    "categories": ["tech"],
+    "tags": []
+}
+
+---
+
+
+
+<p></p>
+<title>TUIpaper後半のまとめ、緊急勉強会</title>
+<p>   本日これからとある緊急勉強会が開催される。内容は例によって輪読で、僕の担当は<a href="http://xenia.media.mit.edu/~ullmer/papers/tui-millenium-chapter.pdf">Emerging   Frameworks for Tangible User Interfaces</a>の後半部分。 </p>
+<p>   できた発表資料はこちら-&gt;<a href="http://kamawada.com/~yusuke/yusukebe/archives/files/040321/TUI_yusuke.pdf">TUI_yusuke.pdf</a> </p>
+<p>   この論文、タンジブルビットで有名なMITの石井さんとullmerさんが書いたもの。内容も面白かったが、研究戦略みたいなものが感じられて興味深かった。 </p>
+<p>   参考にしたホームページは以下。 </p>
+<p>   ・論文のPDF<br>   <a href="http://xenia.media.mit.edu/~ullmer/papers/tui-millenium-chapter.pdf">http://xenia.media.mit.edu/~ullmer/papers/tui-millenium-chapter.pdf</a> </p>
+<p>   ・論文のHTML、でもちょっと内容がちがう？＠IBM<br>   <a href="http://www.research.ibm.com/journal/sj/393/part3/ullmer.html">http://www.research.ibm.com/journal/sj/393/part3/ullmer.html</a> </p>
+<p>   ・Tangible Bits:<br>   情報の感触／情報の気配<br>   <a href="http://tangible.media.mit.edu/papers/Tangible_Bits_IPSJ98/Tangible_Bits_IPSJ98.pdf">http://tangible.media.mit.edu/papers/Tangible_Bits_IPSJ98/Tangible_Bits_IPSJ98.pdf</a> </p>
+<p>   ・tangible media group<br>   <a href="http://tangible.media.mit.edu/">http://tangible.media.mit.edu/</a> </p>
+<p>   ・Thinks That Think<br>   <a href="http://ttt.media.mit.edu/">http://ttt.media.mit.edu/</a> </p>
+<p>   ・Urp: A Luminous-Tangible Workbench for Urban Planning and Design<br>   <a href="http://tangible.media.mit.edu/papers/Urp_CHI99/Urp_CHI99.html">http://tangible.media.mit.edu/papers/Urp_CHI99/Urp_CHI99.html</a> </p>
+<p>   ・Water Lamp and Pinwheels: Ambient Projection of<br>   Digital Information into Architectural Space<br>   <a href="http://xenia.media.mit.edu/~andyd/paper/af-chi98.pdf">http://xenia.media.mit.edu/~andyd/paper/af-chi98.pdf</a> </p>
+<p>   ・mediaBlocks<br>   <a href="http://xenia.media.mit.edu/~ullmer/projects/mediablocks/">http://xenia.media.mit.edu/~ullmer/projects/mediablocks/</a> </p>
+<p>   ・スクラブル<br>   <a href="http://www.google.co.jp/search?hl=ja&amp;ie=UTF-8&amp;oe=UTF-8&amp;q=%E3%82%B9%E3%82%AF%E3%83%A9%E3%83%96%E3%83%AB&amp;btnG=Google+%E6%A4%9C%E7%B4%A2&amp;lr=">http://www.google.co.jp/search?hl=ja&amp;ie=UTF-8&amp;oe=UTF-8&amp;q=%E3%82%B9%E3%82%AF%E3%83%A9%E3%83%96%E3%83%AB&amp;btnG=Google+%E6%A4%9C%E7%B4%A2&amp;lr=</a> </p>
+<p>   ・Passive Real-World Interface Props for Neurosurgical Visualization (1994)<br>   <a href="http://research.microsoft.com/Users/kenh/PropsInterface.htm">http://research.microsoft.com/Users/kenh/PropsInterface.htm</a>    <br>   <a href="http://citeseer.ist.psu.edu/hinckley94passive.html">http://citeseer.ist.psu.edu/hinckley94passive.html</a> </p>
+<p>   ・Interacting with Paper on the DigitalDesk<br>   <a href="http://pitecan.com/bib/Wellner_DigitalDesk.html">http://pitecan.com/bib/Wellner_DigitalDesk.html</a>    <br>   <a href="http://portal.acm.org/citation.cfm?id=159630&amp;dl=ACM&amp;coll=GUIDE">http://portal.acm.org/citation.cfm?id=159630&amp;dl=ACM&amp;coll=GUIDE</a> </p>
+<p>   ・Tangible Bits: Towards Seamless Interfaces between People, Bits and Atoms<br>   <a href="http://www.acm.org/sigchi/chi97/proceedings/paper/hi.htm">http://www.acm.org/sigchi/chi97/proceedings/paper/hi.htm</a> </p>
+<p>   ・Durrell Bishop’s marble answering machine<br>   <a href="http://books.nap.edu/html/beyond_productivity/ch4_f2.html">http://books.nap.edu/html/beyond_productivity/ch4_f2.html</a> </p>
+<p>   ・Tangible Computation Bricks:Building-blocks for Physical Microworlds<br>   <a href="http://xenia.media.mit.edu/~mcnerney/tangible-comp-bricks-review2.2.pdf">http://xenia.media.mit.edu/~mcnerney/tangible-comp-bricks-review2.2.pdf</a> </p>
+<p>   ・Triangles: Design of A Physical/Digital Construction Kit<br>   <a href="http://tangible.media.mit.edu/papers/Triangles_DIS97/Triangles_DIS97.pdf">http://tangible.media.mit.edu/papers/Triangles_DIS97/Triangles_DIS97.pdf</a> </p>
+<p>   ・Reflections on Notecards: Seven issues for the next generation of hypermedia systems<br>   <a href="http://pitecan.com/bib/Halasz_NoteCards.html">http://pitecan.com/bib/Halasz_NoteCards.html</a> </p>
+<p>   ・Found Object<br>   <a href="http://www.dnp.co.jp/museum/nmp/artscape/artwords/a_j/found_object.html">http://www.dnp.co.jp/museum/nmp/artscape/artwords/a_j/found_object.html</a> </p>
+<p>   ・Is paper safer? The role of paper flight strips in air traffic control<br>   <a href="http://portal.acm.org/citation.cfm?id=331491&amp;dl=ACM&amp;coll=GUIDE">http://portal.acm.org/citation.cfm?id=331491&amp;dl=ACM&amp;coll=GUIDE</a> </p>
+<p></p>
+
+
+ 
+}

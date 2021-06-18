@@ -1,0 +1,107 @@
+{
+    "data" :  {
+    "title": "AWS S3 の認証リクエストをつくる「その 1」",
+    "date": "2014-01-23 01:13:00 +0900 JST",
+    "dir": "posts/2014/",
+    "slug": "0123011321",
+    "categories": ["tech"],
+    "tags": []
+}
+
+---
+
+
+
+<p>PerlのAWS関係のライブラリについて。</p>
+
+
+
+
+<p>ファイルのアップロードなどS3の操作に関して、現在Net::Amazon::S3を使っているのですが、深遠な理由からかもっさりしているのと、バージョンアップが頻繁ではないので、それとはまた別コンセプト＋別実装でライブラリを書きたい気分。当然Net::Amazon::S3に関して挙動としては正しい動きをしておりますのでそれはそれで使うといいかと。以前から考えているのはAWSの各種サービスに対して透過的に使える署名作成と認証のためのフレームワーク。S3はちょいと特殊なのですが、大抵のサービスは</p>
+
+
+
+
+<ul>
+<li>Signature Version 2</li>
+<li>Signature Version 4</li>
+</ul>
+
+
+<p>とこの2つの方式で署名をつくってHTTPリクエストヘッダに埋め込んで認証をかけます。現在CPANに上がっているNet::Amazon::* や Net::AWS::* 系のモジュールは個別のサービスに特化しているので、それぞれで認証を実装していてるケースが見受けられて、これ、どうせだったら認証だけを面倒見る汎用プログラムがあっていいかとも考えています。確かにnodeとかの実装で似たようなコンセプトのライブラリがあったので多言語の実装も参考にする。</p>
+
+
+
+
+<p>で、昔つくろうと思って挫折というか放棄したので、ちょっとずつ、まずはスクリプトレベルで書いています。</p>
+
+
+
+
+<p>まずはよく使うS3の署名作成をしようと、リクエストのAuthorizationヘッダに埋め込むためのSignatureを生成するロジックを書いてみます。ちなみに公式な仕様を含むドキュメントは以下のページで見れます。</p>
+
+
+
+
+<ul>
+<li><a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">http://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html</a></li>
+</ul>
+
+
+<p>このページには例として</p>
+
+
+
+
+<ul>
+<li>AWSAccessKeyId =&gt; AKIAIOSFODNN7EXAMPLE</li>
+<li>AWSSecretAccessKey =&gt; wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY</li>
+</ul>
+
+
+<p>であること。そして検証用に</p>
+
+
+
+
+<pre class="code">GET /photos/puppy.jpg HTTP/1.1
+Host: johnsmith.s3.amazonaws.com
+Date: Tue, 27 Mar 2007 19:36:42 +0000</pre>
+
+
+
+
+<p>というリクエストを例としています。Authorizationヘッダに書くべきSignature「bWq2s1WEIj+Ydj0vQ697zp+IXMU=」も掲載されています。サンプルを元にPerlスクリプトでSignatureの値を出して、果たして当たっている結果になるかを書いてみました。こんなの！</p>
+
+
+
+
+<pre class="code">use strict;
+use warnings;
+use Test::More;
+use Digest::HMAC_SHA1;
+
+# Yet another script to generate the AWS-S3 signature
+
+my $access_key = 'AKIAIOSFODNN7EXAMPLE'; #XXX not used
+my $secret_key = 'wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY';
+
+my $string_to_sign = "GETnnnTue, 27 Mar 2007 19:36:42 +0000n/johnsmith/photos/puppy.jpg";
+my $hmac = Digest::HMAC_SHA1-&gt;new($secret_key);
+$hmac-&gt;add($string_to_sign);
+my $signature = $hmac-&gt;b64digest . '=';
+
+ok $signature;
+is $signature, 'bWq2s1WEIj+Ydj0vQ697zp+IXMU=';
+
+done_testing();</pre>
+
+
+
+
+<p>ハッシュ化とBase64によるエンコードが必要なんだなぁ〜、具体的な実装はこれで決まりだねぇ〜 って感じでひとまず手元のスクリプトが出した値がドキュメントにある値と等しかったので安心。この先やることがまだあるので、進捗あれば書きますしそのうちライブラリにするかも。</p>
+
+
+
+ 
+}

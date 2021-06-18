@@ -1,0 +1,69 @@
+{
+    "data" :  {
+    "title": "Node.jsでメロディー・雛・マークスを出す",
+    "date": "2020-01-18 05:43:34 +0900 JST",
+    "dir": "posts/2020/",
+    "slug": "node-dmm",
+    "categories": [],
+    "tags": ["JavaScript","Node.js"]
+}
+
+---
+
+
+何事も勉強するなら「**メロディー・雛・マークス**」ということで、
+Node.jsでDMM Webサービスを叩いてメロディー・雛・マークスを出す。PHPの実装は以下。
+
+* [PHPでDMM Webサービスを叩いてメロディー・雛・マークスを出す - ゆーすけべー日記](https://yusukebe.com/posts/2019/1226173405/)
+
+めんどくさいこと抜きで`$ node dmm.js`で実行してコンソールに表示させる。
+
+GETリクエストで使うURLを構築するのに、
+Node.js標準のURLとURLSearchParamsを使う。
+`url.search`にURLSearchParamsオブジェクトを渡すといい感じにクエリパラメータを付けてくれる。
+
+HTTP(S)のクライアントは、
+なるべくNode.js標準のhttp/httpsを使いたいところだが、
+ローレベルで使いにくいかったので`node-fetch`を使う。
+
+* [node-fetch - npm](https://www.npmjs.com/package/node-fetch)
+
+以下コード。
+
+```javascript
+const fetch = require('node-fetch');
+
+const api_id = 'YOUR_API_ID';
+const affiliate_id = 'YOUR_AFFILIATE_ID';
+const keyword = '雛';
+
+const params = new URLSearchParams({
+    api_id: api_id,
+    affiliate_id: affiliate_id,
+    hits: 50,
+    keyword: keyword
+});
+
+const url = new URL('https://api.dmm.com/affiliate/v3/ActressSearch');
+url.search = params;
+console.log('GET:' + url.toString());
+
+fetch(url.toString())
+    .then(res => res.json())
+    .then((data) => {
+        for (const actress of data.result.actress) {
+            console.log(actress.name);
+        }
+    });
+```
+
+`$ node dmm.js`で実行する。
+
+![DMM](https://live.staticflickr.com/65535/49400593051_f9fe77a945_c_d.jpg)
+
+でた！**メロディー・雛・マークス**！
+オモテナシ！
+
+
+ 
+}

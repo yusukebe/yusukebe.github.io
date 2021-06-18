@@ -1,0 +1,21 @@
+{
+    "data" :  {
+    "title": "画像の縮小方法、高品質双三次補間でいく。",
+    "date": "2004-08-16 09:03:00 +0900 JST",
+    "dir": "posts/2004/",
+    "slug": "0816000348",
+    "categories": ["tech"],
+    "tags": []
+}
+
+---
+
+
+
+<p>   <a href="http://yusukebe.com/archives/2004_08_15_173444.php">このようなソフト</a>を作っていてもう出来そうなんですが、最後に画像の縮小方式を検討中。画像の縮小にもいろいろあります。<a href="http://yougo.ascii24.com/gh/65/006570.html">高品質双三次補間</a>でいこうかと。</p>
+<p>   左の団子さんは普通に縮小させた。ジャギーが目立つ。右は品質双三次補間。自然できれいだ。</p>
+<p>   <img alt="dan1.JPG" border="0" class="at-xid-6a0133f4781589970b015391e37722970b" src="https://yusukebe.com/archives/a/6a0133f4781589970b015391e37722970b-pi"> <img alt="dan2.JPG" border="0" class="at-xid-6a0133f4781589970b015391e37734970b" src="https://yusukebe.com/archives/a/6a0133f4781589970b015391e37734970b-pi"></p>
+
+
+ 
+}

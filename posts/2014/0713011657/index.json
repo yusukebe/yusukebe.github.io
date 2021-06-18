@@ -1,0 +1,92 @@
+{
+    "data" :  {
+    "title": "たった一つの依存で #yapcasia のトーク応募ソーシャルランキングをつくる",
+    "date": "2014-07-13 01:16:00 +0900 JST",
+    "dir": "posts/2014/",
+    "slug": "0713011657",
+    "categories": ["tech"],
+    "tags": []
+}
+
+---
+
+
+
+<p>YAPC::Asia実行委員長として、ただいま皆様から頂いたトーク応募を、絶賛選考中であります。トークの選考にあたっては</p>
+
+
+
+
+<blockquote>
+  <p>また選考者だけで判断がつかない場合はFacebookのいいね！やはてなブックマーク等のフィードバックの数・内容によって採択されるかどうか決まる事がありますので、トークを応募した後はFacebook、Twitter、ブログ等での拡散をお勧めいたします。</p>
+</blockquote>
+
+
+
+
+<p>という判断基準がありますので、当然、ソーシャルボタンの反応を可視化して見やすくしたいところ… と思っていたら<a href="http://yusuke.be/post/91594826674">Mishima.pm</a> でお世話になった dokechin さんが「<a href="http://dokechin.hatenablog.com/entry/2014/07/11/123704">YAPC::Asia 2014 Talks 総選挙</a>」という名で、はてぶ数やツイートされた数でトークのランキングをWebで一覧出来るものをつくってました。で、この記事で紹介するのは、その「 <strong>車輪の再発明</strong> 」です。</p>
+
+
+
+
+<p>彼のコードでは Mojo::Template を使っている割には他の Mojo::* モジュールを使っていなかったので「Mojoliciousディストリビューション」のみだけで似たようなことが出来ないかな？と考えました。MojoliciousにはMojo::UserAgentと呼ばれるHTTPクライアントのみならず、Mojo::DOMもしくはMojo::DOM::*モジュールが同封されており、HTMLのパースとその中の要素に対しCSSセレクタを使用したアクセスも可能となっています。つまりスクレイピングに便利なモジュールが <code>cpanm Mojolicious</code> しただけで入っちゃうってわけです。</p>
+
+
+
+
+<p>例えば、今年のYAPC::Asiaのトーク群をそれぞれ、いちトークずつ処理し、タイトルやURL、スピーカーの名前とアイコンURLを取得するようなコードは以下のように書けます。</p>
+
+
+
+
+<pre class="code">my $ua = Mojo::UserAgent-&gt;new;
+my $tx = $ua-&gt;get('http://yapcasia.org/2014/talk/list');
+
+my $talks = [];
+for my $n ( $tx-&gt;res-&gt;dom('div.talk')-&gt;each ) {
+    my $talk = {
+        icon_url =&gt; $n-&gt;at('div.icon a img')-&gt;attr('src'),
+        speaker_name =&gt; $n-&gt;at('div.speaker p.name a')-&gt;text,
+        title =&gt; $n-&gt;at('div.title a')-&gt;text,
+        url =&gt; 'http://yapcasia.org' . $n-&gt;at('div.title a')-&gt;attr('href'),
+    };
+    push @$talks, $talk;
+}
+...;</pre>
+
+
+
+
+<p>ね？簡単でしょ？ちなみにMojo::DOMって初めて使いましたけど (・ω&lt;)</p>
+
+
+
+
+<p>で、今回やってみたのは、トーク情報だけをスクレイピングして、各種SNSのシェアカウントをAPIで叩く。各トークの内容をハッシュ構造にする。トークリストが配列リファレンスになるので、それをJSON形式のファイルとしてダンプ。表示はAngularJSを使ってそのJSONを読み込みませて表にする。という具合です。以下が完成品のスクショ。</p>
+
+
+
+
+<p><img src="http://38.media.tumblr.com/76408758c4e3a9b47a9cffd12488bc8e/tumblr_inline_n8mm15Z1eq1qb2ehr.png" alt="SS"></p>
+
+
+
+
+<p>はてぶ、Twitter、Facebook、トータル別にそれぞれソート出来るので便利〜</p>
+
+
+
+
+<p>基本的に個人用につくったので、Webで公開などはしませんが、ソースは以下に置いてありますので、興味のある方はお使い下され〜</p>
+
+
+
+
+<ul>
+<li><a href="https://github.com/yusukebe/yapcasia2014-talks-social-ranking">https://github.com/yusukebe/yapcasia2014-talks-social-ranking</a></li>
+</ul>
+
+
+
+ 
+}

@@ -1,0 +1,22 @@
+{
+    "data" :  {
+    "title": "IMP入ったなりー。",
+    "date": "2002-09-04 12:16:00 +0900 JST",
+    "dir": "posts/2002/",
+    "slug": "0903151604",
+    "categories": ["tech"],
+    "tags": []
+}
+
+---
+
+
+
+<p>マンセー。すごくいい。ロゴのGIFとか代えちゃった♪ただ1つ気になるのはメールボックスが
+空のときに
+</p>
+<pre class="code">Warning: Mailbox is empty (errflg=1) in Unknown on line 0</pre>
+と軽く怒られる。まぁ問題なく使えるからよしとしよう。
+
+ 
+}

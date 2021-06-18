@@ -1,0 +1,189 @@
+{
+    "data" :  {
+    "title": "Hugoでわりと楽してわりとかっこよくAmazon商品紹介をする",
+    "date": "2020-03-10 15:48:46 +0900 JST",
+    "dir": "posts/2020/",
+    "slug": "amazon-shortcode",
+    "categories": [],
+    "tags": ["Blog","Amazon"]
+}
+
+---
+
+
+Hugoで、ショートコードを使ってかつ、Data Templatesを使わないで、
+Amazon紹介リンクを表示する、というのを試している。
+
+## embed.lyだとAmazon商品ページがうまく埋め込めない
+
+この前、embed.lyで外部コンテンツを埋め込んでいると書いたけど、
+Amazonの商品ページに限ってたまにうまく表示がいかない問題があった。
+
+* [全部、embed.lyで埋め込んでみる - ゆーすけべー日記](https://yusukebe.com/posts/2020/embedly-embed-everything/)
+
+これ、よく考えてみたら、embed.lyがフェッチしているのはAmazon.co.jpのサイト本体である。
+Amazonサイトはどうやら同一クライント、もしくはそれに準ずるもののアクセスが連続で来た場合などエラーを返すことがあるらしい。
+なので、この目的ではProduct Advertising APIを使うのが適している。
+
+## HugoのData Templates？
+
+ただ、Hugoで外部のAPIから得た情報を埋め込む場合、以下の2つの方法を取る必要がある、と思われる。
+どちらもData Templatesと呼ばれる機能である。
+
+* `data`フォルダーの中にJSON or YAML or TOML形式のデータアセットを用意。ロードし描画するためのショートコードを記載、ビルド時にHTMLへ変換させる。
+* データが入ったJSON or CSVをローカルファイルに置く、もしくはAPIサーバを用意する。ビルド時にアクセスが走り、ショートコードのテンプレートルールに従って描画する。
+
+今回の場合、指定したいAmazon商品の情報を都度YAMLやCSVのファイルに書くようにするか、
+商品情報をJSONで吐くProduct Advertising APIのゲートウェイのようなアプリを自作しなきゃいけない。
+
+**これはめんどい**。作ってもいんだけど（作るのは楽しそうだけど）、運用が大変そう。
+そこでわりと楽して、わりとかっこよくAmazon商品の紹介をする方法を考えた。
+
+## Amazon商品を紹介する時に必要な最低限の情報
+
+特に頑張ってアフィリエイトしたいということでもないので、
+最低限、必要な情報はこの2つだった。
+
+* 商品のASIN
+* 商品タイトル
+
+ASINが分かれば、URLルールに則って画像も表示できる。
+本だったら著者名、ガジェットだったらメーカー名なども捨てがたいが、
+とにかくミニマムでやる。
+
+## ショートコードの記載方法
+
+こんなショートコードをMarkdown記事内に書けば、商品リンクが表示されてほしい。
+かつ設定ファイルに書いたアフィリエイトIDを付与したURLへ飛ぶことが望ましい。
+
+{{<rawhtml>}}
+<div class="highlight">
+<pre class="chroma"><code>{{&lt; amazon asin="ASIN" title="商品名" &gt;}}</code></pre>
+</div>
+{{</rawhtml>}}
+
+## 実装する
+
+`layouts/shortcodes/amazon.html`を以下のように書いた。
+`$tag`は`config.toml`に記載したアフィリエイトIDを参照させている。
+Data Templatesを使った実装である[ikemo3/hugo-amazon-jp](https://github.com/ikemo3/hugo-amazon-jp)を参考にさせていただきました。
+
+
+```html
+{{- $tag := .Site.Params.amazonJpAffiliate }}
+{{- $asin := .Get "asin" -}}
+{{- $title := .Get "title" -}}
+<div class="amazon-widget">
+  <a target="_blank" href="https://www.amazon.co.jp/gp/product/{{ $asin }}/?tag={{ $tag }}"></a>
+  <div class="amazon-widget-img">
+    <img src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=JP&ASIN={{ $asin }}&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL350_&tag={{ $tag }}" />
+  </div>
+  <div class="amazon-widget-info">
+    <span class="amazon-widget-title">
+      {{ $title }}
+    </span>
+    <span class="amazon-widget-via">
+      <img src="https://www.amazon.co.jp/favicon.ico" />
+      amazon.co.jp
+    </span>
+  </div>
+</div>
+```
+
+## カードっぽく表示させる
+
+最低限の情報だけなので、いかにそれっぽく見せるかが重要だ。
+Twitterのカードライクなのを目指してみた。
+URLをつぶやくと展開されるアレ。
+以下はTwitter Card Validatorで試している様子（ちなみに、アフィリエイトタグ付きのURLはうまくカード表示してくれない）。
+
+{{< figure src="/images/amazon-shortcode-001.png" alt="Amazonショートコード" >}}
+
+あとは**CSSを頑張る**。これが一番たいへんだった。
+もっと賢いやり方あったら教えて下さい。
+
+```css
+.amazon-widget {
+    margin: 2rem 0;
+    max-width: 480px;
+    position: relative;
+}
+.amazon-widget a {
+    position: absolute;
+    top:0;
+    left:0;
+    height: 100%;
+    width: 100%;
+}
+.amazon-widget-img {
+    border: 1px solid #E1E8ED;
+    border-radius: 15px 15px 0 0;
+    text-align: center;
+ }
+.amazon-widget-img img {
+    border: none;
+    margin: 0 auto;
+    max-height: 200px;
+    padding: 16px;
+}
+.amazon-widget-info {
+    border-right: 1px solid #E1E8ED;
+    border-bottom: 1px solid #E1E8ED;
+    border-left: 1px solid #E1E8ED;
+    padding:5px 10px 10px 10px;
+    border-radius:0 0 15px 15px;
+}
+.amazon-widget:hover .amazon-widget-info {
+    background-color: #E1E8ED;
+}
+.amazon-widget-title {
+    font-weight: bold;
+    display:block;
+}
+.amazon-widget-via {
+    color: #aaa;
+}
+.amazon-widget-via img {
+    border: none;
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    padding: 0;
+    display: inline;
+    vertical-align: text-bottom;
+}
+```
+
+## 完成、試運転
+
+できたので、実際に商品を紹介してみる。どうだ！
+`hover`すると下のタイトル部分だけ背景色が変わるよー。
+
+{{< amazon asin="4041026148" title="完全版 社会人大学人見知り学部 卒業見込 (角川文庫)" >}}
+
+## ブックマークレット
+
+毎回、ASINとタイトルをコピペして〜みたいなことがだるいので、
+Amazon商品ページで実行すれば、値付きショートコードを表示してくれるブックマークレットを作った。
+以下を参考にさせていただきました。
+
+* [hugo-amazon-jp向けのショートコード等を出力するブックマークレット作った - ひびテク](https://yoshikiito.net/blog/archives/hugo-amazon-bookmarklet/)
+
+{{<rawhtml>}}
+<div class="highlight">
+<pre class="chroma"><code>javascript:(function(){var a=document.getElementById("productTitle").textContent,b=document.URL.match("(dp|product)/([0-9a-zA-Z]{10})")[2];window.alert('{{&lt; amazon asin="'+b+'" title="'+a.trim()+'" &gt;}}')})();</pre></code>
+</div>
+{{</rawhtml>}}
+
+## まとめ
+
+というわけで、最近欲しいものの商品リンク貼っておきますね。
+
+{{< amazon asin="4873117127" title="コンピュータシステムの理論と実装 ―モダンなコンピュータの作り方" >}}
+
+{{< amazon asin="B07PYM8BCW" title="Apple Watch Series 5(GPSモデル)- 40mmシルバーアルミニウムケースとホワイトスポーツバンド - S/M & M/L" >}}
+
+{{< amazon asin="B079Z5SXHW" title="Apple iMac Pro (27インチ, Retina 5Kディスプレイモデル, 3.2GHz 8コアIntel Xeon Wプロセッサ)" >}}
+
+ 
+}

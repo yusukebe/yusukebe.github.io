@@ -1,0 +1,23 @@
+{
+    "data" :  {
+    "title": "便利そうなソフトを自作中",
+    "date": "2004-08-15 17:34:00 +0900 JST",
+    "dir": "posts/2004/",
+    "slug": "0815083444",
+    "categories": ["tech"],
+    "tags": []
+}
+
+---
+
+
+
+<p>   この日記のエントリーの編集には<a href="http://yusukebe.com/archives/2004_03_08_235436.php">WB Editorというソフトを使っている</a>のだが、問題は画像のアップ。MovableTypeには画像アップロードのためのフォームがあって、このエントリーみたいに画像が1つとかだったらなんとかなるのだが、<a href="http://yusukebe.com/archives/2004_08_12_120052.php">サマソニ行ったとき</a>みたいに写真が10個以上あると何回もクリックしたりファイルを選んだり大変。サムネイル作成ソフトとファイル転送ソフトの組み合わせ技もなんだかんだいってめんどい。</p>
+<p>   というわけで、MovableType用の画像簡単アップロードソフトを作ろうかと。画像をドラッグすると適当なアーカイブフォルダにサムネールを作成しつつアップしてくれて、その画像を表示するためのHTMLはクリップボードにコピーされるという感じにしようかと。</p>
+<p>   現在作成中。</p>
+<p>   <a href="http://kamawada.com/~yusuke/yusukebe/archives/files/040815/blogImageUp.JPG"><img alt="blogImageUp.JPG" border="0" class="at-xid-6a0133f4781589970b014e8bd73412970d" height="204" src="https://yusukebe.com/archives/a/6a0133f4781589970b014e8bd73412970d-pi.jpg" width="250"></a></p>
+<p>   Visual C# .netという環境で作っております。とりあえずHTTPのPOSTで画像をアップしたり、サムネイルを作る方法がわかったのでなんとかできそう。現在DataSetとかあまり関係ないところで苦戦中。とりあえず今日は作業終了させないとほかの事がなにもできない。。。</p>
+
+
+ 
+}

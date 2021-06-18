@@ -1,0 +1,30 @@
+{
+    "data" :  {
+    "title": "ディレクトリの変更に応じてLESSをコンパイルする",
+    "date": "2013-11-03 07:17:00 +0900 JST",
+    "dir": "posts/2013/",
+    "slug": "1103071700",
+    "categories": ["tech"],
+    "tags": []
+}
+
+---
+
+
+
+<p>ディレクトリを指定して、それ配下の .less ファイルが更新されたら .css へ自動で書き出すって実装が言語に限らずよいのがなかったのであった。そこで自分でスクリプトつくってたんだけど、Songmuさんに気付かされ<a href="http://search.cpan.org/dist/App-watcher/">App::watcher</a>使えばいいじゃん！ってなった。確かにこれでよい。</p>
+
+
+
+
+<pre class="code">$ watcher --dir ./assets -- 'lessc --compile assets/less/bootstrap.less &gt; bootstrap.css'</pre>
+
+
+
+
+<p>App::watcherの万能感ヤバいイイ。tokuhirom++</p>
+
+
+
+ 
+}

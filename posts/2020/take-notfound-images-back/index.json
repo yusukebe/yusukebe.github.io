@@ -1,0 +1,208 @@
+{
+    "data" :  {
+    "title": "過去画像をInternet Archiveで取り戻せ",
+    "date": "2020-03-08 09:27:21 +0900 JST",
+    "dir": "posts/2020/",
+    "slug": "take-notfound-images-back",
+    "categories": [],
+    "tags": ["Blog"]
+}
+
+---
+
+
+年単位前から気になっていたことで、
+この日記で掲載している画像の大半がみれないというものがあった。
+というのも一時期、画像ファイルをすべて`yusukebe.typepad.jp`で配信していたんだけど、
+今では`typepad.jp`は息をしていないし、
+記憶が定かではないけど、
+Typepadで管理していたブログもろとも削除してしまったかもしれないのです。。。
+とにもかくにも、**画像は全部404 Not Foundだし、元画像は手元にない！**
+
+![画像が見当たらない](/images/wayback-001.png)
+
+で、どうしょうと考えた結果、
+**Internet Archiveから頑張ってひっぱってくる**作戦を思いついた。
+
+試しに、今ではNot Foundになってしまっているimgタグのsrc属性値である画像URLのひとつを
+Internet Archiveのフォームに打ち込んだら、
+ちゃんと残っているじゃないか！
+全部試さずとも、だいたい残っているっぽい。
+
+ってことで、作戦決行。
+
+## 行方不明の画像達
+
+404でかつ、手元にない画像達は以下のURLフォーマットで以前は参照できた。
+
+```
+http://yusukebe.typepad.jp/.a/xxxxxxxxxxxxxxxxxxxxxxxx
+```
+
+過去記事すべての中からこのフォーマットのものを抜き出すと、
+なんと1万件以上あった。重複を除くと、4,000件程度。
+ここまで大量なのはMovableTypeからTypepadに移行した際に
+だいぶむりくりやって、不要な外部画像までインポートしたせいだと思わえるが、
+もともとこの日記は画像が多く、とにかく画像が多い。
+
+これをいちいち手作業でやるには当然骨が折れまくる。
+以下の作業が必要となってくる。
+
+1. すべての旧画像URLを抽出、ユニークにする
+2. Internet Archiveに残ってる画像URLをそれぞれ取得する
+3. 画像をダウンロードする
+4. 画像をレポジトリ、GitHub Pagesにアップする
+5. 記事中の旧画像URLを新しいものに書き換える
+
+## Wayback Machine APIを使う
+
+まず、`find`とか`grep`とか`sed`とかで頑張って旧画像URLのリストをとりあえず作成した。
+次にやるのは、このURLにマッチするInternet Archiveに保存されている画像URLを取得することだ。
+
+Internet Archiveには[Weback Machine API](https://archive.org/help/wayback_api.php)というのがある。なみに、Internet Archiveとかが過去のドキュメントを保管し参照できるようにしてることをWayback Machineと呼ぶらしい。
+
+例えば、とある旧画像URLに対応するものがどのようにアーカイブされているかを知るには、
+
+```
+$ curl "http://archive.org/wayback/available?url=https://yusukebe.typepad.jp/.a/6a0133f4781589970b015391e3959c970b-pi"
+```
+
+で、JSONが返ってくる。
+
+```json
+{"url": "https://yusukebe.typepad.jp/.a/6a0133f4781589970b015391e3959c970b-pi", "archived_snapshots": {"closest": {"available": true, "url": "http://web.archive.org/web/20120517020815/http://yusukebe.typepad.jp/.a/6a0133f4781589970b015391e3959c970b-pi", "timestamp": "20120517020815", "status": "200"}}}
+```
+
+ここにある`archived_snapshots->closest->url`を参照すれば、画像ファイルの場所が分かる。
+なので、旧画像URLごとにこのAPIを叩いて、返ってきたURLをリストとして保存するようにする。以下のワンショットのPerlスクリプトでやっつけた。
+
+```perl
+use HTTP::Tinyish;
+use URI;
+use JSON;
+use Path::Tiny;
+
+my $ua = HTTP::Tinyish->new;
+
+my $list = path('list.txt');
+my $result = path('result.txt');
+
+for my $line ($list->lines) {
+    wayback($line);
+}
+
+sub wayback {
+    my $target_url = shift;
+    my $uri = URI->new('http://archive.org/wayback/available');
+    $uri->query_form( url => $target_url );
+
+    my $res = $ua->get($uri);
+    return unless $res->{success};
+
+    my $data = decode_json($res->{content});
+    my $wayback_url = $data->{archived_snapshots}{closest}{url} or return;
+    warn "Append URL: $wayback_url\n";
+    $result->append("$wayback_url\n");
+}
+```
+
+なにせ4,000件あるので、その間にコーヒーがたくさん飲める。
+
+## 画像をダウンロードする
+
+取得すべき画像のURLのリストができたら、ダウンロードする。
+これは`wget`使えば簡単だった。
+
+```
+$ wget -v -i result.txt
+```
+
+## 拡張子を与える
+
+時間はかかったものの、ここまでは順調。
+ただ、問題があって、`typepad.jp`でホストしていたURLには拡張子が付いておらず、
+おのずとダウンロードしたファイル名にも拡張子はつかない。
+これだとGithub Pagesとかでホストする際に、MIME-Typeが適切につかない。
+
+頑張って、画像の中身をみて拡張子をつける。
+
+これもPerlで書いた。`Image::Info`っていうモジュールで画像タイプを判断している。
+ところで、`Path::Tiny`大好き。
+
+```perl
+use Path::Tiny;
+use Image::Info qw/determine_file_format/;
+
+my $dir = path('./static/archives/.a/');
+
+for my $file ($dir->children) {
+    execute($file);
+}
+
+sub execute {
+    my $file = shift;
+    my $path = path($file);
+    my $basename = $path->basename;
+    my $type = determine_file_format($path->slurp);
+    my $ext = 'jpg';
+    if ($type && $type eq 'GIF') {
+        $ext = 'gif';
+    }elsif($type && $type eq 'PNG') {
+        $ext = 'png';
+    }
+    $path->move(sprintf("%s/%s.%s", $dir->absolute, $basename, $ext));
+}
+```
+
+## URLを新しいのに変更する
+
+大量の画像を`git add`してGitHubのレポに`push`。
+これでGitHub Pagesにも反映される。
+
+最後に、記事中の旧URLを新しいURLに書き換える作業。
+ダウンロード済みのファイル名から拡張子を取り除いた文字列とマッチしたURLの箇所をみつけて拡張子つきの新しいURLに書き換えないといけない。
+ちょい複雑なのでこれもPerlで書いた。
+総当り的で雑なのは目をつむる。
+
+```perl
+use File::Find::Rule;
+use Path::Tiny;
+use feature qw/say/;
+
+my @files = File::Find::Rule->file()
+    ->name('*.html')->in('./content/posts');
+my $image_dir = path("./static/archives/.a");
+
+for my $file (@files) {
+    replace($file);
+}
+
+sub replace {
+    my $file = shift;
+    my $path = path($file);
+    my $content = $path->slurp;
+    for my $image ($image_dir->children) {
+        my $basename = $image->basename;
+        my ($name) = $basename =~ m/(.+?)\.(?:\w{3})$/;
+        if ($content =~ s/($name)"/$basename/g) {
+            say "Replace - $file: $name to $basename";
+        }
+    }
+    $path->spew($content);
+}
+```
+
+## 作戦成功
+
+これで画像が、、、
+
+![画像がでた](/images/wayback-002.png)
+
+でた！
+
+一部、Wayback Machineから取得できないものがあったりしたけど、
+3,400件の画像が復活した。わーい。
+Internet Archive様様でございます。
+
+ 
+}

@@ -1,0 +1,207 @@
+{
+    "data" :  {
+    "title": "一人で作る！Webサービスに必要な知識とか能力",
+    "date": "2012-02-16 09:29:00 +0900 JST",
+    "dir": "posts/2012/",
+    "slug": "0216002938",
+    "categories": ["tech"],
+    "tags": ["Technologies"]
+}
+
+---
+
+
+
+<p><a href="http://yusukebe.com/archives/20120215/143118.html">iPhoneアプリの設計</a>や開発に比べるとWebサービスのそれは、
+かなり複雑でやることが多いことに改めて考えました。</p>
+
+<p>Webサービスは個人で小さいものをたくさん作ってきましたし、
+以前技術評論社のWEB+DB PRESSで「<strong>Webサービス[即日]開発 〜思いつきをすぐにカタチに！〜</strong>」
+という30数ページの特集を書かせてもらったことがあります。</p>
+
+<div class="amazlet-box" style="margin-bottom:0px;">
+<div class="amazlet-image" style="float:left;margin:0px 12px 1px 0px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4774140643/kamawada-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/61HrkEt%2BwGL._SL160_.jpg" alt="WEB+DB PRESS Vol.54" style="border: none;"></a></div>
+<div class="amazlet-info" style="line-height:120%; margin-bottom: 10px">
+<div class="amazlet-name" style="margin-bottom:10px;line-height:120%">
+<a href="http://www.amazon.co.jp/exec/obidos/ASIN/4774140643/kamawada-22/ref=nosim/" name="amazletlink" target="_blank">WEB+DB PRESS Vol.54</a><div class="amazlet-powered-date" style="font-size:80%;margin-top:5px;line-height:120%">posted with <a href="http://www.amazlet.com/browse/ASIN/4774140643/kamawada-22/ref=nosim/" title="WEB+DB PRESS Vol.54" target="_blank">amazlet</a> at 12.02.16</div>
+</div>
+<div class="amazlet-detail">和田 裕介 飯塚 慶則 羽生 章洋 高林 哲 小飼 弾 角田 直行 はまちや2 小林 陽介 西田 圭介 藤澤 瑞樹 西林 孝 加藤 幹生 木村 俊也 森田 創 鶴岡 直也 川口 耕介 ミック 伊藤 直也 武者 晶紀 <br>技術評論社 <br>売り上げランキング: 299828<br>
+</div>
+<div class="amazlet-sub-info" style="float: left;"><div class="amazlet-link" style="margin-top: 5px"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4774140643/kamawada-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jp で詳細を見る</a></div></div>
+</div>
+<div class="amazlet-footer" style="clear: left"></div>
+</div>
+
+
+<p><br></p>
+
+<p>僕にはそれなりの経験と知識があるのかもしれませんね。てへぺろ</p>
+
+<p>
+<img alt="hitori.jpg" src="http://yusukebe.com/archives/2012/02/16/hitori.jpg" width="320" height="239" class="mt-image-none" style="">
+</p>
+
+
+<p>そこで、特に個人とか小さな規模のチームでWebサービスを作っていくために必要な知識を、
+開発のプロセス順に、それぞれ短く紹介します。ちなみに、ググったら同じようなテーマの記事がいくつか出てきたけど、
+なんか「足りてない感」がしたのでBlogに残そうかなぁと。
+また予め伝えておきますが、より詳しいお話は<a href="http://www.mag2.com/m/0001426750.html">メルマガ</a>の方で
+掲載していきたいと思います。</p>
+
+<p>では行ってみよう！</p>
+
+<hr>
+
+<p><br></p>
+
+<h3>1. 準備</h3>
+
+<p>「Webサービスを作ろう！」と思い立って、いきなりコードを書き始めることはできません。
+準備をしましょう。そのためには最低限以下の4つの能力とか知識が必要だったり、
+経験すると身についていきます。</p>
+
+<ul>
+<li>マーケティング</li>
+<li>発想力</li>
+<li>調査</li>
+<li>設計</li>
+</ul>
+
+
+<p>実はこの準備ってのが注目すべき点で、ついつい「どうやって作るのか」に目が行きがちですが
+Webサービスにおいて「何を作るのか」が一番大切だったりします。</p>
+
+<p><strong>マーケティング</strong>や<strong>発想力</strong>はその起点になります。少なからずあなたが誰かに使ってもらいたいサービスを
+作りたいならば、対抗サービスやユーザーについて調べなくてはいけません。
+また、アイデアの作り方のコツを覚えておくといいでしょう。以下の題名ずばりの本がオススメです。
+30分くらいで読めちゃう薄い本です。</p>
+
+<div class="amazlet-box" style="margin-bottom:0px;">
+<div class="amazlet-image" style="float:left;margin:0px 12px 1px 0px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4484881047/kamawada-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/518JGHMGRAL._SL160_.jpg" alt="アイデアのつくり方" style="border: none;"></a></div>
+<div class="amazlet-info" style="line-height:120%; margin-bottom: 10px">
+<div class="amazlet-name" style="margin-bottom:10px;line-height:120%">
+<a href="http://www.amazon.co.jp/exec/obidos/ASIN/4484881047/kamawada-22/ref=nosim/" name="amazletlink" target="_blank">アイデアのつくり方</a><div class="amazlet-powered-date" style="font-size:80%;margin-top:5px;line-height:120%">posted with <a href="http://www.amazlet.com/browse/ASIN/4484881047/kamawada-22/ref=nosim/" title="アイデアのつくり方" target="_blank">amazlet</a> at 12.02.16</div>
+</div>
+<div class="amazlet-detail">ジェームス W.ヤング <br>阪急コミュニケーションズ <br>売り上げランキング: 407<br>
+</div>
+<div class="amazlet-sub-info" style="float: left;"><div class="amazlet-link" style="margin-top: 5px"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4484881047/kamawada-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jp で詳細を見る</a></div></div>
+</div>
+<div class="amazlet-footer" style="clear: left"></div>
+</div>
+
+
+<p><br></p>
+
+<p>作りたいものが決まったら<strong>調査</strong>をしましょう。特に<strong>技術的なこと</strong>についてです。
+ここで言う技術というのは、「自分が作りたいことが世の中の利用可能な技術で実現できるか？」を意味します。
+その際に「自分のスキル」と「世の中の技術」を分けて考えるといいでしょう。
+アイデアを実現するために「利用可能な技術が無い」ケースはあきらめればいいですし、
+「あるけれども自分にスキルがない」ケースは頑張ればいいのです。</p>
+
+<p><strong>設計</strong>は紙に書いちゃうくらい簡素なもので最初はいいかもです。個人個人のスタイルがあるので。
+<strong>ユースケース</strong>という「ユーザーがシステムに対して振る舞う行為」を図にすることと、
+<strong>扱うデータには何があるのか</strong>を列挙して構造化することは最低限行います。</p>
+
+<p><br></p>
+
+<h3>2. 開発</h3>
+
+<p>いよいよ開発です。Perl、Python、Ruby、PHP... 何を使うにしろ以下の知識が必要になると思います。</p>
+
+<ul>
+<li>言語に対する理解</li>
+<li>WAF</li>
+<li>DB</li>
+<li>フロントエンド</li>
+<li>セキュリティ</li>
+</ul>
+
+
+<p><strong>言語に対する理解</strong>は当然必要です。いきなりWebアプリを作って学ぶよりも、
+僕はコマンドラインのスクリプトを使って勉強したりしました。
+たった以下のコマンドラインのスクリプトでもWebサービスではたまに使う「クローラー」の機能を果たしていますし、
+とはいえ、言語に対する理解（構文、データ表現、ライブラリの利用など）がなくては書けないものです。</p>
+
+<pre class="code">use strict;
+use warnings;
+use LWP::UserAgent;
+
+my $url = $ARGV[0];
+my $ua = LWP::UserAgent-&gt;new;
+my $res = $ua-&gt;get($url);
+my ($title) = $res-&gt;decoded_content =~ m!&lt;title&gt;(.+?)&lt;/title&gt;!i;
+print "$title\n";</pre>
+
+
+<p><br></p>
+
+<p>安全で効率的に開発を進めるにはWeb Application Framework（<strong>WAF</strong>）を使うのが基本です。
+ドキュメントをしっかり読んで、サンプルを動かしてみましょう。そういえば、
+その際には<strong>英語の理解</strong>も必要ですね。プログラミング関係の英語って、ソースコードがよく出てくるので、
+そこまで把握するのが難しくないのがよいですね。</p>
+
+<p>そのサービスがデータを永続的に保存したいのであれば、<strong>DB</strong>の知識も必要です。また、
+<strong>フロントエンド</strong>と言ってHTMLやCSS、JavaScriptも書かなくてはいけないと思います。
+このあたりはやりながらWebのリソースや本を見て学ぶのがいいと思いますね。</p>
+
+<p>最後に<strong>セキュリティ</strong>に関してですが、これはフレームワークやライブラリの利用である程度防げるものもあれば、
+うっかりしてしまう部分もあるので、学んだ方がよいです。徳丸さんの本が今ならオススメです。</p>
+
+<div class="amazlet-box" style="margin-bottom:0px;">
+<div class="amazlet-image" style="float:left;margin:0px 12px 1px 0px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4797361190/kamawada-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/41lX6Fg5KpL._SL160_.jpg" alt="体系的に学ぶ 安全なWebアプリケーションの作り方　脆弱性が生まれる原理と対策の実践" style="border: none;"></a></div>
+<div class="amazlet-info" style="line-height:120%; margin-bottom: 10px">
+<div class="amazlet-name" style="margin-bottom:10px;line-height:120%">
+<a href="http://www.amazon.co.jp/exec/obidos/ASIN/4797361190/kamawada-22/ref=nosim/" name="amazletlink" target="_blank">体系的に学ぶ 安全なWebアプリケーションの作り方　脆弱性が生まれる原理と対策の実践</a><div class="amazlet-powered-date" style="font-size:80%;margin-top:5px;line-height:120%">posted with <a href="http://www.amazlet.com/browse/ASIN/4797361190/kamawada-22/ref=nosim/" title="体系的に学ぶ 安全なWebアプリケーションの作り方　脆弱性が生まれる原理と対策の実践" target="_blank">amazlet</a> at 12.02.16</div>
+</div>
+<div class="amazlet-detail">徳丸 浩 <br>ソフトバンククリエイティブ <br>売り上げランキング: 2444<br>
+</div>
+<div class="amazlet-sub-info" style="float: left;"><div class="amazlet-link" style="margin-top: 5px"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4797361190/kamawada-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jp で詳細を見る</a></div></div>
+</div>
+<div class="amazlet-footer" style="clear: left"></div>
+</div>
+
+
+<p><br></p>
+
+<p><br></p>
+
+<h3>3. 運用</h3>
+
+<p>自分のマシンだけで動かしているアプリをいよいよ運用環境へと移します（配置＝<strong>デプロイ</strong>と言います）。</p>
+
+<ul>
+<li>サーバ</li>
+<li>プロモーション</li>
+<li>負荷対策</li>
+</ul>
+
+
+<p>どこの<strong>サーバ</strong>を使うのかは結構悩ましいところ。ですが、昔よりかかなり環境はよくなっています。
+Google App EngineやdotcloudなどのPaaSなサービスもありますし、もちろんさくらやLinodeのVPSもあります。
+比較的安いお値段からサーバを利用できるのではないでしょうかね。
+で、もちろんその際にはLinux/Unixの知識も必要になってきますのでそれもある程度知らなきゃですね。</p>
+
+<p><strong>プロモーション</strong>と書いてるのは広告代理店がやるような大々的なものじゃなくって、
+TwitterとかBlogとかでの発信も含めたものです。
+僕はプレスリリースを個人名で結構出します。ITMediaやTechCrunchなどの大手メディアのメールアドレスに直接、
+文面をメールします。ちなみにプレスリリース専門の配信会社もありますが、あまり効果的じゃないので、
+オススメはあんまりできないっすね。</p>
+
+<p>サービスに人気が出たり、パフォーマンスを改善したい時は<strong>負荷対策、チューニング</strong>を行いましょう。
+MySQLでしたらインデックスの見直し、memcachedなどによるコンテンツのキャッシュ、
+JobQueueを利用した非同期処理などが考えられます。
+今だと、mixiやDeNAなど大規模なサービスの負荷対策ドキュメントが出ているので、規模は違いますが、
+何かしらの参考になるかもしれません。</p>
+
+<hr>
+
+<p><br></p>
+
+<p>以上、なんかまだまだ足りてない気がしますが、僕が今のところ思い浮かぶ最低限はこんな感じですね。
+Webサービスの開発はやることが多い分、すごく勉強になりますし、楽しい部分が多いです。
+再びになりますが、
+<a href="http://www.mag2.com/m/0001426750.html">メルマガ</a>ではより深くこれらWebサービスのつくり方を掘り下げていきたいと思います。</p>
+
+
+ 
+}

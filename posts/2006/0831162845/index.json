@@ -1,0 +1,20 @@
+{
+    "data" :  {
+    "title": "Store::DBICでentryのpermalinkも保存させるように修正",
+    "date": "2006-09-01 01:28:00 +0900 JST",
+    "dir": "posts/2006/",
+    "slug": "0831162845",
+    "categories": ["tech"],
+    "tags": ["Perl"]
+}
+
+---
+
+
+<p>
+  今夜もPlagger関係。feature-serverというbranchesにあるPlugin、<a href="http://plagger.org/trac/browser/branches/feature-server/plagger/lib/Plagger/Plugin/Store/DBIC.pm">Store::DBIC</a>を使えば、フィード情報をデータベースに保存できる。今のところsqliteで保存できることを確認(nfsでマウントした場所でsqliteのdbを作ろうとするとlockedなんちゃらで怒られるのが不満)。これを使って、Plagger→db→Catalystというのをたくらんでいてまたもや<del>エロエロ</del>イロイロできそう。
+  今のバージョンだとStore::DBICで保存できるentryのプロパティにpermalinkがないので修正。ただただ、permalinkの文字を追加しただけですが、以下diff -u 。
+</p>
+
+ 
+}

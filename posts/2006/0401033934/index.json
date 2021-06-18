@@ -1,0 +1,39 @@
+{
+    "data" :  {
+    "title": "鎌倉山の桜トンネル",
+    "date": "2006-04-01 12:39:00 +0900 JST",
+    "dir": "posts/2006/",
+    "slug": "0401033934",
+    "categories": ["tech"],
+    "tags": []
+}
+
+---
+
+
+
+<p>
+  俺が住んでいる鎌倉山は春になると、桜のトンネルができる。
+  昨日ふらっと車でそのトンネルをくぐってきた。
+</p>
+<p>
+  <img alt="鎌倉山の桜トンネル" class="at-xid-6a0133f4781589970b015391e3825b970b" src="https://yusukebe.com/archives/a/6a0133f4781589970b015391e3825b970b-pi.jpg">
+  <img alt="鎌倉山の桜トンネル" class="at-xid-6a0133f4781589970b015391e3826d970b" src="https://yusukebe.com/archives/a/6a0133f4781589970b015391e3826d970b-pi.jpg">
+</p>
+<p>
+  くねくねとした軽い山道にかかる桜のトンネルをくぐると、ほんと桜のピンクをダイレクトに感じれて贅沢な気分にさせてくれる。
+  鎌倉山の名物のひとつです。近くに来るチャンスがあれば是非くぐってみてください。
+</p>
+<h4>おまけ: 鎌倉山の桜トンネルFlash</h4>
+
+<object align="middle" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,0,0" height="150" id="sakura" width="200">
+<param name="allowScriptAccess" value="sameDomain">
+<param name="movie" value="http://kamawada.com/~yusuke/yusukebe/archives/files/060331/sakura.swf">
+<param name="quality" value="high">
+<param name="bgcolor" value="#000000">
+<embed align="middle" allowscriptaccess="sameDomain" bgcolor="#000000" height="150" name="sakura" pluginspage="http://www.macromedia.com/go/getflashplayer" quality="high" src="http://kamawada.com/~yusuke/yusukebe/archives/files/060331/sakura.swf" type="application/x-shockwave-flash" width="200"></embed>
+</object>
+
+
+ 
+}

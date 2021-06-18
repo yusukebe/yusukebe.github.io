@@ -1,0 +1,99 @@
+{
+    "data" :  {
+    "title": "PerlベースのWebアプリ作成を「委譲」する際のスキルチェックリスト20！",
+    "date": "2013-10-03 18:56:00 +0900 JST",
+    "dir": "posts/2013/",
+    "slug": "1003095639",
+    "categories": ["tech"],
+    "tags": ["Perl","Technologies"]
+}
+
+---
+
+
+
+<p>え〜とあるアプリのバックエンドを僕一人が書いてるのですが、
+さすがにキツくなってきたので大工事をして「楽に」分業出来るようにしています。
+その構成はちょいと置いといて〜 ウマく行けば「とある部分」を誰かに任せることになりますよね。
+すると「弊社は（そのための）エンジニア募集中です！」という展開をご期待かもしれませんが、
+もう既にアサインが済んだので「弊社はエンジニアを募集しておりません！」すいません... m(__)m</p>
+
+<p>本来ならばその「とある部分」の実装においては僕がメインで使っているPerlじゃなくても、
+PHPでもRubyでもPythonでもなんでも良かったのですが、
+当の担当する方が「Perl書けます」とのことで「じゃあPerlでいこう」という展開になってます...</p>
+
+<p>ただ、全然、彼のスキルセットをまだ分かってないので、これから話すという段階なんすよね...
+そこで、僕、人事的なこととかやったことないので、なんとも言えないかもしれませんが、
+とりあえず「ピンポイントで求めている」能力といいますか経験をピックアップしてみました。
+うんで、足りない部分があれば僕が補いつつ、やっていこうかと！そしたら結果、
+チェックリスト的に使える20個にまとまったのでどうせならってことで共有してみますね。
+タイトルにもある通り「PerlベースのWebアプリ」をつくるのに確認したい点が列挙されてます。
+が、僕らがこれからつくる「とある部分」に関して特化しているので一般的ではない点もあることはご考慮してください！</p>
+
+<hr>
+
+<p><br></p>
+
+<ol>
+<li>HTML/CSS/JSが無理なく書ける</li>
+<li>Perlのプリミティブなデータ表現、つまりスカラー、配列、ハッシュを理解している</li>
+<li>リファレンスを使いこなして複雑なデータを表現したり操作出来る</li>
+<li>bless関数によるオブジェクト作成とMoose/Mouse/Mooの使用</li>
+<li>システムPerlではなくperlbrewもしくはplenvでコンパイルしたperlを利用している</li>
+<li>cpanシェルではなくcpanmでモジュールをインストールしている</li>
+<li>PSGIについてアプリの返却値が配列リファレンスである等、仕様についておおよそ知ってる</li>
+<li>.psgiファイルを書いてPlack::Middleware::*を使った経験がある</li>
+<li>Catalyst/Mojolicious/Amon2などWeb Application Frameworkを使ったアプリ制作経験</li>
+<li>Cartonの利便性について語れる</li>
+<li>URI/LWP::UserAgent/JSONあたりのモジュールを組み合わせWeb APIを利用出来る</li>
+<li>PSGI互換サーバによる本番環境の構築、デーモン化</li>
+<li>nginx+リバースプロキシなどによるフロント+アプリサーバ構成をつくれる</li>
+<li>静的コンテンツ配信の最適化、フロントエンドのチューニングが出来る</li>
+<li>MySQL/memcachedの環境構築、運用経験</li>
+<li>何らかの形でMySQL/memcachedをPerlコードで利用出来る</li>
+<li>TAPを理解しTest::Moreを使ったことがある</li>
+<li>Amazon AWSに対して例えばec2など、経験とノウハウを多少でも持っている</li>
+<li>GearmanなどのJob Queueを使用して非同期という概念を把握している</li>
+<li>最低限のGitコマンドを理解している</li>
+</ol>
+
+
+<hr>
+
+<p><br></p>
+
+<p>まぁ、あとは僕の本2つを読んでもらえるといいかも！</p>
+
+<div class="amazlet-box" style="margin-bottom:0px;">
+<div class="amazlet-image" style="float:left;margin:0px 12px 1px 0px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4774154075/kamawada-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/51jdbeo%2BrmL._SL160_.jpg" alt="Webサービスのつくり方 ~「新しい」を生み出すための33のエッセイ (Software Design plus)" style="border: none;"></a></div>
+<div class="amazlet-info" style="line-height:120%; margin-bottom: 10px">
+<div class="amazlet-name" style="margin-bottom:10px;line-height:120%">
+<a href="http://www.amazon.co.jp/exec/obidos/ASIN/4774154075/kamawada-22/ref=nosim/" name="amazletlink" target="_blank">Webサービスのつくり方 ~「新しい」を生み出すための33のエッセイ (Software Design plus)</a><div class="amazlet-powered-date" style="font-size:80%;margin-top:5px;line-height:120%">posted with <a href="http://www.amazlet.com/" title="amazlet" target="_blank">amazlet</a> at 13.10.03</div>
+</div>
+<div class="amazlet-detail">和田 裕介 <br>技術評論社 <br>売り上げランキング: 58,406<br>
+</div>
+<div class="amazlet-sub-info" style="float: left;"><div class="amazlet-link" style="margin-top: 5px"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4774154075/kamawada-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jpで詳細を見る</a></div></div>
+</div>
+<div class="amazlet-footer" style="clear: left"></div>
+</div>
+
+
+<p><br></p>
+
+<div class="amazlet-box" style="margin-bottom:0px;">
+<div class="amazlet-image" style="float:left;margin:0px 12px 1px 0px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B00BU7DBIA/kamawada-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/41aw6M2z7eL._SL160_.jpg" alt="Perlについて語ろう" style="border: none;"></a></div>
+<div class="amazlet-info" style="line-height:120%; margin-bottom: 10px">
+<div class="amazlet-name" style="margin-bottom:10px;line-height:120%">
+<a href="http://www.amazon.co.jp/exec/obidos/ASIN/B00BU7DBIA/kamawada-22/ref=nosim/" name="amazletlink" target="_blank">Perlについて語ろう</a><div class="amazlet-powered-date" style="font-size:80%;margin-top:5px;line-height:120%">posted with <a href="http://www.amazlet.com/" title="amazlet" target="_blank">amazlet</a> at 13.10.03</div>
+</div>
+<div class="amazlet-detail">和田裕介 (2013-03-13)<br>売り上げランキング: 3,260<br>
+</div>
+<div class="amazlet-sub-info" style="float: left;"><div class="amazlet-link" style="margin-top: 5px"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B00BU7DBIA/kamawada-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jpで詳細を見る</a></div></div>
+</div>
+<div class="amazlet-footer" style="clear: left"></div>
+</div>
+
+
+
+ 
+}

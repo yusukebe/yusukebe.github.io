@@ -1,0 +1,23 @@
+{
+    "data" :  {
+    "title": "Powerbookメモリ増設、ストリーミングサーバーとして使いたい",
+    "date": "2004-01-27 12:35:00 +0900 JST",
+    "dir": "posts/2004/",
+    "slug": "0126153542",
+    "categories": ["tech"],
+    "tags": []
+}
+
+---
+
+
+
+<p>Powerbookのメモリが６４０MBになった。<br>
+いまいちリソースがあまり気味なので、<a href="http://netwarp.ddo.jp/qt/darwin.html">DarwinStreamingServer</a>でも入れてエンターテイメントサーバーにしようと検討中。</p>
+
+<p>追記<br>
+<a href="http://www.fan.gr.jp/~sakai/vnc.html">VNCサーバー</a>にすりゃいいんじゃん？</p>
+
+
+ 
+}

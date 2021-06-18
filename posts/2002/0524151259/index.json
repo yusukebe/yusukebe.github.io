@@ -1,0 +1,19 @@
+{
+    "data" :  {
+    "title": "w3m",
+    "date": "2002-05-25 12:12:00 +0900 JST",
+    "dir": "posts/2002/",
+    "slug": "0524151259",
+    "categories": ["tech"],
+    "tags": []
+}
+
+---
+
+
+<p>Cygwinでw3mを使ってみる。日本語表示がちゃんとできてなかなかよい。普通に読みやすいし。<br>
+ちょっとマスターしよ。<br>
+<a href="http://w3m.sourceforge.net/" target="_new">http://w3m.sourceforge.net/</a></p>
+
+ 
+}

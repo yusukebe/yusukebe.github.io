@@ -1,0 +1,23 @@
+{
+    "data" :  {
+    "title": "digitention勉強会やります",
+    "date": "2004-03-15 04:51:00 +0900 JST",
+    "dir": "posts/2004/",
+    "slug": "0314195142",
+    "categories": ["tech"],
+    "tags": []
+}
+
+---
+
+
+
+<p></p>
+<p>   <a href="http://www.digitention.com/">digitention</a>の勉強会を<a href="http://www.digitention.com/benkyo/network/">以前やったネットワーク講習会</a>より1年半ぶりに本日開催します。今回はFlash勉強会です。まだテキスト作ってないけどこんな感じ。</p>
+<p>   <strong>目的<br>   </strong>それぞれ経験値がばらばらの受講生であるが、このFlash勉強会を通して<br>   ・「初めてのアニメーション制作」<br>   ・「初めてのプログラミング」<br>   ・「初めてのオブジェクト指向」<br>   を少なからず経験する。<br>   さらに、勉強会内のFlashコンテンツ制作を通して「自分にとってほしいもの」を自分で作り上げる楽しさ（プラプリ-Practical Application,2003,Yusuke   Wada @ okude lab）を体験する。</p>
+<p>   <strong>進め方</strong>   <br>   講師であるユッケの講義を中心に行う。講義はユッケが一方的に話す形式ではなく、実際にFlashを使いながら講義を進めていく。また、講義後半からはコンテンツ制作を講義とともに進め勉強会が終わる頃には各自ひとつのコンテンツ、もしくはアプリケーションを作り終えているはずである。</p>
+<p>   内容<br>   ・Flashとは？<br>   ・Flashでできること<br>     ユッケの過去の制作より<br>      Yellowイントロムービー<br>      笛田radio<br>      ムービー倶楽部<br>      boke today<br>      オンテナリーダー<br>     tomob<br>     VACUUN!<br>     vacuunGG<br>   ・アニメーション<br>    拡大<br>    移動<br>     透明など<br>   ・アクションスクリプトプログラミング<br>    関数<br>   ・Flashにおける有効なオブジェクト指向<br>     ムービークリップ、ライブラリ<br>     インスタンス<br>     ムービークリップの1フレーム目にアクションスクリプトを</p>
+
+
+ 
+}

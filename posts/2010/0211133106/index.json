@@ -1,0 +1,82 @@
+{
+    "data" :  {
+    "title": "FriendFeedに流れてきたTumblrの画像をだら見できるTumblr Photo Streamってのを作ったよ",
+    "date": "2010-02-11 22:31:00 +0900 JST",
+    "dir": "posts/2010/",
+    "slug": "0211133106",
+    "categories": ["tech"],
+    "tags": []
+}
+
+---
+
+
+
+<p>
+FriendFeedでキーワード検索してだらだらエントリが流れてくるのみるのって楽しいですよね。
+でも、Tumblrの画像だったらでっかく見たい！
+というかTumblrの画像だけ見たい！
+ということで、FriendFeedのRealTime APIを試すついでに、
+JSオンリーでそんなの作ってみたよ。
+名付けて「<a href="http://tumblr-stream.s3.amazonaws.com/index.html">Tumblr Photo Stream</a>」。Amazon S3にデプロイしました。
+jQuery使ったJSのソース部分はこんな感じです。
+</p>
+
+<pre class="brush: perl"> $(document).ready(function(){
+  var url = "http://friendfeed-api.com/v2/search?q=service%3Atumblr&amp;callback=?";
+  loadFF(url);
+});
+
+function loadFF(url){
+  $.getJSON(url,
+  function(data) {
+    var entries = new Array();
+    $.each(data.entries,function(){
+      if( this.thumbnails &amp;&amp; this.thumbnails[0].url.match(/tumblr\.com/) ){
+        entries.push(this);
+      }
+    });
+    if( entries.length ){
+      showEntry(entries);
+    }
+    var cursor = '';
+    if( data.realtime ){
+      cursor = data.realtime.cursor;
+    }
+    var url = "http://friendfeed-api.com/v2/updates/search?q=service%3Atumblr&amp;cursor="
+     + cursor + "&amp;callback=?";
+    loadFF(url);
+  });
+}
+
+function showEntry(entries){
+  var entry = entries.pop();
+  var photoUrl = entry.thumbnails[0].url.replace("_75sq","_400");
+  var a = $("&lt;a/&gt;");
+  a.attr('href',entry.url).attr('target','_blank');
+  var img = $("&lt;img/&gt;");
+  a.append(img.attr('src',photoUrl));
+  var p = $("&lt;p/&gt;");
+  p.html(entry.body);
+  var div = $("&lt;div/&gt;");
+  div.append(a).append(p).addClass("entry").hide();
+  $("#panel").prepend(div);
+  div.animate({
+    "height": "toggle", "opacity": "toggle"
+  }, 1000,
+  function(){
+    if(entries.length){ showEntry(entries); }
+  });
+}</pre>
+<p>
+よかったらだら見してみてください。
+</p>
+<ul>
+  <li>
+<span class="hatena-bookmark-title"><a href="http://tumblr-stream.s3.amazonaws.com/index.html">Tumblr Photo Stream</a></span> <span class="hatena-bookmark-users"><a href="http://b.hatena.ne.jp/entry/tumblr-stream.s3.amazonaws.com/index.html"><img alt="Tumblr Photo Stream" class="at-xid-6a0133f4781589970b014e8bd751ea970d" src="https://yusukebe.com/archives/a/6a0133f4781589970b014e8bd751ea970d-pi.gif" title="Tumblr Photo Stream"></a></span>
+</li>
+</ul>
+
+
+ 
+}

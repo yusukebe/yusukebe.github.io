@@ -1,0 +1,22 @@
+{
+    "data" :  {
+    "title": "トラックバックを正常に受け付けない不具合を解消",
+    "date": "2005-12-24 20:44:00 +0900 JST",
+    "dir": "posts/2005/",
+    "slug": "1224114426",
+    "categories": ["tech"],
+    "tags": []
+}
+
+---
+
+
+
+<p>トラックバックを送ると</p>
+<pre class="code">HTTP error: 403 Throttled </pre>
+<p>というエラーが出て正常に受け付けない不具合があったので、ogawaさんの<a href="http://as-is.net/blog/archives/001053.html">MT 3.2日本語版Unofficial Patch</a>を当てて解消しました。
+</p>
+
+
+ 
+}

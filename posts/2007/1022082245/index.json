@@ -1,0 +1,90 @@
+{
+    "data" :  {
+    "title": "札コラメーカーをリリースしました",
+    "date": "2007-10-22 17:22:00 +0900 JST",
+    "dir": "posts/2007/",
+    "slug": "1022082245",
+    "categories": ["tech"],
+    "tags": ["Perl"]
+}
+
+---
+
+
+
+<p>
+  ゆーすけべー ( yusukebe ) は実験サイト <a href="http://pulpsite.net/">pulpsite.net</a> にて、
+  お札に描かれている人物の顔と写真に写っている顔とを取り替えて遊ぶことができるサービス
+  <strong>札コラメーカー</strong> ( <a href="http://pulpsite.net/satsucolla/">pulpsite.net/satsucolla/</a> ) を、
+  2007年10月22日より開始いたしました。
+</p>
+<p>
+  <a href="http://pulpsite.net/satsucolla/">札コラメーカー</a><br>
+  <a href="http://pulpsite.net/satsucolla/">
+    <img alt="札コラメーカー" class="at-xid-6a0133f4781589970b014e8bd74b87970d" src="https://yusukebe.com/archives/a/6a0133f4781589970b014e8bd74b87970d-pi.jpg">
+  </a>
+</p>
+
+<p>
+  札コラメーカーでは、ネット上の写真のURLを入力もしくは、
+  キーワードで検索した結果の画像を選択するなどして写真を指定し、
+  その写真にて顔が検出されれば、1000円札・5千円札・1万円札にそれぞれ描かれている
+  野口英世・樋口一葉・福沢諭吉などの顔と取り替えることできる、
+  「札コラ」を簡単に作ることできるサービスです。
+  詳細につきましては札コラメーカーサイトの「<a href="http://pulpsite.net/satsucolla/about">札コラメーカーとは</a>」をご覧ください。
+</p>
+
+<p>
+  札コラメーカーを使うと例えば、俺の全身写真がこんな感じにユキチナイズドされます。
+</p>
+<p>
+  <img alt="ユキチナイズド" class="at-xid-6a0133f4781589970b014e8bd74b95970d" src="https://yusukebe.com/archives/a/6a0133f4781589970b014e8bd74b95970d-pi.jpg">
+  <img alt="ユキチナイズド" class="at-xid-6a0133f4781589970b014e8bd74ba3970d" src="https://yusukebe.com/archives/a/6a0133f4781589970b014e8bd74ba3970d-pi.jpg">
+</p>
+<p>
+  さて、「札コラ」という発想がでてきた経緯ですが、
+  ネットの界隈で有名なYappoさんがUstreamで札コラをはじめて、
+  一瞬だが空前の札コラブームが起こって若干それにインスパイアされて作ったという経緯もあります。
+  ( 参考: <a href="http://www.flickr.com/photo_zoom.gne?id=1408359626&amp;size=o">Flickr Photo Download: とんでもないオサツ</a> )。
+  ですが、実はタイミングを同じくして、
+  俺が以前所属していた奥出研の合宿に<a href="http://yusukebe.com/archives/07/09/23/152051.html">OB達が乗り込むという開発合宿</a>が1ヶ月ほど前にあって、
+  その時に「何作ろうか」とでてきたアイデアがこの札コラだったのです。
+  アイデアが出る前には、「出てこないよー」と悶々していて、俺がシエスタ( 昼寝 )して起きたらいつの間にか
+  「札コラ」の話で盛り上がっていました。
+  じゃあなんでその面子の中で、札コラという発想が出てきたのかというと、
+  今からさかのぼること4年以上前、<a href="http://kamadango.com">鎌団子</a>と一緒に友達の顔をいじくって「友達アイコラ」なるものを作りました ( 参考: <a href="http://yusukebe.com/archives/03/05/13/000228.html">ゆーすけべー日記: 友達アイコラ</a> ) 。その時にやたら面白かった記憶が鎌団子にあって、そこから「ぽんっ」とアイデアが出たようですね。
+</p>
+<p>
+  ところで、このサービス、権利的にかなり限りなく黒に近いグレーな代物です。
+  著作権しかり、肖像権しかり…。
+  しかし、とりあえず面白いので今のところは公開、ということで皆さん利用してください。
+</p>
+<p>
+  作り方としては簡単なもので、OpenCVを使っている<a href="http://search.cpan.org/~jiro/Image-ObjectDetect-0.11/lib/Image/ObjectDetect.pm">Image::ObjectDetect</a>で顔検出して、マスクで樋口一葉さんとかの顔をのっけっています。
+  プログラミング的な難しさより、そのマスクの一葉さんの顔とかを切り抜いて、顔周辺のアルファを下げたりするフォトショップ的な作業の方が大変でしたね。
+  あと、個人的な話ですが、今回から本格的にSubversionとTracを使い出しました。
+  慣れないところがありますが、これだと本番環境とテスト環境を簡単に分けて開発できたりして便利ですね。
+</p>
+<p>
+  ま、てな感じでたびたび申し上げますが、みなさん、札コラメーカー、よろしければ楽しんでください。
+</p>
+<ul>
+  <li><a href="http://pulpsite.net/satsucolla/">札コラメーカー</a></li>
+  <li>
+    <a href="http://b.hatena.ne.jp/append?http://pulpsite.net/satsucolla/">
+      <img alt="このエントリーをはてなブックマークに追加" class="at-xid-6a0133f4781589970b015435b6ee05970c" src="https://yusukebe.com/archives/a/6a0133f4781589970b015435b6ee05970c-pi.gif"></a>
+    <a href="http://b.hatena.ne.jp/entry/http://pulpsite.net/satsucolla/">
+      <img alt="このエントリーを含むはてなブックマーク" class="at-xid-6a0133f4781589970b015435b6ee0f970c" height="12" src="https://yusukebe.com/archives/a/6a0133f4781589970b015435b6ee0f970c-pi.gif" title="このエントリーを含むはてなブックマーク" width="16"></a>
+    <a href="http://b.hatena.ne.jp/entry/http://pulpsite.net/satsucolla/">
+      <img alt="" class="at-xid-6a0133f4781589970b015435b6ee18970c" src="https://yusukebe.com/archives/a/6a0133f4781589970b015435b6ee18970c-pi.gif">
+    </a>
+  </li>
+</ul>
+<h4>追記</h4>
+<p>
+  英世・一葉・諭吉・ルー・タモリ以外に、この人の顔をコラ素材したらおもろいんじゃないかなーって思った人は顔写真を探してURLを教えてくれたら、挑戦してみたいと思います。コメントもしくは yusuke (at) kamawada.com でうけつけまーす。
+</p>
+
+
+ 
+}

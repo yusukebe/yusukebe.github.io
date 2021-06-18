@@ -1,0 +1,259 @@
+{
+    "data" :  {
+    "title": "RakuのType CheckとGradual Typingについて",
+    "date": "2020-01-22 06:12:39 +0900 JST",
+    "dir": "posts/2020/",
+    "slug": "raku-typecheck",
+    "categories": [],
+    "tags": ["Raku"]
+}
+
+---
+
+
+[YAPC::Kyoto](https://yapcjapan.org/2020kyoto/)
+のタイムテーブルが発表された。
+[Raku(Perl6)初心者のNativeCallを使った全文検索ライブラリー作成日記](https://yapcjapan.org/2020kyoto/timetable.html#/detail/27)
+を聞きたいな〜と思ったら、
+裏が[マコピー](https://twitter.com/mackee_w)の
+[かんたん静的型付けPerlへの道のり](https://yapcjapan.org/2020kyoto/timetable.html#/detail/20)
+だった。
+マコピーのトークも気になる〜〜〜ってなって、とあるところでこうつぶやいた。
+
+> Rakuで型付けできるじゃんとか思いつつ「Perlをパースして型を抜き出す」これ面白そう、とかなる
+
+**でも**、Raku（Perl 6）の型付けについてイマイチ理解が足りない。
+さらに、Type Check=型チェックについて、どういう場合に、
+どこで、どんなエラーを吐くかが分かってなかったので[インターネットアイドルさん](https://twitter.com/AnaTofuZ)の
+力を借りつつ調べてみた。
+
+## 追記
+
+以下の点について、教えてもらってスッキリした。
+
+* Typingと型チェックは別の概念
+  * 静的型付けや漸進的型付けであるのと、どういう風に型チェックするかどうかは別で考える
+* Rakuは静的型付けで記述でき、後述するように型チェックの機能が備わっている
+  * ただし、エラーを吐くのがコンパイル時 or 実行時かは実装に関わる
+  * `my Int $i := 'foo'`でコンパイルエラーが出ないのは、単にまだ実装しきれてない or なんらかの深い理由があってのことだろう
+
+## RakuはGradual Typingな言語
+
+まずRakuの型付けの性質について。
+Rakuは、Javaのような静的型付けの側面も持ちつつ、動的型付けの利点がある
+Gradual Typing=漸進的型付けを持つ（だと思う）。漸進的型付けについては以下の記事がすごく面白いです。
+
+* [What is Gradual Typing: 漸進的型付けとは何か - Qiita](https://qiita.com/t2y/items/0a604384e18db0944398)
+
+RakuはGradual Typingだぜ！って言ってる人は他にもいる。
+
+* [Perl 6 gradual typing FTW!](https://lebgeeks.com/talks/perl6-gradual-typing.html)
+* [Perl 6 Types: Made for Humans | Zoffix Znet blogs.perl.org](http://blogs.perl.org/users/zoffix_znet/2016/04/perl-6-types-made-for-humans.html)
+* [Calling subs and typing in Perl 6 | Opensource.com](https://opensource.com/article/18/12/calling-subs-and-typing-perl-6)
+
+## 型チェックの例
+
+Perl 5は動的型付けな言語（ライブラリを使って漸進的型付けっぽくすることもできる）なので、
+`sub func`で定義したサブルーチンの引数に`Int`を期待したいけど、
+それを表現することはできなくて、以下のコードはそのまま`foo`と印字する。
+
+```perl
+use v5.10;
+
+sub func {
+    my $i = shift;
+    say $i;
+}
+func('foo');
+```
+
+まぁ当たり前なんだけど、これをRakuでやろうとするとシグネチャーを付けてこうなる。
+
+```perl
+use v6;
+
+sub func( Int $i ) {
+    say $i;
+}
+func('foo');
+```
+
+実行しようとするとコンパイルエラーになる。
+
+![Raku Type Check Error](https://live.staticflickr.com/65535/49421230586_07f3e9315d_c_d.jpg)
+
+エラーメッセージが色付けされてていい感じ！
+
+とはいえ、実はRakuにおける型チェックでコンパイルエラーが出るのは
+このケース（`X::TypeCheck::Argument`）だけのようだ。
+
+## X::TypeCheck::*
+
+Rakuのコンパイルor実行時エラーの定義はRakudoの例外に関するソースを読むと結構分かる。
+
+* <https://github.com/rakudo/rakudo/blob/826c3ead8208f3304f7ee99cc2575c2fbb3a8b6a/src/core.c/Exception.pm6>
+
+型チェックで例外を出すために実装されているのは、
+`X::TypeCheck`を継承したクラス`X::TypeCheck::*`。
+で、その中でも上の例で示したのは`X::TypeCheck::Argument`で定義されている例外で、
+これだけコンパイル時にエラーが出るみたい
+（コンパイルエラーを出すのは`X::Comp`ロールを実装しているものだと思うので、
+ソースコードをみる限り、それを実装していない`X::TypeCheck::Argument`でコンパイルエラーが出るのが謎）。
+
+で、どういう場合に型チェックでどんなエラーが出るのかをいくか試してみた。
+これらは
+
+```perl
+# 実行時エラーが出るコード
+CATCH { default { put .^name, ': ', .Str } };
+```
+
+とすれば、例外の名前とメッセージをみることができる。
+
+### X::TypeCheck::Assignment
+
+型宣言した変数に異なる型の値を代入しようとした時に発生する。
+
+```perl
+my Int $i = "foo";
+CATCH { default { put .^name, ': ', .Str } };
+# X::TypeCheck::Assignment: Type check failed in assignment to $i; expected Int but got Str ("foo")
+```
+
+### X::TypeCheck::Return
+
+サブルーチンの返り値が期待する型ではない時に発生する。
+
+```perl
+sub func( --> Int ) {
+    return 'foo';
+}
+func();
+CATCH { default { put .^name, ': ', .Str } };
+# X::TypeCheck::Return: Type check failed for return value; expected Int but got Str ("foo")
+```
+
+### X::TypeCheck::Binding
+
+指定した型以外の値をバインドしようとした時に発生する。
+
+```perl
+my Int $i := "foo";
+CATCH { default { put .^name, ': ', .Str } };
+# X::TypeCheck::Binding: Type check failed in binding; expected Int but got Str ("foo")
+```
+
+### X::TypeCheck::Binding::Parameter
+
+クラス内メソッドの引数が期待する型と異なる場合に発生する。
+
+```perl
+class A {
+    method func( Int $i) {
+        say $i;
+    }
+}
+A.new.func('foo');
+CATCH { default { put .^name, ': ', .Str } };
+# X::TypeCheck::Binding::Parameter: Type check failed in binding to parameter '$i'; expected Int but got Str ("foo")
+```
+
+### X::TypeCheck::Assignment
+
+クラス内のプロパティの値が期待する型と異なる場合に発生する。
+
+```perl
+class A {
+    has Int $.i;
+}
+A.new( i => 'foo' );
+CATCH { default { put .^name, ': ', .Str } };
+# X::TypeCheck::Assignment: Type check failed in assignment to $!i; expected Int but got Str ("foo")
+```
+
+### X::TypeCheck::Argument
+
+サブルーチンの引数が期待する型と異なる場合に発生する。
+
+```perl
+sub func( Int $i ) {
+     say $i;
+}
+func('foo');
+CATCH { default { put .^name, ': ', .Str } };
+```
+
+**で**、これだけコンパイルエラーになる。
+
+```
+===SORRY!=== Error while compiling type.p6
+Calling func(Str) will never work with declared signature (Int $i)
+at type.p6:19
+------> <BOL>⏏func('foo');
+```
+
+## ちなみに、ロール周りのエラー
+
+ロール周りでわりとコンパイル時にエラーを吐いてくれて、イケてる。
+
+例えば、複数のロールを実装した場合にメソッドが被ってしまった時は以下の通り。
+
+```perl
+role A {
+    method func() {}
+}
+
+role B {
+    method func() {}
+}
+
+class C does A does B {}
+```
+
+![Roleエラー](https://live.staticflickr.com/65535/49421546071_eb5365f5eb_c_d.jpg)
+
+`stub`で定義したメソッドを実装しない場合。
+
+
+```perl
+role A {
+    method func() { !!! }
+}
+
+class C does A {}
+```
+
+![Roleエラー](https://live.staticflickr.com/65535/49421546036_9a0a31f5a4_c_d.jpg)
+
+## まとめる
+
+以上、漸進的型付けなRakuではコンパイル時もしくは実行時に型チェックが走り、
+`X::TypeCheck::*`で定義された例外を投げることが分かった。
+
+他の言語の静的型付け、漸進的型付けがどうなっているのか、
+Perl 5でどのように実現するのかが気になるところだが、
+[YAPC::Kyotoのマコピーのトーク](https://yapcjapan.org/2020kyoto/timetable.html#/detail/20)を聞けば分かるっぽい！！
+でも[NativeCallでGroonga](https://yapcjapan.org/2020kyoto/timetable.html#/detail/27)も面白そう！
+
+わくわく〜〜〜。
+
+## 追記
+
+Twitterでつぶやいたら、
+
+{{<rawhtml>}}
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">Rakuは漸進的型付けをサポートするでいいんしょうか。教えてください偉いひと… <a href="https://twitter.com/hashtag/rakulang?src=hash&amp;ref_src=twsrc%5Etfw">#rakulang</a></p>&mdash; Yusuke Wada (@yusukebe) <a href="https://twitter.com/yusukebe/status/1219634104343375872?ref_src=twsrc%5Etfw">January 21, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+{{</rawhtml>}}
+
+すごい勢いでエリザベスさんがレスしてくれた。
+
+{{<rawhtml>}}
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Typing in Raku is usually referred to as &quot;gradual typing&quot;. As in, you do not need to specify typing. But under the hood, type checking does take place.<br><br> my <a href="https://twitter.com/search?q=%24a&amp;src=ctag&amp;ref_src=twsrc%5Etfw">$a</a>;<br><br>is really short for:<br><br> my Any <a href="https://twitter.com/search?q=%24a&amp;src=ctag&amp;ref_src=twsrc%5Etfw">$a</a>;<br><br>Since most values match `Any`, you can put just about any value in there.</p>&mdash; Elizabeth Mattijsen (@liztormato) <a href="https://twitter.com/liztormato/status/1219739537766830080?ref_src=twsrc%5Etfw">January 21, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+{{</rawhtml>}}
+
+{{<rawhtml>}}
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Now, if you want to e.g. limit to integers, you would write:<br><br> my Int <a href="https://twitter.com/search?q=%24a&amp;src=ctag&amp;ref_src=twsrc%5Etfw">$a</a>;<br> <a href="https://twitter.com/search?q=%24a&amp;src=ctag&amp;ref_src=twsrc%5Etfw">$a</a> = 42; # ok<br> <a href="https://twitter.com/search?q=%24a&amp;src=ctag&amp;ref_src=twsrc%5Etfw">$a</a> = &quot;foo&quot;; # Type check failed in assignment to <a href="https://twitter.com/search?q=%24a&amp;src=ctag&amp;ref_src=twsrc%5Etfw">$a</a>; expected Int but got Str (&quot;foo&quot;)</p>&mdash; Elizabeth Mattijsen (@liztormato) <a href="https://twitter.com/liztormato/status/1219739998557175814?ref_src=twsrc%5Etfw">January 21, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+{{</rawhtml>}}
+
+ 
+}

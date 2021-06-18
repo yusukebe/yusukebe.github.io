@@ -1,0 +1,131 @@
+{
+    "data" :  {
+    "title": "Shibuya.pm tech talk #8 で 「リビドー駆動開発によるPlaggerとCatalystを使ったサイト開発」を発表してきました",
+    "date": "2007-10-02 12:33:00 +0900 JST",
+    "dir": "posts/2007/",
+    "slug": "1002033306",
+    "categories": ["tech"],
+    "tags": ["Perl"]
+}
+
+---
+
+
+
+<p>
+  昨日10月1日に行なわれた <a href="http://shibuya.pm.org/blosxom/techtalks/200710.html">Shibuya.pm tech talk #8 のLightning Talks</a>で、
+  「<strong>リビドー駆動開発によるPlaggerとCatalystを使ったサイト開発</strong>」という題目の発表をしてきました。
+  本格的にShibuya.pmに参加したのが初めての上、いきなり発表、さらに内容が基本エロ、そしてトリ。
+  ということで空気読めてるか心配でしたが、元気よくやってみました。
+ まずは、そのスライドと録画していただいた動画を貼り付け＆それへのリンクを取り急ぎという形でお見せしてから、個人的に「感激した」という感想をつらつらと述べようと思います。
+</p>
+<p><font size="2">
+  *注意 : 時系列的には本来、9月29日〜30日にかけて行なわれた、大笑いして最後には衝撃のハプニングが起こったという、鎌団子の結婚式二次会、三次会、四次会、五次会の模様をお送りするべきですが、ネタが濃くてまとめるのに時間がかかりそうという点と、Shibuya.pmネタの方がどちらかというと早急に記事にすべきということでご了承ください。また、お楽しみにしていてください。実は今回の発表のスライドに出てくる謎の写真とも微妙にリンクしています。</font>
+</p>
+
+<h4>Shibuya.pm tech talk #8 「リビドー駆動開発によるPlaggerとCatalystを使ったサイト開発」スライド</h4>
+<object data="http://s3.amazonaws.com/slideshare/ssplayer.swf?id=123288&amp;doc=libido-driven-development-shibuyapm-tech-talk-83117" height="348" type="application/x-shockwave-flash" width="425"><param name="movie" value="http://s3.amazonaws.com/slideshare/ssplayer.swf?id=123288&amp;doc=libido-driven-development-shibuyapm-tech-talk-83117"></object>
+<br>
+
+<h5>ダウンロード</h5>
+<ul>
+  <li>
+<a href="http://kamawada.com/~yusuke/yusukebe/archives/files/071001/shibuya-pm-techtalk-8-lt12.pdf">「リビドー駆動開発によるPlaggerとCatalystを使ったサイト開発」</a>(PDF)</li>
+</ul>
+<br>
+<h4>Shibuya.pm tech talk #8 「リビドー駆動開発によるPlaggerとCatalystを使ったサイト開発」映像</h4>
+
+<embed flashvars="autoplay=false" height="340" src="http://www.ustream.tv/g3fsDA7dVWxcbSIY1Z7H3A.usv" type="application/x-shockwave-flash" width="416" wmode="transparent"></embed>
+<br>
+<ul>
+  <li><a href="http://www.ustream.tv/yappo/videos/g3fsDA7dVWxcbSIY1Z7H3A">Ustream.tv リビドー駆動開発によるPlaggerとCatalystを使った(Mashup)サイト開発 (yusukebe) - Shibuya.PM tech talk #8</a></li>
+</ul>
+<p>
+  後からUstreamのログみて気づいたんですが、声でかすぎだったみたいですね。
+  ごめんなさい＞＜
+</p>
+
+<h4>Shibuya.pmとは？</h4>
+<p>
+まず、Shibuya.pmについて知らない方向けに、軽く解説しておいた方がいいですね。
+Shibuya.pmとはShibuya Perl Mongersの別名で、Perl Mongersというのは地域ごとのPerl(プログラミング言語の一つです)のユーザグループの集まりのことを指し、Shibuya.pmはShibuyaとつくだけあり東京近辺のPerl使いの皆様が集っています。一応日本では一番大きいPerlのユーザ会だと思います。
+</p>
+<ul>
+  <li><a href="http://shibuya.pm.org/blosxom">Shibuya Perl Mongers</a></li>
+</ul>
+
+<h4>Shibuya.pmデビューにあたって</h4>
+<p>
+  会場に向かう電車の中で変な汗かきまくるほど、実はドキドキしてました。
+  というのも、僕は1年ほど前からPerlを本格的にはじめたんですが、
+  それからというものShibuya.pmのGeek(いい意味でのHacker)な皆さんのモジュールを使わせてもらったり、彼ら(と)のBlogやチャットを介してPerlプログラミングの勉強をさせていだいたたりと、日々非常にお世話になっていて、こうした<b>リスペクトしている人たちと初めて生で対面する</b>んですから。
+  しかも、<b>同じ立場で発表する</b>ときたら、もう緊張、さらに興奮するしかありません。
+</p>
+<p>
+会場に前乗りして、待っているとWeb上で顔を拝見したことのある方々が続々と登場してきて、勇気を振り絞って、「はじめましてゆーすけべーです」と挨拶をして名刺交換。
+そりゃあもう感激です。
+</p>
+<p>
+Yappoさん、miyagawaさん、takesakoさん、dankogaiさん、zigorouさん、mizzyさん、tokuhiromさん、typesterさん、たつをさん、nipotanさん、otsuneさん...。皆さん、憧れの人たち。お会いできてほんとに光栄です。そして、予想していた通りの人柄で、暖かく接してくれました。いいお兄さん達という感じです。
+</p>
+<p>
+例えば、Yappoさんには「アフロじゃないじゃないですか」と突っ込まれたり、
+miyagawaさんには「お世話になってます、いろいろと迷惑かけてないですか？」とたずねると「だいじょぶっすよ」という予想していた通りのいい意味でそっけない返答をしてくれたり、
+takesakoさんは恐縮するほど腰を低くして挨拶をしてくれたり、
+dankogaiさんはリアクションがしずらい質問をしてくれたり、
+mizzyさんは会話の中に「お口で」という軽いエロネタをはさんできたり…。
+そうそう、イベントが終わったあと、懇親会があるのか無いのかわからずに、みんなとはぐれてしまい、会場の外でしょんぼりと一応誰か来るかなと待っていたら、IRCのチャットでotsuneさんが懇親会の場所を教えてくれてほんとに嬉しかった。
+みんなやさしいよぉーーー。
+</p>
+<p>
+  <font size="2">otsuneさんに教えてもらって中華料理屋を見つける</font><br>
+  <img alt="Shibuya.pm" class="at-xid-6a0133f4781589970b015435b6ee6e970c" src="https://yusukebe.com/archives/a/6a0133f4781589970b015435b6ee6e970c-pi.jpg">
+  <img alt="Shibuya.pm" class="at-xid-6a0133f4781589970b015435b6ee79970c" src="https://yusukebe.com/archives/a/6a0133f4781589970b015435b6ee79970c-pi.jpg">
+</p>
+<p>
+懇親会は、隣がtypesterさんだったのでCatalystやカヤックのこととか話せてよかった＆
+otsuneさんが近くにいたので、案の定Erogeek的トークになっていろいろアイデアも出ておもろかった。
+とにかく、あの場に入れるだけで幸せでした。
+</p>
+<p>
+  <font size="2">懇親会の様子、無修正だけど画像小さくしたよ</font><br>
+  <img alt="Shibuya.pm" class="at-xid-6a0133f4781589970b015435b6ee84970c" src="https://yusukebe.com/archives/a/6a0133f4781589970b015435b6ee84970c-pi.jpg">
+  <img alt="Shibuya.pm" class="at-xid-6a0133f4781589970b015435b6ee94970c" src="https://yusukebe.com/archives/a/6a0133f4781589970b015435b6ee94970c-pi.jpg">
+  <img alt="Shibuya.pm" class="at-xid-6a0133f4781589970b015435b6eea0970c" src="https://yusukebe.com/archives/a/6a0133f4781589970b015435b6eea0970c-pi.jpg">
+</p>
+<p>
+  <font size="2">去り際に全体を撮影</font><br>
+  <img alt="Shibuya.pm" class="at-xid-6a0133f4781589970b015435b6eeb4970c" src="https://yusukebe.com/archives/a/6a0133f4781589970b015435b6eeb4970c-pi.jpg">
+</p>
+<p>
+  肝心の僕の発表なんですが、とにかく、「もうこうなったら」ということでめちゃくちゃ<strong>声張って</strong>、勢いで押しまくりました（だから録画された映像では音声が割れまくりんぐ）。
+  技術的に目新しいことものを発表できるわけではないので、とにかくコンテンツ勝負。
+  内容はまさにリビドー、エロ！
+  1年ぶりのプレゼンでしたが、我ながら笑いを誘うことができたと思います。erogeek++でたくさんインクリメントしてくれましたし。
+  今後は、miyagawaさんのWeb::Scraperの様な「こりゃ使ったら楽しそう」と思えるようなモジュールなりを作って、技術的要素がもう少し入った発表ができるように精進したいと思います。
+</p>
+<p>
+  <font size="2">miyagawaさんの発表</font><br>
+  <img alt="Shibuya.pm" class="at-xid-6a0133f4781589970b015435b6eec1970c" src="https://yusukebe.com/archives/a/6a0133f4781589970b015435b6eec1970c-pi.jpg">
+</p>
+<p>
+  <font size="2">俺の発表</font><br>
+  <img alt="Shibuya.pm" class="at-xid-6a0133f4781589970b015435b6eec7970c" src="https://yusukebe.com/archives/a/6a0133f4781589970b015435b6eec7970c-pi.jpg">
+</p>
+<p>
+  ということでShibuya.pmの皆さん、ありがとうございます。
+  これからもよろしくお願いします。
+</p>
+<h4>追記</h4>
+<p>
+  うちの親父もUstream経由で見てたみたいです。
+  ってかあの発表を親父に見られるってどんだけー。
+  でも<a href="http://yusukebe.com/archives/07/09/06/225946.html">恥軸がぶれている</a>のでとりわけ、気にしない。
+</p>
+<ul>
+  <li><a href="http://kamawada.com/~masanori/blog/2007/10/shibuya_perl_mongers.html">Shibuya Perl Mongersデビュー - 親子丼的ビジネス奮闘記（７） (mark-wada blog)</a></li>
+</ul>
+
+
+ 
+}

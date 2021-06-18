@@ -1,0 +1,25 @@
+{
+    "data" :  {
+    "title": "Mozila Firebird",
+    "date": "2003-05-25 12:03:00 +0900 JST",
+    "dir": "posts/2003/",
+    "slug": "0524150307",
+    "categories": ["tech"],
+    "tags": []
+}
+
+---
+
+
+<p>IEに負けるな！とみんなで楽しく作っている(細かい機能の追加ヴァージョンアップがとっても早い)感じと、玄人っぽいところが好きで<br>
+<a href="http://www.mozilla.org/" target="_new">Mozilla</a><br>
+をメインのブラウザと使っていたが、問題は"重さ"であった。起動までにやたら時間がかかる。そこで、<br>
+<a href="http://jt.mozilla.gr.jp/projects/firebird/why/%20Mozilla" target="_new">Firebirdに乗り換えてみた</a><br>
+。ええじゃないか！FirebirdがPhenixと呼ばれている頃から注目していたが、このver0.6は割とメインで使えそうだ。起動の時間を俺のマシンで測ってみたが、IEが3秒で、Firebirdが4秒だった。一回起動しちゃえば、ページの表示速度はかなり早く感じる。<br>
+<a href="http://suosday.g-com.ne.jp/nyozlla/" target="_new">にょずらさんのところ</a><br>
+で日本語化もできるし。<br>
+細かいバグはまだ多そうだけど、使っていこうかと思いまーす。<br>
+<img alt="Firebird" src="Mozila"></p>
+
+ 
+}

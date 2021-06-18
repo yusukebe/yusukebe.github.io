@@ -1,0 +1,115 @@
+{
+    "data" :  {
+    "title": "Rakuでメロディー・雛・マークスを出す",
+    "date": "2020-01-18 15:12:26 +0900 JST",
+    "dir": "posts/2020/",
+    "slug": "raku-dmm",
+    "categories": [],
+    "tags": ["Perl","Raku"]
+}
+
+---
+
+
+今度はRaku(Perl6)でDMM Webサービスを叩いてメロディー・雛・マークスを出す。
+
+* [PHPでDMM Webサービスを叩いてメロディー・雛・マークスを出す - ゆーすけべー日記](https://yusukebe.com/posts/2019/1226173405/)
+* [Node.jsでメロディー・雛・マークスを出す - ゆーすけべー日記](https://yusukebe.com/posts/2020/node-dmm/)
+
+`HTTP::UserAgent`を使うとPerl 5における`LWP::UserAgent`とほぼ同じインターフェースなので、
+あっさりと書けた。JSONのデコードには`JSON::Tiny`を使った。
+
+ただ引っかかったところが2点。コマンドライン引数を取得する際、
+Perl 5だと
+
+```perl
+my $name = $ARGV[0];
+```
+
+で取ってたのが、Rakuだと
+
+```perl
+my $name = @*ARGS[0];
+```
+
+となる。もう一つは、JSONをdecodeして`$data`に入れた
+値の中から女優のリストを取ってくるのに、Perl 5だと
+`@{$data->{result}{actress}}` とハッシュの中身をたどって
+デリファレンスしていたが、今回の場合
+
+```perl
+my $stars = $data->{'result'}{'actress'};
+for $stars.list -> $star {
+}
+```
+
+と書いた。`$stars`はスカラの変数でそこに`Array`型が入っているので、
+`list`メソッドでイテレーブルにしている。
+
+`Array`、`Scalar`、さらに`List`については以下のドキュメントを参考にする。
+
+* [class Scalar - Perl 6 Documentation](https://docs.perl6.org/type/Scalar)
+* [class List - Perl 6 Documentaion](https://docs.perl6.org/type/List)
+
+とはいえ
+
+```perl
+my $stars = $data->{'result'}{'actress'};
+for @$stars -> $star {
+}
+```
+
+でもいける。
+
+さて、以下コード。
+
+```perl
+use HTTP::UserAgent;
+use URI;
+use JSON::Tiny;
+
+constant $api_id = 'YOUR_API_ID';
+constant $affiliate_id = 'YOUR_AFFILIATE_ID';
+
+# @*ARGSで引数取得、Perl5では$ARGV[0]だった
+my $name = @*ARGS[0] || '雛';
+
+my $uri = URI.new('https://api.dmm.com/affiliate/v3/ActressSearch');
+
+# クエリを組み立てるハッシュ
+my %params =
+    api_id => $api_id,
+    affiliate_id => $affiliate_id,
+    keyword => $name,
+    hits => 50;
+
+# query-formメソッドに食わせる
+$uri.query.query-form(%params);
+
+# say $uri;
+# => https://api.dmm.com/affiliate/v3/ActressSearch?api_id=YOUR_API_ID&hits=50&keyword=&affiliate_id=YOUR_AFFILIATE_ID
+
+my $ua = HTTP::UserAgent.new;
+my $res = $ua.get($uri);
+
+# status codeが200番台でなければdie
+if !$res.is-success {
+    die $res;
+}
+
+# JSON::Tinyからエキスポートされたfrom-jsonメソッドでdecode
+my $data = from-json($res.decoded-content);
+
+# ハッシュから女優一覧を取り出す
+my $stars =  $data{'result'}{'actress'};
+
+# .listしてイテレーション
+for $stars.list -> $star {
+    say $star{'name'};
+}
+```
+
+Raku楽しい。
+
+ 
+}

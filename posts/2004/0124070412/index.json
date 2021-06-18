@@ -1,0 +1,31 @@
+{
+    "data" :  {
+    "title": "test for import from hns",
+    "date": "2004-01-24 16:04:00 +0900 JST",
+    "dir": "posts/2004/",
+    "slug": "0124070412",
+    "categories": ["tech"],
+    "tags": []
+}
+
+---
+
+
+
+<p><a href="http://web.sfc.keio.ac.jp/~yusukebe/diary/">旧日記</a>をインポートするためのテストです。<br>
+</p>
+<h4>サブタイトル</h4>
+<br>
+サブタイトルの中身<br>
+ほほ<br>
+ほほ<br>
+ほほ<br>
+<h4>サブタイトル</h4>
+<br>
+サブタイトルの中身<br>
+ほほ<br>
+ほほ<br>
+ほほ
+
+ 
+}

@@ -1,0 +1,366 @@
+{
+    "data" :  {
+    "title": "Flickr には某氏厳選47人のグラビアアイドルにおいて画像が8407枚あり、そのうち2670枚は小倉優子",
+    "date": "2008-01-13 18:13:00 +0900 JST",
+    "dir": "posts/2008/",
+    "slug": "0113091331",
+    "categories": ["tech"],
+    "tags": ["Perl"]
+}
+
+---
+
+
+
+<p>
+  <a href="http://d.hatena.ne.jp/gamella/">id:gamella</a> こと大学の同期のお友達「ともちゃん」がErogeekチックなことをしていたのを発見。
+</p>
+<blockquote>
+  <p>
+    今、ちょっと作成を考えているWebサービスがあって、その練習のためにFlickrから画像を取得するスクリプトを書きました。
+  </p>
+  <p>（中略）</p>
+  <p>
+    何をしたかったかと言うと、<strong>Flickrにどれくらいグラビアアイドルの画像がアップされているか</strong>を調べたかったのです。<strong>理由は聞かないでください</strong>。
+  </p>
+  <p>
+    とりあえず、グラビアアイドルのリストを作成します。個人的に気に入っているグラビアアイドルを50人ほどピックアップしてみました。…
+  </p>
+  <p>
+    <a href="http://d.hatena.ne.jp/gamella/20080112#1200052207">Flickrから2000枚の品質の高いグラビアアイドル画像を取得してみた - Future Insight</a>より
+  </p>
+</blockquote>
+<p>
+  理由は聞きません。でも、そのともちゃんチョイスのグラビアアイドルリスト、貸して下さい！
+というわけで、ともちゃんはPythonでスクリプトを書いてたけど、俺はPerlでダウンローダー作った（Plaggerでもできそうだけど素で書いてみたかった）。
+</p>
+<p>
+  <font size="2">お決まりの iPod touch にいれるとこんな感じアイドルまみれ</font><br>
+  <img alt="iPod touch" class="at-xid-6a0133f4781589970b014e8bd74b98970d" src="https://yusukebe.com/archives/a/6a0133f4781589970b014e8bd74b98970d-pi.jpg">
+</p>
+<p>
+それで、最後にそのスクリプトを貼り付けておくけど、面白かったのはともちゃんも調べたかったという、各グラビアアイドルの画像が何枚 Flickr にアップされているかという数。
+</p>
+<p>
+Flickr API 初めて使ってあんまよく理解していないかもしれないけど、
+「flickr.photos.search」メソッドにアイドル名を text クエリーとして渡すと上限500でURLが返ってくる仕組みらしい。ともちゃんはそのURL数、上限500で写真の数をカウントしていたけれど、APIの返り値に total というのがあって、それは500以上でも Flickr 内にあるそのクエリーにヒットした画像の数を返してくれる。Perlのコードだとこんな感じ（XML::Simpleでパースしているのは好みっす）。
+</p>
+
+<pre class="brush: perl"> 
+use Flickr::API;
+use XML::Simple;
+
+my $api_key = "";
+my $api     = new Flickr::API( { key =&gt; $api_key, forcearray =&gt; ['photo'] } );
+my $xs      = XML::Simple-&gt;new( keyattr =&gt; [] );
+
+warn "total_count is " . &amp;search("query");
+
+sub search {
+    my ($query) = @_;
+    warn "searching $query ...";
+    my $res =
+      $api-&gt;execute_method( 'flickr.photos.search', { text =&gt; $query } );
+    my $ref = $xs-&gt;XMLin( $res-&gt;{_content} );
+    return 0 unless $ref-&gt;{photos}-&gt;{total};
+    return $ref-&gt;{photos}-&gt;{total};
+}</pre>
+<p>
+このコードを使い、日本語の名前とアルファベット名でそれぞれ検索して total のカウントを足して数えてみると、一位はダントツ<strong>2670枚で小倉優子</strong>りん。2位が沢尻エリカの633枚だからすごい差。ちなみに、1枚しかなかったのは最下位、和希沙也ちゃんだった。
+</p>
+<p>
+リストには<strong>47人</strong>のグラビアアイドルがいて、その全てのFlickr画像の数を足すと<strong>8407枚</strong>になった。なるほど、Flickr にはユーザー撮影した写真がばかりであまりそのような画像は少ないと思ったけど、そこそこあるんだな。いや、ってかぶっちゃけ多いのか少ないのかよくわからないな。とにかく小倉優子りんがダントツなのは把握した。
+</p>
+<p>
+結果をDumpしたのを以下に貼り付けておきます。ともちゃんはこの結果からどのような考察をしてくれるのだろうか。
+</p>
+<pre class="brush: perl"> total_count: 8407 
+---
+count: 2670
+en: Ogura Yuko
+ja: ' 小倉優子'
+---
+count: 633
+en: Sawajiri Erika
+ja: ' 沢尻エリカ'
+---
+count: 614
+en: Minami Akina
+ja: ' 南明奈'
+---
+count: 507
+en: Hoshino Aki
+ja: ' ほしのあき'
+---
+count: 362
+en: Toda Erika
+ja: ' 戸田恵梨香'
+---
+count: 304
+en: Kawamura Yukie
+ja: ' 川村ゆきえ'
+---
+count: 278
+en: Ayase Haruka
+ja: ' 綾瀬はるか'
+---
+count: 264
+en: Nagasawa Masami
+ja: ' 長澤まさみ'
+---
+count: 252
+en: Yamamoto Azusa
+ja: ' 山本梓'
+---
+count: 238
+en: Morishita Chisato
+ja: ' 森下千里'
+---
+count: 233
+en: Nagasaki Rina
+ja: ' 長崎莉奈'
+---
+count: 190
+en: Natsukawa Jun
+ja: ' 夏川純'
+---
+count: 187
+en: Irie Saaya
+ja: ' 紗綾'
+---
+count: 168
+en: Kosaka Yuka
+ja: ' 小阪由佳'
+---
+count: 159
+en: Hara Fumina
+ja: ' 原史奈'
+---
+count: 148
+en: Takizawa Nonami
+ja: ' 滝沢乃南'
+---
+count: 109
+en: Yasu Megumi
+ja: ' 安めぐみ'
+---
+count: 107
+en: Tsugihara Kana
+ja: ' 次原かな'
+---
+count: 98
+en: Yuki Maomi
+ja: ' 優木まおみ'
+---
+count: 87
+en: Isoyama Sayaka
+ja: ' 磯山さやか'
+---
+count: 84
+en: Akiyama Rina
+ja: ' 秋山莉奈'
+---
+count: 77
+en: Mitsuya Yoko
+ja: ' 三津谷葉子'
+---
+count: 74
+en: Aibu Saki
+ja: ' 相武紗季'
+---
+count: 74
+en: Iwasa Mayuko
+ja: ' 岩佐真悠子'
+---
+count: 55
+en: Komatsu Ayaka
+ja: ' 小松綾夏'
+---
+count: 49
+en: Anzu Sayuri
+ja: ' 杏さゆり'
+---
+count: 45
+en: Sugimoto Yumi
+ja: ' 杉本有美'
+---
+count: 36
+en: Okubo Mariko
+ja: ' 大久保麻梨子'
+---
+count: 34
+en: Tokito Ami
+ja: ' 時東あみ'
+---
+count: 33
+en: Kumada Yoko
+ja: ' 熊田曜子'
+---
+count: 32
+en: Nakamura Miu
+ja: ' 仲村みう'
+---
+count: 28
+en: Yabuki Haruna
+ja: ' 矢吹春奈'
+---
+count: 23
+en: Ando Sayaka
+ja: ' 安藤沙耶香'
+---
+count: 21
+en: Nakagawa Shoko
+ja: ' 中川翔子'
+---
+count: 19
+en: Hamada Shoko
+ja: ' 浜田翔子'
+---
+count: 19
+en: Sato Hiroko
+ja: ' 佐藤寛子'
+---
+count: 17
+en: Yasuda Misako
+ja: ' 安田美沙子'
+---
+count: 14
+en: Shiratori Yuriko
+ja: ' 白鳥百合子'
+---
+count: 13
+en: Aizawa Hitomi
+ja: ' 相澤仁美'
+---
+count: 11
+en: Natsume Rio
+ja: ' 夏目理緒'
+---
+count: 11
+en: Wakatsuki Chinatsu
+ja: ' 若槻千夏'
+---
+count: 9
+en: Morishita Yuri
+ja: ' 森下悠里'
+---
+count: 8
+en: Kiguchi Aya
+ja: ' 木口亜矢'
+---
+count: 5
+en: Suzuki Akane
+ja: ' 鈴木茜'
+---
+count: 5
+en: Yamazaki Mami
+ja: ' 山崎真実'
+---
+count: 2
+en: Kinoshita Yukina
+ja: ' 木下優樹菜'
+---
+count: 1
+en: Kazuki Saya
+ja: ' 和希沙也'</pre>
+<p>
+ところで、よくよく、リストとか写真とか見てみると、「三津谷葉子」とか「夏川純」、そして「磯山さやか」とうまいこと俺の趣向に合っていることが判明した。ともちゃんGJ！
+もちろん、ゲットした画像は iPod touch でくぱぁしたよ！
+</p>
+<p>
+  <img alt="iPod touch" class="at-xid-6a0133f4781589970b014e8bd74bb2970d" src="https://yusukebe.com/archives/a/6a0133f4781589970b014e8bd74bb2970d-pi.jpg">
+</p>
+<p>
+  では最後にダウンローダーのPerlスクリプトを貼り付け。Flickrに過度な負荷を与えないようにね。
+  あ、あとダウンロードしなくても画像見たいだけだったらともちゃんがWebアルバム作ってくれてるよ→<a href="http://choichoi.sakura.ne.jp/idols/">idol album</a>。
+</p>
+<pre class="brush: perl"> #!/usr/bin/perl
+
+use strict;
+use warnings;
+use Flickr::API;
+use XML::Simple;
+use LWP::UserAgent;
+use Digest::MD5 qw(md5_hex);
+use Path::Class;
+use Text::CSV::Simple;
+
+my $api_key      = "";
+my $dir_path     = "photos";
+# http://d.hatena.ne.jp/gamella/20080112#1200105210 にあるグラビアアイドルリストをcsvで保存
+# もちろん好みに合わせるのもOK
+my $csv_filename = "idol.csv";
+
+my $api          = new Flickr::API( { key =&gt; $api_key } );
+my $xs           = XML::Simple-&gt;new( keyattr =&gt; [] , forcearray =&gt; ['photo'] );
+my $ua           = LWP::UserAgent-&gt;new();
+
+my $param = {
+    per_page =&gt; '500',
+    sort     =&gt; 'date-posted-desc',
+    extras   =&gt; 'date_upload',
+};
+
+my $csv = Text::CSV::Simple-&gt;new( { binary =&gt; 1 } );
+$csv-&gt;field_map(qw/en ja/);
+my @list = $csv-&gt;read_file($csv_filename);
+
+foreach my $idol (@list) {
+    my $subdir_path = $idol-&gt;{en};
+    $subdir_path =~ s/\s//;
+    &amp;search( $idol-&gt;{ja}, $subdir_path );
+    &amp;search( $idol-&gt;{en}, $subdir_path );
+}
+
+sub search {
+    my ( $query, $subdir_path ) = @_;
+    $param-&gt;{text} = $query;
+    my $res = $api-&gt;execute_method( 'flickr.photos.search', $param );
+    my $ref = $xs-&gt;XMLin( $res-&gt;{_content} );
+    return unless $ref-&gt;{photos}-&gt;{total};
+    foreach my $photo ( @{ $ref-&gt;{photos}-&gt;{photo} } ) {
+        my $url = sprintf "http://farm%s.static.flickr.com/%s/%s_%s.jpg",
+          $photo-&gt;{farm}, $photo-&gt;{server}, $photo-&gt;{id}, $photo-&gt;{secret};
+        my $dir = Path::Class::Dir-&gt;new( $dir_path, $subdir_path );
+        mkdir $dir-&gt;relative if !-d $dir-&gt;is_absolute;
+        my $file = $dir-&gt;file( md5_hex($url) . ".jpg" );
+        my $res = $ua-&gt;mirror( $url, $file-&gt;absolute );
+        print "try to fetch : " . $res-&gt;status_line . " : $url\n";
+    }
+}</pre>
+
+<h4>お決まりの iPod touch アサマシ</h4>
+
+<p></p>
+<div style="float:left"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B000IDHJ30/kamawada-22/"><img alt="Apple iPod touch 8GB MA623J/A" src="http://ecx.images-amazon.com/images/I/21pbnI3NTTL.jpg" style="border:none;"></a></div>
+<div style="float:left;margin-left:15px;">
+<div style="font-size:12pt"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B000IDHJ30/kamawada-22/">Apple iPod touch 8GB MA623J/A</a></div>
+<div style="font-size:7pt;font-family:verdana;">posted with <a href="http://yusukebe.com/b/amazon/search/">yusukebe.com::AmazonSearch</a> on 2008.1.13</div>
+<div style="font-size:10pt;">
+<ul style="list-style-type:none;padding:0;">
+<li>エレクトロニクス / アップルコンピュータ (2007/09/25)</li>
+<li>Amazon 売り上げランキング: 50</li>
+</ul>
+<a href="http://www.amazon.co.jp/gp/product/B000IDHJ30%3ftag=kamawada-22%26link_code=xm2%26camp=2025%26dev-t=D3QNAE4JDR26A2">Amazon.co.jpで詳細を見る</a>
+</div>
+</div>
+<div style="clear:left;"></div>
+
+<p></p>
+<div style="float:left"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B000IIOQJK/kamawada-22/"><img alt="Apple iPod touch 16GB MA627J/A" src="http://ecx.images-amazon.com/images/I/21yw434torL.jpg" style="border:none;"></a></div>
+<div style="float:left;margin-left:15px;">
+<div style="font-size:12pt"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B000IIOQJK/kamawada-22/">Apple iPod touch 16GB MA627J/A</a></div>
+<div style="font-size:7pt;font-family:verdana;">posted with <a href="http://yusukebe.com/b/amazon/search/">yusukebe.com::AmazonSearch</a> on 2008.1.13</div>
+<div style="font-size:10pt;">
+<ul style="list-style-type:none;padding:0;">
+<li>エレクトロニクス / アップルコンピュータ (2007/09/25)</li>
+<li>Amazon 売り上げランキング: 53</li>
+</ul>
+<a href="http://www.amazon.co.jp/gp/product/B000IIOQJK%3ftag=kamawada-22%26link_code=xm2%26camp=2025%26dev-t=D3QNAE4JDR26A2">Amazon.co.jpで詳細を見る</a>
+</div>
+</div>
+<div style="clear:left;"></div>
+
+
+ 
+}

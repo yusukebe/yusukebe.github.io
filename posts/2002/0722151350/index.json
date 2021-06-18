@@ -1,0 +1,18 @@
+{
+    "data" :  {
+    "title": "faces connector改造",
+    "date": "2002-07-23 12:13:00 +0900 JST",
+    "dir": "posts/2002/",
+    "slug": "0722151350",
+    "categories": ["tech"],
+    "tags": []
+}
+
+---
+
+
+<p>FlashのXMLSocketを解析等してくれるfaces connectorだが、ちょいと不都合があるので簡単に改造した。ソースは以下。
+<a href="http://www.ok.sfc.keio.ac.jp/~yusuke/asp/FACEsConnector0.01_yusukekai/" target="_new">http://www.ok.sfc.keio.ac.jp/~yusuke/asp/FACEsConnector0.01_yusukekai/</a></p>
+
+ 
+}

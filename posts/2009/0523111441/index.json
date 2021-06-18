@@ -1,0 +1,72 @@
+{
+    "data" :  {
+    "title": "WebService::SimpleとXML::Simpleのあまりシンプルではないやり方",
+    "date": "2009-05-23 20:14:00 +0900 JST",
+    "dir": "posts/2009/",
+    "slug": "0523111441",
+    "categories": ["tech"],
+    "tags": ["Perl"]
+}
+
+---
+
+
+
+<p>
+WebService::Simple の紹介記事にて、こういうコメントを頂きました。
+</p>
+
+<blockquote>
+<p>
+<a href="http://tf0054.blogspot.com/">tf0054さん</a> :
+</p>
+<p>
+WebService::Simple、とても便利に使わせて頂いています！
+</p>
+<p>
+Perlがさほど分かっているわけではないので間違っているかもしれないのですが、中でXML::Simpleするとき、ForceArrayなどオプションが(パーサ差し替えが可能となった時点から?)与えられなくなっているように思うのですが。。
+</p>
+<p>
+何か別の方法で対処可能なものでしょうか。
+</p>
+</blockquote>
+<p>
+お、使って頂いてあざーす！対処の方法ありますよー。
+ですが、これ、「Simple」を冠する WebService::Simple と、XML::Simple にあまりふさわしくない
+若干複雑なコードになっちゃってます。YouTube の GData API からキーワード検索をして、
+マッチしたビデオのリンクを出力する簡単なサンプルを掲載するのでこちらを参考にしてください。
+ようは、XML::Simple の OO オブジェクトをオプション付きで作って、
+WebService::Simple::Parser::XML::Simple のコンストラクタに渡して新しくパーサーを作り、
+それを WebService::Simple の response_parser として指定しています。
+って、こうやって書いててもわかりにくいか＞＜
+</p>
+
+<pre class="brush: perl"> use WebService::Simple;
+use WebService::Simple::Parser::XML::Simple;
+use XML::Simple;
+
+my $keyword = shift || 'perfume';
+my $xs = XML::Simple-&gt;new( KeyAttr =&gt; [], ForceArray =&gt; ['entry'] );
+my $service = WebService::Simple-&gt;new(
+    base_url =&gt; "http://gdata.youtube.com/feeds/api/videos",
+    param    =&gt; { v =&gt; 2 },
+    response_parser =&gt;
+      WebService::Simple::Parser::XML::Simple-&gt;new( xs =&gt; $xs ),
+);
+
+my $res = $service-&gt;get( { 'q' =&gt; $keyword, } );
+my $ref = $res-&gt;parse_response();
+
+for my $entry ( @{ $ref-&gt;{entry} } ) {
+    print $entry-&gt;{link}-&gt;[0]-&gt;{href} . "\n";
+}</pre>
+<p>
+まぁ、XML::Simple も慣れるまでに KeyAttr オプションを知らずにはまったりするのですが、
+この WebService::Simple、もっとシンプルにしたいですなぁ。
+Moose/Mouse もだいぶ浸透してきたので、API の互換性をうまく保って、Any::Moose で書き直すってのもありですね。
+とりあえず、上記のコードを参考に XML::Simple のオプションを指定してみてください。
+</p>
+
+
+ 
+}

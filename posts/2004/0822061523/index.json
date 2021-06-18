@@ -1,0 +1,20 @@
+{
+    "data" :  {
+    "title": "OSXでバックスラッシュを打つ方法、覚え書き",
+    "date": "2004-08-22 15:15:00 +0900 JST",
+    "dir": "posts/2004/",
+    "slug": "0822061523",
+    "categories": ["tech"],
+    "tags": []
+}
+
+---
+
+
+<p>Option + ¥
+でバックスラッシュ。ただの¥じゃだめ。¥nとかやっても改行されないので注意。
+
+参考サイト→<a href="http://www.sodan.ecc.u-tokyo.ac.jp/~okayama/diary/index.cgi?d=2004051#20040511-0">今日の小咄</a></p>
+
+ 
+}

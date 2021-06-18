@@ -1,0 +1,32 @@
+{
+    "data" :  {
+    "title": "rss-jp.netに奥出研が",
+    "date": "2003-06-16 12:04:00 +0900 JST",
+    "dir": "posts/2003/",
+    "slug": "0615150443",
+    "categories": ["tech"],
+    "tags": []
+}
+
+---
+
+
+<p><a href="http://web.sfc.keio.ac.jp/~yusukebe/diary/index.cgi?200301a&amp;to=200301071#200301071" target="_new">以前苦労して</a><br>
+奥出研チーム毎の更新までRSS化しようとしたがあきらめて、単純に<br>
+<a href="http://squishdot.org/" target="_new">Squishdot</a><br>
+のニュース記事だけ<br>
+<a href="http://zope.ok.sfc.keio.ac.jp/ok02aut/news/rdf" target="_new">RSS</a><br>
+吐かせた<br>
+<a href="http://zope.ok.sfc.keio.ac.jp/ok02aut" target="_new">旧奥出研サイト</a><br>
+。実は日本のRSSの権威である<br>
+<a href="http://rss-jp.net/" target="_new">rss-jp.net</a><br>
+に<br>
+<a href="http://www.zope.org/" target="_new">Zope</a><br>
+でのRSS出力ということで<br>
+<a href="http://rss-jp.net/rss_list.html#l14" target="_new">掲載されている</a><br>
+。そういや<br>
+<a href="http://web.sfc.keio.ac.jp/~yusukebe/diary/index.cgi?200212a&amp;to=200212052#200212052" target="_new">ZopeLandに紹介されたり</a><br>
+といろいろと話題のあったWebサイトだったなぁ。</p>
+
+ 
+}

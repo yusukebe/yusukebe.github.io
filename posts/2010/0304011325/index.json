@@ -1,0 +1,180 @@
+{
+    "data" :  {
+    "title": "実例で学ぶPerlにおけるリファレンス",
+    "date": "2010-03-04 10:13:00 +0900 JST",
+    "dir": "posts/2010/",
+    "slug": "0304011325",
+    "categories": ["tech"],
+    "tags": ["Perl"]
+}
+
+---
+
+
+
+<p>
+Perlの文法が大体わかってくるとぶちあたる壁が「リファレンス」です。
+Cを既にやっている人ですと「ポインタ」という概念を知っているので、
+あまり違和感がないのですが( by lestrrat さん )、個人的にはこいつを理解した時に
+「パーと」Perlに対する視界が開けた感じを受けました。
+perlcodesampleさんもこう言ってます。
+</p>
+
+<blockquote>
+<p>
+<a href="http://d.hatena.ne.jp/perlcodesample/20100210/1264257759">Perlで一番ややこしく感じるのはリファレンスだと思う - サンプルコードによるPerl入門</a>
+</p>
+</blockquote>
+
+<p>
+でまぁ、そんな難しい話ではないし、
+慣れれば全てリファレンスで扱うケースもありとのことなので、
+コードを交えて解説してみたいと思います。
+ツッコミ歓迎です。
+ちなみに、僕がリファレンスを理解するきっかけになった「<a href="http://www.amazon.co.jp/exec/obidos/ASIN/4873113059/kamawada-22/">続・初めてのPerl</a>」の例を多いに参考にしています。
+</p>
+<p>
+これから扱うサンプルは
+</p>
+<ul>
+<li>萌え</li>
+<li>メガネ</li>
+<li>ギーク</li>
+<li>エロ</li>
+<li>嫁あり</li>
+</ul>
+<p>
+という5つの人に関する属性があると過程して、
+それぞれの人がどのような属性を持っているかをチェックして出力する簡単なプログラムです。
+例えば、yusukebe には メガネ エロ という属性がある
+という具合です。
+これから例で示す人名らしき物はあくまで架空のものだと思ってください。
+まずは素の配列のみを使ってそのデータ構造を書いてみます。
+</p>
+
+<pre class="brush: perl"> my @zokuseis = qw(萌え メガネ ギーク エロ 嫁あり);
+my @miyagawa = qw(萌え ギーク);
+my @yusukebe = qw(メガネ エロ);</pre>
+<p>
+これをそれぞれの人が持っている属性と予め定義された「@zokuseis」の文字列と比較して、
+マッチすれば出力するというプログラムは、
+何も考えないでやると以下のようになります。
+</p>
+
+<pre class="brush: perl"> # 配列のみを使った場合
+
+for my $zokusei (@zokuseis) {
+    if ( grep $zokusei eq $_, @miyagawa ) {
+        print "miyagawa is $zokusei \n";
+    }
+}
+
+for my $zokusei (@zokuseis) {
+    if ( grep $zokusei eq $_, @yusukebe ) {
+        print "yusukebe is $zokusei \n";
+    }
+}</pre>
+<p>
+2個ループがでてきて冗長ですね。
+ということでこの部分一つのサブルーチンにまとめてしまいましょう。
+</p>
+
+<pre class="brush: perl"> # サブルーチンを使った場合
+
+check_zokusei( 'miyagawa', @miyagawa );
+check_zokusei( 'yusukebe', @yusukebe );
+
+sub check_zokusei {
+    my $name = shift;
+    for my $zokusei (@zokuseis) {
+        if ( grep $zokusei eq $_, @_ ) {
+            print "$name is $zokusei \n";
+        }
+    }
+}</pre>
+
+<p>
+ちょっとすっきりしました。
+しかし、問題とやりたいことがいくつか。
+</p>
+<ul>
+<li>check_zokuseiサブルーチン内で、@_ は配列の中身全てをコピーしているので、
+配列が大きくなった時に無駄である。</li>
+<li>check_zokuseiサブルーチンの引数として、第2引数以降の配列全て、つまり一度 shift した後の @_ が
+属性名前の配列だとは限らないかもしれない。</li>
+<li>データ構造を表す時点で miyagawa, yusukebe といった「名前」を定義したい。</li>
+<li>メンバーが増えた時に毎回メソッドを実行するコードを書くのが面倒である。</li>
+</ul>
+<p>
+で、ちょっとぶっ飛ばして、無名リファレンスと呼ばれてる方法で、
+データ構造を定義してそれを扱うことにしてみます。
+配列の無名リファレンスは [] 、ハッシュの無名リファレンスは {} で表現します。
+変数に入れるときは、@ や % を使うのではなく $ つきのスカラー変数に入れます。
+これを使うことで、ネストしたデータ構造を記述することができます。
+データ定義は以下のようになりました。
+</p>
+
+<pre class="brush: perl"> 
+my $members = [
+    { name =&gt; 'miyagawa', zokuseis =&gt; [qw(萌え ギーク)] },
+    { name =&gt; 'yusukebe', zokuseis =&gt; [qw(メガネ エロ)] },
+    { name =&gt; 'nekokak',  zokuseis =&gt; [qw(ギーク 嫁あり)] },
+    { name =&gt; 'Yappo',    zokuseis =&gt; [qw(ギーク エロ)] },
+    { name =&gt; 'acotie',   zokuseis =&gt; [qw(萌え エロ)] },
+];</pre>
+
+<p>
+細かいことは置いといて、これでメンバーがどういう名前で、どのような属性を持っているかが、
+一望できるようになりました。
+このようにネストしたデータ構造を配列リファレンスとハッシュリファレンスを駆使して、
+表現するとヒューマンリーダブルでもありわかりやすいと思います。
+</p>
+<p>
+では、これを先ほどのように属性チェックさせてみます。
+まず、配列リファレンスを「デリファレンス」という方法を用いて、素の配列に変換してから、
+ループを回しています。スカラー変数名に @ と頭に付ければ、配列にデリファレンスされます。
+そして、先ほど定義された無名のハッシュリファレンスをそのまま、
+check_zokusei_with_ref に渡しています。
+ハッシュの中身へのアクセスは、
+$who-&gt;{name} のような形で実現しています。
+</p>
+
+<pre class="brush: perl"> for my $member (@$members) {
+    check_zokusei_with_ref($member);
+}
+
+sub check_zokusei_with_ref {
+    my $who = shift;
+    for my $zokusei (@zokuseis) {
+        if ( grep $zokusei eq $_, @{ $who-&gt;{zokuseis} } ) {
+            print "$who-&gt;{name} is $zokusei \n";
+        }
+    }
+}</pre>
+<p>
+最終的に出力は以下のようになりました。
+</p>
+
+<pre class="brush: perl"> miyagawa is 萌え
+miyagawa is ギーク
+yusukebe is メガネ
+yusukebe is エロ
+nekokak is ギーク
+nekokak is 嫁あり
+Yappo is ギーク 
+Yappo is エロ 
+acotie is 萌え 
+acotie is エロ</pre>
+
+<p>
+ということで実例を用いて、素の配列だけで表現していたものを
+リファレンスを使ってわかりやすくかつ効率的にデータを扱う方法をかなり駆け足で解説をしてきました。
+文法的な部分はしょってますが、
+リファレンスというものがなんなのかが多少でもわかれば幸いです。
+「これ間違ってるお！」とか「こんなんじゃわかんねーよ！」とかご意見あったらください。
+ということでEnjoy!
+</p>
+
+
+ 
+}

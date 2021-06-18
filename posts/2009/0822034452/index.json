@@ -1,0 +1,45 @@
+{
+    "data" :  {
+    "title": "YAPC::Asia 2009 前夜祭 で「エロサイト管理者の憂鬱2」という題名で話す",
+    "date": "2009-08-22 12:44:00 +0900 JST",
+    "dir": "posts/2009/",
+    "slug": "0822034452",
+    "categories": ["tech"],
+    "tags": ["Perl"]
+}
+
+---
+
+
+
+<p>
+このところ、様々な小規模ウェブアプリケーションを作ってはこの日記でそのバックエンドの仕組みをいろいろ書いています。
+それは、個人でも運用可能でかつ、管理が容易な手法を、今まさに、自分なりにですが確立させようとしているという背景があります。
+</p>
+<p>
+ただ、それら全てをこの日記で紹介するとなると、膨大ななんちゃって論文のようなものになってしまい兼ねない上に、
+めんどくさいので、一連のノウハウを組み合わせて、どうやって個人でも楽しく勉強しながら小規模ウェブアプリケーションを
+持続的に作っていけるかという話を Yokohama.pm 出張版 in YAPC::Asia 2009 前夜祭 でさせていただくことになりました。
+</p>
+<p>
+題して「<strong>エロサイト管理者の憂鬱2</strong>」です。
+といってもエロサイトばかりの話ではなくて、僕が作っているアプリ全てにかかわる話をしていきます。
+なのでサブタイトルは
+「<strong>- How I build, operate, monetize, and tune up small web applications -</strong>」
+としておきます。
+現時点での yusukebe プロダクト構築・運用・マネタイズ・チューニングに関する集大成となる予定です。
+</p>
+<p>
+YAPC::Asia 2009 前夜祭は 9月9日(水) 東京工業大学大岡山キャンパスにて 18:30から開始です。
+YAPC のチケットをお持ちでない方も、別途参加費を払えば入場可能ですので、是非興味のある方、yusukebe ファンの方は
+お越し下さい。
+他に amachang とかいう人の発表があるので、あんなチャラ男には負けないクオリティでプレゼンに挑みたいと思います。
+</p>
+<ul>
+  <li><a href="http://yokohama.pm.org/2009/08/yokohamapm-in-yapcasia-2009-1.html">Yokohama.pm 出張版 in YAPC::Asia 2009 前夜祭のスピーカー発表 - Yokohama Perl Mongers</a></li>
+  <li><a href="http://yokohama.pm.org/2009/08/yokohamapm-in-yapcasia-2009.html">Yokohama.pm 出張版 in YAPC::Asia 2009 前夜祭を開催します - Yokohama Perl Mongers</a></li>
+</ul>
+
+
+ 
+}

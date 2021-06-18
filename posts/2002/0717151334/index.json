@@ -1,0 +1,19 @@
+{
+    "data" :  {
+    "title": "swift3d",
+    "date": "2002-07-18 12:13:00 +0900 JST",
+    "dir": "posts/2002/",
+    "slug": "0717151334",
+    "categories": ["tech"],
+    "tags": []
+}
+
+---
+
+
+<p>swift3dちょいといじってみた。メタセコでモデリングしたデータをAutoCAD形式で書き出して
+インポートさせる。こんな感じのくまさんができました。
+<a href="http://www.ok.sfc.keio.ac.jp/~yusuke/asp/kuma.swf" target="_new">http://www.ok.sfc.keio.ac.jp/~yusuke/asp/kuma.swf</a></p>
+
+ 
+}

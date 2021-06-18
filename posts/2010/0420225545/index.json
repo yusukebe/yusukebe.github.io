@@ -1,0 +1,77 @@
+{
+    "data" :  {
+    "title": "今日はPerl初心者向け勉強会 in PerlCasual#02",
+    "date": "2010-04-21 07:55:00 +0900 JST",
+    "dir": "posts/2010/",
+    "slug": "0420225545",
+    "categories": ["tech"],
+    "tags": ["Perl"]
+}
+
+---
+
+
+
+<p>
+<b>この記事は随時更新されると思われます</b>
+</p>
+
+<p>
+いよいよ本日はPerl初心者向け勉強会です。
+当日の諸連絡をこの記事とツイッターをベースに行いますので、
+関係者の方はチェックしてください。
+</p>
+
+<h4>公式タグ</h4>
+<p>
+公式というのもなんか変ですが、タグは以下を使ってください。
+</p>
+<ul>
+  <li>Twitter等向けハッシュタグ「#perlcasual」</li>
+  <li>はてなブックマーク等向けタグ「perlcasual」</li>
+</ul>
+
+<h4>開場時間</h4>
+<p>スタートは19時ですが、来れる方はそれ以前に来てください。
+開場は<strong>18時30分</strong>です。
+</p>
+
+<h4>出欠の確認ATNDで</h4>
+<p>
+先週と繰り返しになりますが、ATNDで自分が参加可能かどうかを確認してください。
+また、残念ながら来れない方はキャンセルの登録をお願いいたします。
+</p>
+<ul>
+  <li><a href="http://atnd.org/events/3772">カジュアルPerl #02 (初心者枠) : ATND</a></li>
+  <li><a href="http://atnd.org/events/3773">カジュアルPerl #02 (CPAN Author枠) : ATND</a></li>
+</ul>
+
+<h4>アジェンダPDF</h4>
+<p>
+本日のアジェンダのPDFを作りました。
+便利かと思うので、参加者の方はみてみてください。githubに置いてあります。
+</p>
+<ul>
+  <li>
+<a href="http://github.com/yusukebe/perlcasual/raw/master/02/100421_perlcasual02_agenda.pdf">100421_perlcasual02_agenda.pdf</a>
+</li>
+</ul>
+
+<h4>僕への連絡はTwitterで</h4>
+<p>
+まぁ、基本ないと思いますが（講師が遅刻するとかね！）、僕への連絡はTwitterでお願いします
+（午後から直前まで外出しているので）。
+</p>
+<ul>
+  <li><a href="http://twitter.com/yusukebe">yusukebe (yusukebe) on Twitter</a></li>
+</ul>
+
+<h4>懇親会に参加してください</h4>
+<p>
+是非懇親会に参加してください！
+おそらく、初顔合わせのパターンが多いと思うので、抵抗感ある方もご安心を！
+</p>
+
+
+ 
+}

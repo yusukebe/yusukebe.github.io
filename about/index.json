@@ -1,0 +1,139 @@
+{
+    "data" :  {
+    "title": "和田裕介について",
+    "date": "2020-01-16 02:58:48 +0900 JST",
+    "dir": "about/",
+    "slug": "index",
+    "categories": [],
+    "tags": []
+}
+
+---
+
+
+和田裕介です。ゆーすけべーの名前で活動しています。天然パーマです。
+
+![和田裕介](https://live.staticflickr.com/65535/49391959862_ba1a9a485f_o_d.jpg)
+
+## Profile
+
+* Yusuke Wada
+* 和田裕介
+* 1981年12月23日生
+* Master of Media Design
+
+## History
+
+* 幼少期 神奈川県鎌倉市にて活動
+* 2000年 神奈川県立湘南高校卒業
+* 2003年 情報処理推進機構未踏ソフトウェア開発事業未踏ユース採択
+* 2003年 未踏ユース準スーパークリエーター認定
+* 2004年 慶應義塾大学環境情報学部卒業
+* 2006年 慶應義塾大学政策メディア研究科修了
+
+## 受賞
+
+* 2005年 DAF東京PRIZE インタラクティブ/インスターレション部門
+* 2008年 ネトラン ベスト・オブ・超凄サービス大賞
+* 2008年 Award on rails 2008 クックパッド賞
+* 2012年 YAPC::Asia 2012 in Tokyo ベストトーク賞1位
+* 2013年 YAPC::Asia 2013 in Tokyo ベストトーク賞1位
+* 2013年 ボケて - 文化庁第17回メディア芸術祭 審査委員会推薦作品
+
+## アカウント
+
+* [Twitter / yusukebe](https://twitter.com/yusukebe)
+* [Facebook / 和田裕介](https://www.facebook.com/yusuke.wada)
+* [GitHub / yusukebe](https://github.com/yusukebe)
+* [CPAN / yusukebe ](https://metacpan.org/author/YUSUKEBE)
+* [Qiita / yusukebe](https://qiita.com/yusukebe)
+* [YouTube / yusukebe](https://www.youtube.com/user/yusukebe)
+* [note / yusukebe](https://note.com/yusukebe)
+* [Rebuild / yusukebe](https://rebuild.fm/people/yusukebe/)
+* [Amazon.co.jp / 和田 裕介](https://www.amazon.co.jp/%E5%92%8C%E7%94%B0%E8%A3%95%E4%BB%8B/e/B009ZCI0JW/)
+* [Speaker Deck / yusukebe](https://speakerdeck.com/yusukebe)
+* [SlideShare / yusukebe](https://www.slideshare.net/yusukebe/presentations/)
+
+## ブログ
+
+* [ゆーすけべー日記](http://yusukebe.com/)
+
+### 人気記事
+
+* [君はPornhubを知っているか - ゆーすけべー日記](https://yusukebe.com/posts/2020/do-you-know-pornhub/)
+* [7つの習慣の実践で人生が変わった - ゆーすけべー日記](https://yusukebe.com/posts/2012/0215014510/)
+* [実装までにする7つの企画作業 - ゆーすけべー日記](https://yusukebe.com/posts/2012/0507112346/)
+* [Twitter以前のWebの言葉たち - ゆーすけべー日記](https://yusukebe.com/posts/2020/words-before-twitter/)
+* etc.
+
+## 書籍
+
+* [Webサービスのつくり方〜「新しい」を生み出すための33のエッセイ / 技術評論社](http://www.amazon.co.jp/dp/4774154075/)
+* [Perlについて語ろう / Kindle Direct Publishing](http://www.amazon.co.jp/dp/B00BU7DBIA/)
+* [Webアプリエンジニア養成読本(共著) / 技術評論社](http://www.amazon.co.jp/dp/4774163678/)
+
+## 論文
+
+* [Wada, Y., Usui, J., Uriu, D., & Okude, N. (2005). Moo-pong. ： ACM SIGGRAPH 2005 Emerging Technologies, SIGGRAPH 2005](https://keio.pure.elsevier.com/ja/publications/moo-pong-2)
+* [moo-pong:映像の万華鏡 和田裕介, 臼井旬, 奥出直人, 瓜生大輔 インタラクション2006 2006年3月 情報処理学会](http://www.interaction-ipsj.org/archives/paper2006/pdf2006/interactive/paper0181.pdf)
+* 和田裕介, 菅野吉郎，萩原ゆづる，吉村茉莉，奥出直人. &quot;本を介して人とつながり、人の本棚を覗いて新しい本と出会える本棚“ボクダナ”～モノを介したコミュニケーションコンセプトTSUNAとユビキタス環境におけるTSUNAの実 践&quot;. 情報処理学会インタラクション2004論文集, March, 2004. [PDF(700K)]
+* Takashi Matsumoto, Yusuke Wada, Miho Norimatsu, Naohito Okude. &quot;Smart-Media Applications Created by Scenario Based Modling&quot;. Symposium on Applications and the Internet Workshops(SAINT 2004 Workshops), pp473-479, IEEE Computer Society, 2004
+
+## プレゼン
+
+* [1日でわかるWebサービス制作の全て ～企画から実装まで～](https://yusukebe.com/webservice-oneday/)
+* [「新しい」を生み出すためのWebアプリ開発とその周辺](https://www.slideshare.net/yusukebe/web-14511784)
+*  [Mojoliciousでつくる！ Webアプリ入門](https://www.slideshare.net/yusukebe/yapcasia-2013-mojolicious)
+* [「Webサービスのつくり方」 のつくり方](https://www.slideshare.net/yusukebe/web-16710062)
+* [僕らがWebサービスをつくる5つの理由](https://www.slideshare.net/yusukebe/web5-20062274)
+* [Podcastを支える技術、エンジニアのためのWebメディア、そしてCPAN](https://www.slideshare.net/yusukebe/podcastwebcpan)
+* [Webサービスのコンテンツパターン 或いはデータの活⽤](https://www.slideshare.net/yusukebe/ngthack)
+* [エロサイトのじわじわ （TV放送コード版）](https://www.slideshare.net/yusukebe/tv-13561522)
+* [Webサービスにおける
+キャッシュ戦略 - Speaker Deck](https://speakerdeck.com/yusukebe/websabisuniokeru-kiyatusiyuzhan-lue)
+* [revealgo - Shibuya.go#1](https://yusukebe.com/talks/shibuyago-001/#/)
+* [Local server based Web Application](https://yusukebe.com/talks/yapceu2015/#/)
+* etc.
+
+## 記事
+
+* [若いエンジニアこそイベントに！｜ゆーすけべー（オモロキCTO/YAPC実行委員長） | キャリアハック](https://careerhack.en-japan.com/report/detail/349)
+* [和田裕介（ボケて）×土屋泰洋：前編「ゆーすけべーの作り方」 | ウェブ電通報](https://dentsu-ho.com/articles/2006)
+* [和田裕介 | TechWave（テックウェーブ）](https://techwave.jp/tag/%E5%92%8C%E7%94%B0%E8%A3%95%E4%BB%8B)
+* [鎌倉の自宅ではたらく、父子2人のIT企業 (1/2) - ITmedia NEWS](https://www.itmedia.co.jp/news/articles/0805/02/news027.html)
+* [和田 裕介について：MarkeZine（マーケジン）](https://markezine.jp/author/853)
+* etc.
+
+## 代表作
+
+* CDTube
+    *  [CDTubeとは ウェブの人気・最新記事を集めました - はてな](https://d.hatena.ne.jp/keyword/CDTube)
+    * [音楽配信メモ CDTubeの使い道](http://xtc.bz/index.php?ID=394)
+* ListPod
+    * [YouTube動画集めたマイリスト作成、iPodで持ち運べる「ListPod」 - ITmedia NEWS](https://www.itmedia.co.jp/news/articles/0803/24/news109.html)
+    * [YouTubeの動画をリストで保存、動画ポッドキャストを楽しめる「ListPod」 - CNET Japan](https://japan.cnet.com/article/20369960/)
+* [ボケて](http://bokete.jp/)
+    * [開始4年目で突然ヒット　写真で一言「ボケて」のアクセスが30倍になった理由 (1/2) - ITmedia NEWS](https://www.itmedia.co.jp/news/articles/1210/10/news029.html)
+    * [【ネット上にお笑いを！】「ボケて」開発で起こった衝撃的な事件とは？ | リクナビNEXTジャーナル](https://next.rikunabi.com/journal/20151106_1/)
+* Twib - Twitter ホットエントリー
+    * [Twitter上の話題サイトがわかる「Twib」、iPhone向けページやお気に入り機能など追加 - CNET Japan](https://japan.cnet.com/article/20398173/)
+    * [Twib - ITmedia エンタープライズ](https://www.itmedia.co.jp/bizid/articles/0910/26/news049.html)
+* anpiレポート
+    * [「その時Webが出来ること」 - 和田 裕介 / 株式会社ワディット代表取締役 / 株式会社オモロキCTO - ユレッジ ： 日本の「揺れやすさ」と地震防災を考えるサイト](https://yullege.jp/?p=270)
+    * [安否情報を含むTwitterのつぶやきを人力でリスト化するサービス、和田裕介氏らが提供 | 日経クロステック（xTECH）](https://xtech.nikkei.com/it/pc/article/news/20110316/1030802/)
+    * [安否情報「#anpi」をリスト化　「anpiレポート」 - ITmedia NEWS](https://www.itmedia.co.jp/news/articles/1103/15/news038.html)
+* 君のラジオ
+    * [ちょっとしたBGMがほしいときは｢Musictonic｣と｢君のラジオ｣を使ってみよう！ | ライフハッカー［日本版］](https://www.lifehacker.jp/2012/02/120211musictonic.html)
+    * [「君のラジオ」がソーシャル対応　世界を狙えると思う【湯川】 | TechWave（テックウェーブ）](https://techwave.jp/archives/51646671.html)
+* miyagawanize
+    * [Miyagawanize](https://www.slideshare.net/yusukebe/miyagawanize)
+    * [miyagawanize2](https://www.slideshare.net/yusukebe/miyagawanize2)
+* Oppai-Detect
+    * [Oppai-Detect 3](https://www.slideshare.net/yusukebe/oppaidetect-3)
+ * App::revealup
+    * [App::revealup - HTTP Server application for viewing Markdown formatted text as slides - metacpan.org](https://metacpan.org/pod/App::revealup)
+* revealgo
+    * [yusukebe/revealgo： Markdown driven presentation tool written in Go!](https://github.com/yusukebe/revealgo)
+
+ 
+}

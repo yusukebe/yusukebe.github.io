@@ -1,0 +1,76 @@
+{
+    "data" :  {
+    "title": "ListPod に見る OpenID Provider の利用率、Yahoo! がダントツでトップ",
+    "date": "2008-04-15 17:07:00 +0900 JST",
+    "dir": "posts/2008/",
+    "slug": "0415080746",
+    "categories": ["tech"],
+    "tags": ["Perl"]
+}
+
+---
+
+
+
+<p>
+<a href="http://listpod.tv/">ListPod</a> を公開して3週間が経ちました。
+おかげさまで現時点でユーザー登録をしていただいた方の数は1000人以上を達成。
+こうした、ユーザーにログインしてもらうようなサービスを自分で運営するのは初めてなので、
+至らない点ありますが、嬉しい限りです。
+</p>
+
+<p>
+ところで、ListPod では認証に OpenID を利用しています。
+バージョン2.0 にも対応しています。
+そこで、現時点での会員の皆様がどの OpenID Provider を利用しているかのデータを見てみたいと思います。
+</p>
+<p>
+  2008年4月15日現在、ListPod において OpenID によるユーザー登録をした数は「<b>1081</b>」。
+  そのうちの OpenID Provider の利用トップは <b>614</b> 件で「<b>Yahoo! Japan</b>（参考: <a href="http://openid.yahoo.co.jp/">OpenIDとは？ - Yahoo! JAPAN</a>）」でした。
+2位が「はてな（<a href="http://www.hatena.ne.jp/info/openid">はてなでOpenID - はてな</a>）」で351件、
+  3位が「livedoor（<a href="http://auth.livedoor.com/openid/">livedoor Auth OpenID(β)</a>）」で56件となりました。実に1位の Yahoo! JAPAN は全体の<b>57％</b>を占め、2位のはてなが33％ということを考えるとダントツと言えます。全体の順位は以下のようになります（主要OP以外はその他の扱いにしました）。
+</p>
+<blockquote>
+me.yahoo.co.jp: 614 (57%)<br>
+www.hatena.ne.jp: 351 (33%)<br>
+profile.livedoor.com: 56 (6%)<br>
+openid.ne.jp: 26 (2%)<br>
+myopenid.com: 8<br>
+me.yahoo.com: 5<br>
+claimid.com: 2<br>
+vaginarepos.org: 2<br>
+coderepos.org: 1<br>
+openid4u.net: 1<br>
+vox.com: 1<br>
+other: 14<br>
+</blockquote>
+<p>
+また、Google Chart API で全体を俯瞰する円グラフを作ってみました。こちらです。
+</p>
+<p>
+  <img alt="chart" class="at-xid-6a0133f4781589970b015435b6f273970c" src="https://yusukebe.com/archives/a/6a0133f4781589970b015435b6f273970c-pi.png">
+</p>
+<p>
+実際に運用を始める前では、はてなの OpenID 利用が高いのではという予測でしたが、この結果を見て、Yahoo! JAPAN のシェアがこれほどまでか、と多少驚いています。
+もちろん、この数値は ListPod というサービスにおいてですし、一人が複数アカウントを利用していることも想定されているので、一般的な OpenID Provider の利用率として考えることはできません。ただ、ひとつの目安になるかと思います。
+</p>
+<p>
+Yahoo! JAPAN の利用が半数以上というのは、Open ID 2.0 の Provider であることで URL 入力が簡便になった点が一つあげられるのかと思います。しかし、当然のことですが、利用ユーザーがはてなや livedoor のアカウントに比べて、Yahoo! JAPAN のアカウントを使うことの方を優先したことが一番でかいでしょう。これは、利用者が Yahoo! JAPAN 以外の Open ID Provider のアカウントを持っていないことも含まれます。
+</p>
+<p>
+はてなや livedoor などどちらかと言えば（偏見入ってますが）ネットに精通している人が使いそうな OP ではなく、より一般的なユーザーが多いと思われる Yahoo! JAPAN の利用が多いということで、OpenID はサービスによりけりで幅広い層の方に認知されていくのではないかと考えることもできます。
+ターゲットユーザーにも関わってきますが、Open ID による認証を用いたサービスを作るに当たって今のところは、2.0 に対応させること、そして、Yahoo! JAPAN の OpenID からのログインが比較的多くなることを想定しよう、という結論ですかね。
+</p>
+<p>
+とにもかくにも、ListPod はおそらく、OpenID が無ければここまでユーザー数が伸びなかったと思います。
+これからも OpenID の今後に注目していきたいです。
+</p>
+
+<h4>関連記事</h4>
+<ul>
+  <li><a href="http://yusukebe.com/archives/08/03/23/094204.html">ゆーすけべー日記: YouTube動画のお気に入りをPodcast化してiTunesやiPod で見れるサービス「ListPod」をリリースしました</a></li>
+</ul>
+
+
+ 
+}

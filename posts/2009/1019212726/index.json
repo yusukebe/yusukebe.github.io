@@ -1,0 +1,42 @@
+{
+    "data" :  {
+    "title": "Tumblrのパーマリンクから写真を含んでいたらそのURLを取得するスクリプト",
+    "date": "2009-10-20 06:27:00 +0900 JST",
+    "dir": "posts/2009/",
+    "slug": "1019212726",
+    "categories": ["tech"],
+    "tags": ["Perl"]
+}
+
+---
+
+
+
+<p>
+題名通りなんだけど、こんな感じでしょうか。
+拙作WebService::Simpleの模範的な使い方。
+</p>
+
+<pre class="brush: perl"> use strict;
+use warnings;
+use URI;
+use WebService::Simple;
+
+my $permalink = shift || "http://33rpm.tumblr.com/post/211527548";
+my $uri = URI-&gt;new($permalink);
+my $id = $uri-&gt;as_string =~ m!post/(\d+)! ? $1 : die "can't detect post id!";
+my $base_url = $uri-&gt;scheme . "://" . $uri-&gt;host;
+
+my $service  = WebService::Simple-&gt;new( base_url =&gt; $base_url );
+my $res      = $service-&gt;get( 'api/read', { id =&gt; $id } );
+my $ref      = $res-&gt;parse_response();
+
+die "this post does not have photos!"
+  unless defined $ref-&gt;{posts}-&gt;{post}-&gt;{'photo-url'};
+for my $photo_url ( @{ $ref-&gt;{posts}-&gt;{post}-&gt;{'photo-url'} } ) {
+    print "$photo_url-&gt;{content}\n";
+}</pre>
+
+
+ 
+}

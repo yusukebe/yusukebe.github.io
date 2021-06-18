@@ -1,0 +1,24 @@
+{
+    "data" :  {
+    "title": "落下型RSSリーダー",
+    "date": "2004-06-22 23:17:00 +0900 JST",
+    "dir": "posts/2004/",
+    "slug": "0622141750",
+    "categories": ["tech"],
+    "tags": []
+}
+
+---
+
+
+
+<p>   <a href="http://www.cmagazine.jp/contents/200406.html">C-Magazine6月号</a>の特集「数学」を道具として使いこなす。この一番最初にある雨粒シミュレーションってのをFlashで作ってみた。 </p>
+<p>   こんな感じ<br>   <object align="middle" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,0,0" height="400" id="amatubu" width="550">      <param name="_cx" value="14552">      <param name="_cy" value="10583">      <param name="FlashVars" value="">      <param name="Movie" value="http://kamawada.com/~yusuke/yusukebe/archives/files/040622/amatubu.swf">      <param name="Src" value="http://kamawada.com/~yusuke/yusukebe/archives/files/040622/amatubu.swf">      <param name="WMode" value="Window">      <param name="Play" value="-1">      <param name="Loop" value="-1">      <param name="Quality" value="High">      <param name="SAlign" value="">      <param name="Menu" value="-1">      <param name="Base" value="">      <param name="AllowScriptAccess" value="sameDomain">      <param name="Scale" value="ShowAll">      <param name="DeviceFont" value="0">      <param name="EmbedMovie" value="0">      <param name="BGColor" value="FFFFFF">      <param name="SWRemote" value="">      <param name="MovieData" value="">      <embed align="middle" allowscriptaccess="sameDomain" bgcolor="#ffffff" height="400" name="amatubu" pluginspage="http://www.macromedia.com/go/getflashplayer" quality="high" src="http://kamawada.com/~yusuke/yusukebe/archives/files/040622/amatubu.swf" type="application/x-shockwave-flash" width="550"></embed>    </object></p>
+<p>   これを応用して面白いもの作れないかなと考えたところ、落下型RSSリーダーというのを作ってみた。   雨粒のようにエントリーのタイトルが落下して、最近更新されたエントリーほど小さい重力が、古く更新されたエントリーほど大きい重力がかかるというもの。</p>
+<p>   それで<a href="http://www.ok.sfc.keio.ac.jp/~yusuke/ontenna/">オンテナ</a>を読み込んでみたらこんな感じ→<a href="http://www.ok.sfc.keio.ac.jp/~yusuke/ontenna/skin/amatubu.html">落下型オンテナ</a>。</p>
+<p>ちょっと変なところがあるけど一応それっぽく動いている。パラメータの与え方調整しなきゃだな。こういう感じでオンテナのSKINをいろいろ作るのもたのしい。みんなも作ってみてくださいな。</p>
+<p>   FlashMX2004のXMLConnectorとDataSetはかなり便利。</p>
+
+
+ 
+}

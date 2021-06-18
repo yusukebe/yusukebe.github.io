@@ -1,0 +1,41 @@
+{
+    "data" :  {
+    "title": "Windowsで作って日本語が含まれるZIPファイルをPerlで文字化けせず解凍する",
+    "date": "2011-10-08 14:37:00 +0900 JST",
+    "dir": "posts/2011/",
+    "slug": "1008053718",
+    "categories": ["tech"],
+    "tags": ["Perl"]
+}
+
+---
+
+
+
+<p>Archive::Zip使った。なんかEncodeの辺りが無理矢理な気がするが、こんな感じかしら。</p>
+
+
+
+
+<pre class="code">use Archive::Zip;
+use File::Spec;
+use Encode;
+
+my $file = $ARGV[0];
+my $zip  = Archive::Zip-&gt;new();
+die 'read error' unless $zip-&gt;read($file) == &amp;Archive::Zip::AZ_OK;
+
+for my $member ( $zip-&gt;members ) {
+    my $to = File::Spec-&gt;catfile(decode('shift_jis',$member-&gt;fileName()));
+    $zip-&gt;extractMember( $member, $to );
+}</pre>
+
+
+
+
+<p><a style="display: inline;" href="https://yusukebe.com/archives/a/6a0133f4781589970b015435fa8d54970c-pi"><img class="asset  asset-image at-xid-6a0133f4781589970b015435fa8d54970c image-full" alt="スクリーンショット（2011-10-08 14.34.42）" title="スクリーンショット（2011-10-08 14.34.42）" src="https://yusukebe.com/archives/a/6a0133f4781589970b015435fa8d54970c-800wi.png border="0"></a> <br></p>
+
+
+
+ 
+}

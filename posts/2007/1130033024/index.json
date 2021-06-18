@@ -1,0 +1,108 @@
+{
+    "data" :  {
+    "title": "PlaggerでCDTube(シングルランキング)の映像をまとめてダウンロード＆Podcast",
+    "date": "2007-11-30 12:30:00 +0900 JST",
+    "dir": "posts/2007/",
+    "slug": "1130033024",
+    "categories": ["tech"],
+    "tags": ["Perl"]
+}
+
+---
+
+
+
+<p>
+
+昨日の俺のファンであるのどぐろさんに会えた記念。
+のどぐろさんは言いました。
+
+</p>
+<blockquote>
+  <p>流行り歌をまとめてダウンロードしたくないですか？</p>
+  <p>
+以前から、作りたいなと思っていたのは、Yusukebeさんが作ったCDTube（カウントダウンチューブ）というサービスからflvファイルを一発で落とすソフトだ。CDTubeは、CDTVのようにその週のヒット曲を1位から100位まで提供してくれるサービスだ。オリコンなんかと違うのは、その1位から100位までの曲のミュージックビデオをYoutube動画から探してきて表示してくれるというとってもありがたいサービスなのだ。
+  </p>
+  <p>
+    <a href="http://d.hatena.ne.jp/nodoguro/20071125/p1">流行り歌をまとめてダウンロードしたくないですか？ - のどぐろ</a>より
+  </p>
+</blockquote>
+<p>
+ということでそれPlaggerでやってみたよ。
+</p>
+<p>
+CDTubeをちょこっと改造してAtomフィードはかせてref=related属性のついたlinkを作ってその先をYouTubeの映像にして、この前紹介したPlaggerのレシピに入れ込めば一気にダウンロード＆iTunesやiPodで見れる形式に変換してPodcastで読み込めるよ。
+</p>
+<p>
+  <font size="2">iTunesでCDTubeの1位から10位までの映像Podcastを読み込ませたところ</font><br>
+  <img alt="cdtube" class="at-xid-6a0133f4781589970b015435b6efa4970c" src="https://yusukebe.com/archives/a/6a0133f4781589970b015435b6efa4970c-pi.jpg">
+</p>
+
+<p>
+  <font size="2">iPod touch で見たところ</font><br>
+  <img alt="cdtube" class="at-xid-6a0133f4781589970b015435b6efb3970c" src="https://yusukebe.com/archives/a/6a0133f4781589970b015435b6efb3970c-pi.jpg">
+</p>
+
+<p>
+  Atomフィードは今のところ20位まで吐いてます。URLは以下です。
+</p>
+<ul>
+  <li><a href="http://pulpsite.net/cdtube/atom">http://pulpsite.net/cdtube/atom</a></li>
+</ul>
+
+<p>
+  これが config.yaml の例です。
+</p>
+
+<pre class="brush: perl"> plugins:
+
+  - module: Subscription::Config
+    config:
+      feed:
+          - url: http://pulpsite.net/cdtube/atom
+
+  - module: Filter::AtomLinkRelated
+
+  - module: Filter::FindEnclosures
+  
+  - module: Filter::FetchEnclosure
+    config:
+      dir: /home/user/dir
+    rule:
+      module: Deduped
+      path: ./deduped.db
+
+  - module: Filter::FFmpeg
+    config:
+      command: /usr/bin/ffmpeg
+      ext: mp4
+      dir: /home/user/dir
+      encoding: utf8
+      extra_options: -coder 0 -level 13 -ac 2
+      options:
+        video_codec:         h264
+        bitrate:             600
+        audio_codec:         aac
+        audio_sampling_rate: 44100
+        audio_bit_rate:      128
+        frame_size:          432x320
+
+  - module: Filter::RewriteEnclosureURL
+    config:
+      rewrite:
+        - local: /home/user/dir
+          url: http://localhost/~user/dir
+
+  - module: Publish::Feed
+    config:
+      format: RSS
+      dir: ./
+      filename: cdtube.xml</pre>
+
+<p>
+  というわけでEnjoy！
+</p>
+
+
+ 
+}

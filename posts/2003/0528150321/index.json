@@ -1,0 +1,85 @@
+{
+    "data" :  {
+    "title": "Blogブックマーク",
+    "date": "2003-05-29 12:03:00 +0900 JST",
+    "dir": "posts/2003/",
+    "slug": "0528150321",
+    "categories": ["tech"],
+    "tags": []
+}
+
+---
+
+
+
+<p>
+  とある人に僕がBlogについて詳しいということをとある人から紹介されたらしくて、
+  Blogについてのページを教えてほしいとのこと。
+  ちょっと前に盛り上がって、最近離れ気味だったので、ちゃんと整理してみた。以下だらだらと貼り付け。
+</p>
+<pre class="code">---
+Blogブックマーク集
+■Blogの説明
+・weblog って、なに? on SFC CLIP
+http://compress.sfc.keio.ac.jp/clip/series03040401.html
+・TrackBackとは on 羊堂本舗　ちょき
+http://sheepman.parfait.ne.jp/wiki/pukiwiki.php?TrackBack
+■ツール
+・movabletyp.org
+http://www.movabletype.org/docs/mtmanual_trackback.html
+・TRACKBACKマニュアル
+http://www.movabletype.org/docs/mtmanual_trackback.html
+・せかいのまんなか
+http://webmania.jp/%7Ekeitsuda/
+具体的にどのような仕組みでできてるかわからないが、
+日本中のBlogサイトからどのページへのリンクが一番多いかがわかる
+・はてなアンテナ
+http://a.hatena.ne.jp/
+あらかじめ登録したサイトの最新更新時刻を取得し並べ替えて表示するツール
+アンテナを誰でも作れるサイト
+・はてなダイアリー
+http://d.hatena.ne.jp/
+キーワードが登録でき、似たような日記、つまり同じキーワードを多く含む
+日記をおとなり日記として表示できる
+■SFC内でのBlogへの取り組み
+・TRIGGERS
+http://blog.sfc.keio.ac.jp/
+小檜山研の松村さんたちがやってるプロジェクト
+・blogのススメ on SFC CLIP
+http://compress.sfc.keio.ac.jp/clip/series03052302.html
+・network styy *
+http://ellington.gel.sfc.keio.ac.jp/nsly/mt/ns/
+熊坂研の人達が書いてるBlog
+・オンテナ
+http://www.ok.sfc.keio.ac.jp/~yusuke/ontenna/
+奥出研でBlogをつけている人達の最新更新時刻を取得して並べ替えて表示するサイト。
+うちの研究会の鎌田が以下のようなページを作って研究会の人にMovableTypeを
+使ってBlogをつけることを広めた。
+http://www.kamadango.com/2003/04/sfcmovabletype263.php
+その結果、20人以上の人が毎日に近い頻度でBlogを更新している。
+Blogの起源である「ウェブのログ」という意味合いから外れているものも多いが、
+新たなコミュニケーションのツール、コンテンツマネージメントのツールとして
+非常に興味深い。
+■個人的に好きなBlog
+・Soanblog [Movabletype版]　創庵
+http://soan.jp/
+著者の人がカフェをやってて、そこでBlogで知り合った人と出会ったりしてる
+僕たちも行ってみたいと騒いでいる
+・Going My Way
+http://kengo.preston-net.com/
+・ishiao's WikiLike
+http://ishinao.net/WikiLike/
+オリジナルのツールWikiLikeを使ってBlogを書いている
+WikiLikeはほしいけど、配布されていない模様
+■個人的に面白いと思った記事
+・TrackBackに関する議論
+http://sheepman.parfait.ne.jp/wiki/TrackBack%A4%CB%B4%D8%A4%B9%A4%EB%B5%C4%CF%C0/
+・トラックバックの意味と、BlogのWWWサービス説
+http://www.syncworld.net/blog/nob/archives/000462.html
+・「日本人にはBlogより日記」、はてなの人気に迫る
+http://japan.cnet.com/news/maker/story/0,2000047861,20053530-2,00.htm
+--- </pre>
+
+
+ 
+}

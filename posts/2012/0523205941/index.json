@@ -1,0 +1,65 @@
+{
+    "data" :  {
+    "title": "MojoliciousでRails風のRESTディスパッチ",
+    "date": "2012-05-24 05:59:00 +0900 JST",
+    "dir": "posts/2012/",
+    "slug": "0523205941",
+    "categories": ["tech"],
+    "tags": ["Perl","Mojolicious"]
+}
+
+---
+
+
+
+<p>GET、POST、PUT、DELETEの4つのメソッドを使い切ってリソースをコントロールしようというRESTfulな概念には賛同だけれども、
+ブラウザがGET、POSTのみのサポートだよねぇ〜っていう状況はよくあります。
+Ruby on Railsではそこまで深く調べてないけど、POSTメソッドのパラメータ「_method」に「DELETE」か「PUT」という値を入れることでもう二つのメソッドをサポートさせているように見せている？ようだ。</p>
+
+<p>Perlで僕がいつも使っているWAF、MojoliciousではサーバサイドのルータでPUT、DELETEに対応しているので、
+Railsで使っている「_method」フィールドを活用すればそれなりにRESTfulでありコントローラの記述も
+スッキリするんじゃないかと思う。
+つまりディスパッチ前にうまいことフックさせて_methodの値でメソッドを書き換える。</p>
+
+<p>よって以下のMojolicious::Liteのコードがうまく動いた。</p>
+
+<pre class="code">#!/usr/bin/env perl
+use Mojolicious::Lite;
+
+app-&gt;hook(
+    before_dispatch =&gt; sub {
+        my $c = shift;
+        if($c-&gt;req-&gt;method eq 'POST' &amp;&amp; $c-&gt;req-&gt;param('_method')) {
+            my $methods = [qw/GET POST PUT DELETE/];
+            if ( grep { $_ eq $c-&gt;req-&gt;param('_method') } @$methods ) {
+                $c-&gt;req-&gt;method( $c-&gt;req-&gt;param('_method') );
+            }
+        }
+    }
+);
+
+get '/' =&gt; sub {
+    my $self = shift;
+    $self-&gt;render('index');
+};
+
+del '/' =&gt; sub {
+    my $self = shift;
+    $self-&gt;render_text('DELETE resource!');
+};
+
+app-&gt;start;
+
+__DATA__
+
+@@ index.html.ep
+&lt;form action="/" method="post"&gt;
+   &lt;input type="hidden" name="_method" value="DELETE" /&gt;
+   &lt;input type="submit" value="DELETE" /&gt;
+&lt;/form&gt;</pre>
+
+<p>ふむ、なかなかよさげです。とあるプロジェクトのコードで試してみるとします。</p>
+
+
+ 
+}

@@ -1,0 +1,66 @@
+{
+    "data" :  {
+    "title": "あなたのブログに「tweets数」を表示するには？ tweets数を画像で取得するAPIを実験的に公開。Twib更新情報その2",
+    "date": "2009-08-07 12:58:00 +0900 JST",
+    "dir": "posts/2009/",
+    "slug": "0807035825",
+    "categories": ["tech"],
+    "tags": []
+}
+
+---
+
+
+
+<p>
+今までTwibで収集したURLを含んだつぶやきを利用して、
+指定したページが何件つぶやかれている＝tweetsされているかを画像で取得するAPIを実験的に公開します。
+</p>
+
+<blockquote>
+<a href="http://image.twib.jp/counter/Web">http://image.twib.jp/counter/Web</a>ページのURL
+</blockquote>
+<p>
+というURLを指定するとtweets数を画像で取得することができます。
+例えば Twib の場合だと
+</p>
+<blockquote>
+<a href="http://image.twib.jp/counter/http://twib.jp/">http://image.twib.jp/counter/http://twib.jp/</a>
+</blockquote>
+<p>
+となります。
+そのまま img タグで埋め込むことができますね。
+</p>
+
+<pre class="brush: perl"> &lt;img src="http://image.twib.jp/counter/http://twib.jp/" /&gt;</pre>
+<p>
+以下が表示例です。
+</p>
+<p>
+<img src="http://image.twib.jp/counter/http://twib.jp/">
+</p>
+<p>
+ブログ等からリンクを貼る場合は以下のようにしてください。
+</p>
+
+<pre class="brush: perl"> &lt;a href="http://twib.jp/url/WebページのURL"&gt;&lt;img src="http://image.twib.jp/counter/WebページのURL" alt="このWebページのtweets" /&gt;&lt;/a&gt;</pre>
+<p>
+MovableTypeの場合はこんな具合ですね。
+</p>
+
+<pre class="brush: perl"> &lt;a href="http://twib.jp/url/"&gt; src="http://image.twib.jp/counter/" alt="このエントリーのtweets" /&gt;&lt;/a&gt;</pre>
+
+<p>
+ベータ版、実験的ということを加味しつつ、
+使っていただける方は是非 tweets 数を表示させてみてください。
+また、不具合等ありましたらご連絡ください。<a href="http://twitter.com/yusukebe">@yusukebe</a>
+以上、Enjoy!
+</p>
+
+<ul>
+  <li><a href="http://twib.jp/">Twib - Twitter ホットエントリー</a></li>
+</ul>
+
+
+ 
+}

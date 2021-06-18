@@ -1,0 +1,21 @@
+{
+    "data" :  {
+    "title": "ボケトゥデイ、最近の写真表示機能を復活",
+    "date": "2004-08-21 21:27:00 +0900 JST",
+    "dir": "posts/2004/",
+    "slug": "0821122716",
+    "categories": ["tech"],
+    "tags": []
+}
+
+---
+
+
+
+<p>   非常に地味だが、<a href="http://web.sfc.keio.ac.jp/~yusukebe/">ボケトゥデイ</a>で俺のボケが流れたあと、「最近のゆーすけべー日記」が表示されるところの横に最近のゆーすけべー日記からの写真を表示する機能を復活させた。</p>
+<p>   <a href="http://kamawada.com/~yusuke/yusukebe/archives/files/040821/bokeToday.jpg"><img alt="bokeToday.jpg" border="0" class="at-xid-6a0133f4781589970b015435b6e0ed970c" src="https://yusukebe.com/archives/a/6a0133f4781589970b015435b6e0ed970c-pi"></a></p>
+<p>   yusukebe.comに移行させてからできていなかったんだけど、phpを駆使して復活。Flashでは外部ドメインのものを読み込めないという制限があるので、その辺を回避をしたのと、ファイルサイズが大きいものは読み込まないようにした。ここ最近の写真をディレクトリから読み込んで、ランダムにリサイズして表示。</p>
+
+
+ 
+}

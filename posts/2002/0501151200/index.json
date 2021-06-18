@@ -1,0 +1,33 @@
+{
+    "data" :  {
+    "title": "ldapインストール",
+    "date": "2002-05-02 12:12:00 +0900 JST",
+    "dir": "posts/2002/",
+    "slug": "0501151200",
+    "categories": ["tech"],
+    "tags": []
+}
+
+---
+
+
+<pre class="code">ldapのインストール＠fs
+■現在インストールされているLdap関係を見てみる
+yusuke@fs openldap$ rpm -qa |grep ldap
+openldap-2.0.11-13
+nss_ldap-172-2
+php-ldap-4.0.6-7
+openldap-devel-2.0.11-13
+openldap-clients-2.0.11-13
+■だが、/etc/openldapにslapd.confがない。。。
+どうやらopenldap-serverってのがはいってないかららしいぞ
+というわけで、
+■openldap-serverをいれましょう。
+FTPでRPMをとってこようかとおもったが、だいるのでCDROMからRPMをみつけていました。（2枚目のCDROMです。）
+そんでRPMがたくさんはいっているところまでいって
+# rpm -ivh openldap-servers-2.0.11-13.i386.rpm
+ってな感じ。
+■インストール後の確認 </pre>
+
+ 
+}

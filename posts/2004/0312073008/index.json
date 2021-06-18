@@ -1,0 +1,28 @@
+{
+    "data" :  {
+    "title": "osxのwindowsファイル共有でcd-romドライブを覗きたいとき",
+    "date": "2004-03-12 16:30:00 +0900 JST",
+    "dir": "posts/2004/",
+    "slug": "0312073008",
+    "categories": ["tech"],
+    "tags": []
+}
+
+---
+
+
+
+<p>デフォルトの状態だとosxでwindowsファイル共有をして、そのマシンを覗くと自分のホームディレクトリとプリンタしか表示されない。osx側にcdを入れてwindowsからそのcdを覗きたいときにはどうすればよいか。windowsファイル共有といっても所詮はsambaなので<b>/etc/smb.conf</b>を編集すればよい。以下を追加する。<br>
+
+</p>
+<pre class="code">[Volumes]
+   comment = Mac Local Volume
+   path = /Volumes/
+   valid user = yusuke
+   read only = yes</pre>
+
+これでwindows側からVolumes以下つまりcdドライブを含めたローカルのボリューム一覧が表示されることになる。
+
+
+ 
+}

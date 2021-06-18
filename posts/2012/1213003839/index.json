@@ -1,0 +1,44 @@
+{
+    "data" :  {
+    "title": "daemontoolsで起動しているstarmanのログをfluentdで",
+    "date": "2012-12-13 09:38:00 +0900 JST",
+    "dir": "posts/2012/",
+    "slug": "1213003839",
+    "categories": ["tech"],
+    "tags": ["Technologies","Perl","fluentd"]
+}
+
+---
+
+
+
+<p>fluentdが面白そうなんで、散らばっているAppサーバのログを集計してみたい。
+アプリケーションは</p>
+
+<ul>
+<li>基本、Perlで書かれてる</li>
+<li>Starmanで動かす</li>
+<li>.psgiで「enable "Plack::Middleware::AccessLog", format =&gt; "combined";」してる</li>
+<li>daemontoolsでデーモン化</li>
+</ul>
+
+
+<p>という条件で、fluentdに付属のサンプル設定ファイルをほんの少しいじる。
+tailして標準出力に出すだけだけど、いい感じです。</p>
+
+<pre class="code">&lt;source&gt;
+  type tail
+  path /service/bokete_web/log/main/current
+  format /^@[0-9a-z]+ (?&lt;host&gt;[^ ]*) [^ ]* (?&lt;user&gt;[^ ]*) \[(?&lt;time&gt;[^\]]*)\] "(?&lt;method&gt;\S+)(?: +(?&lt;path&gt;[^ ]*) +\S*)?" (?&lt;code&gt;[^ ]*) (?&lt;size&gt;[^ ]*)(?: "(?&lt;referer&gt;[^\"]*)" "(?&lt;agent&gt;[^\"]*)")?$/
+  time_format %d/%b/%Y:%H:%M:%S %z                                                                                      
+  tag starman.access
+&lt;/source&gt;
+&lt;match starman.access&gt;
+   type stdout
+&lt;/match&gt;</pre>
+
+<p>これをmongodbに入れてごにょる！</p>
+
+
+ 
+}

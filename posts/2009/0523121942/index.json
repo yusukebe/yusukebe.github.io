@@ -1,0 +1,55 @@
+{
+    "data" :  {
+    "title": "Fixed bug on WebService::Simple::Google::Chart 0.04",
+    "date": "2009-05-23 21:19:00 +0900 JST",
+    "dir": "posts/2009/",
+    "slug": "0523121942",
+    "categories": ["tech"],
+    "tags": ["Perl"]
+}
+
+---
+
+
+
+<p>
+またまた、コメントより。
+今回は、WebService::Simple::Google::Chart の紹介記事にて、頂きました。
+</p>
+<blockquote>
+<p>
+color99 さん:
+</p>
+<p>
+コードサンプル通りで動作確認しようとしたら、<br>
+Odd number of elements in hash assignment at xxxxx <br>
+というエラーメッセージが出ます。
+</p>
+</blockquote>
+<p>
+う、ごめんなさい。それバグです＞＜
+修正して、CodeRepos にコミット済み。また、ヴァージョン 0.05 として、
+CPAN にもアップしておきました。そのうち更新されると思います。
+ということで以下のサンプルが動きます。
+</p>
+
+<pre class="brush: perl"> use WebService::Simple::Google::Chart;
+
+my $chart = WebService::Simple::Google::Chart-&gt;new;
+my $url = $chart-&gt;get_url(
+    {
+        chs =&gt; "250x100",
+        cht =&gt; "p3",
+   },
+    { foo =&gt; 200, bar =&gt; 130, hoge =&gt; 70 }
+);
+
+print $url . "\n";</pre>
+
+<ul>
+  <li><a href="http://search.cpan.org/dist/WebService-Simple-Google-Chart/">Yusuke Wada / WebService-Simple-Google-Chart - search.cpan.org</a></li>
+</ul>
+
+
+ 
+}

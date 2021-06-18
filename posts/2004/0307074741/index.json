@@ -1,0 +1,50 @@
+{
+    "data" :  {
+    "title": "VaraTerm",
+    "date": "2004-03-07 16:47:00 +0900 JST",
+    "dir": "posts/2004/",
+    "slug": "0307074741",
+    "categories": ["tech"],
+    "tags": []
+}
+
+---
+
+
+
+<p>みなさんWindows環境でのSSHクライアントソフトは何をお使いですか？<br>
+<a href="http://www.sakurai.comp.ae.keio.ac.jp/ttssh.html">TTSSHとTeraterm</a>？<br>
+僕もちょっと前までその組み合わせでしたねー。日本語がうまく使えるSSHクライアントはそのくらいしかありませんでしたし、TTSSHとTeratermで不自由はありませんでした。</p>
+
+<p>でも最近とあるSSHクライアントソフトが日本発で開発されました。その名も<b>ゲバラ</b>。</p>
+
+<p>さてそのゲバラ。タブ機能が付いたり、TTSSH＆Teratermほどインストールがめんどくさくなかったり、さらにアイコンが<a href="http://www.pioniwa.com/new/kokai.html">ゲバラさん</a>の顔でユニークなので気に入ってつかっていたわけですが、最近ヴァージョンがあがり名前が変わった模様。</p>
+
+<p>なんか<b>VaraTerm</b>って名前になっている・・・<br>
+ホームページの記述によると</p>
+<pre class="code">なぜ名前が変わったのかといいますと、今回英語版を作ったわけですが、 
+世界には"Guevara"を危険なテロリストと思っている人も少なくないので、 
+無用な誤解を避けるために名前を変えました。 </pre>とのこと。<br>
+それに伴いなんか<b>ゲバラさんの顔がいかつい</b>アイコンから単なる<b>V</b>を模したアイコンに変更された。これじゃあ迫力がぁなくなるぅと思っていたらホームページに<pre class="code">なお、古いアイコンが気に入っている方は、バージョン情報ダイアログを出した状態で  
+guevara と打ち込んでみてください。 </pre>と書いてある。<br>
+さっそく打ち込んでみた。
+
+<p>これがVaraTermデフォルトのバージョン情報ダイアログ<br>
+<img alt="guevara01.gif" border="0" class="at-xid-6a0133f4781589970b015391e37423970b" height="240" src="https://yusukebe.com/archives/a/6a0133f4781589970b015391e37423970b-pi.gif" width="352"></p>
+
+<p>このダイアログがでている状態で「guevara」とキーボードを押す、すると</p>
+
+<p><img alt="guevara02.gif" border="0" class="at-xid-6a0133f4781589970b015391e37437970b" height="121" src="https://yusukebe.com/archives/a/6a0133f4781589970b015391e37437970b-pi.gif" width="179"></p>
+
+<p>ゲバラモードに。完全に「裏技」ノリ。</p>
+
+<p><img alt="guevara03.gif" border="0" class="at-xid-6a0133f4781589970b015391e3743f970b" src="https://yusukebe.com/archives/a/6a0133f4781589970b015391e3743f970b-pi.gif"></p>
+
+<p>アイコンもこのゲバラさんの顔になる。やっぱりこうでなくっちゃ！</p>
+
+<p>参考：<a href="http://www.routrek.co.jp/product/varaterm/">Terminal Emulator VaraTerm</a><br>
+</p>
+
+
+ 
+}

@@ -1,0 +1,26 @@
+backend:
+  name: git-gateway
+  repo: yusukebe/blog
+  branch: master
+  locale: 'ja'
+media_folder: static/images
+public_folder: /images
+collections:
+  - name: 'yusukebe.com'
+    label: 'Post'
+    folder: 'content/posts/2020'
+    create: true
+    editor:
+      preview: true
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
+      - label: 'Images'
+        name: 'images'
+        widget: 'list'
+        summary: '{{fields.image}}'
+        field: {label: 'Image', name: image, widget: image}
+      - { label: 'Categories', name: 'categories', widget: 'list' }
+      - { label: 'Tags', name: 'tags', widget: 'list' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
+    preview_path: posts/{{year}}/{{slug}}

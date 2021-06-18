@@ -1,0 +1,27 @@
+{
+    "data" :  {
+    "title": "ディレクトリ配下の.pmファイルでuseしているCPANモジュールを一気にインストールする",
+    "date": "2010-08-31 10:33:00 +0900 JST",
+    "dir": "posts/2010/",
+    "slug": "0831013338",
+    "categories": ["tech"],
+    "tags": ["Perl"]
+}
+
+---
+
+
+
+<p>
+これが一番簡単っぽい？ Module::Usedなるモジュールをインストールして付属のmodules-usedコマンドを使ってみる。
+</p>
+<pre class="brush: perl"> $ cpanm --sudo Module::Used
+$ modules-used ./ | cpanm --sudo --skip-installed</pre>
+<p>
+今、お試し中だよ。うまくいけば、
+Makefile.PLのrequiresちゃんと書いてない時とか便利だね。
+</p>
+
+
+ 
+}

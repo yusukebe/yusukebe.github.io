@@ -1,0 +1,63 @@
+{
+    "data" :  {
+    "title": "PCファンを利用したポータブル(?)換気扇の試作完成",
+    "date": "2006-01-10 21:40:00 +0900 JST",
+    "dir": "posts/2006/",
+    "slug": "0110124014",
+    "categories": ["tech"],
+    "tags": []
+}
+
+---
+
+
+
+<p>
+<a href="http://yusukebe.com/archives/05/12/28/223553.html">去年から</a>
+暇な時に腕ためし的に作っているPCファンを利用したポータブル換気扇。
+やっと先ほど完成した。
+</p>
+<p>
+(左)正面には吸気口、(右)後ろにはダクトのファンがつく<br>
+<img alt="ポータブル換気扇" class="at-xid-6a0133f4781589970b015391e37eb7970b" src="https://yusukebe.com/archives/a/6a0133f4781589970b015391e37eb7970b-pi.jpg">
+<img alt="ポータブル換気扇" class="at-xid-6a0133f4781589970b015391e37eca970b" src="https://yusukebe.com/archives/a/6a0133f4781589970b015391e37eca970b-pi.jpg">
+</p>
+<p>
+(左)窓際に置いて使用する。(右)上部に取り付けられたボタンでOn/Off
+<br>
+<img alt="ポータブル換気扇" class="at-xid-6a0133f4781589970b015391e37ee3970b" src="https://yusukebe.com/archives/a/6a0133f4781589970b015391e37ee3970b-pi.jpg">
+<img alt="ポータブル換気扇" class="at-xid-6a0133f4781589970b015391e37ef3970b" src="https://yusukebe.com/archives/a/6a0133f4781589970b015391e37ef3970b-pi.jpg">
+</p>
+<p>
+完成にあたって今日の作業は、筐体つまり箱の微調整と電子工作。
+<a href="http://yusukebe.com/archives/06/01/05/050147.html">年末ネタ旅行</a>
+のために買ったヘッドライトを頭につけて半田付け。
+BGMにはユーロトランス。まじノリノリ。「何やってんだ俺」、とは思わない、ようにする。
+<br>
+<img alt="ポータブル換気扇" class="at-xid-6a0133f4781589970b015391e37f09970b" src="https://yusukebe.com/archives/a/6a0133f4781589970b015391e37f09970b-pi.jpg">
+<img alt="ポータブル換気扇" class="at-xid-6a0133f4781589970b015391e37f29970b" src="https://yusukebe.com/archives/a/6a0133f4781589970b015391e37f29970b-pi.jpg">
+</p>
+<p>
+マイコンも使ってなくて電子工作的には単純なものだけど、得るものは結構あった。
+「自室でも結構工作できる」、ってことが証明できたのだ。
+それにコツもいろいろ発見した。
+例えば掃除機をうまく使えば削りカスとかも気にならない。
+歯医者が歯を削りながらそのカスを吸い取るみたいな感じ。
+削りカスこのことを言うと全身ユニクロのフリースでプラスティック加工したら、
+全身カスで真っ白になった。
+今回はこれを教訓に高校の時に使っていたサッカー部ジャージ。つなぎが欲しい。
+<br>
+<img alt="ポータブル換気扇" class="at-xid-6a0133f4781589970b015391e37f42970b" src="https://yusukebe.com/archives/a/6a0133f4781589970b015391e37f42970b-pi.jpg">
+</p>
+あと、100円ショップで買ってきたタッパの加工がうまくできることがわかったのと、
+家に眠っているつかっていないACアダプタが活用できることがわかってよかった。
+さて、次は何を作ろうか。
+
+<p>
+<strong>おまけ</strong>：
+  <a href="http://kamawada.com/~yusuke/yusukebe/archives/files/060110/MOV04262.MPG">悶える掃除機映像(mpeg)</a>
+</p>
+
+
+ 
+}

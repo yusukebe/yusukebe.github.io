@@ -1,0 +1,25 @@
+{
+    "data" :  {
+    "title": "-DEAPI",
+    "date": "2002-09-05 12:16:00 +0900 JST",
+    "dir": "posts/2002/",
+    "slug": "0904151610",
+    "categories": ["tech"],
+    "tags": []
+}
+
+---
+
+
+
+<p>そんなこんなでhttpd.confとか書き換えて立ち上げなおすとこんな感じで激しくおこられる。
+</p>
+<pre class="code">[warn] Loaded DSO modules/mod_hogehoge.so uses plain Apache 1.3 API, 
+this module might crash under EAPI! (please recompile it with -DEAPI)</pre>
+というわけで言われたとおりPHP再コンパイル＆インストール
+<pre class="code">CFLAGS=-DEAPI ./configure --with-apxs=/usr/local/apache/bin/apxs\
+--with-・・・・・・・・・・・・・・・・・</pre>
+ってな感じでコンパイルしたらOKだったYO。
+
+ 
+}

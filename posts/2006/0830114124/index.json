@@ -1,0 +1,19 @@
+{
+    "data" :  {
+    "title": "EntryFullTextをタグ入れれるように修正",
+    "date": "2006-08-30 20:41:00 +0900 JST",
+    "dir": "posts/2006/",
+    "slug": "0830114124",
+    "categories": ["tech"],
+    "tags": ["Perl"]
+}
+
+---
+
+
+<p>
+  PlaggerのPlugin、Filter::EntryFullTextでは今のところtagsを入れることができないので、入れれるようにEntryFullText.pmを修正。
+</p>
+
+ 
+}

@@ -1,0 +1,100 @@
+{
+    "data" :  {
+    "title": "Kindle本「Perlについて語ろう」を出版しました",
+    "date": "2013-03-15 10:48:00 +0900 JST",
+    "dir": "posts/2013/",
+    "slug": "0315014846",
+    "categories": ["tech"],
+    "tags": ["Perl","News","Kindle"]
+}
+
+---
+
+
+
+<p>プログラミング言語「Perl」の入門書「<strong>Perlについて語ろう</strong>」をKindle向け電子書籍として出版し販売を開始しました。</p>
+
+<p><br></p>
+
+<div class="amazlet-box" style="margin-bottom:0px;">
+<div class="amazlet-image" style="float:left;margin:0px 12px 1px 0px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B00BU7DBIA/kamawada-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/41aw6M2z7eL._SL160_.jpg" alt="Perlについて語ろう" style="border: none;"></a></div>
+<div class="amazlet-info" style="line-height:120%; margin-bottom: 10px">
+<div class="amazlet-name" style="margin-bottom:10px;line-height:120%">
+<a href="http://www.amazon.co.jp/exec/obidos/ASIN/B00BU7DBIA/kamawada-22/ref=nosim/" name="amazletlink" target="_blank">Perlについて語ろう</a><div class="amazlet-powered-date" style="font-size:80%;margin-top:5px;line-height:120%">posted with <a href="http://www.amazlet.com/" title="amazlet" target="_blank">amazlet</a> at 13.03.15</div>
+</div>
+<div class="amazlet-detail">和田裕介 (2013-03-13)<br>
+</div>
+<div class="amazlet-sub-info" style="float: left;"><div class="amazlet-link" style="margin-top: 5px"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B00BU7DBIA/kamawada-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jpで詳細を見る</a></div></div>
+</div>
+<div class="amazlet-footer" style="clear: left"></div>
+</div>
+
+
+<p><br></p>
+
+<p>本書は週刊で発行しているメルマガ「 <a href="http://www.mag2.com/m/0001426750.html">ゆーすけべーラジオ</a>」内の連載を原稿とし、加筆修正したものとなります。文字数はトータルで11万文字ちょい。紙媒体にして100ページ前後というボリュームで、480円という値付けにしてみました。Perl処女脱出から、基本的なデータ構造の解説、様々なCPANモジュールの紹介、Webアプリケーションフレームワークの使い方などを「サクっと」した文章とコードでまとめました。Perl初心者の方を対象に、読み終わった頃にはWebアプリ開発ができている！ところまで持っていくことを目標にした入門書です。以下目次になります。</p>
+
+<hr>
+
+<p><br></p>
+
+<ul>
+<li>はじめに</li>
+<li>Perlとは？</li>
+<li>初めてのPerl</li>
+<li>関数とスカラー、配列</li>
+<li>Perlにおけるデータ表現</li>
+<li>データを操作する</li>
+<li>CPANモジュールを使ってみよう</li>
+<li>おっぱいスクリプトを読み解く その1</li>
+<li>おっぱいスクリプトを読み解く その2</li>
+<li>おっぱいスクリプトを読み解く その3</li>
+<li>Twitter Search API を使ってみよう</li>
+<li>まだまだあるぞ、CPANモジュール</li>
+<li>まだまだあるぞ、CPANモジュール その2</li>
+<li>Webアプリを動かす環境</li>
+<li>Mojolicious入門その1</li>
+<li>Mojolicious入門その2</li>
+<li>Mojolicious入門その3</li>
+<li>O/R Mapper でデータベース操作</li>
+<li>O/R Mapper でデータベース操作 その2</li>
+<li>O/R Mapper でデータベース操作 その3</li>
+<li>自作モジュールをつくる</li>
+<li>入力値の妥当性をチェックする</li>
+<li>一歩進んだPerlの環境つくり</li>
+<li>Instagram検索をPerlでつくる</li>
+<li>運用環境にデプロイする</li>
+<li>ファイル操作のための便利なモジュール</li>
+<li>実践「セッションについて」</li>
+<li>イマドキのメール送信</li>
+<li>終わりに</li>
+</ul>
+
+
+<hr>
+
+<p><br></p>
+
+<p>Kindle Paperwhite に最適化していますので、Kindle端末では快適に読めるでしょう。その代わりiOSなどのKindleアプリだと少々プログラミングコードの部分が文字が大きく見えてしまったり、目次が対応してないなど使いにくい点ございます。その点、ご了承いただいて、アップデートを待っていただければと思います。端末での見た目はこのような具合です。</p>
+
+<h3>Kindle Paperwhite</h3>
+
+<p><a href="http://yusukebe.com/archives/2013/03/15/screenshot_2013_03_15T01_16_17%2B0000.png"><img alt="screenshot_2013_03_15T01_16_17+0000.png" src="http://yusukebe.com/archives/assets_c/2013/03/screenshot_2013_03_15T01_16_17%2B0000-thumb-550x743-319.png" width="550" height="743" class="mt-image-none" style=""></a></p>
+
+<h3>iPad mini</h3>
+
+<p><a href="http://yusukebe.com/archives/2013/03/15/IMG_0066.PNG"><img alt="IMG_0066.PNG" src="http://yusukebe.com/archives/assets_c/2013/03/IMG_0066-thumb-550x733-321.png" width="550" height="733" class="mt-image-none" style=""></a></p>
+
+<hr>
+
+<p><br></p>
+
+<p>今回の出版に当たっての経緯を簡単に紹介。以前からメルマガで連載していたPerl入門記事をまとめてKindle本化したいなーとちょこちょこ手元で電子書籍化してたりしたんですが、おととい、<a href="http://d.hatena.ne.jp/naoya/20130313/1363129532">naoyaさんがChef Solo本をKindleで出した</a>のを見て影響され、本腰を入れたという具合です。Kindleダイレクトパブリッシング＝KDPの仕組みを知るためにも、まず出してみようという意気込みだったのですが、案の定諸々と意図しないことが起こったり、また、上記した通りiOSのアプリでは表示がKindle端末と違ったりとバッドノウハウ的なことがありますね。原稿の電子書籍化の行程も含めて後ほど記事にしたいと思います。</p>
+
+<p>さて、最後にもう一押し本書のアピールをさせていただきますと、メルマガの連載が元という性質上、一つ一つの「固まり」がそれぞれで完結している形になっていて、始めからちょっとずつ読んでコードを書いていくと自然とPerlに近づけるようになっています。学習の際に「キリ」がつけやすいって感じです。また、モジュールやWebアプリの紹介においては僕が楽しい！と思えるようなコード例を記載しているので、共感してもらえれば学習効率は高いでしょう。</p>
+
+<p>えー、そんなわけでワンコインで読めちゃう「<a href="http://www.amazon.co.jp/exec/obidos/ASIN/B00BU7DBIA/kamawada-22/ref=nosim/">Perlについて語ろう</a>」をぜひともよろしくお願いいたします！</p>
+
+
+ 
+}

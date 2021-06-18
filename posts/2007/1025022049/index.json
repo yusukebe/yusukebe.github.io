@@ -1,0 +1,96 @@
+{
+    "data" :  {
+    "title": "P704iに機種変 / 「FOMAカード(UIM)異常」への対処の仕方",
+    "date": "2007-10-25 11:20:00 +0900 JST",
+    "dir": "posts/2007/",
+    "slug": "1025022049",
+    "categories": ["tech"],
+    "tags": []
+}
+
+---
+
+
+
+<p>
+  <a href="http://yusukebe.com/archives/06/07/07/231049.html">去年から使っているP702i</a>から<strong>P704i</strong>に機種変更した。
+前までので機能的には十分だったんだけど、
+よくコンビニとかで売っている携帯充電器が使えなくなってしまった( コンセントに挿す正規の充電器だと平気 )というのが、大きな理由。
+これって些細なことに思えるけど、長い間旅行に行ったりする時に不便、というか生死にかかわる自体に発展しかねないので割と重要。
+</p>
+<p>
+  <font size="2">(左)P702i、(右)P704i</font><br>
+  <img alt="P704i" class="at-xid-6a0133f4781589970b015391e38b8c970b" src="https://yusukebe.com/archives/a/6a0133f4781589970b015391e38b8c970b-pi">
+</p>
+<p>
+さて、このP704i。スライド式なのが大きな特徴。
+っていうか最近スライド式多すぎ。なぜ、そこまで滑らせたいのかよく分からない。
+個人的には、P702i以前の「パカパカ」＋「ワンプッシュオープン」が気に入っていたんだけどね。
+</p>
+<p>
+  <font size="2">(左)ワンプッシュボタンを押すと、(右)すぐに開く</font><br>
+  <img alt="P704i" class="at-xid-6a0133f4781589970b015391e38b95970b" src="https://yusukebe.com/archives/a/6a0133f4781589970b015391e38b95970b-pi">
+  <img alt="P704i" class="at-xid-6a0133f4781589970b015391e38ba0970b" src="https://yusukebe.com/archives/a/6a0133f4781589970b015391e38ba0970b-pi">
+</p>
+<p>
+でもまぁ、所詮は慣れだろうな。
+P702iより幅が多少大きくなったが、その分薄くなって、デジカメと一緒にジーパンのポケットに入れても違和感ないし、以前からPanasonicを使っているのでメニューとかもすぐ覚えられたし、かっこいいし、いい感じ。
+</p>
+
+<h4>P704iのFOMAカード(UIM)異常 問題</h4>
+<p>
+でだ、ここからは同じくP704iを新しく手にした人向け情報。
+俺もこまったんだけど、購入して手続きが終わって、触ってみてメールを試しに送ってみようと思ったらいきなり
+</p>
+<blockquote>
+  <strong>FOMAカード(UIM)異常</strong><br>
+  FOMAカード(UIM)を挿入してください<br>
+</blockquote>
+<p>
+  のメッセージ。ちゃんとFOMAカード入れ替えてくれているはずなのに！
+</p>
+<p>
+  <font size="2">これがなんども出てきて通話もメールもできない</font><br>
+  <img alt="P704i" class="at-xid-6a0133f4781589970b015391e38bab970b" src="https://yusukebe.com/archives/a/6a0133f4781589970b015391e38bab970b-pi">
+</p>
+<p>
+中開けてみて、そのFOMAカードを抜き差ししてみても状況は変わらず。
+購入したお店に尋ねてみても、「薄いから強く押すとよくないんじゃないですかね？」というリコールしたくなるような返答。
+で、家に帰ってGoogle先生に聞いてみると、さすが、すぐ答えが見つかった。
+</p>
+<ul>
+  <li><a href="http://bbs.kakaku.com/bbs/31101000966/SortID=6699896/">価格.com - DoCoMo FOMA P704i クチコミ 『今日変えたのですが・・・』</a></li>
+</ul>
+<p>
+ようはFOMAカードを支えている金属の部分がうまくスライドされていないで、不安定な状態になっていたみたい。
+以下、同じことが起きた人のために、写真付きで解説した後、動画も載せるぜ。
+</p>
+<p>
+  <font size="2">(左)裏側のバッテリー部分を開けて、(右)バッテリーパックを取り出します</font><br>
+  <img alt="P704i" class="at-xid-6a0133f4781589970b015391e38bbf970b" src="https://yusukebe.com/archives/a/6a0133f4781589970b015391e38bbf970b-pi">
+  <img alt="P704i" class="at-xid-6a0133f4781589970b015391e38bce970b" src="https://yusukebe.com/archives/a/6a0133f4781589970b015391e38bce970b-pi">
+</p>
+
+<p>
+  <font size="2">(左)FOMAカードがあるのでそれを支える銀色のやつに書いてある「OPEN」の矢印にしたがってスライドさせて、(右)とりあえず取り出す</font><br>
+  <img alt="P704i" class="at-xid-6a0133f4781589970b015391e38bdc970b" src="https://yusukebe.com/archives/a/6a0133f4781589970b015391e38bdc970b-pi">
+  <img alt="P704i" class="at-xid-6a0133f4781589970b015391e38be4970b" src="https://yusukebe.com/archives/a/6a0133f4781589970b015391e38be4970b-pi">
+</p>
+
+<p>
+  <font size="2">元あったようにもう一度差し込む。そして銀色部分だけを「CLOSE」の方向にスライドさせる</font><br>
+  <img alt="P704i" class="at-xid-6a0133f4781589970b015391e38bf5970b" src="https://yusukebe.com/archives/a/6a0133f4781589970b015391e38bf5970b-pi">
+</p>
+
+<h4>動画 : P704iの正しいFOMAカード(UIM)挿入方法</h4>
+
+<embed flashvars="file=http://kamawada.com/~yusuke/yusukebe/archives/files/071025/p704i_bat.flv&amp;image=http://kamawada.com/~yusuke/yusukebe/archives/files/071025/p704i_bat.jpg&amp;displayheight=300&amp;title=P704iの正しいFOMAカード(UIM)挿入方法" height="360" pluginspage="http://www.macromedia.com/go/getflashplayer" src="http://yusukebe.com/v/player/jw_flvplayer.swf" type="application/x-shockwave-flash" width="400"></embed>
+
+<p>
+以上で、「FOMAカード(UIM)異常」はでなくなってちゃんと使えるようになりましたー。
+よかったよかった。
+</p>
+
+
+ 
+}

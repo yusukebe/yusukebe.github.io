@@ -1,0 +1,30 @@
+{
+    "data" :  {
+    "title": "Wundelist OSX版が起動したらすぐ落ちる件",
+    "date": "2013-10-21 10:36:00 +0900 JST",
+    "dir": "posts/2013/",
+    "slug": "1021103600",
+    "categories": ["tech"],
+    "tags": []
+}
+
+---
+
+
+
+<p>これをやれば直るっぽい！</p>
+
+
+
+
+<pre class="code">$ rm -rf ~/Library/Containers/com.wunderkinder.wunderlistdesktop</pre>
+
+
+
+
+<p>動いた ＼(^o^)／</p>
+
+
+
+ 
+}

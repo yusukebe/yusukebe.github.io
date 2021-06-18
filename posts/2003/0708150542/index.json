@@ -1,0 +1,32 @@
+{
+    "data" :  {
+    "title": "nullの発音",
+    "date": "2003-07-09 12:05:00 +0900 JST",
+    "dir": "posts/2003/",
+    "slug": "0708150542",
+    "categories": ["tech"],
+    "tags": []
+}
+
+---
+
+
+
+<p><a href="http://web.sfc.keio.ac.jp/~yusukebe/diary/index.cgi?200307a&amp;to=200307091#200307091" target="_new">自然言語論のエラー</a><br>
+は<br>
+<font color="5">nil</font><br>
+を<br>
+<font color="5">nill</font><br>
+と書いていたからだったらしい。そりゃ間違えます。普段Javaとか使っているので<br>
+<font color="5">null</font><br>
+って書いているし。それと問題は<br>
+</p>
+<pre class="code">lが細すぎる</pre>
+<br>
+ことかと。重なっているかなんてわからんよー。<br>
+ところでnullの本当の発音はこんな感じ→<br>
+<a href="http://dictionary.goo.ne.jp/voice/n/02060587.wav" target="_new">nullの発音</a><br>
+。
+
+ 
+}

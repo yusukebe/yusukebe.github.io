@@ -1,0 +1,77 @@
+{
+    "data" :  {
+    "title": "PerlでGoogle AnalyticsへアクセスするならNet::Google::Analyticsが便利",
+    "date": "2013-02-21 16:57:00 +0900 JST",
+    "dir": "posts/2013/",
+    "slug": "0221075705",
+    "categories": ["tech"],
+    "tags": ["Perl"]
+}
+
+---
+
+
+
+<p>fluentdとかTreasure Dataとかログを拾い集めて集計する新しい技術やプラットフォームが出て来てますが、Webの表層レベルだとGoogle Analyticsがやっぱり便利で使えます。ただ、サイト全体のトラフィックを観察するのには向いていますが、例えば、いくつかURLがあってそれぞれのPVを取りたい！って時に毎回毎回URLパスを入れては数字を確認するってのには骨が折れます。そこでGoogle AnalyticsのAPIを使って自動化すると捗ります。</p>
+
+<p>Perlで実装するには Net::Google::Analytics というモジュールがサクッと使う分には便利です。</p>
+
+<ul>
+<li><a href="http://search.cpan.org/dist/Net-Google-Analytics/">Nick Wellnhofer / Net-Google-Analytics - search.cpan.org</a></li>
+</ul>
+
+
+<p>厳密に言うならば「Google Analytics Core Reporting API」の「Version 3」に対応しているものです。では指定したURLからそのPVを取得するサンプルを紹介しましょう。</p>
+
+<p>まず、OAuthの認証が必要なのですが、この Net::Google::Analytics だと以下のコードを使えば認証用のURLが出てきて必要なIDなどが手に入ります。これはイイ。ちなみに client_id と client_secret はGoogle API管理画面でアプリ登録をすると手に入ります。</p>
+
+<pre class="code">use Net::Google::Analytics::OAuth2;
+
+my $oauth = Net::Google::Analytics::OAuth2-&gt;new(
+    client_id     =&gt; 'your_client_id',
+    client_secret =&gt; 'your_client_secret',
+);
+
+$oauth-&gt;interactive;</pre>
+
+<p>Refresh Acces Token というのが取得できるので、それを使いつつ、実践スクリプトを書きます。必要な認証部分はこういう感じ。</p>
+
+<pre class="code">use Net::Google::Analytics;
+use Net::Google::Analytics::OAuth2;
+
+my $analytics = Net::Google::Analytics-&gt;new;
+my $oauth = Net::Google::Analytics::OAuth2-&gt;new(
+    client_id     =&gt; 'your_client_id',
+    client_secret =&gt; 'your_client_secret',
+);
+my $token = $oauth-&gt;refresh_access_token('your_refresh_access_token');
+$analytics-&gt;token($token);</pre>
+
+<p>次にいよいよ取得したいURLのパスを指定して、リクエストをかけます。$profile_id にはAnalytics用のサイトごとのプロフィールIDを入れてください。取得する期限は今年から今までって感じにしています。</p>
+
+<pre class="code">$profile_id = 'your_profile_id';
+
+my $req = $analytics-&gt;new_request(
+    ids         =&gt; "ga:$profile_id",
+    dimensions  =&gt; "ga:pagePath",
+    metrics     =&gt; "ga:pageviews",
+    filters     =&gt; "ga:pagePath==/about.html",
+    sort        =&gt; "-ga:pageviews",
+    start_date  =&gt; "2013-01-01",
+    end_date    =&gt; "2013-02-20",
+    max_results =&gt; 1,
+);
+
+my $res = $analytics-&gt;retrieve($req);
+die("Error: " . $res-&gt;error_message) if !$res-&gt;is_success;
+
+my $pageview = $res-&gt;rows-&gt;[0]-&gt;get_pageviews;
+print "PV: ", $pageview . "\n";</pre>
+
+<p>dimensionsとかmetricsとかで何が指定出来るかはGoogleのオフィシャルドキュメントを参照してください。このケースでは「/about.html」というパスに完全マッチするページの「pageview」を取得し標準出力に印字しています。この部分をうまいことサブルーチン化して使い回したりすれば複数のURLのPVを一気に取得できると思います。</p>
+
+<p>Google Analyticsは随分とよく出来てるのでそのデータをさらにウマい事利用できるとWebサイトのデータ解析として使えるかもしれませんね！</p>
+
+
+ 
+}

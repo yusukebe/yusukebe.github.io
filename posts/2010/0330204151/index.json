@@ -1,0 +1,55 @@
+{
+    "data" :  {
+    "title": "cpanmにMETA.ymlに書かれた依存モジュールを渡したい",
+    "date": "2010-03-31 05:41:00 +0900 JST",
+    "dir": "posts/2010/",
+    "slug": "0330204151",
+    "categories": ["tech"],
+    "tags": ["Perl"]
+}
+
+---
+
+
+
+<p>
+<b>いきなり追記</b>
+</p>
+<p>
+miyagawaさんからご指摘いただきまして、cpanm本体のコマンドできます！
+すばらしす。
+</p>
+<pre class="brush: perl"> $ cpanm --installdeps .</pre>
+<p>
+cpanm -h するといろいろ使い方書いてあるので見てみたほうがよかったっすね。
+miyagawaさんあざっす。
+</p>
+<p>
+<b>以下もうすでにあまりためにならない本文</b>
+</p>
+<p>
+正確には、
+CPANに上がっていないようなライブラリの、
+META.yml内に書かれたrequiresで指定されたモジュールでかつ、
+環境にインストールされていないものを標準出力して、
+cpanminusに渡してうはうはしたい、つまり make installdeps 相当のことを cpanm で、
+ということなんだけれども。
+「つかこのやり方がデファクトだよ！」っていうのがよくわからなかったので、
+以下のスクリプトを書いてみた。
+</p>
+<pre class="brush: perl"> #!/usr/bin/perl
+use YAML::Tiny;
+print join "\n", grep { eval("require $_"); $_ if $@; }
+  keys %{ YAML::Tiny-&gt;read( $ARGV[0] || 'META.yml' )-&gt;[0]{requires} };</pre>
+<p>
+これをcpan_not_installed.plとかで保存して、
+</p>
+<pre class="brush: perl"> $ cpan_not_installed.pl | sudo -H cpanm</pre>
+<p>
+とかってやるととりあえずやりたいことはできてうはうはしてる。
+他に方法あれば教えてください＞＜
+</p>
+
+
+ 
+}

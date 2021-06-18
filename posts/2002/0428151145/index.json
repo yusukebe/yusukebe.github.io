@@ -1,0 +1,19 @@
+{
+    "data" :  {
+    "title": "SAMBAでWindowsのドメインコントロール",
+    "date": "2002-04-29 12:11:00 +0900 JST",
+    "dir": "posts/2002/",
+    "slug": "0428151145",
+    "categories": ["tech"],
+    "tags": []
+}
+
+---
+
+
+<p>SambaによるPrimary Domain Controller (PDC)の構築<br>
+まじ熱い。<br>
+<a href="http://odalab.spub.chitose.ac.jp/~oda/unix/samba.html" target="_new">http://odalab.spub.chitose.ac.jp/~oda/unix/samba.html</a></p>
+
+ 
+}

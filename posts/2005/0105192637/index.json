@@ -1,0 +1,23 @@
+{
+    "data" :  {
+    "title": "奥出研来期シラバス向けFlashサイト",
+    "date": "2005-01-06 04:26:00 +0900 JST",
+    "dir": "posts/2005/",
+    "slug": "0105192637",
+    "categories": ["tech"],
+    "tags": []
+}
+
+---
+
+
+
+<p>   研究会の来期新規履修希望者のための奥出研紹介サイトを作った。 自信作。</p>
+<p>   <a href="http://www.ok.sfc.keio.ac.jp/2004spring/forSyllabus05s/"><img alt="ss.jpg" border="0" class="at-xid-6a0133f4781589970b014e8bd7387c970d" src="https://yusukebe.com/archives/a/6a0133f4781589970b014e8bd7387c970d-pi"></a>    <br>   <a href="http://www.ok.sfc.keio.ac.jp/2004spring/forSyllabus05s/">http://www.ok.sfc.keio.ac.jp/2004spring/forSyllabus05s/</a> </p>
+<p>   ちょっと前までの奥出研のプロジェクトを紹介、写真・ビデオが見れる。来期奥出研に入りたい人、興味ある人はぜひみてみてください。 </p>
+<p>   このサイト、実は某自動車会社のあるサイトをかなり参考にして作ってます。どのサイトだかわかるかな？ </p>
+<p>   技術解説：Flashで作ってるんだけど、実はコンテンツであるプロジェクトなどの情報や写真は全部外部のXMLで管理。だから一応更新や追加も楽なはず。何より、12個のプロジェクト紹介をいちまいいちまいFlashで作るより、いっこのテンプレートに情報を流し込んだ方が楽だったんだな。個人的にはプロジェクトの写真が横にスライドするところとかすごく好き。 </p>
+
+
+ 
+}

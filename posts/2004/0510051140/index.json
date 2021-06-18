@@ -1,0 +1,23 @@
+{
+    "data" :  {
+    "title": "t00274yw -&gt; yusukebe変更で困ること",
+    "date": "2004-05-10 14:11:00 +0900 JST",
+    "dir": "posts/2004/",
+    "slug": "0510051140",
+    "categories": ["tech"],
+    "tags": []
+}
+
+---
+
+
+
+<p>   RCSで管理していたHTMLとかco -lして編集しようとすると </p>
+<p></p>
+<pre class="code">co: RCS/main.shtml,v: Revision 1.18 is already locked by t00274yw. 
+</pre>
+<p>   と怒られる。既に俺はt00274ywじゃなくてyusukebe。RCSディレクトリに入っているファイルを見るとauthor t00274yw;のまま。このアカウントってのがUnixさんにとっては唯一のIDでそれが代わるってのは人がまったく変わってしまうようなものだ。</p>
+
+
+ 
+}

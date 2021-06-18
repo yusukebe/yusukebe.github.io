@@ -1,0 +1,18 @@
+{
+    "data" :  {
+    "title": "ExternalEditor",
+    "date": "2002-08-01 12:14:00 +0900 JST",
+    "dir": "posts/2002/",
+    "slug": "0731151426",
+    "categories": ["tech"],
+    "tags": []
+}
+
+---
+
+
+<p>これすごい便利そう。今までZopeのオブジェクトをブラウザから編集していたのを好きなエディタで編集できたりするらしい。でもProductを入れてみたが鉛筆マークが現れない…^^；
+<a href="http://wiki.zope.jp/ExternalEditor" target="_new">http://wiki.zope.jp/ExternalEditor</a></p>
+
+ 
+}

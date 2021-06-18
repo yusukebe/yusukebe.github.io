@@ -1,0 +1,182 @@
+{
+    "data" :  {
+    "title": "人気娼婦とたくさんのオッサンの 性行為で学ぶ TheSchwartz",
+    "date": "2008-03-08 02:40:00 +0900 JST",
+    "dir": "posts/2008/",
+    "slug": "0307174031",
+    "categories": ["tech"],
+    "tags": ["Perl"]
+}
+
+---
+
+
+
+<p>
+  Web2.0 時代のジョブキューサーバーと呼ばれて久しい <strong>TheSchwartz</strong> ですが、今更ながら必要に駆られて弄っています。どんなものかの正しい解説については tokuhirom が記事を書いているので気になる方はそちらをご覧ください→<a href="http://d.hatena.ne.jp/tokuhirom/20071017/1192589429">web2.0 時代のジョブキューサーバー Gearman と TheSchwartz の関係について - TokuLog 改め だまってコードを書けよハゲ</a>。
+</p>
+<p>
+  ちなみに、俺は、<strong>性行為</strong>を例えに使ったサンプルを作ってみて、その挙動を確認して学んでいるところ、というのが今回のお題です。なので俺の拙い知識での理解なのであんま信用しないでください。あくまでネタということで。では説明に入ります。
+</p>
+<p>
+まず、ジョブキューとは、というのを簡単に理解したのですが、まあ、その名の通り、ジョブはお仕事です。
+しかし、時間がかかるお仕事の場合など、それにある制限を設けたいときなどがあります。
+大変なお仕事が一気に来られたらそれを処理する仕事人さんが困ってしまったりするからです。
+だから
+</p>
+<blockquote>
+  <p>
+    「お仕事は同時に（例えば）一個しかさばけねーんだよ」
+  </p>
+</blockquote>
+<p>
+  そして
+</p>
+<blockquote>
+  <p>「いちいちそのお仕事終わるのまってられねーから、順番が着たらやっといて」
+  </p>
+</blockquote>
+<p>
+って感じにしたいのです。
+</p>
+<p>
+これをより性行為というものを通して具体的に想像していきます。
+とある人気の娼婦がいました。性行為という仕事をする仕事人さんです。
+そして、彼女と性行為をしたいオッサンがたくさんいます。彼らが突然大勢で「やらせろよ」と押しかけると、娼婦は大変です。もちろん穴は一つ（ここではあえて一つにします）しかないので、同時に性行為をすることができるのは一人のチンコとだけです。そこで、娼婦は「私とやりたいのならチンコを並べて置いといて、順番に処理するから」と言います。ということでオッサンたちは前の人との性行為が終わるのを待つことなく、ちんこだけ置いて去ればいいのです。あとは順番がきたら娼婦がかってにちんこと性行為をしてくれます。
+もちろん、娼婦が暇なときはすぐにちんこと穴との性行為が始まるようになっています。
+こうして、娼婦さんはたくさんのオッサンのちんこを順番に（キューとして）処理し、オッサンたちは自分以外のオッサンをあまり気にせず娼婦を妊娠させることができるわけです。
+</p>
+<p>
+サンプルコードの総称は「sexschwartz」にしました。
+仕事をする worker の 娼婦は一人でいいのですが、問題はたくさんのオッサンというところで、そのオッサンたちをどこで手に入れようかと思ったのですが、そこはいいのがありました。外国の俳優さんたちです。
+makidaisuke さん products の Acme::Actors::JA （<a href="http://mt.endeworks.jp/d-6/2008/01/acmeactorsja.html">Acme-Actors-JA作った - D-6 [相変わらず根無し]</a>）を使ってリストをYAML形式にして、オッサンである client が読み込み、ランダムで自分は誰であるかを決定するという仕組みです。そして、自分のチンコの名前を 娼婦であるworkerに伝えるということにしました。
+</p>
+<p>
+ということで以下サンプルコードと動いているところです。
+</p>
+<p>
+娼婦、sexschwartz_worker.pl。
+</p>
+<pre class="brush: perl"> #!/usr/bin/perl
+
+package Worker;
+use strict;
+use warnings;
+use FindBin;
+use lib "$FindBin::Bin/lib";
+use base qw(TheSchwartz::Worker);
+use IO::File;
+use utf8;
+use Encode;
+
+sub work {
+    my ( $class, $job ) = @_;
+    my $chinko = $job-&gt;arg-&gt;{chinko};
+
+    print encode("utf-8","$chinko 気持ちいい\n");
+
+    sleep(3); # 妊娠期間3秒
+
+    my $text        = "$chinko で妊娠して子供できちゃいました＞＜";
+    utf8::encode($text);
+    my $io          = IO::File-&gt;new();
+    $io-&gt;open( 'log.txt', 'a' ) or die $!;
+    $io-&gt;print("$text\n");
+    $io-&gt;close;
+
+    $job-&gt;completed();
+}
+
+package main;
+use strict;
+use warnings;
+use TheSchwartz;
+
+my $client =
+  TheSchwartz-&gt;new( databases =&gt;
+      [ { dsn =&gt; 'dbi:mysql:theschwartz', user =&gt; 'root', pass =&gt; '' } ], );
+$client-&gt;can_do("Worker");
+$client-&gt;work();</pre>
+<p>
+オッサン、sexschwartz_client.pl。
+</p>
+<pre class="brush: perl"> #!/usr/bin/perl
+
+use strict;
+use warnings;
+use FindBin;
+use lib "$FindBin::Bin/lib";
+use TheSchwartz;
+use YAML;
+use utf8;
+use Encode;
+
+my $actors_yaml = YAML::LoadFile("actors.yaml");
+my @actors = @$actors_yaml;
+my $who = $actors[rand($#actors)];
+my $name = $who-&gt;{name};
+utf8::decode($name);
+my $client =
+  TheSchwartz-&gt;new( databases =&gt;
+      [ { dsn =&gt; 'dbi:mysql:theschwartz', user =&gt; 'root', pass =&gt; '' } ], );
+
+$client-&gt;insert( "Worker" =&gt; { chinko =&gt; "$name のチンコ" } );
+
+my @list = $client-&gt;list_jobs( { funcname =&gt; "Worker" } );
+print $#list + 1 . encode("utf-8","人の男優がセックス待ちです\n");</pre>
+<p>
+オッサンのチンコ
+</p>
+<pre class="brush: perl"> $ perl sexschwartz_client.pl
+1人の男優がセックス待ちです
+$ perl sexschwartz_client.pl
+2人の男優がセックス待ちです</pre>
+
+<p>
+娼婦の反応
+</p>
+<pre class="brush: perl"> $ perl sexschwartz_worker.pl
+ベルナール・ブリエ のチンコ 気持ちいい
+マイケル・J・フォックス のチンコ 気持ちいい</pre>
+<p>
+結果（log.txt）
+</p>
+<pre class="brush: perl"> ベルナール・ブリエ のチンコ で妊娠して子供できちゃいました＞＜
+マイケル・J・フォックス のチンコ で妊娠して子供できちゃいました＞＜</pre>
+<p>
+補足で、もちろん 穴 の方を増やすこともできると思います。
+俺の理解が足りないところがあったらがんがん突っ込んでください。あと、job を全てこなしきれていない worker のプロセスを殺すと、次回起動したときに job の数がずれるっていう問題があるっぽいんだけど、それはやはり job が全て終わるのを待つとか、立ち上げるときに db をクリアするとかすればいいのかなー。
+ま、以上、娼婦とオッサンによる性行為で TheSchwartz を学んでみました。
+</p>
+<ul>
+  <li><a href="http://svn.vaginarepos.org/share/perl/pussy/sexschwartz/">/perl/pussy/sexschwartz@vaginarepos</a></li>
+</ul>
+
+<p></p>
+<div style="float:left"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4105090178/kamawada-22/"><img alt="わが悲しき娼婦たちの思い出 (2004)" src="http://ecx.images-amazon.com/images/I/11HVT2X1SNL.jpg" style="border:none;"></a></div>
+<div style="float:left;margin-left:15px;">
+<div style="font-size:12pt"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4105090178/kamawada-22/">わが悲しき娼婦たちの思い出 (2004)</a></div>
+<div style="font-size:7pt;font-family:verdana;">posted with <a href="http://yusukebe.com/b/amazon/search/">yusukebe.com::AmazonSearch</a> on 2008.3.8</div>
+<div style="font-size:10pt;">
+<ul style="list-style-type:none;padding:0;">
+<li>ガブリエル・ガルシア=マルケス 木村 榮一  </li>
+<li>単行本 / 新潮社 (2006/09/28)</li>
+<li>Amazon 売り上げランキング: 38149</li>
+</ul>
+<ul style="list-style-type:none;padding:0;"><li>Amazon おすすめ度の平均: <img alt="4.5" class="at-xid-6a0133f4781589970b015435b6d28c970c" src="https://yusukebe.com/archives/a/6a0133f4781589970b015435b6d28c970c-pi.gif" style="margin:0;"><ul style="list-style-type:none;padding-left:0;">
+<li>
+<img alt="5" class="at-xid-6a0133f4781589970b015435b6d28e970c" src="https://yusukebe.com/archives/a/6a0133f4781589970b015435b6d28e970c-pi.gif" style="margin:0;"> 貪欲な下半身</li>
+<li>
+<img alt="5" class="at-xid-6a0133f4781589970b015435b6d28e970c" src="https://yusukebe.com/archives/a/6a0133f4781589970b015435b6d28e970c-pi.gif" style="margin:0;"> 小説を読む歓びに溢れた傑作。</li>
+<li>
+<img alt="4" class="at-xid-6a0133f4781589970b014e8bd727e1970d" src="https://yusukebe.com/archives/a/6a0133f4781589970b014e8bd727e1970d-pi.gif" style="margin:0;"> すべては過去に</li>
+</ul>
+</li></ul>
+<a href="http://www.amazon.co.jp/gp/product/4105090178%3ftag=kamawada-22%26link_code=xm2%26camp=2025%26dev-t=D3QNAE4JDR26A2">Amazon.co.jpで詳細を見る</a>
+</div>
+</div>
+<div style="clear:left;"></div>
+
+
+ 
+}

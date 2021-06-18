@@ -1,0 +1,166 @@
+{
+    "data" :  {
+    "title": "古川享さんが「苗字と名前をMashupしてブログにポストするライフハック」を実践してた",
+    "date": "2007-09-19 11:48:00 +0900 JST",
+    "dir": "posts/2007/",
+    "slug": "0919024818",
+    "categories": ["tech"],
+    "tags": []
+}
+
+---
+
+
+
+<p>
+  元マイクロソフト社長であり、<a href="http://yusukebe.com/archives/04/09/05/103709.html">僕の人生を変えた</a>人でもある<strong>古川享</strong>さんが、
+  新ジャンル(？)「<strong>苗字と名前をMashupしてブログにポストするライフハック</strong>」を実践してた。
+  と思ったら、修正かかってた…
+  だけど、せっかくのネタなので書く。
+</p>
+<p>
+  <img alt="古川さんのブログより" class="at-xid-6a0133f4781589970b015435b6eb9c970c" src="https://yusukebe.com/archives/a/6a0133f4781589970b015435b6eb9c970c-pi.gif">
+</p>
+<blockquote>
+  <p>
+    2007年9月17日1:21AM追記....何故か橋本翔さんの苗字は柴田で<strong>柴田翔</strong>と同姓同名と勘違いしていた、オマヌケな私...ごめんね橋本さん....というわけで、上記の記述修正させてもらいました。
+  </p>
+  <p>
+    <a href="http://furukawablog.spaces.live.com/Blog/cns!156823E649BD3714!8044.entry">古川 享 ブログ: 橋本翔さん、快挙!!!　文学（柴田翔）じゃないけれどね...</a>より
+  </p>
+</blockquote>
+<p>
+  <strong>橋本翔</strong>こと<a href="http://shokai.org/">橋本商会</a>は俺の大学の
+  研究室(慶應義塾大学SFC<a href="http://www.ok.sfc.keio.ac.jp/">奥出研究室</a>)の後輩。
+  <a href="http://www.pileus.net/">Pileus</a>という(俺でもいまだに発音がよくわからないが)面白い
+  「インターネット傘」を作った。それを
+  <del>SIGGRAPHとか</del>海外の有名な学会で発表し、<a href="http://web.sfc.keio.ac.jp/~shokai/archives/2007/09/pileus-mobilehci2007-demo-2nd-prize.html">MobileHCI2007ではデモで2位受賞をした</a>。
+  古川さんは、それを取り上げてくれて当初、
+  「<strong>柴田翔さん、快挙!!!　文学（柴田翔）じゃないけれどね...</strong>」
+  という題名でブログに記事をアップしたわけ。
+</p>
+<blockquote>
+  「苗字『柴田』じゃないですよ」
+</blockquote>
+<p>
+  <b>さらに</b>奥出研究室には橋本商会と同じ代に「<strong>柴田樹</strong>」という生意気な後輩がいる。
+  だから奥出研のOB＆OGを含むメンバーはこのエントリーを見たとき、
+</p>
+<blockquote>
+  「柴田樹と橋本翔が(古川さんの中で)混同されているｗ」
+</blockquote>
+<p>
+  って盛り上がった(古川さんの中では柴田樹を知っていたかは不明)。
+</p>
+<p>
+  <font size="2">(左)橋本翔、(右)柴田樹</font><br>
+  <img alt="shokai" class="at-xid-6a0133f4781589970b015435b6ebab970c" src="https://yusukebe.com/archives/a/6a0133f4781589970b015435b6ebab970c-pi.jpg">
+  <img alt="itsuki" class="at-xid-6a0133f4781589970b015435b6ebba970c" src="https://yusukebe.com/archives/a/6a0133f4781589970b015435b6ebba970c-pi.jpg">
+</p>
+<p>
+  でも、これって一種のマッシュアップですよね。
+  「<b>2人の苗字と名前をMashupする、さらにそれをブログにアップする</b>」というライフ(？)ハック。
+  新しいような気もするし、前からあったような気もする(既出だったらごめんなさい)。
+</p>
+<p>
+  例えば、野球選手だとこんなすごい選手が生まれる。
+</p>
+<blockquote>
+  長嶋茂雄さん＋王貞治さん　＝　<strong>長嶋貞治</strong>
+</blockquote>
+<p>
+  驚異的な打率と本塁打を放ちつつ、守備も完璧な無敵のプレーヤーだ。
+  是非俺が応援するベイスターズに加入してもらいたい。
+</p>
+<p>
+  次に、とある2人のスーパーPerlハッカーを勝手にマッシュアップしてみるとこうなる。
+</p>
+<blockquote>
+  <a href="http://coolsummer.typepad.com/kotori/2007/08/post-2.html">宮川達彦さん</a>＋<a href="http://d.hatena.ne.jp/yappo/20070522/1179810332">伊藤直也さん</a>　＝　<strong>宮川直也</strong>
+</blockquote>
+<p>
+  うぉーすげぇコード書きそう。
+  Perlモジュール量産しながら、Linuxカーネルハックしたりして。
+</p>
+<p>
+  最後に(俺も自負したいんだけど)「<b>ひきこもりIT系社長</b>」同士をマッシュアップしてみる。
+</p>
+<blockquote>
+  <a href="http://www.itmedia.co.jp/news/articles/0603/20/news013.html">家入一真さん</a>＋<a href="http://d.hatena.ne.jp/jkondo/20070331/1175393752">近藤淳也さん</a>　＝　<strong>家入淳也</strong>
+</blockquote>
+<p>
+  ひきこもりとか言いながら、
+  アメリカでちゃり乗ってカメラ撮ってそうだね。
+  仕事やってんのかなって疑っちゃうよ(不快に思われてしまいましたらすいません)。
+</p>
+<p>
+  ただ、これをマッシュアップとは呼ばずに、
+  「<b>結婚した説</b>(うほっ！)」と捉えることができる。
+  そのことに関してこれまた奥出研の後輩、よっしーがこう発言している。
+</p>
+<blockquote>
+  「結婚ではなくてライフハックなんだからね!!」っていうツンデレが生まれて欲しい<br>
+  <br>
+  <a href="http://twitter.com/shingoy/statuses/274436112">Twitter / Shingo Yoshida</a>より
+</blockquote>
+<p>
+  それはいいツンデレ、しかもガチホモｗｗｗ
+</p>
+<p>
+  ということで、
+  みなさんも「苗字と名前をMashupしてブログにポストするライフハック」を実践してみたらいかがでしょうか。
+  *注意 : 人権侵害とか気をつけた方がいいかもね。
+</p>
+<h4>追記</h4>
+<p>
+  こんなのも見つけました。
+  「<a href="http://blog.hatena.ne.jp/jkondo/">id:jkondo</a> + <a href="http://blog.hatena.ne.jp/naoya/">id:naoya</a>」のはてな最強コンビ。
+</p>
+<p>
+  <img alt="knaoya" class="at-xid-6a0133f4781589970b015435b6ebc9970c" src="https://yusukebe.com/archives/a/6a0133f4781589970b015435b6ebc9970c-pi.jpg">
+</p>
+<h4>関連記事</h4>
+<ul>
+  <li>
+    <a href="http://furukawablog.spaces.live.com/blog/cns!156823E649BD3714!8044.entry">古川 享 ブログ: 橋本翔さん、快挙!!!　文学（柴田翔）じゃないけれどね...</a>
+  </li>
+  <li><a href="http://yusukebe.com/archives/04/09/05/103709.html">ゆーすけべー日記: 俺の人生を変えた人、古川享氏ブログスタート</a></li>
+  <li>
+    <a href="http://yusukebe.com/mt/mt-search.cgi?search=%E6%A9%8B%E6%9C%AC%E5%95%86%E4%BC%9A">ゆーすけべー日記: 「橋本商会」の検索結果</a>
+  </li>
+  <li><a href="http://web.sfc.keio.ac.jp/~shokai/archives/2007/09/pileus-mobilehci2007-demo-2nd-prize.html">s.h.log: Pileus - MobileHCI2007 demo 2nd prizeをいただきました</a></li>
+  <li><a href="http://coolsummer.typepad.com/kotori/2007/08/post-2.html">アルファギーク、らき☆すたを理解しようと努める：小鳥ピヨピヨ(a cheeping little bird)</a></li>
+  <li><a href="http://d.hatena.ne.jp/yappo/20070522/1179810332">Yappo::Hatena::Diary - id:naoyaは</a></li>
+  <li><a href="http://www.itmedia.co.jp/news/articles/0603/20/news013.html">ITmedia News：ひきこもりからIT社長に　“paperboy”の軌跡 (1/4)</a></li>
+  <li><a href="http://d.hatena.ne.jp/jkondo/20070331/1175393752">jkondoの日記 - 逃げ込め、好きを貫け、未来を作れ、ひきこもれ</a></li>
+  <li><a href="http://twitter.com/otsune/statuses/254620512">otsuneさんのTwitter: jkondoの「ひきこもりIT社長」というキャラ作りは俺とネタかぶってるぞ！　とieiri社長が苦言するのはどうか</a></li>
+</ul>
+<h4>関連書籍</h4>
+<p></p>
+<div style="float:left"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4774127280/kamawada-22/"><img alt="Life Hacks PRESS ~デジタル世代の「カイゼン」術~" src="http://g-ec2.images-amazon.com/images/I/21SDY8CGWYL.jpg" style="border:none;"></a></div>
+<div style="float:left;margin-left:15px;">
+<div style="font-size:12pt"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4774127280/kamawada-22/">Life Hacks PRESS ~デジタル世代の「カイゼン」術~</a></div>
+<div style="font-size:7pt;font-family:verdana;">posted with <a href="http://yusukebe.com/b/amazon/search/">yusukebe.com::AmazonSearch</a> on 2007.9.19</div>
+<div style="font-size:10pt;">
+<ul style="list-style-type:none;padding:0;">
+<li>田口 元 安藤 幸央 平林 純 角 征典 和田 卓人 金子 順 角谷 信太郎  </li>
+<li>大型本 / 技術評論社 (2006/03/23)</li>
+<li>Amazon 売り上げランキング: 5043</li>
+</ul>
+<ul style="list-style-type:none;padding:0;"><li>Amazon おすすめ度の平均: <img alt="4.0" class="at-xid-6a0133f4781589970b014e8bd727e1970d" src="https://yusukebe.com/archives/a/6a0133f4781589970b014e8bd727e1970d-pi.gif" style="margin:0;"><ul style="list-style-type:none;padding-left:0;">
+<li>
+<img alt="3" class="at-xid-6a0133f4781589970b015391e3783b970b" src="https://yusukebe.com/archives/a/6a0133f4781589970b015391e3783b970b-pi.gif" style="margin:0;"> GTDに若干興醒め</li>
+<li>
+<img alt="4" class="at-xid-6a0133f4781589970b014e8bd727e1970d" src="https://yusukebe.com/archives/a/6a0133f4781589970b014e8bd727e1970d-pi.gif" style="margin:0;"> LifeHacksの取っ掛かりに最適</li>
+<li>
+<img alt="4" class="at-xid-6a0133f4781589970b014e8bd727e1970d" src="https://yusukebe.com/archives/a/6a0133f4781589970b014e8bd727e1970d-pi.gif" style="margin:0;"> 忙しい人こそ読んでみて</li>
+</ul>
+</li></ul>
+<a href="http://www.amazon.co.jp/gp/product/4774127280%3ftag=kamawada-22%26link_code=xm2%26camp=2025%26dev-t=D3QNAE4JDR26A2">Amazon.co.jpで詳細を見る</a>
+</div>
+</div>
+<div style="clear:left;"></div>
+
+
+ 
+}

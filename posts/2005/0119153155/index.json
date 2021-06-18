@@ -1,0 +1,20 @@
+{
+    "data" :  {
+    "title": "SerialStroke ver0.1",
+    "date": "2005-01-20 12:31:00 +0900 JST",
+    "dir": "posts/2005/",
+    "slug": "0119153155",
+    "categories": ["tech"],
+    "tags": []
+}
+
+---
+
+
+
+<p>   COM port 4に来たシリアルの文字をそのまま、キーストロークに変えるソフト。.net frameworkが必要。外部デバイスとFlashを連動するときに便利。</p>
+<p>   <a alt="SerialStrokeSetup.msi" border="0" href="http://kamawada.com/~yusuke/yusukebe/archives/files/050120/SerialStrokeSetup.msi">SerialStrokeSetup.msi</a></p>
+
+
+ 
+}

@@ -1,0 +1,59 @@
+{
+    "data" :  {
+    "title": "Plagger使ってデイリーベイスターズのRSSを吐き出す",
+    "date": "2006-06-11 20:40:00 +0900 JST",
+    "dir": "posts/2006/",
+    "slug": "0611114006",
+    "categories": ["tech"],
+    "tags": ["Perl"]
+}
+
+---
+
+
+
+<p>
+  横浜ベイスターズの試合情報は<a href="http://www.kanaloco.jp/sports/bay/index.html">デイリーベイスターズ</a>というサイトがウェブでは一番充実している。
+  けど、RSS吐いてない。というわけで<a href="http://plagger.org/">Plagger</a>のFilter::EntryFullTextっての使ってRSS吐き出してみた。
+  これ、
+</p>
+<ul><li><a href="http://www.kamawada.com/~yusuke/work/plagger/baystars/dailybaysters.xml">http://www.kamawada.com/~yusuke/work/plagger/baystars/dailybaysters.xml</a></li></ul>
+<p>
+  うまくマッチさせるのがだるいので、extractの設定せずに、description空。
+  更新情報とタイトルがわかればいいやと、という主義なのでこれでよし。
+  なんとなくPlaggerがわかってきた。
+  Filter::EntryFullTextってのはRSS吐いてないページとかを対象として、
+  そのページのリンクをたどってページ更新情報＆サマライズをまとめてRSSにしてくれたり、
+  するんだな。便利だ。
+</p>
+<p>
+  以下assetsディレクトリに入れたyaml
+</p>
+<pre class="code"># http://www.kanaloco.jp/sports/bay/back.htm
+author: Yusuke Wada
+custom_feed_handle: http://www¥.kanaloco¥.jp/sports/bay/back¥.htm$
+custom_feed_follow_link: yb¥d+.html
+handle: http://www.kanaloco.jp/sports/bay/yb¥d+.html
+#extract: &lt;p&gt;&lt;font color="#FF6600" size="5"&gt;(.*?)&lt;table width="360"
+#extract_capture: body </pre>
+<p>
+  コンフィグyaml
+</p>
+<pre class="code">global:
+  assets_path: /path_to/assets
+  timezone: Asia/Tokyo
+plugins:
+  - module: Subscription::Config
+    config:
+      feed:
+         - url: http://www.kanaloco.jp/sports/bay/back.htm
+  - module: Filter::EntryFullText
+  - module: Publish::Feed
+    config:
+      format: RSS
+      dir: ./
+      filename: dailybaysters.xml </pre>
+
+
+ 
+}

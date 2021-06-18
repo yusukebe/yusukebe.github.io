@@ -1,0 +1,28 @@
+{
+    "data" :  {
+    "title": "CodeTreeに「Rain Drop RSS Reader」をSubmitしてみた",
+    "date": "2006-02-11 12:24:00 +0900 JST",
+    "dir": "posts/2006/",
+    "slug": "0210152401",
+    "categories": ["tech"],
+    "tags": []
+}
+
+---
+
+
+
+<p>
+  <a href="http://www.hatayan.org/weblog/archives/2006/02/04/160225.php">hatayanlog ver0.3: プロダクトを作る技術を共有するSNSが増えてきた</a>、
+  こちらで、<a href="http://www.codetree.org/index.php">CodeTree</a>
+  なるものを知ったので、Coder登録をして、とりあえず、以前作った「雨粒RSSリーダー」を
+  「Rain Drop RSS Reader」という名前にしてSubmitしてみた。→
+  <a href="http://www.codetree.org/artwork/art.php?id=188">CodeTree: Rain Drop RSS Reader by yusukebe</a>
+</p>
+<p>
+  ゆーすけべー日記を読み込むので、はたして、英語圏の人に理解されるか微妙なところだ。
+</p>
+
+
+ 
+}

@@ -1,0 +1,122 @@
+{
+    "data" :  {
+    "title": "Markdown文章をお手軽にKindleで見る",
+    "date": "2012-03-27 07:21:00 +0900 JST",
+    "dir": "posts/2012/",
+    "slug": "0322141018",
+    "categories": ["tech"],
+    "tags": ["Technologies","Kindle","Markdown"]
+}
+
+---
+
+
+
+<p>いつの間にか手元にある「Kindle Touch」。ぐふふ。</p>
+
+<p><a href="http://yusukebe.com/archives/2012/03/27/IMG_1882.JPG"><img alt="IMG_1882.JPG" src="http://yusukebe.com/archives/assets_c/2012/03/IMG_1882-thumb-300x224-171.jpg" width="300" height="224" class="mt-image-none" style=""></a>
+<a href="http://yusukebe.com/archives/2012/03/27/IMG_1884.JPG"><img alt="IMG_1884.JPG" src="http://yusukebe.com/archives/assets_c/2012/03/IMG_1884-thumb-300x224-165.jpg" width="300" height="224" class="mt-image-none" style=""></a></p>
+
+<p>ページめくりがもっさりしているのが気になるけど、軽くて手頃なサイズ感がいい。
+今なら円高なんで安く買えるし。
+ただ、Kindle Storeで購入する書籍も含めて英語だとなんとなく実感がわかないので、
+日本語の文章を読んでみたかった。
+というか、自分が最近書いている文章のプレビュー用として使いたかった。</p>
+
+<p>Markdownで文章を書いているのでMarkdownを変換してKindleに転送して読めばよい。
+実は後から知ったんだけどKindleってePubにまだ対応してないのね...
+ということで色々調べてみると以下の方法がすごくお手軽。</p>
+
+<ul>
+<li>Markdownを簡単な構造のHTMLに変換する</li>
+<li>KindleGenを使って.mobi形式に変換する</li>
+<li>Kindleを繋げてフォルダにぶっこむ</li>
+</ul>
+
+
+<p>KindleGenっていうのはAmazonがオフィシャルに配布しているePubやHTMLを結構かしこくKindleで読める形式＝.mobiに変換してくれるコマンドラインソフト。</p>
+
+<ul>
+<li><a href="http://www.amazon.com/gp/feature.html?ie=UTF8&amp;amp;docId=1000234621" title="Kindle Publishing Programs">Kindle Publishing Programs</a></li>
+</ul>
+
+
+<p>これにMarkdownからおこしたHTMLをかませればいいということになる。
+適当なHTMLを指定しKindleGenを実行するいろいろと警告や情報を出してくれるのでHTMLを作る参考になります。</p>
+
+<p>気をつけるのは以下の点でした。</p>
+
+<ul>
+<li>html、bodyタグ等はしっかりつける</li>
+<li>head内のmeta要素でcharset=utf8とかしないと日本語が文字化ける</li>
+<li>画像はローカルにないといけない</li>
+<li>デフォルトだと特有のCSSが適応されるので簡単なCSSを書く</li>
+<li>.cssファイルを外部から読み込んでも考慮される</li>
+</ul>
+
+
+<p>MarkdownをHTML化するために使ったスクリプトはこちら。Markdownファイルを引数に渡すと、
+HTML内の画像をtempファイルに置きつつsrc属性を変更、最終的に出来たHTMLを標準出力に吐いてくれる。</p>
+
+<pre class="code">use strict;
+use warnings;
+use Text::Markdown qw/markdown/;
+use Path::Class qw/file/;
+use Data::Section::Simple qw/get_data_section/;
+use HTML::TokeParser;
+use File::Temp qw/tempfile/;
+use LWP::Simple qw/getstore/;
+
+my $filename = $ARGV[0] or die "filename argument required!";
+my $file     = file($filename);
+my $content  = $file-&gt;slurp;
+my $html     = markdown($content);
+
+my $parser = HTML::TokeParser-&gt;new( \$html );
+while ( my $token = $parser-&gt;get_tag('img') ) {
+    my $src = $token-&gt;[1]{src};
+    my ($suffix) = $src =~ /.+(\..\w+?)$/;
+    my ( $fh, $tempname ) = tempfile( SUFFIX =&gt; $suffix );
+    getstore( $src, $tempname );
+    $html =~ s/$src/$tempname/g;
+}
+
+my $header = get_data_section('header.html');
+my $footer = get_data_section('footer.html');
+print "$header$html$footer";
+
+__DATA__
+
+@@ header.html
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta http-equiv="content-type" content="text/html; charset=utf-8" /&gt;
+    &lt;link rel="stylesheet" href="style.css" type="text/css" /&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+
+@@ footer.html
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
+
+<p>これを「convert.pl」などと保存して、以下のようにすればHTMLが生成される。</p>
+
+<pre class="code">$ perl convert.pl oppai.mkdn &gt; oppai.html</pre>
+
+<p>そしてすかさずKindleGenで変換。</p>
+
+<pre class="code">$ ~/bin/kindlegen oppai.html</pre>
+
+<p>するとカバーが無いと怒られつつも「oppai.mobi」が生成されるのでKindleに転送して見てみる。</p>
+
+<p><a href="http://yusukebe.com/archives/2012/03/27/IMG_1921.JPG"><img alt="IMG_1921.JPG" src="http://yusukebe.com/archives/assets_c/2012/03/IMG_1921-thumb-550x410-167.jpg" width="550" height="410" class="mt-image-none" style=""></a></p>
+
+<p>できたー！画像もコードも綺麗に読める！</p>
+
+<p><a href="http://yusukebe.com/archives/2012/03/27/IMG_1922.jpg"><img alt="IMG_1922.jpg" src="http://yusukebe.com/archives/assets_c/2012/03/IMG_1922-thumb-550x410-169.jpg" width="550" height="410" class="mt-image-none" style=""></a></p>
+
+<p>やっぱりE-Ink読みやすいな！そしてこういう風に自分の書いた文章を物理デバイスでプレビューすると直したい点がわかったり全体のボリューム感を把握できていいわー。今手元に複数のMarkdownファイルがあるのでそれをうまいことまとめて一つのHTMLにすればもっとよさげ。表紙とか目次についても比較的簡単にプログラマブルにやれそうなんで調べてみます。</p>
+
+
+ 
+}

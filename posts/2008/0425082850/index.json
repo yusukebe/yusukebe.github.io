@@ -1,0 +1,179 @@
+{
+    "data" :  {
+    "title": "WebService-Simple-0.09 の使い方",
+    "date": "2008-04-25 17:28:00 +0900 JST",
+    "dir": "posts/2008/",
+    "slug": "0425082850",
+    "categories": ["tech"],
+    "tags": ["Perl"]
+}
+
+---
+
+
+
+<p>
+  シンプルに Web API を叩ける
+  WebService::Simple の現在の最新版はヴァージョン 0.09 です。
+  ヴァージョン 0.03 から<a href="http://yusukebe.com/archives/08/04/25/154415.html">スーパーハカーによる修正</a>が入ったこともあり、機能が（Simpleという名前を崩さない程度に）増えたり、多少インターフェースが変わったりしました。
+  そこで WebService::Simple 0.09 の使い方を POD より詳しめに解説します。
+  # shipit が便利だったので、調子に乗ってやたら使いまくったらヴァージョンがどんどんあがっちゃった＞＜
+</p>
+<p>
+最初に、インターフェースの変更点をあげます。大きく変わったのは一点のみです。
+例えば、Lingr の API を扱う場合、base_url は <a href="http://www.lingr.com/">http://www.lingr.com/</a> になりますが、
+各メソッドの URL は 例えば <a href="http://www.lingr.com/api/session/create">http://www.lingr.com/api/session/create</a> という風に、メソッドごとに変化します。つまり base_url に api/session/create みたいなパスを追加したいということです。
+そのためには、
+get メソッド の パラメータ にそのパスを記載するんですが、0.03 の時と引渡し方が変更になっています。
+第1引数に extra_path を指定するようになりました。
+</p>
+<pre class="brush: perl"> my $lingr = WebService::Simple-&gt;new(
+    base_url =&gt; 'http://www.lingr.com/',
+    param    =&gt; { api_key =&gt; "your_api_key", format =&gt; 'xml' }
+);
+
+my $response = $lingr-&gt;get( 'api/session/create', {} );
+
+my $session = $response-&gt;parse_response-&gt;{session};</pre>
+<p>
+また、上記サンプルに記載されているように、get などで取得した WebService::Simple::Response オブジェクトをパースするには、parse_xml メソッドを今まで呼んででいましたが、parse_response メソッドを使うことを推奨しています（エイリアスを作っているので parse_xml でも動きます）。
+</p>
+<p>
+あとは普通に使う分には今まで通りで問題ないです。
+Flickr API を使ったキーワードによる検索結果を Dump するサンプルコードは以下のようになります。
+</p>
+<pre class="brush: perl"> use strict;
+use warnings;
+use WebService::Simple;
+use Data::Dumper;
+
+my $flickr = WebService::Simple-&gt;new(
+    base_url =&gt; "http://api.flickr.com/services/rest/",
+    param    =&gt; { api_key =&gt; "your_api_key", }
+);
+
+my $response =
+  $flickr-&gt;get( { method =&gt; "flickr.photos.search", text =&gt; "cat" } );
+print Dumper $response-&gt;parse_response;</pre>
+<p>
+response のキャッシュも以前と同じ書き方でできます。
+</p>
+<pre class="brush: perl"> use WebService::Simple;
+use Cache::File;
+
+my $cache = Cache::File-&gt;new(
+    cache_root      =&gt; '/tmp/mycache',
+    default_expires =&gt; '30 min',
+);
+
+my $flickr = WebService::Simple-&gt;new(
+    base_url =&gt; "http://api.flickr.com/services/rest/",
+    cache    =&gt; $cache,
+    param    =&gt; { api_key =&gt; "your_api_key", }
+);</pre>
+<p>
+次にこの WebService::Simple を継承したサブクラスを作って、もうちょっと楽に API を触れるという方法を紹介します。
+例えば、Flickr API の flickr.test.echo 及び flickr.photos.search を呼び出す WebService::Simple::Flickr をこんな感じで作ります。
+</p>
+<pre class="brush: perl"> package WebService::Simple::Flickr;
+
+use base qw(WebService::Simple);
+__PACKAGE__-&gt;config(
+    base_url   =&gt; "http://api.flickr.com/services/rest/",
+);
+
+sub test_echo {
+    my ($self,$str) = @_;
+    return $self-&gt;get( { method =&gt; "flickr.test.echo", name =&gt; $str } );
+}
+
+sub photos_search {
+    my ($self,$str) = @_;
+    return $self-&gt;get( { method =&gt; "flickr.photos.search", text =&gt; $str } );
+}</pre>
+<p>
+そしたら外部から、よりスッキリとしたコードで API をたたくことができます。
+</p>
+<pre class="brush: perl"> use utf8;
+use WebService::Simple::Flickr;
+use Data::Dumper;
+
+my $flickr =
+  WebService::Simple::Flickr-&gt;new( param =&gt; { api_key =&gt; "your_api_key", } );
+
+my $ref = $flickr-&gt;photos_search("富士山")-&gt;parse_response;
+print Dumper $ref;</pre>
+<p>
+この API ごとにサブクラス化するという方法なんですが、Yappo さんが作った WebService::Simple::Cabinet
+を使う方法と、「ある API に特化したモジュールもしくはメソッドを作る」という点で似ています。WebService::Simple::Cabinet は YAML 形式などで API の定義をしますが、この場合は Perl モジュールを作っています。API を使うシチュエーションによってどちらか選ぶというのもいいと思います。
+</p>
+<p>
+最後にパーサー、つまりAPI から返却されたコンテンツをパースするのに使うモジュールが選べるようになったという機能を紹介します。デフォルトでは XML::Simple でパースするようになっていますが、例えば XML::LibXML を使いたい場合は、WebService::Simple::Parser を継承して WebService::Simple::Parser::XML::LibXML モジュールを以下のように作成します（ このモジュールはWebService::Simple に同封されています）。
+</p>
+<pre class="brush: perl"> package WebService::Simple::Parser::XML::LibXML;
+use strict;
+use warnings;
+use base qw(WebService::Simple::Parser);
+use XML::LibXML;
+
+__PACKAGE__-&gt;mk_accessors($_) for qw(libxml);
+
+sub new
+{
+    my $class = shift;
+    my $args  = shift || {};
+    $args-&gt;{libxml} ||= XML::LibXML-&gt;new;
+    $class-&gt;SUPER::new($args);
+}
+
+sub parse_response
+{
+    my $self = shift;
+    $self-&gt;libxml-&gt;parse_string( $_[0]-&gt;content );
+}
+
+1;</pre>
+<p>
+それで利用するスクリプトからは、WebService::Simple のコンストラクタの引数 response_parser の値で使いたいパーサのモジュールを指定します。
+</p>
+<pre class="brush: perl"> my $service = WebService::Simple-&gt;new(
+    base_url        =&gt; "http://api.flickr.com/services/rest/",
+    response_parser =&gt; 'XML::LibXML',
+    params          =&gt; { api_key =&gt; "your_api_key" }
+);</pre>
+<p>
+これで面白いのは、とりわけ XML で結果が返ってくる API 以外にも対応するところです。
+例えば、JSON もしくは JSONP 形式で返却される API を扱うこともできます。
+WebService::Simple::Parser::JSON はもう既に定義済みのものがあるので、以下のようなスクリプトを書くだけで、JSON もしくは JSONP を パースしてくれてデータを利用することができます。
+</p>
+<pre class="brush: perl"> use strict;
+use warnings;
+use WebService::Simple;
+use Data::Dumper;
+
+my $flickr = WebService::Simple-&gt;new(
+    base_url        =&gt; "http://api.flickr.com/services/rest/",
+    response_parser =&gt; 'JSON',
+    params          =&gt; { api_key =&gt; "your_api_key", format =&gt; "json" }
+);
+
+my $response =
+  $flickr-&gt;get( { method =&gt; "flickr.photos.search", text =&gt; "cat" } );
+print Dumper $response-&gt;parse_response;</pre>
+<p>
+あとは POST にも対応したので、使いたい場合は
+post メソッドを get と同じ引数形式で呼び出せばおｋだと思います。
+</p>
+<p>
+dmaki（lestrrat）さん、tokuhirom  に（まるごと）書き換えてもらった＆Yappo さんが WebService::Simple::Cabinet を作ったおかげで、面白いモジュールになった気がします。感謝です。
+</p>
+<p>
+CPAN に最新版があがっているので、もしよろしければご利用ください。
+</p>
+<ul>
+  <li><a href="http://search.cpan.org/dist/WebService-Simple/">Yusuke Wada / WebService-Simple - search.cpan.org</a></li>
+</ul>
+
+
+ 
+}

@@ -1,0 +1,121 @@
+{
+    "data" :  {
+    "title": "アクションスクリプトお姉さんの家でAS3勉強会をしてきたよ",
+    "date": "2007-12-14 21:13:00 +0900 JST",
+    "dir": "posts/2007/",
+    "slug": "1214121328",
+    "categories": ["tech"],
+    "tags": []
+}
+
+---
+
+
+
+<p>
+Flashを操作できるプログラミング言語、アクションスクリプト。
+昔5年くらい前にVersion1.5を結構いじっていたことがあったんだけど、
+AS3(アクションスクリプトVersion3)になって触ってみたら、Javaみたいになっていてびっくらこいた。
+そんで今勉強しているところ。
+誰か教えてーとつぶやいたら奥出研OBのニートな人達が集まって、
+巷で有名になってしまったアクションスクリプトお姉さんの家で勉強会をすることになった。
+実はアクションスクリプトお姉さんとは学区が一緒ってほど（とはいえ学校で一緒になったことはない）、
+家が近いご近所さん。
+</p>
+
+<p>
+内容はライトニングトークというか、各自が最近のニート的生活の中で何をやっているかの発表、そして、
+それが終わるとAS3をそれぞれひたすら書くというもの。
+俺は、Flashによるおっぱいアプリケーションを作るのを目標しつつ、感を取り戻すために、
+WEB+DB PRESS vol.41 の特集にあったPhotoViewerのソースをひたすら写す＝写経した。
+あと、DisplacementMapFilterっていうのを使うとおっぱい画像をエロくできそうなので、
+その辺もちょっと触ってみた。なんだか動くのがちょっとづつできてくるとwktkしてきた。
+</p>
+
+<p>
+  <img alt="AS3勉強会" class="at-xid-6a0133f4781589970b015435b6eeb2970c" src="https://yusukebe.com/archives/a/6a0133f4781589970b015435b6eeb2970c-pi.jpg">
+</p>
+
+<p>
+以下、「各自が最近何をやっているのか発表」の簡単なログと参考ページ。
+</p>
+<blockquote>
+  <p>hatayan<br>
+    as3flickrlib を使って、Flickrの画像をアップ<br>
+    参考: <a href="http://www.hatayan.org/weblog/archives/2007/12/03/045835.php">Flash で Flickr に写真をアップロードするサンプル（FlashCS3 + Action Script3） - hatayanlog</a><br>
+    Uploadのコンストラクタがあるが、uploadのメソッドがない<br>
+    開発者外人さんのブログでそのメソッドを見つけて実装してみた<br>
+    Flashのローカルからアップロードできる<br>
+    それを利用して AIR アプリを作っている<br>
+    exifを読んで情報を付加してFlickrにアップするのはどうか<br>
+    Webカムから直接Flickrにアップロードさせることができる<br>
+    札コラメーカーとマッシュアップさせるのはどうか<br>
+    AIRはsqliteを使える<br>
+  </p>
+</blockquote>
+<blockquote>
+  <p>
+    ussy<br>
+    真空管アンプを作っている<br>
+    参考: <a href="http://www.ussy.info/weblog/2007/12/post-13.html">真空管アンプを作るその３　箱が出来たよ - ussylog</a><br>
+    真空管、3極管<br>
+    箱: 標準シャーシも売っているが、自分で作っている<br>
+    ハムノイズチェック、ノイズが出ないように角度が重要<br>
+    アルミ、切る、ハンドニブラ？ってのを使ってやる、手がまじ痛くなる<br>
+    シャーシパンチ、で穴をあける、秋葉に売ってるよ<br>
+    頭が良くなる照明術を参考に、IKEAで照明を買って、本棚に置いた<br>
+    真空管って今、デッドストックで売られていないもの、探さないといけない<br>
+  </p>
+</blockquote>
+<blockquote>
+  <p>
+    oyspe<br>
+    アクションスクリプトお姉さん<br>
+    イベントリスナー、イベントディスパッチャー、<br>
+    AIRのアプリを作る練習をしている<br>
+    参考: <a href="http://geek.oyspe.com/2007/12/memo-006adobe-air-beta2.html">memo 006　Adobe AIR Beta2でデスクトップアプリケーションを作ってみる - やっぱギークでナイト！</a><br>
+    でんすけとお散歩アプリ<br>
+    でんすけのクオリティが超たけー<br>
+    裁縫をやろうと思う<br>
+    ウサギと野菜のぬいぐるみを作って、今日の晩御飯どおしようってのを作りたい<br>
+  </p>
+</blockquote>
+<p>
+  みんな面白い、ってかニート的生活だとそれぞれ趣味に突っ走る感じが垣間見れて楽しい。
+  特にussyなんて真空管アンプ作ってるからね。
+</p>
+<p>
+  勉強会が終わった後は、地元の里のうどんでたらふく食べた。
+  おいしゅうございました。
+</p>
+<p>
+  <font size="2">バラ塩セットはすきっ腹に丁度よかった</font><br>
+  <img alt="AS3勉強会" class="at-xid-6a0133f4781589970b015435b6eebe970c" src="https://yusukebe.com/archives/a/6a0133f4781589970b015435b6eebe970c-pi.jpg">
+  <img alt="AS3勉強会" class="at-xid-6a0133f4781589970b015435b6eec4970c" src="https://yusukebe.com/archives/a/6a0133f4781589970b015435b6eec4970c-pi.jpg">
+</p>
+
+<p>
+  勉強会という名をつけたが、
+  簡単に言えば、昼間っから友達の家にいって、夜はみんなでご飯を食べるというニートプレイ。
+  どんな大学生だよとみんなで突っ込みを入れていたが、なかなか実りのある会だった。
+  AS3はコツコツを勉強していきます。
+</p>
+<p></p>
+<div style="float:left"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/477413256X/kamawada-22/"><img alt="WEB+DB PRESS Vol.41" src="http://ecx.images-amazon.com/images/I/315OMtu9gBL.jpg" style="border:none;"></a></div>
+<div style="float:left;margin-left:15px;">
+<div style="font-size:12pt"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/477413256X/kamawada-22/">WEB+DB PRESS Vol.41</a></div>
+<div style="font-size:7pt;font-family:verdana;">posted with <a href="http://yusukebe.com/b/amazon/search/">yusukebe.com::AmazonSearch</a> on 2007.12.14</div>
+<div style="font-size:10pt;">
+<ul style="list-style-type:none;padding:0;">
+<li>WEB+DB PRESS編集部  </li>
+<li>大型本 / 技術評論社 (2007/10/24)</li>
+<li>Amazon 売り上げランキング: 2686</li>
+</ul>
+<a href="http://www.amazon.co.jp/gp/product/477413256X%3ftag=kamawada-22%26link_code=xm2%26camp=2025%26dev-t=D3QNAE4JDR26A2">Amazon.co.jpで詳細を見る</a>
+</div>
+</div>
+<div style="clear:left;"></div>
+
+
+ 
+}

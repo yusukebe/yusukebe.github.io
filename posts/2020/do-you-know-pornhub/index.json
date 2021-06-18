@@ -1,0 +1,264 @@
+{
+    "data" :  {
+    "title": "君はPornhubを知っているか",
+    "date": "2020-01-21 03:55:35 +0900 JST",
+    "dir": "posts/2020/",
+    "slug": "do-you-know-pornhub",
+    "categories": [],
+    "tags": ["Pornhub"]
+}
+
+---
+
+
+Pornhubをご存知だろうか。
+答えは当然Yesだろう。
+ところがその本当の実態について我々は理解しているだろうか。
+[WikipediaのPornhubページ](https://ja.m.wikipedia.org/wiki/Pornhub)には興味深い事柄が書いてある。
+
+* YouTubeに次ぐ世界第2位の動画共有サイト
+* 360度動画を提供しており、PlayStation VRで視聴できる
+* 上下運動で発電できるリストバンドを発明した
+* 宇宙空間でポルノを撮影すると発表した
+* VPNHubというVPNサービスを開始した
+
+これらのいくつかを恥ずかしながら私は知らなかった。
+この恥ずかしさがモチベーションとなり、私はPornhubのポルノ以外のことを調べた。
+出てくるものはアダルトコンテンツばかりだったが、
+以下の3つのページに出会うことができた。
+
+* [Pornhub Insights :: Digging deep into the data](https://www.pornhub.com/insights/)
+* [Interview with a Pornhub Web Developer](https://davidwalsh.name/pornhub-interview)
+* [Pornhub case study: 5 marketing steps that made it #1](https://awario.com/blog/pornhub-case-study-marketing/)
+
+*Pornhub Insights*はPornhubのリサーチや解析を専門チームが発表する公式サイトである。*Interivew with a Pornhub Web Developer*ではPornhubのWebエンジニアにインタビューをしている。おそらく世界で唯一のPornhubの技術に関するパブリックな文章だ。nagayamanとuzullaさんに教えてもらった。*Pornhub case study*ではマーケティングの観点から考察している。
+
+{{<embedly href="https://twitter.com/nagayama/status/1216695289819480064">}}
+
+今回はこれら3つの記事を読んで分かった3つのこと:
+
+* Pornhubの実態
+* Pornhubを支える技術（私が分かる範囲で）
+* Pornhubを支えるマーケティング（私が分かる範囲で）
+
+を箇条書きでまとめてみる。なお、なるべく注意しているが、性質上どうしてもアダルト用語が出てくる。
+こうしたものに不快感を覚える人は見ないでほしい。
+
+## Pornhubの実態
+
+Pornhub Insightsでは節目ごと、国別に統計を事細かくまとめている。[The 2019 Year in Review – Pornhub Insights](https://www.pornhub.com/insights/2019-year-in-review)では昨年、2019年について書かれている。
+興味深い点をピックアップした。これでPornhubがいかにすごいのか、どのように利用されているかが分かるだろう。
+
+### 2019年にPornhubで起こったこと
+
+* 683万件の動画がアップされた
+* 訪問回数~~42億~~ 420億。これは1日に~~115万~~ 1億1,500万の訪問があることになる
+* 6,597ペタバイトのデータ転送。1日で換算すると18,073テラバイト。秒間では209ギガバイトとなる
+* 203万件の動画評価（PornhubではYouTubeのようにユーザーが動画に対してLike/Unlikeができる）
+* 2019年の特徴的な検索語
+  1. Amateur
+  2. Alien - [Alien Insights – Pornhub Insights](https://www.pornhub.com/insights/alien-insights)に考察がある
+  3. POV（Point of View） - 日本で言うところの「ハメ撮り」もしくはVRコンテンツにあたる
+* 2019年検索語ランキング
+  1. japanese
+  2. hentai
+  3. lesbian
+  4. milf
+  5. korean
+* 国別の人気カテゴリー
+  * Hentai - ロシア、チリ、ペルーで人気
+  * Japanese - アジアで人気
+  * Indian - パキスタンで人気
+  * Arab - リビア、エジプト 、スーダンで人気
+* Pornstar（日本で言うAV女優）のランキングもあるが、海外の方ばかりだったので割愛
+* 男性のPornstar（日本の男優ともちょっと違う）のランキングもある
+* 国別アクセスランキング
+  1. アメリカ
+  2. 日本
+  3. イギリス
+  4. カナダ
+  5. フランス
+* 一回の訪問に対しての滞在時間ランキング
+  1. タイ
+  2. フィリピン
+  3. オランダ
+  4. アメリカ
+  5. カナダ
+  * 平均は10分28秒、日本は29位だった。
+
+* ゲイ、レズビアンの専用サイトがある
+  * それぞれについて統計を解説
+* 女性の訪問はフィリピン、ブラジル、メキシコ、アルゼンチン、オーストラリアの順で多い
+  * アメリカは24位、日本は26位
+* 利用者の平均年齢は36歳。日本は18歳から24歳の若い人の訪問が相対的に多い
+* デバイス別統計
+  * 携帯: 76％
+  * デスクトップ: 7%
+  * タブレット: 16%
+* OS別統計
+  * Chrome OSのアクセスが多くなった
+  * iOSのアクセスも増えた
+  * ゲーム機からのアクセスもあり、Xbox、Playstation、PS Vitaの順で多い
+* テレビ番組の放送、スポーツイベントなどがアクセスに影響する
+  * ゴールデングローブ賞、グラミー賞、Appleイベントがあった日はアクセス減
+  * NFLスーパーボールの試合で、アメリカのアクセスが27%落ち込んだ
+  * UEFAチャンピオンズリーグ決勝（トットナムvsリバプール）ではロンドン、リバプール、スペインでアクセス減
+* 日本について
+  * 日本語訳されたタイトルが付くようになってきた
+  * 検索タームではjapaneseが一位、uncensored（無修正）が2位
+  * 人気女優上位3人は上原亜衣、明日花キララ、JULIA
+
+## Pornhubを支える技術
+
+[Interview with a Pornhub Web Developer](https://davidwalsh.name/pornhub-interview)は
+2019年10月の記事である。PornhubのWeb開発者（おそらくフロントエンド）にインタビューをしている。
+Pornhubで使われている技術、アダルトサイトで働くということはどういうことかを聞いている。
+関心のある部分をピックアップした。といってもだいたい全てである。
+
+### サードパーティの広告スクリプトが動いてるが開発の時にどうしているか
+
+* プレイヤーを2つに区切って開発している
+  * コア機能とイベント発火
+  * 広告無しの状態で開発される
+* 本番サイトでサードパーティスクリプトと広告を統合している
+  * 開発の早い段階で問題を発見したい
+  * なので、広告会社にイベントトリガーの手動設定ができるようにお願いしている
+
+### 動画、GIFの広告、ライブカメラのプレビュー、サムネイル...。それらをどうやって計測して、どうやってパフォーマンスを維持しているか
+
+* プレイヤーがプレイバック情報をバックエンドに送っている
+* サードパーティのRUM（リアルタイムユーザーモニタリング）システムが基本
+* AWSにWebPageTestのスクリプトが置いてある
+  * それを見て何が起こっているのか見ている
+  * 場所別、プロバイダー別の`waterfall`を解釈できる
+
+### ビデオプレイヤーについて。動画再生の前に広告がでる、ハイライト（盛り上がってるところ）が分かる、再生速度の変更ができるけど...
+
+* ビデオプレイヤー専門のチームがいる
+* ブラウザのパフォマンス計測ツール、Web ページのテスト、メトリクスなどを使う
+* QAがいる
+
+### ビデオチーム、フロントエンドチーム は何人くらいいるの？
+
+* おれが思うに平均的なほうだと思う
+
+### フロントエンドについて
+
+* CSS直書きからLESSを使いだした
+* メディアクエリーで解像度別に対応
+* jQueryとjQuery UIが遅い。結局vanillaJSでOOPしている
+* IntersectionObserver APIが大好き。画像のロードに便利
+* Picture-in-Picture APIを使いだした
+
+### 使っているWeb技術は？
+
+* Beacon
+* Fetch
+* WebRTC
+* Service Worker
+
+### WebVRについてどう思ってる？
+
+* webXRについての調査をしている
+* VRコンテンツのクリーター、ユーザーが必要
+* PornhubはVR、コンピュータービジョン、バーチャルパフォーマーをサポートした最初のプラットフォーム
+* これからも新しい技術を探求していく
+
+### デスクトップとモバイルとかデバイスの違いについて
+
+* 例えば、iOSでのビデオ再生はフルスクリーン中をカスタム プレイヤーで操作できない
+    * ネイティブのQuickTimeプレイヤーで動作するから
+  * Androidはフルスクリーンで色々できる
+* HLSによるストリーミング
+  * IEとEdgeはいけてない
+
+### IE対応について
+
+* IE11以前のサポートは切った
+* Flashプレイヤーもやめた
+* Chrome、Firefox、Safariに焦点を当てている
+
+### サーバーとフロントエンドで使ってる技術を教えて
+
+* バックエンド
+  * Nginx
+  * PHP
+  * MySQL
+  * Memcached
+  * 他にも、Vernish、ElasticSearch、Node.js、Go、Verticaなんかを使ってる
+
+* フロント
+  * jQueryの代わりにvanilla Javascript
+  * 他のフレームワークも試している。Vue.jsとか
+
+### アダルトサイトで働くってどう？
+
+* 俺は気にしない。とても魅力的なことだ
+* たくさんの人が利用するのがモチベーションになっている
+* ポルノは絶対死なない。これは声を大にして言いたい！！
+
+### フロントエンドエンジニアに向けて言いたいことは？
+
+* 大きなプロダクトのユーザーエクスペリエンスを作ることはとてもエキサイティング
+* 俺たちは技術の最先端を走ってる。これからも継続していくぜ
+
+
+## Pornhubを支えるマーケティング
+
+以下のPornhub広告を見てほしい。
+
+![Ponrhub](https://live.staticflickr.com/65535/49416456832_a63a2d13f8_c_d.jpg)
+
+くそかっこいいだろう。アダルトサイトとは到底思えない。
+
+これに関わらず、[Pornhub case study: 5 marketing steps that made it #1](https://awario.com/blog/pornhub-case-study-marketing/)ではPornhubが行っている5つのマーケティング・ケーススタディを紹介している。
+
+### 1. 広告がかっこいい
+
+* こうした広告はNSFWではない。NSFWとはNot safe for workの頭文字を取っている。職場でみちゃあかんやつの意味。
+* ソーシャルメディアに対しての愉快な試み
+  * Twitterのアカウントがうける
+  * <https://twitter.com/Pornhub>
+
+例えば以下のツイートだ。
+
+{{<embedly href="https://twitter.com/Pornhub/status/632281409013567488">}}
+
+{{<embedly href="https://twitter.com/Pornhub/status/1105967345040846849">}}
+
+さらにInstagramも開設。これもNSFWではない。
+
+### 3. 語られることのないマーケティングキャンペーン
+
+* 2015年に宇宙でポルノ撮影をしたいとクラウドファウンディングを始めた
+  * *SEXPLORATION*プロジェクト
+  * $236,086集めた。日本円で2,600万円
+
+このプロモーション動画が最高。「俺は宇宙でポルノを作ってみせるぜ！」のテンションがヤバい。
+
+{{<embedly href="https://www.youtube.com/watch?v=B7mZmj7KTC4">}}
+
+### 4. データが面白い
+
+* Pornhub Insightsの話。
+
+### 5. いい感じの広告
+
+とにかくこのYouTube動画を見てほしい。これは職場で見ても大丈夫なやつだ。
+
+
+{{<embedly href="https://www.youtube.com/watch?v=jb32Ego033o">}}
+
+* インフルエンサーマーケティング
+  * レコードレーベルを立ち上げた
+  * [Pornhub Launches Record Label - Rolling Stone](https://www.rollingstone.com/culture/culture-news/pornhub-launches-record-label-59423/)
+
+## まとめ
+
+以上、Pornhubについて、中の人による統計、技術に関してのインタビュー、マーケティングのケーススタディについて
+Web上のリソースを元にまとめた。
+こうしてみると、私がPornhubについて知っていたことはほんの少しのことだった。
+そして、こう問う。君はPornhubを知っているか。
+
+ 
+}

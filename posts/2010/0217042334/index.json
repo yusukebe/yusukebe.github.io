@@ -1,0 +1,152 @@
+{
+    "data" :  {
+    "title": "CatalystアプリケーションをStarmanで運用しよう！",
+    "date": "2010-02-17 13:23:00 +0900 JST",
+    "dir": "posts/2010/",
+    "slug": "0217042334",
+    "categories": ["tech"],
+    "tags": ["Perl"]
+}
+
+---
+
+
+
+<p>
+<a href="http://github.com/miyagawa/Starman">Starman</a>というmiyagawaさんが目下開発中のPerl製Webサーバがあります。
+PSGIをサポートして高速であることが特徴です。
+おとといにバージョン0.1000がCPANにアップロードされたばかりという新しいものですが、
+とあるエロサイトでStarmanを導入したので、その件について
+書いてみたいと思います。
+ちなみにStarmanについては日本語のドキュメントがほとんどなく、
+全体を通して間違ったこと言ってる可能性あるのでツッコミ歓迎です。
+</p>
+<p>
+PSGI/Plackが熱いと言われる昨今ですが、
+miyagawaさんが口を酸っぱく言うように
+「PlackはWebアプリケーションフレームワーク」ではなく、
+今まで使っていたWAFをPlackが騒がれているからといってそれに置き換える必要はないということを
+最初に記しておきます。
+自分もPlackを使ってWAFもどきを作っていますが、
+大抵のWebアプリに関してはCatalystを使っています。
+Catalystはもちろん個人差がありますが一度慣れると開発が非常にしやすいので大好きです。
+</p>
+<p>
+てなわけで、例に挙げるとある一番アクセスの多いエロサイトはCatalystで開発しています。
+で、今回注目したいのはそのアプリケーションのデプロイの仕方です。
+皆さん、Catalystアプリはどのように運用してますでしょうか？
+僕は Apache + mod_perl ( Catalyst::Engine::Apache ) というパターンがほとんどです。
+中には Lighttpd + FastCGI という組み合わせの方もいるかと思います。
+おそらくそれで満足できるものかと思いますし、自分も Apache + mod_perl そして、
+フロントに別の Apache を置いて静的コンテンツをサーブさせるというやり方で十分です。
+しかし、新しモノ、それにPSGI、Perl製、高速、Starmanという響きに釣られ、
+この度、Catalystアプリを Starman で動かすということにチャレンジしてみました。
+</p>
+<p>
+まずは簡易なベンチマークをとってみましたという報告から。
+実際に運用しているApache + mod_perlという環境と、
+Starmanで立ち上げた場合、どちらがどれだけ高速か？
+そのとあるエロサイトを対象にし、同じworker数になるように調節し、
+ab でベンチマークをとると、細かい部分を抜きにして、以下の結果がでました
+（そもそものアプリが遅いというのはおいといてね）。
+</p>
+
+<pre class="brush: perl"> Apache + mod_perl - Requests per second:    3.18 [#/sec] (mean)
+Starman           - Requests per second:    4.43 [#/sec] (mean)</pre>
+
+<p>
+Starmanの方が約140% fasterです。
+メモリ消費量はそれほど変わりません。
+(*追記: CoWで共有されているメモリがあるのでworkerの実消費メモリをみたら少なくなってました＞＜ )
+ということでワクワクしながら早速本番投入してみます。
+</p>
+
+<p>
+とその前に、CatalystアプリをStarmanで動かす手順について説明します。
+StarmanはPSGIをサポートするので、最初にCatalystをPSGI互換にしましょう。
+といっても、簡単で「Catalyst::Engine::PSGI」をインストールし、
+Helperスクリプトで
+</p>
+
+<pre class="brush: perl"> $ script/myapp_create.pl PSGI</pre>
+
+<p>
+とするだけで、plackupで起動可能な.psgiができます。
+つまりCatalystアプリのPSGI化ができたことになり、
+上記したWAFを変える必要はないということがなんとなくわかる気がします。
+plackupコマンドでももちろん起動できますし、Starmanを入れると
+</p>
+
+<pre class="brush: perl"> $ starman myapp.psgi</pre>
+
+<p>
+とすれば、starmanでCatalystアプリが起動します。
+ちなみに現状のStarmanはPlackの開発版リリースを入れないと動かないのでご注意。
+</p>
+<p>
+おし、これでCatalystアプリがStarmanで起動したぜ、ってことで、
+いよいよ本番投入への準備です。
+フロントサーバを構え、Starmanはリバースプロキシとして動作させたいので、
+「Plack::Middleware::ReverseProxy」を.psgiで使い設定しましょう。
+最終的にはこんな感じの.psgiになりました。
+</p>
+
+<pre class="brush: perl"> use Plack::Builder;
+use XXX::Web;
+
+XXX::Web-&gt;setup_engine('PSGI');
+my $app = sub { XXX::Web-&gt;run(@_) };
+
+builder {
+    enable_if { $_[0]-&gt;{REMOTE_ADDR} eq '192.168.1.xxx' }
+        "Plack::Middleware::ReverseProxy";
+            $app;
+};</pre>
+
+<p>
+最後にstarmanコマンドを使ってお好きなポート、お好きなworkerの数でサーバを起動します。
+Plack::Standalone::Server::Prefork::Server::Starter を運用する時のように、
+daemontoolsでプロセスを管理することにしました。
+</p>
+
+<pre class="brush: perl"> exec 2&gt;&amp;1
+cd /home/yusuke/www/pulpsite/xxx || exit 1
+exec /usr/bin/setuidgid www-data /usr/local/bin/starman \
+--workers 20 --port 8080 ./xxx.psgi</pre>
+
+<p>
+こんな感じの run スクリプトを書いて、それが入ったディレクトリを /services へシンボリックリンク張れば、
+起動開始。
+無事、今まで Apache で運用していたものとリプレースが済みました。
+</p>
+<p>
+今回は実験的なサービスに、ということで早速Starmanを導入してみました。
+今のところいい感じなので、しばらく様子をみたいと思います。
+まだ、でてきたばかりのソフトウェアですが、
+よろしければ参考にして使ってみてください。
+</p>
+<p>
+PS.<br>
+今度発売されるWEB+DB PRESSにはmiyagawaさんによるPSGI/Plack特集が載るらしいよ！
+</p>
+
+<div>
+<div style="float:left"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4774141593/kamawada-22/"><img alt="WEB+DB PRESS Vol.55" class="at-xid-6a0133f4781589970b014e8bd75152970d" src="https://yusukebe.com/archives/a/6a0133f4781589970b014e8bd75152970d-pi.jpg" style="border:none;"></a></div>
+<div style="float:left;margin-left:15px;">
+<div style="font-size:12pt"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4774141593/kamawada-22/">WEB+DB PRESS Vol.55</a></div>
+<div style="font-size:7pt;font-family:verdana;">posted with <a href="http://yusukebe.com/b/amazon/search/">yusukebe.com::AmazonSearch</a> on 2010.2.17</div>
+<div style="font-size:10pt;">
+<ul style="list-style-type:none;padding:0;">
+<li>WEB+DB PRESS編集部  </li>
+<li>大型本 / 技術評論社 </li>
+<li>Amazon 売り上げランキング: 789</li>
+</ul>
+<a href="http://www.amazon.co.jp/WEB-DB-PRESS-Vol-55-PRESS%E7%B7%A8%E9%9B%86%E9%83%A8/dp/4774141593%3FSubscriptionId%3D0VEY2A9SVSFB81NQ9HG2%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D4774141593">Amazon.co.jpで詳細を見る</a>
+</div>
+</div>
+<div style="clear:left;"></div>
+</div>
+
+
+ 
+}

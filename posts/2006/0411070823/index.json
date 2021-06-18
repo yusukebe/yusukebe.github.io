@@ -1,0 +1,62 @@
+{
+    "data" :  {
+    "title": "ぐぐるボタンをR8C/Tinyで作る",
+    "date": "2006-04-11 16:08:00 +0900 JST",
+    "dir": "posts/2006/",
+    "slug": "0411070823",
+    "categories": ["tech"],
+    "tags": []
+}
+
+---
+
+
+
+<p>
+  R8C/TinyというマイコンとPCとをシリアル接続してUART通信すること、に成功したので、
+  それを使ったアプリを考える。以前もAVR2313で作った「ぐぐるボタン」を作る。
+  R8C/Tiny側に取り付けられたボタンを押すとPC上のウェブブラウザでGoogleが開くというもの。
+  COMポートの制御をしてブラウザを立ち上げるソフトはVBで過去作成したものを利用。以下「ぐぐるボタンの使い方」
+</p>
+<p>
+  わからないことや言葉があったら人に聞く前にまずぐぐりましょう。 ぐぐるボタンを使うとさらにぐぐるのが楽になります。
+</p>
+<p>
+  ぐぐるボタンをPCと接続します。さらにPCで「ぐぐるボタンソフトウェア」を立ち上げます。
+</p>
+<p>
+  <img alt="ぐぐるボタンR8C/Tiny版" class="at-xid-6a0133f4781589970b014e8bd73d8b970d" src="https://yusukebe.com/archives/a/6a0133f4781589970b014e8bd73d8b970d-pi.jpg">
+  <img alt="ぐぐるボタンR8C/Tiny版" class="at-xid-6a0133f4781589970b014e8bd73d96970d" src="https://yusukebe.com/archives/a/6a0133f4781589970b014e8bd73d96970d-pi.jpg">
+</p>
+<p>
+  さていよいよぐぐります。ぐぐるボタンを押しましょう。
+</p>
+<p>
+  <img alt="ぐぐるボタンR8C/Tiny版" class="at-xid-6a0133f4781589970b014e8bd73dae970d" src="https://yusukebe.com/archives/a/6a0133f4781589970b014e8bd73dae970d-pi.jpg">
+</p>
+<p>
+  押してからちょっとすると、、
+</p>
+<p>
+  <img alt="ぐぐるボタンR8C/Tiny版" class="at-xid-6a0133f4781589970b014e8bd73dc3970d" src="https://yusukebe.com/archives/a/6a0133f4781589970b014e8bd73dc3970d-pi.jpg">
+</p>
+<p>
+  あなたが普段使っているブラウザでGoogleが立ち上がります。さあ思う存分ぐぐってください。
+</p>
+<ul>
+  <li>
+<a href="http://kamawada.com/~yusuke/yusukebe/archives/files/060411/google_button.mpg">動いている様子の動画</a>(mpeg形式)</li>
+  <li>
+<a href="http://kamawada.com/~yusuke/yusukebe/archives/files/060411/google_button.c">R8C/Tinyプログラムのソース</a>(C)ヘッダファイルは<a href="http://www.amazon.co.jp/exec/obidos/ASIN/4789837319/kamawada-22/">R8C/Tinyスタートアップ</a>についてきたもの</li>
+  <li><a href="http://kamawada.com/~yusuke/yusukebe/archives/files/040720/google_pc.zip">PC側「ぐぐるボタンソフトウェア」(VB)のソースと実行ファイル</a></li>
+  <li><a href="http://yusukebe.com/archives/04/07/20/061341.html">ゆーすけべー日記: ぐぐるボタンをAVRで作る</a></li>
+</ul>
+<p>
+  R8C/Tinyいいんだけど、昔やってたAVRも改めて悪くないなと思う。
+  メリットデメリットが自分でよくわからなくなってきたのよ。
+  とりあえず、AVR mega8というマイコンが手に入るまではR8C/Tinyをそのままいじる。
+</p>
+
+
+ 
+}

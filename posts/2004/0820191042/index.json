@@ -1,0 +1,20 @@
+{
+    "data" :  {
+    "title": "LinuxをiTunesサーバにしてどこからでも聴くという夢",
+    "date": "2004-08-21 04:10:00 +0900 JST",
+    "dir": "posts/2004/",
+    "slug": "0820191042",
+    "categories": ["tech"],
+    "tags": []
+}
+
+---
+
+
+
+<p>   <a href="http://pcweb.mycom.co.jp/column/osx/100/">【コラム】OS X ハッキング! 第100回 LinuxをiTunesサーバに仕立てる   (MYCOM PC WEB)</a>より</p>
+<p>   これとSoftether組み合わせて、どこからでもファイルサーバーの曲にiTunes経由でアクセス。そんでSDK使ってなんか面白いことしたい。したい。</p>
+
+
+ 
+}

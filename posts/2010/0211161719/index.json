@@ -1,0 +1,63 @@
+{
+    "data" :  {
+    "title": "日本人がうpしたTwitPicの画像をだら見できるTwitPic Stream (ja)ってのを作ったよ",
+    "date": "2010-02-12 01:17:00 +0900 JST",
+    "dir": "posts/2010/",
+    "slug": "0211161719",
+    "categories": ["tech"],
+    "tags": []
+}
+
+---
+
+
+
+<p>
+さっきTumblrの写真をだら見できるの作ったので、
+<a href="http://picstream.pulpsite.net/">今度はTwitPic（ただし日本人がうpしたものに限る）でやってみました</a>。
+こちらもJSオンリーで、TwitterのオフィシャルのAPIを使ってます。
+jQueryのtooltip plugin利用していますが、JSの部分はこれだけでできちゃいますお。
+</p>
+
+<pre class="brush: perl"> var url;
+ 
+$(document).ready(function(){
+  url = "http://search.twitter.com/search.json?q=twitpic&amp;locale=ja&amp;callback=?";
+  loadTwitter();
+  setInterval(loadTwitter, 4000);
+});
+ 
+function loadTwitter(){
+  $.getJSON(url, function(data) {
+    if( data.results.length ){
+      var sinceID = data.results[0]['id'];
+      url = "http://search.twitter.com/search.json?q=twitpic&amp;locale=ja&amp;since_id=" + sinceID
+        + "&amp;callback=?";
+      $.each(data.results,function(){
+        if( this.text.match(/http:\/\/twitpic.com\/(\w+)/) ){
+          var photoURL = "http://twitpic.com/show/thumb/" + RegExp.$1;
+          var twitpicURL = "http://twitpic.com/" + RegExp.$1;
+          var a = $("&lt;a/&gt;");
+          a.attr('href',twitpicURL).attr('target','_blank').attr('title',this.text);
+          a.tooltip();
+          var img = $("&lt;img/&gt;");
+          a.append(img.attr('src',photoURL).hide());
+          $("#panel").prepend(a);
+          img.fadeIn(3000);
+        }
+      });
+    }
+  });
+}</pre>
+<p>
+こちらもよかったらだら見してみてください。
+</p>
+<ul>
+  <li>
+<span class="hatena-bookmark-title"><a href="http://picstream.pulpsite.net/">TwitPic Stream (ja)</a></span> <span class="hatena-bookmark-users"><a href="http://b.hatena.ne.jp/entry/picstream.pulpsite.net/"><img alt="TwitPic Stream (ja)" class="at-xid-6a0133f4781589970b015391e394d1970b" src="https://yusukebe.com/archives/a/6a0133f4781589970b015391e394d1970b-pi.gif" title="TwitPic Stream (ja)"></a></span>
+</li>
+</ul>
+
+
+ 
+}

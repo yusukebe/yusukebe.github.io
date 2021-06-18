@@ -1,0 +1,23 @@
+{
+    "data" :  {
+    "title": "bokeTodayを更新",
+    "date": "2004-01-26 12:59:00 +0900 JST",
+    "dir": "posts/2004/",
+    "slug": "0126035914",
+    "categories": ["tech"],
+    "tags": []
+}
+
+---
+
+
+
+<p>僕のトップページのコンテンツである<a href="http://web.sfc.keio.ac.jp/~yusukebe/">ボケトゥデイ</a>を更新しました。</p>
+
+<p>・IEでランダムがきいてないのを修正。リロードするとランダムで切り替わります。<br>
+・ボケが流れた後にyusukebe.comの日記情報を表示<br>
+・<a href="http://yusukebe.com/archives/cat_natami.html">ナタミ</a>でのボケを復活。</p>
+
+
+ 
+}

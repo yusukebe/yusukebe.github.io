@@ -1,0 +1,153 @@
+{
+    "data" :  {
+    "title": "月額980円のさくらVPSを個人用に使い倒す",
+    "date": "2012-03-01 09:44:00 +0900 JST",
+    "dir": "posts/2012/",
+    "slug": "0301004443",
+    "categories": ["tech"],
+    "tags": ["Technologies","Web Essay","VPS"]
+}
+
+---
+
+
+
+<p>Webサービスの運営用にVPSと呼ばれるバーチャル・プライベート・サーバを借りることは昨今よくあることだと思います。
+VPSのサーバを借りればroot権限を持てることになるので、自由度が高いサーバ環境を構築することができます。
+また、スペックによって価格が違っていて、低いスペックなものだと月額かなり低価格なものが存在します。
+僕はその中でも月額980円のさくらVPSを借りていて、それを個人用に限って使っています。
+これから紹介するような用途であれば980円でもかなりいけます。
+ちなみに980円コースのスペックは2012年3月現在で以下のようなものです。</p>
+
+<ul>
+<li>メモリ: 512MB</li>
+<li>HDD: 20GB</li>
+<li>CPU: 2Core(仮想)</li>
+</ul>
+
+
+<p><img alt="スクリーンショット 2012-03-01 9.33.23.png" src="http://yusukebe.com/archives/2012/03/01/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202012-03-01%209.33.23.png" width="372" height="183" class="mt-image-none" style=""></p>
+
+<hr>
+
+<p><br></p>
+
+<h4>gitリモートレポジトリ</h4>
+
+<p>僕が現行で行っているWebサービスでもiPhoneアプリ開発でもバージョン管理は必要になってきて、
+そのためのプライベートなレポジトリが欲しくなります。
+githubなどでは無料で公開レポジトリが持てますが、プライベートレポジトリを持つには有料プランが必要です。
+こちらを使ってもいいですがだんだんキリがなくなってくるので、
+僕は980円VPSにgitのプライベートレポジトリを構築しています。</p>
+
+<p>gitのリモートレポジトリを作るにはgitoliteというソフトがオススメです。
+新規ユーザーを追加したり、
+新たなレポジトリを追加したりする際に「管理用のレポジトリ」を取ってきてpushするだけで済むのが非常によいですね。
+例えばレポジトリ「Hoge」を追加するとします。管理レポジトリを取ってきて</p>
+
+<pre class="code">$ git clone git@yourdomain:gitolite-admin.git
+$ cd gitolite-admin</pre>
+
+<p>「conf/gitolite.conf」に以下を追加します。</p>
+
+<pre class="code">repo    Hoge
+        RW+     =   @all</pre>
+
+<p>そしてcommitしてpush。</p>
+
+<pre class="code">$ git commit -a -m 'add Hoge repo.'
+$ git push</pre>
+
+<p>自動的に「Hoge」レポジトリを作ってくれます。</p>
+
+<pre class="code">remote: creating Hoge...
+remote: Initialized empty Git repository in /home/git/repositories/Hoge.git/</pre>
+
+<p>そのままgit cloneすれば空のレポジトリを取ってこれますね。</p>
+
+<pre class="code">$ git clone git@yourdomain:Hoge.git
+Cloning into Hoge...
+warning: You appear to have cloned an empty repository.</pre>
+
+<p>他にもgitosisなどの管理ツールはありますが、色々ためしてこのgitoliteに落ち着きました。</p>
+
+<h3>gitレポジトリビューアー</h3>
+
+<p>さてgitのリモートレポジトリができたところで、僕はレポジトリ郡の様子をWebブラウザで閲覧したいと思い、
+「gitweb.cgi」を設定しました。gitweb.cgiでは個々のレポジトリのコミットログやコードを表示してくれます。</p>
+
+<p><img src="http://farm8.staticflickr.com/7060/6942426841_e959ec088a.jpg" alt="筆者のgitweb.cgi"></p>
+
+<p>gitweb.cgiはgitのソースコードに同封されています。
+いくつかの設定をしてApacheでcgiが実行されるようにすればよいのですが、
+僕は980円VPSにApacheを入れていないので特殊な方法で立ち上げてます。
+PerlモジュールであるPlackを入れて、</p>
+
+<pre class="code">$ cpanm Plack</pre>
+
+<p>以下のような.psgiというファイルを書きます。</p>
+
+<pre class="code">use Plack::App::WrapCGI;
+use Plack::Builder;
+
+my $app =  Plack::App::WrapCGI-&gt;new( script =&gt; '/home/git/gitweb/gitweb.cgi' )-&gt;to_app;
+builder {
+    enable "Plack::Middleware::Static",
+      path =&gt; qr{^/static/},
+      root =&gt; '/home/git/gitweb/';
+    $app;
+};</pre>
+
+<p>そしてplackupで起動すれば「<a href="http://yourdomain:3000/">http://yourdomain:3000/</a>」などのアドレスで閲覧することができます。</p>
+
+<pre class="code">$ plackup gitweb.psgi</pre>
+
+<p>工夫してBasic認証などを書ければ誰にも閲覧されない「俺だけの」レポジトリビューアーが完成です。</p>
+
+<h3>Blogのホスティング</h3>
+
+<p>本Blog「ゆーすけべー日記」も980円VPSでホスティングしています。
+上記した通りWebサーバにApacheは使っておらずに基本的にはフロントに省メモリの「nginx」を使っています。
+BlogはMovableTypeで動いていて、投稿時にHTMLなどの静的ファイルを書き出してくれるので、
+それをnginxで配信するという形です。
+これだと負荷がかかるのが再構築時のみなのである意味効率的かと思います。</p>
+
+<p>さて、nginxはもともとCGIをサポートしてませんので、MovableTypeの管理画面のCGIを別途違う方法で動かす必要があります。
+gitweb.cgiの時も使ったPlackで動かしましょう。
+以下のようなMTディレクトリと同じ階層に置く.psgiを利用しています。</p>
+
+<pre class="code">use File::Basename;
+use Plack::Builder;
+use Plack::App::CGIBin;
+my $base_dir = dirname(__FILE__);
+builder {
+    enable "Plack::Middleware::Static",
+      path =&gt; qr{^/mt-static},
+      root =&gt; $base_dir;
+      mount "/" =&gt;
+          Plack::App::CGIBin-&gt;new( root =&gt; $base_dir, exec_cb =&gt; sub { 1 } )-&gt;to_app;
+};</pre>
+
+<p>これもplackupコマンドで立ち上げて、
+「<a href="http://yourdomain:3000/">http://yourdomain:3000/</a>」などにアクセスすれば管理画面を見ることができるはずです。</p>
+
+<h4>各種Webサイトのホスティング</h4>
+
+<p>Blogの他にも<a href="http://wadit.jp/">弊社のHP</a>や小物のWebサービスも同じ月額980円のさくらVPSでホスティングしています。
+このくらいだったら、メモリ512MBでもなんとかなるものです。
+その他僕はあまり使いませんが、Trac、RedmineなどのBTSツールを入れても良いでしょうね。
+また、チャットシステムのIRCのためにtiarraというゲートウェイを入れている人も多いですね。</p>
+
+<h4>まとめ</h4>
+
+<p>さくらの回し者ではないですが、この980円VPSをしばらく使ってきてなかなかいいです。
+ちょっとしたモノを動かしたい時に「980円VPSがあるから」という安心感もあります。
+人によっていろいろな活用法があると思うので自分なりの「使い倒し」をすればいいと思います！</p>
+
+<h4>宣伝</h4>
+
+<p>さくら980円VPSより安い！メルマガ「ゆーすけべーラジオ」は<a href="http://www.mag2.com/m/0001426750.html">こちら</a>。</p>
+
+
+ 
+}

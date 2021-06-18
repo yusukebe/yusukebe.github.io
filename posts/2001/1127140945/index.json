@@ -1,0 +1,25 @@
+{
+    "data" :  {
+    "title": "KeyTest.java",
+    "date": "2001-11-27 23:09:00 +0900 JST",
+    "dir": "posts/2001/",
+    "slug": "1127140945",
+    "categories": ["tech"],
+    "tags": []
+}
+
+---
+
+
+<pre class="code">import java.awt.*;
+import java.awt.event.*;
+public class KeyTest{
+	public static void main(String args[]){
+		try{Thread.sleep(5000);}catch(Exception e){} // 5秒待つ
+		KeyType kt= new KeyType();
+		kt.KeySet("ahosugano");
+	}
+}</pre>
+
+ 
+}

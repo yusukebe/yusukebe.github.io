@@ -1,0 +1,254 @@
+{
+    "data" :  {
+    "title": "PerlのWAFはMojolicious推しな件とそのノウハウ",
+    "date": "2012-02-25 08:10:00 +0900 JST",
+    "dir": "posts/2012/",
+    "slug": "0224231052",
+    "categories": ["tech"],
+    "tags": ["Perl","Mojolicious"]
+}
+
+---
+
+
+
+<p>Perlerな皆さん！WAFは何を使っていますかー！？
+昨日行われたという「<a href="http://atnd.org/events/24780">Perl Beginners #1</a>」のレポートを漁っていると
+<a href="http://twitter.com/hsksyusk">@hsksyusk</a>さんの<a href="http://d.hatena.ne.jp/hsksnote/20120224/1330105132">エントリ</a>にこう書かれていましたので僕もつい乗っかってみたくなりました。</p>
+
+<blockquote>
+PerlのWAFは何がいいの？
+<ul>
+<li>@ytnobodyさんはKossy推し。</li>
+<li>僕はAmon2推し。</li>
+</ul>
+</blockquote>
+
+
+<p>ぼ、ぼ、ぼ、僕は<strong>Mojolicious</strong>推し！！！</p>
+
+<p>ということでなぜ僕が今、Mojolicious推しなのかを探るためにその「いい点」と思っていること列挙してみました。
+それと同時に悪い点も見えてきて、かつバッドノウハウもあるなーって感じなのでまとめてみます。</p>
+
+<hr>
+
+<p><br></p>
+
+<h3>Mojoliciousのいい点</h3>
+
+<h4>依存モジュールが無くポータブル</h4>
+
+<p>ご存知の通りMojoliciousは標準で入っているモジュールに依存しているだけで、
+残りは自前で実装しています。なので、</p>
+
+<pre class="code">$ cpanm Mojolicious</pre>
+
+<p>とすれば外部のモジュールをインストールしなくとも入るので非常にポータブル！
+以前Catalystを使っていて、Catalystが依存しているMooseのバージョンが問題になって、
+アプリが動かなくなったりCatalyst自身のアップデートができないことがありましたが、
+そういうことは起こらないですね。
+最低限のアプリならMojolicious自体だけのバージョンだけを気にしていればよいです
+（とはいえモデル層で他のモジュールに依存しがちですが！）。</p>
+
+<h4>そこそこでかいアプリも書ける</h4>
+
+<p>MojoliciousというとSinatraライクな「Mojolicious::Lite」が有名で、
+一つのファイルでコントローラもビューも書けて簡単だぜ！というのがPRとして売りになってる気がします。
+Mojolicious::Liteのアプリを作るための雛形は、</p>
+
+<pre class="code">$ mojo generate lite_app hoge.pl</pre>
+
+<p>とかして作ります。さてLiteで作ったアプリがどんどん大きくなっていくとしましょう。
+hoge.plと同じ階層に「templates」というディレクトリを作って「index.html.ep」などのテンプレートファイルを置けば、
+hoge.pl内のデータセクションに書いていたビューを切り離すことができます。
+ただ、コントローラとディスパッチャ等を分割したモジュールで管理したいという時には、
+Liteでは対応できません。そこでコマンドを打ち込みます。</p>
+
+<pre class="code">$ mojo generate app Hoge</pre>
+
+<p>すると以下の構造で「普通の」Mojoliciousアプリの雛形を作ってくれます。</p>
+
+<pre class="code">./
+├── lib
+│   ├── Hoge
+│   │   └── Example.pm
+│   └── Hoge.pm
+├── log
+├── public
+│   └── index.html
+├── script
+│   └── hoge
+├── t
+│   └── basic.t
+└── templates
+    ├── example
+    │   └── welcome.html.ep
+    └── layouts
+        └── default.html.ep</pre>
+
+<p>「Mojolicious」でググると「Mojolicious::Lite」の話題ばかり出てくるのですが、
+僕はこちらの「普通の」Mojoliciousアプリを使うケースが多いですし、そこそこの大きさのアプリにも耐えられます。</p>
+
+<h4>Mojo::Templateが柔軟</h4>
+
+<p>Text::MicroTemplateの元になったというMojo::TemplateがPerlそのまま書けるので、一人でやる分には柔軟でよいです。
+気に入っているのはテンプレート内で使える「layout」という関数。「templates/layout/default.html.ep」がこのようにあったとして</p>
+
+<pre class="code">&lt;html&gt;
+  &lt;body&gt;
+    &lt;%= content %&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
+
+<p>「templates/root/index.html.ep」でこのレイアウトを使うには冒頭にでもlayout関数を使います。</p>
+
+<pre class="code">% layout 'default';
+
+&lt;h1&gt;Hello Hoge&lt;/h1&gt;</pre>
+
+<p>レイアウトを変えることもテンプレートファイル内で容易にできるのがいいのです。</p>
+
+<h4>$selfだけ</h4>
+
+<p>コントローラではコンテキストオブジェクトを扱わずに「$self」だけでごにょれるのがいいですね。</p>
+
+<pre class="code">sub index {
+    my $self = shift;
+    $self-&gt;stash-&gt;{message} = 'Hage';
+    $self-&gt;render('message');
+}</pre>
+
+<h4>VCだけ</h4>
+
+<p>Mojoliciousはモデル部分は後述するアクセサ的の提供のみを行ってビューとコントローラのみを提供しています。
+まぁ最近の薄いWAFはだいたいそうですが、簡素でよいですね。</p>
+
+<h4>Mの登録、ディスパッチの記述</h4>
+
+<p>さて、モデルの登録には遅延させるために上記の例だと「Hoge.pm」にこうやって記述します。</p>
+
+<pre class="code">package Hoge;
+use Mojo::Base 'Mojolicious';
+use Hoge::API;
+
+sub startup {
+    my $self = shift;
+    $self-&gt;attr( api =&gt; sub { Hoge::API-&gt;new() } );
+}</pre>
+
+<p>至って簡単です。またディスパッチの記述も</p>
+
+<pre class="code">my $r = $self-&gt;routes;
+    $r-&gt;namespace('Hoge::Controller');
+    $r-&gt;get('/')-&gt;to( "root#index");</pre>
+
+<p>なんてできて楽でかつ柔軟ですね。</p>
+
+<h4>CGIで動かす時にLiteが便利</h4>
+
+<p>たまーに面倒くさい感じでさくらの一番安いレンタルサーバーでフォームだけの処理のCGIを書くとかあるんですが、
+そういう時に依存がないMojoliciousのLiteを使ってCGIにしちゃうのは結構便利です。
+Liteのアプリを「hoge.cgi」などの拡張子にすればそのままApache経由のCGIとして動いたりしますからね。</p>
+
+<h4>ドキュメントがしっかりしている</h4>
+
+<p>さすがにMojoliciousはドキュメントがしっかりしています。
+だいたい「Mojolicious::Controller」を見ることが多いですね。</p>
+
+<h4>公式のWebページや開発モードNot Foundページがお洒落</h4>
+
+<p><a href="http://mojolicio.us/">公式のWebページ</a>がよくデザインされてかっこかわいいです。また、
+アプリのデフォルトのNot Foundページなども凝っていて、
+最新版のMojoliciousを使っていて、かつ開発モードで立ち上げてるとこのようにルーティングパスまで表示してくれて洒落てます。</p>
+
+<p><img src="http://yusukebe.com/archives/assets_c/2012/02/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202012-02-25%207.42.38-thumb-600x411-128.png" alt="開発モードのNot Found"></p>
+
+<h4>開発陣が複数人いる、開発が活発</h4>
+
+<p>開発陣がSebastian Riedelがリーダーになって複数人いて開発が活発です。</p>
+
+<hr>
+
+<p><br></p>
+
+<h3>Mojoliciousのイケてない点</h3>
+
+<p>さて、Mojoliciousのよい点ばかりを挙げてきましたが個人的に思うイケてない部分もあります。</p>
+
+<h4>5.10以上必須</h4>
+
+<p>Perl 5.10以上が必須でかつ5.12が推奨されています。
+5.8の環境って今ではあまりないですが、昔の環境でどうしても動かしたいって時に、
+せっかくのポータブルなコンセプトのMojoliciousが入らないと萎えます。</p>
+
+<h4>セッションの扱い</h4>
+
+<p>デフォルトのセッションは非常に貧弱で、暗号化した文字列をcookieに入れるだけのサポートです。
+なのでMojoliciousの機能は使わずに、
+よくPlack::Middleware::SessionとPlack::Sessionを組み合わせたセッション管理を行うことが多いです。
+アプリ用の.psgiを書いて</p>
+
+<pre class="code">my $psgi = Mojo::Server::PSGI-&gt;new( app_class =&gt; 'Hage' );
+my $app = sub { $psgi-&gt;run(@_) };
+
+builder {
+    enable 'Session', store =&gt; 'File';
+    $app;
+};</pre>
+
+<p>とします。べたにやるならコントローラの中で「use Plack::Session;」して</p>
+
+<pre class="code">sub index {
+    my $self = shift;
+    my $session = Plack::Session-&gt;new( $self-&gt;req-&gt;env );
+    my $access_token = $session-&gt;get('access_token');
+    my $access_secret = $session-&gt;get('access_secret');
+    ...;
+}</pre>
+
+<p>などとしてセッションの値を取得します。まぁ.psgiは毎回書いてそれを開発、本番用に使っているので、
+Plackのミドルウェアを使うってのはいいんですけどね。</p>
+
+<h4>redirect_toがたぶん相対パスを表す</h4>
+
+<p>こういう細かいちょっとした変なところがあるのでたまにストレスが溜まります。</p>
+
+<pre class="code">$self-&gt;redirect_to('/hage');</pre>
+
+<p>とすると302でリダレイクトしてくれるのですが、これがアプリ内の「/hage」の絶対パスじゃなくて相対パスなんで、
+本番環境だとおかしくなったりします。</p>
+
+<pre class="code">$self-&gt;redirect_to( $self-&gt;req-&gt;url-&gt;base . '/hage' );</pre>
+
+<p>とか長ったらしい記述をして回避しがちっす。
+他にも軽くはまるところがいくつかあった気がします。</p>
+
+<p><strong>＊ここについて追記＊</strong></p>
+
+<p><a href="http://d.hatena.ne.jp/kits/">id:kits</a>さんが<a href="https://gist.github.com/1904869">検証してくれた</a>通り、
+ローカルの環境だとうまくリダイレクトされるんですが、なんか本番のReverseProxy＋ホスト名だとうまくいかないケースがあったんですよね＞＜ ちょっと今、再現できないのですがLocationヘッダの中身がおかしかった気がするす。</p>
+
+<hr>
+
+<p><br></p>
+
+<h3>まとめ</h3>
+
+<p>Mojoliciousを個人的に推している理由を解説してきましたが、
+ほんとWAFは何を使ってもいいと思います。
+最近はAmon2とかKossyとか！薄くて使い勝手がよいWAFがたくさんありますしね。
+でも僕はMojolicious推しですよーというエントリでした。</p>
+
+<h3>お知らせ</h3>
+
+<p>前号Perlのコードが出てきたメルマガ「ゆーすけべーラジオ」は、
+次回28日（火）に発行です。よろしければチェックしてください。</p>
+
+<ul>
+<li><a href="http://www.mag2.com/m/0001426750.html">ゆーすけべーラジオ</a></li>
+</ul>
+
+
+
+ 
+}

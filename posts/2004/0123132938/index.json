@@ -1,0 +1,23 @@
+{
+    "data" :  {
+    "title": "大きすぎてメモ帳では開けません",
+    "date": "2004-01-23 22:29:00 +0900 JST",
+    "dir": "posts/2004/",
+    "slug": "0123132938",
+    "categories": ["tech"],
+    "tags": []
+}
+
+---
+
+
+
+<p><img alt="memo.gif" border="0" class="at-xid-6a0133f4781589970b015435b6e017970c" height="118" src="https://yusukebe.com/archives/a/6a0133f4781589970b015435b6e017970c-pi.gif" width="538"></p>
+
+<p>とある３００MBほどのログファイルを開こうとしたらこうなった。</p>
+
+<p>xyzzyだと開けた。さすがだ。</p>
+
+
+ 
+}

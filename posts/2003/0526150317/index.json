@@ -1,0 +1,19 @@
+{
+    "data" :  {
+    "title": "市松模様",
+    "date": "2003-05-27 12:03:00 +0900 JST",
+    "dir": "posts/2003/",
+    "slug": "0526150317",
+    "categories": ["tech"],
+    "tags": []
+}
+
+---
+
+
+<p>KCのやってるのを見て、「簡単だよできるよ」と言ってるだけではさびしいので、家かえって作ってみた。<br>
+<a href="http://kamawada.com/~yusuke/yusukebe/archives/files/030527/Ichimatsu.html" target="_new">実行してみる。</a><br>
+<a href="http://kamawada.com/~yusuke/yusukebe/archives/files/030527/Ichimatsu.java" target="_new">ソース</a></p>
+
+ 
+}

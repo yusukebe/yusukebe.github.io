@@ -1,0 +1,24 @@
+{
+    "data" :  {
+    "title": "コメント機能追加",
+    "date": "2002-04-30 12:11:00 +0900 JST",
+    "dir": "posts/2002/",
+    "slug": "0429151151",
+    "categories": ["tech"],
+    "tags": []
+}
+
+---
+
+
+
+<a href="http://infosys.sys.i.kyoto-u.ac.jp/~tsasaki/Nikki/" target="_new">http://infosys.sys.i.kyoto-u.ac.jp/~tsasaki/Nikki/</a>
+こちらのページからこの日記にリンクが張られていた。<br>
+たどってみると、HNSの日記なのにコメントができる！
+Board0.0.9ってのがいつの間にか配布されているらしい。<br>
+<a href="http://www.h14m.org/dist/contrib/web_board_for_hns/" target="_new">http://www.h14m.org/dist/contrib/web_board_for_hns/</a>
+というわけで早速入れてみました。みなさまコメントくだされ。<br>
+
+
+ 
+}

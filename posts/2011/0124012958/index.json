@@ -1,0 +1,55 @@
+{
+    "data" :  {
+    "title": "Kamakura.pm テクニカルトーク#01 で「Blog Hacks 2011」を話します",
+    "date": "2011-01-24 10:29:00 +0900 JST",
+    "dir": "posts/2011/",
+    "slug": "0124012958",
+    "categories": ["tech"],
+    "tags": ["Perl"]
+}
+
+---
+
+
+
+<p>
+  発足したばかりの鎌倉周辺のPerl Mongersの集まりKamakura.pmの「まともな」テクニカルトークイベントが、
+  今週末28日(金)に開催されます。
+  そこで、鎌倉市民であり鎌倉で活動する僕も参加し、
+  「Blog Hacks 2011」という題名で20分ほどトークしたいと思います。
+</p>
+<p>
+  <img alt="blog hacks 2011" class="at-xid-6a0133f4781589970b014e8bd75357970d" src="https://yusukebe.com/archives/a/6a0133f4781589970b014e8bd75357970d-pi.jpg">
+</p>
+<p>
+  概要は以下。
+</p>
+<blockquote>
+  <p>
+    2004年発売のオライリー「Blog Hacks」はBlogを書くこと、
+    Blogツールやそれを活用した技術ハックの楽しさを表現してくれました。
+    時代は巡る巡って2011年。
+    Twitter、Facebookなどのソーシャルメディアが出現し、
+    Blogの周りの状況は変わってきましたが、その楽しさは相変わらずだと僕は感じています。
+    ただ、2004年の「Blog Hacks」では通じない2011年なりの「Hack」の仕方があります。
+    そこで、今回はPerlのことにも触れつつその周辺の技術を利用したBlogの楽しみ方を、
+    「Blog Hacks 2011」と題しKamakura.pm テクニカルトーク#01で話したいと思います。
+    Facebookとの連動、CSS Frameworkについてのライトな事柄や、
+    Perlを使ったMovableTypeのHackなどコアな話など20分で解説していきます。
+  </p>
+</blockquote>
+<p>
+  主催者のtypesterさんに聞くと、そこまでPerlにこだわらなくても周辺技術でもいいよーってことなので、
+  このテーマにしました。すでに募集定員の20人が埋まってしまっているので、
+  なんとも言えないのですが、
+  もしかしてキャンセルがでるかもしれないので「補欠」登録してみて参加できるかもしれないので、興味のある人は是非。
+</p>
+<ul>
+  <li><a href="http://atnd.org/events/12129">Kamakura Perl Mongers テクニカルトーク#1 : ATND</a></li>
+  <li>
+<a href="http://kamakura.pm.org/">Kamakura Perl Mongers</a> (Kamakura.pm 公式ページ)</li>
+</ul>
+
+
+ 
+}

@@ -1,0 +1,22 @@
+{
+    "data" :  {
+    "title": "対策",
+    "date": "2005-02-04 02:03:00 +0900 JST",
+    "dir": "posts/2005/",
+    "slug": "0203170349",
+    "categories": ["tech"],
+    "tags": []
+}
+
+---
+
+
+
+<p>   コメントスパムの対策に<a href="http://www.jayallen.org/projects/mt-blacklist/">MT-Blacklist(2.04-beta)</a>を導入、SSHアタックの対策に<a href="http://www.itmedia.co.jp/help/tips/linux/l0541.html">MaxStartupsの設定</a>を行った。今までネタ的に放置してきたが、知らぬ間に攻撃されているのはやっぱりキモい。</p>
+<p>
+<img class="at-xid-6a0133f4781589970b014e8bd739af970d" src="https://yusukebe.com/archives/a/6a0133f4781589970b014e8bd739af970d-pi.gif">
+</p>
+
+
+ 
+}

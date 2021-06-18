@@ -1,0 +1,133 @@
+{
+    "data" :  {
+    "title": "Pythonでメロディー・雛・マークスを出す",
+    "date": "2020-02-21 16:01:30 +0900 JST",
+    "dir": "posts/2020/",
+    "slug": "python-dmm",
+    "categories": [],
+    "tags": ["Python"]
+}
+
+---
+
+
+Pythonを勉強するにあたってまずはDMM Webサービスを叩きたい。
+
+{{< tweet 1230483618004254721 >}}
+
+---
+
+ニッポンのおもてなしデビューを果たしたという
+「**メロディー・雛・マークス**」の情報を女優検索APIから検索して表示させるお決まりのやつ。
+過去のメロディー・雛・マークスは以下。
+
+* [Vue.jsでメロディー・雛・マークスを出す - ゆーすけべー日記](https://yusukebe.com/posts/2020/vue-dmm/)
+* [Rakuでメロディー・雛・マークスを出す - ゆーすけべー日記](https://yusukebe.com/posts/2020/raku-dmm/)
+* [Node.jsでメロディー・雛・マークスを出す - ゆーすけべー日記](https://yusukebe.com/posts/2020/node-dmm/)
+* [PHPでDMM Webサービスを叩いてメロディー・雛・マークスを出す - ゆーすけべー日記](https://yusukebe.com/posts/2019/1226173405/)
+
+今回はPython3、及びせっかくだからとJupyter Notebookで表示してみたい。
+
+まずは、環境変数に入れた`API ID`と`AFFILIATE ID`を取得する。
+この2つの値はDMM APIにリクエストする際に必須になる。
+
+```python
+import os
+
+api_id = os.environ.get('DMM_API_ID')
+affiliate_id = os.environ.get('DMM_AFFILIATE_ID')
+```
+
+次にリクエストURLを生成する。なお、HTTPクライアントは標準の`urllib`を使うことにした。
+
+```python
+import urllib.request
+
+...
+
+base_url = 'https://api.dmm.com/affiliate/v3/ActressSearch'
+params = {
+    'api_id': api_id,
+    'affiliate_id': affiliate_id,
+    'keyword': '雛',
+    'hits': '50',
+}
+
+url = "{}?{}".format(base_url, urllib.parse.urlencode(params))
+```
+
+本来なら`keyword`の値をユーザー入力によって変更可能にしたいところだが、
+暫定的に「雛」とする。
+
+URLが完成したらクライアントからGET、
+中身はJSONフォーマットで返却されるので、パースして辞書型にして`data`変数に格納する。
+
+```python
+import urllib.request
+import json
+
+...
+
+req = urllib.request.Request(url)
+with urllib.request.urlopen(req) as res:
+    body = res.read()
+data = json.loads(body)
+```
+
+いよいよ、`pandas`ライブラリを使ってDataFrameに変換、Jupyter Notebookで描画する。
+ただ、返却されたJSONのデータ構造はそのまま使えないので、
+女優リストを取得するために`data`ディクショナリの中をたぐり、
+生のJSON文字列にしてから`pandas`の`read_json`メソッドで読み込ませる。
+
+```python
+import json
+import pandas as pd
+
+...
+
+df = pd.read_json(json.dumps(data['result']['actress']))
+```
+
+これで、よし。全ソースコードは以下の通り。
+
+```python
+import os
+import urllib.request
+import json
+import pandas as pd
+
+api_id = os.environ.get('DMM_API_ID')
+affiliate_id = os.environ.get('DMM_AFFILIATE_ID')
+
+base_url = 'https://api.dmm.com/affiliate/v3/ActressSearch'
+params = {
+    'api_id': api_id,
+    'affiliate_id': affiliate_id,
+    'keyword': '雛',
+    'hits': '50',
+}
+
+url = "{}?{}".format(base_url, urllib.parse.urlencode(params))
+req = urllib.request.Request(url)
+with urllib.request.urlopen(req) as res:
+    body = res.read()
+data = json.loads(body)
+df = pd.read_json(json.dumps(data['result']['actress']))
+df.loc[:,['id','name','ruby']]
+```
+
+Jupyter Notebookで「Controll + Enter」を押していざ実行。
+
+![](/images/python-dmm-001.png)
+
+お、AV女優一覧が表になってる。
+
+下の方にスクロールすると…
+
+![](/images/python-dmm-002.png)
+
+でた！メロディー・雛・マークス！黒船襲来！
+
+
+ 
+}

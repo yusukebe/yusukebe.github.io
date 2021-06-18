@@ -1,0 +1,79 @@
+{
+    "data" :  {
+    "title": "Google Charts API を Perl から簡単に操作できるようにしたモジュール『WebService::Simple::Google::Chart』",
+    "date": "2008-04-28 14:32:00 +0900 JST",
+    "dir": "posts/2008/",
+    "slug": "0428053217",
+    "categories": ["tech"],
+    "tags": ["Perl"]
+}
+
+---
+
+
+
+<p>
+  この記事見つけて
+</p>
+<blockquote>
+  <p>
+    以前紹介した「これは便利！誰でも簡単にグラフを描けるAPIがGoogleから登場！『Google Charts』」ですが、PHPから簡単に操作できるようにしたライブラリが公開されています。
+  </p>
+  <p>
+    <a href="http://www.ideaxidea.com/archives/2008/04/google_charts_apiphpgoogchart.html">Google Charts APIをPHPから簡単に操作できるようにしたライブラリ『googChart』 | IDEA*IDEA</a>」より
+  </p>
+</blockquote>
+<p>
+  同じようにGoogle Charts API を扱う Perl 版が欲しかったので、WebService::Simple（0.09以上が必須） を継承する形で「<strong>WebService::Simple::Google::Chart</strong>」というモジュールを作ってみました。
+</p>
+<p>
+パラメータを渡すと、その Chart のURLを返してくれて（get_url）、その Chart のイメージをファイルに書き出す（render_to_file）ことができます。以下がコードサンプルです。
+</p>
+<pre class="brush: perl"> use WebService::Simple::Google::Chart;
+
+my $chart = WebService::Simple::Google::Chart-&gt;new;
+my $url = $chart-&gt;get_url(
+    {
+        chs =&gt; "250x100",
+        cht =&gt; "p3",
+   },
+    { foo =&gt; 200, bar =&gt; 130, hoge =&gt; 70 }
+);
+
+#http://chart.apis.google.com/chart?cht=p3&amp;chl=bar%7Cfoo%7Choge&amp;chs=250x100&amp;chd=t%3A33%2C50%2C18
+print $url . "\n";
+
+#一度 get_url でパラメータを渡したら、ファイル名を指定するだけで書き出せる
+$chart-&gt;render_to_file("foo.png");</pre>
+
+<p>
+特徴は、get_url 及び render_to_file の第2引数に、チャートにしたいデータを ラベル名 =&gt; 値 という形のハッシュリファレンスを渡せば、自動的に割合を出してくれて URL のパラメータにする点です。
+なので、最大値をみつけて、それぞれの値をその数字で割るなんてことは不要になります（なるはずです）。
+第一引数はデータ以外のチャートへのパラメータを書けばOKです。
+</p>
+<p>
+WebService::Simple は LWP::UserAgent を継承しているので、今回のファイルに書き出すという機能が簡単に実装できました。実際 Chart.pm の中身はこんな感じでファイルに保存しています。
+</p>
+<pre class="brush: perl"> $self-&gt;SUPER::get( $request_param , ":content_file" =&gt; $filename );</pre>
+<p>
+CPAN はここ（ただし、0.01 はインターフェースが違う＆バグを持っているので 0.02 以上推奨）
+</p>
+<ul>
+  <li><a href="http://search.cpan.org/~yusukebe/WebService-Simple-Google-Chart/">Yusuke Wada / WebService-Simple-Google-Chart - search.cpan.org</a></li>
+</ul>
+<p>
+  CodeRepos はここに置いておきます。修正、突っ込み大歓迎です。
+</p>
+<ul>
+  <li><a href="http://coderepos.org/share/browser/lang/perl/WebService-Simple-Google-Chart">/lang/perl/WebService-Simple-Google-Chart - CodeRepos::Share - Trac</a></li>
+</ul>
+<p>
+ちなみに、
+Google::Chart という hanekomu さんが作っているそのものずばりのモジュールがCPANにあって coderepos にもレポジトリを移してもらいました。
+が、しかし、これだとラベル表示ができなくて、対応するためにコードいじろうと手をつけてみたら、
+設計までも変えてしまいかねないことに気づき、別モジュールという形で作ることにしました。ということでこれをhanekomu さんに見せたい。
+</p>
+
+
+ 
+}

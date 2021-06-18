@@ -1,0 +1,80 @@
+{
+    "data" :  {
+    "title": "「GINZA TECH LOUNGE feat. OpenID」で ListPod での OpenID 利用について LT してきた",
+    "date": "2008-09-11 10:48:00 +0900 JST",
+    "dir": "posts/2008/",
+    "slug": "0911014859",
+    "categories": ["tech"],
+    "tags": []
+}
+
+---
+
+
+
+<p>
+リクルートの川崎さんから誘っていただき、
+  昨日開催された「<strong>OpenID 技術セミナー 『GINZA TECH LOUNGE feat. OpenID』</strong>」にて、俺が個人的に制作・運営している「ListPod」での、OpenID 利用についてライトニングトークしてきました。
+</p>
+<p>
+発表資料を以下に置いておきます。
+</p>
+<ul>
+  <li><a href="http://kamawada.com/~yusuke/yusukebe/archives/files/080911/080910_openid.pdf">ListPod with OpenID (PDF)</a></li>
+</ul>
+<div id="__ss_592273" style="width:425px;text-align:left">
+<a href="http://www.slideshare.net/yusukebe/listpod-with-openid-presentation?type=powerpoint" style="font:14px Helvetica,Arial,Sans-serif;display:block;margin:12px 0 3px 0;text-decoration:underline;" title="ListPod with OpenID">ListPod with OpenID</a><object height="355" style="margin:0px" width="425"><param name="movie" value="http://static.slideshare.net/swf/ssplayer2.swf?doc=080910openid-1221092828473518-8&amp;stripped_title=listpod-with-openid-presentation">
+<param name="allowFullScreen" value="true">
+<param name="allowScriptAccess" value="always">
+<embed allowfullscreen="true" allowscriptaccess="always" height="355" src="http://static.slideshare.net/swf/ssplayer2.swf?doc=080910openid-1221092828473518-8&amp;stripped_title=listpod-with-openid-presentation" type="application/x-shockwave-flash" width="425"></embed></object><div style="font-size:11px;font-family:tahoma,arial;height:26px;padding-top:2px;">View SlideShare <a href="http://www.slideshare.net/yusukebe/listpod-with-openid-presentation?type=powerpoint" style="text-decoration:underline;" title="View ListPod with OpenID on SlideShare">presentation</a> or <a href="http://www.slideshare.net/upload?type=powerpoint" style="text-decoration:underline;">Upload</a> your own.</div>
+</div>
+<br>
+<p>
+この『GINZA TECH LOUNGE feat. OpenID』、協賛がミクシー、ヤフーということもあり、
+それぞれ中の人による技術解説を聞く事ができました。
+個人的に面白かったのは、両社の OpenID 発行のスタンスの違いです。
+ミクシーはどちらかというと OpenID で取得できる ユーザー情報 をもっと増やしたいという意向なのに対して、
+ヤフーの場合は OpenID URI にユーザID を含まないような仕様にするなど割とユーザの情報は開示しないような方向性をとっているのかなーと思いました。サービスとしてミクシーはクローズド、ヤフーはオープンなのに対して OpenID においては、それが若干逆転している感があるのが興味深いです。
+</p>
+<p>
+  オープニング<br>
+  <img alt="OpenID" class="at-xid-6a0133f4781589970b014e8bd74d7d970d" src="https://yusukebe.com/archives/a/6a0133f4781589970b014e8bd74d7d970d-pi.jpg">
+</p>
+<p>
+ライトニングトークでは、自分も含め、OpenID を利用する RP 側の事例が聞けてよかったです。
+資料にも書いてありますが、ListPod ほどのアプリケーションだと、OpenID の利点をもろに享受できます。
+なので、ただいま開催されている Mashup Award 4 に個人で出展していて、規模もそこまで大きくないというケースだと、OpenID の利用は有効だと思います。それに、ミクシーとヤフーの OpenID を利用するだけで、Mashup Award 4 的には API を利用していることになり参加が可能になるので、最優秀作品に贈られる100万円をゲットする機会を得ることになりますしね。
+</p>
+<p>
+  会場では全員OpenIDを知っている＝銀座のとある場所ではOpenID認知率100％！<br>
+  <img alt="OpenID" class="at-xid-6a0133f4781589970b014e8bd74d9b970d" src="https://yusukebe.com/archives/a/6a0133f4781589970b014e8bd74d9b970d-pi.jpg">
+</p>
+<p>
+発表してなんかアウェーっぽいなと思ったのですが、懇親会ではいろいろな方とお話できてよかったです。
+やっぱこういうのは懇親会が一番楽しいという噂ｗ
+</p>
+<p>
+ということで、協賛のミクシーさん、ヤフーさん、主催のリクルートさん、楽しい機会をくれてありがとうございました！
+</p>
+<p>
+最後に宣伝ですが、Mashup Award 4 におそらく応募するであろう、ListPod もよろしくね！ 
+</p>
+
+<h4>関連記事</h4>
+
+<ul>
+  <li><a href="http://atnd.org/events/33">OpenID 技術セミナー　『GINZA TECH LOUNGE feat. OpenID』 : イベント開催支援ツール ATND(アテンド)</a></li>
+  <li>
+    <a href="http://mashupaward.jp/">Mashup Awards 4 / MA4</a>
+  </li>
+  <li>
+<a href="http://listpod.tv/">ListPod - YouTube動画のマイリストを作ってPodcastで見よう！</a>
+  </li>
+  <li>
+    <a href="http://yusukebe.com/archives/08/03/23/094204.html">ゆーすけべー日記: YouTube動画のお気に入りをPodcast化してiTunesやiPod で見れるサービス「ListPod」をリリースしました</a>
+  </li>
+</ul>
+
+
+ 
+}

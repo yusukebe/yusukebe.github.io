@@ -1,0 +1,22 @@
+{
+    "data" :  {
+    "title": "これでIEうらやましくない",
+    "date": "2004-01-18 22:41:00 +0900 JST",
+    "dir": "posts/2004/",
+    "slug": "0118134104",
+    "categories": ["tech"],
+    "tags": []
+}
+
+---
+
+
+
+<p><a href="http://cheebow.sub.jp/docmt/archives/000108.html" title="MovableTypeで行こう！: Mozillaでもボタンを使いたい！">MovableTypeで行こう！: Mozillaでもボタンを使いたい！</a></p>
+
+<p>僕は<br>
+<a href="http://www.deftone.com/blogzilla/misc/edit_entry.tmpl">edit_entry.tmpl</a>と<a href="http://kalsey.com/tools/mtplugins/files/bm_entry.tmpl">bm_entry.tpml</a>をそのまま入れ替えちゃいました。</p>
+
+
+ 
+}

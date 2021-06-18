@@ -1,0 +1,90 @@
+{
+    "data" :  {
+    "title": "There&#39;s more than one way to enjoy YAPC ! / YAPC::Asia 2010",
+    "date": "2010-10-18 11:37:00 +0900 JST",
+    "dir": "posts/2010/",
+    "slug": "1018023730",
+    "categories": ["tech"],
+    "tags": ["Perl","YAPC"]
+}
+
+---
+
+
+
+<p>
+14日の前夜祭から始まり、15日-16日と東京工業大学で行われた YAPC::Asia 2010。
+みなさんお疲れさまでした！
+</p>
+
+<p>
+さて最初にgihyo.jpの素晴らしいレポートにも書かれていない事実を紹介。
+僕は、自分の発表「perl-casual特別企画 Twitter解析サービス(20min)」が始まる前に、
+時間が余ったので適当に会場の皆さんのアンケートを取っていました。
+その際に「YAPC初参加の人、手を挙げてください」と伺ったところ、
+8割以上の人が手を挙げていて目を疑ったほどでした。
+会場のキャパが80人くらい？でそのくらいの人数の方は、少なくとも「初YAPC」だったわけです。
+ということで今回、YAPC::Asia 初参加の人が非常に多かった気がしたし、
+事実だと思います。
+で、さらに言うと「PerlCasualのイベントに参加したことのある人？」と聞くと、
+だいたい6割だったので、もしかするとPerlCasualのイベントをキッカケにYAPC来てくれた方がいるかもしれないですね。
+</p>
+<p>
+色々考慮すると今回のYAPC::Asiaの副題が「Welcome, Perl」なのは非常に意味を持つことだと思いました。
+そもそもこの「Welcome, Perl」という言葉を聞いて「初心者の俺も行っていいんだ」と思ったという意見を懇親会で聞きました。
+また、「perl-causual」枠を設けたことによって聞く側も話す側もレベルでのターゲッティングができた気がします。
+「地方.pm」の対談があったことも地方Perlerを盛り上げていくキッカケになっていたようです。
+</p>
+<p>
+こうしたYAPC初参加の人と話したり、感想のTwitter/Blogを見るとみんな感じてるのは、
+「YAPCにおける自由さ」だと思います。
+これを今回ゲストで来日したラリーの言葉に置き換えるとこうでしょうか。
+</p>
+<blockquote>
+「There's more than one way to enjoy YAPC !」
+</blockquote>
+<p>
+Perlはよく知られている通り、問題を解決するためには「やり方は一つじゃない」書き方ができる言語です。
+これはPerl ConferenceのYAPCにも言えて、「YAPCを楽しむやり方は一つじゃない」んですよね。
+いわゆる技術系のセミナーだと、決まりきった偉いさんの講演をじっと聞くってのが結構あります。
+しかし、YAPC::Asiaは違います。
+まず、自分が望めば発表者になれます。応募制なんで主催者側がアブストラクトを読んで面白いと判断されれば、
+トークすることができます。
+また、スタッフとして参加することももちろんできます。
+当日では、講演会場が3つにわかれているので好きなトークを自由に行き来すればいいし、
+逆に講演自体を聞かなくてもいいです。
+Perl仲間と東工大の芝生で餃子くってもいいし、トークやっている会場のすぐ外のソファーでビール飲んでもいいし、
+僕みたいに飯食いながら、韓国から来たPerl Mongerと片言の英語同士でお互いの国のPerlコミュニティについて話してもいいし。
+今回そういう意味で印象的だったのは、
+通常用意するはずの発表資料なしで「速いhttp clientが欲しくて、それがPerl Mongersの力があればできると思っている」とトークした
+tokuhiromがベストスピーカー賞をもらったことでした( 実際tokuhiromのトークで受賞対象になったのはシラフの方だけどね )。
+そして、各自好きなことやっているようで、miyagawaさんのキーノートでは一致団結してみんな聞き入っているところが素敵でした。
+ということで、いろんなやり方で楽しむことができたYAPC::Asiaだっと思います。
+</p>
+<p>
+個人的にはこうしたYAPCの自由さ以外に、
+myfinderさん、makamakaさん、刺身さんとかに「PerlCasualのおかげで今回プレゼンする気になりましたよ」的なこと言われて、
+ちょー嬉しかったです。PerlCasualのイベントは年明けにやりたいと思います。
+</p>
+<p>
+さて、前夜祭にゲストとしてお越し頂いた岡田有花さん、
+スピーカーの皆さん、参加者の皆さん、スタッフの皆さん、
+全体を指揮してくれた牧さん、くしいさん。お疲れ様でした！！
+</p>
+<p>
+最後に、僕の方のトーク「Twitter解析サービス(20min)」のプレゼン資料を貼っておきます。
+MongoDBの話あんまできなくてすいません。
+とりあえず触ってみるにはMongoDB面白いし、CPANも「MongoDB」モジュールもO/R Mapperを少しでも使ったことあれば、
+取っ付きやすいのでオススメです、と付け加えておきましょう。
+</p>
+
+<div id="__ss_5468992" style="width:425px">
+<strong style="display:block;margin:12px 0 4px"><a href="http://www.slideshare.net/yusukebe/yapcasia-2010-twitter" title="YAPC::Asia 2010 Twitter解析サービス">YAPC::Asia 2010 Twitter解析サービス</a></strong><object height="355" id="__sse5468992" width="425"><param name="movie" value="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=101016yapctwib-101017202142-phpapp01&amp;rel=0&amp;stripped_title=yapcasia-2010-twitter&amp;userName=yusukebe">
+<param name="allowFullScreen" value="true">
+<param name="allowScriptAccess" value="always">
+<embed allowfullscreen="true" allowscriptaccess="always" height="355" name="__sse5468992" src="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=101016yapctwib-101017202142-phpapp01&amp;rel=0&amp;stripped_title=yapcasia-2010-twitter&amp;userName=yusukebe" type="application/x-shockwave-flash" width="425"></embed></object><div style="padding:5px 0 12px">View more <a href="http://www.slideshare.net/">presentations</a> from <a href="http://www.slideshare.net/yusukebe">yusukebe</a>.</div>
+</div>
+
+
+ 
+}

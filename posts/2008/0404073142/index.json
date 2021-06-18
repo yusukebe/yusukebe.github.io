@@ -1,0 +1,78 @@
+{
+    "data" :  {
+    "title": "CPAN Author になりました",
+    "date": "2008-04-04 16:31:00 +0900 JST",
+    "dir": "posts/2008/",
+    "slug": "0404073142",
+    "categories": ["tech"],
+    "tags": ["Perl"]
+}
+
+---
+
+
+
+<p>
+先日から紹介している WebService::Simple というモジュールを CPAN に登録するため、CPAN Author になりました。少し前からもそれになるべく PAUSE の申請をしていて、理由に「Acme::PornStars::JP」とだけ書いていたら、中の人にガン無視されてしまっていたので、まさに念願の CPAN Author です。オレオレモジュールとは違い、 MANIFEST や Makefile.PL をちゃんと書かなくてはいけないのに戸惑いました。いまだ、空気読めずに間違っているところもあるかと思いますが、というかすでに Makefile.PL とかに必要なモジュール（test で使っている Test::Perl::Critic ）を書き忘れていて、test がこけるよーというレポートもらって修正したのをうｐしているところです。
+</p>
+<p>
+  WebService::Simple の中身の件ですが、<a href="http://mattn.kaoriya.net/software/lang/perl/20080402145529.htm">mattn さんに使っていただいて動的にURLのパスを変えたいというリクエストがあった</a>ので、それに対応させました。ご要望サンクスです。
+リクエストを発行する get メソッドの第 2 引数にオプションとしてハッシュリファレンスを指定します。
+それを踏まえて mattn さんが作った Lingr のチャットに発言するサンプルスクリプトはこのように書けます。
+</p>
+
+<pre class="brush: perl"> use strict;
+use warnings;
+use WebService::Simple;
+
+my $api_key  = "your_api_key";
+my $room_id  = "hO4SmQWTdJ4"; # http://www.lingr.com/room/hO4SmQWTdJ4
+my $nickname = "lingr.pl";
+my $message  = $ARGV[0] || "Hello, World.";
+
+my $lingr = WebService::Simple-&gt;new(
+    base_url =&gt; 'http://www.lingr.com/',
+    param    =&gt; { api_key =&gt; $api_key, format =&gt; 'xml' }
+);
+
+# create session, get session
+my $response;
+$response = $lingr-&gt;get( {}, { path =&gt; '/api/session/create' } );
+my $session = $response-&gt;parse_xml-&gt;{session};
+
+# enter the room, get ticket
+$response = $lingr-&gt;get(
+    {
+        session  =&gt; $session,
+        id       =&gt; $room_id,
+        nickname =&gt; $nickname,
+    },
+    { path =&gt; '/api/room/enter' }
+);
+my $ticket = $response-&gt;parse_xml-&gt;{ticket};
+
+# say 'Hello, World'
+$response = $lingr-&gt;get(
+    {
+        session =&gt; $session,
+        ticket  =&gt; $ticket,
+        message =&gt; $message,
+    },
+    { path =&gt; '/api/room/say' }
+);
+my $status = $response-&gt;parse_xml-&gt;{status};
+
+# destroy session
+$lingr-&gt;get( { session =&gt; $session, }, { path =&gt; '/api/session/destroy' } );</pre>
+
+<p>
+自分が作ったものを使ってもらえること、また、CPAN のサイトに自分の名前が載るっていうのはとっても嬉しいことですね。至らぬ点あると思いますが、よろしくお願いします。
+他のモジュールもうｐろう。
+</p>
+<ul>
+  <li><a href="http://search.cpan.org/~yusukebe/">Yusuke Wada - search.cpan.org</a></li>
+</ul>
+
+
+ 
+}

@@ -1,0 +1,19 @@
+{
+    "data" :  {
+    "title": "黄アンテナをSideBarに追加！？",
+    "date": "2002-07-26 12:14:00 +0900 JST",
+    "dir": "posts/2002/",
+    "slug": "0725151401",
+    "categories": ["tech"],
+    "tags": []
+}
+
+---
+
+
+
+<a href="http://mozilla.to/mozx/sb/index.php?lang=ja" target="_new">http://mozilla.to/mozx/sb/index.php?lang=ja</a>
+これ使って黄アンテナをMozillaのSideBarに入れたらめちゃくちゃレイアウト崩れて大変なことになった。HTMLそのまま表示かよ。
+
+ 
+}

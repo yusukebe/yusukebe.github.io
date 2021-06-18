@@ -1,0 +1,30 @@
+{
+    "data" :  {
+    "title": "本日の萌えの壺→いろんなターミナル＠OSX",
+    "date": "2003-11-12 23:08:00 +0900 JST",
+    "dir": "posts/2003/",
+    "slug": "1112140853",
+    "categories": ["tech"],
+    "tags": []
+}
+
+---
+
+
+<p>いまさら<br>
+<a href="http://www.apple.com/macosx/" target="_new">OSX</a><br>
+に萌えている。OSXはWindowsと比べてOS自体の楽しみがたくさんあると思う。たとえば、ターミナル。ネイティブでUNIXが動いてるので、それをCUIで扱うインターフェースであるTerminalが付属しているのだが、日本語関係でちとあまりよくない。というわけで<br>
+<a href="http://iterm.sourceforge.net/" target="_new">iTerm</a><br>
+と<br>
+<a href="http://www.tt.rim.or.jp/kusama/" target="_new">JTerminal</a><br>
+を入れて並べてみた。<br>
+<br>
+左からMac付属のTerminal、iTerm、JTerminalのドックアイコン<br>
+<img alt="本日の萌えの壺→いろんなターミナル＠OSX" class="at-xid-6a0133f4781589970b015391e372cd970b" src="https://yusukebe.com/archives/a/6a0133f4781589970b015391e372cd970b-pi"><br>
+比較<br>
+<img alt="本日の萌えの壺→いろんなターミナル＠OSX" class="at-xid-6a0133f4781589970b015391e372d8970b" src="https://yusukebe.com/archives/a/6a0133f4781589970b015391e372d8970b-pi"><br>
+<br>
+Jterminalが軽くて日本語読めるのでよいかな。</p>
+
+ 
+}

@@ -1,0 +1,19 @@
+{
+    "data" :  {
+    "title": "validator",
+    "date": "2002-07-31 12:14:00 +0900 JST",
+    "dir": "posts/2002/",
+    "slug": "0730151420",
+    "categories": ["tech"],
+    "tags": []
+}
+
+---
+
+
+<p>トップページ↓だけでもvalidator通るようにしようと思い奮闘。
+<a href="http://web.sfc.keio.ac.jp/~yusukebe/main.shtml" target="_new">http://web.sfc.keio.ac.jp/~yusukebe/main.shtml</a>
+結構やばやばだったけどNOERRORにしたよ。</p>
+
+ 
+}

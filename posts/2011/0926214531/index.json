@@ -1,0 +1,59 @@
+{
+    "data" :  {
+    "title": "gitweb.cgiをPlackで起動する",
+    "date": "2011-09-27 06:45:00 +0900 JST",
+    "dir": "posts/2011/",
+    "slug": "0926214531",
+    "categories": ["tech"],
+    "tags": ["Perl"]
+}
+
+---
+
+
+
+<p>というか、<a href="https://gist.github.com/346068">miyagawaさんのgist</a>でいいんだけど...</p>
+
+
+
+
+<p>俺の場合は</p>
+
+
+
+
+<ul>
+<li>'/'というパスでアクセスしてトップが表示される</li>
+<li>Plack::Middleware::Staticを使った</li>
+</ul>
+
+
+
+
+<p>ってことで以下のような.psgiになった。</p>
+
+
+
+
+<pre class="code">use Plack::App::WrapCGI;
+use Plack::Builder;
+
+my $app =
+  Plack::App::WrapCGI-&gt;new( script =&gt; '/home/git/gitweb/gitweb.cgi' )
+  -&gt;to_app;
+builder {
+    enable "Plack::Middleware::Static",
+      path =&gt; qr{^/static/},
+      root =&gt; '/home/git/gitweb/';
+    $app;
+};</pre>
+
+
+
+
+<p>これでplackupすればOK。もちろんstarmanなどのpsgi互換のサーバソフトでも起動できるので、応用でnginx等のフロントサーバを使えたりする。いやー便利！</p>
+
+
+
+ 
+}

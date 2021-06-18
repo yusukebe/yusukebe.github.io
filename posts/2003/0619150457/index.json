@@ -1,0 +1,62 @@
+{
+    "data" :  {
+    "title": "バージェス氏後の基調講演",
+    "date": "2003-06-20 12:04:00 +0900 JST",
+    "dir": "posts/2003/",
+    "slug": "0619150457",
+    "categories": ["tech"],
+    "tags": []
+}
+
+---
+
+
+
+<p>バージェス氏が退いた後は、ムービーを見る。いろんなフラッシュ界の人たちが出てきて、Flashの面白さとかを語る。<br>
+<a href="http://kamawada.com/~yusuke/yusukebe/archives/files/flashcon/b/flashconb03.jpg"><img alt="フラッシュカンファレンス・レポート" class="at-xid-6a0133f4781589970b015391e36ddc970b" src="https://yusukebe.com/archives/a/6a0133f4781589970b015391e36ddc970b-pi.jpg"></a><br>
+<br>
+フラッシュコンテンツ界では超大御所<br>
+<a href="http://www.yugop.com/" target="_new">yugop</a><br>
+の中村ゆうごさんはこんな人。他にムービーに出てきた人と比べて、熱っ苦しくなくマイルドなコメントが素敵だった。<br>
+<br>
+<a href="http://kamawada.com/~yusuke/yusukebe/archives/files/flashcon/b/flashconb04.jpg"><img alt="フラッシュカンファレンス・レポート" class="at-xid-6a0133f4781589970b015391e36df1970b" src="https://yusukebe.com/archives/a/6a0133f4781589970b015391e36df1970b-pi.jpg"></a><br>
+<br>
+3つの大画面を2000人の人が見ている。<br>
+<br>
+ムービー後はマクロメディアジャパンのCTO(?)田中氏より日本のFlashで面白い試みを紹介。<br>
+</p>
+<ul>
+<br>
+LI<br>
+<a href="http://www.westunitis.co.jp/" target="_new">ウェストウニティス</a><br>
+のウェアラブルへのフラッシュUI利用<br>
+実際にレースで使われたらしい。今回は田中氏が実際にメガネディスプレイをかけてデモを行った。<br>
+<a href="http://kamawada.com/~yusuke/yusukebe/archives/files/flashcon/b/flashconb05.jpg"><img alt="フラッシュカンファレンス・レポート" class="at-xid-6a0133f4781589970b015391e36e01970b" src="https://yusukebe.com/archives/a/6a0133f4781589970b015391e36e01970b-pi.jpg"></a><br>
+<a href="http://kamawada.com/~yusuke/yusukebe/archives/files/flashcon/b/flashconb06.jpg"><img alt="フラッシュカンファレンス・レポート" class="at-xid-6a0133f4781589970b015391e36e13970b" src="https://yusukebe.com/archives/a/6a0133f4781589970b015391e36e13970b-pi.jpg"></a><br>
+<br>
+メガネディスプレイに映し出されているGUIの部分にフラッシュを使用している。<br>
+<br>
+<li>
+<br>
+<a href="http://ascii24.com/news/i/topi/article/2003/06/20/imageview/images718252.jpg.html%20MIGHTY" target="_new">BOARD</a><br>
+ディスプレイが付いたスケートボード。動くとそれにあわせてマイティ・マウスが動く。ディスプレイに表示させる絵をフラッシュで作っている。こういう組み込み系のところにもフラッシュは有効だ。<br>
+<li>Q-JAM</li>
+<br>
+携帯で選択したら、それが大画面に反映される、というイベントなどに使えるシステム。大画面表示の画がフラッシュで作られている。今回はデモとして4択のクイズをやった。<br>
+実は同じようなことを1年以上前に<br>
+<a href="http://dcc.imgl.sfc.keio.ac.jp/mive/" target="_new">mive</a><br>
+でやってたりして。<br>
+<br>
+これってYellnetって会社がシステムとして最初にやりだしたと思ったんだけどindexって会社のシステムとして紹介されてる。なんかYellnetがHPなくなっているー。ごたごたがあったくせーな。<br>
+<br>
+</ul>
+<br>
+その後の基調講演はドコモの夏野氏の講演。505にフラッシュが乗ったという話だが、携帯の話が多くなってきて、そういうことはあまり期待していないので抜け出す。こちらに詳細レポートあり→<br>
+<a href="http://internet.watch.impress.co.jp/www/article/2003/0620/flash2.htm" target="_new">ドコモ夏野氏、「Flash導入の意義はメガピクセルの比ではない」</a><br>
+。<br>
+<br>
+実は俺、携帯にFlashが乗ったことに関してあんまり感銘を受けていないんだな。<br>
+
+
+ 
+}

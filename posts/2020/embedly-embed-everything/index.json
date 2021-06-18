@@ -1,0 +1,150 @@
+{
+    "data" :  {
+    "title": "全部、embed.lyで埋め込んでみる",
+    "date": "2020-03-09 17:02:14 +0900 JST",
+    "dir": "posts/2020/",
+    "slug": "embedly-embed-everything",
+    "categories": [],
+    "tags": ["Blog"]
+}
+
+---
+
+
+この日記をHugoに移してから、TwitterやYouTubeの埋め込みをどうするかが問題だった。
+例えば、以下のようにTwitterクライントで表示されるツイートを埋め込むとする。
+
+{{< figure src="/images/embedly-001.png" alt="ツイート" >}}
+
+まず、各サービスで吐き出されたHTMLコードを貼って、原稿のMarkdown内に無理やり埋め込む方法がある。
+
+{{<rawhtml>}}
+<div class="highlight">
+<pre class="chroma"><code>{{&lt; rawhtml &gt;}}
+&lt;blockquote class=&quot;twitter-tweet&quot;&gt;
+  &lt;p lang=&quot;ja&quot; dir=&quot;ltr&quot;&gt;朝イチで劇場版SHIROBAKO観てきたー。色紙、ずかちゃんだったー。 
+    &lt;a href=&quot;https://t.co/CtVixpMoCr&quot;&gt;pic.twitter.com/CtVixpMoCr&lt;/a&gt;
+  &lt;/p&gt;&amp;mdash; ゆーすけべー (@yusukebe) 
+  &lt;a href=&quot;https://twitter.com/yusukebe/status/1236882637777563651?ref_src=twsrc%5Etfw&quot;&gt;March 9, 2020&lt;/a&gt;
+&lt;/blockquote&gt;
+&lt;script async src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+{{&lt;/ rawhtml &gt;}}</pre></code>
+</div>
+{{</rawhtml>}}
+
+これはちょっとひどい。で、Hugoではショートコードというのがある。
+[ドキュメントの概要](https://gohugo.io/content-management/shortcodes/)を訳すとこんな感じ。
+
+> HugoはシンプルなフォーマットのMarkdownを愛しているぜ！
+> だけど時に、短く書けない時がある…
+> しばしば、著者はビデオのiframeタグなど、生のHTMLを追加しようとしちゃう。
+> これらは、Markdownの美しいシンタックスをぶっこわしてしまうと私たちは思う。
+>
+> そこで、Hugoはそれらを打開するために、ショートコードというのを作ったぜ！
+
+そのショートコードを使った場合のTwitterの埋め込みはこうだ。
+
+{{<rawhtml>}}
+<div class="highlight">
+<pre class="chroma"><code>{{&lt; tweet 1236882637777563651 &gt;}}</code></pre>
+</div>
+{{</rawhtml>}}
+
+おお、確かに美しい。で、他にYouTubeの場合はこう。
+
+{{<rawhtml>}}
+<div class="highlight">
+<pre class="chroma"><code>{{&lt; youtube t3O8C2hlW2o &gt;}}</code></pre>
+</div>
+{{</rawhtml>}}
+
+で、まぁこれでいいし、Hugoが推しているやり方なので、のっとった方がいいのだけど、
+あれもこれも埋め込みたい場合に、Hugoがデフォルトで対応していないとめんどい。
+例えば、Amazon.co.jpへの画像付き商品リンクを貼りたかったんだけど、
+これをショートコードで実現するには結構たいへん
+（頑張ってる人は外部にJSON返すWeb APIを立てて、HugoのDynamic Contentという仕組みで実現させている）。
+
+そこで、embed.lyの登場。
+ずいぶん前からお世話になっているサービスですが、ようはワンサービスであらゆる埋め込みをいい感じにしてくれるサービス。
+その中の`Cards`という機能を使う。
+
+まず、テンプレートをいじって、JavaScriptを読み込む以下のHTMLタグを挿入する。
+
+```html
+<script async src="//cdn.embedly.com/widgets/platform.js" charset="UTF-8"></script>
+```
+
+これで、`embedly-card`属性値をもった`A`タグのURLが埋め込まれる。
+例えば、こういうリンクをいい感じの「カード」に置き換えてくれる。
+
+```html
+<a href="https://yusukebe.com/" class="embedly-card">ゆーすけべー日記</a>
+```
+
+これを簡便にMarkdownの記事内で書けるようにしたい。
+そう、ショートコードを自作する。
+
+```html
+{{- $href := .Get "href" -}}
+<a href="{{ $href }}" data-card-via="{{ $href }}"
+ class="embedly-card" data-card-controls="0"
+ data-card-align="left" data-card-width="100%">
+ loading...
+</a>
+```
+
+これで、ひとつのショートコードでありとあらゆるものを埋め込むことができる。
+`embedly`タグの`href`属性値に埋め込みたいコンテンツのURLを指定すればよい。
+Markdownでの記述と実際の表示を見ていこう。
+
+まず**Twitter**。
+
+{{<rawhtml>}}
+<div class="highlight">
+<pre class="chroma"><code>{{&lt; embedly href="https://twitter.com/yusukebe/status/1236882637777563651?s=21" &gt;}}</code></pre>
+</div>
+{{</rawhtml>}}
+
+{{< embedly href="https://twitter.com/yusukebe/status/1236882637777563651?s=21" >}}
+
+次に**YouTube**。
+
+{{<rawhtml>}}
+<div class="highlight">
+<pre class="chroma"><code>{{&lt; embedly href="https://www.youtube.com/watch?v=t3O8C2hlW2o" &gt;}}</code></pre>
+</div>
+{{</rawhtml>}}
+
+{{< embedly href="https://www.youtube.com/watch?v=t3O8C2hlW2o" >}}
+
+**Gist**。
+
+{{<rawhtml>}}
+<div class="highlight">
+<pre class="chroma"><code>{{&lt; embedly href="https://gist.github.com/yusukebe/699e3f5435e9a6ebed4331a9190c2c8e" &gt;}}</code></pre>
+</div>
+{{</rawhtml>}}
+
+{{< embedly href="https://gist.github.com/yusukebe/699e3f5435e9a6ebed4331a9190c2c8e" >}}
+
+そして、アフィリエイトタグ付きの**Amazon商品リンク**。
+
+{{<rawhtml>}}
+<div class="highlight">
+<pre class="chroma"><code>{{&lt; embedly href="https://www.amazon.co.jp/dp/4774154075/?tag=kamawada-22" &gt;}}</code></pre>
+</div>
+{{</rawhtml>}}
+
+{{< embedly href="https://www.amazon.co.jp/dp/4774154075/?tag=kamawada-22" >}}
+
+あれ？？見えてる？？
+
+たまーに**Amazonの商品リンクの展開がうまくいかない**時があって、
+時間を置いてリロードするとうまくいったりする…のが非常に気持ち悪い。
+アフィリエイトタグがあるとダメとかそういうのじゃなさそう。
+なんでだー。
+だけど、Amazon以外はいい感じなので、しばらく`embedly`ショートコードだけでいってみようと思う。
+
+
+ 
+}

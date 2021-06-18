@@ -1,0 +1,22 @@
+{
+    "data" :  {
+    "title": "NullSoftが出しているwindowsインストーラー作成ツール",
+    "date": "2004-03-31 12:17:00 +0900 JST",
+    "dir": "posts/2004/",
+    "slug": "0330151745",
+    "categories": ["tech"],
+    "tags": []
+}
+
+---
+
+
+
+<p><a href="http://nsis.sourceforge.net/home/" title="NSIS: Home">NSIS: Home</a></p>
+
+<p>GUIじゃなくてテキストスクリプトで作るらしい。<br>
+メモ。</p>
+
+
+ 
+}

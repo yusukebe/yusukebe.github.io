@@ -1,0 +1,18 @@
+{
+    "data" :  {
+    "title": "RCS",
+    "date": "2002-07-21 12:13:00 +0900 JST",
+    "dir": "posts/2002/",
+    "slug": "0720151340",
+    "categories": ["tech"],
+    "tags": []
+}
+
+---
+
+
+<p>ヴァージョン管理なるものはつかったことなかったが、RCSすごくいい。ciとcoしか使っていけど、シンプルなのがすき。
+<a href="http://www.dais.is.tohoku.ac.jp/~kabe/vsd/rcs/rcs.html" target="_new">http://www.dais.is.tohoku.ac.jp/~kabe/vsd/rcs/rcs.html</a></p>
+
+ 
+}
